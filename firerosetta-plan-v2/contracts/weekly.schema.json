@@ -1,0 +1,171 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "weekly.json — contracts 6.2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "generated_at",
+    "code_version",
+    "region",
+    "series_meta",
+    "rows"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schema_version"
+    },
+    "generated_at": {
+      "$ref": "common.schema.json#/$defs/generated_at"
+    },
+    "code_version": {
+      "$ref": "common.schema.json#/$defs/code_version"
+    },
+    "region": {
+      "$ref": "common.schema.json#/$defs/region_id"
+    },
+    "series_meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "aqua_raw",
+        "viirs_raw",
+        "viirs_as_aqua",
+        "harmonized",
+        "viirs_equiv"
+      ],
+      "properties": {
+        "aqua_raw": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "label",
+            "unit"
+          ],
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "unit": {
+              "type": "string"
+            }
+          }
+        },
+        "viirs_raw": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "label",
+            "unit"
+          ],
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "unit": {
+              "type": "string"
+            }
+          }
+        },
+        "viirs_as_aqua": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "label",
+            "unit"
+          ],
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "unit": {
+              "type": "string"
+            }
+          }
+        },
+        "harmonized": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "label",
+            "unit"
+          ],
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "unit": {
+              "type": "string"
+            }
+          }
+        },
+        "viirs_equiv": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "label",
+            "unit",
+            "method"
+          ],
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "unit": {
+              "type": "string"
+            },
+            "method": {
+              "enum": [
+                "tier1",
+                "tier2"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "year",
+          "week",
+          "series",
+          "value",
+          "lo",
+          "hi",
+          "kind",
+          "source"
+        ],
+        "properties": {
+          "year": {
+            "$ref": "common.schema.json#/$defs/year"
+          },
+          "week": {
+            "$ref": "common.schema.json#/$defs/week"
+          },
+          "series": {
+            "$ref": "common.schema.json#/$defs/web_series"
+          },
+          "value": {
+            "$ref": "common.schema.json#/$defs/nullable_number"
+          },
+          "lo": {
+            "$ref": "common.schema.json#/$defs/nullable_number"
+          },
+          "hi": {
+            "$ref": "common.schema.json#/$defs/nullable_number"
+          },
+          "kind": {
+            "$ref": "common.schema.json#/$defs/kind"
+          },
+          "source": {
+            "$ref": "common.schema.json#/$defs/nullable_sensor"
+          }
+        }
+      }
+    }
+  }
+}

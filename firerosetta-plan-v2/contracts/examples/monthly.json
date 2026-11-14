@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-11-14T12:00:00Z",
+  "code_version": "example",
+  "region": "punjab",
+  "series_meta": {
+    "aqua_raw": {
+      "label": "MODIS Aqua, as recorded",
+      "unit": "fire cell-days per month"
+    },
+    "viirs_raw": {
+      "label": "VIIRS, as recorded",
+      "unit": "fire cell-days per month"
+    },
+    "viirs_as_aqua": {
+      "label": "VIIRS translated to the Aqua scale",
+      "unit": "Aqua-equivalent fire cell-days per month"
+    },
+    "harmonized": {
+      "label": "Harmonized record",
+      "unit": "Aqua-equivalent fire cell-days per month"
+    },
+    "viirs_equiv": {
+      "label": "What VIIRS would have seen",
+      "unit": "VIIRS-equivalent fire cell-days per month",
+      "method": "tier1"
+    }
+  },
+  "rows": [
+    {
+      "year": 2015,
+      "month": 10,
+      "series": "harmonized",
+      "value": 812.0,
+      "lo": 812.0,
+      "hi": 812.0,
+      "kind": "observed",
+      "source": "aqua"
+    }
+  ]
+}

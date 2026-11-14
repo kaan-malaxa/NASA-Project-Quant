@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "climatology.json — contracts 6.5",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "generated_at",
+    "code_version",
+    "region",
+    "baseline_years",
+    "unit_week",
+    "unit_month",
+    "weeks",
+    "months"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schema_version"
+    },
+    "generated_at": {
+      "$ref": "common.schema.json#/$defs/generated_at"
+    },
+    "code_version": {
+      "$ref": "common.schema.json#/$defs/code_version"
+    },
+    "region": {
+      "$ref": "common.schema.json#/$defs/region_id"
+    },
+    "baseline_years": {
+      "$ref": "common.schema.json#/$defs/year_range"
+    },
+    "unit_week": {
+      "type": "string"
+    },
+    "unit_month": {
+      "type": "string"
+    },
+    "weeks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "week",
+          "min",
+          "p10",
+          "p25",
+          "p50",
+          "p75",
+          "p90",
+          "max",
+          "n_years"
+        ],
+        "properties": {
+          "week": {
+            "$ref": "common.schema.json#/$defs/week"
+          },
+          "min": {
+            "$ref": "common.schema.json#/$defs/number"
+          },
+          "p10": {
+            "$ref": "common.schema.json#/$defs/number"
+          },
+          "p25": {
+            "$ref": "common.schema.json#/$defs/number"
+          },
+          "p50": {
+            "$ref": "common.schema.json#/$defs/number"
+          },
+          "p75": {
+            "$ref": "common.schema.json#/$defs/number"
+          },
+          "p90": {
+            "$ref": "common.schema.json#/$defs/number"
+          },
+          "max": {
+            "$ref": "common.schema.json#/$defs/number"
+          },
+          "n_years": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "months": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "month",
+          "min",
+          "p10",
+          "p25",
+          "p50",
+          "p75",
+          "p90",
+          "max",
+          "n_years"
+        ],
+        "properties": {
+          "month": {
+            "$ref": "common.schema.json#/$defs/month"
+          },
+          "min": {
+            "$ref": "common.schema.json#/$defs/number"
+          },
+          "p10": {
+            "$ref": "common.schema.json#/$defs/number"
+          },
+          "p25": {
+            "$ref": "common.schema.json#/$defs/number"
+          },
+          "p50": {
+            "$ref": "common.schema.json#/$defs/number"
+          },
+          "p75": {
+            "$ref": "common.schema.json#/$defs/number"
+          },
+          "p90": {
+            "$ref": "common.schema.json#/$defs/number"
+          },
+          "max": {
+            "$ref": "common.schema.json#/$defs/number"
+          },
+          "n_years": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    }
+  }
+}

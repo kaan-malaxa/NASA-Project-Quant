@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-11-14T12:00:00Z",
+  "code_version": "example",
+  "region": "punjab",
+  "as_of": "2026-11-15T12:00:00Z",
+  "source": "VIIRS_NOAA20_NRT",
+  "window": {
+    "start": "2026-11-08",
+    "end": "2026-11-14",
+    "days_covered": 7
+  },
+  "value": 0,
+  "lo": 0,
+  "hi": 0,
+  "unit": "Aqua-equivalent fire cell-days per 7 days",
+  "percentile": 0,
+  "status": "normal",
+  "baseline_years": [
+    2003,
+    2025
+  ],
+  "history": [
+    {
+      "year": 2003,
+      "value": 0,
+      "kind": "observed"
+    }
+  ],
+  "month_to_date": {
+    "month": 11,
+    "through_day": 14,
+    "value": 0,
+    "median": 0,
+    "ratio": null,
+    "percentile": 0
+  },
+  "kind": "harmonized",
+  "input_note": "Near-real-time input; calibration fitted on science-quality data.",
+  "sentence": "Example sentence."
+}

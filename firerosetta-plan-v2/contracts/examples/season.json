@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-11-14T12:00:00Z",
+  "code_version": "example",
+  "region": "punjab",
+  "definition": "The fewest weeks that hold 80% of a typical year's burning",
+  "critical_weeks": [
+    17,
+    18,
+    19,
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "windows": [
+    {
+      "id": "w1",
+      "label": "mid-October to mid-November",
+      "start_week": 42,
+      "peak_week": 44,
+      "end_week": 46,
+      "share": 0.71,
+      "by_year": [
+        {
+          "year": 2003,
+          "start_doy": 288,
+          "centroid_doy": 304,
+          "end_doy": 322,
+          "total": 1234.0,
+          "kind": "observed"
+        }
+      ],
+      "shift_days_per_decade": {
+        "start": {
+          "value": 0,
+          "lo": 0,
+          "hi": 0
+        },
+        "centroid": {
+          "value": 0,
+          "lo": 0,
+          "hi": 0
+        },
+        "end": {
+          "value": 0,
+          "lo": 0,
+          "hi": 0
+        }
+      },
+      "sentence": "Example sentence."
+    }
+  ]
+}

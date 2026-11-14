@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-11-14T12:00:00Z",
+  "code_version": "example",
+  "regions": [
+    {
+      "id": "punjab",
+      "name": "Punjab and Haryana, India",
+      "country": "IN",
+      "bbox": [
+        73.8,
+        27.6,
+        77.6,
+        32.6
+      ],
+      "centroid": [
+        75.7,
+        30.1
+      ],
+      "fire_type": "Crop residue burning",
+      "story": "Farmers burn crop residue every April–May and October–November; the smoke reaches Delhi.",
+      "n_cells_r6": 5600,
+      "membership": "polygon",
+      "last_data_day": "2026-11-13",
+      "synthetic": false,
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline"
+      ],
+      "optional_files": [
+        "cells_monthly",
+        "downloads",
+        "hotspots_recent"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,188 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "calibration.json — contracts 6.11 (also data/harmonized/<region>/calibration.json, 5.10)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "generated_at",
+    "code_version",
+    "region",
+    "reference",
+    "count_resolution",
+    "shrinkage_n0",
+    "eras",
+    "fit_window",
+    "noaa20_method",
+    "k_annual",
+    "k"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schema_version"
+    },
+    "generated_at": {
+      "$ref": "common.schema.json#/$defs/generated_at"
+    },
+    "code_version": {
+      "$ref": "common.schema.json#/$defs/code_version"
+    },
+    "region": {
+      "$ref": "common.schema.json#/$defs/region_id"
+    },
+    "reference": {
+      "type": "string"
+    },
+    "count_resolution": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 15
+    },
+    "shrinkage_n0": {
+      "$ref": "common.schema.json#/$defs/number"
+    },
+    "eras": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "from",
+          "to",
+          "source",
+          "kind"
+        ],
+        "properties": {
+          "from": {
+            "$ref": "common.schema.json#/$defs/date"
+          },
+          "to": {
+            "$ref": "common.schema.json#/$defs/nullable_date"
+          },
+          "source": {
+            "$ref": "common.schema.json#/$defs/sensor"
+          },
+          "kind": {
+            "$ref": "common.schema.json#/$defs/kind"
+          }
+        }
+      },
+      "minItems": 1
+    },
+    "fit_window": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "snpp",
+        "noaa20"
+      ],
+      "properties": {
+        "snpp": {
+          "$ref": "common.schema.json#/$defs/date_range"
+        },
+        "noaa20": {
+          "$ref": "common.schema.json#/$defs/date_range"
+        }
+      }
+    },
+    "noaa20_method": {
+      "type": "string"
+    },
+    "k_annual": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "snpp",
+        "noaa20"
+      ],
+      "properties": {
+        "snpp": {
+          "$ref": "common.schema.json#/$defs/k_lo_hi"
+        },
+        "noaa20": {
+          "$ref": "common.schema.json#/$defs/k_lo_hi"
+        }
+      }
+    },
+    "k": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "snpp",
+        "noaa20"
+      ],
+      "properties": {
+        "snpp": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "month",
+              "k",
+              "lo",
+              "hi",
+              "aqua_celldays",
+              "viirs_celldays"
+            ],
+            "properties": {
+              "month": {
+                "$ref": "common.schema.json#/$defs/month"
+              },
+              "k": {
+                "$ref": "common.schema.json#/$defs/number"
+              },
+              "lo": {
+                "$ref": "common.schema.json#/$defs/number"
+              },
+              "hi": {
+                "$ref": "common.schema.json#/$defs/number"
+              },
+              "aqua_celldays": {
+                "$ref": "common.schema.json#/$defs/number"
+              },
+              "viirs_celldays": {
+                "$ref": "common.schema.json#/$defs/number"
+              }
+            }
+          }
+        },
+        "noaa20": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "month",
+              "k",
+              "lo",
+              "hi",
+              "aqua_celldays",
+              "viirs_celldays"
+            ],
+            "properties": {
+              "month": {
+                "$ref": "common.schema.json#/$defs/month"
+              },
+              "k": {
+                "$ref": "common.schema.json#/$defs/number"
+              },
+              "lo": {
+                "$ref": "common.schema.json#/$defs/number"
+              },
+              "hi": {
+                "$ref": "common.schema.json#/$defs/number"
+              },
+              "aqua_celldays": {
+                "$ref": "common.schema.json#/$defs/number"
+              },
+              "viirs_celldays": {
+                "$ref": "common.schema.json#/$defs/number"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

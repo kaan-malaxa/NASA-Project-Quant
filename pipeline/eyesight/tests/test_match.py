@@ -33,7 +33,8 @@ def test_y_in_the_right_rows():
     x = dict(zip(m["h3_r6"], m["x"]))
     assert x[C3] == pytest.approx(math.log10(30.0))
     assert set(m["year"]) == {2015} and set(m["month"]) == {6}
-    assert counts == {"aqua_celldays_total": 2, "aqua_celldays_matched": 2, "n_matched_rows": 4}
+    assert counts == {"aqua_celldays_total": 2, "aqua_celldays_matched": 2, "n_matched_rows": 4,
+                      "by_year": {2015: (2, 2)}}
 
 
 def test_aqua_only_cellday_raises_total_not_matched():
@@ -68,6 +69,15 @@ def test_neighbour_mode_flips_adjacent():
     assert y_same[C3] == 0 and y_nb[C3] == 1
     assert y_nb[C4] == 0  # far away: unchanged
     assert c_same == c_nb  # g counts stay same-cell
+
+
+def test_counts_by_year_sum_to_totals():
+    rows = _base_rows() + [("snpp", "2016-03-01", C1, 5.0), ("aqua", "2016-03-01", C1, 5.0),
+                           ("aqua", "2016-03-01", C_AQUA_ONLY, 5.0)]
+    _, counts = build_matched(celldays(rows), coverage("2015-05-30", "2016-03-02"), "2015-01-01", "2016-12-31",
+                              frp_floor_mw=0.1)
+    assert counts["by_year"] == {2015: (2, 2), 2016: (2, 1)}
+    assert sum(t for t, _ in counts["by_year"].values()) == counts["aqua_celldays_total"]
 
 
 def test_zero_or_null_frp_is_floored_not_dropped():

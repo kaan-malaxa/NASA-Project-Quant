@@ -8,6 +8,8 @@ You build two things that make our science checkable.
 
 You are never blocked: you create your own data first.
 
+**Real data scope: United States only.** The only real region is `usa`, the contiguous United States (48 states and DC; Alaska and Hawaii excluded), built from the FIRMS country files for the United States (`modis_{YEAR}_United_States.csv`, `viirs-snpp_{YEAR}_United_States.csv`, `viirs-jpss1_{YEAR}_United_States.csv`). Working bbox (W,S,E,N) `-125.0, 24.0, -66.0, 50.0`, to be confirmed by R2 in `regions.yaml`; until then treat it as provisional. `synthland` stays as the planted-truth test region. This replaces the `punjab`, `bc` and `litoral` regions of SD-19 for R4's work; R1, R2 and R3 must update SD-19, the contracts and `regions.yaml` to match.
+
 ## 2. You own / you never touch
 - **Own:** `pipeline/synth/`, `pipeline/eyesight/`.
 - **Never touch:** anything else. In particular the simulator writes raw CSVs only; R2's `ingest` turns them into cell-days like any real region.
@@ -46,7 +48,7 @@ Commands you provide: `python -m pipeline.synth --region synthland [--seed 7] [-
 |---|---|
 | A · Sat 18:30 | `pipeline.synth --size tiny` writes valid FIRMS-format files + `truth.json` (**files in R2's hands by 18:00**) |
 | B · Sat 23:00 | Matching + three-parameter fit recover the planted curve on `synthland`; `curve.json` written; `--size full` available |
-| C · Sun 10:00 | Curve fitted on real Punjab (then `bc`, `litoral`) with bootstrap bands and figures |
+| C · Sun 10:00 | Curve fitted on the real `usa` region (contiguous United States) with bootstrap bands and figures |
 | D · Sun 14:00 | Forward and backward translation, V6/V8, reliability, status decided with R3 by 13:30 |
 | E · Sun 17:00 | Planted-truth run green end to end; sensitivity note sent to R1 |
 
@@ -59,6 +61,8 @@ You are assisting R4 on the FireRosetta project. Before doing anything, read the
 - plan/roles/R4_tier2_eyesight.md (section 9 defines the simulator)
 
 I own only: pipeline/synth/ and pipeline/eyesight/. Never edit files elsewhere.
+Real data is United States only: the one real region is `usa` (contiguous US, FIRMS United_States country files);
+synthland is the test region. Do not use or mention punjab, bc or litoral.
 Use pipeline.common for paths, config, time bins and file IO. Constants come from science.yaml.
 The simulator must be deterministic for a given seed. The eyesight code must never look at truth.json (only tests do).
 Reply first with a three-line restatement and the list of files you will create or change. Run the acceptance commands and
@@ -174,18 +178,21 @@ Paste a, b, c with their ranges, g, n_celldays and the reliability error.
 
 ### C1 · Real data (Sun 07:00)
 ```text
-Task: run the stage on punjab, then bc and litoral, and make it robust to what real data throws at it.
+Task: run the stage on the US data (region usa: contiguous United States, from the FIRMS United_States country files
+in the US data folder) and make it robust to what real data throws at it.
+- Check that only contiguous-US cells are in the matched table: no Alaska or Hawaii rows (the country files contain
+  them; they must fall outside the usa bbox/polygon).
 - Print before fitting: matched rows per year, share with y = 1 per year, FRP quantiles (5, 25, 50, 75, 95).
-- If a region has fewer than 2,000 matched rows in some years, keep those years but report them.
+- If usa has fewer than 2,000 matched rows in some years, keep those years but report them.
 - Check for year effects: fit the curve separately for each year and plot the 10 curves faintly behind the pooled one
   (figures/eyesight_by_year.png). A fan that widens is real information; do not hide it.
-- Paste for each region: params with ranges, g, band width at 10 MW, reliability error.
+- usa is large: report the run time of match + bootstrap (B from tier2.bootstrap_b). If it is too slow, say so and
+  stop; do not reduce B or the fit window without R3's approval.
+- Paste for usa: params with ranges, g, band width at 10 MW, reliability error.
 Do not change the model, the predictor or the fit window to improve the numbers. If something looks wrong, report it.
 
 Acceptance:
-  uv run python -m pipeline.eyesight --region punjab
-  uv run python -m pipeline.eyesight --region bc
-  uv run python -m pipeline.eyesight --region litoral
+  uv run python -m pipeline.eyesight --region usa
 ```
 
 ### C2 · Forward and backward translation
@@ -201,14 +208,14 @@ Task: implement pipeline/eyesight/translate.py and write data/eyesight/R/daily_t
   daily.parquet), lo/hi from the 5th/95th percentile of the yearly k_T2,month,year values, kind estimated;
   from that day on, viirs_raw from R3's daily.parquet, kind observed.
 - Fill curve.json k_compare with {month, k_tier1 (R3's calibration.json snpp), k_tier2}. Figure
-  figures/k_tier1_vs_tier2.png: 12 points per region against the 1:1 line.
+  figures/k_tier1_vs_tier2.png: 12 points (one per month) for usa against the 1:1 line.
 
 Tests (fabricated): if every fire has the same FRP, forward equals VIIRS cell-days * g * p exactly; backward times
 k_T2 returns aqua_raw; no negative values; one row per series per day.
 
 Acceptance:
   uv run pytest pipeline/eyesight -q
-  uv run python -m pipeline.eyesight --region synthland && uv run python -m pipeline.eyesight --region punjab
+  uv run python -m pipeline.eyesight --region synthland && uv run python -m pipeline.eyesight --region usa
 ```
 
 ### D1 · Validation and the status decision (by Sun 13:00)
@@ -230,17 +237,19 @@ and status flips to exploratory; held-out years are provably excluded from the r
 
 Acceptance:
   uv run pytest pipeline/eyesight -q
-  uv run python -m pipeline.run --all-regions --from eyesight --to eyesight
-Paste a table per region: status, the four metrics, which SD-17 conditions passed. Send it to R3 for the decision.
+  uv run python -m pipeline.run --region synthland --from eyesight --to eyesight
+  uv run python -m pipeline.run --region usa --from eyesight --to eyesight
+Paste a table for usa (and synthland as the check): status, the four metrics, which SD-17 conditions passed. Send it
+to R3 for the decision.
 ```
 
 ### D2 · Plain-language text for the Methods page (Sun 13:30, 20 min)
 ```text
-Task: from the real curve.json files I paste, draft for R1's methods_text.yaml: (1) a four-sentence explanation of the
-eyesight curve for a land manager (what the curve is, what the ceiling means, how we know it is right, what it is used
-for); (2) one sentence per region reading its curve ("At 10 megawatts Aqua sees about {p}% of the fire cell-days VIIRS
-sees; at 100 megawatts, {p}%"), with placeholders in braces naming the JSON path to fill, not typed numbers;
-(3) the honest status line for each region. No number may be typed by hand.
+Task: from the real usa curve.json I paste, draft for R1's methods_text.yaml: (1) a four-sentence explanation of the
+eyesight curve for a US land manager (what the curve is, what the ceiling means, how we know it is right, what it is
+used for); (2) one sentence reading the usa curve ("Across the contiguous United States, at 10 megawatts Aqua sees
+about {p}% of the fire cell-days VIIRS sees; at 100 megawatts, {p}%"), with placeholders in braces naming the JSON path
+to fill, not typed numbers; (3) the honest status line for usa. No number may be typed by hand.
 ```
 
 ### E1 · Planted truth, full run (Sun 15:00)
@@ -325,7 +334,8 @@ The zeros are filled by the simulator from its own internal tables (prompt A2). 
 
 ## 11. If things go wrong
 - **Real FIRMS headers differ from §9.4:** change the simulator to match the real files, never the other way round.
-- **Fit does not converge on a region:** status `absent`, Tier 1 everywhere; report the matched-row counts.
+- **Fit does not converge on `usa`:** status `absent`, Tier 1 everywhere; report the matched-row counts.
+- **Alaska or Hawaii rows reach the `usa` cell-days:** the region clip is wrong; report it to R2 with the row counts and do not fit until it is fixed.
 - **Band at 10 MW is wide or reliability fails:** status `exploratory`; the curve still goes on the Methods page with that label. This is a planned outcome, not a failure.
 - **Tier 1 and Tier 2 monthly k disagree:** plot them (that figure is the point), report the months that differ, let R3 decide the wording.
 - **R2's ingest of `synthland` is not ready at 20:00:** fit on a cell-day table produced by your fabricate helper from the simulator's internal fire table; swap to the real path when ingest lands.

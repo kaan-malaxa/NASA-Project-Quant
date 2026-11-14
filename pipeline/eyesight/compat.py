@@ -32,6 +32,8 @@ except ImportError:
 _FALLBACK_SCIENCE = {
     "seed": 7,
     "reference": {"sensor": "aqua", "pass": "D"},
+    "eras": {"record_start": "2003-01-01", "aqua_trusted_through": "2022-12-31", "snpp_through": "2025-12-31",
+             "snpp_first_day": "2012-01-20"},
     "tier2": {"fit": ["2013-01-01", "2022-12-31"], "frp_floor_mw": 0.1, "bootstrap_b": 200,
               "max_band_at_10mw": 0.30, "max_reliability_err": 0.05, "max_wape_ratio_vs_t1": 1.10},
 }
@@ -81,7 +83,27 @@ def coverage_path(region: str) -> Path:
     return _paths.coverage(region) if HAVE_COMMON else grid_dir(region) / "coverage.parquet"
 
 
+def harmonized_dir(region: str) -> Path:
+    return _paths.harmonized_dir(region) if HAVE_COMMON else _root() / "harmonized" / region
+
+
+def harmonized_daily_path(region: str) -> Path:
+    return harmonized_dir(region) / "daily.parquet"  # contracts 5.8
+
+
+def calibration_path(region: str) -> Path:
+    return harmonized_dir(region) / "calibration.json"  # contracts 5.10
+
+
+def daily_t2_path(region: str) -> Path:
+    return eyesight_dir(region) / "daily_t2.parquet"  # contracts 5.13
+
+
 # ------------------------------------------------------------------ file IO
+def read_json(path: Path):
+    return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
 def read_parquet(path: Path, schema_name: str) -> pd.DataFrame:
     if HAVE_COMMON:
         return _io.read_parquet(path, schema_name)

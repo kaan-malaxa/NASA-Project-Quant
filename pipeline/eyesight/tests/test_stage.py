@@ -70,3 +70,34 @@ def test_too_few_rows_is_absent_and_exits_zero(tmp_path, caplog):
 
 def test_missing_inputs_fail_with_nonzero_exit(tmp_path):
     assert main(["--region", "nowhere", "--data-root", str(tmp_path)]) != 0
+
+
+def test_outside_conus_counts_known_answer():
+    import h3
+
+    from pipeline.eyesight.stage import outside_conus_counts
+
+    m = pd.DataFrame({"h3_r6": [h3.latlng_to_cell(61.2, -149.9, 6), h3.latlng_to_cell(19.7, -155.1, 6),
+                                h3.latlng_to_cell(19.7, -155.1, 6), h3.latlng_to_cell(37.0, -120.0, 6),
+                                h3.latlng_to_cell(52.0, 177.0, 6)]})
+    assert outside_conus_counts(m) == {"alaska": 2, "hawaii": 2}
+
+
+def test_usa_with_alaska_rows_refuses_to_fit(tmp_path):
+    import h3
+
+    from pipeline.eyesight.stage import RegionClipError, fit_entry
+    from pipeline.eyesight.compat import science
+
+    cd = celldays([("snpp", "2015-06-01", h3.latlng_to_cell(61.2, -149.9, 6), 10.0)])
+    with pytest.raises(RegionClipError):
+        fit_entry("usa", cd, coverage("2015-06-01", "2015-06-01"), science()[0], "D", logging.getLogger("t"))
+
+
+def test_by_year_figure_and_thin_years_reported(tmp_path, caplog):
+    with caplog.at_level(logging.INFO, logger="pipeline.eyesight"):
+        code, _ = _run(tmp_path, 400)  # 400 rows per year < 2 000: every year is reported as thin
+    assert code == 0
+    assert (tmp_path / "eyesight" / "fab" / "figures" / "eyesight_by_year.png").stat().st_size > 10_000
+    assert "fewer than 2000 matched rows" in caplog.text
+    assert "year 2013: matched rows 400" in caplog.text and "p50=" in caplog.text

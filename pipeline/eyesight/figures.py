@@ -39,3 +39,61 @@ def eyesight_curve_png(entry: dict, path: Path) -> None:
     fig.tight_layout()
     fig.savefig(path)
     plt.close(fig)
+
+
+def eyesight_by_year_png(entry: dict, by_year: list[dict], path: Path) -> None:
+    """One faint curve per fit year behind the pooled curve and its band. A widening fan is information."""
+    import numpy as np
+    from scipy.special import expit
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fig, ax = plt.subplots(figsize=(7, 4.5), dpi=150)
+    frp = np.geomspace(0.5, 2000.0, 100)
+    cmap = plt.get_cmap("viridis")
+    years = [r for r in by_year if r["converged"]]
+    for i, r in enumerate(years):
+        ax.plot(frp, r["c"] * expit(r["a"] + r["b"] * np.log10(frp)), lw=1, alpha=0.45,
+                color=cmap(i / max(len(years) - 1, 1)), label=str(r["year"]))
+    curve = entry["curve"]
+    ax.fill_between([p["frp_mw"] for p in curve], [p["lo"] for p in curve], [p["hi"] for p in curve],
+                    color="#bdbdbd", alpha=0.5)
+    ax.plot([p["frp_mw"] for p in curve], [p["p"] for p in curve], color="black", lw=2.5, label="All years")
+    skipped = [r["year"] for r in by_year if not r["converged"]]
+    title = f"Eyesight curve by year: {entry['region']}"
+    if skipped:
+        title += f" (did not converge: {', '.join(map(str, skipped))})"
+    ax.set_title(title)
+    ax.set_xscale("log")
+    ax.set_ylim(0, 1)
+    ax.set_xlabel("S-NPP fire radiative power in the cell-day (MW, log scale)")
+    ax.set_ylabel("Chance Aqua also detects the cell-day")
+    ax.grid(True, which="both", alpha=0.3)
+    ax.legend(loc="lower right", fontsize=7, ncol=2)
+    fig.tight_layout()
+    fig.savefig(path)
+    plt.close(fig)
+
+
+def k_tier1_vs_tier2_png(entry: dict, path: Path) -> None:
+    """12 monthly points: Tier 1 k (R3) against Tier 2 k_T2, with the 1:1 line. Two independent routes."""
+    pts = [r for r in entry["k_compare"] if r["k_tier1"] is not None and r["k_tier2"] is not None]
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fig, ax = plt.subplots(figsize=(5, 5), dpi=150)
+    if pts:
+        lim = max(max(r["k_tier1"] for r in pts), max(r["k_tier2"] for r in pts)) * 1.15
+        ax.plot([0, lim], [0, lim], color="#636363", ls="--", lw=1, label="1:1 (the two routes agree)")
+        ax.scatter([r["k_tier1"] for r in pts], [r["k_tier2"] for r in pts], color="#08519c", zorder=3,
+                   label="One calendar month")
+        for r in pts:
+            ax.annotate(str(r["month"]), (r["k_tier1"], r["k_tier2"]), textcoords="offset points", xytext=(4, 4),
+                        fontsize=7)
+        ax.set_xlim(0, lim)
+        ax.set_ylim(0, lim)
+    ax.set_xlabel("Tier 1 k (Aqua ÷ S-NPP fire cell-days)")
+    ax.set_ylabel("Tier 2 k (g × mean eyesight probability)")
+    ax.set_title(f"Monthly calibration factor, two routes: {entry['region']}")
+    ax.grid(True, alpha=0.3)
+    ax.legend(loc="upper left", fontsize=8)
+    fig.tight_layout()
+    fig.savefig(path)
+    plt.close(fig)

@@ -12,6 +12,7 @@ from . import compat
 from .figures import eyesight_by_year_png, eyesight_curve_png, k_tier1_vs_tier2_png
 from .fit import band_width_at, binned, bootstrap_curve, curve, curve_points, fit_curve
 from .match import build_matched, g_factor
+from .validate import validate
 from .translate import NOAA20_NOTE, backward_t2, forward_t2, g_per_draw, k_compare, k_t2_monthly
 
 MIN_MATCHED_ROWS = 2000
@@ -198,6 +199,16 @@ def run(region: str, pass_: str, log: logging.Logger) -> tuple[dict, dict]:
     out = compat.eyesight_dir(region)
     if entry["status"] != "absent":
         diag["daily_t2"] = translate(region, entry, diag, celldays, coverage, science, pass_, log)
+        daily_path, t1_path = compat.harmonized_daily_path(region), compat.validation_t1_path(region)
+        daily_r3 = compat.read_parquet(daily_path, "daily") if daily_path.exists() else None
+        validation_t1 = compat.read_json(t1_path) if t1_path.exists() else None
+        if validation_t1 is None:
+            log.warning("R3 input %s missing: the SD-17 Tier 1 WAPE condition cannot be evaluated", t1_path)
+        rows, status, conds = validate(region, entry, diag, celldays, coverage, science, pass_, log, daily_r3,
+                                       validation_t1)
+        entry["status"] = status
+        diag.update({"validation_rows": rows, "sd17": conds})
+        compat.write_json({"validation": rows}, compat.validation_t2_path(region))
     compat.write_json(entry, out / "curve.json")
     if entry["status"] == "absent":
         log.warning("status absent: %s", diag["reason"])

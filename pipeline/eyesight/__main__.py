@@ -49,6 +49,13 @@ def main(argv: list[str] | None = None) -> int:
         for name, grp in d.groupby("series"):
             log.info("daily_t2 %s: %d days, kinds %s, forward %.1f s", name, len(grp),
                      grp["kind"].value_counts().to_dict(), diag.get("seconds_forward", 0.0))
+    if "sd17" in diag:
+        for r in diag["validation_rows"]:
+            v = "null" if r["value"] is None else f"{r['value']:.4f}"
+            log.info("validation %s (%s) = %s, n=%d", r["test"], r["method"], v, r["n"])
+        for c in diag["sd17"]:
+            log.info("SD-17 %s: %s (%s)", "PASS" if c["passed"] else "FAIL", c["condition"], c["detail"])
+        log.info("status = %s", entry["status"])
     compat.finish(STAGE, args.region, entry["n_celldays"], t0)
     return 0
 

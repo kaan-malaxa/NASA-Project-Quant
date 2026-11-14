@@ -15,6 +15,7 @@ import os
 import time
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 
 try:  # pragma: no cover - depends on R2's scaffold
@@ -97,6 +98,41 @@ def calibration_path(region: str) -> Path:
 
 def daily_t2_path(region: str) -> Path:
     return eyesight_dir(region) / "daily_t2.parquet"  # contracts 5.13
+
+
+def validation_t1_path(region: str) -> Path:
+    return harmonized_dir(region) / "validation_t1.json"  # contracts 5.11
+
+
+def validation_t2_path(region: str) -> Path:
+    return eyesight_dir(region) / "validation_t2.json"  # contracts 5.14
+
+
+# ------------------------------------------------------------------ time bins (SD-08)
+def aggregate_weekly(daily: pd.DataFrame, value_cols) -> pd.DataFrame:
+    """Weekly values per SD-08 via pipeline.common.timebins.aggregate. Input: one row per local_day, value columns
+    null where the day is not covered. Fallback (until common exists): week = min(52, (doy-1)//7 + 1); value =
+    sum over covered days * 7 / covered days; missing when fewer than 5 covered days."""
+    if HAVE_COMMON:  # pragma: no cover
+        from pipeline.common import timebins as _tb
+
+        return _tb.aggregate(daily, "week", value_cols=tuple(value_cols))
+    d = daily.copy()
+    ts = pd.to_datetime(d["local_day"])
+    d["year"] = ts.dt.year
+    d["week"] = ((ts.dt.day_of_year - 1) // 7 + 1).clip(upper=52)
+    cols = list(value_cols)
+    covered = d[cols[0]].notna()
+    g = d.assign(_cov=covered).groupby(["year", "week"])
+    out = g[cols].sum(min_count=1)
+    out["n_covered"] = g["_cov"].sum()
+    out["n_days"] = g.size()
+    scale = 7.0 / out["n_covered"].where(out["n_covered"] > 0)
+    for c in cols:
+        out[c] = out[c] * scale
+    out["missing"] = out["n_covered"] < 5
+    out.loc[out["missing"], cols] = np.nan
+    return out.reset_index()
 
 
 # ------------------------------------------------------------------ file IO

@@ -1,0 +1,27 @@
+> ruff check pipeline
+All checks passed!
+
+> python -m pytest pipeline/ingest -q
+......................                                                   [100%]
+22 passed in 1.66s
+
+> python -m pytest -q
+..................................................................       [100%]
+66 passed in 1.98s
+
+> python -m pipeline.ingest.download --region us --via country --years 2023:2023
+OK download us rows=873545 seconds=0.655
+2026-11-14 23:24:37,584Z pipeline.download INFO EXISTS modis_country_2023.csv
+2026-11-14 23:24:37,773Z pipeline.download INFO EXISTS viirs_snpp_country_2023.csv
+2026-11-14 23:24:38,007Z pipeline.download INFO EXISTS viirs_noaa20_country_2023.csv
+
+> python -m pipeline.run --region synthland
+SKIP synth: not implemented yet
+SKIP ingest: not implemented yet
+SKIP harmonize: not implemented yet
+SKIP eyesight: not implemented yet
+SKIP stats: not implemented yet
+SKIP export: not implemented yet
+OK run synthland rows=0 seconds=0.009
+
+PASS real US rerun leaves the manifest byte-identical with one entry per product

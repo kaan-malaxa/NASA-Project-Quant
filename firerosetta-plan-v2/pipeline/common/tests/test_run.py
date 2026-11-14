@@ -1,5 +1,7 @@
 import subprocess
 import sys
+from dataclasses import replace
+from types import SimpleNamespace
 
 import pytest
 
@@ -7,7 +9,7 @@ from pipeline import run
 from pipeline.common import paths
 
 
-@pytest.mark.parametrize("region,count", [("synthland", 6), ("punjab", 5)])
+@pytest.mark.parametrize("region,count", [("synthland", 6), ("us", 5)])
 def test_missing_modules_exit_zero(monkeypatch, capsys, region, count):
     monkeypatch.setattr(run.importlib.util, "find_spec", lambda module: None)
     assert run.main(["--region", region]) == 0
@@ -16,6 +18,14 @@ def test_missing_modules_exit_zero(monkeypatch, capsys, region, count):
     expected = list(run.STAGES) if region == "synthland" else list(run.STAGES[1:])
     assert skips == [f"SKIP {stage}: not implemented yet" for stage in expected]
     assert len(skips) == count
+
+
+def test_package_without_main_is_not_an_implemented_stage(monkeypatch, capsys):
+    def find_spec(module):
+        return None if module.endswith(".__main__") else SimpleNamespace(submodule_search_locations=[])
+    monkeypatch.setattr(run.importlib.util, "find_spec", find_spec)
+    assert run.main(["--region", "synthland"]) == 0
+    assert capsys.readouterr().out.count("SKIP ") == 6
 
 
 def test_real_subprocess_missing_modules():
@@ -34,6 +44,10 @@ def test_real_subprocess_missing_modules():
 
 def test_subprocess_order_export_once_and_flags(monkeypatch, tmp_path):
     commands = []
+    template = run.config.get_region("us")
+    regions = [replace(template, id=f"region-{i}") for i in range(3)]
+    regions.append(replace(template, id="synthetic", synthetic=True))
+    monkeypatch.setattr(run.config, "load_regions", lambda: regions)
     monkeypatch.setattr(run.importlib.util, "find_spec", lambda module: object())
     def invoke(command, **kwargs):
         commands.append(command)
@@ -67,6 +81,6 @@ def test_stage_bounds_and_invalid_selection(monkeypatch, capsys):
     assert run.main(["--region", "synthland", "--from", "harmonize", "--to", "stats"]) == 0
     assert capsys.readouterr().out.count("SKIP ") == 3
     with pytest.raises(SystemExit):
-        run.main(["--region", "punjab", "--all-regions"])
+        run.main(["--region", "us", "--all-regions"])
     with pytest.raises(SystemExit):
-        run.main(["--region", "punjab", "--from", "stats", "--to", "ingest"])
+        run.main(["--region", "us", "--from", "stats", "--to", "ingest"])

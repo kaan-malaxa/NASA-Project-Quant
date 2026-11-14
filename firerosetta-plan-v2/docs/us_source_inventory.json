@@ -1,0 +1,205 @@
+{
+  "code_version": "6abfe03",
+  "generated_at": "2026-11-14T23:23:12.701435+00:00",
+  "products": [
+    {
+      "bytes": 246196524,
+      "daynight": [
+        "D",
+        "N"
+      ],
+      "east_detection": -67.004,
+      "files": [
+        "modis_2000_United_States.csv",
+        "modis_2001_United_States.csv",
+        "modis_2002_United_States.csv",
+        "modis_2003_United_States.csv",
+        "modis_2004_United_States.csv",
+        "modis_2005_United_States.csv",
+        "modis_2006_United_States.csv",
+        "modis_2007_United_States.csv",
+        "modis_2008_United_States.csv",
+        "modis_2009_United_States.csv",
+        "modis_2010_United_States.csv",
+        "modis_2011_United_States.csv",
+        "modis_2012_United_States.csv",
+        "modis_2013_United_States.csv",
+        "modis_2014_United_States.csv",
+        "modis_2015_United_States.csv",
+        "modis_2016_United_States.csv",
+        "modis_2017_United_States.csv",
+        "modis_2018_United_States.csv",
+        "modis_2019_United_States.csv",
+        "modis_2020_United_States.csv",
+        "modis_2021_United_States.csv",
+        "modis_2022_United_States.csv",
+        "modis_2023_United_States.csv",
+        "modis_2024_United_States.csv",
+        "modis_2025_United_States.csv"
+      ],
+      "first_date": "2000-11-01",
+      "folder": "MODIS_data",
+      "header": [
+        "latitude",
+        "longitude",
+        "brightness",
+        "scan",
+        "track",
+        "acq_date",
+        "acq_time",
+        "satellite",
+        "instrument",
+        "confidence",
+        "version",
+        "bright_t31",
+        "frp",
+        "daynight",
+        "type"
+      ],
+      "instrument": [
+        "MODIS"
+      ],
+      "last_date": "2025-12-31",
+      "north_detection": 70.491,
+      "rows": 3063355,
+      "satellite": [
+        "Aqua",
+        "Terra"
+      ],
+      "south_detection": 18.921,
+      "type": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "version": [
+        "6.03",
+        "6.2",
+        "61.03"
+      ],
+      "west_detection": -176.61
+    },
+    {
+      "bytes": 348621719,
+      "daynight": [
+        "D",
+        "N"
+      ],
+      "east_detection": 179.595,
+      "files": [
+        "viirs-jpss1_2018_United_States.csv",
+        "viirs-jpss1_2019_United_States.csv",
+        "viirs-jpss1_2020_United_States.csv",
+        "viirs-jpss1_2021_United_States.csv",
+        "viirs-jpss1_2022_United_States.csv",
+        "viirs-jpss1_2023_United_States.csv",
+        "viirs-jpss1_2024_United_States.csv",
+        "viirs-jpss1_2025_United_States.csv"
+      ],
+      "first_date": "2018-04-01",
+      "folder": "VIIRS-JPSS_data",
+      "header": [
+        "latitude",
+        "longitude",
+        "bright_ti4",
+        "scan",
+        "track",
+        "acq_date",
+        "acq_time",
+        "satellite",
+        "instrument",
+        "confidence",
+        "version",
+        "bright_ti5",
+        "frp",
+        "daynight",
+        "type"
+      ],
+      "instrument": [
+        "VIIRS"
+      ],
+      "last_date": "2025-12-31",
+      "north_detection": 70.494,
+      "rows": 4206744,
+      "satellite": [
+        "N20"
+      ],
+      "south_detection": 18.917,
+      "type": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "version": [
+        "2"
+      ],
+      "west_detection": -176.629
+    },
+    {
+      "bytes": 578026554,
+      "daynight": [
+        "D",
+        "N"
+      ],
+      "east_detection": 179.588,
+      "files": [
+        "viirs-snpp_2012_United_States.csv",
+        "viirs-snpp_2013_United_States.csv",
+        "viirs-snpp_2014_United_States.csv",
+        "viirs-snpp_2015_United_States.csv",
+        "viirs-snpp_2016_United_States.csv",
+        "viirs-snpp_2017_United_States.csv",
+        "viirs-snpp_2018_United_States.csv",
+        "viirs-snpp_2019_United_States.csv",
+        "viirs-snpp_2020_United_States.csv",
+        "viirs-snpp_2021_United_States.csv",
+        "viirs-snpp_2022_United_States.csv",
+        "viirs-snpp_2023_United_States.csv",
+        "viirs-snpp_2024_United_States.csv",
+        "viirs-snpp_2025_United_States.csv"
+      ],
+      "first_date": "2012-01-20",
+      "folder": "VIIRS-SNPP_data",
+      "header": [
+        "latitude",
+        "longitude",
+        "bright_ti4",
+        "scan",
+        "track",
+        "acq_date",
+        "acq_time",
+        "satellite",
+        "instrument",
+        "confidence",
+        "version",
+        "bright_ti5",
+        "frp",
+        "daynight",
+        "type"
+      ],
+      "instrument": [
+        "VIIRS"
+      ],
+      "last_date": "2025-12-31",
+      "north_detection": 71.329,
+      "rows": 7150394,
+      "satellite": [
+        "N"
+      ],
+      "south_detection": 18.917,
+      "type": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "version": [
+        "2"
+      ],
+      "west_detection": -178.808
+    }
+  ],
+  "source_directory": "../data"
+}

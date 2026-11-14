@@ -11,7 +11,11 @@ STAGES = ("synth", "ingest", "harmonize", "eyesight", "stats", "export")
 
 def _run_stage(stage, region, args):
     module = f"pipeline.{stage}"
-    if importlib.util.find_spec(module) is None:
+    spec = importlib.util.find_spec(module)
+    if spec is None or (
+        getattr(spec, "submodule_search_locations", None) is not None
+        and importlib.util.find_spec(f"{module}.__main__") is None
+    ):
         print(f"SKIP {stage}: not implemented yet", flush=True)
         return 0
     command = [

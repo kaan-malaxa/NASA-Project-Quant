@@ -38,6 +38,35 @@ def config_file(name: str) -> Path:
     return PROJECT_ROOT / "pipeline" / "config" / name
 
 
+def env_file() -> Path:
+    return PROJECT_ROOT / ".env"
+
+
+def tmp_dir() -> Path:
+    return data_root() / "tmp"
+
+
+def raw_csv(region, prefix, via, year) -> Path:
+    return raw_dir(region) / f"{prefix}_{via}_{year}.csv"
+
+
+def region_polygon(region) -> Path:
+    return config_file("regions") / f"{region}.geojson"
+
+
+def natural_earth_source() -> Path:
+    return tmp_dir() / "ne_10m_admin_1_states_provinces.geojson"
+
+
+def country_csv_candidates(product, year, country) -> list[Path]:
+    folders = {
+        "modis": "MODIS_data", "viirs-snpp": "VIIRS-SNPP_data", "viirs-jpss1": "VIIRS-JPSS_data",
+    }
+    filename = f"{product}_{year}_{country}.csv"
+    roots = dict.fromkeys((data_root(), PROJECT_ROOT.parent / "data"))
+    return [root / folders[product] / filename for root in roots]
+
+
 def detections(region, sensor) -> Path:
     return clean_dir(region) / f"detections_{sensor}.parquet"
 

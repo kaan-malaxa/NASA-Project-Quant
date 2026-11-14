@@ -1,36 +1,27 @@
 regions:
-  - id: punjab
-    name: "Punjab and Haryana, India"
-    country: IN
-    firms_country_names: ["India"]          # for E2
-    bbox: [73.8, 27.6, 77.6, 32.6]          # W,S,E,N — download only
-    polygon: pipeline/config/regions/punjab.geojson
-    fire_type: "Crop residue burning"
-    story: "Farmers burn crop residue every April–May and October–November; the smoke reaches Delhi."
-    synthetic: false
-  - id: bc
-    name: "British Columbia, Canada"
-    country: CA
-    firms_country_names: ["Canada"]
-    bbox: [-139.1, 48.2, -114.0, 60.1]
-    polygon: pipeline/config/regions/bc.geojson
-    fire_type: "Forest wildfire"
-    story: "Summer wildfire, including the record 2023 season."
-    synthetic: false
-  - id: litoral
-    name: "Santa Fe and Entre Ríos, Argentina"
-    country: AR
-    firms_country_names: ["Argentina"]
-    bbox: [-63.0, -34.5, -57.7, -27.9]
-    polygon: pipeline/config/regions/litoral.geojson
-    fire_type: "Wetland and pasture burning"
-    story: "Paraná Delta wetland fires and pasture burning; a crisis in 2020–2022."
-    synthetic: false
-  - id: synthland
-    name: "Synthland (planted-truth test)"
-    country: ZZ
-    bbox: [10.0, 10.0, 12.0, 12.0]
-    polygon: null
-    fire_type: "Simulated"
-    story: "A simulated region where the right answer is known."
-    synthetic: true
+- id: us
+  name: United States
+  country: US
+  bbox:
+  - -179.144
+  - 18.906
+  - 179.781
+  - 71.413
+  polygon: pipeline/config/regions/us.geojson
+  fire_type: Satellite-detected burning activity
+  story: Satellite detections across the United States, compared across sensors.
+  synthetic: false
+  firms_country_names:
+  - United_States
+- id: synthland
+  name: Synthland (planted-truth test)
+  country: ZZ
+  bbox:
+  - 10.0
+  - 10.0
+  - 12.0
+  - 12.0
+  polygon: null
+  fire_type: Simulated
+  story: A simulated region where the right answer is known.
+  synthetic: true

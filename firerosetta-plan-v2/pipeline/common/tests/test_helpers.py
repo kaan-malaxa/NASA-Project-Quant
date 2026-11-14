@@ -34,10 +34,19 @@ def test_paths_and_cli_override(tmp_path, monkeypatch):
     assert paths.web_data_dir("test") == paths.PROJECT_ROOT / "web" / "public" / "data" / "test"
     assert paths.harmonized_figures_dir("test") == paths.harmonized_dir("test") / "figures"
     assert paths.eyesight_figures_dir("test") == paths.eyesight_dir("test") / "figures"
+    assert paths.tmp_dir() == tmp_path / "cli" / "tmp"
+    assert paths.raw_csv("test", "modis", "country", 2023) == (
+        tmp_path / "cli" / "raw" / "test" / "modis_country_2023.csv"
+    )
+    assert paths.env_file() == paths.PROJECT_ROOT / ".env"
+    assert paths.region_polygon("test") == paths.config_file("regions") / "test.geojson"
+    assert paths.natural_earth_source() == paths.tmp_dir() / "ne_10m_admin_1_states_provinces.geojson"
+    candidates = paths.country_csv_candidates("modis", 2023, "United_States")
+    assert candidates[0] == tmp_path / "cli" / "MODIS_data" / "modis_2023_United_States.csv"
 
 
 def test_regions_and_science(tmp_path, monkeypatch):
-    assert [r.id for r in config.load_regions()] == ["punjab", "bc", "litoral", "synthland"]
+    assert [r.id for r in config.load_regions()] == ["us", "synthland"]
     assert config.get_region("synthland").synthetic
     assert config.region_centroid("synthland") == (11.0, 11.0)
     with pytest.raises(ValueError, match="Unknown region"):

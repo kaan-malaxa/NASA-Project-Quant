@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-11-14T12:00:00Z",
+  "code_version": "example",
+  "region": "punjab",
+  "index_base_years": [
+    2003,
+    2011
+  ],
+  "jump_multiple": {
+    "value": 0,
+    "lo": 0,
+    "hi": 0,
+    "years": [
+      2013,
+      2022
+    ],
+    "definition": "Mean yearly S-NPP VIIRS hotspot count divided by mean yearly MODIS (Terra + Aqua) hotspot count, same years, same place"
+  },
+  "rows": [
+    {
+      "year": 2003,
+      "naive_index": 1.0,
+      "harmonized_index": 1.0,
+      "naive_source": "modis",
+      "kind": "observed"
+    }
+  ],
+  "sentence": "Example sentence."
+}

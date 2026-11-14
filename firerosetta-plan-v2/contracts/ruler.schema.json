@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ruler.json — contracts 6.8",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "generated_at",
+    "code_version",
+    "region",
+    "index_base_years",
+    "jump_multiple",
+    "rows",
+    "sentence"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schema_version"
+    },
+    "generated_at": {
+      "$ref": "common.schema.json#/$defs/generated_at"
+    },
+    "code_version": {
+      "$ref": "common.schema.json#/$defs/code_version"
+    },
+    "region": {
+      "$ref": "common.schema.json#/$defs/region_id"
+    },
+    "index_base_years": {
+      "$ref": "common.schema.json#/$defs/year_range"
+    },
+    "jump_multiple": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "lo",
+        "hi",
+        "years",
+        "definition"
+      ],
+      "properties": {
+        "value": {
+          "$ref": "common.schema.json#/$defs/number"
+        },
+        "lo": {
+          "$ref": "common.schema.json#/$defs/number"
+        },
+        "hi": {
+          "$ref": "common.schema.json#/$defs/number"
+        },
+        "years": {
+          "$ref": "common.schema.json#/$defs/year_range"
+        },
+        "definition": {
+          "type": "string"
+        }
+      }
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "year",
+          "naive_index",
+          "harmonized_index",
+          "naive_source",
+          "kind"
+        ],
+        "properties": {
+          "year": {
+            "$ref": "common.schema.json#/$defs/year"
+          },
+          "naive_index": {
+            "$ref": "common.schema.json#/$defs/nullable_number"
+          },
+          "harmonized_index": {
+            "$ref": "common.schema.json#/$defs/nullable_number"
+          },
+          "naive_source": {
+            "$ref": "common.schema.json#/$defs/naive_source"
+          },
+          "kind": {
+            "$ref": "common.schema.json#/$defs/kind"
+          }
+        }
+      }
+    },
+    "sentence": {
+      "type": "string"
+    }
+  }
+}

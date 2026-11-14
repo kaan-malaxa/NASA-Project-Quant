@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-11-14T12:00:00Z",
+  "code_version": "example",
+  "region": "punjab",
+  "years": [
+    2003,
+    2025
+  ],
+  "annual": [
+    {
+      "year": 2003,
+      "harmonized": 1234.0,
+      "lo": 1234.0,
+      "hi": 1234.0,
+      "kind": "observed",
+      "naive_count": 5678.0,
+      "naive_source": "modis"
+    }
+  ],
+  "harmonized": {
+    "pct_per_decade": 0,
+    "lo": 0,
+    "hi": 0,
+    "direction": "no_clear_change"
+  },
+  "naive": {
+    "pct_per_decade": 0,
+    "lo": 0,
+    "hi": 0,
+    "direction": "rising"
+  },
+  "robustness": [
+    {
+      "variant": "aqua_only_2003_2022",
+      "pct_per_decade": 0,
+      "lo": 0,
+      "hi": 0,
+      "direction": "no_clear_change"
+    },
+    {
+      "variant": "translated_from_2012",
+      "pct_per_decade": 0,
+      "lo": 0,
+      "hi": 0,
+      "direction": "no_clear_change"
+    }
+  ],
+  "sentence_id": "artifact_flat",
+  "sentence": "Example sentence."
+}

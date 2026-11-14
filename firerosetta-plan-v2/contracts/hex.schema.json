@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "hex.json — contracts 6.10",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "generated_at",
+    "code_version",
+    "region",
+    "resolution",
+    "unit",
+    "source",
+    "years",
+    "kind",
+    "cells"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schema_version"
+    },
+    "generated_at": {
+      "$ref": "common.schema.json#/$defs/generated_at"
+    },
+    "code_version": {
+      "$ref": "common.schema.json#/$defs/code_version"
+    },
+    "region": {
+      "$ref": "common.schema.json#/$defs/region_id"
+    },
+    "resolution": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 15
+    },
+    "unit": {
+      "type": "string"
+    },
+    "source": {
+      "$ref": "common.schema.json#/$defs/sensor"
+    },
+    "years": {
+      "$ref": "common.schema.json#/$defs/year_range"
+    },
+    "kind": {
+      "$ref": "common.schema.json#/$defs/kind"
+    },
+    "cells": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "h3",
+          "critical",
+          "all_year"
+        ],
+        "properties": {
+          "h3": {
+            "type": "string",
+            "minLength": 1
+          },
+          "critical": {
+            "$ref": "common.schema.json#/$defs/number"
+          },
+          "all_year": {
+            "$ref": "common.schema.json#/$defs/number"
+          }
+        }
+      }
+    }
+  }
+}

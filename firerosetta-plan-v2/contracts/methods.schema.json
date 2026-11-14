@@ -1,0 +1,410 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "methods.json — contracts 6.13",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "generated_at",
+    "code_version",
+    "decisions",
+    "validation",
+    "drift",
+    "eyesight",
+    "planted_truth",
+    "inputs",
+    "filters",
+    "sources",
+    "limitations",
+    "ai_use"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schema_version"
+    },
+    "generated_at": {
+      "$ref": "common.schema.json#/$defs/generated_at"
+    },
+    "code_version": {
+      "$ref": "common.schema.json#/$defs/code_version"
+    },
+    "decisions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reference",
+        "count_resolution",
+        "aqua_trusted_through",
+        "snpp_through",
+        "baseline_years",
+        "science_yaml_sha256"
+      ],
+      "properties": {
+        "reference": {
+          "type": "string"
+        },
+        "count_resolution": {
+          "type": "integer"
+        },
+        "aqua_trusted_through": {
+          "$ref": "common.schema.json#/$defs/date"
+        },
+        "snpp_through": {
+          "$ref": "common.schema.json#/$defs/date"
+        },
+        "baseline_years": {
+          "$ref": "common.schema.json#/$defs/year_range"
+        },
+        "science_yaml_sha256": {
+          "$ref": "common.schema.json#/$defs/sha256"
+        }
+      }
+    },
+    "validation": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/ValidationRow"
+      }
+    },
+    "drift": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "region",
+          "sensor",
+          "year",
+          "k_annual",
+          "lo",
+          "hi"
+        ],
+        "properties": {
+          "region": {
+            "$ref": "common.schema.json#/$defs/region_id"
+          },
+          "sensor": {
+            "$ref": "common.schema.json#/$defs/sensor"
+          },
+          "year": {
+            "$ref": "common.schema.json#/$defs/year"
+          },
+          "k_annual": {
+            "$ref": "common.schema.json#/$defs/number"
+          },
+          "lo": {
+            "$ref": "common.schema.json#/$defs/number"
+          },
+          "hi": {
+            "$ref": "common.schema.json#/$defs/number"
+          }
+        }
+      }
+    },
+    "eyesight": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "region",
+          "status"
+        ],
+        "properties": {
+          "region": {
+            "$ref": "common.schema.json#/$defs/region_id"
+          },
+          "status": {
+            "$ref": "common.schema.json#/$defs/eyesight_status"
+          },
+          "params": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "a",
+              "b",
+              "c",
+              "a_lo",
+              "a_hi",
+              "b_lo",
+              "b_hi",
+              "c_lo",
+              "c_hi"
+            ],
+            "properties": {
+              "a": {
+                "$ref": "common.schema.json#/$defs/number"
+              },
+              "b": {
+                "$ref": "common.schema.json#/$defs/number"
+              },
+              "c": {
+                "$ref": "common.schema.json#/$defs/number"
+              },
+              "a_lo": {
+                "$ref": "common.schema.json#/$defs/number"
+              },
+              "a_hi": {
+                "$ref": "common.schema.json#/$defs/number"
+              },
+              "b_lo": {
+                "$ref": "common.schema.json#/$defs/number"
+              },
+              "b_hi": {
+                "$ref": "common.schema.json#/$defs/number"
+              },
+              "c_lo": {
+                "$ref": "common.schema.json#/$defs/number"
+              },
+              "c_hi": {
+                "$ref": "common.schema.json#/$defs/number"
+              }
+            }
+          },
+          "g": {
+            "$ref": "common.schema.json#/$defs/number"
+          },
+          "n_celldays": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "curve": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "frp_mw",
+                "p",
+                "lo",
+                "hi"
+              ],
+              "properties": {
+                "frp_mw": {
+                  "$ref": "common.schema.json#/$defs/number"
+                },
+                "p": {
+                  "$ref": "common.schema.json#/$defs/number"
+                },
+                "lo": {
+                  "$ref": "common.schema.json#/$defs/number"
+                },
+                "hi": {
+                  "$ref": "common.schema.json#/$defs/number"
+                }
+              }
+            }
+          },
+          "binned": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "frp_mw",
+                "p_obs",
+                "n"
+              ],
+              "properties": {
+                "frp_mw": {
+                  "$ref": "common.schema.json#/$defs/number"
+                },
+                "p_obs": {
+                  "$ref": "common.schema.json#/$defs/number"
+                },
+                "n": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              }
+            }
+          },
+          "k_compare": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "month",
+                "k_tier1",
+                "k_tier2"
+              ],
+              "properties": {
+                "month": {
+                  "$ref": "common.schema.json#/$defs/month"
+                },
+                "k_tier1": {
+                  "$ref": "common.schema.json#/$defs/number"
+                },
+                "k_tier2": {
+                  "$ref": "common.schema.json#/$defs/number"
+                }
+              }
+            }
+          }
+        },
+        "if": {
+          "properties": {
+            "status": {
+              "const": "absent"
+            }
+          }
+        },
+        "then": {
+          "maxProperties": 2
+        },
+        "else": {
+          "required": [
+            "params",
+            "g",
+            "n_celldays",
+            "curve",
+            "binned",
+            "k_compare"
+          ]
+        }
+      }
+    },
+    "planted_truth": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "quantity",
+          "truth",
+          "recovered",
+          "tolerance",
+          "pass"
+        ],
+        "properties": {
+          "quantity": {
+            "type": "string"
+          },
+          "truth": {
+            "$ref": "common.schema.json#/$defs/number"
+          },
+          "recovered": {
+            "$ref": "common.schema.json#/$defs/number"
+          },
+          "tolerance": {
+            "$ref": "common.schema.json#/$defs/number"
+          },
+          "pass": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source",
+          "region",
+          "rows",
+          "first_date",
+          "last_date",
+          "downloaded",
+          "via"
+        ],
+        "properties": {
+          "source": {
+            "type": "string"
+          },
+          "region": {
+            "$ref": "common.schema.json#/$defs/region_id"
+          },
+          "rows": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "first_date": {
+            "$ref": "common.schema.json#/$defs/date"
+          },
+          "last_date": {
+            "$ref": "common.schema.json#/$defs/date"
+          },
+          "downloaded": {
+            "type": "string"
+          },
+          "via": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "filters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "region",
+          "sensor",
+          "step",
+          "rows_in",
+          "rows_dropped"
+        ],
+        "properties": {
+          "region": {
+            "$ref": "common.schema.json#/$defs/region_id"
+          },
+          "sensor": {
+            "$ref": "common.schema.json#/$defs/sensor"
+          },
+          "step": {
+            "type": "string"
+          },
+          "rows_in": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "rows_dropped": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "claim_id",
+          "text",
+          "url",
+          "checked"
+        ],
+        "properties": {
+          "claim_id": {
+            "$ref": "common.schema.json#/$defs/claim_id"
+          },
+          "text": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "minLength": 1
+          },
+          "checked": {
+            "$ref": "common.schema.json#/$defs/date"
+          }
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "ai_use": {
+      "type": "string"
+    }
+  }
+}

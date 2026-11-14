@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "season.json — contracts 6.6",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "generated_at",
+    "code_version",
+    "region",
+    "definition",
+    "critical_weeks",
+    "windows"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schema_version"
+    },
+    "generated_at": {
+      "$ref": "common.schema.json#/$defs/generated_at"
+    },
+    "code_version": {
+      "$ref": "common.schema.json#/$defs/code_version"
+    },
+    "region": {
+      "$ref": "common.schema.json#/$defs/region_id"
+    },
+    "definition": {
+      "type": "string"
+    },
+    "critical_weeks": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/week"
+      },
+      "uniqueItems": true
+    },
+    "windows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "label",
+          "start_week",
+          "peak_week",
+          "end_week",
+          "share",
+          "by_year",
+          "shift_days_per_decade",
+          "sentence"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "start_week": {
+            "$ref": "common.schema.json#/$defs/week"
+          },
+          "peak_week": {
+            "$ref": "common.schema.json#/$defs/week"
+          },
+          "end_week": {
+            "$ref": "common.schema.json#/$defs/week"
+          },
+          "share": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "by_year": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "year",
+                "start_doy",
+                "centroid_doy",
+                "end_doy",
+                "total",
+                "kind"
+              ],
+              "properties": {
+                "year": {
+                  "$ref": "common.schema.json#/$defs/year"
+                },
+                "start_doy": {
+                  "anyOf": [
+                    {
+                      "$ref": "common.schema.json#/$defs/doy"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "centroid_doy": {
+                  "anyOf": [
+                    {
+                      "$ref": "common.schema.json#/$defs/doy"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "end_doy": {
+                  "anyOf": [
+                    {
+                      "$ref": "common.schema.json#/$defs/doy"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "total": {
+                  "$ref": "common.schema.json#/$defs/nullable_number"
+                },
+                "kind": {
+                  "$ref": "common.schema.json#/$defs/kind"
+                }
+              }
+            }
+          },
+          "shift_days_per_decade": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "start",
+              "centroid",
+              "end"
+            ],
+            "properties": {
+              "start": {
+                "$ref": "common.schema.json#/$defs/value_lo_hi"
+              },
+              "centroid": {
+                "$ref": "common.schema.json#/$defs/value_lo_hi"
+              },
+              "end": {
+                "$ref": "common.schema.json#/$defs/value_lo_hi"
+              }
+            }
+          },
+          "sentence": {
+            "type": "string"
+          }
+        }
+      },
+      "minItems": 1,
+      "maxItems": 2
+    }
+  }
+}

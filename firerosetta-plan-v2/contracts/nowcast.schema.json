@@ -1,0 +1,173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "nowcast.json — contracts 6.9",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "generated_at",
+    "code_version",
+    "region",
+    "as_of",
+    "source",
+    "window",
+    "value",
+    "lo",
+    "hi",
+    "unit",
+    "percentile",
+    "status",
+    "baseline_years",
+    "history",
+    "month_to_date",
+    "kind",
+    "input_note",
+    "sentence"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schema_version"
+    },
+    "generated_at": {
+      "$ref": "common.schema.json#/$defs/generated_at"
+    },
+    "code_version": {
+      "$ref": "common.schema.json#/$defs/code_version"
+    },
+    "region": {
+      "$ref": "common.schema.json#/$defs/region_id"
+    },
+    "as_of": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/datetime_utc"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "source": {
+      "type": "string"
+    },
+    "window": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "start",
+        "end",
+        "days_covered"
+      ],
+      "properties": {
+        "start": {
+          "$ref": "common.schema.json#/$defs/nullable_date"
+        },
+        "end": {
+          "$ref": "common.schema.json#/$defs/nullable_date"
+        },
+        "days_covered": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 7
+        }
+      }
+    },
+    "value": {
+      "$ref": "common.schema.json#/$defs/nullable_number"
+    },
+    "lo": {
+      "$ref": "common.schema.json#/$defs/nullable_number"
+    },
+    "hi": {
+      "$ref": "common.schema.json#/$defs/nullable_number"
+    },
+    "unit": {
+      "type": "string"
+    },
+    "percentile": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 100
+    },
+    "status": {
+      "$ref": "common.schema.json#/$defs/status"
+    },
+    "baseline_years": {
+      "$ref": "common.schema.json#/$defs/year_range"
+    },
+    "history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "year",
+          "value",
+          "kind"
+        ],
+        "properties": {
+          "year": {
+            "$ref": "common.schema.json#/$defs/year"
+          },
+          "value": {
+            "$ref": "common.schema.json#/$defs/nullable_number"
+          },
+          "kind": {
+            "$ref": "common.schema.json#/$defs/kind"
+          }
+        }
+      }
+    },
+    "month_to_date": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "month",
+        "through_day",
+        "value",
+        "median",
+        "ratio",
+        "percentile"
+      ],
+      "properties": {
+        "month": {
+          "$ref": "common.schema.json#/$defs/month"
+        },
+        "through_day": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 31
+        },
+        "value": {
+          "$ref": "common.schema.json#/$defs/nullable_number"
+        },
+        "median": {
+          "$ref": "common.schema.json#/$defs/nullable_number"
+        },
+        "ratio": {
+          "$ref": "common.schema.json#/$defs/nullable_number"
+        },
+        "percentile": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        }
+      }
+    },
+    "kind": {
+      "$ref": "common.schema.json#/$defs/kind"
+    },
+    "input_note": {
+      "type": "string"
+    },
+    "sentence": {
+      "type": "string"
+    }
+  }
+}

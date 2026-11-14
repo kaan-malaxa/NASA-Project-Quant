@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-11-14T12:00:00Z",
+  "code_version": "example",
+  "region": "punjab",
+  "resolution": 5,
+  "unit": "VIIRS fire cell-days per year",
+  "source": "snpp",
+  "years": [
+    2013,
+    2025
+  ],
+  "kind": "observed",
+  "cells": [
+    {
+      "h3": "85…",
+      "critical": 12.3,
+      "all_year": 20.1
+    }
+  ]
+}

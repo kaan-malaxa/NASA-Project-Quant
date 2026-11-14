@@ -72,3 +72,23 @@ def aggregate(daily: pd.DataFrame, grain: str, value_cols: Sequence[str] = ("val
                    source=_majority(list(covered["source"])) if "source" in g else None)
         out.append(rec)
     return pd.DataFrame(out)
+
+
+def doy_window(daily: pd.DataFrame, end_doy: int, n_days: int, year: int,
+               value_cols: Sequence[str] = ("value",)) -> dict:
+    """Coverage-scaled sum of the n_days ending at day-of-year end_doy of `year` (may cross into year-1).
+
+    Returns the value columns (None when no day is covered), plus n_days and n_covered. Thresholds
+    are left to the caller.
+    """
+    from datetime import timedelta
+
+    end = date(year, 1, 1) + timedelta(end_doy - 1)
+    wanted = {end - timedelta(k) for k in range(n_days)}
+    days = pd.to_datetime(daily["local_day"]).dt.date
+    sub = daily[days.isin(wanted).to_numpy()]
+    covered = sub[sub[value_cols[0]].notna()]
+    n_cov = len(covered)
+    out: dict = {c: (float(covered[c].sum()) * n_days / n_cov if n_cov else None) for c in value_cols}
+    out.update(n_days=n_days, n_covered=n_cov)
+    return out

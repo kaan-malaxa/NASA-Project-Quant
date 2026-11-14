@@ -1,6 +1,7 @@
 import json
 import logging
 import time
+from dataclasses import replace
 
 import pytest
 
@@ -42,13 +43,17 @@ def test_paths_and_cli_override(tmp_path, monkeypatch):
     assert paths.region_polygon("test") == paths.config_file("regions") / "test.geojson"
     assert paths.natural_earth_source() == paths.tmp_dir() / "ne_10m_admin_1_states_provinces.geojson"
     candidates = paths.country_csv_candidates("modis", 2023, "United_States")
-    assert candidates[0] == tmp_path / "cli" / "MODIS_data" / "modis_2023_United_States.csv"
+    assert candidates == [
+        paths.PROJECT_ROOT.parent / "data" / "MODIS_data" / "modis_2023_United_States.csv",
+    ]
+    assert paths.source_data_root() == (paths.PROJECT_ROOT.parent / "data").resolve()
 
 
 def test_regions_and_science(tmp_path, monkeypatch):
-    assert [r.id for r in config.load_regions()] == ["us", "synthland"]
-    assert config.get_region("synthland").synthetic
-    assert config.region_centroid("synthland") == (11.0, 11.0)
+    assert [r.id for r in config.load_regions()] == ["us"]
+    assert not config.get_region("us").synthetic
+    with pytest.raises(ValueError, match="Unknown region"):
+        config.get_region("synthland")
     with pytest.raises(ValueError, match="Unknown region"):
         config.get_region("unknown")
     monkeypatch.setattr(paths, "config_file", lambda name: tmp_path / name)
@@ -60,6 +65,16 @@ def test_regions_and_science(tmp_path, monkeypatch):
     loaded["seed"] = 999
     assert config.load_science()["seed"] == 7
     assert science.read_text(encoding="utf-8") == "seed: 7\n"
+
+
+def test_non_us_or_synthetic_configuration_is_rejected():
+    region = config.get_region("us")
+    for invalid in [
+        replace(region, synthetic=True), replace(region, country="CA"),
+        replace(region, firms_country_names=["India"]), replace(region, id="other"),
+    ]:
+        with pytest.raises(ValueError, match="Only the us region"):
+            config.require_us_region(invalid)
 
 
 def test_polygon_centroid(tmp_path, monkeypatch):

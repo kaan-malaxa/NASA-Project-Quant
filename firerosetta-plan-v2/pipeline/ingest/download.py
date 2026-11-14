@@ -1,43 +1,27 @@
-"""Download FIRMS country or Area API CSVs without changing source columns."""
+"""Stage only the existing local United States country CSVs; never fetch data."""
 import csv
 import hashlib
 import json
-import logging
-import os
 import sys
 import time
 from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
 from tempfile import TemporaryDirectory
-from urllib.parse import quote
 
 import duckdb
-import requests
-from dotenv import load_dotenv
 
 from pipeline.common import cli, config, io, log, paths
 
-# Verified against the country page's yearly_summary_files.txt and linked UI.
-COUNTRY_URL = (
-    "https://firms.modaps.eosdis.nasa.gov/data/country/"
-    "{product}/{year}/{product}_{year}_{country}.csv"
-)
-AREA_URL = "https://firms.modaps.eosdis.nasa.gov/api/area/csv"
-AVAILABILITY_URL = "https://firms.modaps.eosdis.nasa.gov/api/data_availability/csv"
 PRODUCTS = {"modis": "modis", "viirs-snpp": "viirs_snpp", "viirs-jpss1": "viirs_noaa20"}
-SOURCES = {
-    "MODIS_SP": "modis", "VIIRS_SNPP_SP": "viirs_snpp",
-    "VIIRS_NOAA20_SP": "viirs_noaa20", "VIIRS_NOAA20_NRT": "nrt_viirs_noaa20",
-}
 LOGGER = log.get_logger("download")
 
 
 class DownloadError(ValueError):
-    """A safe-to-print failure that never contains a MAP_KEY or request URL."""
+    """A local input cannot be used without changing or inventing source data."""
 
 
 def api_windows(start: date, end: date):
-    """Yield inclusive (start, end) windows, never exceeding E3's five days."""
+    """Pure window helper retained for fabricated tests; performs no IO."""
     if end < start:
         raise ValueError("end must not precede start")
     while start <= end:
@@ -63,11 +47,11 @@ def _connection():
 
 
 def clip_bbox(inputs, output, bbox):
-    """Keep bbox boundaries; preserve every column as source text, including HHMM."""
+    """Keep bbox boundaries and every original text column, including HHMM."""
     inputs = [Path(path) for path in inputs]
     headers = [csv_header(path) for path in inputs]
     if not headers or any(header != headers[0] for header in headers[1:]):
-        raise DownloadError("Input CSV headers differ; refusing to merge countries")
+        raise DownloadError("Input CSV headers differ; refusing to merge")
     west, south, east, north = bbox
     with _connection() as connection:
         relation = connection.read_csv([str(path) for path in inputs], header=True, all_varchar=True)
@@ -77,7 +61,6 @@ def clip_bbox(inputs, output, bbox):
             f"try_cast(latitude as double) >= {float(south)!r} AND "
             f"try_cast(latitude as double) <= {float(north)!r}"
         )
-        # All output rows have a deterministic lexical order, with original text intact.
         relation.order(", ".join('"' + name.replace('"', '""') + '"' for name in headers[0])).write_csv(
             str(output), header=True,
         )
@@ -104,20 +87,46 @@ def _file_facts(path):
     }
 
 
-def update_manifest(region, path=None, source=None, via=None):
-    """Upsert one entry by filename; unchanged content keeps its original timestamp."""
+def _source_name(path):
+    root = paths.source_data_root()
+    resolved = Path(path).resolve()
+    if not resolved.is_relative_to(root):
+        raise DownloadError(f"US source must remain inside {root}")
+    return resolved.relative_to(root).as_posix()
+
+
+def update_manifest(region, path=None, source=None, via="country"):
+    """Upsert local provenance without inventing the original download time."""
+    if region != "us":
+        raise DownloadError("Only the local us region is supported")
     manifest = paths.manifest(region)
     entries = json.loads(manifest.read_text(encoding="utf-8")) if manifest.exists() else []
-    by_file = {entry["file"]: entry for entry in entries}
+    # Do not carry old API or unverified source entries into a local-only manifest.
+    by_file = {}
+    for entry in entries:
+        relative = entry.get("source", "")
+        candidate = paths.source_data_root() / relative
+        if (
+            entry.get("via") == "country" and relative
+            and candidate.is_file() and _source_name(candidate) == relative
+            and candidate.name.endswith("_United_States.csv")
+        ):
+            by_file[entry["file"]] = entry
     if path is not None:
-        path = Path(path)
+        if via != "country" or not source:
+            raise DownloadError("Manifest entries require a local US source")
+        candidate = paths.source_data_root() / source
+        if not candidate.is_file() or _source_name(candidate) != source:
+            raise DownloadError("Manifest source must be an existing file inside the US source directory")
+        if not candidate.name.endswith("_United_States.csv"):
+            raise DownloadError("Manifest source must be a United_States country CSV")
         facts = _file_facts(path)
-        old = by_file.get(path.name)
-        if old is None or any(old.get(key) != value for key, value in facts.items()):
-            by_file[path.name] = {
-                "file": path.name, "source": source, "via": via,
+        old = by_file.get(Path(path).name)
+        values = {"source": source, "via": via, **facts}
+        if old is None or any(old.get(key) != value for key, value in values.items()):
+            by_file[Path(path).name] = {
+                "file": Path(path).name, **values,
                 "downloaded_at": datetime.now(UTC).isoformat(timespec="seconds").replace("+00:00", "Z"),
-                **facts,
             }
     updated = sorted(by_file.values(), key=lambda entry: entry["file"])
     if updated != entries or not manifest.exists():
@@ -128,149 +137,42 @@ def update_manifest(region, path=None, source=None, via=None):
     return updated
 
 
-class Client:
-    """Streaming HTTP with one-second pacing, three retries and redacted errors."""
-
-    def __init__(self, session=None, sleep=time.sleep):
-        self.session = session if session is not None else requests.Session()
-        self.sleep = sleep
-        self.called = False
-        # urllib3 DEBUG logs include request paths, which contain the MAP_KEY.
-        logging.getLogger("urllib3").setLevel(logging.WARNING)
-
-    def fetch(self, url, destination, allow_404=False):
-        error = "network error"
-        for attempt in range(4):
-            if self.called:
-                self.sleep(1)
-            self.called = True
-            response = None
-            try:
-                response = self.session.get(url, stream=True, timeout=(15, 120))
-                if response.status_code == 404 and allow_404:
-                    return False
-                if response.status_code >= 400:
-                    error = f"HTTP {response.status_code}"
-                else:
-                    with Path(destination).open("wb") as handle:
-                        for chunk in response.iter_content(chunk_size=1024 * 1024):
-                            if chunk:
-                                handle.write(chunk)
-                    return True
-            except requests.RequestException:
-                error = "network error"
-            finally:
-                if response is not None:
-                    response.close()
-            if attempt < 3:
-                self.sleep(2 ** attempt)
-        raise DownloadError(f"Request failed after three retries ({error})")
-
-    def close(self):
-        self.session.close()
-
-
-def download_country(region, years, products, client):
-    if not region.firms_country_names:
-        raise DownloadError("Country downloads require configured firms_country_names")
+def download_country(region, years, products):
+    """Stage verified local US inputs; missing files never trigger a network call."""
+    config.require_us_region(region)
+    paths.tmp_dir().mkdir(parents=True, exist_ok=True)
+    jobs = []
     for year in years:
         for product in products:
-            destination = paths.raw_csv(region.id, PRODUCTS[product], "country", year)
-            if destination.exists():
-                LOGGER.info("EXISTS %s", destination.name)
-                update_manifest(region.id, destination, product, "country")
+            source = paths.country_csv_candidates(product, year, "United_States")[0]
+            if not source.is_file():
+                LOGGER.warning("MISSING local US source: %s", source)
                 continue
-            with TemporaryDirectory(dir=paths.tmp_dir(), prefix="country-") as temporary:
-                work = Path(temporary)
-                clipped = []
-                for index, country in enumerate(region.firms_country_names):
-                    raw = next(
-                        (path for path in paths.country_csv_candidates(product, year, country) if path.is_file()),
-                        None,
-                    )
-                    local = raw is not None
-                    if local:
-                        LOGGER.info("LOCAL %s", raw.name)
-                    else:
-                        raw = work / f"country-{index}.csv"
-                        url = COUNTRY_URL.format(product=product, year=year, country=quote(country, safe=""))
-                        if not client.fetch(url, raw, allow_404=True):
-                            LOGGER.warning("404 %s %s %s: skipped", product, year, country)
-                            continue
-                    header = csv_header(raw)
-                    LOGGER.info("HEADER %s: %s", product, ",".join(header))
-                    part = work / f"clipped-{index}.csv"
-                    clip_bbox([raw], part, region.bbox)
-                    if not local:
-                        raw.unlink()
-                    clipped.append(part)
-                if not clipped:
-                    continue
-                output = work / "output.csv"
-                clip_bbox(clipped, output, region.bbox)
-                _file_facts(output)  # Validate before publishing.
+            relative = _source_name(source)
+            csv_header(source)
+            jobs.append((year, product, source, relative))
+    if not jobs:
+        raise DownloadError(f"No requested local US CSVs exist in {paths.source_data_root()}")
+    for year, product, source, relative in jobs:
+        LOGGER.info("LOCAL %s", relative)
+        LOGGER.info("HEADER %s: %s", product, ",".join(csv_header(source)))
+        destination = paths.raw_csv("us", PRODUCTS[product], "country", year)
+        with TemporaryDirectory(dir=paths.tmp_dir(), prefix="local-us-") as temporary:
+            output = Path(temporary) / "output.csv"
+            clip_bbox([source], output, region.bbox)
+            facts = _file_facts(output)
+            try:
+                unchanged = destination.is_file() and _file_facts(destination) == facts
+            except (DownloadError, duckdb.Error):
+                unchanged = False
+            if unchanged:
+                LOGGER.info("VERIFIED %s", destination.name)
+            else:
                 destination.parent.mkdir(parents=True, exist_ok=True)
                 output.replace(destination)
-                update_manifest(region.id, destination, product, "country")
                 LOGGER.info("SAVED %s", destination.name)
-    return update_manifest(region.id)
-
-
-def check_availability(sources, key, client, work):
-    target = work / "availability.csv"
-    client.fetch(f"{AVAILABILITY_URL}/{quote(key, safe='')}/all", target)
-    with target.open(encoding="utf-8-sig", newline="") as handle:
-        # No undocumented E4 column names are assumed: look for the exact source values.
-        available = {cell for row in csv.reader(handle) for cell in row}
-    missing = sorted(set(sources) - available)
-    if missing:
-        raise DownloadError("E4 does not list the requested source(s): " + ", ".join(missing))
-
-
-def download_api(region, years, sources, key, client):
-    with TemporaryDirectory(dir=paths.tmp_dir(), prefix="api-") as temporary:
-        work = Path(temporary)
-        check_availability(sources, key, client, work)
-        bbox = ",".join(str(value) for value in region.bbox)
-        for source in sources:
-            for year in years:
-                start, end = date(year, 1, 1), min(date(year, 12, 31), datetime.now(UTC).date())
-                if start > end:
-                    continue
-                assembled = work / "assembled.csv"
-                header = None
-                with assembled.open("w", encoding="utf-8", newline="") as handle:
-                    writer = csv.writer(handle, lineterminator="\n")
-                    for first, last in api_windows(start, end):
-                        window = work / "window.csv"
-                        count = (last - first).days + 1
-                        client.fetch(f"{AREA_URL}/{quote(key, safe='')}/{source}/{bbox}/{count}/{first}", window)
-                        current = csv_header(window)
-                        if header is None:
-                            header = current
-                            writer.writerow(header)
-                            LOGGER.info("HEADER %s: %s", source, ",".join(header))
-                        elif current != header:
-                            raise DownloadError("Area API CSV header changed between windows")
-                        with window.open(encoding="utf-8-sig", newline="") as rows:
-                            reader = csv.reader(rows)
-                            next(reader)
-                            for row in reader:
-                                if len(row) != len(header):
-                                    raise DownloadError("Area API returned a malformed CSV row")
-                                acquired = date.fromisoformat(row[header.index("acq_date")])
-                                if not first <= acquired <= last:
-                                    raise DownloadError("Area API returned an acq_date outside its requested window")
-                                writer.writerow(row)
-                output = work / "output.csv"
-                clip_bbox([assembled], output, region.bbox)
-                _file_facts(output)
-                destination = paths.raw_csv(region.id, SOURCES[source], "api", year)
-                destination.parent.mkdir(parents=True, exist_ok=True)
-                output.replace(destination)
-                update_manifest(region.id, destination, source, "api")
-                LOGGER.info("SAVED %s", destination.name)
-    return update_manifest(region.id)
+            update_manifest("us", destination, relative)
+    return update_manifest("us")
 
 
 def parse_years(raw):
@@ -288,17 +190,16 @@ def parse_years(raw):
 def main(argv=None):
     t0 = time.perf_counter()
     parser = cli.stage_parser("ingest.download")
+    parser.description = "Stage only local US CSVs from NASA-Project-Quant/data; no network downloads."
     parser.add_argument("--via", choices=("country", "api"), default="country")
     parser.add_argument("--years")
     parser.add_argument("--sources", nargs="+")
     args = parser.parse_args(argv)
-    client = None
     try:
-        if not args.region:
-            parser.error("--region is required")
-        region = config.get_region(args.region)
-        if region.synthetic:
-            raise DownloadError("Synthetic regions use pipeline.synth, not FIRMS downloads")
+        if args.via != "country":
+            raise DownloadError("--via api is disabled: only existing local US country CSVs may be used")
+        region = config.get_region(args.region or "us")
+        config.require_us_region(region)
         if args.years is None:
             try:
                 science = config.load_science()
@@ -306,35 +207,19 @@ def main(argv=None):
                 raise DownloadError("Supply --years YYYY:YYYY until R3 provides science.yaml") from None
             args.years = f'{date.fromisoformat(science["eras"]["record_start"]).year}:'
             args.years += str(science["climatology"]["baseline_years"][1])
-        years = parse_years(args.years)
-        allowed = PRODUCTS if args.via == "country" else SOURCES
         selected = (
             [item for value in args.sources for item in value.split(",")]
-            if args.sources else list(PRODUCTS) if args.via == "country" else list(SOURCES)[:3]
+            if args.sources else list(PRODUCTS)
         )
-        if len(selected) != len(set(selected)) or not set(selected) <= set(allowed):
-            raise DownloadError("Unknown or duplicate --sources; choose from " + ", ".join(allowed))
-        paths.tmp_dir().mkdir(parents=True, exist_ok=True)
-        client = Client()
-        if args.via == "country":
-            manifest = download_country(region, years, selected, client)
-        else:
-            load_dotenv(paths.env_file())
-            key = os.environ.get("FIRMS_MAP_KEY", "").strip()
-            if not key:
-                raise DownloadError("FIRMS_MAP_KEY is required for --via api; set it in .env or the environment")
-            manifest = download_api(region, years, selected, key, client)
-        log.finish("download", region.id, sum(entry["rows"] for entry in manifest), t0)
+        if len(selected) != len(set(selected)) or not set(selected) <= set(PRODUCTS):
+            raise DownloadError("Unknown or duplicate --sources; choose from " + ", ".join(PRODUCTS))
+        manifest = download_country(region, parse_years(args.years), selected)
+        log.finish("download", "us", sum(entry["rows"] for entry in manifest), t0)
         return 0
-    except (DownloadError, OSError, duckdb.Error, ValueError, KeyError):
-        # Never echo arbitrary HTTP, DuckDB or file contents: they may contain a key.
-        error = sys.exc_info()[1]
-        message = str(error) if isinstance(error, DownloadError) else type(error).__name__
+    except (OSError, duckdb.Error, ValueError, KeyError) as error:
+        message = str(error) if isinstance(error, (ValueError, FileNotFoundError)) else type(error).__name__
         print(f"FAIL download: {message}", file=sys.stderr)
         return 1
-    finally:
-        if client is not None:
-            client.close()
 
 
 if __name__ == "__main__":

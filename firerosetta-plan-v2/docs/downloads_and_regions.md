@@ -1,95 +1,84 @@
-# Downloads and US region handoff
+# Local US data policy
 
-The user changed this task from the original showcase regions to **the whole
-United States**. `pipeline/config/regions.yaml` now contains `us` and the
-unchanged synthetic region `synthland`. No science configuration was created.
+The only runtime region is `us`. The authoritative hotspot inputs are the
+existing files in `NASA-Project-Quant/data/`:
 
-The official Natural Earth source identifies US admin-1 features with
-`iso_a2: US`, `admin: United States of America`, and exact state names in
-`name`. The generated outline combines all of those features into one
-MultiPolygon feature, including Alaska, Hawaii and the District of Columbia.
-Natural Earth assigns Puerto Rico its own `PR` country code; it is outside
-this US outline. The raw FIRMS US files do contain detections there, so a later
-ingest stage must use polygon membership when counting this region. Bbox
-clipping alone does not establish polygon membership.
+- `MODIS_data/modis_<year>_United_States.csv`
+- `VIIRS-SNPP_data/viirs-snpp_<year>_United_States.csv`
+- `VIIRS-JPSS_data/viirs-jpss1_<year>_United_States.csv`
 
-The US download bbox was computed from the rounded source boundary coordinates,
-rather than from hotspot locations. Its large longitude span reflects the
-Aleutian Islands crossing the date line.
+`pipeline.common.paths.source_data_root()` pins this input directory.
+Neither `--data-root` nor `FIREROSETTA_DATA_ROOT` can redirect the inputs.
+Those settings control derived output storage only.
 
-## Run from the project root
+No HTTP client, API downloader, country URL fallback, key loading, or remote
+availability lookup remains in the acquisition code. `--via api` returns a
+clear error before inspecting inputs. Missing local product-years are reported;
+they are never fetched, fabricated, or recorded as zero-valued observations.
+If none of the requested source files exist, the command fails.
+
+## Run
+
+From `NASA-Project-Quant/firerosetta-plan-v2`:
 
 ```text
 uv run python -m pipeline.ingest.download --region us --via country --years 2023:2023
-uv run python -m pipeline.ingest.make_region_polygons --region us --input data/tmp/ne_10m_admin_1_states_provinces.geojson --all-admin1
-uv run pytest pipeline/ingest -q
+uv run python -m pipeline.run --region us
+uv run ruff check pipeline
+uv run pytest -q
 ```
 
-The original Punjab smoke test was replaced by the US command after the user's
-region change. Local source files are checked first in the corresponding
-product folder under the chosen data root, then under the existing sibling
-`../data/` directory. Those source directories are `MODIS_data`,
-`VIIRS-SNPP_data` and `VIIRS-JPSS_data`. Sources remain unchanged.
-If no local source exists, the downloader streams the verified FIRMS country
-URL to temporary storage. It clips every country immediately with DuckDB and
-deletes the temporary unclipped download.
+An explicit `--years YYYY:YYYY` works without R3's science configuration.
+Default analysis years still require that configuration; the program does not
+invent scientific record boundaries.
 
-Outputs live under `data/raw/us/`, with product prefixes `modis`,
-`viirs_snpp` and `viirs_noaa20`. Existing outputs are skipped and reconciled
-with `MANIFEST.json`. The manifest's acquisition timestamp records when a
-file enters this project's raw directory; for local imports, the original
-external download time is not known. Unchanged files keep the original
-manifest timestamp and digest. Empty clipped files have null first/last dates.
+The acquisition command preserves every original file. It clips source text
+with DuckDB, including bbox boundary points and zero-padded acquisition times,
+and writes derived CSVs under the project's `data/raw/us/`.
+Outputs use the `modis`, `viirs_snpp` and `viirs_noaa20` prefixes.
 
-Use `--sources` to select exact country products (`modis`, `viirs-snpp`,
-`viirs-jpss1`) or the Area API sources listed in the contracts.
-An explicit `--years YYYY:YYYY` works without science configuration.
-Default years require R3's science configuration.
+Every run rechecks staged files against the corresponding local original.
+Changed or malformed staged files are rebuilt. A cache without an authoritative
+local source is never accepted as an input substitute.
 
-For Area API downloads, put `FIRMS_MAP_KEY` in the project `.env` or environment.
-The client checks requested sources with E4, requests at most five days at a
-time, waits between requests and retries failures. Each source/year output is
-assembled from window responses in temporary storage, then published after
-validation. Repeating a year replaces that year's output instead of duplicating
-rows. Failed windows leave that source/year's previous CSV and manifest intact.
-The Area API path has automated fake-response tests; no live authenticated
-Area API download was performed.
+The manifest records the relative original path in `source`, alongside the
+derived file's hash, rows and acquisition-date bounds. `downloaded_at` records
+when the file entered this project's staged dataset, since the original external
+download time is unknown. Unchanged validated outputs preserve their manifest
+timestamps. Old API/unverified entries are removed from the local-only manifest;
+original source files are never deleted.
 
-The polygon tool can also accept `--names` followed by exact admin-1 names.
-It lists candidates and stops on any missing or ambiguous name. It never
-normalizes spelling or guesses replacements.
+## Boundaries and tests
 
-The runner skips packages that have no stage `__main__`, so the download
-helpers can exist before the cleaning/grid stage is implemented.
+`pipeline/config/regions/us.geojson` is local geographic reference metadata,
+not a hotspot source. It contains the Natural Earth US states and DC outline.
+Puerto Rico is separate in that boundary source; raw FIRMS US files may include
+detections there. A later grid stage must apply polygon membership rather than
+treating bbox membership as sufficient.
 
-## Source inspection and verification
+The optional polygon regeneration tool reads local boundary metadata and checks
+the configured US country membership. It performs no network request and does
+not create hotspot detections.
 
-`docs/us_source_inventory.json` was generated directly from all existing US
-CSVs with DuckDB. It records file names, byte totals, dates, headers, sensor
-values and detection-coordinate ranges. Those ranges are observations about
-the input files, not region boundaries.
+Runtime configuration no longer exposes `synthland`. Fabricated unit-test
+fixtures remain isolated in temporary directories; they are not production
+source files. Shared generic path/time/IO helpers remain reusable, and the pure
+API-window helper remains only for fabricated tests.
 
-`docs/download_acceptance.txt` contains captured command output.
-Raw downloads and the global Natural Earth cache stay in ignored `data/`.
+The runner skips packages without a stage `__main__`. Cleaning, gridding,
+harmonization and statistics are still pending; a successful runner invocation
+with SKIP messages verifies orchestration, not scientific outputs.
 
-Verified sources:
-- [NASA FIRMS country downloads](https://firms.modaps.eosdis.nasa.gov/country/)
-- [Official yearly country-file index](https://firms.modaps.eosdis.nasa.gov/data/country/yearly_summary_files.txt)
-- [FIRMS Area API](https://firms.modaps.eosdis.nasa.gov/api/area/)
-- [Natural Earth admin-1 source](https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_admin_1_states_provinces.geojson)
-
-## Request for R1/R3 to post in team chat
-
-The user has explicitly selected the whole United States in place of Punjab,
-British Columbia and Litoral. Please reconcile contracts section 4.1 and science
-decision SD-19 with `pipeline/config/regions.yaml`, and update region-dependent
-examples and consumers. R2 has not edited the R1/R3-owned plan documents.
-The current US polygon uses Natural Earth's US country membership; Puerto Rico
-is separate. The synthetic region remains available for planted-truth tests.
+`docs/us_source_inventory.json` contains the prior direct inspection of the
+real US CSVs. `docs/download_acceptance.txt` captures the latest validation.
+`docs/local_us_source_check.json` records hashes for every original US CSV
+and the successful real staging checks with network connections blocked.
+The source policy supersedes the original regional/API examples; R1/R3 still
+need to reconcile their plan documents with the user's US-only direction.
 
 Handoff:
-Built: country/API download helpers, exact-name polygon extraction and the US outline.
-Run: execute the commands above from the selected project root.
-Reads/writes: reads existing country CSVs or FIRMS responses; writes raw CSVs, manifests and the configured outline.
-Limits: live API remains untested; clean/grid are pending; team plan documents need the US scope update.
-Next: reconcile the team contracts, then implement cleaning and polygon membership using the US files.
+Built: strict local-US source selection and cache verification, with remote acquisition removed.
+Run: use the commands above from the project root.
+Reads/writes: reads only the designated US hotspot files; writes derived CSVs and provenance manifests.
+Limits: no new live observations; analysis stages and R3 science configuration remain pending.
+Next: implement cleaning and polygon membership using these local US inputs.

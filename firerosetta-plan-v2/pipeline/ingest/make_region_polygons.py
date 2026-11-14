@@ -83,8 +83,7 @@ def main(argv=None):
         if not args.region:
             parser.error("--region is required and must exist in approved regions.yaml")
         region = config.get_region(args.region)
-        if region.synthetic:
-            raise ValueError("Synthetic regions do not use Natural Earth polygons")
+        config.require_us_region(region)
         with args.input.open(encoding="utf-8") as handle:
             source = json.load(handle)
         collection = select_polygon(source, region, args.names)

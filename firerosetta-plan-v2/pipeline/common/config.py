@@ -23,7 +23,20 @@ class Region:
 
 def load_regions() -> list[Region]:
     with paths.config_file("regions.yaml").open(encoding="utf-8") as handle:
-        return [Region(**row) for row in yaml.safe_load(handle)["regions"]]
+        regions = [Region(**row) for row in yaml.safe_load(handle)["regions"]]
+    if len(regions) != 1:
+        raise ValueError("Configure exactly one real-data region: us")
+    for region in regions:
+        require_us_region(region)
+    return regions
+
+
+def require_us_region(region) -> None:
+    if (
+        region.id != "us" or region.country != "US" or region.synthetic
+        or region.firms_country_names != ["United_States"]
+    ):
+        raise ValueError("Only the us region using local United_States CSVs is enabled")
 
 
 def get_region(region_id) -> Region:

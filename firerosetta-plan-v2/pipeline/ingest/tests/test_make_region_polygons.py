@@ -9,13 +9,13 @@ from pipeline.ingest import make_region_polygons as polygons
 @pytest.fixture
 def region():
     return config.Region(
-        id="test", name="Fabricated region", country="ZZ",
+        id="us", name="Fabricated US test fixture", country="US",
         bbox=[0, 0, 4, 4], polygon="pipeline/config/regions/test.geojson",
-        fire_type="", story="", synthetic=False, firms_country_names=["Test"],
+        fire_type="", story="", synthetic=False, firms_country_names=["United_States"],
     )
 
 
-def feature(name, coordinates, country="ZZ"):
+def feature(name, coordinates, country="US"):
     return {
         "type": "Feature", "properties": {"name": name, "admin": "Test country", "iso_a2": country},
         "geometry": {"type": "Polygon", "coordinates": [coordinates]},
@@ -76,11 +76,11 @@ def test_script_writes_only_after_success(tmp_path, monkeypatch, capsys, region,
     path.write_text(json.dumps(source), encoding="utf-8")
     monkeypatch.setattr(config, "get_region", lambda region_id: region)
     monkeypatch.setattr(paths, "PROJECT_ROOT", tmp_path)
-    output = paths.region_polygon("test")
+    output = paths.region_polygon("us")
     assert polygons.main(["--region", "test", "--input", str(path), "--names", "State A"]) == 0
     assert output.is_file()
     before = output.read_bytes()
-    assert "test bbox: 0.000, 0.000, 1.235, 1.000" in capsys.readouterr().out
+    assert "us bbox: 0.000, 0.000, 1.235, 1.000" in capsys.readouterr().out
     assert polygons.main(["--region", "test", "--input", str(path), "--names", "Missing"]) == 1
     assert output.read_bytes() == before
     assert "Candidate names: State A, State B" in capsys.readouterr().err
@@ -92,4 +92,4 @@ def test_script_all_admin1(tmp_path, monkeypatch, capsys, region, source):
     monkeypatch.setattr(config, "get_region", lambda region_id: region)
     monkeypatch.setattr(paths, "PROJECT_ROOT", tmp_path)
     assert polygons.main(["--region", "test", "--input", str(path), "--all-admin1"]) == 0
-    assert "OK make_region_polygons test rows=2" in capsys.readouterr().out
+    assert "OK make_region_polygons us rows=2" in capsys.readouterr().out

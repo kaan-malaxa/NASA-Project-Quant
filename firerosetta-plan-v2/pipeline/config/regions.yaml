@@ -13,15 +13,3 @@ regions:
   synthetic: false
   firms_country_names:
   - United_States
-- id: synthland
-  name: Synthland (planted-truth test)
-  country: ZZ
-  bbox:
-  - 10.0
-  - 10.0
-  - 12.0
-  - 12.0
-  polygon: null
-  fire_type: Simulated
-  story: A simulated region where the right answer is known.
-  synthetic: true

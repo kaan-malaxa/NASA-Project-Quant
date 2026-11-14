@@ -6,7 +6,7 @@ Run commands from `NASA-Project-Quant/firerosetta-plan-v2`:
 uv sync
 uv run ruff check pipeline
 uv run pytest -q
-uv run python -m pipeline.run --region synthland
+uv run python -m pipeline.run --region us
 ```
 
 The runner skips absent stage modules, stops on the first failed subprocess,
@@ -18,10 +18,11 @@ raises an explicit error until that file exists. Tests inject fabricated
 coverage thresholds without creating or changing the project science file.
 The seed outage entries are copied from the contract and still need verification.
 
-All intermediate file locations are in `pipeline.common.paths`.
-`--data-root` overrides `FIREROSETTA_DATA_ROOT`; otherwise data lives under
-the project root. No stage implementation or real-data processing is included
-in this foundation task.
+All file locations are in `pipeline.common.paths`. The sole hotspot source
+is the existing US country files under `NASA-Project-Quant/data/`.
+`--data-root` overrides `FIREROSETTA_DATA_ROOT` for derived output storage
+only; neither setting can redirect hotspot inputs. The runtime region is
+`us`; fabricated and synthetic examples are isolated test fixtures.
 
 Parquet schema names are the file stems in `pipeline.common.io.SCHEMAS`,
 with `detections` used for every sensor's cleaned detections file.
@@ -50,13 +51,13 @@ Real source headers inspected before implementation:
 - MODIS: `latitude,longitude,brightness,scan,track,acq_date,acq_time,satellite,instrument,confidence,version,bright_t31,frp,daynight,type`
 - S-NPP and JPSS-1 VIIRS: `latitude,longitude,bright_ti4,scan,track,acq_date,acq_time,satellite,instrument,confidence,version,bright_ti5,frp,daynight,type`
 
-These were United States country files in the sibling `data/` directory,
-not region files in the contracted raw layout. They were read only for their
-headers and were neither ingested nor modified.
+These are the United States country files in the sibling `data/` directory.
+The local acquisition command stages copies into the contracted raw layout
+without modifying originals. Remote acquisition is disabled.
 
 Handoff:
 Built: Python configuration, common helpers, strict file IO, runner, tests and CI definition.
 Run: execute the commands above from the selected project root.
-Reads/writes: reads contracted YAML; helpers write contracted Parquet and JSON paths when called.
+Reads/writes: reads local US country CSVs and configuration; writes derived outputs through shared path helpers.
 Limits: stage modules and R3 science configuration remain to be supplied; CI needs repository-root placement.
 Next: obtain science configuration from R3 and implement R2 ingest against inspected region files.

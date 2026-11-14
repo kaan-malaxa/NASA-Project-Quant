@@ -9,6 +9,11 @@ def data_root() -> Path:
     return Path(os.environ.get("FIREROSETTA_DATA_ROOT", PROJECT_ROOT / "data")).expanduser().resolve()
 
 
+def source_data_root() -> Path:
+    """The sole hotspot input directory; output overrides cannot change it."""
+    return (PROJECT_ROOT.parent / "data").resolve()
+
+
 def raw_dir(region) -> Path:
     return data_root() / "raw" / region
 
@@ -59,12 +64,13 @@ def natural_earth_source() -> Path:
 
 
 def country_csv_candidates(product, year, country) -> list[Path]:
+    if country != "United_States":
+        raise ValueError("Only existing United_States country CSVs are allowed")
     folders = {
         "modis": "MODIS_data", "viirs-snpp": "VIIRS-SNPP_data", "viirs-jpss1": "VIIRS-JPSS_data",
     }
     filename = f"{product}_{year}_{country}.csv"
-    roots = dict.fromkeys((data_root(), PROJECT_ROOT.parent / "data"))
-    return [root / folders[product] / filename for root in roots]
+    return [source_data_root() / folders[product] / filename]
 
 
 def detections(region, sensor) -> Path:

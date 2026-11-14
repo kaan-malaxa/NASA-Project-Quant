@@ -11,6 +11,9 @@ from pipeline.common import paths
 
 @pytest.mark.parametrize("region,count", [("synthland", 6), ("us", 5)])
 def test_missing_modules_exit_zero(monkeypatch, capsys, region, count):
+    if region == "synthland":
+        fixture = replace(run.config.get_region("us"), id="synthland", synthetic=True)
+        monkeypatch.setattr(run.config, "get_region", lambda region_id: fixture)
     monkeypatch.setattr(run.importlib.util, "find_spec", lambda module: None)
     assert run.main(["--region", region]) == 0
     lines = capsys.readouterr().out.splitlines()
@@ -24,8 +27,8 @@ def test_package_without_main_is_not_an_implemented_stage(monkeypatch, capsys):
     def find_spec(module):
         return None if module.endswith(".__main__") else SimpleNamespace(submodule_search_locations=[])
     monkeypatch.setattr(run.importlib.util, "find_spec", find_spec)
-    assert run.main(["--region", "synthland"]) == 0
-    assert capsys.readouterr().out.count("SKIP ") == 6
+    assert run.main(["--region", "us"]) == 0
+    assert capsys.readouterr().out.count("SKIP ") == 5
 
 
 def test_real_subprocess_missing_modules():
@@ -34,12 +37,12 @@ def test_real_subprocess_missing_modules():
             sys.executable, "-c",
             ("from pipeline import run; "
             "run.importlib.util.find_spec = lambda module: None; "
-            "raise SystemExit(run.main(['--region', 'synthland']))"),
+            "raise SystemExit(run.main(['--region', 'us']))"),
         ],
         check=False, cwd=paths.PROJECT_ROOT, capture_output=True, text=True, encoding="utf-8",
     )
     assert result.returncode == 0, result.stderr
-    assert result.stdout.count("SKIP ") == 6
+    assert result.stdout.count("SKIP ") == 5
 
 
 def test_subprocess_order_export_once_and_flags(monkeypatch, tmp_path):
@@ -71,14 +74,14 @@ def test_failure_stops_and_reports(monkeypatch, capsys):
         commands.append(command)
         return subprocess.CompletedProcess(command, 7)
     monkeypatch.setattr(run.subprocess, "run", invoke)
-    assert run.main(["--region", "synthland"]) == 7
+    assert run.main(["--region", "us"]) == 7
     assert len(commands) == 1
-    assert "FAIL synth synthland: exit 7" in capsys.readouterr().err
+    assert "FAIL ingest us: exit 7" in capsys.readouterr().err
 
 
 def test_stage_bounds_and_invalid_selection(monkeypatch, capsys):
     monkeypatch.setattr(run.importlib.util, "find_spec", lambda module: None)
-    assert run.main(["--region", "synthland", "--from", "harmonize", "--to", "stats"]) == 0
+    assert run.main(["--region", "us", "--from", "harmonize", "--to", "stats"]) == 0
     assert capsys.readouterr().out.count("SKIP ") == 3
     with pytest.raises(SystemExit):
         run.main(["--region", "us", "--all-regions"])

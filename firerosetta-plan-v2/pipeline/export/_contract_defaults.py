@@ -41,16 +41,11 @@ SCIENCE_4_2: dict[str, Any] = {
 }
 
 REGIONS_4_1: list[dict[str, Any]] = [
-    {"id": "punjab", "name": "Punjab and Haryana, India", "country": "IN",
-     "bbox": [73.8, 27.6, 77.6, 32.6], "fire_type": "Crop residue burning",
-     "story": "Farmers burn crop residue every April–May and October–November; the smoke reaches Delhi.",
+    {"id": "conus", "name": "Contiguous United States", "country": "US",
+     "bbox": [-124.8, 24.4, -66.9, 49.4], "fire_type": "Wildfire, prescribed and agricultural burning",
+     "story": "Summer and autumn wildfire in the West; prescribed and agricultural burning in the Southeast "
+              "and the Great Plains, mostly in spring.",
      "synthetic": False},
-    {"id": "bc", "name": "British Columbia, Canada", "country": "CA",
-     "bbox": [-139.1, 48.2, -114.0, 60.1], "fire_type": "Forest wildfire",
-     "story": "Summer wildfire, including the record 2023 season.", "synthetic": False},
-    {"id": "litoral", "name": "Santa Fe and Entre Ríos, Argentina", "country": "AR",
-     "bbox": [-63.0, -34.5, -57.7, -27.9], "fire_type": "Wetland and pasture burning",
-     "story": "Paraná Delta wetland fires and pasture burning; a crisis in 2020–2022.", "synthetic": False},
     {"id": "synthland", "name": "Synthland (planted-truth test)", "country": "ZZ",
      "bbox": [10.0, 10.0, 12.0, 12.0], "fire_type": "Simulated",
      "story": "A simulated region where the right answer is known.", "synthetic": True},

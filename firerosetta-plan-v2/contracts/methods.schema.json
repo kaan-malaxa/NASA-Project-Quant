@@ -285,7 +285,8 @@
             "$ref": "common.schema.json#/$defs/number"
           },
           "recovered": {
-            "$ref": "common.schema.json#/$defs/number"
+            "$ref": "common.schema.json#/$defs/nullable_number",
+            "description": "null when the pipeline output needed to evaluate this quantity is absent; pass is then false"
           },
           "tolerance": {
             "$ref": "common.schema.json#/$defs/number"

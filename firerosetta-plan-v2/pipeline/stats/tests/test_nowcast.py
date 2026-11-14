@@ -22,8 +22,8 @@ from pipeline.stats.tests.fabricate import (
 )
 
 SCI = {**SCIENCE, "anomaly": {"low_activity_threshold": 5, "extreme_pct": 95, "above_pct": 75, "below_pct": 25}}
-FETCHED = datetime(2026, 11, 15, 6, 0)          # punjab: local solar date 15 Nov at centroid and west edge
-PUNJAB = {"centroid_lon": 75.7, "west_lon": 73.8}
+FETCHED = datetime(2026, 11, 15, 18, 0)         # conus: local solar date 15 Nov at centroid and west edge
+CONUS = {"centroid_lon": -95.85, "west_lon": -124.8}
 CALIBRATION = {"k": {"noaa20": [{"month": m, "k": 0.5, "lo": 0.4, "hi": 0.6} for m in range(1, 13)]}}
 
 
@@ -51,8 +51,8 @@ def history(per_year_daily: dict[int, float] | float, last: date = date(2026, 11
 
 
 def run(nrt, hist, coverage=None, **kw):
-    return build_nowcast(nrt, CALIBRATION, hist, coverage, "punjab", "Punjab", PUNJAB["centroid_lon"],
-                         PUNJAB["west_lon"], SCI, HEADER, **kw)
+    return build_nowcast(nrt, CALIBRATION, hist, coverage, "conus", "Testland", CONUS["centroid_lon"],
+                         CONUS["west_lon"], SCI, HEADER, **kw)
 
 
 # ------------------------------------------------------------------ SD-11 pieces
@@ -77,13 +77,13 @@ def test_status_table_first_match_wins(value, pct, past, expected):
 
 
 def test_window_ends_yesterday_at_the_centroid():
-    assert window_dates(FETCHED, 75.7, 73.8) == (date(2026, 11, 8), date(2026, 11, 14))
+    assert window_dates(FETCHED, -95.85, -124.8) == (date(2026, 11, 8), date(2026, 11, 14))
 
 
 def test_window_never_ends_after_the_last_fully_present_day():
-    # Centroid (-126.5) is already 00:30 on 15 Nov, but the west edge (-139.1) is still on 14 Nov.
-    fetched = datetime(2026, 11, 15, 0, 30) + timedelta(hours=126.5 / 15)
-    assert window_dates(fetched, -126.5, -139.1) == (date(2026, 11, 7), date(2026, 11, 13))
+    # Centroid (-95.85) is already 00:30 on 15 Nov, but the west edge (-124.8) is still on 14 Nov.
+    fetched = datetime(2026, 11, 15, 0, 30) + timedelta(hours=95.85 / 15)
+    assert window_dates(fetched, -95.85, -124.8) == (date(2026, 11, 7), date(2026, 11, 13))
 
 
 # ------------------------------------------------------------------ whole document
@@ -96,9 +96,9 @@ def test_value_beating_22_of_23_years_is_extreme():
     assert len(doc["history"]) == 23
     assert doc["percentile"] == pytest.approx(95.652, abs=1e-3)
     assert doc["status"] == "extreme"
-    assert doc["as_of"] == "2026-11-15T06:00:00Z"
+    assert doc["as_of"] == "2026-11-15T18:00:00Z"
     assert doc["kind"] == "harmonized"
-    assert doc["sentence"] == ("In the 7 days to 14 November 2026, Punjab had 158 Aqua-equivalent fire cell-days: "
+    assert doc["sentence"] == ("In the 7 days to 14 November 2026, Testland had 158 Aqua-equivalent fire cell-days: "
                                "higher than 96% of the same week in 23 past years.")
     assert {h["kind"] for h in doc["history"] if h["year"] <= 2022} == {"observed"}
 
@@ -115,7 +115,7 @@ def test_all_zero_history_and_value_two_is_low_activity():
     doc = run(nrt, history(0.0))
     assert doc["value"] == pytest.approx(2.0)
     assert doc["status"] == "low_activity"
-    assert doc["sentence"] == "Too little burning at this time of year in Punjab to rank this week."
+    assert doc["sentence"] == "Too little burning at this time of year in Testland to rank this week."
 
 
 def test_empty_nrt_is_unavailable_with_null_value():

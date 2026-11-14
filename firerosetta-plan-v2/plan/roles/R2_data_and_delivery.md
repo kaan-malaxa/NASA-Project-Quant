@@ -43,14 +43,14 @@ Your first hour decides the schedule. **Archive requests go out before any code 
 |---|---|
 | Kickoff 16:00–16:30 | Archive requests submitted (by hand); MAP_KEY; country downloads started; `data_availability` saved |
 | A · Sat 18:30 | Repo scaffold, `common/`, `run.py`, CI on three OSes, `regions.yaml` + polygons on main |
-| B · Sat 23:00 | `ingest` passes on `synthland` and on real Punjab; data profile posted; overnight jobs running for `bc` and `litoral` |
+| B · Sat 23:00 | `ingest` passes on `synthland` and on real `conus` (one recent year first); data profile posted; overnight job running for the full `conus` record |
 | C · Sun 10:00 | All three regions ingested; nowcast fetched; outages verified |
 | D · Sun 14:00 | README draft, slide skeleton, `docs/submission.md` draft; hotspot archives (Should) |
 | E · Sun 17:00 | Cross-OS reproducibility check done; video script filled from the audit list |
 | 19:00 / 22:00 | Video recorded; project submitted |
 
 ## 7. Kickoff checklist (you, by hand, before any prompt)
-1. Open `https://firms.modaps.eosdis.nasa.gov/download/`, sign in, and create archive requests **per region bbox** (contracts §4.1), **CSV**, for: MODIS (Collection 6.1) 2003-01-01 → today; VIIRS S-NPP 2012-01-20 → today; VIIRS NOAA-20 earliest available → today. Nine requests. Do `punjab` first.
+1. Open `https://firms.modaps.eosdis.nasa.gov/download/`, sign in, and create archive requests **per region bbox** (contracts §4.1), **CSV**, for: MODIS (Collection 6.1) 2003-01-01 → today; VIIRS S-NPP 2012-01-20 → today; VIIRS NOAA-20 earliest available → today. Three requests (one per sensor) for `conus`.
 2. Get a MAP_KEY at `https://firms.modaps.eosdis.nasa.gov/api/map_key/`; put it in `.env` as `FIRMS_MAP_KEY=…`. Send it privately to one backup teammate.
 3. Open `https://firms.modaps.eosdis.nasa.gov/api/data_availability/csv/<MAP_KEY>/all` and save the result as `docs/data_availability_2026-11-14.csv`. Post in chat: first/last date of `MODIS_SP`, `MODIS_NRT`, `VIIRS_SNPP_SP`, `VIIRS_NOAA20_SP`, `VIIRS_NOAA20_NRT`.
 4. Open `https://firms.modaps.eosdis.nasa.gov/country/` and check how the yearly country files are linked. Note the exact URL pattern for one MODIS and one VIIRS file.
@@ -129,8 +129,8 @@ download.py (`python -m pipeline.ingest.download --region R --via country|api [-
 - Always update data/raw/R/MANIFEST.json (contracts 5.15) with rows, first/last date and sha256.
 
 Region polygons: write a one-off script pipeline/ingest/make_region_polygons.py that reads a local copy of the Natural
-Earth admin-1 GeoJSON (I will download it once; contracts E7), selects by name: punjab = India: Punjab + Haryana;
-bc = Canada: British Columbia; litoral = Argentina: Santa Fe + Entre Rios; and writes
+Earth admin-1 GeoJSON (I will download it once; contracts E7), selects by name: conus = United States of America, every state except Alaska and Hawaii (the lower 48 plus the
+District of Columbia); and writes
 pipeline/config/regions/<id>.geojson as a FeatureCollection with one (Multi)Polygon feature, coordinates rounded to
 3 decimals. Print each region's bbox so I can compare with regions.yaml. If a name does not match, list the candidate
 names for that country and stop; do not guess.
@@ -140,14 +140,14 @@ with no gap or overlap (pure function, no network).
 
 Acceptance:
   uv run pytest pipeline/ingest -q
-  uv run python -m pipeline.ingest.download --region punjab --via country --years 2023:2023     # real smoke test
+  uv run python -m pipeline.ingest.download --region conus --via country --years 2023:2023     # real smoke test
 ```
 
 ### B1 · Clean (start 18:30; test on R4's synthland files first)
 ```text
 Task: implement pipeline/ingest/clean.py, step "clean" of `python -m pipeline.ingest --region R`.
 
-Before writing code: open one real MODIS file and one real VIIRS file from data/raw/punjab/ (and the synthland files),
+Before writing code: open one real MODIS file and one real VIIRS file from data/raw/conus/ (and the synthland files),
 print their headers, the distinct values of satellite, instrument, version, confidence, daynight and type, and the
 min/max acq_date. Paste that. If anything is not covered by contracts section 4.4, stop and tell me.
 
@@ -171,7 +171,7 @@ value raises; NRT rows keep type null.
 Acceptance:
   uv run pytest pipeline/ingest -q
   uv run python -m pipeline.ingest --region synthland --steps clean
-  uv run python -m pipeline.ingest --region punjab --steps clean      # paste filter_log.json and the run time
+  uv run python -m pipeline.ingest --region conus --steps clean      # paste filter_log.json and the run time
 ```
 
 ### B2 · Grid, static mask, coverage
@@ -199,7 +199,7 @@ covered=false; a day with zero raw rows everywhere is no_raw_rows; days before t
 Acceptance:
   uv run pytest pipeline/ingest -q
   uv run python -m pipeline.ingest --region synthland
-  uv run python -m pipeline.ingest --region punjab
+  uv run python -m pipeline.ingest --region conus
 Then post the data profile (prompt B3).
 ```
 
@@ -208,7 +208,7 @@ Then post the data profile (prompt B3).
 Task: write pipeline/ingest/profile.py (`python -m pipeline.ingest.profile --region R`) that prints, and saves to
 docs/profile_<region>.md: rows per sensor per year; first and last local_day per sensor; share of rows that are NRT per
 year; number of uncovered days per sensor by reason; number of region cells; n20_first_full_year (first calendar year
-with NOAA-20 detections on >= 300 distinct days); the peak week by Aqua cell-days; file sizes. Run it for punjab and
+with NOAA-20 detections on >= 300 distinct days); the peak week by Aqua cell-days; file sizes. Run it for conus and
 paste the output. R3 needs n20_first_full_year and the last Aqua and S-NPP days tonight.
 ```
 
@@ -229,7 +229,7 @@ the CSV header matches the contract.
 
 Acceptance:
   uv run pytest pipeline/ingest -q
-  uv run python -m pipeline.ingest.nowcast_fetch --region punjab
+  uv run python -m pipeline.ingest.nowcast_fetch --region conus
 Run for all three regions at 07:15 and again at 18:00; tell R1 each time.
 ```
 
@@ -280,7 +280,7 @@ and send the JSON to R1. Test: row counts equal the parquet's in-region counts f
 Task: fill docs/video/script.md. Six shots, 30 seconds total, with on-screen action, voice-over and subtitle text.
 Shot order: (1) team name + broken ruler; (2) naive line jumps, "{{jump_multiple}} times"; (3) drift chart then the
 harmonized line: "we calibrate only where the old satellite was steady, and prove it on a simulated world";
-(4) pick Punjab: verdict sentence (verbatim from trend.json) and the calendar; (5) this week: status sentence verbatim
+(4) pick the US (conus): verdict sentence (verbatim from trend.json) and the calendar; (5) this week: status sentence verbatim
 from nowcast.json with its as_of date; (6) "Data: NASA FIRMS" + URL + QR.
 Replace every placeholder with the exact value from web/public/data/numbers_audit.md that I paste. Count the words:
 at most 75 spoken words. Also write docs/video/subtitles.srt with timings.
@@ -291,7 +291,7 @@ Then give me the ffmpeg command to burn the subtitles into video.mp4 that works 
 ```text
 Task: write pipeline/ingest/repro_check.py that prints the sha256 of every file under web/public/data and of each
 region's celldays.parquet row count and value checksum (sum of n_det, sum of frp_sum rounded to 1 decimal).
-Two of us will run `python -m pipeline.run --region punjab` from the same raw files on different operating systems and
+Two of us will run `python -m pipeline.run --region conus` from the same raw files on different operating systems and
 diff the outputs. If hashes differ, find the first differing file and the first differing value.
 ```
 
@@ -316,7 +316,7 @@ diff the outputs. If hashes differ, find the first differing file and the first 
 
 ## 12. If things go wrong
 - **No archive email by 19:00:** go with country files (already downloading); use `--via api` for 2026.
-- **Country URL pattern is wrong:** download the Punjab years by hand from the country page tonight; fix the script after.
+- **Country URL pattern is wrong:** download the United States years by hand from the country page tonight; fix the script after.
 - **A region's clean step takes more than 20 minutes:** tighten the bbox to the polygon's bounds; if still slow, tell R1 so the region can be dropped.
 - **API rate limit:** one pull per region at 07:15 and 18:00 only; the cached file is fine, the site shows `as_of`.
 - **Unknown satellite code in a file:** do not map it by guess; print the distinct values and ask R3.

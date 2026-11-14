@@ -1,4 +1,4 @@
-"""`python -m pipeline.export --sample`: a complete, deterministic SAMPLE site for punjab, bc, litoral.
+"""`python -m pipeline.export --sample`: a complete, deterministic SAMPLE site for conus.
 
 Everything here is fabricated so the web team can build every screen before real data exists.
 Every data object carries kind "sample", every file code_version "sample", and
@@ -6,9 +6,9 @@ manifest.contains_sample is true (AGENTS.md science rule 10).
 
 How the fake data is made (shapes requested in R1 prompt A2):
 - A daily Aqua activity rate per region = seasonal bumps (circular, in weeks) x a yearly factor
-  x daily noise. punjab: peaks at weeks 18 and 44 (the second larger); bc: one peak at week 32,
-  2023 at 6x, a planted start shift of about -5 days per decade; litoral: a broad Aug-Sep season,
-  2020-2022 elevated.
+  x daily noise. conus: a spring burning season (peak week 14) and a larger summer-autumn
+  wildfire season (peak week 33); both move earlier by about 6 days per decade, and
+  one extreme year (2020, 2.5x). These shapes are invented for chart design, not real findings.
 - VIIRS (S-NPP from 2012-01-20, NOAA-20 from 2018) sees about 2.5x Aqua. k is then fitted from
   these fake series with the SD-06 formula and used to build harmonized / viirs_as_aqua /
   viirs_equiv exactly as SD-05 and SD-07 describe, so the sample has realistic era switches.
@@ -47,7 +47,7 @@ from pipeline.stats.sentences import (
     verdict_sentence,
 )
 
-SAMPLE_REGIONS = ("punjab", "bc", "litoral")
+SAMPLE_REGIONS = ("conus",)
 LAST_DAY = date(2026, 11, 13)          # fixed so output is byte-identical on every run
 GENERATED_AT = "2026-11-14T00:00:00Z"
 NOWCAST_AS_OF = "2026-11-14T03:00:00Z"
@@ -71,31 +71,21 @@ WEB_SERIES = ("aqua_raw", "viirs_raw", "viirs_as_aqua", "harmonized", "viirs_equ
 MONTH_ABBR = ("January", "February", "March", "April", "May", "June", "July", "August",
               "September", "October", "November", "December")
 
-# Per-region shape of the fake data.
+# Per-region shape of the fake data. Bumps are (centre week, amplitude, width in weeks).
+# `exact_years` get their year factor without random noise (the planted extreme year).
 SHAPES: dict[str, dict[str, Any]] = {
-    "punjab": {"peak": 60.0, "bumps": [(18, 0.45, 1.6), (44, 1.0, 1.8)], "background": 0.02,
-               "shift_weeks_per_year": 0.0, "jump": 4.2,
-               # tuned so this week's sample nowcast reads "above_normal" (about the 87th percentile)
-               "year_factor": lambda y: 0.75 if y == 2026 else 1.0},
-    "bc": {"peak": 25.0, "bumps": [(32, 1.0, 2.6)], "background": 0.004,
-           "shift_weeks_per_year": -0.07, "jump": 5.0,
-           "year_factor": lambda y: (6.0 if y == 2023 else 1.0) * (1 + 0.03 * (y - 2003))},
-    "litoral": {"peak": 14.0, "bumps": [(35, 1.0, 3.0)], "background": 0.03,
-                "shift_weeks_per_year": 0.0, "jump": 3.6,
-                "year_factor": lambda y: {2020: 2.8, 2021: 2.2, 2022: 2.5}.get(y, 1.0)},
+    "conus": {"peak": 120.0, "bumps": [(14, 0.55, 2.5), (33, 1.0, 3.5)], "background": 0.05,
+              "shift_weeks_per_year": -0.09, "jump": 4.0, "exact_years": {2020},
+              # 2026 tuned so this week's sample nowcast reads "above_normal" (about the 83rd percentile)
+              "year_factor": lambda y: {2020: 2.5, 2026: 1.3}.get(y, 1.0)},
 }
 # Trend estimates (pct per decade, lo, hi) chosen so SD-15 yields the requested sentence_id.
 TRENDS = {
-    "punjab": {"expect": "artifact_flat", "H": (2.0, -6.0, 9.0), "N": (38.0, 25.0, 52.0),
-               "aqua_only_2003_2022": (1.0, -8.0, 10.0), "translated_from_2012": (3.0, -5.0, 11.0)},
-    "bc": {"expect": "agree", "H": (31.0, 12.0, 55.0), "N": (36.0, 15.0, 60.0),
-           "aqua_only_2003_2022": (27.0, 6.0, 50.0), "translated_from_2012": (33.0, 13.0, 56.0)},
-    "litoral": {"expect": "unclear", "H": (14.0, -3.0, 33.0), "N": (41.0, -1.0, 88.0),
-                "aqua_only_2003_2022": (12.0, -6.0, 31.0), "translated_from_2012": (16.0, -2.0, 35.0)},
+    "conus": {"expect": "artifact_flat", "H": (2.0, -6.0, 9.0), "N": (38.0, 25.0, 52.0),
+              "aqua_only_2003_2022": (1.0, -8.0, 10.0), "translated_from_2012": (3.0, -5.0, 11.0)},
 }
 EYESIGHT = {
-    "punjab": {"status": "validated", "a": -1.2, "b": 2.1, "c": 0.82, "g": 1.12, "n": 48210},
-    "bc": {"status": "exploratory", "a": -2.0, "b": 1.6, "c": 0.64, "g": 1.31, "n": 15377},
+    "conus": {"status": "validated", "a": -1.2, "b": 2.1, "c": 0.82, "g": 1.12, "n": 48210},
 }
 
 
@@ -230,8 +220,9 @@ class Region:
     def _simulate(self) -> None:
         rng = self.rng
         years = range(self.days[0].year, LAST_DAY.year + 1)
-        yf = {y: self.shape["year_factor"](y) * (1.0 if y == 2023 and self.id == "bc"
-                                                  else math.exp(rng.gauss(0, 0.22))) for y in years}
+        exact = self.shape.get("exact_years", set())
+        noise = {y: math.exp(rng.gauss(0, 0.22)) for y in years}
+        yf = {y: self.shape["year_factor"](y) * (1.0 if y in exact else noise[y]) for y in years}
         # each season's centre wobbles a little from year to year (weeks)
         jitter = {y: [rng.gauss(0, 0.5) for _ in self.shape["bumps"]] for y in years}
         snpp_first = _d(self.sci["eras"]["snpp_first_day"])
@@ -807,6 +798,14 @@ def _methods(regions: list[Region], sci: dict[str, Any], sci_sha: str) -> dict[s
              "n": 1, "years": [2011, 2012], "note": "Sample value."},
             {"region": r.id, "test": "step_harmonized", "method": "tier1", "value": rng.uniform(0.9, 1.15),
              "n": 1, "years": [2011, 2012], "note": "Sample value."},
+            {"region": r.id, "test": "loyo_bias", "method": "tier1", "value": rng.uniform(-0.04, 0.04),
+             "n": 520, "years": fit_years, "note": "Sample value."},
+            {"region": r.id, "test": "sat_agreement_wape", "method": "tier1", "value": rng.uniform(0.03, 0.08),
+             "n": 156, "years": [2023, 2025], "note": "Sample value."},
+            {"region": r.id, "test": "k_direct_vs_chained_pct", "method": "tier1", "value": rng.uniform(-4, 4),
+             "n": 12, "years": [2019, 2022], "note": "Sample value."},
+            {"region": r.id, "test": "backcast_weekly_wape", "method": "tier1", "value": rng.uniform(0.15, 0.3),
+             "n": 520, "years": fit_years, "note": "Sample value."},
         ]
         k_ann = r.k_annual["snpp"]["k"]
         departure = {2023: -0.06, 2024: -0.12, 2025: -0.19}

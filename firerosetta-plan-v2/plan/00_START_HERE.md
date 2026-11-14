@@ -76,7 +76,7 @@ Each prompt is written for a capable coding assistant of any brand. Nothing in t
 | Gate | When | In one line |
 |---|---|---|
 | A | Sat 18:30 | Foundations on main; sample site deployed; contracts frozen |
-| B | Sat 23:00 | Simulated region runs end to end; Punjab real through Tier 1; Must screens on sample data |
+| B | Sat 23:00 | Simulated region runs end to end; conus real through Tier 1; Must screens on sample data |
 | C | Sun 10:00 | Three regions real; validation real; site off sample data |
 | D | Sun 14:00 | Should features merged or cut |
 | E | Sun 17:00 | Feature freeze; reproducible on a second OS; numbers signed |

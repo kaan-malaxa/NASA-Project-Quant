@@ -4,21 +4,21 @@
   "code_version": "example",
   "regions": [
     {
-      "id": "punjab",
-      "name": "Punjab and Haryana, India",
-      "country": "IN",
+      "id": "conus",
+      "name": "Contiguous United States",
+      "country": "US",
       "bbox": [
-        73.8,
-        27.6,
-        77.6,
-        32.6
+        -124.8,
+        24.4,
+        -66.9,
+        49.4
       ],
       "centroid": [
-        75.7,
-        30.1
+        -95.85,
+        36.9
       ],
-      "fire_type": "Crop residue burning",
-      "story": "Farmers burn crop residue every April–May and October–November; the smoke reaches Delhi.",
+      "fire_type": "Wildfire, prescribed and agricultural burning",
+      "story": "Summer and autumn wildfire in the West; prescribed and agricultural burning in the Southeast and the Great Plains, mostly in spring.",
       "n_cells_r6": 5600,
       "membership": "polygon",
       "last_data_day": "2026-11-13",

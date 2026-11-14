@@ -138,7 +138,7 @@ Task: implement FireYearClock (spec 9.5): the same data as the week heatmap, wra
 - Same keyboard model: left/right = week, up/down = year, Enter = onSelect. aria-label per cell.
 - Use d3.arc; one <path> per cell (about 1,250); no per-frame work on hover (use CSS :hover/:focus for the outline).
 
-Then run the 10-second test with two teammates who have not seen it: show the Punjab sample and ask "When is peak
+Then run the 10-second test with two teammates who have not seen it: show the conus sample and ask "When is peak
 season?" and "Which year was worst?". Write the result in design/clock_test.md. If either fails, tell R5 to default
 `view` to "months" (their one-line change) and keep the clock as a toggle.
 

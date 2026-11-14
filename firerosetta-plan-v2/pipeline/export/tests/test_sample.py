@@ -42,7 +42,7 @@ def test_two_runs_give_identical_bytes(tmp_path):
     env = {**os.environ, "PYTHONHASHSEED": "123", "PYTHONPATH": str(REPO_ROOT)}
     subprocess.run([sys.executable, "-c", code], check=True, cwd=REPO_ROOT, env=env)
     ha, hb = _hashes(a), _hashes(b)
-    assert len(ha) == 45
+    assert len(ha) == 3 + 14 * len(SAMPLE_REGIONS)
     assert ha == hb
 
 
@@ -101,27 +101,23 @@ def _annual(docs, region):
     return {a["year"]: a["harmonized"] for a in docs[f"{region}/trend.json"]["annual"] if a["harmonized"] is not None}
 
 
-def test_punjab_two_seasons_second_larger(docs):
-    wins = docs["punjab/season.json"]["windows"]
-    assert [w["peak_week"] for w in wins] == [44, 18]
+def test_conus_spring_and_larger_summer_season(docs):
+    wins = docs["conus/season.json"]["windows"]
+    assert len(wins) == 2
+    assert 31 <= wins[0]["peak_week"] <= 35 and 12 <= wins[1]["peak_week"] <= 16
     assert wins[0]["share"] > wins[1]["share"]
 
 
-def test_bc_one_summer_season_and_extreme_2023(docs):
-    wins = docs["bc/season.json"]["windows"]
-    assert len(wins) == 1 and wins[0]["peak_week"] == 32
-    annual = _annual(docs, "bc")
-    others = [v for y, v in annual.items() if y != 2023]
-    assert annual[2023] > 4 * median(others)
+def test_conus_extreme_2020(docs):
+    annual = _annual(docs, "conus")
+    others = [v for y, v in annual.items() if y != 2020]
+    assert annual[2020] > 2 * median(others)
 
 
-def test_litoral_aug_sep_season_and_elevated_2020_2022(docs):
-    win = docs["litoral/season.json"]["windows"][0]
-    assert win["start_week"] <= 31 and win["end_week"] >= 39 and 33 <= win["peak_week"] <= 37
-    annual = _annual(docs, "litoral")
-    crisis = [annual[y] for y in (2020, 2021, 2022)]
-    rest = [v for y, v in annual.items() if y not in (2020, 2021, 2022)]
-    assert min(crisis) > 1.5 * median(rest)
+def test_conus_planted_season_shift_is_visible(docs):
+    start = docs["conus/season.json"]["windows"][0]["shift_days_per_decade"]["start"]
+    assert start["hi"] < 0
+    assert "earlier per decade" in docs["conus/season.json"]["windows"][0]["sentence"]
 
 
 @pytest.mark.parametrize("region", SAMPLE_REGIONS)
@@ -145,7 +141,7 @@ def test_missing_weeks_and_estimated_band(docs, region):
 
 
 def test_harmonized_era_switches_in_kind_runs(docs):
-    runs = [r for r in docs["punjab/daily.json"]["kind_runs"] if r["series"] == "harmonized"]
+    runs = [r for r in docs["conus/daily.json"]["kind_runs"] if r["series"] == "harmonized"]
     starts = {r["from"]: r["source"] for r in runs}
     assert starts["2023-01-01"] == "snpp" and starts["2026-01-01"] == "noaa20"
     assert runs[-1]["to"] == "2026-11-13"
@@ -160,13 +156,12 @@ def test_daily_columns_have_n_days_entries(docs):
 
 def test_nowcast_statuses(docs):
     status = {r: docs[f"{r}/nowcast.json"]["status"] for r in SAMPLE_REGIONS}
-    assert status["punjab"] == "above_normal"
-    assert status["bc"] == "low_activity"
+    assert status == {"conus": "above_normal"}
 
 
 def test_trend_sentence_ids(docs):
     ids = {r: docs[f"{r}/trend.json"]["sentence_id"] for r in SAMPLE_REGIONS}
-    assert ids == {"punjab": "artifact_flat", "bc": "agree", "litoral": "unclear"}
+    assert ids == {"conus": "artifact_flat"}
     for r in SAMPLE_REGIONS:
         s = docs[f"{r}/trend.json"]["sentence"]
         assert s and "{" not in s and "number of fires" not in s

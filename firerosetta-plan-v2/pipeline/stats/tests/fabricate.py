@@ -17,6 +17,8 @@ from referencing.jsonschema import DRAFT202012
 # Test constants: the SD-08 / SD-10 values of contracts 4.2, so expected answers are literal.
 SCIENCE = {
     "seed": 7,
+    "reference": {"sensor": "aqua", "pass": "D"},
+    "grid": {"count_res": 6, "map_res": 5, "mask_res": 8},
     "eras": {"record_start": "2003-01-01", "aqua_trusted_through": "2022-12-31",
              "snpp_through": "2025-12-31", "snpp_first_day": "2012-01-20"},
     "tier1": {"snpp_fit": ["2013-01-01", "2022-12-31"]},

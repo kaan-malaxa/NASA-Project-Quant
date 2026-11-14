@@ -92,9 +92,9 @@ def test_enum_values_are_enforced():
 def test_eyesight_absent_needs_only_region_and_status():
     validator = validator_for("methods", load_registry())
     doc = load_json_strict(EXAMPLES / "methods.json")
-    doc["eyesight"] = [{"region": "bc", "status": "absent"}]
+    doc["eyesight"] = [{"region": "synthland", "status": "absent"}]
     assert validator.is_valid(doc)
-    doc["eyesight"] = [{"region": "bc", "status": "validated"}]
+    doc["eyesight"] = [{"region": "synthland", "status": "validated"}]
     assert not validator.is_valid(doc)
 
 
@@ -103,7 +103,7 @@ def test_eyesight_absent_needs_only_region_and_status():
 def site(tmp_path: Path) -> Path:
     """A complete, valid web/public/data tree for one region built from the examples."""
     data = tmp_path / "data"
-    region = data / "punjab"
+    region = data / "conus"
     region.mkdir(parents=True)
     for name in ("regions", "methods", "manifest"):
         shutil.copy(EXAMPLES / f"{name}.json", data / f"{name}.json")
@@ -112,13 +112,13 @@ def site(tmp_path: Path) -> Path:
     outline = {"type": "FeatureCollection", "features": [
         {"type": "Feature", "properties": {}, "geometry": {
             "type": "Polygon",
-            "coordinates": [[[73.8, 27.6], [77.6, 27.6], [77.6, 32.6], [73.8, 32.6], [73.8, 27.6]]]}}]}
+            "coordinates": [[[-124.8, 24.4], [-66.9, 24.4], [-66.9, 49.4], [-124.8, 49.4], [-124.8, 24.4]]]}}]}
     (region / "outline.geojson").write_text(json.dumps(outline), encoding="utf-8")
     (region / "cells_monthly.csv").write_text(
         "h3_r5,ym,aqua,viirs\n85283473fffffff,201510,3,7\n", encoding="utf-8")
     (region / "hotspots_recent.csv").write_text(
         ",".join(CSV_HEADERS["hotspots_recent.csv"]) + "\n"
-        "30.1,75.7,2026-11-10,0805,N20,n,4.2,D,2026-11-10,86283473fffffff\n", encoding="utf-8")
+        "36.9,-95.85,2026-11-10,1914,N20,n,4.2,D,2026-11-10,86283473fffffff\n", encoding="utf-8")
     return data
 
 
@@ -141,47 +141,47 @@ def test_missing_data_folder_fails(tmp_path):
 
 
 def test_schema_violation_fails_with_path(site, capsys):
-    doc = json.loads((site / "punjab/weekly.json").read_text(encoding="utf-8"))
+    doc = json.loads((site / "conus/weekly.json").read_text(encoding="utf-8"))
     doc["rows"][0]["extra_field"] = 1
-    (site / "punjab/weekly.json").write_text(json.dumps(doc), encoding="utf-8")
-    res = _by_path(run_check(site))["punjab/weekly.json"]
+    (site / "conus/weekly.json").write_text(json.dumps(doc), encoding="utf-8")
+    res = _by_path(run_check(site))["conus/weekly.json"]
     assert not res.ok and "rows/0" in res.errors[0]
     assert report(run_check(site)) == 1
-    assert "FAIL punjab/weekly.json: rows/0" in capsys.readouterr().out
+    assert "FAIL conus/weekly.json: rows/0" in capsys.readouterr().out
 
 
 @pytest.mark.parametrize("token", ["NaN", "Infinity", "-Infinity", "1e400"])
 def test_non_finite_json_fails(site, token):
-    text = (site / "punjab/weekly.json").read_text(encoding="utf-8").replace('"value": 812.0', f'"value": {token}')
-    (site / "punjab/weekly.json").write_text(text, encoding="utf-8")
-    res = _by_path(run_check(site))["punjab/weekly.json"]
+    text = (site / "conus/weekly.json").read_text(encoding="utf-8").replace('"value": 812.0', f'"value": {token}')
+    (site / "conus/weekly.json").write_text(text, encoding="utf-8")
+    res = _by_path(run_check(site))["conus/weekly.json"]
     assert not res.ok and "not valid JSON" in res.errors[0]
 
 
 def test_non_finite_csv_fails(site):
-    (site / "punjab/cells_monthly.csv").write_text("h3_r5,ym,aqua,viirs\n85a,201510,nan,7\n", encoding="utf-8")
-    res = _by_path(run_check(site))["punjab/cells_monthly.csv"]
+    (site / "conus/cells_monthly.csv").write_text("h3_r5,ym,aqua,viirs\n85a,201510,nan,7\n", encoding="utf-8")
+    res = _by_path(run_check(site))["conus/cells_monthly.csv"]
     assert not res.ok and "non-finite" in res.errors[0]
 
 
 @pytest.mark.parametrize("name", ["cells_monthly.csv", "hotspots_recent.csv"])
 def test_wrong_csv_header_fails(site, name):
-    path = site / "punjab" / name
+    path = site / "conus" / name
     lines = path.read_text(encoding="utf-8").splitlines()
     lines[0] = lines[0].replace(",", ";", 1)
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
-    res = _by_path(run_check(site))[f"punjab/{name}"]
+    res = _by_path(run_check(site))[f"conus/{name}"]
     assert not res.ok and "header" in res.errors[0]
 
 
 def test_listed_file_missing_fails_regions(site):
-    (site / "punjab/trend.json").unlink()
+    (site / "conus/trend.json").unlink()
     res = _by_path(run_check(site))["regions.json"]
     assert not res.ok and "'trend'" in res.errors[0]
 
 
 def test_listed_optional_file_missing_fails_regions(site):
-    (site / "punjab/downloads.json").unlink()
+    (site / "conus/downloads.json").unlink()
     res = _by_path(run_check(site))["regions.json"]
     assert not res.ok and "'downloads'" in res.errors[0]
 
@@ -192,24 +192,24 @@ def test_missing_regions_json_fails(site):
 
 
 def test_sample_kind_requires_manifest_flag(site):
-    doc = json.loads((site / "punjab/weekly.json").read_text(encoding="utf-8"))
+    doc = json.loads((site / "conus/weekly.json").read_text(encoding="utf-8"))
     doc["rows"][0]["kind"] = "sample"
-    (site / "punjab/weekly.json").write_text(json.dumps(doc), encoding="utf-8")
-    res = _by_path(run_check(site))["punjab/weekly.json"]
+    (site / "conus/weekly.json").write_text(json.dumps(doc), encoding="utf-8")
+    res = _by_path(run_check(site))["conus/weekly.json"]
     assert not res.ok and "contains_sample" in res.errors[0]
 
     manifest = json.loads((site / "manifest.json").read_text(encoding="utf-8"))
     manifest["contains_sample"] = True
     (site / "manifest.json").write_text(json.dumps(manifest), encoding="utf-8")
-    assert _by_path(run_check(site))["punjab/weekly.json"].ok
+    assert _by_path(run_check(site))["conus/weekly.json"].ok
 
 
 def test_unexpected_file_fails(site):
-    (site / "punjab/notes.txt").write_text("hi", encoding="utf-8")
-    assert not _by_path(run_check(site))["punjab/notes.txt"].ok
+    (site / "conus/notes.txt").write_text("hi", encoding="utf-8")
+    assert not _by_path(run_check(site))["conus/notes.txt"].ok
 
 
 def test_outline_must_have_one_feature(site):
-    (site / "punjab/outline.geojson").write_text(
+    (site / "conus/outline.geojson").write_text(
         json.dumps({"type": "FeatureCollection", "features": []}), encoding="utf-8")
-    assert not _by_path(run_check(site))["punjab/outline.geojson"].ok
+    assert not _by_path(run_check(site))["conus/outline.geojson"].ok

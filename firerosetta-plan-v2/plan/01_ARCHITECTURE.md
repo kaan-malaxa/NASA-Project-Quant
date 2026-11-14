@@ -67,7 +67,7 @@ The challenge asks for: harmonized MODIS + VIIRS hotspots; a web app where a use
 | S7 | Drift chart (V4) on the Methods page | R3, R6 |
 
 ### Could (only after Gate D with everything above green)
-Fourth region `mato_grosso`; night-pass series; Season Brief in a second language; cropland/wildland split.
+More US regions (one entry each in `regions.yaml`); night-pass series; Season Brief in a second language; cropland/wildland split.
 
 ### Won't
 Fire prediction or spread modelling; accounts, backend, database, alerts; NOAA-21; any place on Earth with full history; summing sensors; calling a hotspot a fire.
@@ -147,7 +147,7 @@ Rules that keep the split clean:
 | Rehearsal | When | What is joined | Pass means |
 |---|---|---|---|
 | IR-1 | Sat 18:30 (Gate A) | R1 sample JSON → R5 shell → R6 first chart | Deployed site renders sample data with the SAMPLE banner |
-| IR-2 | Sat 23:00 (Gate B) | `pipeline.run --region synthland` through every stage that exists; Punjab real data through Tier 1 | One command, exit 0, JSON validates |
+| IR-2 | Sat 23:00 (Gate B) | `pipeline.run --region synthland` through every stage that exists; conus real data through Tier 1 | One command, exit 0, JSON validates |
 | IR-3 | Sun 10:00 (Gate C) | All regions, real data, site switched off sample | No SAMPLE banner; Methods page shows real validation |
 | IR-4 | Sun 14:00 (Gate D) | Should features | Each Should either merged or cut |
 | Final | Sun 17:00 (Gate E) | Feature freeze | Only bug fixes after this |
@@ -237,8 +237,8 @@ About 30 working hours remain. Sleep is in the plan because tired people break `
 |---|---|---|
 | **Sat 16:00–16:30** | Kickoff | Roles assigned; repo created and public; everyone has cloned, run `uv sync` and `npm ci`; **R2 has submitted FIRMS archive requests and started country downloads**; MAP_KEY obtained |
 | **Sat 16:30–18:30** | **A · Foundations** | **Gate A 18:30:** scaffold + `common/` on main (R2) · JSON Schemas + `--sample` data on main (R1) · `science.yaml` on main (R3) · simulator writes tiny `synthland` raw CSVs (R4) · site deployed and rendering sample `ruler.json` (R5) · tokens + first chart in the gallery (R6) · **contracts frozen** |
-| **Sat 18:30–23:00** | **B · Vertical slices** | **Gate B 23:00:** `pipeline.run --region synthland` exits 0 through ingest → harmonize → stats → export · Punjab real data cleaned and gridded, Tier 1 k fitted · eyesight fit recovers the planted curve on `synthland` · every Must screen works on sample data · IR-2 passed |
-| Sat 23:00–07:00 | Sleep | R2 leaves overnight downloads and `ingest` for `bc` and `litoral` running |
+| **Sat 18:30–23:00** | **B · Vertical slices** | **Gate B 23:00:** `pipeline.run --region synthland` exits 0 through ingest → harmonize → stats → export · conus real data cleaned and gridded, Tier 1 k fitted · eyesight fit recovers the planted curve on `synthland` · every Must screen works on sample data · IR-2 passed |
+| Sat 23:00–07:00 | Sleep | R2 leaves the overnight `ingest` for the full `conus` record running |
 | **Sun 07:00–10:00** | **C · Real data everywhere** | **Gate C 10:00:** three regions through ingest → harmonize → stats → export · V1–V5 numbers in `methods.json` · nowcast fetched · site on real data with no SAMPLE banner · IR-3 passed |
 | **Sun 10:00–14:00** | **D · Should features** | **Gate D 14:00:** each Should item is merged or cut, decided by R1 · Tier 2 status decided per SD-17 · README draft and slide skeleton exist |
 | **Sun 14:00–17:00** | **E · Hardening** | **Gate E 17:00 feature freeze:** all branches merged · full re-run from raw data on a second laptop with a different OS produces identical JSON · accessibility and phone checks done · numbers audit signed by R3 |
@@ -299,13 +299,13 @@ These were added because they either answer the official challenge text, remove 
 | Risk | Early sign | Fallback | Owner |
 |---|---|---|---|
 | Archive emails are slow | Nothing by Sat 19:00 | Country yearly CSVs (already downloading); Area API for 2026 | R2 |
-| Country file pattern differs from our guess | 404 on first file | Read the links on the FIRMS country page; download by hand for Punjab first | R2 |
+| Country file pattern differs from our guess | 404 on first file | Read the links on the FIRMS country page; download by hand for the United States first | R2 |
 | NOAA-20 archive starts later than 2018 | E4 shows 2020 | SD-06 chained k (already specified) | R3 |
 | Aqua or S-NPP rows stop earlier than expected | coverage shows `after_end` | Already handled by eras and fallback (SD-05) | R3 |
 | Tier 2 curve is noisy | band at 10 MW ≥ 0.30 | `exploratory` label; Tier 1 everywhere (SD-17) | R4 |
-| Real data not ready at Gate C | ingest unfinished Sun 09:00 | Ship Punjab real + the other two marked "coming"; never ship sample as real | R1 |
+| Real data not ready at Gate C | ingest unfinished Sun 09:00 | Ship the years that are real and say which; never ship sample as real | R1 |
 | Fire Year Clock is hard to read | two teammates cannot name the peak season in 10 s | Month heatmap becomes the default view | R6 |
-| Off-season regions make "This week" dull | `low_activity` on two regions | Demo opens on Punjab; the others show the last active window with its date | R5 |
+| Off-season makes "This week" dull | `low_activity` | Show the last active window with its date | R5 |
 | Area-of-interest lens disagrees with the pipeline | whole-region test fails | Cut S5; keep the three regions | R5, R1 |
 | Deploy breaks late | build fails after 17:00 | Deploy only from `main`; tag `freeze-1700`; Pages can be rolled back by re-running the tagged workflow | R5 |
 | Scope creep | anyone on a Could before Gate D | R1 reassigns at the stand-up | R1 |

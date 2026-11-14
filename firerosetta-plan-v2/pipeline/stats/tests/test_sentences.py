@@ -71,11 +71,11 @@ def test_unknown_sentence_id_raises():
 
 
 def test_other_templates():
-    assert ruler_sentence("Punjab", 4.138).startswith("In Punjab, VIIRS reports about 4.1 times")
-    assert nowcast_sentence("unavailable", "Punjab", None, None, None, 0) == "No recent satellite data."
-    assert "Too little burning" in nowcast_sentence("low_activity", "BC", date(2026, 11, 13), 1, 40, 23)
-    assert nowcast_sentence("extreme", "Punjab", date(2026, 11, 13), 987.1, 95.65, 23) == (
-        "In the 7 days to 13 November 2026, Punjab had 987 Aqua-equivalent fire cell-days: "
+    assert ruler_sentence("Testland", 4.138).startswith("In Testland, VIIRS reports about 4.1 times")
+    assert nowcast_sentence("unavailable", "Testland", None, None, None, 0) == "No recent satellite data."
+    assert "Too little burning" in nowcast_sentence("low_activity", "Testland", date(2026, 11, 13), 1, 40, 23)
+    assert nowcast_sentence("extreme", "Testland", date(2026, 11, 13), 987.1, 95.65, 23) == (
+        "In the 7 days to 13 November 2026, Testland had 987 Aqua-equivalent fire cell-days: "
         "higher than 96% of the same week in 23 past years.")
     assert season_shift_sentence("summer", -6.2, -10, -4) == (
         "The summer season now starts about 6 days earlier per decade (-10 to -4).")

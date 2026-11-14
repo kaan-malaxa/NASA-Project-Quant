@@ -1,0 +1,5 @@
+# Seed list. R2 verifies each entry against FIRMS notices (E5) on Saturday evening and adds its URL.
+outages:
+  - {sensor: aqua,  start: "2020-08-16", end: "2020-09-02", note: "Aqua formatter anomaly", url: ""}
+  - {sensor: snpp,  start: "2022-07-26", end: "2022-08-10", note: "S-NPP anomaly",          url: ""}
+  - {sensor: snpp,  start: "2026-07-10", end: null,          note: "S-NPP non-nominal state; fire data ended 2026-11-02", url: ""}

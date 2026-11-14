@@ -1,0 +1,31 @@
+# Replace placeholder handles before enabling required owner reviews.
+/contracts/ @R1
+/pipeline/stats/ @R1
+/pipeline/export/ @R1
+/plan/ @R1
+/pyproject.toml @R2
+/uv.lock @R2
+/.* @R2
+/LICENSE @R2
+/CODEOWNERS @R2
+/pipeline/__init__.py @R2
+/pipeline/run.py @R2
+/pipeline/common/ @R2
+/pipeline/config/ @R2
+/pipeline/ingest/ @R2
+/docs/ @R2
+/README.md @R2
+/pipeline/harmonize/ @R3
+/pipeline/config/science.yaml @R3
+/plan/03_SCIENCE_DECISIONS.md @R3
+/pipeline/synth/ @R4
+/pipeline/eyesight/ @R4
+/web/ @R5
+/.github/workflows/web.yml @R5
+/web/src/viz/ @R6
+/web/src/styles/tokens.css @R6
+/design/ @R6
+/web/public/data/ @R1
+/.github/workflows/pipeline.yml @R2
+# Written shared-template exception.
+/plan/REPORTS.md @R1 @R2 @R3 @R4 @R5 @R6

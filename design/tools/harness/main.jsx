@@ -191,7 +191,7 @@ const Credit = () => (
     >
       NASA FIRMS
     </a>{" "}
-    · FireRosetta
+    · Prometheus Torch
   </span>
 );
 const SampleTag = () => (
@@ -288,7 +288,7 @@ function OgCard({ d }) {
       {d.sample && <SampleTag />}
       <div style={{ flex: 1 }}>
         <div style={{ fontSize: 43, fontWeight: 700, letterSpacing: -1 }}>
-          FireRosetta
+          Prometheus Torch
         </div>
         <div style={{ fontSize: 20, marginTop: 10, lineHeight: 1.25 }}>
           When does {d.region.name} burn?

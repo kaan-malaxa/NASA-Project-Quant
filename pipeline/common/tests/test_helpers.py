@@ -9,7 +9,7 @@ from pipeline.common import cli, config, log, paths
 
 
 def test_paths_and_cli_override(tmp_path, monkeypatch):
-    monkeypatch.setenv("FIREROSETTA_DATA_ROOT", str(tmp_path / "env"))
+    monkeypatch.setenv("PROMETHEUS_TORCH_DATA_ROOT", str(tmp_path / "env"))
     assert paths.raw_dir("test") == tmp_path / "env" / "raw" / "test"
     parser = cli.stage_parser("ingest")
     args = parser.parse_args(["--region", "synthland", "--data-root", str(tmp_path / "cli"), "--pass", "N"])

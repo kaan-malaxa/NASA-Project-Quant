@@ -39,7 +39,7 @@ test.describe("published real outputs", () => {
     await expect(page.locator('#where canvas.maplibregl-canvas, #where svg.fr-viz [role="button"]').first()).toBeVisible({timeout:60000});
     const download = page.waitForEvent("download");
     await page.getByRole("button", {name:/series csv/i}).click();
-    expect((await download).suggestedFilename()).toMatch(/firerosetta_us/);
+    expect((await download).suggestedFilename()).toMatch(/prometheus_torch_us/);
     expect(await overflowsHorizontally(page)).toBe(false);
     expect(await seriousAxe(page)).toEqual([]);
     expect(errors).toEqual([]);

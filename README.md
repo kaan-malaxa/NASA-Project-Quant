@@ -1,6 +1,6 @@
-# FireRosetta
+# Prometheus Torch
 
-FireRosetta makes a satellite record inspectable across changes in observing instruments. It calibrates separate sensor records to the Aqua scale, preserves missing observations and shows uncertainty, held-out prediction checks and the limits of the conclusion. A hotspot is a detection of heat in a pixel, not an individual fire. Counts describe fire cell-days, not burned area.
+Prometheus Torch makes a satellite record inspectable across changes in observing instruments. It calibrates separate sensor records to the Aqua scale, preserves missing observations and shows uncertainty, held-out prediction checks and the limits of the conclusion. A hotspot is a detection of heat in a pixel, not an individual fire. Counts describe fire cell-days, not burned area.
 
 The static JavaScript application reads validated files from web/public/data/. Analysis years select complete calendar years and load Python-precomputed trend, season, climatology and ruler results. Exact dates independently select daily totals and downloads. Anomaly comparisons retain the configured historical baseline. Maps and area summaries sum authoritative daily-source contributions, including outage fills, calibration bounds and regional coverage scaling. The analysis polygon includes Alaska and Hawaii; display wrapping leaves that polygon unchanged.
 

@@ -80,7 +80,7 @@ def test_empty_aggregation_and_out_of_region():
 
 
 def test_grid_end_to_end_rewrites_masked_rows_and_is_idempotent(tmp_path, monkeypatch):
-    monkeypatch.setenv("FIREROSETTA_DATA_ROOT", str(tmp_path))
+    monkeypatch.setenv("PROMETHEUS_TORCH_DATA_ROOT", str(tmp_path))
     region = replace(config.get_region("us"), bbox=[10.99, 10.99, 11.01, 11.01], polygon=None, synthetic=True)
     monkeypatch.setattr(config, "get_region", lambda region_id: region)
     monkeypatch.setattr(config, "load_science", lambda: SCIENCE)

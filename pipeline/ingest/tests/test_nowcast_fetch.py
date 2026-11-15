@@ -28,7 +28,7 @@ def environment(tmp_path, monkeypatch):
     monkeypatch.setattr(config, "get_region", lambda region_id: region)
     monkeypatch.setattr(config, "region_centroid", lambda region: (-120, 40))
     monkeypatch.setattr(config, "load_science", lambda: SCIENCE)
-    monkeypatch.setenv("FIREROSETTA_DATA_ROOT", str(tmp_path / "derived"))
+    monkeypatch.setenv("PROMETHEUS_TORCH_DATA_ROOT", str(tmp_path / "derived"))
     source = tmp_path / "originals"
     source.mkdir()
     monkeypatch.setattr(paths, "source_data_root", lambda: source)

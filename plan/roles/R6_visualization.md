@@ -49,7 +49,7 @@ D3 (scales, shapes, chromatic schemes, arcs), React + JavaScript with generated 
 
 ## 7. Session primer (paste at the start of every AI session)
 ```text
-You are assisting R6 on the FireRosetta project. Before doing anything, read these files fully:
+You are assisting R6 on the Prometheus Torch project. Before doing anything, read these files fully:
 - AGENTS.md
 - plan/02_CONTRACTS.md sections 6, 8 and 9 (the JSON I draw, my component props, the enums)
 - plan/03_SCIENCE_DECISIONS.md SD-08, SD-10, SD-11, SD-13 and section H

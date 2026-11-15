@@ -1,4 +1,4 @@
-# FireRosetta · Start here
+# Prometheus Torch · Start here
 
 > Integration repair supersedes the original multi-region and TypeScript-runtime plans: whole United States (Alaska and Hawaii included), plus synthetic validation; JavaScript with generated declarations; selectable complete analysis years and separate exact dates. See `02_CONTRACTS.md` and `REQUIREMENTS_MATRIX.md`.
 
@@ -39,7 +39,7 @@ Suggested fit: R1 someone comfortable with statistics in Python and with saying 
 
 1. Assign roles (table above). The draft charter's author should take R1 (scope owner).
 2. **R2, immediately, before anything else:** submit the FIRMS archive requests and start country downloads (R2's file, §7). This is the only step that cannot be made faster later.
-3. R2 creates the public GitHub repository `firerosetta`, unzips this bundle into it, pushes, and adds everyone as collaborators.
+3. R2 creates the public GitHub repository `prometheus-torch`, unzips this bundle into it, pushes, and adds everyone as collaborators.
 4. Everyone installs: Git, **uv**, **Node.js LTS (22+)**, an editor (`01_ARCHITECTURE.md` §6.1). Windows users also run `git config --global core.longpaths true` and `git config --global core.autocrlf false`.
 5. Everyone clones, creates a branch `r<n>/setup`, opens their role file, and pastes their **Session primer** into their AI assistant.
 6. R1 reads `REPORTS.md` §5 aloud: the eleven things we still have to verify, and who owns each.

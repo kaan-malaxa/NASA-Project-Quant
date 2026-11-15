@@ -14,7 +14,7 @@ original and staged bytes, science/configuration, outages and polygon fingerprin
 and source_fingerprint_reconciliation.json for the historical LF/CRLF reconciliation. Historical inventory
 reports remain historical records; current acceptance is in repair_acceptance.md.
 
-Use --data-root / FIREROSETTA_DATA_ROOT for intermediates and --web-output-dir / FIREROSETTA_WEB_DATA_DIR
+Use --data-root / PROMETHEUS_TORCH_DATA_ROOT for intermediates and --web-output-dir / PROMETHEUS_TORCH_WEB_DATA_DIR
 for the static publication. Scoped exports validate and preserve compatible other published regions without
 their intermediates. All outputs are staged and checked first. The manifest is installed last, with rollback
 of replaced and removed files if publication fails.

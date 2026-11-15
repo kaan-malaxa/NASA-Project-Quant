@@ -25,7 +25,7 @@ def documents(read, audit):
     limits = "\n".join(f"- {line}" for line in methods["limitations"])
     sources = "\n".join(f'- [{row["text"]}]({row["url"]}) (checked {row["checked"]}).'
                          for row in methods["sources"])
-    intro = ("FireRosetta makes a satellite record inspectable across changes in observing instruments. "
+    intro = ("Prometheus Torch makes a satellite record inspectable across changes in observing instruments. "
              "It calibrates separate sensor records to the Aqua scale, preserves missing observations and "
              "shows uncertainty, held-out prediction checks and the limits of the conclusion. A hotspot is "
              "a detection of heat in a pixel, not an individual fire. Counts describe fire cell-days, not burned area.")
@@ -41,7 +41,7 @@ def documents(read, audit):
                "No external publication is part of this repair.")
     ai = ("OpenAI Codex assisted implementation, integration repair, regression tests, source verification and "
           "document generation. The team must confirm other assistant use and completed human review before submission.")
-    readme = f"""# FireRosetta
+    readme = f"""# Prometheus Torch
 
 {intro}
 
@@ -116,7 +116,7 @@ See the [requirements matrix](plan/REQUIREMENTS_MATRIX.md) and [repair acceptanc
 
 {ai}
 """
-    submission = f"""# FireRosetta: Reading US Burning Activity Across Satellite Changes
+    submission = f"""# Prometheus Torch: Reading US Burning Activity Across Satellite Changes
 
 {intro}
 
@@ -157,7 +157,7 @@ Demo video: {{{{link:video}}}}
 Public repository: {{{{link:repository}}}}
 Slide deck: {{{{link:slide_deck}}}}
 """
-    slides = f"""# FireRosetta slide text
+    slides = f"""# Prometheus Torch slide text
 
 Generated from the same publication as `numbers_audit.md`; slide graphics are in `design/exports/`.
 

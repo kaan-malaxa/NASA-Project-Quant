@@ -218,7 +218,7 @@ def test_cli_accepts_the_common_stage_flags(site, monkeypatch, tmp_path):
     from pipeline.export import __main__ as cli
 
     monkeypatch.setattr(cli, "default_data_dir", lambda: site)
-    monkeypatch.setenv("FIREROSETTA_DATA_ROOT", "unset-by-test")
+    monkeypatch.setenv("PROMETHEUS_TORCH_DATA_ROOT", "unset-by-test")
     args = ["--check", "--data-root", str(tmp_path), "--pass", "D", "--log-level", "INFO"]
     assert cli.main(args) == 0
-    assert os.environ["FIREROSETTA_DATA_ROOT"] == str(tmp_path)
+    assert os.environ["PROMETHEUS_TORCH_DATA_ROOT"] == str(tmp_path)

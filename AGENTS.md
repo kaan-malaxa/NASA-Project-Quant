@@ -1,6 +1,6 @@
 # AGENTS.md — binding rules for every AI coding assistant in this repository
 
-You are helping one of six people build **FireRosetta** for the NASA Space Apps Challenge 2026 (deadline Sunday 15 Nov 2026, 22:00 Eastern). Each person owns part of the repo. Read this file fully, then the files your human's role primer names.
+You are helping one of six people build **Prometheus Torch** for the NASA Space Apps Challenge 2026 (deadline Sunday 15 Nov 2026, 22:00 Eastern). Each person owns part of the repo. Read this file fully, then the files your human's role primer names.
 
 ## Read first, every session
 1. `plan/02_CONTRACTS.md` — every command, file, schema, route and component interface.

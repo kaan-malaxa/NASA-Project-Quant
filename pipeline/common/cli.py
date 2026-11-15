@@ -9,9 +9,9 @@ from pipeline.common import paths
 class _StageParser(argparse.ArgumentParser):
     def parse_args(self, args=None, namespace=None):
         result = super().parse_args(args, namespace)
-        os.environ["FIREROSETTA_DATA_ROOT"] = str(result.data_root)
+        os.environ["PROMETHEUS_TORCH_DATA_ROOT"] = str(result.data_root)
         if result.web_output_dir:
-            os.environ["FIREROSETTA_WEB_DATA_DIR"] = str(result.web_output_dir)
+            os.environ["PROMETHEUS_TORCH_WEB_DATA_DIR"] = str(result.web_output_dir)
         logging.getLogger().setLevel(result.log_level)
         return result
 

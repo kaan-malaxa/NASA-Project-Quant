@@ -1,10 +1,10 @@
-# FireRosetta slide text
+# Prometheus Torch slide text
 
 Generated from the same publication as `numbers_audit.md`; slide graphics are in `design/exports/`.
 
 ## The question
 
-FireRosetta makes a satellite record inspectable across changes in observing instruments. It calibrates separate sensor records to the Aqua scale, preserves missing observations and shows uncertainty, held-out prediction checks and the limits of the conclusion. A hotspot is a detection of heat in a pixel, not an individual fire. Counts describe fire cell-days, not burned area.
+Prometheus Torch makes a satellite record inspectable across changes in observing instruments. It calibrates separate sensor records to the Aqua scale, preserves missing observations and shows uncertainty, held-out prediction checks and the limits of the conclusion. A hotspot is a detection of heat in a pixel, not an individual fire. Counts describe fire cell-days, not burned area.
 
 ## The instrument change and the corrected record
 

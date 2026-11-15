@@ -54,7 +54,7 @@ Command you provide: `python -m pipeline.harmonize --region R`.
 
 ## 7. Session primer (paste at the start of every AI session)
 ```text
-You are assisting R3, the science owner, on the FireRosetta project. Before doing anything, read these files fully:
+You are assisting R3, the science owner, on the Prometheus Torch project. Before doing anything, read these files fully:
 - AGENTS.md
 - plan/03_SCIENCE_DECISIONS.md (all of it; I own it)
 - plan/02_CONTRACTS.md sections 3, 4.2, 5 and 10

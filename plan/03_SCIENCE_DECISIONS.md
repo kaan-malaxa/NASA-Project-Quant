@@ -1,6 +1,6 @@
 # 03 · Science Decision Register (locked)
 
-**Purpose.** Every scientific choice in FireRosetta is decided here, once. Nobody (human or AI) re-decides these during the build. If a decision turns out to be impossible with the real data, the only person who may change it is **R3 (science owner)**, by editing this file and `pipeline/config/science.yaml` in the same commit and telling the team at the next stand-up.
+**Purpose.** Every scientific choice in Prometheus Torch is decided here, once. Nobody (human or AI) re-decides these during the build. If a decision turns out to be impossible with the real data, the only person who may change it is **R3 (science owner)**, by editing this file and `pipeline/config/science.yaml` in the same commit and telling the team at the next stand-up.
 
 **How to read.** Each decision has an ID (`SD-xx`), the locked value, the reason in one or two lines, and the config key that carries it. Code must read constants from `pipeline/config/science.yaml`, never hard-code them.
 

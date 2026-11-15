@@ -25,7 +25,7 @@ export default function AppShell({ banner = <SampleBanner />, resetKey }) {
       <header className="border-b">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-3">
           <Link to="/" className="text-lg font-semibold tracking-tight focus-visible:outline-2">
-            FireRosetta
+            Prometheus Torch
           </Link>
           <nav aria-label="Main" className="flex gap-1">
             <NavLink to="/pick" className={navClass}>

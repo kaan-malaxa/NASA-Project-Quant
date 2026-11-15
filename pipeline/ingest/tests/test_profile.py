@@ -31,7 +31,7 @@ def test_distinct_day_qualification_and_nrt_share():
 def test_raw_fallback_uses_only_local_us_and_solar_days(tmp_path, monkeypatch):
     source = tmp_path / "originals"
     monkeypatch.setattr(paths, "source_data_root", lambda: source)
-    monkeypatch.setenv("FIREROSETTA_DATA_ROOT", str(tmp_path / "derived"))
+    monkeypatch.setenv("PROMETHEUS_TORCH_DATA_ROOT", str(tmp_path / "derived"))
     path = paths.country_csv_candidates("modis", 2023, "United_States")[0]
     path.parent.mkdir(parents=True)
     path.write_text(
@@ -86,7 +86,7 @@ def test_peak_week_accepts_arrow_backed_immutable_input():
 
 def test_processed_profile_uses_contract_files(tmp_path, monkeypatch):
     from pipeline.ingest.clean import typed
-    monkeypatch.setenv("FIREROSETTA_DATA_ROOT", str(tmp_path))
+    monkeypatch.setenv("PROMETHEUS_TORCH_DATA_ROOT", str(tmp_path))
     for sensor in profile.SENSORS:
         io.write_parquet(typed(pd.DataFrame(), "detections"), paths.detections("us", sensor), "detections")
     io.write_parquet(typed(pd.DataFrame({
@@ -104,7 +104,7 @@ def test_processed_profile_uses_contract_files(tmp_path, monkeypatch):
 
 def test_missing_source_and_invalid_region_fail(tmp_path, monkeypatch, capsys):
     monkeypatch.setattr(paths, "source_data_root", lambda: tmp_path / "missing")
-    monkeypatch.setenv("FIREROSETTA_DATA_ROOT", str(tmp_path / "derived"))
+    monkeypatch.setenv("PROMETHEUS_TORCH_DATA_ROOT", str(tmp_path / "derived"))
     assert profile.main(["--region", "us"]) == 1
     assert "No local US CSVs" in capsys.readouterr().err
     with pytest.raises(ValueError):

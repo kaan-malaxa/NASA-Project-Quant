@@ -51,7 +51,7 @@ Vite + React + JavaScript with generated declarations; Tailwind CSS; **shadcn/ui
 
 ## 7. Session primer (paste at the start of every AI session)
 ```text
-You are assisting R5 on the FireRosetta project. Before doing anything, read these files fully:
+You are assisting R5 on the Prometheus Torch project. Before doing anything, read these files fully:
 - AGENTS.md
 - plan/02_CONTRACTS.md sections 6, 7, 8 and 9 (data files, routes, component props, enums)
 - plan/03_SCIENCE_DECISIONS.md sections E and H (what the numbers mean and how to word them)
@@ -81,11 +81,11 @@ Task: create the web app skeleton in web/.
 - shadcn/ui initialised; add: button, card, tabs, toggle-group, tooltip, popover, calendar, dialog, table, badge,
   skeleton, sonner.
 - src/app/: App.jsx with HashRouter and the routes in contracts section 7 (each a placeholder screen with its name),
-  AppShell with header (wordmark "FireRosetta", nav: Pick a place, Methods), footer with the credit
+  AppShell with header (wordmark "Prometheus Torch", nav: Pick a place, Methods), footer with the credit
   "Fire data: NASA FIRMS" linking to https://firms.modaps.eosdis.nasa.gov/ on every page, and a slot for the SAMPLE banner.
 - Create web/src/viz/.gitkeep only (R6 owns that folder). Import charts from "@/viz" nowhere yet.
 - .github/workflows/web.yml: on push to main touching web/** or contracts/**: npm ci, typecheck, test, build with
-  VITE_BASE="/<repo-name>/", upload and deploy to GitHub Pages (actions/configure-pages, upload-pages-artifact,
+  VITE_BASE="/" and VITE_SITE_URL="https://prometheus-torch.design/", upload and deploy to GitHub Pages (actions/configure-pages, upload-pages-artifact,
   deploy-pages). On pull requests: typecheck, test, build only.
 - Self-host the Inter variable font via @fontsource-variable/inter (no CDN).
 
@@ -222,14 +222,14 @@ Task: add the Downloads section to the region page (contracts section 7, "Downlo
 - src/lib/exportCsv.js (pure, unit-tested): buildSeriesCsv(daily, lens, range) -> string with header
   date,series,value,lo,hi,kind,source,unit (missing days have empty value fields and kind "missing");
   buildCalendarCsv(grain, weekly|monthly, lens, range) -> a year x week or year x month table with a leading "year"
-  column. First line of every CSV is a comment row: "# FireRosetta <code_version> <generated_at> region=<id>
+  column. First line of every CSV is a comment row: "# Prometheus Torch <code_version> <generated_at> region=<id>
   lens=<lens> unit=<unit> source=NASA FIRMS" so the file explains itself.
 - src/lib/exportImage.js: given the chart's root SVG element (viz components expose it by ref), produce an SVG file
   (inline computed styles and CSS variables) and a PNG at 2x via canvas. No new dependency.
 - Hotspot CSV: a button for hotspots_recent.csv (plain link with the download attribute) and, if downloads.json exists,
   the list of yearly archives overlapping the selected range with sizes; if none exist say so plainly.
 - "Season Brief (PDF)" button linking to #/r/:region/brief.
-- File names: firerosetta_<region>_<lens>_<from>_<to>.csv etc.
+- File names: prometheus_torch_<region>_<lens>_<from>_<to>.csv etc.
 
 Tests: CSV has one line per day in range plus header and comment; missing days serialise correctly; commas in units are
 quoted; calendar CSV has 52 or 12 value columns.

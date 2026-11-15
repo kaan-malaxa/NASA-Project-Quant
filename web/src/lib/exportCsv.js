@@ -14,15 +14,15 @@ export function csvField(v) {
 
 export const csvLine = (fields) => fields.map(csvField).join(",");
 
-/** "# FireRosetta <code_version> <generated_at> region=<id> lens=<lens> unit=<unit> source=NASA FIRMS" */
+/** "# Prometheus Torch <code_version> <generated_at> region=<id> lens=<lens> unit=<unit> source=NASA FIRMS" */
 export function commentRow({ code_version, generated_at, region, lens, unit }) {
   const u = unit && /[",\r\n]/.test(unit) ? `"${unit.replace(/"/g, '""')}"` : unit ?? "";
-  return `# FireRosetta ${code_version ?? "unknown"} ${generated_at ?? "unknown"} region=${region} lens=${lens} unit=${u} source=NASA FIRMS`;
+  return `# Prometheus Torch ${code_version ?? "unknown"} ${generated_at ?? "unknown"} region=${region} lens=${lens} unit=${u} source=NASA FIRMS`;
 }
 
-/** firerosetta_<region>_<lens>_<from>_<to>[_<suffix>].<ext> */
+/** prometheus_torch_<region>_<lens>_<from>_<to>[_<suffix>].<ext> */
 export function exportFileName({ region, lens, from, to, suffix = undefined, ext }) {
-  return ["firerosetta", region, lens, from, to, suffix].filter(Boolean).join("_") + `.${ext}`;
+  return ["prometheus_torch", region, lens, from, to, suffix].filter(Boolean).join("_") + `.${ext}`;
 }
 
 /**

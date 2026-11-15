@@ -20,7 +20,7 @@ HEADER = ["latitude", "longitude", "acq_date", "acq_time", "satellite", "instrum
 
 @pytest.fixture
 def setup(tmp_path, monkeypatch):
-    monkeypatch.setenv("FIREROSETTA_DATA_ROOT", str(tmp_path))
+    monkeypatch.setenv("PROMETHEUS_TORCH_DATA_ROOT", str(tmp_path))
     region = replace(config.get_region("us"), bbox=[10, 10, 80, 12], polygon=None)
     monkeypatch.setattr(clean, "region_cells", lambda *args: {h3.latlng_to_cell(11, 11, 6)})
     return tmp_path, region

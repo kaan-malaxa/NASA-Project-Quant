@@ -55,7 +55,7 @@ Commands you provide: `python -m pipeline.synth --region synthland [--seed 7] [-
 
 ## 7. Session primer (paste at the start of every AI session)
 ```text
-You are assisting R4 on the FireRosetta project. Before doing anything, read these files fully:
+You are assisting R4 on the Prometheus Torch project. Before doing anything, read these files fully:
 - AGENTS.md
 - plan/03_SCIENCE_DECISIONS.md (SD-16 and SD-17 are mine; also SD-01 to SD-08 and section G)
 - plan/02_CONTRACTS.md sections 3, 4, 5 and 10, and the eyesight part of 6.13

@@ -115,7 +115,7 @@ export default function Brief() {
         </div>
 
         <header className="border-b border-black pb-2">
-          <p className="text-[8pt] tracking-wider uppercase">FireRosetta · Season Brief</p>
+          <p className="text-[8pt] tracking-wider uppercase">Prometheus Torch · Season Brief</p>
           <h1 className="text-[18pt] leading-tight font-semibold">{region.name}</h1>
           {analysis.index ? <p>Analysis years: {analysis.from}–{analysis.to}</p> : null}
           <p className="text-[9pt]">

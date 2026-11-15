@@ -1,1 +1,1 @@
-"""FireRosetta offline pipeline."""
+"""Prometheus Torch offline pipeline."""

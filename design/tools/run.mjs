@@ -65,7 +65,7 @@ const { chromium } = createRequire(path.join(WEB, "package.json"))(
 );
 
 // ---- build and serve the harness ----
-const OUT = path.join(os.tmpdir(), "firerosetta-r6-harness");
+const OUT = path.join(os.tmpdir(), "prometheus-torch-r6-harness");
 const config = {
   configFile: false,
   root: path.join(HERE, "harness"),

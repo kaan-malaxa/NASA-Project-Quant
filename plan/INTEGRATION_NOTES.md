@@ -1,4 +1,4 @@
-# FireRosetta integration repair
+# Prometheus Torch integration repair
 
 The user authorized the full cross-role repair and necessary contract changes, then explicitly requested
 local commits on main. This supersedes the original role-folder and branch restrictions for this repair.

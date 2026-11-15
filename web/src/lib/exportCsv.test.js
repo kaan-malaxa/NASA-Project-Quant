@@ -23,7 +23,7 @@ describe("buildSeriesCsv", () => {
     const csv = buildSeriesCsv(daily, "harmonized", { from: "2010-01-01", to: "2010-01-10" });
     const lines = csv.trimEnd().split("\n");
     expect(lines[0]).toBe(
-      '# FireRosetta abc1234 2026-11-14T00:00:00Z region=testland lens=harmonized unit="Aqua-equivalent fire cell-days, per day" source=NASA FIRMS',
+      '# Prometheus Torch abc1234 2026-11-14T00:00:00Z region=testland lens=harmonized unit="Aqua-equivalent fire cell-days, per day" source=NASA FIRMS',
     );
     expect(lines[1]).toBe("date,series,value,lo,hi,kind,source,unit");
     expect(lines).toHaveLength(2 + 10);
@@ -81,11 +81,11 @@ describe("buildCalendarCsv", () => {
 describe("names", () => {
   it("builds file names and the comment row", () => {
     expect(exportFileName({ region: "punjab", lens: "harmonized", from: "2003-01-01", to: "2026-11-13", ext: "csv" })).toBe(
-      "firerosetta_punjab_harmonized_2003-01-01_2026-11-13.csv",
+      "prometheus_torch_punjab_harmonized_2003-01-01_2026-11-13.csv",
     );
-    expect(exportFileName({ region: "p", lens: "l", from: "a", to: "b", suffix: "weeks", ext: "png" })).toBe("firerosetta_p_l_a_b_weeks.png");
+    expect(exportFileName({ region: "p", lens: "l", from: "a", to: "b", suffix: "weeks", ext: "png" })).toBe("prometheus_torch_p_l_a_b_weeks.png");
     expect(commentRow({ code_version: "sample", generated_at: "t", region: "r", lens: "l", unit: "u" })).toBe(
-      "# FireRosetta sample t region=r lens=l unit=u source=NASA FIRMS",
+      "# Prometheus Torch sample t region=r lens=l unit=u source=NASA FIRMS",
     );
   });
 });

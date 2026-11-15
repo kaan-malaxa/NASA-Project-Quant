@@ -144,7 +144,7 @@ One of these READMEs states the challenge was written by CONAE, Argentina's spac
 ## 4. Corrected pitch text (placeholders are filled from JSON at recording time)
 
 **One sentence everyone repeats:**
-> In 2012 NASA's fire satellites got sharper eyes, and in {region} the raw record shows about {ruler.jump_multiple.value} times as many hotspots for the same fires. FireRosetta puts 24 years on one scale, shows its work, and tells a land manager whether their own patch of Earth is really burning more, in the month the original satellites are going dark.
+> In 2012 NASA's fire satellites got sharper eyes, and in {region} the raw record shows about {ruler.jump_multiple.value} times as many hotspots for the same fires. Prometheus Torch puts 24 years on one scale, shows its work, and tells a land manager whether their own patch of Earth is really burning more, in the month the original satellites are going dark.
 
 **Three questions the app answers:** Is this place really burning more? When are its critical weeks, and are they shifting? Is this week normal?
 

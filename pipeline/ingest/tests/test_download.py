@@ -17,7 +17,7 @@ def local_data(tmp_path, monkeypatch):
     source = tmp_path / "source"
     source.mkdir()
     monkeypatch.setattr(paths, "source_data_root", lambda: source)
-    monkeypatch.setenv("FIREROSETTA_DATA_ROOT", str(tmp_path / "derived"))
+    monkeypatch.setenv("PROMETHEUS_TORCH_DATA_ROOT", str(tmp_path / "derived"))
     return source
 
 

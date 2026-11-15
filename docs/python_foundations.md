@@ -20,7 +20,7 @@ The seed outage entries are copied from the contract and still need verification
 
 All file locations are in `pipeline.common.paths`. The sole hotspot source
 is the existing US country files under `data/`.
-`--data-root` overrides `FIREROSETTA_DATA_ROOT` for derived output storage
+`--data-root` overrides `PROMETHEUS_TORCH_DATA_ROOT` for derived output storage
 only; neither setting can redirect hotspot inputs. The runtime region is
 `us`; fabricated and synthetic examples are isolated test fixtures.
 

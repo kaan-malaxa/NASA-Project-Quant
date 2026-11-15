@@ -155,14 +155,14 @@ def _print_summary(result):
 
 def main(argv=None) -> int:
     argv = list(sys.argv[1:] if argv is None else argv)
-    previous_root = os.environ.get("FIREROSETTA_DATA_ROOT")
+    previous_root = os.environ.get("PROMETHEUS_TORCH_DATA_ROOT")
     changed_root = False
     try:
         shared = _common()
         args = shared.cli.stage_parser("harmonize").parse_args(argv)
         # Preserve the environment override when the default flag was not given.
         if any(arg == "--data-root" or arg.startswith("--data-root=") for arg in argv):
-            os.environ["FIREROSETTA_DATA_ROOT"] = str(args.data_root)
+            os.environ["PROMETHEUS_TORCH_DATA_ROOT"] = str(args.data_root)
             changed_root = True
         logger = shared.log.get_logger("harmonize")
         logger.setLevel(args.log_level.upper())
@@ -180,9 +180,9 @@ def main(argv=None) -> int:
     finally:
         if changed_root:
             if previous_root is None:
-                os.environ.pop("FIREROSETTA_DATA_ROOT", None)
+                os.environ.pop("PROMETHEUS_TORCH_DATA_ROOT", None)
             else:
-                os.environ["FIREROSETTA_DATA_ROOT"] = previous_root
+                os.environ["PROMETHEUS_TORCH_DATA_ROOT"] = previous_root
 
 
 if __name__ == "__main__":

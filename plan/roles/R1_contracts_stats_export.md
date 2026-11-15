@@ -52,7 +52,7 @@ Python 3.11 via `uv`, DuckDB, pandas, numpy, scipy (`scipy.stats.theilslopes`), 
 
 ## 7. Session primer (paste at the start of every AI session)
 ```text
-You are assisting R1 on the FireRosetta project. Before doing anything, read these files fully:
+You are assisting R1 on the Prometheus Torch project. Before doing anything, read these files fully:
 - AGENTS.md
 - plan/02_CONTRACTS.md (all of it; I own section 6 and the export/stats commands in section 3)
 - plan/03_SCIENCE_DECISIONS.md (sections C, D, E, G and H matter most to me)

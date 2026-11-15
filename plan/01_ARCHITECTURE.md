@@ -3,7 +3,7 @@
 > Integration repair supersedes the original multi-region and TypeScript-runtime plans: whole United States (Alaska and Hawaii included), plus synthetic validation; JavaScript with generated declarations; selectable complete analysis years and separate exact dates. See `02_CONTRACTS.md` and `REQUIREMENTS_MATRIX.md`.
 
 
-FireRosetta · NASA Space Apps 2026 · Harmonization of MODIS and VIIRS Hot Spots
+Prometheus Torch · NASA Space Apps 2026 · Harmonization of MODIS and VIIRS Hot Spots
 Plan v2, written Saturday 14 Nov 2026, 15:30 EST. Submission closes Sunday 15 Nov, 23:59 local; we submit by 22:00.
 
 This plan replaces the Draft v1 charter's Architecture, Science method, Scope, Team and Timeline sections. The Mission, user table and pitch ideas from the charter still stand, with the corrections listed in `REPORTS.md`.
@@ -105,7 +105,7 @@ R3 science.yaml ──► R2, R4, R1 (read-only)
 ## 4. Repository layout
 
 ```
-firerosetta/
+prometheus-torch/
   AGENTS.md  CLAUDE.md  README.md  LICENSE  CODEOWNERS
   .gitattributes  .gitignore  .editorconfig  .env.example  .python-version
   pyproject.toml  uv.lock

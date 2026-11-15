@@ -242,19 +242,19 @@ describe("Region page: downloads", () => {
     const seriesBtn = await within(sec).findByRole("button", { name: "Series CSV" });
     await waitFor(() => expect(seriesBtn.disabled).toBe(false));
     await act(async () => seriesBtn.click());
-    expect(cap.saved[0].name).toBe("firerosetta_testland_harmonized_2026-11-01_2026-11-13.csv");
+    expect(cap.saved[0].name).toBe("prometheus_torch_testland_harmonized_2026-11-01_2026-11-13.csv");
     const lines = (await cap.saved[0].blob.text()).trimEnd().split("\n");
-    expect(lines[0]).toMatch(/^# FireRosetta test .* region=testland lens=harmonized unit=Aqua-equivalent fire cell-days per day source=NASA FIRMS$/);
+    expect(lines[0]).toMatch(/^# Prometheus Torch test .* region=testland lens=harmonized unit=Aqua-equivalent fire cell-days per day source=NASA FIRMS$/);
     expect(lines).toHaveLength(2 + 13);
     expect(lines[2 + 4]).toBe("2026-11-05,harmonized,,,,missing,,Aqua-equivalent fire cell-days per day");
 
     const calBtn = within(sec).getByRole("button", { name: "Calendar CSV" });
     await waitFor(() => expect(calBtn.disabled).toBe(false));
     await act(async () => calBtn.click());
-    expect(cap.saved[1].name).toBe("firerosetta_testland_harmonized_2026-11-01_2026-11-13_weeks.csv");
+    expect(cap.saved[1].name).toBe("prometheus_torch_testland_harmonized_2026-11-01_2026-11-13_weeks.csv");
 
     expect(within(sec).getByRole("button", { name: "PNG" }).disabled).toBe(true);
-    expect(within(sec).getByRole("link", { name: /Last 31 days/ }).getAttribute("download")).toBe("firerosetta_testland_hotspots_recent.csv");
+    expect(within(sec).getByRole("link", { name: /Last 31 days/ }).getAttribute("download")).toBe("prometheus_torch_testland_hotspots_recent.csv");
     await waitFor(() => expect(sec.textContent).toContain("2026, VIIRS on NOAA-20"));
     expect(sec.textContent).not.toContain("2010, VIIRS on Suomi NPP");
     expect(within(sec).getByRole("link", { name: /Season Brief/ }).getAttribute("href")).toBe("/r/testland/brief?from=2026-11-01");

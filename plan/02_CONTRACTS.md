@@ -33,8 +33,8 @@ Contents: §1 external endpoints · §2 environment and secrets · §3 command-l
 | Name | Where | Purpose |
 |---|---|---|
 | `FIRMS_MAP_KEY` | `.env` at repo root (git-ignored) or shell environment | E3, E4. Read only by `pipeline/ingest/`. |
-| `FIREROSETTA_DATA_ROOT` | optional env var | Overrides the default `data/` folder (for people who keep raw files on another drive). |
-| `VITE_BASE` | web build (CI sets it) | Base path for GitHub Pages, for example `/firerosetta/`. |
+| `PROMETHEUS_TORCH_DATA_ROOT` | optional env var | Overrides the default `data/` folder (for people who keep raw files on another drive). |
+| `VITE_BASE` | web build (CI sets it) | Base path of the deployed site: `/`, because GitHub Pages serves it from the root of the custom domain `prometheus-torch.design`. |
 
 `.env.example` is committed with empty values. CI never needs the MAP_KEY: the nowcast is fetched on a laptop and its JSON is committed.
 
@@ -425,7 +425,7 @@ Shared behaviour for every chart: renders with a `ref` to its root `<svg>` (for 
 The only Python code shared between stages. Its function signatures are part of the contract and are frozen at Gate A.
 
 ```python
-# paths.py — the single source of file locations (honours --data-root and FIREROSETTA_DATA_ROOT)
+# paths.py — the single source of file locations (honours --data-root and PROMETHEUS_TORCH_DATA_ROOT)
 data_root() -> Path
 raw_dir(region) -> Path;  clean_dir(region) -> Path;  grid_dir(region) -> Path
 harmonized_dir(region) -> Path;  eyesight_dir(region) -> Path
@@ -473,7 +473,7 @@ The user authorized changes across all ownership areas and the frozen interfaces
 
 ### Execution and provenance
 
-- `FIREROSETTA_WEB_DATA_DIR` and the common `--web-output-dir PATH` flag override the complete web output tree. `FIREROSETTA_DATA_ROOT` continues to override intermediates, never original source inputs.
+- `PROMETHEUS_TORCH_WEB_DATA_DIR` and the common `--web-output-dir PATH` flag override the complete web output tree. `PROMETHEUS_TORCH_DATA_ROOT` continues to override intermediates, never original source inputs.
 - Statistics stage outputs are staged under `data/stats/{region}/`, with the same full-record filenames plus the additions below. Only export installs the complete validated proposal into the web output tree. It installs `manifest.json` last and restores prior bytes if installation fails.
 - Export accepts repeatable `--region R`. The runner passes its explicit region scope. Unchanged published regions require a valid prior manifest and matching science/outage/region/polygon fingerprint; incompatible preservation requires rebuilding every published region.
 - `pipeline.run --all-regions --include-synthetic` includes planted-truth regions in a combined run. Without that flag, `--all-regions` keeps its real-region meaning.

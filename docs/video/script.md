@@ -2,7 +2,7 @@
 
 Generated from published outputs; confirm timing, team attribution and links before recording.
 
-FireRosetta makes a satellite record inspectable across changes in observing instruments. It calibrates separate sensor records to the Aqua scale, preserves missing observations and shows uncertainty, held-out prediction checks and the limits of the conclusion. A hotspot is a detection of heat in a pixel, not an individual fire. Counts describe fire cell-days, not burned area.
+Prometheus Torch makes a satellite record inspectable across changes in observing instruments. It calibrates separate sensor records to the Aqua scale, preserves missing observations and shows uncertainty, held-out prediction checks and the limits of the conclusion. A hotspot is a detection of heat in a pixel, not an individual fire. Counts describe fire cell-days, not burned area.
 
 In United States, VIIRS reports about 3.7 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not.
 

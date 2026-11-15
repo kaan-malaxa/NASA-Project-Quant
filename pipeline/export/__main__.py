@@ -64,9 +64,9 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--log-level", default="INFO")
     args = parser.parse_args(argv)
     if args.data_root:
-        os.environ["FIREROSETTA_DATA_ROOT"] = str(args.data_root)
+        os.environ["PROMETHEUS_TORCH_DATA_ROOT"] = str(args.data_root)
     if args.web_output_dir:
-        os.environ["FIREROSETTA_WEB_DATA_DIR"] = str(args.web_output_dir)
+        os.environ["PROMETHEUS_TORCH_WEB_DATA_DIR"] = str(args.web_output_dir)
 
     t0 = time.monotonic()
     if args.sample:

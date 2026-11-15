@@ -7,12 +7,12 @@ import { clearFetchCache } from "@/data/fetchJson.js";
 import { mockFetch } from "@/test/mockFetch.js";
 
 const cases = [
-  ["/", "Is it really burning more, or did the satellite get better eyes?", "FireRosetta"],
-  ["/pick", "Pick a place", "Pick a place · FireRosetta"],
-  ["/r/punjab", "Region", "Region · FireRosetta"],
-  ["/methods", "Methods and honesty", "Methods and honesty · FireRosetta"],
-  ["/gallery", "Component gallery", "Component gallery · FireRosetta"],
-  ["/no/such/page", "Page not found", "Page not found · FireRosetta"],
+  ["/", "Is it really burning more, or did the satellite get better eyes?", "Prometheus Torch"],
+  ["/pick", "Pick a place", "Pick a place · Prometheus Torch"],
+  ["/r/punjab", "Region", "Region · Prometheus Torch"],
+  ["/methods", "Methods and honesty", "Methods and honesty · Prometheus Torch"],
+  ["/gallery", "Component gallery", "Component gallery · Prometheus Torch"],
+  ["/no/such/page", "Page not found", "Page not found · Prometheus Torch"],
 ];
 
 beforeEach(() => {

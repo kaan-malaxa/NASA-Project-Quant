@@ -6,7 +6,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 
 def data_root() -> Path:
-    return Path(os.environ.get("FIREROSETTA_DATA_ROOT", PROJECT_ROOT / "data")).expanduser().resolve()
+    return Path(os.environ.get("PROMETHEUS_TORCH_DATA_ROOT", PROJECT_ROOT / "data")).expanduser().resolve()
 
 
 def source_data_root() -> Path:
@@ -35,7 +35,7 @@ def eyesight_dir(region) -> Path:
 
 
 def web_data_dir(region: str | None = None) -> Path:
-    base = Path(os.environ.get("FIREROSETTA_WEB_DATA_DIR", PROJECT_ROOT / "web" / "public" / "data")).resolve()
+    base = Path(os.environ.get("PROMETHEUS_TORCH_WEB_DATA_DIR", PROJECT_ROOT / "web" / "public" / "data")).resolve()
     return base if region is None else base / region
 
 

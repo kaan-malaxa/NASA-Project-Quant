@@ -30,7 +30,7 @@ def science():
 
 def set_data_root(data_root):
     if data_root is not None:
-        os.environ["FIREROSETTA_DATA_ROOT"] = str(data_root)
+        os.environ["PROMETHEUS_TORCH_DATA_ROOT"] = str(data_root)
 
 
 def aggregate_weekly(daily, value_cols):

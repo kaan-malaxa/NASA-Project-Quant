@@ -1,4 +1,4 @@
-# Owner: R5. Builds the static site in web/ and deploys it to GitHub Pages.
+# Owner: R5. Builds the static site in web/ and deploys it to GitHub Pages, served from the custom domain prometheus-torch.design.
 # JavaScript is checked by the installed compiler against generated contract declarations.
 name: web
 
@@ -40,8 +40,8 @@ jobs:
       - run: npm run e2e
       - run: npm run build
         env:
-          VITE_BASE: /${{ github.event.repository.name }}/
-          VITE_SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+          VITE_BASE: /
+          VITE_SITE_URL: https://prometheus-torch.design/
       - if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v5
       - if: github.event_name != 'pull_request'

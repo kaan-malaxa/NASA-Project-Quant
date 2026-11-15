@@ -16,7 +16,7 @@ code_version = io.code_version
 
 def set_data_root(data_root):
     if data_root is not None:
-        os.environ["FIREROSETTA_DATA_ROOT"] = str(data_root)
+        os.environ["PROMETHEUS_TORCH_DATA_ROOT"] = str(data_root)
 
 
 def science():

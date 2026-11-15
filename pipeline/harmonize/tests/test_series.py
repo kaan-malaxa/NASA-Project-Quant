@@ -468,10 +468,10 @@ def test_stage_validates_existing_schema_before_writing(shared, tmp_path):
 def test_stage_data_root_override_and_restore(shared, monkeypatch):
     import os
 
-    monkeypatch.setenv("FIREROSETTA_DATA_ROOT", "original-root")
+    monkeypatch.setenv("PROMETHEUS_TORCH_DATA_ROOT", "original-root")
     monkeypatch.setattr(stage, "_common", lambda: shared)
     seen = []
-    shared.config.get_region.side_effect = lambda region: seen.append(os.environ["FIREROSETTA_DATA_ROOT"])
+    shared.config.get_region.side_effect = lambda region: seen.append(os.environ["PROMETHEUS_TORCH_DATA_ROOT"])
     assert stage.main(["--region", "us", "--data-root", "new-root"]) == 0
     assert seen == ["new-root"]
-    assert os.environ["FIREROSETTA_DATA_ROOT"] == "original-root"
+    assert os.environ["PROMETHEUS_TORCH_DATA_ROOT"] == "original-root"

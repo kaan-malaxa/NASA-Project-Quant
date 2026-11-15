@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export const SITE_NAME = "FireRosetta";
+export const SITE_NAME = "Prometheus Torch";
 export const DEFAULT_DESCRIPTION =
   "Satellite-detected burning activity on one consistent scale, from MODIS to VIIRS, with the sensor change corrected.";
 

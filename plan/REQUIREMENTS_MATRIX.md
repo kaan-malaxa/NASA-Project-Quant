@@ -23,66 +23,66 @@ This matrix retains every role milestone. Historical schedule and three-region r
 
 | Milestone | Original requirement | Implementation status | Evidence |
 |---|---|---|---|
-| R1.A1 | JSON Schemas and the checker (start 16:30, 45 min) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R1.A2 | Sample data generator (45 min, must be merged by 18:15) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R1.B1 | Calendar core: weekly, monthly, daily, climatology (start 18:30) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R1.B2 | Trend, naive record, broken ruler, verdict sentence | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R1.B3 | Critical weeks (Must) and season windows | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R1.C1 | This week and this month (start Sun 07:00) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R1.C2 | Assemble regions.json, methods.json, manifest; go real | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R1.D1 | Where it burns: hex.json, outline, cells_monthly.csv (Should) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R1.D2 | Tier 2 selection and the viirs_equiv lens | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R1.E1 | Numbers audit list (by Sun 16:00) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R2.A1 | Repo scaffold and shared library (start 16:30, must be on main by 17:45) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R2.A2 | Download helpers and region polygons (17:45–18:30, then leave downloads running) | Local-input implementation; external inputs, publication or cross-OS CI remain explicit limits | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R2.B1 | Clean (start 18:30; test on R4's synthland files first) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R2.B2 | Grid, static mask, coverage | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R2.B3 | Data profile (post in chat before Gate B) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R2.C1 | Nowcast fetch and recent hotspots (Sun 07:00) | Local-input implementation; external inputs, publication or cross-OS CI remain explicit limits | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R2.C2 | Verify outages and external facts (Sun 08:00, 45 min, mostly reading) | Local-input implementation; external inputs, publication or cross-OS CI remain explicit limits | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R2.D1 | README, slides, submission text (Sun 10:00–14:00) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R2.D2 | Yearly hotspot archives on GitHub Releases (Should; only if Gate C passed) | Local-input implementation; external inputs, publication or cross-OS CI remain explicit limits | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R2.E1 | Video script filled from the audit list (Sun 17:00) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R2.E2 | Cross-OS reproducibility (Sun 15:00, with one teammate on a different OS) | Local-input implementation; external inputs, publication or cross-OS CI remain explicit limits | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R3.A1 | science.yaml (start 16:30, on main by 17:15) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R3.A2 | The calibration factor (17:15–18:30) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R3.B1 | The daily series and calibration.json (start 18:30) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R3.B2 | Uncertainty and the naive record | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R3.B3 | Planted-truth check for Tier 1 (before Gate B) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R3.C1 | Validation V1, V2, V3 (start Sun 07:00) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R3.C2 | Drift, saturation, backcast (V4, V5, V6) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R3.D1 | Science review of the outputs (Sun 10:30, mostly reading) | Automated evidence prepared; human science review/sign-off pending | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R3.E1 | Numbers audit (Sun 16:00) | Automated evidence prepared; human science review/sign-off pending | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R4.A1 | The simulated world and FIRMS-format writer (start 16:30; tiny files to R2 by 18:00) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R4.A2 | truth.json expected answers | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R4.B1 | Matching at cell-day level (start 18:30) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R4.B2 | The three-parameter fit | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R4.B3 | Stage entry point and curve.json on synthland (before Gate B) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R4.C1 | Real data (Sun 07:00) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R4.C2 | Forward and backward translation | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R4.D1 | Validation and the status decision (by Sun 13:00) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R4.D2 | Plain-language text for the Methods page (Sun 13:30, 20 min) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R4.E1 | Planted truth, full run (Sun 15:00) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R5.A1 | Scaffold (start 16:30, on main by 17:00) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R5.A2 | Data layer, types, SAMPLE banner (17:00–18:30) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R5.B1 | Landing and place picker (start 18:30) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R5.B2 | Region page: verdict, calendar, this week | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R5.B3 | Methods page | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R5.C1 | Date range and range analytics (Sun 07:00; challenge requirement) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R5.C2 | Downloads (challenge requirement) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R5.D1 | Draw your own area (Should; only after C1 and C2 are merged) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R5.D2 | Season Brief (Should) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R5.D3 | Smoke tests, accessibility, phone (Sun 13:00) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R5.E1 | Freeze (Sun 16:00–17:00) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R6.A1 | Stubs, tokens, theme, gallery (start as soon as R5's scaffold is on main; stubs by 17:30) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R6.A2 | BrokenRuler (by 18:30) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R6.B1 | CalendarHeatmap, week and month (start 18:30) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R6.B2 | FireYearClock | Clock implemented; two-person usability test pending | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R6.B3 | TrendBars, PercentileStrip, KindBadge, Legend | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R6.C1 | Real-data pass (Sun 10:00, after R1 announces real data) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R6.D1 | SeasonShiftChart, EyesightCurve, DriftChart | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R6.D2 | HexMap (and the draw control if S5 is alive) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
-| R6.E1 | Accessibility, colour vision, print, exports (Sun 14:00–16:00) | Implemented; verification is recorded in the acceptance log | Role-owned implementation and tests; `docs/repair_acceptance.md` |
+| R1.A1 | JSON Schemas and the checker (start 16:30, 45 min) | Implemented; verification is recorded in the acceptance log | contracts/; pipeline/export/check.py; `docs/repair_acceptance.md` |
+| R1.A2 | Sample data generator (45 min, must be merged by 18:15) | Implemented; verification is recorded in the acceptance log | pipeline/export/sample.py; `docs/repair_acceptance.md` |
+| R1.B1 | Calendar core: weekly, monthly, daily, climatology (start 18:30) | Implemented; verification is recorded in the acceptance log | pipeline/stats/calendar.py; `docs/repair_acceptance.md` |
+| R1.B2 | Trend, naive record, broken ruler, verdict sentence | Implemented; verification is recorded in the acceptance log | pipeline/stats/trend.py; pipeline/common/sentences.py; `docs/repair_acceptance.md` |
+| R1.B3 | Critical weeks (Must) and season windows | Implemented; verification is recorded in the acceptance log | pipeline/stats/season.py; `docs/repair_acceptance.md` |
+| R1.C1 | This week and this month (start Sun 07:00) | Implemented; verification is recorded in the acceptance log | pipeline/stats/nowcast.py; `docs/repair_acceptance.md` |
+| R1.C2 | Assemble regions.json, methods.json, manifest; go real | Implemented; verification is recorded in the acceptance log | pipeline/export/assemble.py; pipeline/common/publication.py; `docs/repair_acceptance.md` |
+| R1.D1 | Where it burns: hex.json, outline, cells_monthly.csv (Should) | Implemented; verification is recorded in the acceptance log | pipeline/stats/spatial.py; web/src/lib/spatial.js; `docs/repair_acceptance.md` |
+| R1.D2 | Tier 2 selection and the viirs_equiv lens | Implemented; verification is recorded in the acceptance log | pipeline/stats/__main__.py; pipeline/eyesight/validate.py; `docs/repair_acceptance.md` |
+| R1.E1 | Numbers audit list (by Sun 16:00) | Implemented; verification is recorded in the acceptance log | web/public/data/numbers_audit.md; `docs/repair_acceptance.md` |
+| R2.A1 | Repo scaffold and shared library (start 16:30, must be on main by 17:45) | Implemented; verification is recorded in the acceptance log | pipeline/common/; .github/workflows/pipeline.yml; `docs/repair_acceptance.md` |
+| R2.A2 | Download helpers and region polygons (17:45–18:30, then leave downloads running) | Local-input implementation; external inputs, publication or cross-OS CI remain explicit limits | pipeline/ingest/download.py; pipeline/config/regions/us.geojson; `docs/repair_acceptance.md` |
+| R2.B1 | Clean (start 18:30; test on R4's synthland files first) | Implemented; verification is recorded in the acceptance log | pipeline/ingest/clean.py; `docs/repair_acceptance.md` |
+| R2.B2 | Grid, static mask, coverage | Implemented; verification is recorded in the acceptance log | pipeline/ingest/grid.py; pipeline/ingest/static_mask.py; `docs/repair_acceptance.md` |
+| R2.B3 | Data profile (post in chat before Gate B) | Implemented; verification is recorded in the acceptance log | docs/profile_us.md; `docs/repair_acceptance.md` |
+| R2.C1 | Nowcast fetch and recent hotspots (Sun 07:00) | Local-input implementation; external inputs, publication or cross-OS CI remain explicit limits | pipeline/ingest/nowcast_fetch.py; docs/nowcast_handoff.md; `docs/repair_acceptance.md` |
+| R2.C2 | Verify outages and external facts (Sun 08:00, 45 min, mostly reading) | Local-input implementation; external inputs, publication or cross-OS CI remain explicit limits | docs/fact_verification.md; docs/source_fingerprints.md; `docs/repair_acceptance.md` |
+| R2.D1 | README, slides, submission text (Sun 10:00–14:00) | Implemented; verification is recorded in the acceptance log | pipeline/export/delivery.py; docs/submission.md; `docs/repair_acceptance.md` |
+| R2.D2 | Yearly hotspot archives on GitHub Releases (Should; only if Gate C passed) | Local-input implementation; external inputs, publication or cross-OS CI remain explicit limits | pipeline/ingest/hotspots_export.py; docs/hotspot_artifacts_acceptance.json; `docs/repair_acceptance.md` |
+| R2.E1 | Video script filled from the audit list (Sun 17:00) | Implemented; verification is recorded in the acceptance log | docs/video/script.md; docs/video/subtitles.srt; `docs/repair_acceptance.md` |
+| R2.E2 | Cross-OS reproducibility (Sun 15:00, with one teammate on a different OS) | Local-input implementation; external inputs, publication or cross-OS CI remain explicit limits | .github/workflows/pipeline.yml; docs/reproducibility_windows.json; `docs/repair_acceptance.md` |
+| R3.A1 | science.yaml (start 16:30, on main by 17:15) | Implemented; verification is recorded in the acceptance log | pipeline/config/science.yaml (unchanged constants); `docs/repair_acceptance.md` |
+| R3.A2 | The calibration factor (17:15–18:30) | Implemented; verification is recorded in the acceptance log | pipeline/harmonize/; pipeline/harmonize/tests/; `docs/repair_acceptance.md` |
+| R3.B1 | The daily series and calibration.json (start 18:30) | Implemented; verification is recorded in the acceptance log | pipeline/harmonize/; web/public/data/us/calibration.json; `docs/repair_acceptance.md` |
+| R3.B2 | Uncertainty and the naive record | Implemented; verification is recorded in the acceptance log | pipeline/harmonize/; pipeline/stats/trend.py; `docs/repair_acceptance.md` |
+| R3.B3 | Planted-truth check for Tier 1 (before Gate B) | Implemented; verification is recorded in the acceptance log | web/public/data/methods.json; pipeline/harmonize/tests/test_planted_truth_helpers.py; `docs/repair_acceptance.md` |
+| R3.C1 | Validation V1, V2, V3 (start Sun 07:00) | Implemented; verification is recorded in the acceptance log | pipeline/harmonize/; web/public/data/methods.json; `docs/repair_acceptance.md` |
+| R3.C2 | Drift, saturation, backcast (V4, V5, V6) | Implemented; verification is recorded in the acceptance log | pipeline/harmonize/; web/src/screens/Methods.jsx; `docs/repair_acceptance.md` |
+| R3.D1 | Science review of the outputs (Sun 10:30, mostly reading) | Automated evidence prepared; human science review/sign-off pending | docs/repair_acceptance.md (human sign-off pending); `docs/repair_acceptance.md` |
+| R3.E1 | Numbers audit (Sun 16:00) | Automated evidence prepared; human science review/sign-off pending | web/public/data/numbers_audit.md (human review pending); `docs/repair_acceptance.md` |
+| R4.A1 | The simulated world and FIRMS-format writer (start 16:30; tiny files to R2 by 18:00) | Implemented; verification is recorded in the acceptance log | pipeline/synth/; `docs/repair_acceptance.md` |
+| R4.A2 | truth.json expected answers | Implemented; verification is recorded in the acceptance log | pipeline/synth/; web/public/data/methods.json; `docs/repair_acceptance.md` |
+| R4.B1 | Matching at cell-day level (start 18:30) | Implemented; verification is recorded in the acceptance log | pipeline/eyesight/match.py; `docs/repair_acceptance.md` |
+| R4.B2 | The three-parameter fit | Implemented; verification is recorded in the acceptance log | pipeline/eyesight/fit.py; `docs/repair_acceptance.md` |
+| R4.B3 | Stage entry point and curve.json on synthland (before Gate B) | Implemented; verification is recorded in the acceptance log | pipeline/eyesight/stage.py; `docs/repair_acceptance.md` |
+| R4.C1 | Real data (Sun 07:00) | Implemented; verification is recorded in the acceptance log | pipeline/eyesight/stage.py; web/public/data/methods.json; `docs/repair_acceptance.md` |
+| R4.C2 | Forward and backward translation | Implemented; verification is recorded in the acceptance log | pipeline/eyesight/translate.py; `docs/repair_acceptance.md` |
+| R4.D1 | Validation and the status decision (by Sun 13:00) | Implemented; verification is recorded in the acceptance log | pipeline/eyesight/validate.py; pipeline/eyesight/tests/test_validate.py; `docs/repair_acceptance.md` |
+| R4.D2 | Plain-language text for the Methods page (Sun 13:30, 20 min) | Implemented; verification is recorded in the acceptance log | web/src/screens/Methods.jsx; pipeline/export/methods_text.yaml; `docs/repair_acceptance.md` |
+| R4.E1 | Planted truth, full run (Sun 15:00) | Implemented; verification is recorded in the acceptance log | docs/repair_evidence.json; web/public/data/methods.json; `docs/repair_acceptance.md` |
+| R5.A1 | Scaffold (start 16:30, on main by 17:00) | Implemented; verification is recorded in the acceptance log | web/package.json; web/src/app/; `docs/repair_acceptance.md` |
+| R5.A2 | Data layer, types, SAMPLE banner (17:00–18:30) | Implemented; verification is recorded in the acceptance log | web/src/data/; web/scripts/gen-types.mjs; web/jsconfig.json; `docs/repair_acceptance.md` |
+| R5.B1 | Landing and place picker (start 18:30) | Implemented; verification is recorded in the acceptance log | web/src/screens/; `docs/repair_acceptance.md` |
+| R5.B2 | Region page: verdict, calendar, this week | Implemented; verification is recorded in the acceptance log | web/src/screens/Region.jsx; web/src/screens/region/; `docs/repair_acceptance.md` |
+| R5.B3 | Methods page | Implemented; verification is recorded in the acceptance log | web/src/screens/Methods.jsx; `docs/repair_acceptance.md` |
+| R5.C1 | Date range and range analytics (Sun 07:00; challenge requirement) | Implemented; verification is recorded in the acceptance log | web/src/data/useAnalysisPeriod.js; web/src/screens/region/AnalysisYears.jsx; `docs/repair_acceptance.md` |
+| R5.C2 | Downloads (challenge requirement) | Implemented; verification is recorded in the acceptance log | web/src/screens/region/DownloadsPanel.jsx; web/src/lib/exportCsv.js; `docs/repair_acceptance.md` |
+| R5.D1 | Draw your own area (Should; only after C1 and C2 are merged) | Implemented; verification is recorded in the acceptance log | web/src/lib/spatial.js; web/src/screens/region/AoiPanel.jsx; web/src/lib/aoi.region.test.js; `docs/repair_acceptance.md` |
+| R5.D2 | Season Brief (Should) | Implemented; verification is recorded in the acceptance log | web/src/screens/Brief.jsx; `docs/repair_acceptance.md` |
+| R5.D3 | Smoke tests, accessibility, phone (Sun 13:00) | Implemented; verification is recorded in the acceptance log | web/e2e/real.spec.js; docs/repair_acceptance.md; `docs/repair_acceptance.md` |
+| R5.E1 | Freeze (Sun 16:00–17:00) | Implemented; verification is recorded in the acceptance log | docs/repair_acceptance.md; .github/workflows/web.yml (external publication pending); `docs/repair_acceptance.md` |
+| R6.A1 | Stubs, tokens, theme, gallery (start as soon as R5's scaffold is on main; stubs by 17:30) | Implemented; verification is recorded in the acceptance log | web/src/viz/Gallery.jsx; web/src/styles/tokens.css; `docs/repair_acceptance.md` |
+| R6.A2 | BrokenRuler (by 18:30) | Implemented; verification is recorded in the acceptance log | web/src/viz/BrokenRuler.jsx; `docs/repair_acceptance.md` |
+| R6.B1 | CalendarHeatmap, week and month (start 18:30) | Implemented; verification is recorded in the acceptance log | web/src/viz/CalendarHeatmap.jsx; `docs/repair_acceptance.md` |
+| R6.B2 | FireYearClock | Clock implemented; two-person usability test pending | web/src/viz/FireYearClock.jsx; design/clock_test.md; `docs/repair_acceptance.md` |
+| R6.B3 | TrendBars, PercentileStrip, KindBadge, Legend | Implemented; verification is recorded in the acceptance log | web/src/viz/TrendBars.jsx; web/src/viz/PercentileStrip.jsx; web/src/viz/Legend.jsx; `docs/repair_acceptance.md` |
+| R6.C1 | Real-data pass (Sun 10:00, after R1 announces real data) | Implemented; verification is recorded in the acceptance log | design/c1/real_capture.json; design/c1/firefox_hover.json; `docs/repair_acceptance.md` |
+| R6.D1 | SeasonShiftChart, EyesightCurve, DriftChart | Implemented; verification is recorded in the acceptance log | web/src/viz/; design/exports/manifest.json; `docs/repair_acceptance.md` |
+| R6.D2 | HexMap (and the draw control if S5 is alive) | Implemented; verification is recorded in the acceptance log | web/src/viz/HexMap.jsx; web/src/viz/hexLayout.js; `docs/repair_acceptance.md` |
+| R6.E1 | Accessibility, colour vision, print, exports (Sun 14:00–16:00) | Implemented; verification is recorded in the acceptance log | design/a11y/check_results.json; design/exports/manifest.json; `docs/repair_acceptance.md` |
 
 ## Design specification details
 

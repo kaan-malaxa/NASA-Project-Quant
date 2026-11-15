@@ -1,24 +1,27 @@
 1
-00:00:00,000 --> 00:00:02,000
-FireRosetta.
+00:00:00,000 --> 00:00:15,000
+FireRosetta makes a satellite record inspectable across changes in observing instruments. It calibrates separate sensor records to the Aqua scale, preserves missing observations and shows uncertainty, held-out prediction checks and the limits of the conclusion. A hotspot is a detection of heat in a pixel, not an individual fire. Counts describe fire cell-days, not burned area.
 
 2
-00:00:02,000 --> 00:00:05,000
-{{audit:us_jump_multiple}} times.
+00:00:15,000 --> 00:00:30,000
+In United States, VIIRS reports about 3.7 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not.
 
 3
-00:00:05,000 --> 00:00:12,000
-we calibrate only where the old satellite
-was steady, and prove it on a simulated world
+00:00:30,000 --> 00:00:45,000
+The record does not show a clear long-term change here (-9 to 2% per decade).
 
 4
-00:00:12,000 --> 00:00:22,000
-{{audit:us_verdict_sentence}}
+00:00:45,000 --> 00:01:00,000
+No recent satellite data.
 
 5
-00:00:22,000 --> 00:00:27,000
-{{audit:us_nowcast_sentence}}
+00:01:00,000 --> 00:01:15,000
+The methods page reports prediction tests on held-out years, including failures and the separate yearly reliability diagnostic.
 
 6
-00:00:27,000 --> 00:00:30,000
-Data: NASA FIRMS.
+00:01:15,000 --> 00:01:30,000
+Choose analysis years to compare seasons. Use exact dates for daily totals and downloads. Maps and selected areas share the regional calculation.
+
+7
+00:01:30,000 --> 00:01:45,000
+A hotspot is not a fire or a measure of burned area. Missing observations remain missing. Human scientific review remains pending.

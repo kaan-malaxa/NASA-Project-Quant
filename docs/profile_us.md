@@ -1,20 +1,15 @@
 # US data profile
 
-Generated at: 2026-11-15T00:10:11.575181+00:00
-Code version: 3a2db5e
+Generated at: 2026-11-15T19:26:48.830792+00:00
+Code version: 7ca983e0
 
-Processed-data profile: unavailable (complete cleaning outputs are absent).
-The following is a PROVISIONAL, UNFILTERED source inventory, not validated calibration input.
-It includes all local source years and detections outside the counting polygon.
-These records have not passed SD-02, deduplication, or the static mask.
-R3 must confirm n20_first_full_year after clean/grid succeeds.
-
-Source directory: data/
+Basis: cleaned detections; all sensor files are present.
+Scope is the existing cleaning outputs, which may cover only a staged subset of the archive.
 
 | Sensor | First local_day | Last local_day |
 |---|---|---|
-| aqua | 2002-07-04 | 2025-12-31 |
-| terra | 2000-10-31 | 2025-12-31 |
+| aqua | 2003-01-01 | 2025-12-31 |
+| terra | 2002-12-31 | 2025-12-31 |
 | snpp | 2012-01-20 | 2025-12-31 |
 | noaa20 | 2018-04-01 | 2025-12-31 |
 
@@ -22,32 +17,30 @@ Rows per sensor/year; each entry is rows (NRT share). Years use local solar date
 
 | Year | aqua | terra | snpp | noaa20 |
 |---|---:|---:|---:|---:|
-| 2000 | unavailable | 3794 (0.000%) | unavailable | unavailable |
-| 2001 | unavailable | 44934 (0.000%) | unavailable | unavailable |
-| 2002 | 24199 (0.000%) | 55519 (0.000%) | unavailable | unavailable |
-| 2003 | 62094 (0.000%) | 52369 (0.000%) | unavailable | unavailable |
-| 2004 | 78318 (0.000%) | 80067 (0.000%) | unavailable | unavailable |
-| 2005 | 84501 (0.000%) | 86671 (0.000%) | unavailable | unavailable |
-| 2006 | 68244 (0.000%) | 58484 (0.000%) | unavailable | unavailable |
-| 2007 | 75366 (0.000%) | 67058 (0.000%) | unavailable | unavailable |
-| 2008 | 64532 (0.000%) | 55259 (0.000%) | unavailable | unavailable |
-| 2009 | 61806 (0.000%) | 53370 (0.000%) | unavailable | unavailable |
-| 2010 | 54252 (0.000%) | 44074 (0.000%) | unavailable | unavailable |
-| 2011 | 67777 (0.000%) | 56096 (0.000%) | unavailable | unavailable |
-| 2012 | 72062 (0.000%) | 65220 (0.000%) | 536477 (0.000%) | unavailable |
-| 2013 | 53241 (0.000%) | 49106 (0.000%) | 404761 (0.000%) | unavailable |
-| 2014 | 53774 (0.000%) | 45101 (0.000%) | 377204 (0.000%) | unavailable |
-| 2015 | 75268 (0.000%) | 71721 (0.000%) | 581054 (0.000%) | unavailable |
-| 2016 | 61895 (0.000%) | 50840 (0.000%) | 432963 (0.000%) | unavailable |
-| 2017 | 79135 (0.000%) | 73567 (0.000%) | 596168 (0.000%) | unavailable |
-| 2018 | 67895 (0.000%) | 63083 (0.000%) | 556244 (0.000%) | 461477 (0.000%) |
-| 2019 | 53500 (0.000%) | 53715 (0.000%) | 453400 (0.000%) | 451429 (0.000%) |
-| 2020 | 78606 (0.000%) | 75247 (0.000%) | 672822 (0.000%) | 665078 (0.000%) |
-| 2021 | 83689 (0.000%) | 79991 (0.000%) | 664995 (0.000%) | 670917 (0.000%) |
-| 2022 | 67926 (0.000%) | 62432 (0.000%) | 531089 (0.000%) | 546431 (0.000%) |
-| 2023 | 51287 (0.000%) | 42715 (0.000%) | 388672 (0.000%) | 390873 (0.000%) |
-| 2024 | 67227 (0.000%) | 56504 (0.000%) | 484736 (0.000%) | 535136 (0.000%) |
-| 2025 | 61797 (0.000%) | 48027 (0.000%) | 469809 (0.000%) | 485403 (0.000%) |
+| 2002 | unavailable | 1 (0.000%) | unavailable | unavailable |
+| 2003 | 56340 (0.000%) | 46244 (0.000%) | unavailable | unavailable |
+| 2004 | 70866 (0.000%) | 71116 (0.000%) | unavailable | unavailable |
+| 2005 | 75667 (0.000%) | 76359 (0.000%) | unavailable | unavailable |
+| 2006 | 62787 (0.000%) | 52769 (0.000%) | unavailable | unavailable |
+| 2007 | 68644 (0.000%) | 59800 (0.000%) | unavailable | unavailable |
+| 2008 | 59621 (0.000%) | 49844 (0.000%) | unavailable | unavailable |
+| 2009 | 57266 (0.000%) | 48421 (0.000%) | unavailable | unavailable |
+| 2010 | 49545 (0.000%) | 39276 (0.000%) | unavailable | unavailable |
+| 2011 | 62833 (0.000%) | 50786 (0.000%) | unavailable | unavailable |
+| 2012 | 65984 (0.000%) | 58263 (0.000%) | 416453 (0.000%) | unavailable |
+| 2013 | 47453 (0.000%) | 42891 (0.000%) | 297815 (0.000%) | unavailable |
+| 2014 | 48296 (0.000%) | 39248 (0.000%) | 281094 (0.000%) | unavailable |
+| 2015 | 67598 (0.000%) | 62784 (0.000%) | 469564 (0.000%) | unavailable |
+| 2016 | 56063 (0.000%) | 45073 (0.000%) | 324839 (0.000%) | unavailable |
+| 2017 | 71717 (0.000%) | 65129 (0.000%) | 478798 (0.000%) | unavailable |
+| 2018 | 59234 (0.000%) | 53194 (0.000%) | 448434 (0.000%) | 362180 (0.000%) |
+| 2019 | 48373 (0.000%) | 47241 (0.000%) | 353615 (0.000%) | 342749 (0.000%) |
+| 2020 | 72520 (0.000%) | 67595 (0.000%) | 566497 (0.000%) | 559277 (0.000%) |
+| 2021 | 76241 (0.000%) | 71249 (0.000%) | 557067 (0.000%) | 560022 (0.000%) |
+| 2022 | 60852 (0.000%) | 53815 (0.000%) | 427075 (0.000%) | 435344 (0.000%) |
+| 2023 | 46270 (0.000%) | 36913 (0.000%) | 289456 (0.000%) | 290194 (0.000%) |
+| 2024 | 61708 (0.000%) | 50033 (0.000%) | 387620 (0.000%) | 427993 (0.000%) |
+| 2025 | 55779 (0.000%) | 40793 (0.000%) | 357897 (0.000%) | 368642 (0.000%) |
 
 n20_first_full_year: 2019
 Criterion: NOAA-20 detections on >=300 distinct local days in a calendar year.
@@ -65,62 +58,72 @@ Criterion: NOAA-20 detections on >=300 distinct local days in a calendar year.
 
 ## Grid and coverage
 
-Uncovered days per sensor/reason: unavailable (coverage.parquet is missing).
-Region cells: unavailable (region_cells.parquet is missing).
-Peak Aqua week: unavailable (cell-day and/or coverage output is missing).
+| Sensor | Uncovered reason | Days |
+|---|---|---:|
+| aqua | no_raw_rows | 2 |
+| aqua | outage_list | 34 |
+| noaa20 | before_start | 5569 |
+| noaa20 | outage_list | 6 |
+| snpp | before_start | 3306 |
+| snpp | no_raw_rows | 2 |
+| snpp | outage_list | 36 |
+| terra | no_raw_rows | 40 |
+Region cells: 257738; membership: polygon.
+Peak Aqua daytime week: year=2024, week=8, fire cell-days per 7 days=2597.000.
 
 ## File sizes
 
 | File | Bytes |
 |---|---:|
-| ../data/MODIS_data/modis_2000_United_States.csv | 303009 |
-| ../data/MODIS_data/modis_2001_United_States.csv | 3601083 |
-| ../data/MODIS_data/modis_2002_United_States.csv | 6402373 |
-| ../data/MODIS_data/modis_2003_United_States.csv | 9143035 |
-| ../data/MODIS_data/modis_2004_United_States.csv | 12681927 |
-| ../data/MODIS_data/modis_2005_United_States.csv | 13696548 |
-| ../data/MODIS_data/modis_2006_United_States.csv | 10115387 |
-| ../data/MODIS_data/modis_2007_United_States.csv | 11392524 |
-| ../data/MODIS_data/modis_2008_United_States.csv | 9546176 |
-| ../data/MODIS_data/modis_2009_United_States.csv | 9196476 |
-| ../data/MODIS_data/modis_2010_United_States.csv | 7817497 |
-| ../data/MODIS_data/modis_2011_United_States.csv | 9873534 |
-| ../data/MODIS_data/modis_2012_United_States.csv | 10990750 |
-| ../data/MODIS_data/modis_2013_United_States.csv | 8177124 |
-| ../data/MODIS_data/modis_2014_United_States.csv | 7873157 |
-| ../data/MODIS_data/modis_2015_United_States.csv | 11775566 |
-| ../data/MODIS_data/modis_2016_United_States.csv | 8992320 |
-| ../data/MODIS_data/modis_2017_United_States.csv | 12216545 |
-| ../data/MODIS_data/modis_2018_United_States.csv | 10619746 |
-| ../data/MODIS_data/modis_2019_United_States.csv | 8661787 |
-| ../data/MODIS_data/modis_2020_United_States.csv | 12497392 |
-| ../data/MODIS_data/modis_2021_United_States.csv | 13287566 |
-| ../data/MODIS_data/modis_2022_United_States.csv | 10554458 |
-| ../data/MODIS_data/modis_2023_United_States.csv | 7666284 |
-| ../data/MODIS_data/modis_2024_United_States.csv | 10130018 |
-| ../data/MODIS_data/modis_2025_United_States.csv | 8984242 |
-| ../data/VIIRS-JPSS_data/viirs-jpss1_2018_United_States.csv | 38297124 |
-| ../data/VIIRS-JPSS_data/viirs-jpss1_2019_United_States.csv | 37400235 |
-| ../data/VIIRS-JPSS_data/viirs-jpss1_2020_United_States.csv | 55202682 |
-| ../data/VIIRS-JPSS_data/viirs-jpss1_2021_United_States.csv | 55646945 |
-| ../data/VIIRS-JPSS_data/viirs-jpss1_2022_United_States.csv | 45265406 |
-| ../data/VIIRS-JPSS_data/viirs-jpss1_2023_United_States.csv | 32317030 |
-| ../data/VIIRS-JPSS_data/viirs-jpss1_2024_United_States.csv | 44325866 |
-| ../data/VIIRS-JPSS_data/viirs-jpss1_2025_United_States.csv | 40166431 |
-| ../data/VIIRS-SNPP_data/viirs-snpp_2012_United_States.csv | 43376908 |
-| ../data/VIIRS-SNPP_data/viirs-snpp_2013_United_States.csv | 32698823 |
-| ../data/VIIRS-SNPP_data/viirs-snpp_2014_United_States.csv | 30438954 |
-| ../data/VIIRS-SNPP_data/viirs-snpp_2015_United_States.csv | 47028405 |
-| ../data/VIIRS-SNPP_data/viirs-snpp_2016_United_States.csv | 34943483 |
-| ../data/VIIRS-SNPP_data/viirs-snpp_2017_United_States.csv | 48214199 |
-| ../data/VIIRS-SNPP_data/viirs-snpp_2018_United_States.csv | 44998998 |
-| ../data/VIIRS-SNPP_data/viirs-snpp_2019_United_States.csv | 36655419 |
-| ../data/VIIRS-SNPP_data/viirs-snpp_2020_United_States.csv | 54488777 |
-| ../data/VIIRS-SNPP_data/viirs-snpp_2021_United_States.csv | 53821377 |
-| ../data/VIIRS-SNPP_data/viirs-snpp_2022_United_States.csv | 42927300 |
-| ../data/VIIRS-SNPP_data/viirs-snpp_2023_United_States.csv | 31350864 |
-| ../data/VIIRS-SNPP_data/viirs-snpp_2024_United_States.csv | 39159899 |
-| ../data/VIIRS-SNPP_data/viirs-snpp_2025_United_States.csv | 37923148 |
+| clean/us/detections_aqua.parquet | 30017440 |
+| clean/us/detections_noaa20.parquet | 69690792 |
+| clean/us/detections_snpp.parquet | 117758217 |
+| clean/us/detections_terra.parquet | 26678153 |
+| grid/us/celldays.parquet | 38986677 |
+| grid/us/coverage.parquet | 81370 |
+| grid/us/region_cells.parquet | 4901256 |
+| raw/us/modis_country_2003.csv | 9028563 |
+| raw/us/modis_country_2004.csv | 12523541 |
+| raw/us/modis_country_2005.csv | 13525387 |
+| raw/us/modis_country_2006.csv | 9988649 |
+| raw/us/modis_country_2007.csv | 11250103 |
+| raw/us/modis_country_2008.csv | 9426378 |
+| raw/us/modis_country_2009.csv | 9081301 |
+| raw/us/modis_country_2010.csv | 7719174 |
+| raw/us/modis_country_2011.csv | 9749666 |
+| raw/us/modis_country_2012.csv | 10853454 |
+| raw/us/modis_country_2013.csv | 8074775 |
+| raw/us/modis_country_2014.csv | 7774285 |
+| raw/us/modis_country_2015.csv | 11628581 |
+| raw/us/modis_country_2016.csv | 8879583 |
+| raw/us/modis_country_2017.csv | 12063842 |
+| raw/us/modis_country_2018.csv | 10488759 |
+| raw/us/modis_country_2019.csv | 8554573 |
+| raw/us/modis_country_2020.csv | 12343543 |
+| raw/us/modis_country_2021.csv | 13123878 |
+| raw/us/modis_country_2022.csv | 10424099 |
 | raw/us/modis_country_2023.csv | 7572283 |
+| raw/us/modis_country_2024.csv | 10006305 |
+| raw/us/modis_country_2025.csv | 8874396 |
+| raw/us/viirs_noaa20_country_2018.csv | 37835646 |
+| raw/us/viirs_noaa20_country_2019.csv | 36948805 |
+| raw/us/viirs_noaa20_country_2020.csv | 54537603 |
+| raw/us/viirs_noaa20_country_2021.csv | 54976027 |
+| raw/us/viirs_noaa20_country_2022.csv | 44718974 |
 | raw/us/viirs_noaa20_country_2023.csv | 31926156 |
+| raw/us/viirs_noaa20_country_2024.csv | 43790729 |
+| raw/us/viirs_noaa20_country_2025.csv | 39681027 |
+| raw/us/viirs_snpp_country_2012.csv | 42840430 |
+| raw/us/viirs_snpp_country_2013.csv | 32294061 |
+| raw/us/viirs_snpp_country_2014.csv | 30061749 |
+| raw/us/viirs_snpp_country_2015.csv | 46447362 |
+| raw/us/viirs_snpp_country_2016.csv | 34510507 |
+| raw/us/viirs_snpp_country_2017.csv | 47618030 |
+| raw/us/viirs_snpp_country_2018.csv | 44442753 |
+| raw/us/viirs_snpp_country_2019.csv | 36202018 |
+| raw/us/viirs_snpp_country_2020.csv | 53815954 |
+| raw/us/viirs_snpp_country_2021.csv | 53156381 |
+| raw/us/viirs_snpp_country_2022.csv | 42396210 |
 | raw/us/viirs_snpp_country_2023.csv | 30962191 |
+| raw/us/viirs_snpp_country_2024.csv | 38675162 |
+| raw/us/viirs_snpp_country_2025.csv | 37453338 |

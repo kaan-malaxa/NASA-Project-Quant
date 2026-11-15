@@ -1,0 +1,108 @@
+{
+  "regions": [
+    {
+      "canonical_matches": {
+        "climatology": true,
+        "ruler": true,
+        "season": true,
+        "trend": true
+      },
+      "default_years": [
+        2003,
+        2025
+      ],
+      "period_count": 276,
+      "region": "us",
+      "scenarios": [
+        {
+          "fixed_anomaly_baseline": true,
+          "qualification": "Robustness comparison unavailable for the selected years: aqua_only_2003_2022, translated_from_2012",
+          "trend_available": false,
+          "years": [
+            2014,
+            2015
+          ]
+        },
+        {
+          "fixed_anomaly_baseline": true,
+          "qualification": "",
+          "trend_available": true,
+          "years": [
+            2003,
+            2010
+          ]
+        },
+        {
+          "fixed_anomaly_baseline": true,
+          "qualification": "",
+          "trend_available": true,
+          "years": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "fixed_anomaly_baseline": true,
+          "qualification": "Robustness comparison unavailable for the selected years: aqua_only_2003_2022",
+          "trend_available": true,
+          "years": [
+            2023,
+            2025
+          ]
+        }
+      ]
+    },
+    {
+      "canonical_matches": {
+        "climatology": true,
+        "ruler": true,
+        "season": true,
+        "trend": true
+      },
+      "default_years": [
+        2003,
+        2025
+      ],
+      "period_count": 276,
+      "region": "synthland",
+      "scenarios": [
+        {
+          "fixed_anomaly_baseline": true,
+          "qualification": "Robustness comparison unavailable for the selected years: aqua_only_2003_2022, translated_from_2012",
+          "trend_available": false,
+          "years": [
+            2014,
+            2015
+          ]
+        },
+        {
+          "fixed_anomaly_baseline": true,
+          "qualification": "",
+          "trend_available": true,
+          "years": [
+            2003,
+            2010
+          ]
+        },
+        {
+          "fixed_anomaly_baseline": true,
+          "qualification": "",
+          "trend_available": true,
+          "years": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "fixed_anomaly_baseline": true,
+          "qualification": "Robustness comparison unavailable for the selected years: aqua_only_2003_2022",
+          "trend_available": true,
+          "years": [
+            2023,
+            2025
+          ]
+        }
+      ]
+    }
+  ]
+}

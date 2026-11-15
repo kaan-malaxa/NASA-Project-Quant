@@ -1,113 +1,100 @@
 # FireRosetta
 
-FireRosetta asks whether satellite-detected burning activity in the United States changed, or whether a change in the observing instrument changed the record. Its planned calendar and trend verdict put MODIS and VIIRS observations on a shared Aqua-equivalent scale, show uncertainty, and preserve missing data. The project pairs that story with published calibration checks so a reader can inspect the evidence behind the conclusion. A hotspot is a detection of heat in a pixel; it does not identify an individual fire.
+FireRosetta makes a satellite record inspectable across changes in observing instruments. It calibrates separate sensor records to the Aqua scale, preserves missing observations and shows uncertainty, held-out prediction checks and the limits of the conclusion. A hotspot is a detection of heat in a pixel, not an individual fire. Counts describe fire cell-days, not burned area.
 
-[Live site]({{link:live_site}}) · [Demo video]({{link:video}}) · [Slide deck](docs/slides/deck.md) · [Submission draft](docs/submission.md)
+The static JavaScript application reads validated files from web/public/data/. Analysis years select complete calendar years and load Python-precomputed trend, season, climatology and ruler results. Exact dates independently select daily totals and downloads. Anomaly comparisons retain the configured historical baseline. Maps and area summaries sum authoritative daily-source contributions, including outage fills, calibration bounds and regional coverage scaling. The analysis polygon includes Alaska and Hawaii; display wrapping leaves that polygon unchanged.
 
-**Draft status:** numerical claims remain `{{audit:label}}` placeholders until supplied through `web/public/data/numbers_audit.md`. These labels request audit entries; they do not imply that results exist. The audit, `methods.json`, and web assets are absent from this checkout. Local ingestion and its shared library are implemented; the scientific conclusions and product screens described below await integration and review.
+## Reproduce locally
 
-The supplied `data/` folder contains raw US country CSVs in `MODIS_data/`, `VIIRS-SNPP_data/` and `VIIRS-JPSS_data/`. It contains no numbers audit or methods export. These observations establish the input source; calibration results and validation claims still require the pipeline's reviewed outputs. Placeholders for other contributors' limitations, team details, AI disclosures and published assets are reserved for later completion.
-
-## What it answers
-
-- Has satellite-detected burning activity changed after accounting for the sensor transition?
-- When are the critical periods of the US burning calendar, and has their timing shifted?
-- When genuine recent observations are available, how does current activity compare with the historical seasonal pattern?
-
-## How it works
-
-The intended end-to-end workflow is:
-
-- **Stage local inputs.** Preserve the US NASA FIRMS CSVs in `data/`, clip staged copies to the configured download bounds, and record their provenance in `data/raw/us/MANIFEST.json`.
-- **Clean and establish coverage.** Normalize sensor names, apply the configured detection filters and static-source mask, remove duplicates, and assign local solar days. Keep missing observation days explicit.
-- **Count activity consistently.** Group each sensor's detections into fire cell-days: a grid cell active on a local day. Apply US polygon membership and keep sensor totals separate.
-- **Calibrate and test.** Translate each VIIRS sensor to Aqua's reference scale using the configured stable reference period. Test on held-out years, check drift, and compare the planned planted-truth and detection-probability results.
-- **Publish the evidence.** Export the calendar, season statistics, trend verdict and uncertainty ranges to static website files. Label observed, harmonized, estimated, missing and sample values distinctly.
-
-## Proof points
-
-These are the evidence checks required by the plan; their outcomes are pending.
-
-- **Drift-aware calibration:** fit against the configured stable Aqua period, then inspect the annual drift diagnostic. Fit period: `{{audit:us_calibration_fit_period}}`; drift result: `{{audit:us_drift_summary}}`.
-- **Planted truth:** recover known parameters in isolated synthetic validation inputs, kept separate from US observations. Recovery result: `{{audit:planted_truth_result}}`.
-- **Two routes agree:** compare the empirical calibration with the detection-probability route on held-out years. Agreement: `{{audit:us_routes_agreement}}`. An exploratory curve must retain that label.
-- **Verdict with ranges:** use the pipeline-generated sentence and robustness checks, including an unclear conclusion when warranted: `{{audit:us_verdict_sentence}}`.
-
-## How to run
-
-Run from the repository root. Install uv and use the Python version pinned by the repository.
+Run these commands separately from the repository root:
 
 ```text
-uv sync
+uv sync --frozen
+uv run python -m pipeline.run --all-regions --include-synthetic
+uv run python -m pipeline.export --check
+uv run pytest -q
+uv run ruff check pipeline
+uv run python -m pipeline.export.delivery
 ```
 
-Stage the existing local country files before ingestion; this command does not download new hotspot data:
+For one region use `--region us` or `--region synthland`. To isolate a run, pass `--data-root` and
+`--web-output-dir`; these move derived outputs, while supplied original country CSVs stay under `data/`.
+Compatible published regions are preserved without requiring their intermediates. A changed configuration
+or invalid prior manifest requires a complete rebuild. See [contracts](plan/02_CONTRACTS.md).
+
+From `web/`, run these commands separately:
 
 ```text
-uv run python -m pipeline.ingest.download --region us --via country
-```
-
-With the synced virtual environment active, run:
-
-```text
-python -m pipeline.run --region us
-```
-
-The equivalent command without activating the environment is:
-
-```text
-uv run python -m pipeline.run --region us
-```
-
-The current checkout needs the science owner's `pipeline/config/science.yaml` before default staging, cleaning or gridding can run. Harmonization, eyesight, statistics, export and the web scaffold are still pending. The runner reports missing stages as `SKIP`; that message is not evidence of completed analysis.
-
-Once the web scaffold and exported data are available, use a shell supporting the requested command chain:
-
-```text
-cd web && npm ci && npm run dev
-```
-
-For shells that require separate commands, including Windows PowerShell:
-
-```text
-cd web
 npm ci
+npm run gen:types
+npm run typecheck
+npm run lint
+npm test
+npm run build
+npx playwright install chromium
+npm run e2e
 npm run dev
 ```
 
-Authoritative hotspot inputs remain in the parent repository's `data/MODIS_data/`, `data/VIIRS-SNPP_data/` and `data/VIIRS-JPSS_data/`. Staged copies live under the Python project's `data/raw/us/`; derived tables live under `data/clean/us/` and `data/grid/us/`. Output-directory overrides do not change the source directory. See [the local US data policy](docs/downloads_and_regions.md).
+On PowerShell systems that block npm.ps1, use `npm.cmd` and `npx.cmd`. Runtime source remains JavaScript;
+the compiler checks it against generated schema declarations. No new dependency is required.
 
-Recent products require genuine local VIIRS NOAA-20 near-real-time inputs and coverage of the requested window. Historical country files are never relabeled as recent observations; unavailable recent coverage leaves previous outputs untouched. See [the nowcast handoff](docs/nowcast_handoff.md).
+## Audited output
 
-## Data sources and attribution
+These sentences are generated from the published JSON, with every claim traced in the
+[numbers audit](web/public/data/numbers_audit.md). They remain subject to human scientific sign-off.
 
-- **[NASA FIRMS](https://firms.modaps.eosdis.nasa.gov/):** the locally supplied [US country CSVs](https://firms.modaps.eosdis.nasa.gov/country/), using [MODIS Terra and Aqua active-fire products](https://firms.modaps.eosdis.nasa.gov/content/descriptions/FIRMS_MODIS_Firehotspots.html) and [VIIRS S-NPP and NOAA-20 active-fire products](https://firms.modaps.eosdis.nasa.gov/content/descriptions/FIRMS_VIIRS_Firehotspots.html). The recent-data path accepts genuine local NOAA-20 near-real-time observations only when available.
-- **[Natural Earth](https://www.naturalearthdata.com/about/terms-of-use/):** public-domain administrative boundaries used to construct the committed US outline. Boundaries are geographic reference data, separate from hotspot observations.
-- **Optional basemap attribution:** [OpenFreeMap](https://openfreemap.org/), [© OpenMapTiles](https://www.openmaptiles.org/), data from [© OpenStreetMap contributors](https://www.openstreetmap.org/copyright). Retain attribution on maps and any map screenshots in slides or video.
+> In United States, VIIRS reports about 3.7 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not.
 
-## Limitations
+Source: `us/ruler.json#/sentence`.
 
-{{methods:limitations}}
+> The record does not show a clear long-term change here (-9 to 2% per decade).
 
-Pending: copy the complete limitations list verbatim from `web/public/data/methods.json`. That file is absent; this draft does not substitute a newly written list.
+Source: `us/trend.json#/sentence`.
 
-## AI use
+> No recent satellite data.
 
-OpenAI Codex assisted the data-engineering work with Python implementation, test development, debugging, source checks and documentation drafting. This statement covers the assistant work recorded for the data and delivery role. Other team assistant use: {{ai:other_assistants_and_tasks}}. Human review completed: {{ai:human_review_completed}}. The team must confirm these disclosures, inspect the code and sources, and obtain science-owner sign-off on audited claims before submission.
+Source: `us/nowcast.json#/sentence`.
 
-## Team and roles
+- tier1 loyo_weekly_wape: 0.122. Entire held-out calendar year excluded from monthly and annual-baseline fits, including shrinkage; jointly covered Aqua/S-NPP days, common coverage-scaled weeks; n=paired valid weeks. Zero observed totals or constant weekly counts make the corresponding metric null.
+- tier2 reliability_err: 0.0. Locked pooled |sum p - sum observed| / sum observed across held-out years. Neighbour-match sensitivity (reported, not used): c 0.825 -> 0.900 (change +0.076); mean monthly k_T2 0.374 -> 0.499 (change +0.124, largest monthly change +0.130); g kept same-cell (1.514).
+- tier2 reliability_year_absolute_err: 0.019. Diagnostic: sum of absolute yearly prediction errors / total observed; does not cancel across years.
+- tier2 loyo_weekly_wape: 0.166. NOAA-20 days of harmonized_t2 use the curve fitted on S-NPP (same VIIRS instrument design); no NOAA-20-specific curve was fitted. aqua_raw/snpp_raw from R3 daily.parquet.
+- tier2 t1_t2_wape: 0.164. Tier 1 vs Tier 2 predictions from matching excluded-year folds, weekly.
 
-Team: {{team:name}}. Project: FireRosetta.
+- planted truth passed (count of pass = true): 10 of 10  methods.json#/planted_truth
 
-| Member | Role |
-|---|---|
-| {{team:coordinator_member}} | Contracts, calendar statistics, export and integration |
-| Ethan Bui-Quang | Data engineering, shared library and delivery |
-| {{team:science_member}} | Harmonization, calibration and scientific validation |
-| {{team:simulation_member}} | Planted-truth simulator and detection-probability model |
-| {{team:web_member}} | Web application, product screens and deployment |
-| {{team:visualization_member}} | Visualization, accessibility and design system |
+## Data and limitations
 
-## Licence
+Credit: [NASA FIRMS](https://firms.modaps.eosdis.nasa.gov/). Original country CSVs are unchanged.
+The simulator is a separate, explicitly labelled validation region. Genuine recent inputs require independent
+daily coverage metadata; historical data are never relabelled as recent. Local hotspot archives and their
+inventory are prepared under `data/exports/`; release hosting remains pending.
 
-Project code is available under the [MIT License](LICENSE). Source datasets and basemap content retain their own terms and attributions, linked above.
+- Only daytime detections are used in this version. Night-time detections are kept in the data but not shown.
+- Near-real-time detections are filtered per map cell by a static heat-source mask; standard detections are filtered one by one.
+- From 2026 the record uses NOAA-20 with the S-NPP eyesight curve, assuming the two instruments see fires the same way.
+- Fire cell-days describe the spread of satellite-detected burning activity, not burned area, fire counts, severity or damage.
+- The analysis covers the approved whole-US polygon, including Alaska and Hawaii. A display wrap does not change membership.
+- Calibration measured across the whole region is applied to smaller selected areas. Small areas can have different detection conditions.
+- Cloud, smoke, viewing geometry and overpass time can affect detections; coverage rules cannot measure every missed observation.
+- Recent activity remains unavailable until genuine near-real-time detections and independent coverage metadata exist.
+- The trend always uses the count-based translation. The eyesight route is used for the estimated historical lens only when it passes the fixed acceptance tests.
+- Pooled reliability can cancel errors of opposite sign across years. The separately reported absolute-year diagnostic exposes that cancellation.
+- Anomaly ranks use the fixed configured historical baseline; selected-period seasons use only the selected complete years.
+- Spatial maps exclude years with missing required bins. Published sparse contributions omit covered zero cells but retain missing bins as null.
+
+- [NASA FIRMS lists Suomi NPP fire observations through 2 November 2026.](https://firms.modaps.eosdis.nasa.gov/content/descriptions/FIRMS_VIIRS_Firehotspots.html) (checked 2026-11-15).
+- [NASA describes Aqua moving away from its maintained orbit and observing later in the afternoon.](https://science.nasa.gov/mission/aqua/) (checked 2026-11-15).
+
+Geographic boundary credit: [Natural Earth](https://www.naturalearthdata.com/about/terms-of-use/).
+Optional basemap: [OpenFreeMap](https://openfreemap.org/), OpenMapTiles and OpenStreetMap contributors.
+Project code: [MIT License](LICENSE).
+
+## Review and delivery
+
+See the [requirements matrix](plan/REQUIREMENTS_MATRIX.md) and [repair acceptance](docs/repair_acceptance.md).
+
+Human completion remains pending: scientific sign-off, the two-person clock usability test, team identities and AI disclosure review, final submission links and the read-aloud check. Cross-OS CI is configured to compare scientific payloads; a Windows run alone does not establish those results. No external publication is part of this repair.
+
+OpenAI Codex assisted implementation, integration repair, regression tests, source verification and document generation. The team must confirm other assistant use and completed human review before submission.

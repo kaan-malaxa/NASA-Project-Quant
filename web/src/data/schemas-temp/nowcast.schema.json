@@ -1,0 +1,199 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "nowcast (TEMPORARY, R5; replace with contracts/nowcast.schema.json from R1)",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "code_version",
+    "region",
+    "as_of",
+    "source",
+    "window",
+    "value",
+    "lo",
+    "hi",
+    "unit",
+    "percentile",
+    "status",
+    "baseline_years",
+    "history",
+    "month_to_date",
+    "kind",
+    "input_note",
+    "sentence"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "code_version": {
+      "type": "string"
+    },
+    "region": {
+      "type": "string"
+    },
+    "as_of": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    },
+    "window": {
+      "type": "object",
+      "required": [
+        "start",
+        "end",
+        "days_covered"
+      ],
+      "properties": {
+        "start": {
+          "type": "string"
+        },
+        "end": {
+          "type": "string"
+        },
+        "days_covered": {
+          "type": "integer"
+        }
+      }
+    },
+    "value": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "lo": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "hi": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "unit": {
+      "type": "string"
+    },
+    "percentile": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "status": {
+      "enum": [
+        "unavailable",
+        "low_activity",
+        "below_normal",
+        "normal",
+        "above_normal",
+        "extreme"
+      ]
+    },
+    "baseline_years": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "year",
+          "value",
+          "kind"
+        ],
+        "properties": {
+          "year": {
+            "type": "integer"
+          },
+          "value": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "kind": {
+            "enum": [
+              "observed",
+              "harmonized",
+              "estimated",
+              "missing",
+              "sample"
+            ]
+          }
+        }
+      }
+    },
+    "month_to_date": {
+      "type": "object",
+      "required": [
+        "month",
+        "through_day",
+        "value",
+        "median",
+        "ratio",
+        "percentile"
+      ],
+      "properties": {
+        "month": {
+          "type": "integer"
+        },
+        "through_day": {
+          "type": "integer"
+        },
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "median": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "ratio": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "percentile": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      }
+    },
+    "kind": {
+      "enum": [
+        "observed",
+        "harmonized",
+        "estimated",
+        "missing",
+        "sample"
+      ]
+    },
+    "input_note": {
+      "type": "string"
+    },
+    "sentence": {
+      "type": "string"
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
+import SampleBanner from "@/components/SampleBanner.jsx";
 
 export const FIRMS_URL = "https://firms.modaps.eosdis.nasa.gov/";
 
@@ -11,12 +12,15 @@ function navClass({ isActive }) {
 
 /**
  * Header, main outlet, footer with the NASA FIRMS credit on every page.
- * `banner` is the slot for the SAMPLE DATA banner (wired to the sample context in prompt A2).
+ * `banner` is the slot for the SAMPLE DATA banner; it defaults to <SampleBanner/>, which shows itself
+ * only while the sample context is true.
  */
-export default function AppShell({ banner = null }) {
+export default function AppShell({ banner = <SampleBanner /> }) {
   return (
     <div className="flex min-h-svh flex-col">
-      <div data-slot="sample-banner">{banner}</div>
+      <div data-slot="sample-banner" className="sticky top-0 z-50">
+        {banner}
+      </div>
       <header className="border-b">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-3">
           <Link to="/" className="text-lg font-semibold tracking-tight focus-visible:outline-2">

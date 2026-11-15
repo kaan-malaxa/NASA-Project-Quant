@@ -1,0 +1,325 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "methods (TEMPORARY, R5; replace with contracts/methods.schema.json from R1)",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "code_version",
+    "decisions",
+    "validation",
+    "drift",
+    "eyesight",
+    "planted_truth",
+    "inputs",
+    "filters",
+    "sources",
+    "limitations",
+    "ai_use"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "code_version": {
+      "type": "string"
+    },
+    "decisions": {
+      "type": "object",
+      "required": [
+        "reference",
+        "count_resolution",
+        "aqua_trusted_through",
+        "snpp_through",
+        "baseline_years",
+        "science_yaml_sha256"
+      ],
+      "properties": {
+        "reference": {
+          "type": "string"
+        },
+        "count_resolution": {
+          "type": "integer"
+        },
+        "aqua_trusted_through": {
+          "type": "string"
+        },
+        "snpp_through": {
+          "type": "string"
+        },
+        "baseline_years": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "science_yaml_sha256": {
+          "type": "string"
+        }
+      }
+    },
+    "validation": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "region",
+          "test",
+          "method",
+          "value",
+          "n",
+          "years",
+          "note"
+        ],
+        "properties": {
+          "region": {
+            "type": "string"
+          },
+          "test": {
+            "enum": [
+              "loyo_weekly_wape",
+              "loyo_weekly_r",
+              "loyo_bias",
+              "handoff_annual_mape",
+              "step_naive",
+              "step_harmonized",
+              "sat_agreement_wape",
+              "k_direct_vs_chained_pct",
+              "backcast_weekly_wape",
+              "t1_t2_wape",
+              "reliability_err",
+              "saturation_r5",
+              "saturation_r6"
+            ]
+          },
+          "method": {
+            "enum": [
+              "tier1",
+              "tier2",
+              "none"
+            ]
+          },
+          "value": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "baselines": {
+            "type": "object"
+          },
+          "n": {
+            "type": "integer"
+          },
+          "years": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "drift": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "region",
+          "sensor",
+          "year",
+          "k_annual",
+          "lo",
+          "hi"
+        ],
+        "properties": {
+          "region": {
+            "type": "string"
+          },
+          "sensor": {
+            "type": "string"
+          },
+          "year": {
+            "type": "integer"
+          },
+          "k_annual": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "lo": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "hi": {
+            "type": [
+              "number",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "eyesight": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "region",
+          "status"
+        ],
+        "properties": {
+          "region": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "validated",
+              "exploratory",
+              "absent"
+            ]
+          }
+        }
+      }
+    },
+    "planted_truth": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "quantity",
+          "truth",
+          "recovered",
+          "tolerance",
+          "pass"
+        ],
+        "properties": {
+          "quantity": {
+            "type": "string"
+          },
+          "truth": {
+            "type": "number"
+          },
+          "recovered": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "tolerance": {
+            "type": "number"
+          },
+          "pass": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source",
+          "region",
+          "rows"
+        ],
+        "properties": {
+          "source": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "rows": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "filters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "region",
+          "sensor",
+          "step",
+          "rows_in",
+          "rows_dropped"
+        ],
+        "properties": {
+          "region": {
+            "type": "string"
+          },
+          "sensor": {
+            "type": "string"
+          },
+          "step": {
+            "type": "string"
+          },
+          "rows_in": {
+            "type": "integer"
+          },
+          "rows_dropped": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "claim_id",
+          "text",
+          "url",
+          "checked"
+        ],
+        "properties": {
+          "claim_id": {
+            "enum": [
+              "snpp_end",
+              "snpp_anomaly_2026",
+              "aqua_drift",
+              "aqua_end_science",
+              "submission_rules"
+            ]
+          },
+          "text": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "checked": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "ai_use": {
+      "type": "string"
+    }
+  }
+}

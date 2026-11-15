@@ -66,7 +66,7 @@ export default function Region() {
       <CalendarSection files={files} url={url} setUrl={setUrl} lastDataDay={lastDataDay} />
       <CriticalWeeksSection state={files.season} />
       <ThisWeekSection state={files.nowcast} />
-      <WhereSection hex={files.hex} outline={files.outline} aoi={url.aoi} setUrl={setUrl} />
+      <WhereSection region={region} files={files} url={url} setUrl={setUrl} />
       <DownloadsSection>
         <InThisPeriod daily={files.daily} nowcast={files.nowcast} url={url} lastDataDay={lastDataDay} lensLabel={lensLabel} />
       </DownloadsSection>

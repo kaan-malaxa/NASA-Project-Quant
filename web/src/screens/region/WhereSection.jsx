@@ -5,10 +5,14 @@ import KindBadge from "@/components/KindBadge.jsx";
 import { VizSlot } from "@/components/Viz.jsx";
 import { sensorLabel } from "@/lib/labels.js";
 import StorySection from "./StorySection.jsx";
+import AoiPanel from "./AoiPanel.jsx";
 
-/** Screen 7 · Where: HexMap with a critical-weeks / all-year toggle. Drawing an area comes in prompt D1. */
-export default function WhereSection({ hex, outline, aoi, setUrl }) {
+/** Screen 7 · Where: HexMap with a critical-weeks / all-year toggle, and the draw-your-own-area lens (D1). */
+export default function WhereSection({ region, files, url, setUrl }) {
+  const { hex, outline } = files;
   const [metric, setMetric] = useState("critical");
+  // The draw control exists only when cells_monthly.csv is listed for this region.
+  const canDraw = files.cells_monthly?.status === "lazy" || files.cells_monthly?.status === "ok";
   return (
     <StorySection id="where" title="Where it burns">
       <SectionState state={hex} title="Map" skeletonClassName="h-80">
@@ -30,8 +34,8 @@ export default function WhereSection({ hex, outline, aoi, setUrl }) {
               hex={h}
               outline={outline?.status === "ok" ? outline.data : undefined}
               metric={metric}
-              selectedCells={aoi}
-              drawEnabled={false}
+              selectedCells={url.aoi}
+              drawEnabled={canDraw}
               onAoiChange={(cells) => setUrl({ aoi: cells })}
               placeholderClassName="h-80"
             />
@@ -41,9 +45,15 @@ export default function WhereSection({ hex, outline, aoi, setUrl }) {
               </span>
               <KindBadge kind={h.kind} />
             </p>
+            {canDraw && !url.aoi.length ? (
+              <p className="text-muted-foreground text-sm">
+                Draw a rectangle or click hexagons on the map to see the record for your own area.
+              </p>
+            ) : null}
           </div>
         )}
       </SectionState>
+      {url.aoi.length ? <AoiPanel region={region} files={files} url={url} setUrl={setUrl} /> : null}
     </StorySection>
   );
 }

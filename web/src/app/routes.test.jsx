@@ -9,7 +9,6 @@ const cases = [
   ["/", "Is it really burning more, or did the satellite get better eyes?"],
   ["/pick", "Pick a place"],
   ["/r/punjab", "Region"],
-  ["/r/punjab/brief", "8 · Season Brief"],
   ["/methods", "Methods and honesty"],
   ["/gallery", "Component gallery"],
 ];
@@ -24,6 +23,16 @@ afterEach(() => {
 });
 
 describe("routes (contracts section 7)", () => {
+  it("/r/punjab/brief renders without the site header or navigation", () => {
+    render(
+      <MemoryRouter initialEntries={["/r/punjab/brief"]}>
+        <AppRoutes />
+      </MemoryRouter>,
+    );
+    expect(screen.getByRole("heading", { level: 1 }).textContent).toBe("Season Brief");
+    expect(screen.queryByRole("navigation", { name: "Main" })).toBeNull();
+  });
+
   it.each(cases)("%s renders its heading, the nav and the FIRMS credit", (path, title) => {
     render(
       <MemoryRouter initialEntries={[path]}>

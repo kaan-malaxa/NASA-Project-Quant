@@ -178,6 +178,9 @@ describe("Region page: your area (AOI)", () => {
     renderRegion(`/r/testland?aoi=${A}`);
     const panel = await screen.findByRole("region", { name: /Your area/ });
     expect(panel.textContent).toContain("Area data are not available for this place.");
+  });
+});
+
 describe("Region page: downloads", () => {
   function captureDownloads() {
     const saved = [];

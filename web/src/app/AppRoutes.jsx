@@ -15,10 +15,11 @@ export default function AppRoutes() {
         <Route index element={<Landing />} />
         <Route path="pick" element={<Picker />} />
         <Route path="r/:region" element={<Region />} />
-        <Route path="r/:region/brief" element={<Brief />} />
         <Route path="methods" element={<Methods />} />
         <Route path="gallery" element={<GalleryScreen />} />
       </Route>
+      {/* The Season Brief is a print page: no header, no navigation. It carries its own credit footer. */}
+      <Route path="r/:region/brief" element={<Brief />} />
     </Routes>
   );
 }

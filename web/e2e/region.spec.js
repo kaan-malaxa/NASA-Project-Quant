@@ -34,7 +34,7 @@ test.describe("region page", () => {
   test("range presets write from/to and update In this period", async ({ page }) => {
     await serveData(page);
     await open(page, "#/r/alpha");
-    const bar = page.getByRole("group", { name: "Date range" });
+    const bar = page.getByRole("group", { name: "Exact dates" });
     const panel = page.getByRole("region", { name: /In this period/ });
 
     await bar.getByRole("button", { name: "VIIRS era 2012+" }).click();
@@ -59,13 +59,9 @@ test.describe("region page", () => {
     const button = page.getByRole("button", { name: "Series CSV" });
     test.skip((await button.count()) === 0, "The Downloads panel (prompt C2) is not on this branch yet.");
     const [download] = await Promise.all([page.waitForEvent("download"), button.click()]);
-    expect(download.suggestedFilename()).toMatch(/^firerosetta_alpha_harmonized_2003-01-01_2026-11-13\.csv$/);
-    const text = await (
-      await download.createReadStream()
-    )
-      .toArray()
-      .then((c) => Buffer.concat(c).toString("utf8"));
-    expect(text.split("\n")[0]).toMatch(/^# FireRosetta /);
+    expect(download.suggestedFilename()).toMatch(/^prometheus_torch_alpha_harmonized_2003-01-01_2026-11-13\.csv$/);
+    const text = await (await download.createReadStream()).toArray().then((c) => Buffer.concat(c).toString("utf8"));
+    expect(text.split("\n")[0]).toMatch(/^# Prometheus Torch /);
   });
 
   test("the SAMPLE banner is present on sample data", async ({ page }) => {

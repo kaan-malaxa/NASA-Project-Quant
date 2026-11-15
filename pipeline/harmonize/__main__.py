@@ -38,11 +38,9 @@ def run_region(region: str, pass_: str | None = None, *, shared=None):
     if not region_in_scope(science, region):
         raise ValueError("Select the configured United States region or a simulated planted-truth region")
     shared.config.get_region(region)
-    # Optional provenance gate: used when the shared library offers one (R2's ingest verifies its own
-    # staged inputs against the local source CSVs before it writes the files read here).
-    verify = getattr(shared.io, "verify_us_inputs", None)
-    if verify is not None:
-        verify(region)
+    from pipeline.common import paths, provenance
+
+    provenance.verify_stage(region, "grid")
     cells = shared.io.read_parquet(shared.paths.celldays(region), schema_name="celldays")
     coverage = shared.io.read_parquet(shared.paths.coverage(region), schema_name="coverage")
     result = build_outputs(cells, coverage, science, region, pass_)
@@ -129,9 +127,19 @@ def run_region(region: str, pass_: str | None = None, *, shared=None):
         schema_name="naive_annual",
     )
     shared.io.write_json(result.validation, output.joinpath("validation_t1.json"))
+    heldout = validation.loyo.weekly[["year", "week", "observed", "tier1"]].copy()
+    heldout["excluded_year"] = heldout["year"]
+    shared.io.write_parquet(heldout, paths.heldout_predictions(region, "harmonize"), "heldout_weekly_t1")
+    shared.io.write_json({str(year): {"training_years": fold["training_years"]}
+                          for year, fold in validation.loyo.folds.items()}, output / "folds.json")
     for name, figure in validation_figures(validation).items():
         shared.io.write_figure(figure, output.joinpath("figures", name))
         figure.clear()
+    provenance.record_stage(region, "harmonize", [],
+                            [output / name for name in ("daily.parquet", "annual_bootstrap.parquet",
+                                                        "naive_annual.parquet", "calibration.json",
+                                                        "validation_t1.json", "heldout_weekly.parquet", "folds.json")],
+                            upstream=("grid",))
     return result
 
 
@@ -147,14 +155,14 @@ def _print_summary(result):
 
 def main(argv=None) -> int:
     argv = list(sys.argv[1:] if argv is None else argv)
-    previous_root = os.environ.get("FIREROSETTA_DATA_ROOT")
+    previous_root = os.environ.get("PROMETHEUS_TORCH_DATA_ROOT")
     changed_root = False
     try:
         shared = _common()
         args = shared.cli.stage_parser("harmonize").parse_args(argv)
         # Preserve the environment override when the default flag was not given.
         if any(arg == "--data-root" or arg.startswith("--data-root=") for arg in argv):
-            os.environ["FIREROSETTA_DATA_ROOT"] = str(args.data_root)
+            os.environ["PROMETHEUS_TORCH_DATA_ROOT"] = str(args.data_root)
             changed_root = True
         logger = shared.log.get_logger("harmonize")
         logger.setLevel(args.log_level.upper())
@@ -172,9 +180,9 @@ def main(argv=None) -> int:
     finally:
         if changed_root:
             if previous_root is None:
-                os.environ.pop("FIREROSETTA_DATA_ROOT", None)
+                os.environ.pop("PROMETHEUS_TORCH_DATA_ROOT", None)
             else:
-                os.environ["FIREROSETTA_DATA_ROOT"] = previous_root
+                os.environ["PROMETHEUS_TORCH_DATA_ROOT"] = previous_root
 
 
 if __name__ == "__main__":

@@ -18,16 +18,11 @@ from .validate import validate
 MIN_MATCHED_ROWS = 2000
 STATUS_DEFAULT = "exploratory"  # SD-17 decides validated/exploratory in D1
 FRP_QUANTILES = (5, 25, 50, 75, 95)
-# Geographic boxes (lat, lon) of Alaska (incl. the Aleutians across 180) and Hawaii. The usa region is the
-# contiguous US, so no matched cell may fall in them (R4 role file, C1 and section 11).
+# Geographic diagnostics only. The approved whole-US analysis includes Alaska and Hawaii.
 OUTSIDE_CONUS = {
     "alaska": lambda lat, lon: (lat >= 51.0) & ((lon <= -129.0) | (lon >= 172.0)),
     "hawaii": lambda lat, lon: (lat >= 18.5) & (lat <= 22.5) & (lon >= -161.0) & (lon <= -154.5),
 }
-
-
-class RegionClipError(RuntimeError):
-    """The matched table holds cells the region must not contain; do not fit (section 11)."""
 
 
 def outside_conus_counts(matched: pd.DataFrame) -> dict[str, int]:
@@ -98,8 +93,6 @@ def fit_entry(region: str, celldays: pd.DataFrame, coverage: pd.DataFrame, scien
     diag = {"n_matched": n, **counts, "seconds_match": time.time() - t0}
 
     outside = outside_conus_counts(matched)
-    if region == "usa" and any(outside.values()):
-        raise RegionClipError(f"usa matched table holds Alaska/Hawaii rows {outside}; fix the region clip (R2)")
     diag["outside_conus_rows"] = outside
     if n:
         diag["thin_years"] = describe_before_fit(matched, log)
@@ -185,6 +178,9 @@ def translate(region: str, entry: dict, diag: dict, celldays: pd.DataFrame, cove
 
 
 def run(region: str, pass_: str, log: logging.Logger) -> tuple[dict, dict]:
+    from pipeline.common import provenance
+
+    provenance.verify_stage(region, "harmonize")
     science, from_yaml = compat.science()
     if not from_yaml:
         log.warning("science.yaml not found; using the contracts section 4.2 copy in pipeline/eyesight/compat.py")
@@ -210,6 +206,11 @@ def run(region: str, pass_: str, log: logging.Logger) -> tuple[dict, dict]:
         diag.update({"validation_rows": rows, "sd17": conds})
         compat.write_json({"validation": rows}, compat.validation_t2_path(region))
     compat.write_json(entry, out / "curve.json")
+    outputs = [out / "curve.json"]
+    if entry["status"] != "absent":
+        outputs += [out / name for name in ("daily_t2.parquet", "validation_t2.json", "folds.json",
+                                            "heldout_weekly.parquet")]
+    provenance.record_stage(region, "eyesight", [], outputs, upstream=("harmonize",))
     if entry["status"] == "absent":
         log.warning("status absent: %s", diag["reason"])
     else:

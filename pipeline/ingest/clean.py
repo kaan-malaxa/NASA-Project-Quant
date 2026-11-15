@@ -10,7 +10,7 @@ import numpy as np
 import pandas as pd
 import pyarrow as pa
 
-from pipeline.common import config, io, paths, sensors, timebins
+from pipeline.common import config, io, paths, provenance, sensors, timebins
 from pipeline.ingest import download
 
 SENSORS = ("aqua", "terra", "snpp", "noaa20")
@@ -65,7 +65,7 @@ def normalise(frame, family, nrt_prefix):
     aliases = {value: sensors.normalise_sensor(value, family) for value in frame.satellite.unique()}
     result["sensor"] = frame.satellite.map(aliases)
     instruments = set(frame.instrument.dropna().str.upper())
-    if instruments != {family.upper()}:
+    if not frame.empty and instruments != {family.upper()}:
         raise ValueError(f"Unexpected instrument values: {sorted(instruments)}")
     for column in ("latitude", "longitude", "frp", "scan", "track"):
         result[column] = pd.to_numeric(frame[column], errors="coerce")
@@ -144,13 +144,13 @@ def clean_files(inputs, region, science, *, publish=True):
             retain(~frame.duplicated(["sensor", "latitude", "longitude", "acq_datetime_utc"]), "duplicates")
             west, south, east, north = region.bbox
             retain(frame.longitude.between(west, east) & frame.latitude.between(south, north), "bbox")
-            static = frame.loc[frame["type"].isin([1, 2, 3]) & frame["product"].eq("SP")]
+            static = frame.loc[frame["type"].isin(science["static_mask"]["types"]) & frame["product"].eq("SP")]
             if not static.empty:
                 candidates.extend(
                     h3.latlng_to_cell(lat, lon, science["grid"]["mask_res"])
                     for lat, lon in zip(static.latitude, static.longitude)
                 )
-            retain(frame["type"].isna() | frame["type"].eq(0), "type")
+            retain(frame["type"].isna() | frame["type"].eq(science["filters"]["keep_type"]), "type")
             if sensor in {"aqua", "terra"}:
                 quality = pd.to_numeric(frame.quality) >= science["filters"]["modis_min_confidence"]
             else:
@@ -217,9 +217,14 @@ def run(region_id):
     science = config.load_science()
     manifest_path = paths.manifest(region_id)
     if region.synthetic:
-        return clean_files(synthetic_inputs(region_id, manifest_path), region, science)
+        inputs = synthetic_inputs(region_id, manifest_path)
+        provenance.raw_inputs(region_id)
+        rows = clean_files(inputs, region, science)
+        record_clean(region_id)
+        return rows
     config.require_us_region(region)
-    if not manifest_path.is_file():
+    staged_now = not manifest_path.is_file()
+    if staged_now:
         # First run on this machine: stage the local country CSVs (no network), then clean them.
         download.download_country(region, download.default_years(science), list(download.PRODUCTS))
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
@@ -246,6 +251,16 @@ def run(region_id):
     if not jobs:
         raise ValueError("No verified historical US country inputs are listed in MANIFEST.json")
     # Re-verify against original local sources; an old cache is never authoritative.
-    for product, year, _ in sorted(jobs):
-        download.download_country(region, [year], [product])
-    return clean_files([job[2] for job in sorted(jobs)], region, science)
+    if not staged_now:
+        for product, year, _ in sorted(jobs):
+            download.download_country(region, [year], [product])
+    rows = clean_files([job[2] for job in sorted(jobs)], region, science)
+    record_clean(region_id)
+    return rows
+
+
+def record_clean(region_id):
+    provenance.record_stage(region_id, "clean", provenance.raw_inputs(region_id),
+                            [*(paths.detections(region_id, sensor) for sensor in SENSORS),
+                             paths.raw_daily_counts(region_id), paths.static_candidates(region_id),
+                             paths.filter_log(region_id)])

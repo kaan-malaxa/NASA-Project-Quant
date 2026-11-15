@@ -42,6 +42,9 @@ export const FireYearClock = forwardRef(function FireYearClock(
     () =>
       buildHeatGrid({
         rows: weekly?.rows,
+        baselineRows: weekly?.baseline_rows,
+        configuration: weekly?.configuration,
+        calibration: weekly?.calibration,
         grain: "week",
         lens,
         mode,

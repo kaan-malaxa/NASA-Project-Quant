@@ -63,6 +63,7 @@ function LegendImpl({ scale, unit }, ref) {
       label: "too little to rank",
       style: {
         fill: UNRANKED_STYLE.fill,
+        fillOpacity: 1,
         stroke: UNRANKED_STYLE.stroke,
         strokeWidth: UNRANKED_STYLE.strokeWidth,
         strokeDasharray: UNRANKED_STYLE.strokeDasharray,

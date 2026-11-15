@@ -37,8 +37,9 @@ const buttonVariants = cva(
   }
 )
 
+/** @param {import("class-variance-authority").VariantProps<typeof buttonVariants> & {className?: string; asChild?: boolean; [key: string]: any}} props */
 function Button({
-  className,
+  className = undefined,
   variant = "default",
   size = "default",
   asChild = false,

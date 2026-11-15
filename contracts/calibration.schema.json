@@ -81,12 +81,23 @@
           "$ref": "common.schema.json#/$defs/date_range"
         },
         "noaa20": {
-          "$ref": "common.schema.json#/$defs/date_range"
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/date_range"
+            },
+            {
+              "type": "null"
+            }
+          ]
         }
       }
     },
     "noaa20_method": {
-      "type": "string"
+      "enum": [
+        "direct",
+        "chained",
+        null
+      ]
     },
     "k_annual": {
       "type": "object",

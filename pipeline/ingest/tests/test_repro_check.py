@@ -46,7 +46,7 @@ def projects(tmp_path, monkeypatch):
     setup_project(current)
     setup_project(peer)
     monkeypatch.setattr(paths, "PROJECT_ROOT", current)
-    monkeypatch.setenv("FIREROSETTA_DATA_ROOT", str(current / "data"))
+    monkeypatch.setenv("PROMETHEUS_TORCH_DATA_ROOT", str(current / "data"))
     return current, peer
 
 
@@ -165,7 +165,7 @@ def test_tiny_float_difference_is_not_hidden_by_display_rounding(projects, capsy
 
 def test_missing_outputs_and_empty_web_fail_without_overwriting_report(tmp_path, monkeypatch, capsys):
     monkeypatch.setattr(paths, "PROJECT_ROOT", tmp_path)
-    monkeypatch.setenv("FIREROSETTA_DATA_ROOT", str(tmp_path / "data"))
+    monkeypatch.setenv("PROMETHEUS_TORCH_DATA_ROOT", str(tmp_path / "data"))
     report = tmp_path / "saved.json"
     report.write_text("previous", encoding="utf-8")
     assert repro.main(["--output", str(report)]) == 2

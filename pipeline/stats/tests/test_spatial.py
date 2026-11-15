@@ -144,7 +144,7 @@ def test_cross_check_detects_a_wrong_era():
 
 
 def _data_root() -> Path:
-    return Path(os.environ.get("FIREROSETTA_DATA_ROOT", REPO_ROOT / "data"))
+    return Path(os.environ.get("PROMETHEUS_TORCH_DATA_ROOT", REPO_ROOT / "data"))
 
 
 def test_cross_check_synthland_outputs():

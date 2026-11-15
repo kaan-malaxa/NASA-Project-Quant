@@ -35,6 +35,17 @@ const HEX = {
 };
 
 describe("hexLayout", () => {
+  it("fits the US across the antimeridian and retains Alaska and Hawaii", () => {
+    const geo = { type: "MultiPoint", coordinates: [[177, 52], [-175, 52], [-155, 20], [-67, 45]] };
+    const box = bounds(geo);
+    expect(box[1][0] - box[0][0]).toBeCloseTo(116);
+    const project = fitProjection(box, 400, 240);
+    for (const point of geo.coordinates) {
+      const [x, y] = project(point);
+      expect(x).toBeGreaterThanOrEqual(0); expect(x).toBeLessThanOrEqual(400);
+      expect(y).toBeGreaterThanOrEqual(0); expect(y).toBeLessThanOrEqual(240);
+    }
+  });
   it("hexFeatures: one closed GeoJSON polygon per valid cell, metric as value", () => {
     const { fc, skipped } = hexFeatures(HEX.cells, "critical");
     expect(skipped).toBe(1);
@@ -71,6 +82,15 @@ describe("hexLayout", () => {
     expect(got).toEqual([A]);
     expect(getResolution(got[0])).toBe(5);
     expect(cellsInPolygon(null)).toEqual([]);
+  });
+
+  it("normalises drawn longitudes across the Aleutian antimeridian", () => {
+    const ring = [[175,51],[-170,51],[-170,54],[175,54],[175,51]];
+    const displayRing = ring.map(([longitude,latitude]) => [longitude > 0 ? longitude - 360 : longitude,latitude]);
+    const actual = cellsInPolygon(displayRing);
+    expect(actual).toEqual(cellsInPolygon(ring));
+    expect(actual).toContain(latLngToCell(52,177,5));
+    expect(actual).toContain(latLngToCell(52,-175,5));
   });
 
   it("toggleCell adds and removes", () => {

@@ -9,7 +9,7 @@ export function visibleRegions(regions, debug) {
 }
 
 /**
- * @returns {{ state: import("./state.js").FileState, regions: object[], defaultRegion: object | null, debug: boolean }}
+ * @returns {{ state: import("./state.js").FileState, regions: import("./types.gen").RegionsJson["regions"], defaultRegion: import("./types.gen").RegionsJson["regions"][number] | null, debug: boolean }}
  */
 export function useRegions() {
   const { search } = useLocation();

@@ -63,6 +63,7 @@ export const TEST_INFO = {
   backcast_weekly_wape: { label: "Backcast: VIIRS weeks predicted from Aqua, each year held out (WAPE)", better: "lower" },
   t1_t2_wape: { label: "Two methods compared: Tier 1 vs Tier 2, held-out years (WAPE)", better: "lower" },
   reliability_err: { label: "Eyesight curve: predicted vs observed detections (reliability error)", better: "abs" },
+  reliability_year_absolute_err: { label: "Eyesight curve: absolute yearly disagreement (diagnostic)", better: "lower" },
   saturation_r5: { label: "Share of map cells active per day in the peak week, coarser grid (res 5)", better: null },
   saturation_r6: { label: "Share of map cells active per day in the peak week, counting grid (res 6)", better: null },
 };

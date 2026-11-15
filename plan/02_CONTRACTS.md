@@ -1,6 +1,6 @@
 # 02 · Contracts: every endpoint, input and output
 
-**Version 1.0 · frozen at Gate A (Saturday 18:30).** After the freeze, a change needs R1's approval and a message to everyone whose folder reads or writes the file.
+**Full-record version 1.0; period/spatial extensions version 2.0, authorized during integration repair.** After the freeze, a change needs R1's approval and a message to everyone whose folder reads or writes the file.
 
 This file is the only place interfaces are defined. If your code needs something that is not here, stop and ask R1.
 
@@ -33,8 +33,8 @@ Contents: §1 external endpoints · §2 environment and secrets · §3 command-l
 | Name | Where | Purpose |
 |---|---|---|
 | `FIRMS_MAP_KEY` | `.env` at repo root (git-ignored) or shell environment | E3, E4. Read only by `pipeline/ingest/`. |
-| `FIREROSETTA_DATA_ROOT` | optional env var | Overrides the default `data/` folder (for people who keep raw files on another drive). |
-| `VITE_BASE` | web build (CI sets it) | Base path for GitHub Pages, for example `/firerosetta/`. |
+| `PROMETHEUS_TORCH_DATA_ROOT` | optional env var | Overrides the default `data/` folder (for people who keep raw files on another drive). |
+| `VITE_BASE` | web build (CI sets it) | Base path of the deployed site: `/`, because GitHub Pages serves it from the root of the custom domain `prometheus-torch.design`. |
 
 `.env.example` is committed with empty values. CI never needs the MAP_KEY: the nowcast is fetched on a laptop and its JSON is committed.
 
@@ -143,7 +143,7 @@ All under `data/` (git-ignored). Parquet with zstd compression. Dates are `date3
 | 5.6 | `data/grid/{region}/static_mask.parquet` | R2 → R2 | `h3_r8 str`. |
 | 5.7 | `data/grid/{region}/celldays_nrt.parquet` | R2 → R1 | Same columns as 5.2 plus `fetched_at ts`. NOAA-20 near-real-time, last 31 days. |
 | 5.8 | `data/harmonized/{region}/daily.parquet` | R3 → R1, R4 | `local_day date, series str, value f64 null, lo f64 null, hi f64 null, kind str, source str, covered bool`. Series list below. One row per series per day, 2003-01-01 → last data day. |
-| 5.9 | `data/harmonized/{region}/annual_bootstrap.parquet` | R3 → R1 | `replicate i32 (0..499), year i32, harmonized f64`. |
+| 5.9 | `data/harmonized/{region}/annual_bootstrap.parquet` | R3 → R1 | `replicate i32 (0..499), year i32, harmonized f64 null`. One row per replicate per year; `harmonized` is null for a year below the SD-08 yearly coverage threshold. |
 | 5.10 | `data/harmonized/{region}/calibration.json` | R3 → R1, R4, web | Same shape as §6.11. |
 | 5.11 | `data/harmonized/{region}/validation_t1.json` and `naive_annual.parquet` | R3 → R1 | JSON: `{"validation":[ValidationRow…], "drift":[{"year","sensor","k_annual","lo","hi"}], "drift_summary":{"mean_k_fit_window", "departure_pct_by_year":{…}}}` (ValidationRow in §6.13; saturation results are ValidationRows). Parquet: `year i32, modis_count f64, snpp_count f64, modis_covered_frac f64, snpp_covered_frac f64`. |
 | 5.12 | `data/eyesight/{region}/curve.json` | R4 → R1 | The `eyesight` entry of §6.13 for this region. |
@@ -372,7 +372,7 @@ Downloads offered on `#/r/:region` (the challenge's "download analytics and visu
 
 ## 8. Visualization components (R6 builds, R5 uses)
 
-Exported from `web/src/viz/index.ts`. Pure presentational React components: props in, SVG/canvas out. **No fetching, no routing, no global state inside `viz/`.** Types come from `web/src/data/types.gen.ts`.
+Exported from `web/src/viz/index.js`. Pure presentational React components: props in, SVG/canvas out. **No fetching, no routing, no global state inside `viz/`.** Types come from `web/src/data/types.gen.d.ts`.
 
 ```ts
 type SeriesId = "harmonized" | "aqua_raw" | "viirs_raw" | "naive_splice" | "viirs_as_aqua" | "viirs_equiv";
@@ -425,7 +425,7 @@ Shared behaviour for every chart: renders with a `ref` to its root `<svg>` (for 
 The only Python code shared between stages. Its function signatures are part of the contract and are frozen at Gate A.
 
 ```python
-# paths.py — the single source of file locations (honours --data-root and FIREROSETTA_DATA_ROOT)
+# paths.py — the single source of file locations (honours --data-root and PROMETHEUS_TORCH_DATA_ROOT)
 data_root() -> Path
 raw_dir(region) -> Path;  clean_dir(region) -> Path;  grid_dir(region) -> Path
 harmonized_dir(region) -> Path;  eyesight_dir(region) -> Path
@@ -466,3 +466,51 @@ finish(stage: str, region: str, rows: int, t0: float) -> None       # prints "OK
 ```
 
 Every stage's `__main__` uses the same argument parser helper: `common.cli.stage_parser(stage_name)` returning `--region`, `--data-root`, `--pass`, `--log-level`.
+
+## Authorized integration repair extensions
+
+The user authorized changes across all ownership areas and the frozen interfaces. The whole-US polygon and JavaScript implementation supersede earlier contradictory primers; scientific constants and thresholds are unchanged.
+
+### Execution and provenance
+
+- `PROMETHEUS_TORCH_WEB_DATA_DIR` and the common `--web-output-dir PATH` flag override the complete web output tree. `PROMETHEUS_TORCH_DATA_ROOT` continues to override intermediates, never original source inputs.
+- Statistics stage outputs are staged under `data/stats/{region}/`, with the same full-record filenames plus the additions below. Only export installs the complete validated proposal into the web output tree. It installs `manifest.json` last and restores prior bytes if installation fails.
+- Export accepts repeatable `--region R`. The runner passes its explicit region scope. Unchanged published regions require a valid prior manifest and matching science/outage/region/polygon fingerprint; incompatible preservation requires rebuilding every published region.
+- `pipeline.run --all-regions --include-synthetic` includes planted-truth regions in a combined run. Without that flag, `--all-regions` keeps its real-region meaning.
+- `data/provenance/{region}/{clean,grid,harmonize,eyesight,stats}.json` records version, region, stage, upstream stage names, input hashes and output hashes. Inputs include raw/staged files and source CSVs, science, outages, region configuration and the analysis polygon. Downstream stages require these attestations and reject changed bytes. Filename years must contain all observation dates in that source file.
+- `data/{harmonized,eyesight}/{region}/heldout_weekly.parquet` records `year i32, week i32, observed f64? / aqua_obs f64?, tier1 f64? / pred_aqua f64?, excluded_year i32`. Each stage also writes `folds.json`, keyed by excluded year with `training_years`. The evaluation year must be excluded from training. Matching `(year, week, excluded_year)` keys feed V8.
+- `data/grid/{region}/nrt_coverage.json` records `schema_version: 1.0`, `source: VIIRS_NOAA20_NRT`, UTC `fetched_at`, fetched `start`/`end`, and `days: [{local_day, covered, reason}]`. It is independent of retained detections and is installed in the NRT transaction. Optional supplied `data/raw/{region}/nrt_input_coverage.json` has the same source/days coverage fields. Unattested empty days are not assumed covered.
+- `hotspots_export --region us --local` prepares archives and `data/exports/hotspot_inventory.json` with local file names; no publication URLs are invented. `--url-prefix` remains the supplied release-link mode. These files are local until a human publishes them.
+
+### Website file additions
+
+All version 2 documents carry UTC `generated_at`, `code_version`, `region`, and `schema_version: "2.0"`. The schemas in `contracts/` define their exact fields and tuple shapes.
+
+| File | Contents |
+|---|---|
+| `{region}/period_index.json` | `available_years`, nullable `default_years`, fixed `anomaly_baseline_years`, and `periods: [{years:[first,last],path,sha256,bytes}]` for every contiguous interval of complete calendar years. |
+| `{region}/periods/{first}-{last}.json` | `analysis_years`, fixed `anomaly_baseline_years`, and full `trend`, `season`, selected-period `climatology` and `ruler` documents. Calibration fitting windows remain fixed. |
+| `{region}/spatial_index.json` | `membership`, `science_yaml_sha256`, `calibration_scope`, `coverage_note`, and `years: [{year,path,sha256,bytes}]`. |
+| `{region}/spatial/{year}.json` | `year`, `series` (the five web series), `cells` (resolution-5 indexes), `monthly` and `weekly` sparse contribution tuples, `monthly_bins` and `weekly_bins`, `unit_month`, `unit_week`. |
+
+Spatial tuple: `[cell_index, month_or_week, series_index, value]` when both bounds equal value, otherwise `[cell_index, month_or_week, series_index, value, lo, hi]`. Bin metadata carries `series` index, month/week, `value`, `lo`, `hi`, `kind`, actual `source`, `n_days`, `n_covered`. Contributions use the published daily source, daily calibrated bounds and the same regional coverage scaling as the calendar. A missing bin has null values. An omitted cell in a covered bin is zero. Browser AOI summaries only sum these contributions. Maps exclude years whose required bins are missing and identify the selected lens's units and coverage treatment. Raw `cells_monthly.csv` and canonical full-record files remain available for compatibility.
+
+`period_index` and `spatial_index` are added to `regions[].files`. The shared outline contract is now `contracts/outline.schema.json`; GeoJSON retains its native FeatureCollection shape without a data header. Display-only wrapping stays separate from this analysis outline.
+
+Optional `configuration` metadata in `regions.json`, `weekly.json`, `monthly.json`, `daily.json` and `climatology.json` exports `anomaly`, `timebins`, `eras` and `baseline_years` directly from science.yaml. Browser scientific thresholds come from this metadata. `methods.decisions.configuration_sha256` additionally binds all scientific, outage and polygon configuration. Trend estimates allow null values and add `availability`/`reason`; `trend.qualification` records missing robustness comparisons. Climatology quantiles and ruler ratios may be null for unavailable populations or zero denominators.
+
+### Controls, loading and checking
+
+`analysis_from` and `analysis_to` are optional calendar-year URL parameters, defaulting to the period index's complete full record. Reversed or unavailable intervals fall back to the valid default interval. Existing `from`/`to` stay exact dates for daily totals and downloads. Region and brief views restore both controls from the URL. Period documents and yearly spatial shards load on demand; views never re-fit a scientific model in JavaScript.
+
+`npm run gen:types` generates `web/src/data/types.gen.d.ts` from the JSON Schemas with the repository's dependency-free Node generator. Runtime code remains `.js`/`.jsx`, with generated declarations consumed via JSDoc. `npm run typecheck` runs the installed compiler with `allowJs`, `checkJs`, and `noEmit`. JSON shapes are not maintained as handwritten duplicates.
+
+The checker rejects duplicate JSON keys, duplicate period keys, non-finite numbers, misaligned daily arrays/runs, missing-kind inconsistencies, inverted uncertainty bounds, unsafe/missing references, manifest/index hash mismatches and byte-count mismatches. Whole-region AOI acceptance runs in Node, checks every nonmissing month including outages and partial coverage, and fails when required published fixtures are absent.
+
+Recent observations are private until export: ingestion writes `data/grid/<region>/hotspots_recent.csv`,
+`celldays_nrt.parquet` and `nrt_coverage.json`, with a mandatory `nowcast` provenance stamp. Statistics
+verify that stamp, include the private CSV in their staged regional publication, and export installs the
+public `hotspots_recent.csv` with the complete validated site. Historical cleaning attests original/staged
+country bytes and the historical manifest entries; unrelated NRT entry additions do not invalidate history.
+The recent stamp separately attests NRT manifest entries, original local files, mask, coverage and outputs.
+This supersedes the earlier direct-to-public NRT CSV handoff and preserves its public filename and header.

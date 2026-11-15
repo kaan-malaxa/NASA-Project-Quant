@@ -1,0 +1,21 @@
+{
+  "other_region_intermediates_required": false,
+  "scoped_rebuilds": [
+    {
+      "method_rows_unchanged": true,
+      "preserved": "synthland",
+      "preserved_files": 314,
+      "rebuilt": "us",
+      "regional_bytes_unchanged": true,
+      "stdout": "OK export all rows=2 seconds=127.1"
+    },
+    {
+      "method_rows_unchanged": true,
+      "preserved": "us",
+      "preserved_files": 313,
+      "rebuilt": "synthland",
+      "regional_bytes_unchanged": true,
+      "stdout": "OK export all rows=2 seconds=126.5"
+    }
+  ]
+}

@@ -19,10 +19,12 @@ import {
   FireYearClock,
   Gallery,
   HexMap,
+  HeldoutAgreement,
   Legend,
   PercentileStrip,
   TrendBars,
 } from "../../../web/src/viz/index.js";
+import { spatialMap } from "../../../web/src/lib/spatial.js";
 
 const BASE = `${import.meta.env.BASE_URL}data/`;
 const q = new URLSearchParams(location.search);
@@ -61,6 +63,12 @@ async function loadRegion(id) {
   files.outline = await getJson(`${region.id}/outline.geojson`).catch(
     () => undefined,
   );
+  if (q.get("chart") === "hexmap" && region.files.includes("spatial_index")) {
+    const index = await getJson(`${region.id}/spatial_index.json`);
+    const shards = [];
+    for (const entry of index.years) shards.push(await getJson(`${region.id}/${entry.path}`));
+    files.hex = spatialMap(shards, "harmonized", files.season?.critical_weeks ?? [], files.hex);
+  }
   const sample =
     manifest?.contains_sample === true ||
     manifest?.code_version === "sample" ||
@@ -93,6 +101,9 @@ function chartSpec(id, d) {
     files.climatology?.[`unit_${grain}`] ??
     "fire cell-days";
   switch (id) {
+    case "agreement":
+      return {title: "Agreement on matching years excluded from fitting", width: 800, el: <HeldoutAgreement
+        comparison={methods?.eyesight?.find((row) => row.region === region.id)?.heldout_compare ?? []} />};
     case "ruler":
       return {
         title: "The raw record and the harmonized record, as an index",
@@ -159,7 +170,7 @@ function chartSpec(id, d) {
     }
     case "hexmap":
       return {
-        title: "Where the hotspots were",
+          title: "Where the record shows burning activity",
         el: (
           <Suspense fallback={null}>
             <HexMap hex={files.hex} outline={files.outline} metric="critical" />
@@ -180,7 +191,7 @@ const Credit = () => (
     >
       NASA FIRMS
     </a>{" "}
-    · FireRosetta
+    · Prometheus Torch
   </span>
 );
 const SampleTag = () => (
@@ -277,7 +288,7 @@ function OgCard({ d }) {
       {d.sample && <SampleTag />}
       <div style={{ flex: 1 }}>
         <div style={{ fontSize: 43, fontWeight: 700, letterSpacing: -1 }}>
-          FireRosetta
+          Prometheus Torch
         </div>
         <div style={{ fontSize: 20, marginTop: 10, lineHeight: 1.25 }}>
           When does {d.region.name} burn?

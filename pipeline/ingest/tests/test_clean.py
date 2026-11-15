@@ -11,7 +11,8 @@ from pipeline.ingest import __main__ as entry
 from pipeline.ingest import clean
 
 SCIENCE = {
-    "filters": {"modis_min_confidence": 30, "viirs_keep": ["n", "h"]},
+    "filters": {"modis_min_confidence": 30, "viirs_keep": ["n", "h"], "keep_type": 0},
+    "static_mask": {"types": [1, 2, 3]},
     "grid": {"count_res": 6, "map_res": 5, "mask_res": 8},
 }
 HEADER = ["latitude", "longitude", "acq_date", "acq_time", "satellite", "instrument",
@@ -20,7 +21,7 @@ HEADER = ["latitude", "longitude", "acq_date", "acq_time", "satellite", "instrum
 
 @pytest.fixture
 def setup(tmp_path, monkeypatch):
-    monkeypatch.setenv("FIREROSETTA_DATA_ROOT", str(tmp_path))
+    monkeypatch.setenv("PROMETHEUS_TORCH_DATA_ROOT", str(tmp_path))
     region = replace(config.get_region("us"), bbox=[10, 10, 80, 12], polygon=None)
     monkeypatch.setattr(clean, "region_cells", lambda *args: {h3.latlng_to_cell(11, 11, 6)})
     return tmp_path, region

@@ -1,7 +1,7 @@
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 /** One Methods section: heading, one plain-language paragraph, content. */
-export function MethodsSection({ id, title, intro, children }) {
+export function MethodsSection({ id, title, intro = undefined, children }) {
   return (
     <section
       id={id}
@@ -20,7 +20,7 @@ export function MethodsSection({ id, title, intro, children }) {
 /**
  * Small data table. columns: [{ key, label, align?: "right", render?: (row) => node }].
  */
-export function DataTable({ caption, columns, rows, rowKey }) {
+export function DataTable({ caption = undefined, columns, rows, rowKey }) {
   return (
     <Table className="text-sm">
       {caption ? <TableCaption className="mt-2 text-left">{caption}</TableCaption> : null}

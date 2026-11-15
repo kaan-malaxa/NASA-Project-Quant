@@ -14,7 +14,7 @@ from scipy.special import expit
 from pipeline.eyesight.__main__ import main
 from pipeline.eyesight.compat import write_parquet
 
-ENTRY_KEYS = {"region", "status", "params", "g", "n_celldays", "curve", "binned", "k_compare"}
+ENTRY_KEYS = {"region", "status", "params", "g", "n_celldays", "curve", "binned", "k_compare", "heldout_compare"}
 PARAM_KEYS = {"a", "b", "c", "a_lo", "a_hi", "b_lo", "b_hi", "c_lo", "c_hi"}
 
 
@@ -83,15 +83,16 @@ def test_outside_conus_counts_known_answer():
     assert outside_conus_counts(m) == {"alaska": 2, "hawaii": 2}
 
 
-def test_usa_with_alaska_rows_refuses_to_fit(tmp_path):
+def test_whole_us_retains_alaska_rows():
     import h3
 
     from pipeline.eyesight.compat import science
-    from pipeline.eyesight.stage import RegionClipError, fit_entry
+    from pipeline.eyesight.stage import fit_entry
 
     cd = celldays([("snpp", "2015-06-01", h3.latlng_to_cell(61.2, -149.9, 6), 10.0)])
-    with pytest.raises(RegionClipError):
-        fit_entry("usa", cd, coverage("2015-06-01", "2015-06-01"), science()[0], "D", logging.getLogger("t"))
+    entry, diag = fit_entry("us", cd, coverage("2015-06-01", "2015-06-01"), science()[0], "D", logging.getLogger("t"))
+    assert entry["status"] == "absent"  # too few observations, not a geographic exclusion
+    assert diag["outside_conus_rows"]["alaska"] == 1
 
 
 def test_by_year_figure_and_thin_years_reported(tmp_path, caplog):

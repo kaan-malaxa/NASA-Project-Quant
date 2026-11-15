@@ -7,8 +7,6 @@
 import { FIRST_DAY, isIsoDate } from "./urlState.js";
 import { NAIVE_SPLICE_SWITCH_YEAR } from "./lenses.js";
 
-export const MONTH_MIN_COVERAGE = 0.8;
-export const YEAR_MIN_COVERAGE = 0.9;
 const DAY_MS = 86400000;
 
 const toMs = (iso) => Date.parse(`${iso}T00:00:00Z`);
@@ -47,7 +45,7 @@ export function fallbackKind(daily, series) {
 const byTotal = (a, b) => b.total - a.total || a.key.localeCompare(b.key);
 
 /**
- * @param {object} daily daily.json
+ * @param {import("../data/types.gen").DailyJson} daily daily.json
  * @param {{ lens?: string, from: string, to: string }} opts
  */
 export function computeRange(daily, { lens = "harmonized", from, to }) {
@@ -110,12 +108,12 @@ export function computeRange(daily, { lens = "harmonized", from, to }) {
   // Coverage is measured against the whole calendar month / year, so a month or year cut by the range is incomplete.
   const monthList = [...months.values()].map((M) => {
     const coverage = M.days / daysInMonth(M.year, M.month);
-    return { ...M, coverage, complete: coverage >= MONTH_MIN_COVERAGE };
+    return { ...M, coverage, complete: coverage >= daily.configuration?.timebins?.month_min_covered_frac };
   });
   const yearList = [...years.values()].map((Y) => {
     const coverage = Y.days / daysInYear(Y.year);
     const fullyInside = Y.inRange === daysInYear(Y.year);
-    return { ...Y, coverage, fullyInside, complete: coverage >= YEAR_MIN_COVERAGE };
+    return { ...Y, coverage, fullyInside, complete: coverage >= daily.configuration?.timebins?.year_min_covered_frac };
   });
   const topMonths = monthList.filter((x) => x.complete).sort(byTotal).slice(0, 5);
   const topYears = yearList.filter((x) => x.complete).sort(byTotal).slice(0, 5);

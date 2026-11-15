@@ -45,6 +45,7 @@ export function fetchJson(path, opts = {}) {
   return cache.get(path);
 }
 
+/** @returns {Promise<FetchResult>} */
 async function load(path, opts) {
   let res;
   try {

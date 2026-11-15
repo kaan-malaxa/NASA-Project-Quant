@@ -1,5 +1,8 @@
 # R4 · Planted-Truth Simulator and Tier 2 Eyesight Curve
 
+> Current integration scope: one real whole-US polygon plus planted-truth Synthland; runtime web code is JavaScript with generated JSDoc declarations. Selectable analysis years and exact dates are separate. The authorized interfaces and requirement statuses are in `../02_CONTRACTS.md` and `../REQUIREMENTS_MATRIX.md`. Earlier multi-region, TypeScript-runtime and provisional stand-in instructions are superseded.
+
+
 ## 1. Your mission
 You build two things that make our science checkable.
 
@@ -52,7 +55,7 @@ Commands you provide: `python -m pipeline.synth --region synthland [--seed 7] [-
 
 ## 7. Session primer (paste at the start of every AI session)
 ```text
-You are assisting R4 on the FireRosetta project. Before doing anything, read these files fully:
+You are assisting R4 on the Prometheus Torch project. Before doing anything, read these files fully:
 - AGENTS.md
 - plan/03_SCIENCE_DECISIONS.md (SD-16 and SD-17 are mine; also SD-01 to SD-08 and section G)
 - plan/02_CONTRACTS.md sections 3, 4, 5 and 10, and the eyesight part of 6.13

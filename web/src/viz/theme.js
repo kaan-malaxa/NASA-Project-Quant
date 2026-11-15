@@ -147,7 +147,6 @@ export const UNRANKED_STYLE = {
 export const UNRANKED_LABEL = "Too little burning at this time of year to rank.";
 
 /** Anomaly cells whose climatological weekly p90 is below this are drawn UNRANKED (SD-11). */
-export const LOW_ACTIVITY_P90 = 5;
 
 // ---------------------------------------------------------------------------------------
 // Sensors and nowcast status

@@ -208,34 +208,43 @@
       "year": 2025
     }
   ],
-  "code_version": "a25fb442",
-  "generated_at": "2026-11-15T05:49:19Z",
+  "code_version": "1bb5e8f4",
+  "generated_at": "2026-11-15T18:00:00Z",
   "harmonized": {
+    "availability": "available",
     "direction": "rising",
-    "hi": 13.557,
-    "lo": 11.025,
-    "pct_per_decade": 12.459
+    "hi": 13.565,
+    "lo": 11.027,
+    "pct_per_decade": 12.459,
+    "reason": ""
   },
   "naive": {
+    "availability": "available",
     "direction": "rising",
     "hi": 182.949,
     "lo": 18.259,
-    "pct_per_decade": 43.676
+    "pct_per_decade": 43.676,
+    "reason": ""
   },
+  "qualification": "",
   "region": "synthland",
   "robustness": [
     {
+      "availability": "available",
       "direction": "rising",
       "hi": 14.548,
       "lo": 11.266,
       "pct_per_decade": 13.086,
+      "reason": "",
       "variant": "aqua_only_2003_2022"
     },
     {
+      "availability": "available",
       "direction": "rising",
       "hi": 13.662,
       "lo": 11.24,
       "pct_per_decade": 12.708,
+      "reason": "",
       "variant": "translated_from_2012"
     }
   ],

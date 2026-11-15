@@ -1,5 +1,8 @@
 # R3 · Tier 1 Harmonization and Validation (science owner)
 
+> Current integration scope: one real whole-US polygon plus planted-truth Synthland; runtime web code is JavaScript with generated JSDoc declarations. Selectable analysis years and exact dates are separate. The authorized interfaces and requirement statuses are in `../02_CONTRACTS.md` and `../REQUIREMENTS_MATRIX.md`. Earlier multi-region, TypeScript-runtime and provisional stand-in instructions are superseded.
+
+
 ## 1. Your mission
 You build the series the whole product stands on: **the harmonized daily record** (Aqua where Aqua is trustworthy, translated VIIRS after) and the **proof that the translation works**. You also hold the pen on every scientific constant (`science.yaml`) and you sign every number that reaches a judge.
 
@@ -45,13 +48,13 @@ Command you provide: `python -m pipeline.harmonize --region R`.
 |---|---|
 | A · Sat 18:30 | `science.yaml` on main (by **17:15**, others need it); `calibrate.py` passing fabricated tests |
 | B · Sat 23:00 | `pipeline.harmonize` end to end on `synthland` (planted k recovered) and on real `us`; `daily.parquet`, `calibration.json`, bootstrap files written |
-| C · Sun 10:00 | V1–V5 for three regions in `validation_t1.json`; drift and LOYO figures |
+| C · Sun 10:00 | V1–V5 for the approved whole-US region and separate simulator in `validation_t1.json`; drift and LOYO figures |
 | D · Sun 14:00 | V6 backcast; direct vs chained NOAA-20; limitations text sent to R1; Tier 2 status agreed with R4 |
 | E · Sun 17:00 | **Numbers audit signed** (`REPORTS.md` §7.3) |
 
 ## 7. Session primer (paste at the start of every AI session)
 ```text
-You are assisting R3, the science owner, on the FireRosetta project. Before doing anything, read these files fully:
+You are assisting R3, the science owner, on the Prometheus Torch project. Before doing anything, read these files fully:
 - AGENTS.md
 - plan/03_SCIENCE_DECISIONS.md (all of it; I own it)
 - plan/02_CONTRACTS.md sections 3, 4.2, 5 and 10

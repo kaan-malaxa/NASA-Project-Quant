@@ -75,13 +75,13 @@ def eyesight_by_year_png(entry: dict, by_year: list[dict], path: Path) -> None:
 
 
 def k_tier1_vs_tier2_png(entry: dict, path: Path) -> None:
-    """12 monthly points: Tier 1 k (R3) against Tier 2 k_T2, with the 1:1 line. Two independent routes."""
+    """12 monthly points: Tier 1 k (R3) against Tier 2 k_T2, with the 1:1 line. Calibration diagnostic; validation uses matching excluded-year predictions."""
     pts = [r for r in entry["k_compare"] if r["k_tier1"] is not None and r["k_tier2"] is not None]
     path.parent.mkdir(parents=True, exist_ok=True)
     fig, ax = plt.subplots(figsize=(5, 5), dpi=150)
     if pts:
         lim = max(max(r["k_tier1"] for r in pts), max(r["k_tier2"] for r in pts)) * 1.15
-        ax.plot([0, lim], [0, lim], color="#636363", ls="--", lw=1, label="1:1 (the two routes agree)")
+        ax.plot([0, lim], [0, lim], color="#636363", ls="--", lw=1, label="1:1 reference (fitted calibration diagnostic)")
         ax.scatter([r["k_tier1"] for r in pts], [r["k_tier2"] for r in pts], color="#08519c", zorder=3,
                    label="One calendar month")
         for r in pts:
@@ -91,7 +91,7 @@ def k_tier1_vs_tier2_png(entry: dict, path: Path) -> None:
         ax.set_ylim(0, lim)
     ax.set_xlabel("Tier 1 k (Aqua ÷ S-NPP fire cell-days)")
     ax.set_ylabel("Tier 2 k (g × mean eyesight probability)")
-    ax.set_title(f"Monthly calibration factor, two routes: {entry['region']}")
+    ax.set_title(f"Fitted monthly calibration diagnostic: {entry['region']}")
     ax.grid(True, alpha=0.3)
     ax.legend(loc="upper left", fontsize=8)
     fig.tight_layout()

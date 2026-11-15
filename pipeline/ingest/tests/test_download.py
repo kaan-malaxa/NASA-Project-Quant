@@ -17,7 +17,7 @@ def local_data(tmp_path, monkeypatch):
     source = tmp_path / "source"
     source.mkdir()
     monkeypatch.setattr(paths, "source_data_root", lambda: source)
-    monkeypatch.setenv("FIREROSETTA_DATA_ROOT", str(tmp_path / "derived"))
+    monkeypatch.setenv("PROMETHEUS_TORCH_DATA_ROOT", str(tmp_path / "derived"))
     return source
 
 
@@ -34,6 +34,12 @@ def local_source(text, year=2023, product="modis"):
 def records(path):
     with path.open(encoding="utf-8", newline="") as handle:
         return list(csv.DictReader(handle))
+
+
+def test_filename_year_must_match_observation_dates(local_data):
+    local_source(HEADER + "40,-120,2022-12-31,0015,Aqua\n", year=2023)
+    with pytest.raises(download.DownloadError, match="Filename year 2023"):
+        download.download_country(config.get_region("us"), [2023], ["modis"])
 
 
 def test_bbox_includes_all_boundaries(local_data):

@@ -1,3 +1,5 @@
+import { bounds, displayGeometry } from "../viz/hexLayout.js";
+
 /**
  * Region outline (GeoJSON) -> SVG path with a simple equirectangular projection:
  * x = lon * cos(mid-latitude), y = -lat, scaled to fit width x height with padding, centred. No map library.
@@ -22,7 +24,7 @@ const r2 = (v) => Math.round(v * 100) / 100;
  * @returns {{ d: string, width: number, height: number } | null}
  */
 export function outlinePath(geojson, width = 120, height = 90, pad = 4) {
-  const rs = rings(geojson);
+  const rs = rings(displayGeometry(geojson, bounds(geojson)));
   if (!rs.length) return null;
   let minLon = Infinity, maxLon = -Infinity, minLat = Infinity, maxLat = -Infinity;
   for (const ring of rs) {

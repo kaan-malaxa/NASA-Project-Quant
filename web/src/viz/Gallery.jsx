@@ -6,6 +6,7 @@ import { BrokenRuler } from "./BrokenRuler";
 import { CalendarHeatmap } from "./CalendarHeatmap";
 import { DriftChart } from "./DriftChart";
 import { EyesightCurve } from "./EyesightCurve";
+import { HeldoutAgreement } from "./HeldoutAgreement";
 import { FireYearClock } from "./FireYearClock";
 import { KindBadge } from "./KindBadge";
 import { Legend } from "./Legend";
@@ -233,6 +234,10 @@ const ENTRIES = [
         <Absent file="methods.json" />
       ),
   },
+  {
+    name: "HeldoutAgreement",
+    render: (b, c) => <HeldoutAgreement comparison={eyesightFor(b.methods, c.region.id)?.heldout_compare ?? []} />,
+  },
 ];
 
 function yearOf(r) {
@@ -248,7 +253,7 @@ function eyesightFor(m, region) {
 export function Gallery() {
   const [regions, setRegions] = useState(null);
   const [regionId, setRegionId] = useState("");
-  const [bundle, setBundle] = useState({});
+  const [bundle, setBundle] = useState(/** @type {Record<string, any>} */ ({}));
   const [errors, setErrors] = useState([]);
   const [loading, setLoading] = useState(false);
   const [stateFilter, setStateFilter] = useState("all");
@@ -466,7 +471,7 @@ export function Gallery() {
           <Card caption="KindBadge · every kind">
             <div style={{ display: "flex", flexWrap: "wrap", gap: "var(--fr-space-2)" }}>
               {KINDS.map((k) => (
-                <KindBadge key={k} kind={k} />
+                <KindBadge key={k} kind={/** @type {import("./types").Kind} */ (k)} />
               ))}
             </div>
           </Card>

@@ -25,6 +25,8 @@ def _schema(spec):
 
 
 SCHEMAS = {
+    "heldout_weekly_t1": _schema("year:i32 week:i32 observed:f64? tier1:f64? excluded_year:i32"),
+    "heldout_weekly_t2": _schema("year:i32 week:i32 aqua_obs:f64? pred_aqua:f64? excluded_year:i32"),
     "detections": _schema(
         "latitude:f64 longitude:f64 acq_datetime_utc:ts local_day:date daynight:str frp:f32 "
         "confidence_raw:str scan:f32 track:f32 sensor:str product:str type:i8? "
@@ -43,7 +45,8 @@ SCHEMAS = {
     "daily": _schema(
         "local_day:date series:str value:f64? lo:f64? hi:f64? kind:str source:str covered:bool"
     ),
-    "annual_bootstrap": _schema("replicate:i32 year:i32 harmonized:f64"),
+    # A year below the coverage threshold has no total: null, never zero (science rule 3).
+    "annual_bootstrap": _schema("replicate:i32 year:i32 harmonized:f64?"),
     "naive_annual": _schema(
         # A year the sensor did not cover has no count: null, never zero (science rule 3).
         "year:i32 modis_count:f64? snpp_count:f64? modis_covered_frac:f64 snpp_covered_frac:f64"
@@ -134,9 +137,10 @@ def _rounded(obj):
     return obj
 
 
-def write_json(obj, path) -> None:
+def write_json(obj, path, *, compact=False) -> None:
     # Serialize completely before touching the destination.
-    text = json.dumps(_rounded(obj), sort_keys=True, ensure_ascii=False, allow_nan=False, indent=2) + "\n"
+    text = json.dumps(_rounded(obj), sort_keys=True, ensure_ascii=False, allow_nan=False,
+                      indent=None if compact else 2, separators=(",", ":") if compact else None) + "\n"
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="\n") as handle:
@@ -152,8 +156,22 @@ def sha256(path) -> str:
 
 
 def read_json(path):
+    def unique_object(pairs):
+        result = {}
+        for key, value in pairs:
+            if key in result:
+                raise ValueError(f"duplicate JSON key {key!r}")
+            result[key] = value
+        return result
+
+    def finite(text):
+        value = float(text)
+        if not math.isfinite(value):
+            raise ValueError(f"non-finite number {text} is not allowed")
+        return value
+
     with Path(path).open(encoding="utf-8") as handle:
-        return json.load(handle)
+        return json.load(handle, object_pairs_hook=unique_object, parse_float=finite, parse_constant=finite)
 
 
 def write_figure(figure, path) -> None:

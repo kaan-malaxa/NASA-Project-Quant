@@ -13,8 +13,9 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+import shutil
 from collections.abc import Callable
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from pathlib import Path
 from typing import Any
 
@@ -22,6 +23,7 @@ import pandas as pd
 import pyarrow.parquet as pq
 import yaml
 
+from pipeline.common import paths, provenance, publication
 from pipeline.export.audit import write_audit
 from pipeline.export.check import (
     has_sample_kind,
@@ -34,7 +36,7 @@ from pipeline.export.check import (
 
 METHODS_TEXT = Path(__file__).resolve().parent / "methods_text.yaml"
 REGION_FILES = ["weekly", "monthly", "daily", "climatology", "season", "trend", "ruler", "nowcast", "hex",
-                "calibration", "outline"]
+                "calibration", "outline", "period_index", "spatial_index"]
 OPTIONAL_FILES = ["cells_monthly", "downloads", "hotspots_recent"]
 TOP_LEVEL = {"regions.json", "methods.json", "manifest.json", "numbers_audit.md"}
 SENSOR_TEXT = {"aqua": "MODIS Aqua", "terra": "MODIS Terra", "snpp": "S-NPP VIIRS", "noaa20": "NOAA-20 VIIRS"}
@@ -60,6 +62,7 @@ class Inputs:
     write_json: Callable[[Any, Path], None]
     header: dict[str, Any]
     methods_text: Path = METHODS_TEXT
+    scope: list[str] | None = None
 
 
 def _read_json(path: Path) -> Any:
@@ -84,11 +87,12 @@ def classify_regions(inp: Inputs) -> dict[str, str]:
     out, mixed = {}, []
     for folder in sorted(p for p in inp.web_dir.iterdir() if p.is_dir()):
         origins: dict[str, list[str]] = {"sample": [], "real": []}
-        for f in sorted(folder.iterdir()):
+        for f in sorted(file for file in folder.iterdir() if file.is_file()):
             if f.name.startswith("."):
                 continue
             # calibration.json is about to be replaced by the harmonized copy
-            if f.name == "calibration.json" and (inp.harmonized_dir(folder.name) / "calibration.json").is_file():
+            if (f.name == "calibration.json" and (inp.scope is None or folder.name in inp.scope)
+                and (inp.harmonized_dir(folder.name) / "calibration.json").is_file()):
                 continue
             origin = file_origin(f)
             if origin:
@@ -230,7 +234,8 @@ def methods_doc(inp: Inputs, region_ids: list[str]) -> dict[str, Any]:
                           "aqua_trusted_through": sci["eras"]["aqua_trusted_through"],
                           "snpp_through": sci["eras"]["snpp_through"],
                           "baseline_years": sci["climatology"]["baseline_years"],
-                          "science_yaml_sha256": inp.science_sha256},
+                          "science_yaml_sha256": inp.science_sha256,
+                          "configuration_sha256": provenance.configuration_fingerprint()},
             "validation": validation, "drift": drift, "eyesight": eyesight, "planted_truth": planted_truth(inp),
             "inputs": inputs, "filters": filters, "sources": sources,
             "limitations": list(text.get("limitations") or []), "ai_use": text.get("ai_use") or ""}
@@ -266,12 +271,28 @@ def manifest_doc(inp: Inputs) -> dict[str, Any]:
 
 
 # ------------------------------------------------------------------ entry point
-def assemble(inp: Inputs) -> list[str]:
+def _assemble(inp: Inputs) -> list[str]:
     """Write regions.json, methods.json, manifest.json. Returns warnings. Raises AssembleError."""
-    if not inp.web_dir.is_dir():
-        raise AssembleError(f"{inp.web_dir} does not exist; run `python -m pipeline.stats` first")
+    inp.web_dir.mkdir(parents=True, exist_ok=True)
     registry = load_registry()
     known = {r["id"]: r for r in inp.regions}
+    old_regions = _read_json(inp.web_dir / "regions.json") if (inp.web_dir / "regions.json").is_file() else None
+    old_methods = _read_json(inp.web_dir / "methods.json") if (inp.web_dir / "methods.json").is_file() else None
+    scope = inp.scope
+    if scope is not None:
+        for rid in scope:
+            if rid not in known:
+                raise AssembleError(f"Unknown export region: {rid}")
+            provenance.verify_stage(rid, "stats")
+            source = paths.stats_dir(rid)
+            if not source.is_dir():
+                raise AssembleError(f"Missing staged statistics for {rid}; run pipeline.stats --region {rid}")
+            target = (inp.web_dir / rid).resolve()
+            if not target.is_relative_to(inp.web_dir.resolve()):
+                raise AssembleError("Region path escapes staged publication")
+            if target.is_dir():
+                shutil.rmtree(target)
+            shutil.copytree(source, target)
     status = classify_regions(inp)                       # refuses on mixed folders before any write
     warnings = []
     real = [rid for rid in known if status.get(rid) == "real"]
@@ -283,11 +304,31 @@ def assemble(inp: Inputs) -> list[str]:
             warnings.append(f"web/public/data/{folder}/ is not a region in regions.yaml: left out of regions.json")
     if not real:
         raise AssembleError("no region folder holds real pipeline output; nothing to assemble")
-    for rid in real:
+    preserved = [rid for rid in real if scope is not None and rid not in scope]
+    if preserved:
+        if (old_methods is None or old_methods["decisions"]["science_yaml_sha256"] != inp.science_sha256
+            or old_methods["decisions"].get("configuration_sha256") != provenance.configuration_fingerprint()):
+            raise AssembleError("Preserved regions use incompatible science configuration; rebuild every published region")
+        # The original publication is validated before any staged replacements are installed.
+        if old_regions is None:
+            raise AssembleError("Missing manifest for preserved regions; rebuild every published region")
+    rebuilt = [rid for rid in real if rid not in preserved]
+    for rid in rebuilt:
         copy_calibration(inp, rid, registry)
-    records = [region_record(inp, known[rid]) for rid in real]
-    regions = {**inp.header, "regions": records}
-    methods = methods_doc(inp, real)
+    previous = {r["id"]: r for r in old_regions["regions"]} if old_regions else {}
+    records = [previous[rid] if rid in preserved and rid in previous else region_record(inp, known[rid]) for rid in real]
+    regions = {**inp.header, "regions": records,
+               "configuration": {"anomaly": inp.science["anomaly"], "timebins": inp.science["timebins"],
+                                 "eras": inp.science["eras"], "baseline_years": inp.science["climatology"]["baseline_years"]}}
+    methods = methods_doc(inp, rebuilt)
+    if preserved:
+        for key in ("validation", "drift", "eyesight", "inputs", "filters"):
+            methods[key] += [row for row in old_methods[key] if row.get("region") in preserved]
+        if "synthland" in preserved:
+            methods["planted_truth"] = old_methods["planted_truth"]
+    order = {rid: index for index, rid in enumerate(real)}
+    for key in ("validation", "drift", "eyesight", "inputs", "filters"):
+        methods[key].sort(key=lambda row: order.get(row.get("region"), len(order)))
     for name, doc in (("regions", regions), ("methods", methods)):
         errors = schema_errors(json.loads(json.dumps(doc)), validator_for(name, registry))
         if errors:
@@ -296,4 +337,22 @@ def assemble(inp: Inputs) -> list[str]:
     inp.write_json(methods, inp.web_dir / "methods.json")
     write_audit(inp.web_dir)                             # before the manifest, so its hash is listed
     inp.write_json(manifest_doc(inp), inp.web_dir / "manifest.json")
+    return warnings
+
+
+def assemble(inp: Inputs) -> list[str]:
+    """Stage and validate the complete proposed publication; manifest replacement commits it last."""
+    from pipeline.export.check import run_check
+
+    if inp.scope is not None and (inp.web_dir / "manifest.json").is_file():
+        # Validate preserved assets against their original hashes, never against a regenerated manifest.
+        errors = [result.line() for result in run_check(inp.web_dir) if not result.ok]
+        if errors:
+            raise AssembleError("Published assets failed validation; rebuild all regions: " + " | ".join(errors[:3]))
+    with publication.proposal(inp.web_dir) as staged:
+        warnings = _assemble(replace(inp, web_dir=staged))
+        errors = [result.line() for result in run_check(staged) if not result.ok]
+        if errors:
+            raise AssembleError("Proposed publication failed validation: " + " | ".join(errors[:3]))
+        publication.publish_tree(staged, inp.web_dir)
     return warnings

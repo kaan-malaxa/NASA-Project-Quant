@@ -23,7 +23,7 @@ function TrendFigure({ label, fig, kinds }) {
       <p className="text-sm tabular-nums">
         <GlossaryTerm term="range">Likely range</GlossaryTerm>: {fmtRangePct(fig.lo, fig.hi)}
       </p>
-      <p className="mt-1 text-sm">{DIRECTION_LABELS[fig.direction] ?? fig.direction}</p>
+      <p className="mt-1 text-sm">{fig.pct_per_decade === null ? `Unavailable: ${fig.reason ?? "insufficient observations"}` : DIRECTION_LABELS[fig.direction] ?? fig.direction}</p>
       <div className="mt-2 flex flex-wrap gap-1">
         {kinds.map((k) => (
           <KindBadge key={k} kind={k} />
@@ -45,6 +45,7 @@ export default function VerdictSection({ state }) {
           return (
             <div className="space-y-4">
               <p className="max-w-3xl text-lg font-medium text-pretty sm:text-xl">{trend.sentence}</p>
+            {trend.qualification ? <p className="text-sm">{trend.qualification}</p> : null}
               <VizSlot name="TrendBars" trend={trend} placeholderClassName="h-56" />
               <div className="grid gap-3 sm:grid-cols-2">
                 <TrendFigure label="What the raw record suggests" fig={trend.naive} kinds={nKinds} />

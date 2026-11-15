@@ -41,7 +41,7 @@ def write_detections(rows, sensor):
 
 @pytest.fixture
 def inputs(tmp_path, monkeypatch):
-    monkeypatch.setenv("FIREROSETTA_DATA_ROOT", str(tmp_path))
+    monkeypatch.setenv("PROMETHEUS_TORCH_DATA_ROOT", str(tmp_path))
     for sensor in export.SENSORS:
         write_detections([], sensor)
     return tmp_path

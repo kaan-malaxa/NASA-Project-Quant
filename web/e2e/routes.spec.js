@@ -46,7 +46,7 @@ test("each route sets its own title and description", async ({ page }) => {
     await open(page, hash);
     const title = await page.title();
     const description = await page.locator('meta[name="description"]').getAttribute("content");
-    expect(title).toContain("FireRosetta");
+    expect(title).toContain("Prometheus Torch");
     expect(description.length).toBeGreaterThan(20);
     seen.add(title);
   }

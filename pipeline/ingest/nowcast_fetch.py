@@ -1,19 +1,18 @@
 """Build recent NOAA-20 files from genuine local NRT inputs, without network IO."""
 import csv
 import json
-import os
-import shutil
 import sys
 import time
 from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
-from tempfile import NamedTemporaryFile, TemporaryDirectory
+from tempfile import TemporaryDirectory
 
 import duckdb
 import pandas as pd
 import yaml
 
-from pipeline.common import cli, config, io, log, paths, timebins
+from pipeline.common import cli, config, io, log, paths, provenance, timebins
+from pipeline.common.publication import publish
 from pipeline.common.sensors import normalise_viirs_confidence
 from pipeline.ingest import clean, download, grid, static_mask
 
@@ -27,10 +26,11 @@ class NowcastUnavailable(ValueError):
     """Safe, explicit local-data or coverage failure."""
 
 
-def recent_window(now, longitude, days):
+def recent_window(now, longitude, days, west_longitude=None):
     if days < 1:
         raise NowcastUnavailable("--days must be positive")
-    end = timebins.local_day(now, longitude) - timedelta(days=1)
+    end = timebins.last_complete_local_day(now, longitude,
+                                           longitude if west_longitude is None else west_longitude)
     return end - timedelta(days=days - 1), end
 
 
@@ -54,7 +54,25 @@ def load_local(inputs):
     return pd.concat(frames, ignore_index=True).drop_duplicates().reset_index(drop=True)
 
 
-def validate_coverage(raw, region, start, end):
+def validate_coverage(raw, region, start, end, metadata=None):
+    if metadata is not None:
+        if metadata.get("source") != "VIIRS_NOAA20_NRT":
+            raise NowcastUnavailable("Coverage metadata must identify VIIRS_NOAA20_NRT")
+        known = {row["local_day"]: row for row in metadata["days"]}
+        if any(type(row.get("covered")) is not bool for row in known.values()):
+            raise NowcastUnavailable("Coverage metadata requires a boolean covered value for every day")
+        for day, row in known.items():
+            try:
+                date.fromisoformat(day)
+            except (TypeError, ValueError) as error:
+                raise NowcastUnavailable("Coverage metadata has an invalid local day") from error
+            if "reason" in row and not isinstance(row["reason"], str):
+                raise NowcastUnavailable("Coverage reason must be text")
+        if len(known) != len(metadata["days"]) or any(day.isoformat() not in known
+                  for day in pd.date_range(start, end).date):
+            raise NowcastUnavailable("Coverage metadata does not describe every requested day")
+        if raw.empty:
+            return raw
     normalized = clean.normalise(raw, "viirs", False)
     if not normalized.sensor.eq("noaa20").all():
         raise NowcastUnavailable("Only NOAA-20 NRT observations are permitted")
@@ -74,7 +92,7 @@ def validate_coverage(raw, region, start, end):
     required = [day for first, last in download.api_windows(start, end)
                 for day in pd.date_range(first, last).date]
     missing = sorted(set(required) - covered)
-    if missing:
+    if missing and metadata is None:
         raise NowcastUnavailable(
             f"Missing local NOAA-20 NRT coverage on {len(missing)} day(s): "
             + ", ".join(day.isoformat() for day in missing)
@@ -96,42 +114,14 @@ def write_hotspots(frame, destination):
             ])
 
 
-def publish(staged):
-    """Prepare all files first; roll back any replacements if publication fails."""
-    prepared, backups, installed = {}, {}, []
-    def temporary_for(destination):
-        with NamedTemporaryFile(dir=destination.parent, prefix=".nowcast-", delete=False) as handle:
-            return Path(handle.name)
-    try:
-        for destination, source in staged.items():
-            destination.parent.mkdir(parents=True, exist_ok=True)
-            prepared[destination] = temporary_for(destination)
-            shutil.copyfile(source, prepared[destination])
-            if destination.exists():
-                backups[destination] = temporary_for(destination)
-                shutil.copyfile(destination, backups[destination])
-        for destination, source in prepared.items():
-            os.replace(source, destination)
-            installed.append(destination)
-    except BaseException:
-        for destination in reversed(installed):
-            if destination in backups:
-                os.replace(backups[destination], destination)
-            else:
-                destination.unlink()
-        raise
-    finally:
-        for temporary in (*prepared.values(), *backups.values()):
-            temporary.unlink(missing_ok=True)
 
-
-def run(region_id, days, *, now=None, fetch=None):
+def run(region_id, days, *, now=None, fetch=None, coverage_metadata=None):
     region = config.get_region(region_id)
     now = pd.Timestamp(now if now is not None else datetime.now(UTC))
     if now.tzinfo is None:
         raise NowcastUnavailable("Nowcast time must be timezone-aware UTC")
     now = now.tz_convert("UTC")
-    start, end = recent_window(now, config.region_centroid(region)[0], days)
+    start, end = recent_window(now, config.region_centroid(region)[0], days, region.bbox[0])
     inputs = paths.local_nrt_inputs(region_id)
     if not inputs:
         raise NowcastUnavailable(
@@ -146,11 +136,17 @@ def run(region_id, days, *, now=None, fetch=None):
         if outage["sensor"] == "noaa20" and max(start, first) <= min(end, last):
             raise NowcastUnavailable("Requested NRT coverage overlaps a declared NOAA-20 outage")
     paths.tmp_dir().mkdir(parents=True, exist_ok=True)
-    raw = validate_coverage((fetch or load_local)(inputs), region, start, end)
+    if coverage_metadata is None and paths.local_nrt_coverage(region_id).is_file():
+        coverage_metadata = io.read_json(paths.local_nrt_coverage(region_id))
+    raw = validate_coverage((fetch or load_local)(inputs), region, start, end, coverage_metadata)
     science = config.load_science()
     mask_path = paths.static_mask(region_id)
     if not mask_path.is_file():
         raise NowcastUnavailable("Existing static_mask.parquet is required before an NRT refresh")
+    provenance.verify_stage(region_id, "grid")
+    # Upgrade an already verified historical stamp to the separate manifest-entry attestation.
+    if paths.stage_provenance(region_id, "clean").is_file():
+        clean.record_clean(region_id)
     mask = io.read_parquet(mask_path, "static_mask")
     with TemporaryDirectory(dir=paths.tmp_dir(), prefix="nowcast-") as temporary:
         work = Path(temporary)
@@ -176,10 +172,26 @@ def run(region_id, days, *, now=None, fetch=None):
         }
         manifest = work / "MANIFEST.json"
         io.write_json(sorted(old.values(), key=lambda entry: entry["file"]), manifest)
+        coverage_path = work / "nrt_coverage.json"
+        known = {row["local_day"]: {**row, "reason": row.get("reason", "independent_coverage")}
+                 for row in coverage_metadata["days"]} if coverage_metadata else {}
+        io.write_json({"schema_version": "1.0", "source": "VIIRS_NOAA20_NRT",
+                       "fetched_at": now.isoformat().replace("+00:00", "Z"),
+                       "start": start.isoformat(), "end": end.isoformat(),
+                       "days": [known.get(day.isoformat(), {"local_day": day.isoformat(),
+                                                           "covered": True, "reason": "raw_rows"})
+                                for day in pd.date_range(start, end).date]}, coverage_path)
         publish({
             target: snapshot, paths.celldays_nrt(region_id): parquet,
-            paths.hotspots_recent(region_id): csv_path, manifest_path: manifest,
+            paths.staged_hotspots_recent(region_id): csv_path, manifest_path: manifest,
+            paths.nrt_coverage(region_id): coverage_path,
         })
+        source_inputs = [*inputs, mask_path]
+        if paths.local_nrt_coverage(region_id).is_file():
+            source_inputs.append(paths.local_nrt_coverage(region_id))
+        provenance.record_stage(region_id, "nowcast", source_inputs,
+                                [target, paths.celldays_nrt(region_id), paths.staged_hotspots_recent(region_id),
+                                 paths.nrt_coverage(region_id)], upstream=("grid",))
     return len(detections)
 
 

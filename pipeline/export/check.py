@@ -7,8 +7,8 @@ Used by `python -m pipeline.export --check`. Prints one line per file ("OK <path
 from __future__ import annotations
 
 import csv
+import hashlib
 import json
-import math
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -31,7 +31,7 @@ CSV_HEADERS: dict[str, list[str]] = {
 TOP_LEVEL_SCHEMAS = {"regions.json": "regions", "methods.json": "methods", "manifest.json": "manifest"}
 REGION_SCHEMAS = {
     "weekly", "monthly", "daily", "climatology", "season", "trend", "ruler",
-    "nowcast", "hex", "calibration", "downloads",
+    "nowcast", "hex", "calibration", "downloads", "period_index", "spatial_index",
 }
 # Files that live in web/public/data but have no schema and need no check beyond existing.
 NO_SCHEMA_FILES = {"numbers_audit.md"}
@@ -72,6 +72,9 @@ def validator_for(name: str, registry: Registry, schema_dir: Path = SCHEMA_DIR) 
 
 
 def schema_errors(instance: Any, validator: Draft202012Validator) -> list[str]:
+    if validator.schema.get("title") == "spatial":
+        from pipeline.export.spatial_check import errors
+        return errors(instance, validator, MAX_ERRORS_SHOWN)
     errors = sorted(validator.iter_errors(instance), key=lambda e: list(e.absolute_path))
     out = []
     for err in errors[:MAX_ERRORS_SHOWN]:
@@ -84,24 +87,98 @@ def schema_errors(instance: Any, validator: Draft202012Validator) -> list[str]:
 
 
 # ------------------------------------------------------------------ readers
-def _reject_constant(name: str) -> Any:
-    raise ValueError(f"non-finite number {name} is not allowed")
-
-
 def load_json_strict(path: Path) -> Any:
-    """Parse JSON, rejecting NaN, Infinity and -Infinity (Python's json accepts them by default)."""
+    """Shared strict parsing rejects duplicate keys and all non-finite values."""
+    from pipeline.common.io import read_json
+    return read_json(path)
 
-    def parse_float(text: str) -> float:
-        value = float(text)
-        if not math.isfinite(value):
-            raise ValueError(f"number {text} overflows to infinity")
-        return value
 
-    return json.loads(
-        path.read_text(encoding="utf-8"),
-        parse_constant=_reject_constant,
-        parse_float=parse_float,
-    )
+def semantic_errors(doc):
+    errors = []
+
+    def visit(node):
+        if isinstance(node, dict):
+            if "lo" in node and "hi" in node and not isinstance(node["lo"], list):
+                lo, hi = node["lo"], node["hi"]
+                if (lo is None) != (hi is None) or (lo is not None and lo > hi):
+                    errors.append("uncertainty bounds must be both null or finite and ordered")
+            if "kind" in node and "value" in node and not isinstance(node["value"], list):
+                if node["kind"] == "missing" and node["value"] is not None:
+                    errors.append("missing kind has a non-null value")
+                if node["value"] is None and node["kind"] not in ("missing", "sample"):
+                    errors.append("null value must carry missing kind")
+            for key, value in node.items():
+                if node is doc and key in ("monthly", "weekly") and "monthly_bins" in node:
+                    continue  # numeric tuples are checked below; there are no nested kind objects
+                visit(value)
+        elif isinstance(node, list):
+            for value in node:
+                visit(value)
+
+    visit(doc)
+    if not isinstance(doc, dict):
+        return errors
+    for key in ("monthly", "weekly"):
+        if isinstance(doc.get(key), list) and doc.get("schema_version") == "2.0":
+            seen = set()
+            bins = {(row["series"], row["month" if key == "monthly" else "week"]): row
+                    for row in doc[key + "_bins"]}
+            if len(bins) != len(doc[key + "_bins"]):
+                errors.append("duplicate spatial bin")
+            for row in doc[key]:
+                if len(row) not in (4, 6):
+                    errors.append("spatial rows need value or value/lo/hi")
+                    continue
+                cell, slot, series, value = row[:4]
+                identity = (cell, slot, series)
+                if identity in seen:
+                    errors.append("duplicate spatial contribution")
+                seen.add(identity)
+                if not 0 <= cell < len(doc["cells"]) or not 0 <= series < len(doc["series"]):
+                    errors.append("spatial index outside cells or series")
+                if (series, slot) not in bins or bins[series, slot]["value"] is None:
+                    errors.append("spatial contribution has no covered bin")
+                if len(row) == 6 and row[4] > row[5]:
+                    errors.append("spatial bounds are inverted")
+    rows = doc.get("rows", [])
+    if rows and isinstance(rows[0], dict):
+        keys = [(row.get("series"), row.get("year"), row.get("week", row.get("month"))) for row in rows]
+        if len(keys) != len(set(keys)):
+            errors.append("duplicate series/year/period key")
+    if "n_days" in doc and "series" in doc:
+        n = doc["n_days"]
+        from datetime import date
+        start = date.fromisoformat(doc["start"])
+        for name, series in doc["series"].items():
+            for key in ("value", "lo", "hi"):
+                if key in series and len(series[key]) != n:
+                    errors.append(f"daily {name}.{key} length is not n_days")
+            marked = [None] * n
+            for run in doc["kind_runs"]:
+                if run["series"] != name:
+                    continue
+                first = (date.fromisoformat(run["from"]) - start).days
+                last = (date.fromisoformat(run["to"]) - start).days
+                if first < 0 or last >= n or last < first:
+                    errors.append("daily kind run outside array")
+                    continue
+                for index in range(first, last + 1):
+                    if marked[index] is not None:
+                        errors.append("overlapping daily kind runs")
+                    marked[index] = run["kind"]
+            if any(kind is None for kind in marked):
+                errors.append(f"daily kind runs do not cover {name}")
+            if len(series["value"]) == n:
+                for i, value in enumerate(series["value"]):
+                    if marked[i] == "missing" and value is not None:
+                        errors.append("daily missing run contains a value")
+                    if "lo" in series and "hi" in series and len(series["lo"]) == len(series["hi"]) == n:
+                        lo, hi = series["lo"][i], series["hi"][i]
+                        if value is None and (lo is not None or hi is not None):
+                            errors.append("missing daily value has non-null bounds")
+                        if lo is not None and hi is not None and lo > hi:
+                            errors.append("daily bounds are inverted")
+    return list(dict.fromkeys(errors))[:MAX_ERRORS_SHOWN]
 
 
 def has_sample_kind(obj: Any) -> bool:
@@ -170,7 +247,9 @@ def _check_one(path: Path, rel: str, registry: Registry, schema_dir: Path) -> tu
     elif len(parts) == 2 and path.suffix == ".json" and path.stem in REGION_SCHEMAS:
         schema_name = path.stem
     elif len(parts) == 2 and name == "outline.geojson":
-        schema_name = None
+        schema_name = "outline"
+    elif len(parts) == 3 and parts[1] in ("periods", "spatial") and path.suffix == ".json":
+        schema_name = "period" if parts[1] == "periods" else "spatial"
     else:
         result.errors.append("unexpected file: no contract covers this path")
         return result, None
@@ -186,6 +265,11 @@ def _check_one(path: Path, rel: str, registry: Registry, schema_dir: Path) -> tu
     else:
         result.errors += schema_errors(doc, validator_for(schema_name, registry, schema_dir))
     result.has_sample = has_sample_kind(doc)
+    if not result.errors:
+        try:
+            result.errors += semantic_errors(doc)
+        except (ValueError, TypeError, KeyError, IndexError) as error:
+            result.errors.append(f"invalid semantic data: {error}")
     return result, doc
 
 
@@ -218,6 +302,33 @@ def run_check(data_dir: Path, schema_dir: Path = SCHEMA_DIR) -> list[FileResult]
 
     # kind "sample" anywhere implies manifest.contains_sample is true.
     manifest = docs.get("manifest.json")
+    if not isinstance(manifest, dict):
+        results.setdefault("manifest.json", FileResult("manifest.json")).errors.append("publication manifest is missing")
+    elif results["manifest.json"].ok:
+        entries = manifest.get("files", [])
+        listed = [entry["path"] for entry in entries]
+        if len(listed) != len(set(listed)):
+            results["manifest.json"].errors.append("duplicate manifest path")
+        actual = set(results) - {"manifest.json"}
+        if actual != set(listed):
+            results["manifest.json"].errors.append("manifest paths do not match the published files")
+        for entry in entries:
+            file = (data_dir / entry["path"]).resolve()
+            if not file.is_relative_to(data_dir.resolve()) or not file.is_file():
+                results["manifest.json"].errors.append(f"missing or unsafe referenced file: {entry['path']}")
+                continue
+            data = file.read_bytes()
+            if len(data) != entry["bytes"] or hashlib.sha256(data).hexdigest() != entry["sha256"]:
+                results["manifest.json"].errors.append(f"hash or byte count mismatch: {entry['path']}")
+    for relative, doc in docs.items():
+        if not isinstance(doc, dict) or not results[relative].ok or not relative.endswith(("period_index.json", "spatial_index.json")):
+            continue
+        for entry in doc.get("periods", doc.get("years", [])):
+            file = (data_dir / Path(relative).parent / entry["path"]).resolve()
+            if not file.is_relative_to((data_dir / Path(relative).parent).resolve()) or not file.is_file():
+                results[relative].errors.append(f"missing or unsafe index reference {entry['path']}")
+            elif len(file.read_bytes()) != entry["bytes"] or hashlib.sha256(file.read_bytes()).hexdigest() != entry["sha256"]:
+                results[relative].errors.append(f"index hash or byte count mismatch: {entry['path']}")
     contains_sample = isinstance(manifest, dict) and manifest.get("contains_sample") is True
     for res in results.values():
         if res.has_sample and not contains_sample:

@@ -1,7 +1,10 @@
 # R6 · Visualization and Design System
 
+> Current integration scope: one real whole-US polygon plus planted-truth Synthland; runtime web code is JavaScript with generated JSDoc declarations. Selectable analysis years and exact dates are separate. The authorized interfaces and requirement statuses are in `../02_CONTRACTS.md` and `../REQUIREMENTS_MATRIX.md`. Earlier multi-region, TypeScript-runtime and provisional stand-in instructions are superseded.
+
+
 ## 1. Your mission
-You make 24 years of fire data readable in ten seconds. You own the look (colour, type, spacing) and every chart: the broken ruler, the Fire Year Clock, the week and month calendars, the trend and percentile graphics, the hexagon map, and the three Methods charts. R5 places your components on screens; you never fetch data or route.
+You make the available satellite record readable in ten seconds. You own the look (colour, type, spacing) and every chart: the broken ruler, the Fire Year Clock, the week and month calendars, the trend and percentile graphics, the hexagon map, and the three Methods charts. R5 places your components on screens; you never fetch data or route.
 
 Two things are judged directly from your work: **accessibility of the colour ramps** (the challenge text asks for it) and **whether a stranger can name a region's peak season at a glance**.
 
@@ -13,11 +16,11 @@ Two things are judged directly from your work: **accessibility of the colour ram
 | You read | From | Contract |
 |---|---|---|
 | Sample JSON in `web/public/data/` (from Sat 18:15), real JSON (Sun 10:00) | R1 | §6 |
-| TypeScript types `web/src/data/types.gen.ts` (import types only) | R5 | §6 |
+| TypeScript types `web/src/data/types.gen.d.ts` (import types only) | R5 | §6 |
 
 | You produce | For | Contract |
 |---|---|---|
-| Components exported from `web/src/viz/index.ts` with **exactly** the props in contracts §8, plus `percentileRank(value, others)` | R5 | §8 |
+| Components exported from `web/src/viz/index.js` with **exactly** the props in contracts §8, plus `percentileRank(value, others)` | R5 | §8 |
 | `tokens.css` (CSS variables for colour, type, spacing, light print theme) | R5 | — |
 | `Gallery` component (R5 mounts it at `#/gallery`) | yourself, reviewers | — |
 | Screenshots and an Open Graph image in `design/exports/` | R2 (slides, video), R5 | — |
@@ -32,13 +35,13 @@ Two things are judged directly from your work: **accessibility of the colour ram
 | R2 | Data, then slides and video | Needs clean screenshots by Sunday 16:00 and a readable 1920×1080 capture. |
 
 ## 5. Tools (all free)
-D3 (scales, shapes, chromatic schemes, arcs), React + TypeScript, MapLibre GL JS, h3-js, Terra Draw, Tailwind (through tokens). Design: **Penpot** or Excalidraw for 30 minutes of wireframes, no more. Colour checks: Viz Palette, ColorBrewer, the WebAIM contrast checker, Chrome DevTools → Rendering → "Emulate vision deficiencies". Optional: Playwright MCP or Chrome DevTools MCP so your assistant can look at the gallery.
+D3 (scales, shapes, chromatic schemes, arcs), React + JavaScript with generated declarations, MapLibre GL JS, h3-js, Terra Draw, Tailwind (through tokens). Design: **Penpot** or Excalidraw for 30 minutes of wireframes, no more. Colour checks: Viz Palette, ColorBrewer, the WebAIM contrast checker, Chrome DevTools → Rendering → "Emulate vision deficiencies". Optional: Playwright MCP or Chrome DevTools MCP so your assistant can look at the gallery.
 
 ## 6. Your timeline
 | Gate | You deliver |
 |---|---|
-| Sat **17:30** | Stubs for every component in `viz/index.ts` (so R5 compiles) |
-| A · Sat 18:30 | `tokens.css`, `theme.ts` (scales), `Gallery`, `BrokenRuler` working on sample data |
+| Sat **17:30** | Stubs for every component in `viz/index.js` (so R5 compiles) |
+| A · Sat 18:30 | `tokens.css`, `theme.js` (scales), `Gallery`, `BrokenRuler` working on sample data |
 | B · Sat 23:00 | `CalendarHeatmap` (week and month), `FireYearClock`, `TrendBars`, `PercentileStrip`, `KindBadge`, `Legend` on sample data with all states |
 | C · Sun 10:00 | Real-data pass: scale domains, labels, performance; the 10-second test passed or the default view switched |
 | D · Sun 14:00 | `SeasonShiftChart`, `EyesightCurve`, `DriftChart`, `HexMap` (draw control if S5 is alive) |
@@ -46,7 +49,7 @@ D3 (scales, shapes, chromatic schemes, arcs), React + TypeScript, MapLibre GL JS
 
 ## 7. Session primer (paste at the start of every AI session)
 ```text
-You are assisting R6 on the FireRosetta project. Before doing anything, read these files fully:
+You are assisting R6 on the Prometheus Torch project. Before doing anything, read these files fully:
 - AGENTS.md
 - plan/02_CONTRACTS.md sections 6, 8 and 9 (the JSON I draw, my component props, the enums)
 - plan/03_SCIENCE_DECISIONS.md SD-08, SD-10, SD-11, SD-13 and section H
@@ -54,7 +57,7 @@ You are assisting R6 on the FireRosetta project. Before doing anything, read the
 
 I own only: web/src/viz/, web/src/styles/tokens.css and design/. Never edit files elsewhere, including package.json.
 Components are pure: props in, SVG out. No fetch, no router, no global state, no hard-coded colours (use the CSS
-variables and the scales in viz/theme.ts). Props must match contracts section 8 exactly.
+variables and the scales in viz/theme.js). Props must match contracts section 8 exactly.
 Every chart must handle: kind "missing" (hatched), "estimated" (dashed, lighter), empty data, one year of data, and
 values of zero. Never draw missing as zero. Never rely on colour alone.
 Reply first with a three-line restatement and the list of files you will create or change. Run the acceptance commands and
@@ -66,18 +69,18 @@ paste their real output. Finish with a five-line handoff note.
 ### A1 · Stubs, tokens, theme, gallery (start as soon as R5's scaffold is on main; stubs by 17:30)
 ```text
 Task, in this order:
-1. web/src/viz/index.ts exporting every component named in plan/02_CONTRACTS.md section 8 with exactly those prop
+1. web/src/viz/index.js exporting every component named in plan/02_CONTRACTS.md section 8 with exactly those prop
    types (import types from "@/data/types.gen" or "@/data/types"; if neither exists yet declare minimal local types
-   in viz/types.local.ts and switch later). Each component is a stub: a bordered box showing its name and the size of
+   in viz/types.local.js and switch later). Each component is a stub: a bordered box showing its name and the size of
    its main prop. Also export percentileRank(value: number, others: number[]): number implementing SD-11
    (100 * (count(others < v) + 0.5 * count(others == v)) / n). Commit and merge this step alone first.
 2. web/src/styles/tokens.css per section 9.1 of my role file: CSS variables for the dark theme (default), a .brief /
    @media print light theme, type scale, spacing, radius, focus ring.
-3. web/src/viz/theme.ts per section 9.2: activityScale(max), anomalyScale(), kind styles, SVG <defs> for the hatch
+3. web/src/viz/theme.js per section 9.2: activityScale(max), anomalyScale(), kind styles, SVG <defs> for the hatch
    pattern, number and date formatters.
-4. web/src/viz/Gallery.tsx: loads the sample JSON for a region chosen in a <select> (this is the ONE place in viz that
+4. web/src/viz/Gallery.jsx: loads the sample JSON for a region chosen in a <select> (this is the ONE place in viz that
    may fetch, and only from `${import.meta.env.BASE_URL}data/`), then renders every component in every state:
-   normal, all-missing, with estimated band, single year, empty. Export it from index.ts.
+   normal, all-missing, with estimated band, single year, empty. Export it from index.js.
 
 Tests (vitest, web/src/viz/__tests__): percentileRank ties and bounds; activityScale(0) is the "zero" colour and is
 monotonic in lightness; anomalyScale(50) is the neutral colour.
@@ -97,7 +100,7 @@ animation under prefers-reduced-motion. Axis: years every 5; y ticks at sensible
 Accessible: role="img" with an aria-label built from ruler.sentence; a visually hidden table of the values.
 Responsive from 320 to 1200 px wide via viewBox.
 
-Acceptance: npm run typecheck && npm run build; check in the gallery at 360 px and 1280 px, in all three sample regions.
+Acceptance: npm run typecheck && npm run build; check in the gallery at 360 px and 1280 px, in the configured sample states.
 ```
 
 ### B1 · CalendarHeatmap, week and month (start 18:30)
@@ -130,7 +133,7 @@ Task: implement FireYearClock (spec 9.5): the same data as the week heatmap, wra
 - 52 angular segments, week 1 at 12 o'clock, clockwise. One ring per year: 2003 innermost, the current year outermost.
   Inner radius 24% of the outer radius; equal ring thickness; 0.5 px gaps.
 - Fills, lenses, modes, missing/estimated styles and range dimming identical to CalendarHeatmap: share one function
-  that maps a cell to its style (viz/cellStyle.ts) so the two can never disagree.
+  that maps a cell to its style (viz/cellStyle.js) so the two can never disagree.
 - Month names around the outside; thin spokes at month boundaries. Critical weeks: an outer arc band with a label.
 - The current year's ring has a 1.5 px outline. The centre shows the region's typical peak in words computed from
   season.windows[0] ("Peak: late October") or, on hover/focus, the hovered cell's year, week dates and value.
@@ -164,9 +167,9 @@ Acceptance: npm run typecheck && npm run test && npm run build; all states visib
 
 ### C1 · Real-data pass (Sun 10:00, after R1 announces real data)
 ```text
-Task: open the gallery and the three real region pages and fix what real data breaks, only inside web/src/viz/.
+Task: open the gallery and the real US page and the separate synthetic validation page and fix what real data breaks, only inside web/src/viz/.
 Check and report with screenshots: (1) scale domains (one extreme year must not wash out the rest: confirm the p99 +
-sqrt choice or switch that one constant in theme.ts); (2) label collisions at 360 px; (3) rows with long missing runs
+sqrt choice or switch that one constant in theme.js); (2) label collisions at 360 px; (3) rows with long missing runs
 (outages) read as "no data", not as quiet; (4) the era strip changes at 2023 and 2026; (5) the 2012 marker in the
 naive lens; (6) hover performance on the clock in Firefox; (7) regions that are off-season now.
 List anything that needs a data fix for R1 or a layout fix for R5; do not patch around data problems.
@@ -201,7 +204,7 @@ Task: implement HexMap (spec 9.8) with maplibre-gl and h3-js.
 - Hover: tooltip with the value and unit. Click toggles a cell in selectedCells (outlined in the accent colour).
 - drawEnabled: a "Draw area" button uses terra-draw (rectangle mode) with the MapLibre adapter; on finish, select all
   res-5 cells whose centre is inside the rectangle and call onAoiChange with their indexes; "Clear" calls it with [].
-- Lazy: export HexMap through React.lazy from index.ts so maplibre is not in the main bundle. Clean up the map on unmount.
+- Lazy: export HexMap through React.lazy from index.js so maplibre is not in the main bundle. Clean up the map on unmount.
 - No WebGL (or test environment): render a static SVG of the hexagons with the same colours.
 
 Acceptance: npm run typecheck && npm run build; in the gallery, block the tile host in DevTools and confirm the
@@ -232,7 +235,7 @@ Task: final quality pass inside web/src/viz/ and tokens.css.
 - **Spacing:** 4 px grid. Radius 8 px. Focus ring 2 px accent with 2 px offset.
 - Expose everything as CSS variables (`--fr-bg`, `--fr-surface`, `--fr-text`, `--fr-accent`, …) and map Tailwind's theme colours to them.
 
-### 9.2 Scales (`theme.ts`)
+### 9.2 Scales (`theme.js`)
 - **Activity (sequential):** `d3.interpolateInferno` sampled on [0.10, 0.98], through `scaleSequentialSqrt`, domain `[0, p99]`. Exactly zero uses the surface colour with a faint outline, so "covered, nothing burning" differs from the lowest non-zero.
 - **Anomaly (diverging):** `d3.interpolatePuOr` reversed so **orange = busier, purple = quieter**, centred at the 50th percentile, domain 0–100. Colour-blind safe.
 - **No data:** 45° hatch pattern, 1 px lines in the muted colour, on the background colour. Never a fill from either ramp.

@@ -13,14 +13,20 @@ export function watch(page) {
   page.on("request", (r) => {
     const u = new URL(r.url());
     if (u.protocol === "data:" || u.protocol === "blob:") return;
-    if (
-      u.origin !== new URL(page.url() === "about:blank" ? "http://localhost:4173/" : page.url()).origin &&
-      !OPTIONAL_HOSTS.includes(u.host)
-    ) {
+    const base = page.url() === "about:blank" ? process.env.PLAYWRIGHT_BASE_URL || "http://localhost:4173/" : page.url();
+    if (u.origin !== new URL(base).origin && !OPTIONAL_HOSTS.includes(u.host)) {
       problems.push(`external request: ${r.url()}`);
     }
   });
-  page.on("console", (m) => m.type() === "error" && problems.push(`console: ${m.text()}`));
+  page.on("console", (message) => {
+    if (message.type() !== "error") return;
+    const location = message.location().url;
+    const networkFailure = /Failed to load resource|Failed to fetch|AJAXError/.test(message.text());
+    const optionalLocation = OPTIONAL_HOSTS.some((host) => location?.startsWith(`https://${host}/`));
+    const optionalMessage = OPTIONAL_HOSTS.some((host) => message.text().includes(`https://${host}/`));
+    if (networkFailure && (optionalLocation || optionalMessage)) return;
+    problems.push(`console: ${message.text()}`);
+  });
   page.on("pageerror", (e) => problems.push(`page error: ${e.message}`));
   const optional = (url) => OPTIONAL_HOSTS.some((h) => new URL(url).host === h);
   page.on(

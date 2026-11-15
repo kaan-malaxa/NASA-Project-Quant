@@ -48,7 +48,7 @@ def clean(tmp_path_factory):
 def test_model_data_is_validated(clean):
     entry, rows = clean
     assert entry["status"] == "validated"
-    assert set(rows) == {"reliability_err", "loyo_weekly_wape", "backcast_weekly_wape", "t1_t2_wape"}
+    assert set(rows) == {"reliability_err", "reliability_year_absolute_err", "loyo_weekly_wape", "backcast_weekly_wape", "t1_t2_wape"}
     assert all(set(r) == ROW_KEYS and r["method"] == "tier2" and r["years"] == [2013, 2022] for r in rows.values())
     assert rows["reliability_err"]["value"] < 0.05
     assert "Neighbour-match sensitivity (reported, not used)" in rows["reliability_err"]["note"]
@@ -57,12 +57,13 @@ def test_model_data_is_validated(clean):
     assert 0 < rows["loyo_weekly_wape"]["value"] < 1 and 0 < rows["backcast_weekly_wape"]["value"] < 1
 
 
-def test_corrupt_year_raises_reliability_and_flips_status(tmp_path, clean):
+def test_corrupt_year_is_visible_in_absolute_diagnostic_even_when_pooled_error_cancels(tmp_path, clean):
     _, clean_rows = clean
     entry, rows = _run(tmp_path, corrupt=True)
-    assert rows["reliability_err"]["value"] > clean_rows["reliability_err"]["value"]
-    assert rows["reliability_err"]["value"] > 0.05
-    assert entry["status"] == "exploratory"
+    assert rows["reliability_year_absolute_err"]["value"] > clean_rows["reliability_year_absolute_err"]["value"]
+    assert rows["reliability_year_absolute_err"]["value"] > 0.05
+    assert rows["reliability_err"]["value"] < 0.05
+    assert entry["status"] == "validated"  # locked pooled criterion; diagnostic is reported, never substituted
 
 
 def test_missing_tier1_validation_keeps_exploratory(tmp_path):
@@ -118,8 +119,22 @@ def test_reliability_per_year_does_not_cancel():
     p_half = {"a": 0.0, "b": 0.0, "c": 1.0}  # p = 0.5 everywhere
     p_high = {"a": 50.0, "b": 0.0, "c": 0.75}  # p = 0.75 everywhere
     p_low = {"a": -50.0, "b": 0.0, "c": 0.05}  # p ~ 0
-    per_year, pooled, n = reliability_heldout(m, {2013: {"params": p_half}, 2014: {"params": p_half}})
+    pooled, per_year, n = reliability_heldout(m, {2013: {"params": p_half}, 2014: {"params": p_half}})
     assert per_year == pytest.approx(0.0) and pooled == pytest.approx(0.0) and n == 8
     # 2013 over-predicted by 1, 2014 under-predicted by 2: pooled = |1 - 2| / 4, per-year = (1 + 2) / 4
-    per_year, pooled, _ = reliability_heldout(m, {2013: {"params": p_high}, 2014: {"params": p_low}})
+    pooled, per_year, _ = reliability_heldout(m, {2013: {"params": p_high}, 2014: {"params": p_low}})
     assert pooled == pytest.approx(1 / 4) and per_year == pytest.approx(3 / 4)
+
+
+def test_matching_predictions_reject_training_year_leak_and_duplicates():
+    from pipeline.eyesight.validate import matching_heldout_wape
+    t1 = pd.DataFrame({"year": [2013, 2014], "week": [1, 1], "excluded_year": [2013, 2014],
+                       "tier1": [10., 20.]})
+    t2 = pd.DataFrame({"year": [2013, 2014], "week": [1, 1], "excluded_year": [2013, 2014],
+                       "pred_aqua": [12., 18.]})
+    assert matching_heldout_wape(t1, t2) == (pytest.approx(4 / 30), 2)
+    t2.loc[0, "excluded_year"] = 2014
+    with pytest.raises(ValueError, match="excluded year"):
+        matching_heldout_wape(t1, t2)
+    with pytest.raises(ValueError, match="duplicate"):
+        matching_heldout_wape(pd.concat([t1, t1]), t1)

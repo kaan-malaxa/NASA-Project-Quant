@@ -6,7 +6,7 @@ import sys
 import time
 
 from . import compat
-from .stage import RegionClipError, run
+from .stage import run
 
 STAGE = "eyesight"
 
@@ -15,15 +15,13 @@ def main(argv: list[str] | None = None) -> int:
     args = compat.stage_parser(STAGE).parse_args(argv)
     log = compat.get_logger(STAGE)
     log.setLevel(str(getattr(args, "log_level", "INFO")).upper())
-    if not compat.HAVE_COMMON:
-        log.warning("pipeline.common not found; using pipeline/eyesight/compat.py fallbacks")
     compat.set_data_root(getattr(args, "data_root", None))
     pass_ = getattr(args, "pass_", None) or getattr(args, "pass", "D")
 
     t0 = time.perf_counter()  # the clock pipeline.common.log.finish subtracts from
     try:
         entry, diag = run(args.region, pass_, log)
-    except (FileNotFoundError, RegionClipError) as exc:
+    except (OSError, ValueError) as exc:
         print(f"eyesight failed: {exc}", file=sys.stderr)
         return 2
 

@@ -80,8 +80,8 @@ def test_empty_aggregation_and_out_of_region():
 
 
 def test_grid_end_to_end_rewrites_masked_rows_and_is_idempotent(tmp_path, monkeypatch):
-    monkeypatch.setenv("FIREROSETTA_DATA_ROOT", str(tmp_path))
-    region = replace(config.get_region("us"), bbox=[10.99, 10.99, 11.01, 11.01], polygon=None)
+    monkeypatch.setenv("PROMETHEUS_TORCH_DATA_ROOT", str(tmp_path))
+    region = replace(config.get_region("us"), bbox=[10.99, 10.99, 11.01, 11.01], polygon=None, synthetic=True)
     monkeypatch.setattr(config, "get_region", lambda region_id: region)
     monkeypatch.setattr(config, "load_science", lambda: SCIENCE)
     source = detections((None, 0))
@@ -96,6 +96,11 @@ def test_grid_end_to_end_rewrites_masked_rows_and_is_idempotent(tmp_path, monkey
         "sensor": ["snpp"], "utc_date": [date(2023, 1, 3)], "n_raw_rows": [2],
     }), "raw_daily_counts"), paths.raw_daily_counts("us"), "raw_daily_counts")
     io.write_json([], paths.filter_log("us"))
+    raw = paths.raw_dir("us") / "viirs_snpp_fixture.csv"
+    raw.parent.mkdir(parents=True)
+    raw.write_bytes(b"fabricated input")
+    io.write_json([{"file": raw.name, "via": "synth", "sha256": io.sha256(raw)}], paths.manifest("us"))
+    clean.record_clean("us")
     assert grid.run("us") == 1
     assert len(io.read_parquet(paths.detections("us", "snpp"), "detections")) == 1
     assert io.read_parquet(paths.celldays("us"), "celldays").n_det.iloc[0] == 1

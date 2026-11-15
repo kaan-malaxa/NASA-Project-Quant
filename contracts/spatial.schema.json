@@ -1,0 +1,212 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "spatial",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "2.0"
+    },
+    "generated_at": {
+      "$ref": "common.schema.json#/$defs/generated_at"
+    },
+    "code_version": {
+      "$ref": "common.schema.json#/$defs/code_version"
+    },
+    "region": {
+      "$ref": "common.schema.json#/$defs/region_id"
+    },
+    "year": {
+      "type": "integer"
+    },
+    "series": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/web_series"
+      }
+    },
+    "cells": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "monthly": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "prefixItems": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "integer"
+          },
+          {
+            "type": "integer"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "number"
+          }
+        ],
+        "minItems": 4,
+        "maxItems": 6,
+        "items": false
+      }
+    },
+    "weekly": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "prefixItems": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "integer"
+          },
+          {
+            "type": "integer"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "number"
+          }
+        ],
+        "minItems": 4,
+        "maxItems": 6,
+        "items": false
+      }
+    },
+    "monthly_bins": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "month": {
+            "$ref": "common.schema.json#/$defs/month"
+          },
+          "series": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4
+          },
+          "value": {
+            "$ref": "common.schema.json#/$defs/nullable_number"
+          },
+          "lo": {
+            "$ref": "common.schema.json#/$defs/nullable_number"
+          },
+          "hi": {
+            "$ref": "common.schema.json#/$defs/nullable_number"
+          },
+          "kind": {
+            "$ref": "common.schema.json#/$defs/kind"
+          },
+          "source": {
+            "$ref": "common.schema.json#/$defs/nullable_sensor"
+          },
+          "n_days": {
+            "type": "integer"
+          },
+          "n_covered": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "month",
+          "series",
+          "value",
+          "lo",
+          "hi",
+          "kind",
+          "source",
+          "n_days",
+          "n_covered"
+        ]
+      }
+    },
+    "weekly_bins": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "week": {
+            "$ref": "common.schema.json#/$defs/week"
+          },
+          "series": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4
+          },
+          "value": {
+            "$ref": "common.schema.json#/$defs/nullable_number"
+          },
+          "lo": {
+            "$ref": "common.schema.json#/$defs/nullable_number"
+          },
+          "hi": {
+            "$ref": "common.schema.json#/$defs/nullable_number"
+          },
+          "kind": {
+            "$ref": "common.schema.json#/$defs/kind"
+          },
+          "source": {
+            "$ref": "common.schema.json#/$defs/nullable_sensor"
+          },
+          "n_days": {
+            "type": "integer"
+          },
+          "n_covered": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "week",
+          "series",
+          "value",
+          "lo",
+          "hi",
+          "kind",
+          "source",
+          "n_days",
+          "n_covered"
+        ]
+      }
+    },
+    "unit_month": {
+      "type": "string"
+    },
+    "unit_week": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "generated_at",
+    "code_version",
+    "region",
+    "year",
+    "series",
+    "cells",
+    "monthly",
+    "weekly",
+    "monthly_bins",
+    "weekly_bins",
+    "unit_month",
+    "unit_week"
+  ]
+}

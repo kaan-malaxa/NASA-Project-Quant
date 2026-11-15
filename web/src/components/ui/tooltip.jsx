@@ -30,7 +30,7 @@ function TooltipTrigger({
 }
 
 function TooltipContent({
-  className,
+  className = undefined,
   sideOffset = 0,
   children,
   ...props

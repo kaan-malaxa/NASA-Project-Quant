@@ -34,11 +34,7 @@ def loyo_fits(matched: pd.DataFrame, by_year: dict[int, tuple[int, int]], init) 
 
 
 def reliability_heldout(matched: pd.DataFrame, fits: dict[int, dict]) -> tuple[float, float, int]:
-    """Held-out reliability error. Returns (per_year, signed_pooled, n):
-    per_year = sum over held-out years Y of |sum p_-Y - observed_Y|, divided by total observed (the value used);
-    signed_pooled = |sum over all held-out years of (p - observed)| / total observed (reported only).
-    The signed pooled form cancels: a bad year Y is over-predicted by its own fit while the other nine fits,
-    which include Y, under-predict their years by about the same total. The per-year form cannot cancel."""
+    """Return the locked pooled reliability, per-year absolute diagnostic, and sample count."""
     abs_sum, total_p, total_y = 0.0, 0.0, 0.0
     for y, f in fits.items():
         rows = matched[matched["year"] == y]
@@ -50,7 +46,7 @@ def reliability_heldout(matched: pd.DataFrame, fits: dict[int, dict]) -> tuple[f
         total_y += sy
     if not total_y:
         return float("inf"), float("inf"), len(matched)
-    return abs_sum / total_y, abs(total_p - total_y) / total_y, len(matched)
+    return abs(total_p - total_y) / total_y, abs_sum / total_y, len(matched)
 
 
 # ------------------------------------------------------------------ daily and weekly series
@@ -124,6 +120,20 @@ def t1_t2_weekly_wape(daily_t2: pd.DataFrame, daily_r3: pd.DataFrame, fit_start:
     return weekly_wape(df, "t2", "t1")
 
 
+def matching_heldout_wape(tier1: pd.DataFrame, tier2: pd.DataFrame):
+    """Compare matching excluded-year predictions, never fits trained on the evaluated year."""
+    keys = ["year", "week", "excluded_year"]
+    for table in (tier1, tier2):
+        if table.duplicated(keys).any() or not table["year"].eq(table["excluded_year"]).all():
+            raise ValueError("Held-out predictions have duplicate keys or a mismatched excluded year")
+    paired = tier1.merge(tier2, on=keys, validate="one_to_one")
+    valid = paired[["tier1", "pred_aqua"]].notna().all(axis=1)
+    paired = paired.loc[valid]
+    denominator = float(paired.tier1.sum())
+    return (float(abs(paired.pred_aqua - paired.tier1).sum()) / denominator if denominator else None,
+            len(paired))
+
+
 # ------------------------------------------------------------------ SD-17
 def tier1_loyo_wape(validation_t1: dict | None, region: str) -> float | None:
     if not validation_t1:
@@ -189,25 +199,42 @@ def validate(region: str, entry: dict, diag: dict, celldays: pd.DataFrame, cover
     floor = float(t2["frp_floor_mw"])
 
     fits = loyo_fits(matched, counts["by_year"], init=(params["a"], params["b"], params["c"]))
-    rel, rel_pooled, n_rel = reliability_heldout(matched, fits)
+    rel, rel_by_year, n_rel = reliability_heldout(matched, fits)
     daily = heldout_predictions(daily_observed(celldays, coverage, fit_start, fit_end, pass_, daily_r3),
                                 matched, fits)
     source_note = "aqua_raw/snpp_raw from R3 daily.parquet" if daily_r3 is not None else \
         "aqua_raw/snpp_raw counted from celldays (R3 daily.parquet missing)"
     loyo, n_loyo = weekly_wape(daily, "pred_aqua", "aqua_obs")
     back, n_back = weekly_wape(daily, "pred_snpp", "snpp_obs")
-    if daily_r3 is not None:
-        t1t2, n_t1t2 = t1_t2_weekly_wape(diag["daily_t2"], daily_r3, fit_start, fit_end)
-        t1t2_note = "harmonized_t2 vs R3 viirs_as_aqua, weekly, fit window"
+    from pipeline.common import io, paths, timebins
+
+    heldout = timebins.aggregate(daily[["local_day", "aqua_obs", "pred_aqua"]], "week",
+                                 value_cols=("aqua_obs", "pred_aqua"))
+    heldout = heldout[["year", "week", "aqua_obs", "pred_aqua"]].copy()
+    heldout["excluded_year"] = heldout["year"]
+    io.write_parquet(heldout, paths.heldout_predictions(region, "eyesight"), "heldout_weekly_t2")
+    io.write_json({str(year): {"training_years": fit["years_used"]} for year, fit in fits.items()},
+                  paths.eyesight_dir(region) / "folds.json")
+    t1_path = paths.heldout_predictions(region, "harmonize")
+    if t1_path.is_file():
+        t1_predictions = io.read_parquet(t1_path, "heldout_weekly_t1")
+        t1t2, n_t1t2 = matching_heldout_wape(t1_predictions, heldout)
+        pairs = t1_predictions.merge(heldout, on=["year", "week", "excluded_year"], validate="one_to_one")
+        entry["heldout_compare"] = [{"year": int(row.year), "week": int(row.week),
+                                     "excluded_year": int(row.excluded_year), "observed": float(row.aqua_obs),
+                                     "tier1": float(row.tier1), "tier2": float(row.pred_aqua), "kind": "harmonized"}
+                                    for row in pairs.dropna(subset=["tier1", "pred_aqua", "aqua_obs"]).itertuples()]
+        t1t2_note = "Tier 1 vs Tier 2 predictions from matching excluded-year folds, weekly"
     else:
+        entry["heldout_compare"] = []
         t1t2, n_t1t2, t1t2_note = None, 0, "not computed: R3 daily.parquet (viirs_as_aqua) missing"
     nb = neighbour_note(celldays, coverage, fit_start, fit_end, pass_, floor, params, entry["g"], diag["k_t2"])
 
     rows = [
         row(region, "reliability_err", rel, n_rel, years,
-            f"Value = sum over held-out years of |sum p - observed| / total observed (per-year absolute). "
-            f"Signed pooled form |sum of all held-out (p - observed)| / observed = {rel_pooled:.4f} (reported only; "
-            f"it cancels across years). {nb}"),
+            f"Locked pooled |sum p - sum observed| / sum observed across held-out years. {nb}"),
+        row(region, "reliability_year_absolute_err", rel_by_year, n_rel, years,
+            "Diagnostic: sum of absolute yearly prediction errors / total observed; does not cancel across years."),
         row(region, "loyo_weekly_wape", loyo, n_loyo, years, f"{NOAA20_NOTE} {source_note}."),
         row(region, "backcast_weekly_wape", back, n_back, years, source_note + "."),
         row(region, "t1_t2_wape", t1t2, n_t1t2, years, t1t2_note + "."),

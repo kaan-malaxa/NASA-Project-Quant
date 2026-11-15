@@ -1,5 +1,5 @@
 /** One section of the region story; scroll-margin keeps its heading clear of the sticky bars. */
-export default function StorySection({ id, title, intro, children }) {
+export default function StorySection({ id, title, intro = undefined, children }) {
   return (
     <section
       id={id}

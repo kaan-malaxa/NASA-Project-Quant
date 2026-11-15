@@ -23,7 +23,7 @@ def generated_at() -> str:
     return now.strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-def run_assemble(t0: float) -> int:
+def run_assemble(t0: float, scope=None) -> int:
     from pipeline.common import config, io, paths
     from pipeline.export.assemble import AssembleError, Inputs, assemble
 
@@ -38,10 +38,11 @@ def run_assemble(t0: float) -> int:
         science_sha256=hashlib.sha256(science_yaml.read_bytes()).hexdigest(),
         harmonized_dir=paths.harmonized_dir, eyesight_dir=paths.eyesight_dir, grid_dir=paths.grid_dir,
         raw_dir=paths.raw_dir, clean_dir=paths.clean_dir, read_parquet=io.read_parquet, write_json=io.write_json,
-        header={"schema_version": "1.0", "generated_at": generated_at(), "code_version": io.code_version()})
+        header={"schema_version": "1.0", "generated_at": generated_at(), "code_version": io.code_version()},
+        scope=scope)
     try:
         warnings = assemble(inp)
-    except AssembleError as exc:
+    except (AssembleError, OSError, ValueError) as exc:
         print(f"FAIL export: {exc}")
         return 1
     for w in warnings:
@@ -57,11 +58,15 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--check", action="store_true", help="validate web/public/data against contracts/")
     # The common stage flags (contracts section 3). pipeline.run passes them to every stage, export included.
     parser.add_argument("--data-root", default=None, help="folder holding the pipeline's intermediate files")
+    parser.add_argument("--web-output-dir", default=None)
+    parser.add_argument("--region", action="append", help="explicit region scope; repeat to rebuild several regions")
     parser.add_argument("--pass", dest="pass_", choices=("D", "N"), default="D")
     parser.add_argument("--log-level", default="INFO")
     args = parser.parse_args(argv)
     if args.data_root:
-        os.environ["FIREROSETTA_DATA_ROOT"] = str(args.data_root)
+        os.environ["PROMETHEUS_TORCH_DATA_ROOT"] = str(args.data_root)
+    if args.web_output_dir:
+        os.environ["PROMETHEUS_TORCH_WEB_DATA_DIR"] = str(args.web_output_dir)
 
     t0 = time.monotonic()
     if args.sample:
@@ -72,7 +77,12 @@ def main(argv: list[str] | None = None) -> int:
         if not args.check:
             return 0
     elif not args.check:
-        return run_assemble(t0)
+        if args.region is None:
+            from pipeline.common import config, paths
+            scope = [region.id for region in config.load_regions() if paths.stats_dir(region.id).is_dir()]
+        else:
+            scope = args.region
+        return run_assemble(t0, scope=scope)
 
     results = run_check(default_data_dir())
     code = report(results)

@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils"
 import { Tabs as TabsPrimitive } from "radix-ui"
 
 function Tabs({
-  className,
+  className = undefined,
   orientation = "horizontal",
   ...props
 }) {
@@ -37,8 +37,9 @@ const tabsListVariants = cva(
   }
 )
 
+/** @param {import("class-variance-authority").VariantProps<typeof tabsListVariants> & {className?: string; asChild?: boolean; [key: string]: any}} props */
 function TabsList({
-  className,
+  className = undefined,
   variant = "default",
   ...props
 }) {
@@ -53,7 +54,7 @@ function TabsList({
 }
 
 function TabsTrigger({
-  className,
+  className = undefined,
   ...props
 }) {
   return (
@@ -72,7 +73,7 @@ function TabsTrigger({
 }
 
 function TabsContent({
-  className,
+  className = undefined,
   ...props
 }) {
   return (

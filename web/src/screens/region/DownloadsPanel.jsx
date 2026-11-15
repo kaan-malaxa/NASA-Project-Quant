@@ -118,7 +118,7 @@ export default function DownloadsPanel({ region, files, url, lastDataDay, chartE
         <Item title="Hotspot records (CSV)" description="Individual satellite detections, as cleaned by our pipeline.">
           {files.hotspots_recent?.status === "lazy" ? (
             <Button size="sm" variant="outline" asChild>
-              <a href={dataUrl(regionFilePath(region.id, "hotspots_recent"))} download={`firerosetta_${region.id}_hotspots_recent.csv`}>
+              <a href={dataUrl(regionFilePath(region.id, "hotspots_recent"))} download={`prometheus_torch_${region.id}_hotspots_recent.csv`}>
                 <FileText aria-hidden="true" /> Last 31 days (near-real-time)
               </a>
             </Button>

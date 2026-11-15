@@ -1,5 +1,8 @@
 # R5 · Web App and Product Screens
 
+> Current integration scope: one real whole-US polygon plus planted-truth Synthland; runtime web code is JavaScript with generated JSDoc declarations. Selectable analysis years and exact dates are separate. The authorized interfaces and requirement statuses are in `../02_CONTRACTS.md` and `../REQUIREMENTS_MATRIX.md`. Earlier multi-region, TypeScript-runtime and provisional stand-in instructions are superseded.
+
+
 ## 1. Your mission
 You build the website a judge will actually touch: the shell, the data loading, every screen's layout and words, the date-range selector, the downloads, the printable Season Brief, and the deployment. R6 builds the charts as components; you place them, feed them data and make the whole thing fast, clear and unbreakable.
 
@@ -15,7 +18,7 @@ The site is **static**. It reads JSON files from its own `data/` folder and noth
 |---|---|---|
 | `web/public/data/**` (sample from Sat 18:15, real from Sun 10:00) | R1 | §6 |
 | `contracts/*.schema.json` → generated TypeScript types | R1 | §6 |
-| Chart components and `percentileRank` from `web/src/viz/index.ts` | R6 | §8 |
+| Chart components and `percentileRank` from `web/src/viz/index.js` | R6 | §8 |
 | CSS variables from `tokens.css` | R6 | — |
 
 | You produce | For |
@@ -34,7 +37,7 @@ The site is **static**. It reads JSON files from its own `data/` folder and noth
 | R4 | Simulator and eyesight curve | Their planted-truth table and curve status appear on your Methods page. |
 
 ## 5. Tools (all free)
-Vite + React + TypeScript; Tailwind CSS; **shadcn/ui** (Radix-based components you copy in: Button, Card, Tabs, ToggleGroup, Tooltip, Popover, Calendar/DateRangePicker, Dialog, Table, Badge, Skeleton, Sonner toasts); Lucide icons; `react-router-dom` (HashRouter); `ajv`; `papaparse`; `qrcode.react`; Vitest + Testing Library; Playwright + axe. GitHub Actions + GitHub Pages. Optional: Playwright MCP or Chrome DevTools MCP so your assistant can open the local site and read console errors.
+Vite + React + JavaScript with generated declarations; Tailwind CSS; **shadcn/ui** (Radix-based components you copy in: Button, Card, Tabs, ToggleGroup, Tooltip, Popover, Calendar/DateRangePicker, Dialog, Table, Badge, Skeleton, Sonner toasts); Lucide icons; `react-router-dom` (HashRouter); `ajv`; `papaparse`; `qrcode.react`; Vitest + Testing Library; Playwright + axe. GitHub Actions + GitHub Pages. Optional: Playwright MCP or Chrome DevTools MCP so your assistant can open the local site and read console errors.
 
 ## 6. Your timeline
 | Gate | You deliver |
@@ -48,7 +51,7 @@ Vite + React + TypeScript; Tailwind CSS; **shadcn/ui** (Radix-based components y
 
 ## 7. Session primer (paste at the start of every AI session)
 ```text
-You are assisting R5 on the FireRosetta project. Before doing anything, read these files fully:
+You are assisting R5 on the Prometheus Torch project. Before doing anything, read these files fully:
 - AGENTS.md
 - plan/02_CONTRACTS.md sections 6, 7, 8 and 9 (data files, routes, component props, enums)
 - plan/03_SCIENCE_DECISIONS.md sections E and H (what the numbers mean and how to word them)
@@ -69,20 +72,20 @@ paste their real output. Finish with a five-line handoff note.
 ```text
 Task: create the web app skeleton in web/.
 
-- Vite + React + TypeScript (strict). Install exactly the dependencies and dev dependencies listed in
+- Vite + React + JavaScript (allowJs/checkJs/noEmit). Install exactly the dependencies and dev dependencies listed in
   plan/01_ARCHITECTURE.md section 6.3. Add .nvmrc (22) and "engines". Scripts: dev, build, preview, typecheck
   (tsc --noEmit), test (vitest run), lint, gen:types. No script may use shell-only commands (rm, cp).
-- vite.config.ts: base from process.env.VITE_BASE or "./"; @tailwindcss/vite; alias "@" -> src.
+- vite.config.js: base from process.env.VITE_BASE or "./"; @tailwindcss/vite; alias "@" -> src.
 - Tailwind set up to read colours from CSS variables defined in src/styles/tokens.css (create an EMPTY tokens.css with
-  a comment "owned by R6" and import it once in main.tsx; do not put values in it).
+  a comment "owned by R6" and import it once in main.jsx; do not put values in it).
 - shadcn/ui initialised; add: button, card, tabs, toggle-group, tooltip, popover, calendar, dialog, table, badge,
   skeleton, sonner.
-- src/app/: App.tsx with HashRouter and the routes in contracts section 7 (each a placeholder screen with its name),
-  AppShell with header (wordmark "FireRosetta", nav: Pick a place, Methods), footer with the credit
+- src/app/: App.jsx with HashRouter and the routes in contracts section 7 (each a placeholder screen with its name),
+  AppShell with header (wordmark "Prometheus Torch", nav: Pick a place, Methods), footer with the credit
   "Fire data: NASA FIRMS" linking to https://firms.modaps.eosdis.nasa.gov/ on every page, and a slot for the SAMPLE banner.
 - Create web/src/viz/.gitkeep only (R6 owns that folder). Import charts from "@/viz" nowhere yet.
 - .github/workflows/web.yml: on push to main touching web/** or contracts/**: npm ci, typecheck, test, build with
-  VITE_BASE="/<repo-name>/", upload and deploy to GitHub Pages (actions/configure-pages, upload-pages-artifact,
+  VITE_BASE="/" and VITE_SITE_URL="https://prometheus-torch.design/", upload and deploy to GitHub Pages (actions/configure-pages, upload-pages-artifact,
   deploy-pages). On pull requests: typecheck, test, build only.
 - Self-host the Inter variable font via @fontsource-variable/inter (no CDN).
 
@@ -96,20 +99,20 @@ Merge to main immediately and tell R6 the scaffold is up. Then enable GitHub Pag
 ```text
 Task: build src/data/.
 
-- npm run gen:types: runs json-schema-to-typescript over ../contracts/*.schema.json into src/data/types.gen.ts
+- npm run gen:types: runs json-schema-to-typescript over ../contracts/*.schema.json into src/data/types.gen.d.ts
   (a small Node script in web/scripts/gen-types.mjs). If contracts/ has no schemas yet, write the types by hand from
-  contracts section 6 into src/data/types.ts with the same names, and switch to generated types when schemas land.
-- src/data/fetchJson.ts: fetch `${BASE_URL}data/${path}`, parse, validate with ajv against the bundled schema, and
+  contracts section 6 into src/data/types.js with the same names, and switch to generated types when schemas land.
+- src/data/fetchJson.js: fetch `${BASE_URL}data/${path}`, parse, validate with ajv against the bundled schema, and
   return a discriminated result {ok: true, data} | {ok: false, reason: "missing" | "invalid" | "network", detail}.
   Never throw into React. Cache by path in a Map.
-- src/data/useRegions.ts, useRegionData.ts (loads the files named in regions.json "files" and "optional_files" for that
-  region; each file independently loading/ok/absent/invalid), useMethods.ts.
-- src/data/csv.ts: papaparse loaders for cells_monthly.csv and hotspots_recent.csv (lazy, only when asked).
+- src/data/useRegions.js, useRegionData.js (loads the files named in regions.json "files" and "optional_files" for that
+  region; each file independently loading/ok/absent/invalid), useMethods.js.
+- src/data/csv.js: papaparse loaders for cells_monthly.csv and hotspots_recent.csv (lazy, only when asked).
 - Sample detection: a context that becomes true if manifest.contains_sample is true OR any loaded row has kind "sample".
   When true the shell shows a fixed, unmissable banner: "SAMPLE DATA: these numbers are placeholders, not results."
 - src/components/: SectionState (skeleton / "not available for this region yet" / "this file failed validation" with
   the reason in a details element), KindBadge wrapper, GlossaryTerm (dotted underline + tooltip; the text comes from
-  src/lib/glossary.ts, which you fill from the glossary table in section 10 of plan/roles/R5_web_app.md).
+  src/lib/glossary.js, which you fill from the glossary table in section 10 of plan/roles/R5_web_app.md).
 - Hide regions with synthetic true unless ?debug=1.
 
 Tests (vitest): fetchJson returns invalid for a file missing a required field; sample context flips on a sample row;
@@ -164,7 +167,7 @@ week, Where, Downloads). Content spec in section 9 of my role file.
 Tests: useUrlState round-trips every parameter and rejects bad ones; the lens list is built from series_meta keys plus
 naive_splice; status label mapping covers all six statuses.
 
-Acceptance: npm run typecheck && npm run test && npm run build; walk the page on all three sample regions.
+Acceptance: npm run typecheck && npm run test && npm run build; walk the page on the configured sample states.
 ```
 
 ### B3 · Methods page
@@ -175,7 +178,7 @@ Sections, each with one plain-language paragraph (static explanatory text is fin
 1. What we did in five steps (static text; constants such as dates and resolutions read from methods.decisions).
 2. "The ruler was bending": DriftChart from "@/viz" per region + the eras table from each region's calibration.json.
 3. "Does the translation work?": validation table grouped by region: test name in plain words (map test ids to labels
-   in src/lib/labels.ts), our value, the baselines, n, years, note. Lower-is-better tests show which is lower with an
+   in src/lib/labels.js), our value, the baselines, n, years, note. Lower-is-better tests show which is lower with an
    icon and text.
 4. "Tested on a world where we know the answer": planted_truth table with pass/fail in text and icon, and a link to
    numbers_audit.md.
@@ -196,7 +199,7 @@ Task: add the date-range bar and "In this period" analytics to the region page.
 - DateRangeBar (sticky under the header on the region page): from/to with the shadcn calendar popover, quick presets
   (All years, Last 10 years, VIIRS era 2012+, This year, Last 12 months), min 2003-01-01, max = regions.json
   last_data_day. Writes from/to to the URL. All charts receive `range` (they dim cells outside it).
-- src/lib/range.ts (pure, unit-tested) working on daily.json for the selected lens (harmonized by default; lenses not
+- src/lib/range.js (pure, unit-tested) working on daily.json for the selected lens (harmonized by default; lenses not
   present in daily.json fall back to harmonized with a note):
   total in range and its lo-hi; number of days with data and days missing; busiest day; busiest month-year and busiest
   year, plus a top-5 list of each ("which months and years had the most burning"); mean per year for years fully inside
@@ -206,7 +209,7 @@ Task: add the date-range bar and "In this period" analytics to the region page.
   harmonized days shows both badges), and two small ranked lists: Top years, Top months.
 - "This month vs normal" line from nowcast.month_to_date (challenge wording), shown when the range includes today.
 
-Tests for range.ts: totals on a fabricated daily series; nulls skipped and counted; incomplete years excluded from the
+Tests for range.js: totals on a fabricated daily series; nulls skipped and counted; incomplete years excluded from the
 ranking; range clipped to available data; leap day handled.
 
 Acceptance: npm run typecheck && npm run test && npm run build.
@@ -216,17 +219,17 @@ Acceptance: npm run typecheck && npm run test && npm run build.
 ```text
 Task: add the Downloads section to the region page (contracts section 7, "Downloads offered").
 
-- src/lib/exportCsv.ts (pure, unit-tested): buildSeriesCsv(daily, lens, range) -> string with header
+- src/lib/exportCsv.js (pure, unit-tested): buildSeriesCsv(daily, lens, range) -> string with header
   date,series,value,lo,hi,kind,source,unit (missing days have empty value fields and kind "missing");
   buildCalendarCsv(grain, weekly|monthly, lens, range) -> a year x week or year x month table with a leading "year"
-  column. First line of every CSV is a comment row: "# FireRosetta <code_version> <generated_at> region=<id>
+  column. First line of every CSV is a comment row: "# Prometheus Torch <code_version> <generated_at> region=<id>
   lens=<lens> unit=<unit> source=NASA FIRMS" so the file explains itself.
-- src/lib/exportImage.ts: given the chart's root SVG element (viz components expose it by ref), produce an SVG file
+- src/lib/exportImage.js: given the chart's root SVG element (viz components expose it by ref), produce an SVG file
   (inline computed styles and CSS variables) and a PNG at 2x via canvas. No new dependency.
 - Hotspot CSV: a button for hotspots_recent.csv (plain link with the download attribute) and, if downloads.json exists,
   the list of yearly archives overlapping the selected range with sizes; if none exist say so plainly.
 - "Season Brief (PDF)" button linking to #/r/:region/brief.
-- File names: firerosetta_<region>_<lens>_<from>_<to>.csv etc.
+- File names: prometheus_torch_<region>_<lens>_<from>_<to>.csv etc.
 
 Tests: CSV has one line per day in range plus header and comment; missing days serialise correctly; commas in units are
 quoted; calendar CSV has 52 or 12 value columns.
@@ -239,7 +242,7 @@ Acceptance: npm run typecheck && npm run test && npm run build; download each fi
 Task: the area-of-interest lens. HexMap from "@/viz" calls onAoiChange(cellsR5) when the user draws a rectangle or
 clicks hexagons. Put the selection in the URL (aoi).
 
-- src/lib/aoi.ts (pure, unit-tested): given parsed cells_monthly.csv rows, calibration.json and a set of res-5 cells:
+- src/lib/aoi.js (pure, unit-tested): given parsed cells_monthly.csv rows, calibration.json and a set of res-5 cells:
   monthly harmonized series for the area = Aqua cell-days for months inside the Aqua era, primary VIIRS cell-days x that
   sensor's monthly k for later eras (eras and k from calibration.json), with lo/hi from k lo/hi; then a month x year
   table, the per-month median over baseline years, and the current month's ratio to its median.
@@ -268,7 +271,7 @@ explains hatched (no data) and dashed (estimate); a footer with the URL, "Fire d
 A "Print or save as PDF" button calls window.print() and is hidden in print. Sections whose data is absent are omitted
 without leaving gaps.
 
-Acceptance: print preview fits on one page in Chrome and Firefox for all three regions; npm run build.
+Acceptance: print preview fits on one page in Chrome and Firefox for all the approved whole-US region and separate simulator; npm run build.
 ```
 
 ### D3 · Smoke tests, accessibility, phone (Sun 13:00)
@@ -313,7 +316,7 @@ After the tag only bug fixes are merged, each with a one-line reason.
 
 Fixed copy you may write by hand (no results in it): headlines, section titles, button labels, glossary definitions, explanations of method. Anything with a number, a direction ("rose", "fell"), a date of a satellite event or a status is JSON.
 
-## 10. Glossary (hover text; put in `src/lib/glossary.ts`)
+## 10. Glossary (hover text; put in `src/lib/glossary.js`)
 | Term | Hover text |
 |---|---|
 | Hotspot | A satellite pixel much hotter than its surroundings when the satellite passed. Usually a fire; sometimes a factory, flare or volcano. Not the same as one fire. |

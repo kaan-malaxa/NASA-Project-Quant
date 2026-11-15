@@ -1,24 +1,26 @@
 {
-  "code_version": "bf23ae97",
+  "code_version": "29a6fe64",
   "contains_sample": false,
   "files": [
     {
-      "bytes": 53064,
-      "kinds": [],
+      "bytes": 274802,
+      "kinds": [
+        "harmonized"
+      ],
       "path": "methods.json",
-      "sha256": "525856132dc3bc1897bc3c6a03981483f9a1f9aeec5122f6cf330711d0331af3"
+      "sha256": "ad2c43dacabb3a42efa6437dc0c98acecfc6fae35edd2bab520dfcaaa44e618e"
     },
     {
-      "bytes": 13662,
+      "bytes": 14092,
       "kinds": [],
       "path": "numbers_audit.md",
-      "sha256": "82e562aa371f51b6e2c0a20fcb2bc3ea6bd67f94c1674212303e84193c22dc91"
+      "sha256": "5600342cde36b1616e9da190d9e267fe8f4acef6e65867c8123facaa6ba4ae39"
     },
     {
-      "bytes": 1668,
+      "bytes": 2365,
       "kinds": [],
       "path": "regions.json",
-      "sha256": "f81ca6c5e17da785069d2fa906a642f7a28213c00abfe4967c12223e8c5bdb11"
+      "sha256": "bc396de74226642d214517ad5d88c722bf51f77e6f4e6eaaaca2c6199fd31fd3"
     },
     {
       "bytes": 4905,
@@ -27,7 +29,7 @@
         "observed"
       ],
       "path": "synthland/calibration.json",
-      "sha256": "8ad5f7a47276337fa21e2be568361324ab4db5cabd23193341b63e8351bd6d4f"
+      "sha256": "416ba76f37aa324112d82bf8a0d51dc86f9a5aa6eea810af6398aa404241e7fc"
     },
     {
       "bytes": 932656,
@@ -36,13 +38,13 @@
       "sha256": "b99b8a81748c3cbdd5f6156b32cbf00e780abafe0b9c2c06e809726fb015f815"
     },
     {
-      "bytes": 12747,
+      "bytes": 13346,
       "kinds": [],
       "path": "synthland/climatology.json",
-      "sha256": "4313ce5f26369ecada83dfaecc56414772f3b2acc5b7deb541e0e80d211b294c"
+      "sha256": "050a0cd53b143066226ecfa9da3e5969b2fa6f93c02d15f44a2e3464fe0c2518"
     },
     {
-      "bytes": 1353954,
+      "bytes": 1354553,
       "kinds": [
         "estimated",
         "harmonized",
@@ -50,7 +52,7 @@
         "observed"
       ],
       "path": "synthland/daily.json",
-      "sha256": "bf40380984761fa7425a74b19fcd71f9b8348ae00d3dc9c52eff1c6ecae7de23"
+      "sha256": "c31bbc09b25e65b98b6e7aaeae3e1144f14a395d5ac4691448c0354e6699148f"
     },
     {
       "bytes": 20614,
@@ -58,10 +60,10 @@
         "observed"
       ],
       "path": "synthland/hex.json",
-      "sha256": "79c9d412cffaee096c27ed5ee6e38bf2a1f4ad8814ddaf694799530945aa6610"
+      "sha256": "023edcb2e689db70010f06a0824da96ae364e80d5fd5d8909b3af800e15106d2"
     },
     {
-      "bytes": 273402,
+      "bytes": 274001,
       "kinds": [
         "estimated",
         "harmonized",
@@ -69,7 +71,7 @@
         "observed"
       ],
       "path": "synthland/monthly.json",
-      "sha256": "6eb75548a01e8df472c7f42dea23693e1f4bb7c6f9fab5c6b884d017d68508a1"
+      "sha256": "23d5e45f2e742f89a56525a1139dfc04fca3bda8a1ec0e6252abe2f07ca0ee66"
     },
     {
       "bytes": 761,
@@ -77,7 +79,7 @@
         "missing"
       ],
       "path": "synthland/nowcast.json",
-      "sha256": "7dabcf10fa06c23bdcb67f9dd6a4e9c04e3480cb4f55540e3f1eeee34be61fbd"
+      "sha256": "da838ff235e3eed86309317366e005cd45ce14fb175d54cf4eeb4d4f569835bd"
     },
     {
       "bytes": 682,
@@ -86,13 +88,2287 @@
       "sha256": "f6326dfd3597bcd7458d03a17c9fc39c5415bf448b13d45063cc8e09152dee80"
     },
     {
+      "bytes": 58738,
+      "kinds": [],
+      "path": "synthland/period_index.json",
+      "sha256": "07dc86d6e6ee02b00a521c62ba5a7668d70916e2269a0c80f824b3d81e6de020"
+    },
+    {
+      "bytes": 10879,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2003-2003.json",
+      "sha256": "45ecac3966bacb0395c4993ba8ca8c2e83ce44fc600575418b136439e61f9ad1"
+    },
+    {
+      "bytes": 11249,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2003-2004.json",
+      "sha256": "f9b9a880fc4788c97dc08eddfe88ee084da8899c9f1edfacfb8e3574a637efcf"
+    },
+    {
+      "bytes": 11376,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2003-2005.json",
+      "sha256": "adce11cb9f6f119cc46b37118cba35354e1d617e0e0387c766ab6e37221ec067"
+    },
+    {
+      "bytes": 11881,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2003-2006.json",
+      "sha256": "93b98ad020d4e6cd74c4776a00520554a165c9f4a0ede0d8fbbf5d2f6d1f8251"
+    },
+    {
+      "bytes": 12289,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2003-2007.json",
+      "sha256": "e9652ae91bb6670440b26b7d66feb4a86cbe9b2c0781a38722bced0298f35fa5"
+    },
+    {
+      "bytes": 12707,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2003-2008.json",
+      "sha256": "54babda4215515c71b205891edb5777538d6303f70f2241bfa9e3500899281d4"
+    },
+    {
+      "bytes": 13104,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2003-2009.json",
+      "sha256": "045c4229c041f5c6d40bcd2cd0bd1a7b6ffb02bc91fbbe9d55ecd8b7b6b5a77e"
+    },
+    {
+      "bytes": 13527,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2003-2010.json",
+      "sha256": "b0c484e48010e57fd0534ef0efbcd248816c71ab49faf6e47702b3f716ccecf7"
+    },
+    {
+      "bytes": 13948,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2003-2011.json",
+      "sha256": "32edd2c55129db48c35a739b9c65f8b7e77169e69d432403b06293aba71bec54"
+    },
+    {
+      "bytes": 14454,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2003-2012.json",
+      "sha256": "58df2e84e02179b6c11bb35fa22f3347d7976e2b003966f5975d6f4f9f49423a"
+    },
+    {
+      "bytes": 14839,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2003-2013.json",
+      "sha256": "0f1dfc88f9261fe8851a3af44aa02a2286aaf6dfd08b69e0746be77a57a1ddda"
+    },
+    {
+      "bytes": 15275,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2003-2014.json",
+      "sha256": "7f8a3c7ca6dc83f8d38eab7d402b2bc2cffa57be1565875cb140c13d595bde7f"
+    },
+    {
+      "bytes": 15636,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2003-2015.json",
+      "sha256": "4bab5a7ae6abf279058deb978417018f90f0fb2fd7ee79fb92311148acfe1219"
+    },
+    {
+      "bytes": 16106,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2003-2016.json",
+      "sha256": "f64d23d5ca586f996897b25068591231b92c5db495361b2448c1d3229e1c4754"
+    },
+    {
+      "bytes": 16488,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2003-2017.json",
+      "sha256": "b87916a6604c9ce1c2e14b522caca2d44d6314a114b9aecdb282e651b03707e3"
+    },
+    {
+      "bytes": 16905,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2003-2018.json",
+      "sha256": "9b292dde882632d23188d10965d4555ac3d232791cb9fbf7c5ecc2c73e9ebef6"
+    },
+    {
+      "bytes": 17296,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2003-2019.json",
+      "sha256": "ff2ecdb70334d2b2cf370754d7ce8f4a6b60b6bbf1b05ecf4b8dfdec82f0f72d"
+    },
+    {
+      "bytes": 17768,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2003-2020.json",
+      "sha256": "5c2ae9e102d94bdd7aa99d08196f5a10bd6f856fbcf191d06fb320741b997aff"
+    },
+    {
+      "bytes": 18122,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2003-2021.json",
+      "sha256": "5327c34662fa4768e27a4c63ca06a3a1cd745f21749b2cd654106dccd417a15b"
+    },
+    {
+      "bytes": 18608,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2003-2022.json",
+      "sha256": "36a9c9efae06c38380dc9308d2bcf7aa956264ab2f775eb2dfdfb0a139f7d5a7"
+    },
+    {
+      "bytes": 19055,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2003-2023.json",
+      "sha256": "d84c585b92fef269211c022b3a496907b5d0a7b0020fe8e58abdefa7540ba9b5"
+    },
+    {
+      "bytes": 19552,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2003-2024.json",
+      "sha256": "a6d72c9fc9667d2eb6f9d3519fdfa37102c08a5023f6fd3b73efe8e84f79c617"
+    },
+    {
+      "bytes": 19974,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2003-2025.json",
+      "sha256": "fe1d2d339187262fa052cb9bde0dcd45f260b2ed37df79433bed2a6c659faac7"
+    },
+    {
+      "bytes": 10892,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2004-2004.json",
+      "sha256": "4e7ba20388127aee3e15796942065dc3fe58dbcabff1a969683fcd7845113e02"
+    },
+    {
+      "bytes": 11290,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2004-2005.json",
+      "sha256": "eb1dacf872a4f7441f929bfc213abd4aff75d5a2241ed1076f46ad1d78179b84"
+    },
+    {
+      "bytes": 11478,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2004-2006.json",
+      "sha256": "723383937598fbafdff0cc28097fefa6c1880df2f50d29d7041f06d5932e40f1"
+    },
+    {
+      "bytes": 11912,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2004-2007.json",
+      "sha256": "b784a762d316cd771cad15476dcc706c432cbc2003682a2545a54c42c27e1a5d"
+    },
+    {
+      "bytes": 12276,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2004-2008.json",
+      "sha256": "883978975721e05d56a578c45d6f210a72afbbf353df9cdac2e0b5b7c1f0ad74"
+    },
+    {
+      "bytes": 12701,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2004-2009.json",
+      "sha256": "40712a9697cd37e2cb7bc1c0b8d8ccd79feb5a77cfc77fecc43861227242b6b5"
+    },
+    {
+      "bytes": 13084,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2004-2010.json",
+      "sha256": "5bad6144f1c6a0fb0e25bbfe8601cfb8ccfb669e5f7c7a864ab42b7db2b287d1"
+    },
+    {
+      "bytes": 13577,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2004-2011.json",
+      "sha256": "14738b8c82b8c49f7a91390bfa22d415fda2aa3174e304f0a140725291575b9b"
+    },
+    {
+      "bytes": 13963,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2004-2012.json",
+      "sha256": "d3ef377afcc8638eced869813baa123ed0b55b4b5599ecc610a966ef841d037c"
+    },
+    {
+      "bytes": 14441,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2004-2013.json",
+      "sha256": "1213ca67dc9394bbe1e16ab9c306982616924c940e8aa23844096e89d81858ee"
+    },
+    {
+      "bytes": 14854,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2004-2014.json",
+      "sha256": "641bf230857efd7d084e44ead4ae467cd594bfe5567966e51478ca5318f7d0ec"
+    },
+    {
+      "bytes": 15298,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2004-2015.json",
+      "sha256": "0e3fd37dd1c49a934d6c9032b78e3129c2bb4ed8aa2bba570e546a079a333cee"
+    },
+    {
+      "bytes": 15681,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2004-2016.json",
+      "sha256": "629f9b11c21a452b5a19a30b1c658bf2e0c0754ba48cb503b20afd6aa9b9f646"
+    },
+    {
+      "bytes": 16113,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2004-2017.json",
+      "sha256": "25dcda0fa5ac509cf2e0f6f8cd40140503e622296a26a5be4ec43dfabcef2748"
+    },
+    {
+      "bytes": 16495,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2004-2018.json",
+      "sha256": "7799091367e403d92a7b26fd2758619e34451832ab1bc3d631fbe65392016a21"
+    },
+    {
+      "bytes": 16942,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2004-2019.json",
+      "sha256": "01855cf40f4856d658af203459facaeba22cd02af8a9ecbdb245a9f6b68d0e39"
+    },
+    {
+      "bytes": 17335,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2004-2020.json",
+      "sha256": "23e4312ef5d75189a95cc27c997a94542c5f51810bf3f6f6d488a5f955901e01"
+    },
+    {
+      "bytes": 17752,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2004-2021.json",
+      "sha256": "2b890b691ee4c3eddff34fc3291116c34c274356bd09b187085e13dc58df73d5"
+    },
+    {
+      "bytes": 18161,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2004-2022.json",
+      "sha256": "7147e42586d9221160db6d687486de5eebf3371dc382207ccb1c4a46b02621c2"
+    },
+    {
+      "bytes": 18711,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2004-2023.json",
+      "sha256": "b148ec1e9875b10326ffd1e51a99c8605d9b1f78ad4bb09d5a6d981f36da435a"
+    },
+    {
+      "bytes": 19073,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2004-2024.json",
+      "sha256": "1fd0b46caf26a3e53ead0de6d0f7e590df524c413f2e3cc9d07b2b805c4a2f90"
+    },
+    {
+      "bytes": 19585,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2004-2025.json",
+      "sha256": "d9c900585bc81bb94356b3b090c79c3039d370ff2f76633ac83d4ce13c04b758"
+    },
+    {
+      "bytes": 10851,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2005-2005.json",
+      "sha256": "1d8550c43e045e9de5255f50037d0f7182d413d9847d8b8e9ea1b5f2dd9f9b24"
+    },
+    {
+      "bytes": 11358,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2005-2006.json",
+      "sha256": "f08d034758e2713d4014b34033e5d0bee6581dbd54cd65cb5e8cf6ba9df6610b"
+    },
+    {
+      "bytes": 11463,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2005-2007.json",
+      "sha256": "c34be80eed58051a0c599460a659e31b414556ac92c0fc2c1b8160801ba8a5e9"
+    },
+    {
+      "bytes": 11938,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2005-2008.json",
+      "sha256": "6156624f74fadadec1faa2bcda3d3cac281b27d6a45c3813cc7a6cc11de1e88b"
+    },
+    {
+      "bytes": 12239,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2005-2009.json",
+      "sha256": "0aa0d680e977ea334387d8beb75cc2305e4b3666b956c894cbd27a3f5ea2942f"
+    },
+    {
+      "bytes": 12712,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2005-2010.json",
+      "sha256": "566c0161ddb360db6b1b3f2a98fc7da4fbfed820702f1b219fea6bb83fdbd47a"
+    },
+    {
+      "bytes": 13126,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2005-2011.json",
+      "sha256": "31268dd687ea459613857dbc611a16287ec268bf617fea769eeac3a3b6ef91e3"
+    },
+    {
+      "bytes": 13565,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2005-2012.json",
+      "sha256": "af59a3a131569666a02cd108a76f12b8e4bf3e9f805e5841e98b74d0e5444e66"
+    },
+    {
+      "bytes": 13961,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2005-2013.json",
+      "sha256": "8afb368333ee23b0963e22a1031db9f9c82498209e934dcbd141448c714a027a"
+    },
+    {
+      "bytes": 14480,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2005-2014.json",
+      "sha256": "3b0d3906d2e42e8910a9c77687d0bebca53cf3f8b2cbac3fed30725046b8c147"
+    },
+    {
+      "bytes": 14831,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2005-2015.json",
+      "sha256": "00d4f62ea2902461b634c69de6ec1436526ea3b19ac9e1147915de120e7ee2df"
+    },
+    {
+      "bytes": 15284,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2005-2016.json",
+      "sha256": "9510aa39a121df944608c2db189205b7e71507008ca06e1bcddd6d10c84606df"
+    },
+    {
+      "bytes": 15681,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2005-2017.json",
+      "sha256": "32a932e2fd75446deb908b226785a35d82073bd6814a35b8a49638615b4944e6"
+    },
+    {
+      "bytes": 16116,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2005-2018.json",
+      "sha256": "d10f84922f102cbc23ba4606d29f99d932f51cf2d6243b0609b1529bec53db75"
+    },
+    {
+      "bytes": 16494,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2005-2019.json",
+      "sha256": "3b7b810d51cd878d01d394866a1f030ac58c83a94adbf74baffe7fede97f3e59"
+    },
+    {
+      "bytes": 16961,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2005-2020.json",
+      "sha256": "bfe87b41d8ab91b79d1be5df3ebb666e6f7e87692119e363ad9ab582047279f1"
+    },
+    {
+      "bytes": 17346,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2005-2021.json",
+      "sha256": "ad5a9b1f1db93736246ea34ed9c8120a2e0cd0313c7217bf6071f7e3583d8601"
+    },
+    {
+      "bytes": 17788,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2005-2022.json",
+      "sha256": "ff47448965f5c4680f956338c505972819dcb1c926b4e9acf67eebe511a48f35"
+    },
+    {
+      "bytes": 18248,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2005-2023.json",
+      "sha256": "a308ab0126b2d866152cb539e1906171196735290b20e7642c794bd83de1c12a"
+    },
+    {
+      "bytes": 18766,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2005-2024.json",
+      "sha256": "381addd70e2de589cc2f3aba921afaa2ee80a798149d9539837229e73a513f45"
+    },
+    {
+      "bytes": 19123,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2005-2025.json",
+      "sha256": "3d4ff87542c946163f9431b8e15ebb6a4fff43c32a8ff3dacd0bd7a7d9a9b27b"
+    },
+    {
+      "bytes": 10865,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2006-2006.json",
+      "sha256": "fc4e652be8c80a3591c85947a05389524f681c2ed3ca79707428a1a1d54786ce"
+    },
+    {
+      "bytes": 11348,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2006-2007.json",
+      "sha256": "1a385abbfafc1ecbc05adc69f88570b7742c3dad28362c21cd6a1758fac51667"
+    },
+    {
+      "bytes": 11469,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2006-2008.json",
+      "sha256": "c50607dc131f831e4a76687c57dc6d85966e086aa7cf814143ddaa0fc1147e2d"
+    },
+    {
+      "bytes": 11885,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2006-2009.json",
+      "sha256": "c975afd49b4599c28b588d35d8e126070766bd10b362dde3f767b59e62dfe5d9"
+    },
+    {
+      "bytes": 12280,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2006-2010.json",
+      "sha256": "4155e4a7d77d65cb780f5963788e20ddb3a8001d1bcce334b4451b7b19d7df01"
+    },
+    {
+      "bytes": 12751,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2006-2011.json",
+      "sha256": "a576a197e5726a8263dcef3e8eb06da76aafb0124771989824d511c66d33c123"
+    },
+    {
+      "bytes": 13143,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2006-2012.json",
+      "sha256": "546cfbb901903747f9c15f2cdbd01baee709a6436571f7e8f66cb85054fffcc6"
+    },
+    {
+      "bytes": 13588,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2006-2013.json",
+      "sha256": "d68749d0104fb77d4fed05de87a486b52b60f724ab5966311379130b5e9c568b"
+    },
+    {
+      "bytes": 13952,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2006-2014.json",
+      "sha256": "2b64cf9cf9fee41c6f8c8a795c16252a18bf420985912063a2f2fd46aff69aea"
+    },
+    {
+      "bytes": 14470,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2006-2015.json",
+      "sha256": "d8405eec19f2de98832d1539875ff60a39de138491d6b430a69ecef045797094"
+    },
+    {
+      "bytes": 14860,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2006-2016.json",
+      "sha256": "05d5cc49c508ae6a265b313174d3608d9ff68bf255a28147887b0c25c4b87242"
+    },
+    {
+      "bytes": 15302,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2006-2017.json",
+      "sha256": "aa6bd213f226ec5e61723395d03d0a9c68d2c0619ae29b231c67534920aab3af"
+    },
+    {
+      "bytes": 15665,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2006-2018.json",
+      "sha256": "74382ca774d9d3d8cf2cb350dccfed3b8ac5f99cd8b6856da7cddc3ec38bd51c"
+    },
+    {
+      "bytes": 16119,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2006-2019.json",
+      "sha256": "45189eaadc38093672dada85e916480d3ec8065d8a2bcaceb9624e62d4731a26"
+    },
+    {
+      "bytes": 16505,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2006-2020.json",
+      "sha256": "0461aca69b76661214445384ef9e2174fe308fd99fb815c4dacd5d15bbdbd750"
+    },
+    {
+      "bytes": 16947,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2006-2021.json",
+      "sha256": "4f05769f2af1274fa8574201db45cc4941753c6dd0323ccb3b96591915457409"
+    },
+    {
+      "bytes": 17342,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2006-2022.json",
+      "sha256": "371597d5ffd5fc0cfb28343184645ee42c8ae8be6a441537e77d883f23f27ac0"
+    },
+    {
+      "bytes": 17876,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2006-2023.json",
+      "sha256": "4b1f74b762d85e759999229676f0104ad7865e23140e12489737c09ef05e6f35"
+    },
+    {
+      "bytes": 18309,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2006-2024.json",
+      "sha256": "5485b2a8383933702febb2b78e71a8e6d550c8c0cc41c05993bcade02abd9acc"
+    },
+    {
+      "bytes": 18782,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2006-2025.json",
+      "sha256": "97b50da8034bdfc5fbb9429efd911a3d9c099b2a891b03f01095b93ac34a2928"
+    },
+    {
+      "bytes": 10935,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2007-2007.json",
+      "sha256": "867be9379519c93623db963b82553d004c9e5d159dfc684e573f553086d15f70"
+    },
+    {
+      "bytes": 11380,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2007-2008.json",
+      "sha256": "d57865f9d979d78e522aa8eb530333d19885f32d96d97e24bc80885533f8a673"
+    },
+    {
+      "bytes": 11459,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2007-2009.json",
+      "sha256": "131eae93d7504cae39963c49e7918a50e3e92aecb590cf0b900f20dc19c426b8"
+    },
+    {
+      "bytes": 11910,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2007-2010.json",
+      "sha256": "60401701be80374024a28e27d20c3c7eb72c6c04f6dbeba9736069021f31ea27"
+    },
+    {
+      "bytes": 12347,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2007-2011.json",
+      "sha256": "f6a87b81f7b17a384c9c73ad52a0fc5b03f42f511c0e2fcaa3ff6db062dedb8f"
+    },
+    {
+      "bytes": 12762,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2007-2012.json",
+      "sha256": "8fb3f64abba087ad7f43e12706f1bf18583c71d16df66edbbc6019ed17ecdacb"
+    },
+    {
+      "bytes": 13133,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2007-2013.json",
+      "sha256": "f6595d9469d21f50234c18ad4b906c331707977f7d78339311e4f3995d9854ab"
+    },
+    {
+      "bytes": 13547,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2007-2014.json",
+      "sha256": "08045de3ea7053f00ca37842497f09e84ca18ac0c61b1416eb8522d2f16ca4f6"
+    },
+    {
+      "bytes": 13952,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2007-2015.json",
+      "sha256": "6b560e717bc6e497f42dc2af0f55907b329f31b05eeb886f0d75157e585f1416"
+    },
+    {
+      "bytes": 14500,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2007-2016.json",
+      "sha256": "2abce8b8169d7919b04ebfe5be12d57261d481c99fbc93a845cb63e32a719e5d"
+    },
+    {
+      "bytes": 14848,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2007-2017.json",
+      "sha256": "e43861c00a1feae8fca56cb9e5882af99592f83b36710c3f5f8823a2873f5cd1"
+    },
+    {
+      "bytes": 15343,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2007-2018.json",
+      "sha256": "b05feb199db63e87320f3355e393718c4e044122f9b971c64fe1c2891e977658"
+    },
+    {
+      "bytes": 15689,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2007-2019.json",
+      "sha256": "fdbed185b78c897f4fdd43038df0d57332000638984f11d644f1ebeafe34179b"
+    },
+    {
+      "bytes": 16131,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2007-2020.json",
+      "sha256": "9ea68f3e43bb7890541693ae20d694cc947a3fc5f24c1b20fb409e7ca86aa5ca"
+    },
+    {
+      "bytes": 16516,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2007-2021.json",
+      "sha256": "51f2c4a6781c490e034e55d5f7dd3c2f5353edf364ac993d47d0a8c1930b5087"
+    },
+    {
+      "bytes": 16991,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2007-2022.json",
+      "sha256": "c203af325ca93f9d68a056a5a30a76e1fc9fa408679ef16831277f1438010abe"
+    },
+    {
+      "bytes": 17420,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2007-2023.json",
+      "sha256": "c5e5414b70934e2712b437b41941424e309fa53568d69a2e8cb1a04c2bdbc560"
+    },
+    {
+      "bytes": 17941,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2007-2024.json",
+      "sha256": "533775a49e0d4f898dcba8fb7983e852a5ec4ef96e8549ee939a6540b5aa03a2"
+    },
+    {
+      "bytes": 18375,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2007-2025.json",
+      "sha256": "4cbd4fc9de663b17f9c88852ded6570c1c8e29f9f236ce7e4d5b59ea3a18b91e"
+    },
+    {
+      "bytes": 10913,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2008-2008.json",
+      "sha256": "8b053c9946094e974112bc51dc88ca9b6a06f6bd4e0d9da5b1db70461cc6fd35"
+    },
+    {
+      "bytes": 11355,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2008-2009.json",
+      "sha256": "371099b2e87ba02eb871cb595ff8f5c9b9a07a6f10f2a3ab753041412654e224"
+    },
+    {
+      "bytes": 11505,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2008-2010.json",
+      "sha256": "6a5a47e4951c61fa1156a01c22052fabcd811ac743adc35e86396eadc2c69cac"
+    },
+    {
+      "bytes": 11974,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2008-2011.json",
+      "sha256": "806396e066eaeaf18ba12333f5b6e82d6905f0fdd01eafd143f6754b39140e95"
+    },
+    {
+      "bytes": 12359,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2008-2012.json",
+      "sha256": "239bc4973a21994ef72c1fce2740456a15ba4bebc6fbe1c82b4e65b96dbd93b1"
+    },
+    {
+      "bytes": 12771,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2008-2013.json",
+      "sha256": "3a7ea5cad632d352431d1936c039b8ab5a320fac7921b875447c8b5aca816540"
+    },
+    {
+      "bytes": 13205,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2008-2014.json",
+      "sha256": "128a97fdde593f73b8e4537e24df5f8f0f2289c4a50f7cff70da2e36996a0814"
+    },
+    {
+      "bytes": 13552,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2008-2015.json",
+      "sha256": "876480379335d77c0047638e09b6f3a210ee7c82d9521292716a650b0afdc6db"
+    },
+    {
+      "bytes": 14000,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2008-2016.json",
+      "sha256": "1614e9864e95cc69134959c50deb0cf69847f351c61dfb0316d53a11fd660b4c"
+    },
+    {
+      "bytes": 14500,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2008-2017.json",
+      "sha256": "a2ee78555255d01f3a4ddc694aa6f8b8dc5369c28213226af3fe176f7d2ef797"
+    },
+    {
+      "bytes": 14891,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2008-2018.json",
+      "sha256": "ef15e11f99b6bf915f5f648771349070858075545a34f0b40bf6e21b58d5c754"
+    },
+    {
+      "bytes": 15317,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2008-2019.json",
+      "sha256": "d5f7e6c1bbf9747aeb015b0d7a2353dae41e2139d9217ea2e2d8ef361b17a3d3"
+    },
+    {
+      "bytes": 15729,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2008-2020.json",
+      "sha256": "a4c6cb151bf2ebdde971ad7e172250a2161f6682a6cf5500ea3274db82e8d2ea"
+    },
+    {
+      "bytes": 16150,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2008-2021.json",
+      "sha256": "09c76bd8759c1068575f7e253a8ad2f951a16c20ae330ca20ba6582d7c1cab72"
+    },
+    {
+      "bytes": 16554,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2008-2022.json",
+      "sha256": "d1f93130fcf4cb25239578f68798b3ea3f6ce69f687ce728c8d149ffb1e83b3d"
+    },
+    {
+      "bytes": 17066,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2008-2023.json",
+      "sha256": "1bd0923cbd07200c0d2e713bc94dc92faf497b3eddb3779cc378637a6c6ab394"
+    },
+    {
+      "bytes": 17497,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2008-2024.json",
+      "sha256": "508f603e81bc87fe6026e7394163be83c5221bc95c325fcbda791dca5c4e8ee5"
+    },
+    {
+      "bytes": 18002,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2008-2025.json",
+      "sha256": "80738150e139095bce9401fe89c43895c1a21196a7f5c15434b05431934543d1"
+    },
+    {
+      "bytes": 10911,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2009-2009.json",
+      "sha256": "2aa48e83f5d7e2e8d2043346a63f3c878ac3107e9bd1958543e3e14997d40f62"
+    },
+    {
+      "bytes": 11327,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2009-2010.json",
+      "sha256": "50d7073e7640bf4ddb1a73b7ee27edb3b1cc010eedca1848ac0d2d3b3d841fc6"
+    },
+    {
+      "bytes": 11545,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2009-2011.json",
+      "sha256": "667e23f64ff4bcc2173d05bf976e8b094cfc201e92d50604341f8e755b986ba0"
+    },
+    {
+      "bytes": 11925,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2009-2012.json",
+      "sha256": "7428e753ff62b782dc093d725aabd112653be84e6a5c7a4b091d110572782212"
+    },
+    {
+      "bytes": 12318,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2009-2013.json",
+      "sha256": "dd29f653a3dae5a37c696cfe730cb2c18cfa2563f0e2635b71fc3bde8762e7d8"
+    },
+    {
+      "bytes": 12759,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2009-2014.json",
+      "sha256": "3183f132b69d36d296aea3eeacc3f22b61d65d40f808f82ad271100194b050e5"
+    },
+    {
+      "bytes": 13097,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2009-2015.json",
+      "sha256": "afaa8f90af0f46ba4076110c35095e3f28394ee95231818bb8c716a2fd00150d"
+    },
+    {
+      "bytes": 13562,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2009-2016.json",
+      "sha256": "de4aa4eb3b316c7d0d870c433d2d794836ace1eef6bf7219b0f7885905d7ff43"
+    },
+    {
+      "bytes": 13970,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2009-2017.json",
+      "sha256": "d5e089fb6b7f25f3eb9bd81411989be68cc246a6152ad8817ebd0910969eef5d"
+    },
+    {
+      "bytes": 14487,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2009-2018.json",
+      "sha256": "dccbea6dab4883e648cc2b6e259e9a13eb21d138ade45345146f942b4cc0d247"
+    },
+    {
+      "bytes": 14895,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2009-2019.json",
+      "sha256": "161b09666a9431b10929ced07c02541a200e638be0f5cb2122b7c043cbf683d0"
+    },
+    {
+      "bytes": 15323,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2009-2020.json",
+      "sha256": "27d11dfcfedb67b6418fa249ecee706d35ab028b5967e1d83151b1a051a51a7e"
+    },
+    {
+      "bytes": 15679,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2009-2021.json",
+      "sha256": "a9656b709ecb7c5c63ac265b13e403f2a62fd96cc2adf4795050192de6943397"
+    },
+    {
+      "bytes": 16171,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2009-2022.json",
+      "sha256": "ccef89eb2c48c53bfd8486f5adb0b739dbd43a3edf8250a9e50ffb4b4a449e84"
+    },
+    {
+      "bytes": 16645,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2009-2023.json",
+      "sha256": "c074a472bc4cdc7011cd33b00e32a5368c63ad3d404fe55279eb79a11c1b0f1a"
+    },
+    {
+      "bytes": 17107,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2009-2024.json",
+      "sha256": "666417d8cb02c3c3ef3d224d30fea0e386c5a288b4e3e31eef0512d13551b0d0"
+    },
+    {
+      "bytes": 17526,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2009-2025.json",
+      "sha256": "32d929cf002aa2965a8544d198b41e91863dc3ea2ed35dd4a2a856663b5370fb"
+    },
+    {
+      "bytes": 10886,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2010-2010.json",
+      "sha256": "28fedae82ce05b49c58c5accbc4b96d208690fe699c19a73f284fd0c02caa410"
+    },
+    {
+      "bytes": 11368,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2010-2011.json",
+      "sha256": "c4332debed96bd849b3b2118a5f995766e4e6e7876436a552aae8b200eae020c"
+    },
+    {
+      "bytes": 11526,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2010-2012.json",
+      "sha256": "4ad552bcd56c1d7b213ce73827407b1781ef63bedea47c87d415c043b1dcc906"
+    },
+    {
+      "bytes": 11945,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2010-2013.json",
+      "sha256": "c4feb51dba8f349536770565a3a52b8094c3d21620bb2e45db7cb660c81aab5f"
+    },
+    {
+      "bytes": 12354,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2010-2014.json",
+      "sha256": "10d4650b0518ea3febb6eeee2cef19c72d3fae919cb830ce6db32993e887fb55"
+    },
+    {
+      "bytes": 12725,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2010-2015.json",
+      "sha256": "d375bd62378adb7498c58adb369f5a8bf1397bd23ef1c7e9dfd6de3b3a830ba7"
+    },
+    {
+      "bytes": 13156,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2010-2016.json",
+      "sha256": "8d0e9a112680e8143e5e314b742177e621cb979df3309f3895d65c0d0f206157"
+    },
+    {
+      "bytes": 13588,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2010-2017.json",
+      "sha256": "0a09c29db50958455f1c8843f18685e56b20f51dc84aa93a51b586256e357a41"
+    },
+    {
+      "bytes": 13995,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2010-2018.json",
+      "sha256": "6f368dc24bb9bc659bceee2f74609579b38911ea82adc14ddbe62b3580efe57d"
+    },
+    {
+      "bytes": 14492,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2010-2019.json",
+      "sha256": "be56a5620497abedfc935325e7a59403dd76409ec51b2a39fa4b2f84e3eec34b"
+    },
+    {
+      "bytes": 14875,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2010-2020.json",
+      "sha256": "e41d81e6ba5cc651fd13137510661292791c621564ba293002d9bd80655352e8"
+    },
+    {
+      "bytes": 15328,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2010-2021.json",
+      "sha256": "4b0685ecab61872dd41e8c7fcb198f220e9595490dfcae99b18b5dbb536080ac"
+    },
+    {
+      "bytes": 15708,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2010-2022.json",
+      "sha256": "bcc31c8dcc387dc61076b87b4f81b8287dbc46b543153bc860c27fc2ca2c78a2"
+    },
+    {
+      "bytes": 16249,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2010-2023.json",
+      "sha256": "0580bf5535c98d9d50885ad7d49c7fc9e1a7792f9f9baf110c52e4508f34a7ee"
+    },
+    {
+      "bytes": 16707,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2010-2024.json",
+      "sha256": "565c548deb4c48ee85da4d1a96958d0a13e613547b043e2951a917c77bb89edc"
+    },
+    {
+      "bytes": 17176,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2010-2025.json",
+      "sha256": "37ca8cb37c5eff16972ed7ae2d34159da8be8434308c84561b273cf925ecad78"
+    },
+    {
+      "bytes": 10956,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2011-2011.json",
+      "sha256": "b639dae1d4a512a6a2bcffb7651344a8c89540f94f0f0e91f8faea0bbe8f50f4"
+    },
+    {
+      "bytes": 11324,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2011-2012.json",
+      "sha256": "69dd7ee733f5c38d681532282f6bee81b4edcb15b6aee505db601b3e169517b6"
+    },
+    {
+      "bytes": 11485,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2011-2013.json",
+      "sha256": "aac35383b9fa2d614e7421cd15f0fc0f6cab82bb052f4812fb62e9a19b241bae"
+    },
+    {
+      "bytes": 11913,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2011-2014.json",
+      "sha256": "0ecaa1869b141c09297fc73a1eae774d51a97b2e08f49dc51840ed58875d3306"
+    },
+    {
+      "bytes": 12394,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2011-2015.json",
+      "sha256": "747eb57e6f3f916e8962909fbe66f2c1fe8ec7dfd2dd319d97fc215d40259ac4"
+    },
+    {
+      "bytes": 12746,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2011-2016.json",
+      "sha256": "495f85d0da538964014c543bb28bae310dd7b1e09f81e186b4dee2ef42a915cb"
+    },
+    {
+      "bytes": 13164,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2011-2017.json",
+      "sha256": "71dd8dc0fdf9a453b3291ba1a2aa68a630fb4db07c6c59f289cfe9d4b0d7c5bd"
+    },
+    {
+      "bytes": 13591,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2011-2018.json",
+      "sha256": "570743ebf4d714a36378e93e47a7c8b16d82b509dac5bc65425da7000be0d21f"
+    },
+    {
+      "bytes": 13990,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2011-2019.json",
+      "sha256": "f1a2c3ba2a1858ccf672f5355b98509c848710913085db41994daea80b0b3774"
+    },
+    {
+      "bytes": 14482,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2011-2020.json",
+      "sha256": "d8910df1e737ce5303cc8bfa0e6b3c562b6709b35eb2abe59caa37ac357541f4"
+    },
+    {
+      "bytes": 14874,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2011-2021.json",
+      "sha256": "35c532700f5e512818e9cc26d83c6f8b4088bfe6da26b2a149f58136d51e3148"
+    },
+    {
+      "bytes": 15328,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2011-2022.json",
+      "sha256": "6814e7f9b730e5394951bc8c2b9e3c07d71ad469c941fd8c53bb6f8f041a77d1"
+    },
+    {
+      "bytes": 15798,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2011-2023.json",
+      "sha256": "410e3ef964b5374f99a57bfebfe7bf1553e598b3a31daede2d865d3f784a8ea7"
+    },
+    {
+      "bytes": 16315,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2011-2024.json",
+      "sha256": "0bf26e00d097f543eeb8d2958c9a8e0fd52e76b60ffba2a858ce021018d08b0a"
+    },
+    {
+      "bytes": 16743,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2011-2025.json",
+      "sha256": "175a46063f4d35610aaadf89db68e70d015abaf06b5a177f6f42f8e1959d7b44"
+    },
+    {
+      "bytes": 10830,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2012-2012.json",
+      "sha256": "fa637305efe3532870815c413b9e72f7954852ccc959d6522ce59766828a973f"
+    },
+    {
+      "bytes": 11333,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2012-2013.json",
+      "sha256": "30b9c37349b9bb84b9fc0087bd19b898e4e0afda3ee151e08b0e161e39effb7d"
+    },
+    {
+      "bytes": 11511,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2012-2014.json",
+      "sha256": "711f2b39aea3e1c0aa53eb71ad634819767e7bcd2a3e43d29bef37adf6ae8699"
+    },
+    {
+      "bytes": 12007,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2012-2015.json",
+      "sha256": "7240cb11a01e2fd84848d32b5ec1a885bf4d53b4509eb1517236bae53c3f96fe"
+    },
+    {
+      "bytes": 12386,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2012-2016.json",
+      "sha256": "06e84e574622bc32c71b21440c3c5b9cadffab601fb6688b450a3d0a7a152d6c"
+    },
+    {
+      "bytes": 12761,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2012-2017.json",
+      "sha256": "3840ee9558ee58c6e6de9bd3673c9dec3476e1d6c195e4407515728cf2578ad0"
+    },
+    {
+      "bytes": 13133,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2012-2018.json",
+      "sha256": "f1590f63ccb6f87eda3c1e0e704ff1711751ec48951a6a8b21518d38326da66b"
+    },
+    {
+      "bytes": 13572,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2012-2019.json",
+      "sha256": "307a64a338894333b994568f55c5dc09f98d663d32d35082bd6c9de8054efe3d"
+    },
+    {
+      "bytes": 13998,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2012-2020.json",
+      "sha256": "8dba3d027f7b8d774094623a41a6e2e0a227612783d6170c934cd5597cc02985"
+    },
+    {
+      "bytes": 14439,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2012-2021.json",
+      "sha256": "f62f3a693ad805e6fdbea2d07d57ef1176fdf7c3835633a84a3d73e46c0883ee"
+    },
+    {
+      "bytes": 14897,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2012-2022.json",
+      "sha256": "4a91e78675de32b27ad43af3c5a82048e8ff9b71a6eb0ffd485ecb15dd76c724"
+    },
+    {
+      "bytes": 15442,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2012-2023.json",
+      "sha256": "57aa714dfd81dca49b92336c7b0a3a62e7f8d8f724a86c7645cc35c7e7cdc909"
+    },
+    {
+      "bytes": 15865,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2012-2024.json",
+      "sha256": "a502b1c549fb2a55f5f65f7b2c836c40f984885a87978fc4b738ecc797fb5029"
+    },
+    {
+      "bytes": 16372,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2012-2025.json",
+      "sha256": "3f1ea14ab5b32055dbb5f9a5972b739a024871507f606c55b826478e851a4527"
+    },
+    {
+      "bytes": 10962,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2013-2013.json",
+      "sha256": "11afeb367579a1ac6371dc186aa05edba008e7bd2da22b49c4ca83ccd1cd2a68"
+    },
+    {
+      "bytes": 11363,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2013-2014.json",
+      "sha256": "c5c9e64f2b432797c18861c124a361a648ced8d64a9248f597e9ca52222fc9fa"
+    },
+    {
+      "bytes": 11520,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2013-2015.json",
+      "sha256": "95090437c3634a39e6a327922b505a7a3353e8f80719b72cf46b9897fce10562"
+    },
+    {
+      "bytes": 11989,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2013-2016.json",
+      "sha256": "593460e559d4b8f905c01c45d38bfb10a9407a5964c2d05be65c180c0a8a5d80"
+    },
+    {
+      "bytes": 12308,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2013-2017.json",
+      "sha256": "9c37b8be83530787747413d6d165130340bd1370c87b1819eae680f2d19a38a0"
+    },
+    {
+      "bytes": 12792,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2013-2018.json",
+      "sha256": "c6d53f90118d23ddc0a332b52f3e9b94b76a558319af67d6aa31ee8b2b6a081f"
+    },
+    {
+      "bytes": 13176,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2013-2019.json",
+      "sha256": "18206fdf3135150f1dcb6e80b133af2a1c08268a2f38d7d269179249c6883ce3"
+    },
+    {
+      "bytes": 13631,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2013-2020.json",
+      "sha256": "27c41d578426a471ae393b44ed037db23c8055ec2b67a0d6c9fd699b637c2958"
+    },
+    {
+      "bytes": 14025,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2013-2021.json",
+      "sha256": "a6d87a8fae0ee2a92730959ea05a04b1a29c3f2c42d9f57d2f82d9a261c7cd42"
+    },
+    {
+      "bytes": 14532,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2013-2022.json",
+      "sha256": "955f19c4895d3484e3f62fa43e7b6b430cc9f2e81c0057eb366fdf769a4cc62d"
+    },
+    {
+      "bytes": 15011,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2013-2023.json",
+      "sha256": "0a9f1839dc15ec14f6fcd18560c564e2d8b54289d0e80019c8e30e7fb0bc5def"
+    },
+    {
+      "bytes": 15535,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2013-2024.json",
+      "sha256": "90505145508169b96e81a40b3116edb07582790de4651436af9b919882c52546"
+    },
+    {
+      "bytes": 15916,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2013-2025.json",
+      "sha256": "e3e5e09cb37fa08f8acff35ae71e32a5e664345b0e2ca8e7ff177d722cea166b"
+    },
+    {
+      "bytes": 10744,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2014-2014.json",
+      "sha256": "1a28dd15c6307c63a6e3e85b300e2d04a65143688693e2b3052ffe1a91c3a6a9"
+    },
+    {
+      "bytes": 11335,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2014-2015.json",
+      "sha256": "d459a666f3e56347726817f4ee101f0bd261ac722975816690d4e167b3a141aa"
+    },
+    {
+      "bytes": 11493,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2014-2016.json",
+      "sha256": "96a3280e282e1aeeca8ce19ea19b06aa3dfce904960eba3604506c0995493e1c"
+    },
+    {
+      "bytes": 11937,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2014-2017.json",
+      "sha256": "a93f3f1a6f47e90ba72b72641b8a957eb4a90e10600ae2ef1b67b31978ea5f03"
+    },
+    {
+      "bytes": 12345,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2014-2018.json",
+      "sha256": "a301d09e264ae1a4eec15b72e0bc41e38fa340648b14597ce343a5c0f106ccf5"
+    },
+    {
+      "bytes": 12791,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2014-2019.json",
+      "sha256": "a2cacc36212ae16d1474f49db2062a9b0673ebf34ba0f7c7cd460a1ca9925297"
+    },
+    {
+      "bytes": 13191,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2014-2020.json",
+      "sha256": "ae95365016019be31fd4b872970d0889c82291de403f34870f6a6133761647f0"
+    },
+    {
+      "bytes": 13583,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2014-2021.json",
+      "sha256": "65252fc32d2cb3f60d0d983a887afc92d9966f871f8399cd4f5158e60b6a5cda"
+    },
+    {
+      "bytes": 14007,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2014-2022.json",
+      "sha256": "828eb420b71ed7aa62824e78645cd26ec0b21900fe44699a41e142aa44ff658f"
+    },
+    {
+      "bytes": 14666,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2014-2023.json",
+      "sha256": "2974d040d1d328cb2c301d964e354e21725f34e4c50645bccc8ab9bfa6380f1f"
+    },
+    {
+      "bytes": 15075,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2014-2024.json",
+      "sha256": "c557fd87e6ca1ae60882dd9368a378eef094b1a4ff322bf1160a6bc64cb73030"
+    },
+    {
+      "bytes": 15561,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2014-2025.json",
+      "sha256": "767deff82d2ecc0344af0a05e1cac4eb6ccf4a447e82b74348920b8ee54ac781"
+    },
+    {
+      "bytes": 10955,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2015-2015.json",
+      "sha256": "c675e4338a78641d197a069df3bc674ee3553739a2e9925c9d79441c23cf889c"
+    },
+    {
+      "bytes": 11346,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2015-2016.json",
+      "sha256": "ef9d9e70a038a275be09ab514bb03193a9d3dbb1b672b549857cf91c99d860f2"
+    },
+    {
+      "bytes": 11490,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2015-2017.json",
+      "sha256": "695e10cbb229d50ef0e979faf7a6305299c7864a456eebca17e003f0c8128ecf"
+    },
+    {
+      "bytes": 11995,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2015-2018.json",
+      "sha256": "78d1e79fd5907d4e16352258b57dafffa12896c4c1fd73c80315c47d28443b02"
+    },
+    {
+      "bytes": 12331,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2015-2019.json",
+      "sha256": "fac0383a613eb188d072d2a02a4af626af91aae6fc7a976db785079bd3caa461"
+    },
+    {
+      "bytes": 12822,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2015-2020.json",
+      "sha256": "9df07f0cfe9a66686fed5d4c670952c5646e1fbf6a5e4d4358909ec2cf431ae4"
+    },
+    {
+      "bytes": 13184,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2015-2021.json",
+      "sha256": "56067bd4a139b8b9291695bb61b77f6f92e665fec0cad585817282cb73c9f729"
+    },
+    {
+      "bytes": 13641,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2015-2022.json",
+      "sha256": "9787576ee02554f9e1dc1622e608ca954d35ba5bfce8bc0671c171b84924f55b"
+    },
+    {
+      "bytes": 14151,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2015-2023.json",
+      "sha256": "cd1b9fcfbabae6d3ce91f98009e92f62996f42574ad8130909104f08e7cacb8d"
+    },
+    {
+      "bytes": 14706,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2015-2024.json",
+      "sha256": "c62f6ad328893b74a09824493bf021510a241b6b1fc5e4be2f8b0fb5cf828845"
+    },
+    {
+      "bytes": 15141,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2015-2025.json",
+      "sha256": "945fe81107defc6c068c4cd7f2481a31f266ddbbaf3d39754676230b04bff6a1"
+    },
+    {
+      "bytes": 10893,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2016-2016.json",
+      "sha256": "5fc7cc873824673cfdbeb1b215441aba1fde900cf5fba062a0133a3fb1c14472"
+    },
+    {
+      "bytes": 11338,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2016-2017.json",
+      "sha256": "6e91c5cd6e2cec62432c535e96e371934f884ffa6ac9a4ab6c4db7197c188fa2"
+    },
+    {
+      "bytes": 11519,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2016-2018.json",
+      "sha256": "9ee2df281ee60a11c8578046cd049e7cb5afcf1a5b177d45fadfa7a87b705693"
+    },
+    {
+      "bytes": 11918,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2016-2019.json",
+      "sha256": "df1c25c8ba68a402e88cacf1cebcf4503b69b6aeb3aaafe8313791055bd146db"
+    },
+    {
+      "bytes": 12364,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2016-2020.json",
+      "sha256": "ed6525bc9035f220ae43f82df840c85b27e4d13d8fb83479fabf0aecf919400c"
+    },
+    {
+      "bytes": 12780,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2016-2021.json",
+      "sha256": "5f8fa119c4f9a0474a51711629e1ed9734e148e520a0cd718742aa589efb2de2"
+    },
+    {
+      "bytes": 13189,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2016-2022.json",
+      "sha256": "b90ff65a27ffe445d189f931220ac3dc83891ef49e538ce05f8d36c6e2dadc1d"
+    },
+    {
+      "bytes": 13773,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2016-2023.json",
+      "sha256": "2ca0ff2e86094a2cc29c5fed6d4a892f1337a068a94de3c7fc0c0ddd6e8c9ef0"
+    },
+    {
+      "bytes": 14201,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2016-2024.json",
+      "sha256": "fbca6cc35c25f0d7f01daa2bfd94701124b24097d70d269a2a5fe32823781e4c"
+    },
+    {
+      "bytes": 14746,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2016-2025.json",
+      "sha256": "f471c35a8239590dadfbc2f5cd2677fb4a861b167395bafde9e7990afb6dbe16"
+    },
+    {
+      "bytes": 10955,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2017-2017.json",
+      "sha256": "e49c28e41933726278dde560bb1e01fff0b39b10c7af69de7678774bfb4760dd"
+    },
+    {
+      "bytes": 11386,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2017-2018.json",
+      "sha256": "a6e0bb9bf9046aa1b2e689624d63149edc05f9effcf381f99ec5dd5f1cab2b98"
+    },
+    {
+      "bytes": 11508,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2017-2019.json",
+      "sha256": "955234c0763722d610287220b85febf96ffaecafbe6313aef50082546a2b4ad5"
+    },
+    {
+      "bytes": 12044,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2017-2020.json",
+      "sha256": "afe0d41ca50a54e0885190f7df493064e57797156d457b0f38e2b8b654e840f4"
+    },
+    {
+      "bytes": 12340,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2017-2021.json",
+      "sha256": "d83d9fce4cb819686a8f54fa4dffefd85d3b856216fb6ff8f3bed903f6f37625"
+    },
+    {
+      "bytes": 12813,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2017-2022.json",
+      "sha256": "0f9a118e5da098fbfbe66acbe1b4810584eaacff06de30029ae687564b37031e"
+    },
+    {
+      "bytes": 13354,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2017-2023.json",
+      "sha256": "d8af288f03078f5082d70602f7ac24366c47c3397cc2df0038066f80da83d7c0"
+    },
+    {
+      "bytes": 13861,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2017-2024.json",
+      "sha256": "71864af9da65a14467b6449e86e9bc3bd216cd77912b086a1d2e57a85f987bac"
+    },
+    {
+      "bytes": 14252,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2017-2025.json",
+      "sha256": "0fb980627b032c82df1b989794abe16439518eaacf24e831d89b1ce5ebffd505"
+    },
+    {
+      "bytes": 10823,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2018-2018.json",
+      "sha256": "4d5c348cfa8b58658dd18f14beafba044543034884c4062bf62c963d0048b49c"
+    },
+    {
+      "bytes": 11352,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2018-2019.json",
+      "sha256": "7c8c353f4863850b799f3f1fffc8d7039a16677344d7382477d3c542756d6945"
+    },
+    {
+      "bytes": 11558,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2018-2020.json",
+      "sha256": "08c38d9db283883610e645af88734c25dea18128b27e949857a6dfeb9829479c"
+    },
+    {
+      "bytes": 12010,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2018-2021.json",
+      "sha256": "5cb87c54119116253ae90879f72eb0756806298c741c16b8d3ad1c144a1708e7"
+    },
+    {
+      "bytes": 12382,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2018-2022.json",
+      "sha256": "b92b89c06e841ec8c50e471d6eaf117ae4a7efa8bcdae80ff65ae17f6d00f949"
+    },
+    {
+      "bytes": 12981,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2018-2023.json",
+      "sha256": "298f5a86dbf5239bde64441959fd8e615e88444b7dc93c53a87ef27960a1a3c5"
+    },
+    {
+      "bytes": 13421,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2018-2024.json",
+      "sha256": "0ca45ba3a0af5d9d01977c91fb594ad392d89fcf9d9886dc9b2d844fa1868f00"
+    },
+    {
+      "bytes": 13893,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2018-2025.json",
+      "sha256": "4f47f3840db37910709a3d9a47280b230355e95a4d9bc4481e66c929c3a9ab45"
+    },
+    {
+      "bytes": 10984,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2019-2019.json",
+      "sha256": "23fa683acff00cc68864bd9c345523ccba0500815b48e8957c19c4850ca582d2"
+    },
+    {
+      "bytes": 11467,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2019-2020.json",
+      "sha256": "1963b6f6b2079fb999f2df08dc46b51e841d27adcb971c77e99ca4b4f0be6fa7"
+    },
+    {
+      "bytes": 11557,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2019-2021.json",
+      "sha256": "00c59a2dc4494d66427701cdfe746592632d4318aa3dbd512215172e91c39618"
+    },
+    {
+      "bytes": 12013,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2019-2022.json",
+      "sha256": "9579ceac77dcfd07172897564f545b2a21985e3fa77e8cee02cae2466e948008"
+    },
+    {
+      "bytes": 12557,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2019-2023.json",
+      "sha256": "a754a94ec95e851d625eb00677823cc3bc499757a242d6c6413464439e4d1c72"
+    },
+    {
+      "bytes": 13070,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2019-2024.json",
+      "sha256": "9deed5e22b543e0fa22c502590e5d04424cf74a2a2d8eecb8d3d182ef1dbe8ef"
+    },
+    {
+      "bytes": 13498,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2019-2025.json",
+      "sha256": "4e4f61177694757dbeab46e3ab414957b14ff943ce2ade27ae737b4c68bdadea"
+    },
+    {
+      "bytes": 10984,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2020-2020.json",
+      "sha256": "998ccb96804d370763e5f7d699008e948c11e903dfa9b3f54f30100156723289"
+    },
+    {
+      "bytes": 11394,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2020-2021.json",
+      "sha256": "f173d80780db23cbae9307c750b15185af174742f8e744b2f0ed14347162c93d"
+    },
+    {
+      "bytes": 11575,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2020-2022.json",
+      "sha256": "8d3362c33b85b3faef1e5ae4a83d42c774a86d3f824e7f9dedf2a841909121d2"
+    },
+    {
+      "bytes": 12276,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2020-2023.json",
+      "sha256": "ed969996712196dbb56dd568e1877b5f6420d658116825897420a22bc2049e2d"
+    },
+    {
+      "bytes": 12666,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2020-2024.json",
+      "sha256": "f0bfa48f5e1325650463756dd74ddb78ebd0b3818e1cab32ea5a2035c37a0cfe"
+    },
+    {
+      "bytes": 13138,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2020-2025.json",
+      "sha256": "b885d142485592b6280d23a497f18c6b0a1168fb851b37021d16fb005fced652"
+    },
+    {
+      "bytes": 11005,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2021-2021.json",
+      "sha256": "35443359b062b12b090976f6dbbc3dbeaed78ebec973053576156214234af79c"
+    },
+    {
+      "bytes": 11422,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2021-2022.json",
+      "sha256": "c5213cef64939aba2382cefbcb23b851a4a7737a15cb2214a5240c03b06c9b8c"
+    },
+    {
+      "bytes": 11969,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2021-2023.json",
+      "sha256": "ec4ae1fb7180f07d8ab5cb1e5bf3b3dfa115df7e24871cb26a31fd175bcbcb54"
+    },
+    {
+      "bytes": 12419,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2021-2024.json",
+      "sha256": "0fd318b1c8881d7b73c534019557ef03747d5020563ff299cd300d99799e5edc"
+    },
+    {
+      "bytes": 12837,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2021-2025.json",
+      "sha256": "6028662948d995ef85234b2cabcfdf87cedc3ef2ec711e9177fdcef8c9cfcfc5"
+    },
+    {
+      "bytes": 10965,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/periods/2022-2022.json",
+      "sha256": "c4edb785d43ba75d7c4b5cdfdc1b7aaf7034020da0408634fad80bb93bf0458e"
+    },
+    {
+      "bytes": 11717,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2022-2023.json",
+      "sha256": "87c3edbf2010f49026d829e52567b0795046aea00228bfbabd4edbeefd71c630"
+    },
+    {
+      "bytes": 12036,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2022-2024.json",
+      "sha256": "d88baf64ddf3ce5f5c64b9028fd67138838e8f06cb9225ae4a7ffe872b7017f1"
+    },
+    {
+      "bytes": 12489,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/periods/2022-2025.json",
+      "sha256": "3c36b777ce845b850a1ba30faccec31362a91180c91bce698a01f141d3774ce0"
+    },
+    {
+      "bytes": 11303,
+      "kinds": [
+        "harmonized"
+      ],
+      "path": "synthland/periods/2023-2023.json",
+      "sha256": "f0265305c06ad99b70fc8f2fbbd77c1cec53d7da2b100b6b4b02f3cfb6e9c432"
+    },
+    {
+      "bytes": 11749,
+      "kinds": [
+        "harmonized"
+      ],
+      "path": "synthland/periods/2023-2024.json",
+      "sha256": "bfc84e2dbb612e3116157ee6ccb0d8f2b9400b1161ac9034a73a6acdfba77ec2"
+    },
+    {
+      "bytes": 12065,
+      "kinds": [
+        "harmonized"
+      ],
+      "path": "synthland/periods/2023-2025.json",
+      "sha256": "dc12a3fe6e5d4f19a4d7501ad4bb8a0582519a1dd8a1fb90335102bab6982b48"
+    },
+    {
+      "bytes": 11257,
+      "kinds": [
+        "harmonized"
+      ],
+      "path": "synthland/periods/2024-2024.json",
+      "sha256": "0d48420d70899f5dd3483318f218ef34a32a3af7f8c57c7d3392d4dbf4436483"
+    },
+    {
+      "bytes": 11762,
+      "kinds": [
+        "harmonized"
+      ],
+      "path": "synthland/periods/2024-2025.json",
+      "sha256": "cf1231ab431aac0b73fd20106539f5b880bd0f62e6e15b484f73194556379d7f"
+    },
+    {
+      "bytes": 11359,
+      "kinds": [
+        "harmonized"
+      ],
+      "path": "synthland/periods/2025-2025.json",
+      "sha256": "45283a4e3e3a23c759da590a43b9f8fda3b80de0b1fe6b67b1a8f680dd655e7a"
+    },
+    {
       "bytes": 4092,
       "kinds": [
         "harmonized",
         "observed"
       ],
       "path": "synthland/ruler.json",
-      "sha256": "a9dd8c89c81f09ba9c6275cb360c1d7dc3c5504e5f31fe297a20db5b3df4a711"
+      "sha256": "c2d64010c126c6cadb6b14f2be588185b2127c6a16fadcfe08a334643eb0ec57"
     },
     {
       "bytes": 10174,
@@ -101,19 +2377,256 @@
         "observed"
       ],
       "path": "synthland/season.json",
-      "sha256": "700a180faf4f930a74f5fa65c40b71f2560558185b0969df7cbbd91ffbf1222a"
+      "sha256": "8ffbdcfc23576e347afab422d5602297f4aa786c67fdcc9c7a53948fb10e78a4"
     },
     {
-      "bytes": 5207,
+      "bytes": 229735,
+      "kinds": [
+        "estimated",
+        "missing",
+        "observed"
+      ],
+      "path": "synthland/spatial/2003.json",
+      "sha256": "a2a7c494a7929f8bae8b8b3d8f3dc774209ab61c7fbe0d065b12c0519d15cb00"
+    },
+    {
+      "bytes": 232421,
+      "kinds": [
+        "estimated",
+        "missing",
+        "observed"
+      ],
+      "path": "synthland/spatial/2004.json",
+      "sha256": "42b9cebcc36693fc505dbe989ceb129d8a29abe301962c91e4201bcfe18fc107"
+    },
+    {
+      "bytes": 235793,
+      "kinds": [
+        "estimated",
+        "missing",
+        "observed"
+      ],
+      "path": "synthland/spatial/2005.json",
+      "sha256": "4deff73630ff790141923411d963a049fe6b0e2d04696bc254e9ec9b7272fb07"
+    },
+    {
+      "bytes": 231321,
+      "kinds": [
+        "estimated",
+        "missing",
+        "observed"
+      ],
+      "path": "synthland/spatial/2006.json",
+      "sha256": "ca56af33bd8a082c9b4419f7fb236988eba33e726ec1c3dabc11da6264f5a608"
+    },
+    {
+      "bytes": 233843,
+      "kinds": [
+        "estimated",
+        "missing",
+        "observed"
+      ],
+      "path": "synthland/spatial/2007.json",
+      "sha256": "f19de337a7d5399c5aabd9b79d6e3b87825f16962ad5485456d0b299fd473ade"
+    },
+    {
+      "bytes": 241776,
+      "kinds": [
+        "estimated",
+        "missing",
+        "observed"
+      ],
+      "path": "synthland/spatial/2008.json",
+      "sha256": "0fa42bf0d675ecccebfc43b6e4ad0b0774fd76b07619ce2d0e96357eae4805b4"
+    },
+    {
+      "bytes": 246257,
+      "kinds": [
+        "estimated",
+        "missing",
+        "observed"
+      ],
+      "path": "synthland/spatial/2009.json",
+      "sha256": "1a174183d6eac16836ee2f8ed6d8d4a29bd3a8dfc8d11d45ee5509a5d7dd95dc"
+    },
+    {
+      "bytes": 244784,
+      "kinds": [
+        "estimated",
+        "missing",
+        "observed"
+      ],
+      "path": "synthland/spatial/2010.json",
+      "sha256": "8a5e17f3a9b15af994d090a0233a5449d9e9f39bd0ca1623150c5b49205d2fb7"
+    },
+    {
+      "bytes": 241854,
+      "kinds": [
+        "estimated",
+        "missing",
+        "observed"
+      ],
+      "path": "synthland/spatial/2011.json",
+      "sha256": "539ff5301a90eefb788448ee095e670af6d887b965462c03948262cc5cdfe102"
+    },
+    {
+      "bytes": 432503,
+      "kinds": [
+        "estimated",
+        "harmonized",
+        "missing",
+        "observed"
+      ],
+      "path": "synthland/spatial/2012.json",
+      "sha256": "89a7e1afcc9edda1994790956f7ca9aff41ebc24053cad5366dd8bda99f0814d"
+    },
+    {
+      "bytes": 439609,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/spatial/2013.json",
+      "sha256": "7e2122a54b1ec945f48aa49a451f9ca3163d5e7605c4fe47543a564391b34e63"
+    },
+    {
+      "bytes": 440973,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/spatial/2014.json",
+      "sha256": "dbb392e3088c8593b63999264e7e6e444c16d907276d38e944d9c893c283a321"
+    },
+    {
+      "bytes": 435655,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/spatial/2015.json",
+      "sha256": "4440051baa00ea89e94cf7a7d1909a22533bc24d1522b6036df164f3ea9e8269"
+    },
+    {
+      "bytes": 445215,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/spatial/2016.json",
+      "sha256": "c8c11cce518cb31ddf6cca9e23f06f4fd307e6aad80867950e97356c4b6fb4dc"
+    },
+    {
+      "bytes": 449537,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/spatial/2017.json",
+      "sha256": "7d40f1b6bca4740aee68f265469876d600b211a9cbb1799fdaad930f2b87f3fe"
+    },
+    {
+      "bytes": 447552,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/spatial/2018.json",
+      "sha256": "e2ae2842c8716ea44c4e05195e102bacddb38980625b99c6e297800c5f672293"
+    },
+    {
+      "bytes": 455730,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/spatial/2019.json",
+      "sha256": "7b94bd75e6694c8ef616b39ff5bc0652c6e011f6ec492a487ce9d48c1eadfb3e"
+    },
+    {
+      "bytes": 450287,
+      "kinds": [
+        "harmonized",
+        "missing",
+        "observed"
+      ],
+      "path": "synthland/spatial/2020.json",
+      "sha256": "9021ac54f2d76b6e36e7b72ea8bb3e1eed7214585b952bef138ba1a7c298c6dd"
+    },
+    {
+      "bytes": 454294,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/spatial/2021.json",
+      "sha256": "a2ec36703c4337cc053164160f52761eb3850bc8e0552dc5c420576984e7c3f3"
+    },
+    {
+      "bytes": 458136,
+      "kinds": [
+        "harmonized",
+        "missing",
+        "observed"
+      ],
+      "path": "synthland/spatial/2022.json",
+      "sha256": "897ea6793ef4aef58e9e73c2bb5bb21ac225d3c58abb9f721cfe08b63bbde591"
+    },
+    {
+      "bytes": 555118,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/spatial/2023.json",
+      "sha256": "bfa63f11a3d5f744640bca0f5f85148dd48b1adc687fd5264932425f6fc6555b"
+    },
+    {
+      "bytes": 551072,
+      "kinds": [
+        "harmonized",
+        "missing",
+        "observed"
+      ],
+      "path": "synthland/spatial/2024.json",
+      "sha256": "ebab6cf97dc5c8cb37a37848b76dde5d26d9ed26cb957cd810fbead9f7d532e6"
+    },
+    {
+      "bytes": 554575,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/spatial/2025.json",
+      "sha256": "caf1477e8e969b4c17111fb2a7cc4cea1e3c2ddcf540d9d6879f6a42a622f517"
+    },
+    {
+      "bytes": 415369,
+      "kinds": [
+        "harmonized",
+        "missing",
+        "observed"
+      ],
+      "path": "synthland/spatial/2026.json",
+      "sha256": "cb8815ad99f56596e63d4764264f49fc70de07f136a19f7e2af40716bad1e476"
+    },
+    {
+      "bytes": 4578,
+      "kinds": [],
+      "path": "synthland/spatial_index.json",
+      "sha256": "8dadc653f59a2315a13de47f9867338abb4e9ea5833e8a94f031c79684411aa2"
+    },
+    {
+      "bytes": 5442,
       "kinds": [
         "harmonized",
         "observed"
       ],
       "path": "synthland/trend.json",
-      "sha256": "f20fb7ed4c4edc0020907cf5ff17e6c5dc022baba88ae978c97174321a478b3a"
+      "sha256": "ef4e6eb18d34cd2c02b88781b4b3b3f1995f9dc7aa25aa387659588ca8a6d9aa"
     },
     {
-      "bytes": 1170944,
+      "bytes": 1171543,
       "kinds": [
         "estimated",
         "harmonized",
@@ -121,7 +2634,7 @@
         "observed"
       ],
       "path": "synthland/weekly.json",
-      "sha256": "202ecd64ac870f9f7b0fc6bceef007fee4b73f45a33c70095831da49bcb5c4e3"
+      "sha256": "4714131704ec5221eb98ac1cb49bb84a84df7b8dba60fdac6836afe91ec02650"
     },
     {
       "bytes": 4948,
@@ -130,7 +2643,7 @@
         "observed"
       ],
       "path": "us/calibration.json",
-      "sha256": "31b92c4588f7fde1dc8efcf3f057d0fe5917b17252220bf73143a8b47ea16b9c"
+      "sha256": "9589cbb8d1d7000d67c7c78edf622f4e4f8831ac18cc6ac02e075535840072c0"
     },
     {
       "bytes": 21386970,
@@ -139,13 +2652,13 @@
       "sha256": "d49795b3fa245ccada67591e08a83579d02937086d8e56849c1a50e523ed9003"
     },
     {
-      "bytes": 13321,
+      "bytes": 13920,
       "kinds": [],
       "path": "us/climatology.json",
-      "sha256": "7e74041f48ff3561b4dc07be2d88963d4f2babc8581f50c38631e75edb5a73ef"
+      "sha256": "55023a968513b5ff39e5549d9080bc71c91ea9977857fe3d99dd647b47bb6726"
     },
     {
-      "bytes": 1398234,
+      "bytes": 1398833,
       "kinds": [
         "estimated",
         "harmonized",
@@ -153,7 +2666,7 @@
         "observed"
       ],
       "path": "us/daily.json",
-      "sha256": "79596a3b56b996df51a950a3c3c85ab58e61621855a5bcb7b68b2f90a1a1a54e"
+      "sha256": "50350d3b1f005c5672cf408a2b8a2deecff99e0b08e9d58c2541ad50e858251f"
     },
     {
       "bytes": 2576291,
@@ -161,10 +2674,10 @@
         "observed"
       ],
       "path": "us/hex.json",
-      "sha256": "56662e5336fa9823a7629a4797597668a62601dec4f560adf08fe15012a172fd"
+      "sha256": "6ed0d085e19cf85f826f52954574a08cb51ec59ac68c03326dc365d26ccb10d2"
     },
     {
-      "bytes": 268287,
+      "bytes": 268886,
       "kinds": [
         "estimated",
         "harmonized",
@@ -172,7 +2685,7 @@
         "observed"
       ],
       "path": "us/monthly.json",
-      "sha256": "3842ee86dd62a8607a15d282e287515f6f51a66a031bacbe5f81ae3b71ff02e9"
+      "sha256": "009722c0f2f5603f49f74b7fa120066277993df66df737921ed0302a157cfa6e"
     },
     {
       "bytes": 754,
@@ -180,7 +2693,7 @@
         "missing"
       ],
       "path": "us/nowcast.json",
-      "sha256": "e2316d7083c9be3416a6aad7ae7290a145af0e5f25c8a97f42034b99e41938a8"
+      "sha256": "6b2222cff2ea777e862a029001d54c8731a27d1d483a1fdaecbff4c2e2fa99de"
     },
     {
       "bytes": 4356352,
@@ -189,13 +2702,2287 @@
       "sha256": "167451974865aa049bac5a7ba4a4c2b15f13d6f963a306c1c321f9c92db6d92b"
     },
     {
+      "bytes": 58731,
+      "kinds": [],
+      "path": "us/period_index.json",
+      "sha256": "28f2175ce82cb327fdc58f643ac3e6f7891286d3550850ef10dd028eb46b1cdb"
+    },
+    {
+      "bytes": 11470,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2003-2003.json",
+      "sha256": "8ce9123a000ec369d208ec772459b5683e2beda6d87dd2e6c1c277bf5c0297f2"
+    },
+    {
+      "bytes": 11955,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2003-2004.json",
+      "sha256": "1803c511ef8fc89732e3174f91445b71277bfc198a90ce85abaa0b6d1da5e0a2"
+    },
+    {
+      "bytes": 12145,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2003-2005.json",
+      "sha256": "f8b5daa6c309b29add7d18093b00092481df07319b2ba62ed3a20a1e89ea705a"
+    },
+    {
+      "bytes": 12593,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2003-2006.json",
+      "sha256": "017adcca0eb0e8d006e1deab2b3a0c2defff2ac9ed5803abbbf82e6d0c2cb030"
+    },
+    {
+      "bytes": 13001,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2003-2007.json",
+      "sha256": "b3fc78c28e2bc373846b2dd746a14aa8250f037214e1ec296b20c2392b549804"
+    },
+    {
+      "bytes": 13418,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2003-2008.json",
+      "sha256": "219ef95ff4a3afd746611dcd84849943398517162217a1da5b6fb25cff3d833b"
+    },
+    {
+      "bytes": 13821,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2003-2009.json",
+      "sha256": "868639654c4b6b98cfee2bc64c7a30ab9fab71aa8cc2842835416ef68992cc9f"
+    },
+    {
+      "bytes": 14265,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2003-2010.json",
+      "sha256": "f2a382fcf2383392e0484bea86cc879bd06a1dbe291237cc728212cbf20cf8ca"
+    },
+    {
+      "bytes": 14638,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2003-2011.json",
+      "sha256": "b7a8087b9d2806270d9d1cc010637745cfed9d45e6581c2aac53f36a8517bd7d"
+    },
+    {
+      "bytes": 15128,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2003-2012.json",
+      "sha256": "9e53101a101149ec6ea1f90f12a9028f09ffcb8bd25de90023e4223745a06e6e"
+    },
+    {
+      "bytes": 15446,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2003-2013.json",
+      "sha256": "64bd067f75ad22da42945890a5ea164182db7d594e8f81739442ec7e65e13714"
+    },
+    {
+      "bytes": 15894,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2003-2014.json",
+      "sha256": "2f829b329230effd9de49382dda2946cc9e041cefe22e778da285fab81a5a0d0"
+    },
+    {
+      "bytes": 16251,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2003-2015.json",
+      "sha256": "c7eb18c75ada0fe0730b27e686f0db5deef7dd790afaf3df30d69378d7ef947b"
+    },
+    {
+      "bytes": 16684,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2003-2016.json",
+      "sha256": "95466721949fd79285ff10b666123e277580be1fa3a3d02bf6c26b02ffc1765d"
+    },
+    {
+      "bytes": 17063,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2003-2017.json",
+      "sha256": "4fbf83bb150811c4c065a1ff01002dc6b59d6de48397e9c5d841e481ede0e7a0"
+    },
+    {
+      "bytes": 17519,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2003-2018.json",
+      "sha256": "f4c8dded9c0019f6d6c5813f5d134800285dd6eab7519511a94b59597b0a44c6"
+    },
+    {
+      "bytes": 17940,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2003-2019.json",
+      "sha256": "c6a63760e362bf2eb856b598f288022bb83313844f48f058eed26968f005f3c2"
+    },
+    {
+      "bytes": 18383,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2003-2020.json",
+      "sha256": "1e95c51202b7f19a515b9293ec2828702bd091357e8f48db8ad9688d405904e3"
+    },
+    {
+      "bytes": 18773,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2003-2021.json",
+      "sha256": "051b308f02a4aa0d14f2d17160d7568179e867a734690a6bc32ff5c8729d0020"
+    },
+    {
+      "bytes": 19213,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2003-2022.json",
+      "sha256": "e5db828975794c1e575727b033c43695189f5028c93d424d005b2f77ceb33eb3"
+    },
+    {
+      "bytes": 19614,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2003-2023.json",
+      "sha256": "f98665f0238425b1fdfab07af955de27b2cc6357ade8248ea7437cbf5d4b9d4c"
+    },
+    {
+      "bytes": 20145,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2003-2024.json",
+      "sha256": "c44df0941853d258845558a86b207d5b4ec24794acd34a82ec877e85059619b5"
+    },
+    {
+      "bytes": 20591,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2003-2025.json",
+      "sha256": "024a20b27dc8189ae9ad7f98a11308f99a52f53b409136cb344ed44844d07d3a"
+    },
+    {
+      "bytes": 11489,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2004-2004.json",
+      "sha256": "747689d985694e534dda2d732ddcbb5d274f822a26525574d9b0c257abc2d02e"
+    },
+    {
+      "bytes": 11976,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2004-2005.json",
+      "sha256": "5b4bd8422947bf61405172cb382cd93a9415445b4147760ba9cd382cef7fcff8"
+    },
+    {
+      "bytes": 12171,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2004-2006.json",
+      "sha256": "a8dd5bf7be69ff7d679e8068eb1fd2ca0ac23b42f1c167bcb50543cbbaee547b"
+    },
+    {
+      "bytes": 12601,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2004-2007.json",
+      "sha256": "a6498088b7638a6ef2c9e07e6fcc5b8c2790a73f65cba665326e301f3596f5d3"
+    },
+    {
+      "bytes": 12948,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2004-2008.json",
+      "sha256": "de3d1bb514321ac89e07bbac141a3473ff087575fe4f302df8010836252ea55c"
+    },
+    {
+      "bytes": 13408,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2004-2009.json",
+      "sha256": "2543c651723ef6f585e983910ab8c3c377e6366e11ff5be7bd094791b811dc44"
+    },
+    {
+      "bytes": 13742,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2004-2010.json",
+      "sha256": "4956fd11f632bb4b53ae9172e7455b05f4ad5b9cc59b6b5007c19de1bbeaa23f"
+    },
+    {
+      "bytes": 14197,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2004-2011.json",
+      "sha256": "2036cd4a7b565cfac629cf23c8144f8ef83e26d69bb9e1b45836728087a72c53"
+    },
+    {
+      "bytes": 14620,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2004-2012.json",
+      "sha256": "10d26bc0e6ad3e94ed00b22bd1ce8d34e752d98c4367f008ffe67cfb4b63baf0"
+    },
+    {
+      "bytes": 15157,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2004-2013.json",
+      "sha256": "1becc938c2f0db6e32a47df90c65a1af0cbe9d89f4e2278bc0a5c7c9e1cc77e2"
+    },
+    {
+      "bytes": 15401,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2004-2014.json",
+      "sha256": "aaeb4f4d4385142a1e81cc2c7ef7a1ec4a7949e36b1d24411410d8d334604fe6"
+    },
+    {
+      "bytes": 15883,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2004-2015.json",
+      "sha256": "1a48ea6504e7f4b64645a0bf5dbcd9c1a3fe3ef015b952b7760c901e278223e8"
+    },
+    {
+      "bytes": 16249,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2004-2016.json",
+      "sha256": "e546dbe8950752ad5dcb5131435bd2f369b5c47cc18e2052527ba34bd50bed1c"
+    },
+    {
+      "bytes": 16659,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2004-2017.json",
+      "sha256": "42e23a0127664fb8d1a01a3d4d329fa3469bffda098781d8f2023b24128a6efc"
+    },
+    {
+      "bytes": 17041,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2004-2018.json",
+      "sha256": "bc81eedbf050f8f18b93ef54da7c173e97cf6c23fbb81db53b3c3079e31fb53a"
+    },
+    {
+      "bytes": 17525,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2004-2019.json",
+      "sha256": "d5c9c87f4babd3f9e35f26e62cacbfbdedac4d3274c095eaf5474f053c5bc29e"
+    },
+    {
+      "bytes": 17913,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2004-2020.json",
+      "sha256": "e57a5512437128a9a32bc2a6dd70886fc668eb26c392367e9b6683db5ff80757"
+    },
+    {
+      "bytes": 18438,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2004-2021.json",
+      "sha256": "b57fbbcb1be264c7f2cab47142ec7c96c9acc7ad60bb6c9061f25d38a02d454e"
+    },
+    {
+      "bytes": 18744,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2004-2022.json",
+      "sha256": "a748bcd8b135835e9f0f2b009a9a8925a5195988a0e4b357dfd9137acfd5aef8"
+    },
+    {
+      "bytes": 19272,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2004-2023.json",
+      "sha256": "0ec5b10dc3a377f0ce3e5fcc47b4ff21e1096fcf05e4abcf16b544698eed141f"
+    },
+    {
+      "bytes": 19639,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2004-2024.json",
+      "sha256": "990693f5c8e0a83fc9fd7cc3d133c282320ebb465eb9929d59f6d89e3f883db4"
+    },
+    {
+      "bytes": 20185,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2004-2025.json",
+      "sha256": "a3b8b611637d463eb5783f2e57cfefd7604788d36c2b8aed44a97e9ecafc9f9c"
+    },
+    {
+      "bytes": 11488,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2005-2005.json",
+      "sha256": "8f0aca1d345e5651dfb91b61bc513470339d36020f0a9d17e6df6aa0c7bcc3a6"
+    },
+    {
+      "bytes": 11928,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2005-2006.json",
+      "sha256": "d92a1a3665ae7b16fb8a0279e2b247f5c0fd1792102f3f963e60a9109b9366da"
+    },
+    {
+      "bytes": 12087,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2005-2007.json",
+      "sha256": "1ff11a2ff46c53ab7205d561d39a985cc5f6bdc0bf8294b20519e0380aba61b0"
+    },
+    {
+      "bytes": 12535,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2005-2008.json",
+      "sha256": "7d204063bfb3775de3e56952d4284cb415f2ba020802280ed42cdf5cd179ed7c"
+    },
+    {
+      "bytes": 12927,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2005-2009.json",
+      "sha256": "1c8eb806def89c671aa2b7856e94c875ed5fdc2b27299c00130a0939881f9e1a"
+    },
+    {
+      "bytes": 13394,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2005-2010.json",
+      "sha256": "6a290588cca056a31aedaaebe4580707a3e654defdb6af42141ea90958d15151"
+    },
+    {
+      "bytes": 13751,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2005-2011.json",
+      "sha256": "88a9b5dacf52a541f520aaa2263e74b898916a2403636a9f0f4a7a924dff70fa"
+    },
+    {
+      "bytes": 14241,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2005-2012.json",
+      "sha256": "ac6dd339a765603c9d64169495b2699b92ac5e925410579c9f13cd544511dff3"
+    },
+    {
+      "bytes": 14534,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2005-2013.json",
+      "sha256": "2dab1f4ed1583177894e49c79c28e3294ddbdd6223fb54e164b6949c377c9bca"
+    },
+    {
+      "bytes": 15011,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2005-2014.json",
+      "sha256": "93fdd4b3b22e44da6758ffce095b534a6c7bd972da86eedea286b25481f19b12"
+    },
+    {
+      "bytes": 15387,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2005-2015.json",
+      "sha256": "0bca5e752d4e21a00f3b05e60b7d27c1669909bfd5afda4a4a9bfccb6a51c939"
+    },
+    {
+      "bytes": 15863,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2005-2016.json",
+      "sha256": "0e05747bc693346df7cc1f598d771824c0e0242cce7f70f48f798c85f705baef"
+    },
+    {
+      "bytes": 16351,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2005-2017.json",
+      "sha256": "b91848f5bbb121d38e62437ccbeea686b2caba76b2de5dca1122f74c3afe7b07"
+    },
+    {
+      "bytes": 16666,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2005-2018.json",
+      "sha256": "baecb42dd4f11b68352b29492b415d047caadeacb5ed3c2aae5741f3c7b99164"
+    },
+    {
+      "bytes": 17152,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2005-2019.json",
+      "sha256": "30cbdf470a91150d12f8647cca168a1975891887e724d729556699dc3b4cb275"
+    },
+    {
+      "bytes": 17602,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2005-2020.json",
+      "sha256": "2438758ae3474e1da6959c406c7ca40cf9abbac9c178215f2e061adaabb3d426"
+    },
+    {
+      "bytes": 18022,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2005-2021.json",
+      "sha256": "4e6f6ac185afd5111d43ff1a7f5cd3939b306d35dbf2e7ed962a6dd3c6ed950b"
+    },
+    {
+      "bytes": 18466,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2005-2022.json",
+      "sha256": "2bfb872d151b91f00779989294f8184639f259e417e4395a935905588dfad581"
+    },
+    {
+      "bytes": 18790,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2005-2023.json",
+      "sha256": "2c9a049590a8bc9c1c19b756b3ef1aee7286f1aefe76638ef492f88b0ea62f3c"
+    },
+    {
+      "bytes": 19378,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2005-2024.json",
+      "sha256": "9bd8049bae3ba99fde58e0d4c7f1255e5e20a71ab61688c6531481e70ea6ec4c"
+    },
+    {
+      "bytes": 19774,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2005-2025.json",
+      "sha256": "0b64ba04809109fb173bda640b8f624bbfc34a3e7232eb9aae99794c188cd61f"
+    },
+    {
+      "bytes": 11382,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2006-2006.json",
+      "sha256": "28086ed62a7dc281339005f5b5554c7abc3359dfe16a5c7b0b667247a607b5dd"
+    },
+    {
+      "bytes": 11872,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2006-2007.json",
+      "sha256": "32f86a66864dcfb808573ed2b1ffe114e12b61748cd3a0ec6868eaa7aea61c27"
+    },
+    {
+      "bytes": 12110,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2006-2008.json",
+      "sha256": "c7e7ff4dc8c25a260f2eaec3b57aee036f9850facc4f8d4a4d439b46a6795cae"
+    },
+    {
+      "bytes": 12520,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2006-2009.json",
+      "sha256": "800a051711b196ac405f375267a3b393487fcb26e12b9ff2e831baafb8c992ba"
+    },
+    {
+      "bytes": 12958,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2006-2010.json",
+      "sha256": "43ab2cb0598ade02c6155a70d257c52aec4cdc7a68ac5030b84b67d4559619a0"
+    },
+    {
+      "bytes": 13364,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2006-2011.json",
+      "sha256": "ad5d4c8b192784092347637f815980c172c4b1888a440c93a378ed46f3d9006f"
+    },
+    {
+      "bytes": 13836,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2006-2012.json",
+      "sha256": "fa641b6a1de7325f0b8f9660601b170e2e92f55f7728f648b1ac706342d70add"
+    },
+    {
+      "bytes": 14104,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2006-2013.json",
+      "sha256": "b1d1295940d4720aa18ead991573468a1135aa85a3954793fc4219143e22e5e4"
+    },
+    {
+      "bytes": 14482,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2006-2014.json",
+      "sha256": "4c22eb67a0b1c756274313e2813d3673ab9a14be8ebd6840f5f613a59e993376"
+    },
+    {
+      "bytes": 15037,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2006-2015.json",
+      "sha256": "0c4b9ed27ae5a5ccf57054276f3c0317aa7bfcd899b62b047cbb3a74bafaf86a"
+    },
+    {
+      "bytes": 15428,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2006-2016.json",
+      "sha256": "68f870aaa5baa7aa7a6c16b33de8f4f19818a5da349fd28b47b0be85c7b9d990"
+    },
+    {
+      "bytes": 16024,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2006-2017.json",
+      "sha256": "80b4fe87a4173b5b0baca379ff6af753452452f86d6f1b09cc18f24a8aa676da"
+    },
+    {
+      "bytes": 16241,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2006-2018.json",
+      "sha256": "b05bfb35863ebdf3a003ce889bcb0cb57eb02a6576bbd7b371fcde5a4a157ab6"
+    },
+    {
+      "bytes": 16705,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2006-2019.json",
+      "sha256": "388293e84576c30935d78072c71fb333af700c578354e6e6759d87b4536a3c14"
+    },
+    {
+      "bytes": 17163,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2006-2020.json",
+      "sha256": "c705c7148011e30faff975d11d7a64da6e60ea6a0efd86d3d201874bbbe8c944"
+    },
+    {
+      "bytes": 17675,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2006-2021.json",
+      "sha256": "0e544330524cfa4f416ce70fd94be995d0f4d2f278344ddf0c087be386884632"
+    },
+    {
+      "bytes": 18091,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2006-2022.json",
+      "sha256": "51ceeeee235d6428fac06abcd14243520c7668ffcbaa91b575b0932b7b9619a7"
+    },
+    {
+      "bytes": 18491,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2006-2023.json",
+      "sha256": "452cfffda37fb83f495d53198e66da76c9a2c3c0e6be7703b791380e73f79837"
+    },
+    {
+      "bytes": 18916,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2006-2024.json",
+      "sha256": "57307ae73babe72c57e94ce954e570be950413edf6158a827cf9045082396997"
+    },
+    {
+      "bytes": 19400,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2006-2025.json",
+      "sha256": "0a6c1fba2da33fdbdb22a15f1cee681647956cdcef73e1cedc3005feafec1446"
+    },
+    {
+      "bytes": 11385,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2007-2007.json",
+      "sha256": "904a7dc163e6718617b7509ca167ba743d1795dd34c20fecdc46ba212c5b4a6e"
+    },
+    {
+      "bytes": 11878,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2007-2008.json",
+      "sha256": "3899fef413d806bebc6569cd7538d381aa78eaf9b715dbffc0b0d3bea801d65a"
+    },
+    {
+      "bytes": 12136,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2007-2009.json",
+      "sha256": "6453e3162f5d61f4288f40c94a6a407e14ad0ecd29ba1aa4eb28e656df22f3b2"
+    },
+    {
+      "bytes": 12528,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2007-2010.json",
+      "sha256": "6ef97951c716c2ad134166184081445c26bb2a5658b2fce99c9ec9e028673a46"
+    },
+    {
+      "bytes": 12935,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2007-2011.json",
+      "sha256": "51af3ad2df102eb481bf5003c5caab80f2d74a14b5a43966df1404e811347eea"
+    },
+    {
+      "bytes": 13384,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2007-2012.json",
+      "sha256": "3406a06f9ba9e431d76f9a46c85bf71dada984847c031491fba1194cd28f954e"
+    },
+    {
+      "bytes": 13792,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2007-2013.json",
+      "sha256": "a5f269e9e265437333e29e5e964ff3269169d25c7a903b1c83d29cc50fb848a3"
+    },
+    {
+      "bytes": 14106,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2007-2014.json",
+      "sha256": "cec2b5d4fd4b690dd0d3777b6b666dbe9e3c13a045fefff9375ee222f0170874"
+    },
+    {
+      "bytes": 14491,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2007-2015.json",
+      "sha256": "17bb4fafc9fe0b8b9ad337e05a54abe52bcaa14c7e4edb47d4f826e4d5a25dbd"
+    },
+    {
+      "bytes": 15021,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2007-2016.json",
+      "sha256": "b164ad44c1b79baa1d8fac54d2a871277b7b31b8522acc4764af6eb909fc30e9"
+    },
+    {
+      "bytes": 15518,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2007-2017.json",
+      "sha256": "dfcf28340c948d2a19e5818a36d0d6ad719c9691ba1d6d1fe997b064d50e2cfb"
+    },
+    {
+      "bytes": 15922,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2007-2018.json",
+      "sha256": "ea2c7a8f1a5406c61c9d85f81d6a378abb8520306fba8e50e4c0930587e8adde"
+    },
+    {
+      "bytes": 16308,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2007-2019.json",
+      "sha256": "2abe4a44a62bb7efa4ba1208670d6104405a2dda4cf2aec5762b8fe1f1dfbd1e"
+    },
+    {
+      "bytes": 16788,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2007-2020.json",
+      "sha256": "29d6b65a31054fe3981d6ab45a5f65798a4a23334109ccf19646f93ec719a949"
+    },
+    {
+      "bytes": 17136,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2007-2021.json",
+      "sha256": "2a464fabe1cc599ea3d34a2f357deb3a502c9db92b22fe5e40407589a97bc222"
+    },
+    {
+      "bytes": 17603,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2007-2022.json",
+      "sha256": "46c2165cf719dbe24f2c6a34fd9a32fdb6a5f3a736a4c7d530309866e8ee6942"
+    },
+    {
+      "bytes": 18049,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2007-2023.json",
+      "sha256": "4f22034e5e74458d32bd4e8f3caa63b229b42c1b00232820a805946f49ba089b"
+    },
+    {
+      "bytes": 18537,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2007-2024.json",
+      "sha256": "c16d4771e444f26a2c221b6552c84808181e4505d6b04588a321472753bdd915"
+    },
+    {
+      "bytes": 18949,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2007-2025.json",
+      "sha256": "f5353107a7615fd39d129da22f3584eb4dfe9784cf306f10bf94cd04f2d58543"
+    },
+    {
+      "bytes": 11491,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2008-2008.json",
+      "sha256": "a7fa8b31cda461f10a710ab7987777037cfbaa69c8c5f6abaa616476c319facc"
+    },
+    {
+      "bytes": 11812,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2008-2009.json",
+      "sha256": "7d53ee2a6e3e70400441eb821a1fabce8a0561231c9cbb1e3b29bde078c69aa9"
+    },
+    {
+      "bytes": 12095,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2008-2010.json",
+      "sha256": "73c65c7b7bdb33f65a9edf7c01160aa805f2b1f0fad260a41ecfac97612a71d2"
+    },
+    {
+      "bytes": 12513,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2008-2011.json",
+      "sha256": "11a62801f10233f36eb0422048bfc9e65b5163011a0ecfb9e5bed8cba3cb62d1"
+    },
+    {
+      "bytes": 12936,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2008-2012.json",
+      "sha256": "930d9a423538a3b074b46e8a096955d22a3098126aaf9f9c52cebb931f35d86f"
+    },
+    {
+      "bytes": 13287,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2008-2013.json",
+      "sha256": "d85ec7ac4c4e5b5475f162c438bcc8410980edb27063f2076873279124671b5e"
+    },
+    {
+      "bytes": 13710,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2008-2014.json",
+      "sha256": "6f40ba5e1eda7e891126b0c50b209b2329660c70a8c48770a0c9a838f9103db2"
+    },
+    {
+      "bytes": 14176,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2008-2015.json",
+      "sha256": "8f27e7b32412f241cf44ecbde31c201a9b04ad931c58dccc236b6371eff03c99"
+    },
+    {
+      "bytes": 14559,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2008-2016.json",
+      "sha256": "d3f8a61a12affd39245b6fa86b62b7f98cbad0c4193bbe03c35ece16768329d2"
+    },
+    {
+      "bytes": 15083,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2008-2017.json",
+      "sha256": "6649b7c8ee05276c05e08b0474c98bde6510be03ddabd7e5b01ea8c7f32afec7"
+    },
+    {
+      "bytes": 15476,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2008-2018.json",
+      "sha256": "e1f977800f387e8f6adadcada0c6775af6431cd5c8819629a88a63dc205b87a8"
+    },
+    {
+      "bytes": 15917,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2008-2019.json",
+      "sha256": "1b54247bfe8ce30dd723865776cffaef847a941ff4f1a9016916ac58cb038a59"
+    },
+    {
+      "bytes": 16312,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2008-2020.json",
+      "sha256": "150bcb0a9f9c497b9242a1cc97a4c21d8c7e564562d1873fa1817f0c101000af"
+    },
+    {
+      "bytes": 16745,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2008-2021.json",
+      "sha256": "e142d207e4e88f61582101db4d5023aa22a7369093e0e483cf61551b5cec5000"
+    },
+    {
+      "bytes": 17151,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2008-2022.json",
+      "sha256": "01493ffb26b2386559fde56089c2d0146ba354b934b34b1ddae97cbfce16c476"
+    },
+    {
+      "bytes": 17657,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2008-2023.json",
+      "sha256": "b708607f877b07bcde848d23af344f7b43877fa9478f5d08c51eb683b1dce4f6"
+    },
+    {
+      "bytes": 18071,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2008-2024.json",
+      "sha256": "f16ccb8701cfb1ea469045cf79f8c34c3efbdef981894d27ed3ad17913fbde87"
+    },
+    {
+      "bytes": 18576,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2008-2025.json",
+      "sha256": "13b8cffabc8b16b441b3a6a6098e07b2fdd0290009cbcc24d418085c577c5439"
+    },
+    {
+      "bytes": 10883,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2009-2009.json",
+      "sha256": "858d30ac225ce6329c893734ce2fec18fe1004dda2d420924cda16a7b9be1bea"
+    },
+    {
+      "bytes": 11804,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2009-2010.json",
+      "sha256": "92038911b0580892a6ce095a09d41650fc9cff8d4db6f5deefe3de0726c6d026"
+    },
+    {
+      "bytes": 12038,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2009-2011.json",
+      "sha256": "63e5cc47fb0ee77dd9a1a9fc9920ddd757197f062b4526f53633fe7f50adb052"
+    },
+    {
+      "bytes": 12472,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2009-2012.json",
+      "sha256": "fc6cd6f554342685f5c1b7a36e77652068db84241c177efc0fc8ec5c8fd2bf26"
+    },
+    {
+      "bytes": 12858,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2009-2013.json",
+      "sha256": "c4b23573d0fc23387b63ed15fb819568aad99e94c3b0dec980a4ea55beb06653"
+    },
+    {
+      "bytes": 13265,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2009-2014.json",
+      "sha256": "2ffb93e2fada759f21365d0f2f35f97b1c38bd3918407795fd3270a6b5699144"
+    },
+    {
+      "bytes": 13668,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2009-2015.json",
+      "sha256": "9b5369d555935017384f081fc309865d9280855856d7f71ba081e1cb422bae8c"
+    },
+    {
+      "bytes": 14116,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2009-2016.json",
+      "sha256": "2a6942d75d4130da3e6321af315cd86d3d7b0aaa8918eb7e93cceb0cbf7de965"
+    },
+    {
+      "bytes": 14489,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2009-2017.json",
+      "sha256": "6a1c086d46fad7dbeddb4d457c2129cd9eaf24e0948776ec07275cbe4eb44488"
+    },
+    {
+      "bytes": 15098,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2009-2018.json",
+      "sha256": "33bbee2b817e27bfcf0ece18a7486eec3737199f67a4c4cc6b365819d502e99d"
+    },
+    {
+      "bytes": 15407,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2009-2019.json",
+      "sha256": "a7cdfc9a5a6770d245c6edc7140322fda08d7abf128ac485f32bd5402e6c44f1"
+    },
+    {
+      "bytes": 15904,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2009-2020.json",
+      "sha256": "261f2c7a9db206191a6b67afe329df38d14f1f9a1da9ef612daec07118d4a9f9"
+    },
+    {
+      "bytes": 16296,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2009-2021.json",
+      "sha256": "8054b0fb85ea5df08d234861688e87ce485a2cfc4af3e9a4c526d6a9c3dfecea"
+    },
+    {
+      "bytes": 16770,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2009-2022.json",
+      "sha256": "e3e96a20c5395074ca600951c5e387d5c26dd21910890eb07c34bef9ec33f78e"
+    },
+    {
+      "bytes": 17138,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2009-2023.json",
+      "sha256": "9ea54b5f1dcea16c914003d0d838af9a54019ec6bb799266e98af7c28e73ad2e"
+    },
+    {
+      "bytes": 17659,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2009-2024.json",
+      "sha256": "05e12e2cf9652b5ba31dcc279be18538ba650e008ad68e8af284f48e706901d1"
+    },
+    {
+      "bytes": 18056,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2009-2025.json",
+      "sha256": "aef06da112128cee41475b1a0dd1f1365f522ee518c9d887438c5dee7568fe5b"
+    },
+    {
+      "bytes": 11342,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2010-2010.json",
+      "sha256": "09698028734c92f454d89fdd1cebe2476ba2c62ed8ebc5099bc2dfcd7d5d26a1"
+    },
+    {
+      "bytes": 11819,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2010-2011.json",
+      "sha256": "54c6ce10d26399c42aaa7c5247443e8c08ef5788161852efb4df73cd9b537403"
+    },
+    {
+      "bytes": 12066,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2010-2012.json",
+      "sha256": "6f775193c8faaaf7fff9ebc5b4c3b1cffd88ac4425b2800de5a5a5ecbe23eb7e"
+    },
+    {
+      "bytes": 12438,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2010-2013.json",
+      "sha256": "9cfb5891d3332f526b0234a5a9145c30d7a11caf40cab31048f928c4e4770070"
+    },
+    {
+      "bytes": 12809,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2010-2014.json",
+      "sha256": "f1d0834dc7e490190315aa3ce330731c30bf0f3c0295763e27945b85eb0ab5b7"
+    },
+    {
+      "bytes": 13268,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2010-2015.json",
+      "sha256": "8b05e3ecb5df8003b4cf6410294865d554af632d434f75cad9d3e171499518c3"
+    },
+    {
+      "bytes": 13682,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2010-2016.json",
+      "sha256": "5e4b9e4b160127ed8b85285a0fcd10f0695c9f58858db704368fb614b3845f08"
+    },
+    {
+      "bytes": 14116,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2010-2017.json",
+      "sha256": "c8e58ae9a7d31fdcb41ab08442ad1e3dc919673fc70e2bc9c7d76aaba0783b81"
+    },
+    {
+      "bytes": 14555,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2010-2018.json",
+      "sha256": "4ee6621b2cfc3dedd376f5abeec1911e6afc42dfce3cabab526db480fc5f136c"
+    },
+    {
+      "bytes": 15051,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2010-2019.json",
+      "sha256": "053b9e2237f19d7ff95636748375942a69d45720e7d48ddcd4db2ba71fb6d545"
+    },
+    {
+      "bytes": 15438,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2010-2020.json",
+      "sha256": "c262c8cbc8d549ac2888f31384d2285ac7360442094a365766d7055b72027431"
+    },
+    {
+      "bytes": 15903,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2010-2021.json",
+      "sha256": "da4730cf5c961fae08403cb15d7c93a76050cdccdb46f130a8a75d0b696864e5"
+    },
+    {
+      "bytes": 16366,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2010-2022.json",
+      "sha256": "f8e8689f16f97e96f825d52ee3b3f5df32de843c32f0b62efb14140432135b6d"
+    },
+    {
+      "bytes": 16745,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2010-2023.json",
+      "sha256": "c195f05efd82669e9457d0affb8c715f198ff8c8d84a781086ffa920e236fcd7"
+    },
+    {
+      "bytes": 17211,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2010-2024.json",
+      "sha256": "96764f61d0663788492b7ab0a023dba3deeada6eeea8a1af87f7e8bcb937f692"
+    },
+    {
+      "bytes": 17724,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2010-2025.json",
+      "sha256": "a388824b0a181614ccafb777a95fc7d2f4701d69262537a8a61637f7da462e48"
+    },
+    {
+      "bytes": 11400,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2011-2011.json",
+      "sha256": "8902323a3715ff4a7e9a3c9e401aac7e3721203aed6d25384b7e4f9115291cbe"
+    },
+    {
+      "bytes": 11677,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2011-2012.json",
+      "sha256": "8ab89487c3aa86d06b521e84217e46fcf2302ff993b374647e613167c227e00f"
+    },
+    {
+      "bytes": 11995,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2011-2013.json",
+      "sha256": "c232283c4829412cf85ba9bdb17cdfff3a22c75611df6450d955b5a884b69e75"
+    },
+    {
+      "bytes": 12391,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2011-2014.json",
+      "sha256": "994ee6a0b994ddb127ecd90a7a136c0eba9d37ae86c8e8d4136c7d1ce3285eae"
+    },
+    {
+      "bytes": 12864,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2011-2015.json",
+      "sha256": "fda92581475e26f6f85d1667202b3f306df07511479691b2ceb499187e5b7117"
+    },
+    {
+      "bytes": 13338,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2011-2016.json",
+      "sha256": "5c5e91321a6a21a3e06bbd009c9f3754e25082b37b1036e3f239f87ed38190df"
+    },
+    {
+      "bytes": 13735,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2011-2017.json",
+      "sha256": "69a256100c88f5574fe4a64883a3c8df6d803316027f3db9dee4f76b290a4b5d"
+    },
+    {
+      "bytes": 14165,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2011-2018.json",
+      "sha256": "251750d838a786cc9a12721e2fe0245636c3bf6e7c8bec9c936b5b1fce4a2604"
+    },
+    {
+      "bytes": 14539,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2011-2019.json",
+      "sha256": "327175a5c4117219f8ff911d596149a1cb2ec0cae0a975b1268bb40fb31b13b8"
+    },
+    {
+      "bytes": 14993,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2011-2020.json",
+      "sha256": "7d5733ab49139e87c216cc32aa68b325600e03078ba749acf3bf6e0c02b78ddf"
+    },
+    {
+      "bytes": 15421,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2011-2021.json",
+      "sha256": "facd78ddafab85a79775c1f6ae63bb8c3456889d966de83548eae6b23914c5d5"
+    },
+    {
+      "bytes": 15844,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2011-2022.json",
+      "sha256": "2b975b29286559de97ea9e9e2aaee125aacaf7adb9681319eb95dc145cc20d64"
+    },
+    {
+      "bytes": 16332,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2011-2023.json",
+      "sha256": "ad9b0edf2c115223420c3e39534544a07aa58ea3bc63f8f5209a99cada9612dc"
+    },
+    {
+      "bytes": 16827,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2011-2024.json",
+      "sha256": "11b930510cd4ae2c3f61e5aeae7e6e96feb84ac7d8b311736e7bac76f509ade9"
+    },
+    {
+      "bytes": 17264,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2011-2025.json",
+      "sha256": "6c204488f40529386cb089f82aa4f12a77e926778e18ed6c6795f2f92b1ee99c"
+    },
+    {
+      "bytes": 11330,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2012-2012.json",
+      "sha256": "888bce2ca0ec7f62c254a8adfbf7615db403b5500f7dedbe32cf4f736e3ac676"
+    },
+    {
+      "bytes": 11781,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2012-2013.json",
+      "sha256": "3b1020c23bdd56baaa3578dee8cd8c6d69b7ebb24b579471d3777fddf5d268f9"
+    },
+    {
+      "bytes": 11983,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2012-2014.json",
+      "sha256": "ee306c5d7a45508e3c892282934738ae39e2f13aa0a3549fdded37949ba252da"
+    },
+    {
+      "bytes": 12465,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2012-2015.json",
+      "sha256": "d812a91311a6ac52a85327fb2ec2234a1c95ba35da7d13c09f8c2fffaba7ef7a"
+    },
+    {
+      "bytes": 12881,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2012-2016.json",
+      "sha256": "fc3dc0d3fa23886c11c5ca4194a4f8694cf4f3e6fdeae27c96a27add207058cc"
+    },
+    {
+      "bytes": 13322,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2012-2017.json",
+      "sha256": "10ed52a390ca5e59c0bbf2ed0393aaccf8721c421ef7b240be96db159709e764"
+    },
+    {
+      "bytes": 13711,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2012-2018.json",
+      "sha256": "41d7c062bb17cb41d5acdcbc74fd8c02aac9d8e3a3804ec13be45445941e6cc3"
+    },
+    {
+      "bytes": 14098,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2012-2019.json",
+      "sha256": "b2965931045ec0fc64f94e191f66ae3352a1f8ca5c8d012aa421c665140df271"
+    },
+    {
+      "bytes": 14512,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2012-2020.json",
+      "sha256": "f6205c284aceecb2b8b468948de6134fb9959b1a2fad7b6fbabe2d4ac4ee124d"
+    },
+    {
+      "bytes": 15027,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2012-2021.json",
+      "sha256": "6324921179afcfd20895d5e934902c31f80f63cea5d9365d72ac0aac4a2f17be"
+    },
+    {
+      "bytes": 15415,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2012-2022.json",
+      "sha256": "a1277db2cfedbc8e9953419af05dbe0d1bc0aafff9afcc057c17fd2b8d560b51"
+    },
+    {
+      "bytes": 15931,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2012-2023.json",
+      "sha256": "4dac096aa683e6fa1eeefc4b2a6348f798979ccb543e8d1ae4f63c623620333f"
+    },
+    {
+      "bytes": 16426,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2012-2024.json",
+      "sha256": "bb39438456c414b0b4fc1ebd495f0370a0fda92295890bd77b5bfab79f077cc7"
+    },
+    {
+      "bytes": 16884,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2012-2025.json",
+      "sha256": "9bdb48923b0775584555356ee69a9a0fc503f81eb0c7eb38f18c45ab381e80e3"
+    },
+    {
+      "bytes": 11378,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2013-2013.json",
+      "sha256": "ee53a44367f064515e53649a7ef2d845171f74ddf5ca9e377a1c676051dbdbe4"
+    },
+    {
+      "bytes": 11803,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2013-2014.json",
+      "sha256": "3c00c4a0817b0f726cc6065f070a162eb1b08593e43b99f1d32261927b21bd60"
+    },
+    {
+      "bytes": 11982,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2013-2015.json",
+      "sha256": "3b4d690f3907742894374d81fda473d0d55071bfc817049722885ade05ddf8aa"
+    },
+    {
+      "bytes": 12449,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2013-2016.json",
+      "sha256": "e3f169178453c6a8fcc8bd906d047eb74f39d50218533663b6ce22255525765e"
+    },
+    {
+      "bytes": 12792,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2013-2017.json",
+      "sha256": "651138f157ab511604cf46e7d5cfb073ca74726b7329c6d6d6e4fab2e9844841"
+    },
+    {
+      "bytes": 13262,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2013-2018.json",
+      "sha256": "8f1a859727a12395c6f4c883f875e00fd8f39eee43811aedf1d34b33f3d48554"
+    },
+    {
+      "bytes": 13639,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2013-2019.json",
+      "sha256": "f3b8b8f54b04f72ef4f5c55cff623ee8c1a5579ad46096260b62ae559ea4e020"
+    },
+    {
+      "bytes": 14124,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2013-2020.json",
+      "sha256": "58c99b8f6f45d7639c4aaf0ee09e65b3bce9608cc4bb476ed2da4f177bf4653b"
+    },
+    {
+      "bytes": 14500,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2013-2021.json",
+      "sha256": "6c12728c472c4d7f5f53e44c62e6d3f9f4dcae5a4a77446dff9b6e2422689c3a"
+    },
+    {
+      "bytes": 15030,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2013-2022.json",
+      "sha256": "a03e71014022b52f16077a7c8191c809b3b4636c2bcacffe7e45acabd0529e45"
+    },
+    {
+      "bytes": 15534,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2013-2023.json",
+      "sha256": "3d420f56575d59bb24bb8fcfa9d69690a5dd9e6065941cc1fc434150687666a2"
+    },
+    {
+      "bytes": 16017,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2013-2024.json",
+      "sha256": "228fffff1d4a6e02e55da9712ab8bd4afef80a50383ba5e6de06aec74e27bfcd"
+    },
+    {
+      "bytes": 16441,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2013-2025.json",
+      "sha256": "37c3fae73b515a6a4eaa9615e1b78e391309c4417375e4b3ea0aed51246aec4a"
+    },
+    {
+      "bytes": 11381,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2014-2014.json",
+      "sha256": "a83a9566242fd0d38ca2b4a25a54c8b716979ab8eba3ab36acecc42749f237c2"
+    },
+    {
+      "bytes": 11822,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2014-2015.json",
+      "sha256": "3111d20575fd4fafbf23903fde4e15afd7c0fe9e924f9688db353410aaff8f88"
+    },
+    {
+      "bytes": 11994,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2014-2016.json",
+      "sha256": "8ee12ca76aa62b8cfce2435d46bba4dbd9b9605f24936ae063ac6d5e5ff07b4c"
+    },
+    {
+      "bytes": 12423,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2014-2017.json",
+      "sha256": "32dd2e5014c643f36695f4103bc0b1fb7e3eb1eabc7504155ab6e7b7f13095e5"
+    },
+    {
+      "bytes": 12836,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2014-2018.json",
+      "sha256": "b3708aa34d2dbfd877459353cbcde0426764db62dc26f7897a6c66f40c2e2ea1"
+    },
+    {
+      "bytes": 13274,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2014-2019.json",
+      "sha256": "4d09ac74507ab7f9d954ec80ca805c49939d4f299da262dfa052e2291c28989f"
+    },
+    {
+      "bytes": 13660,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2014-2020.json",
+      "sha256": "fc76b4f95f0de7314546753b8e44e8441393416fe7988b91f40ce694471c629a"
+    },
+    {
+      "bytes": 14135,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2014-2021.json",
+      "sha256": "82ca98fcdef1beed641448b11f83f541f559a16ec80b95c8962d63a5e54417a9"
+    },
+    {
+      "bytes": 14556,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2014-2022.json",
+      "sha256": "26ed4b10403639d9a80441c42679ed989e6a3c68848006c29b61013116b16a06"
+    },
+    {
+      "bytes": 15117,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2014-2023.json",
+      "sha256": "b3d6f8ad23ffa002e7e1c5a22b81e70780fe6739275db303601bddb8ca6bd8f4"
+    },
+    {
+      "bytes": 15591,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2014-2024.json",
+      "sha256": "f31169bd89ca969daa662573fc6eb38a06759c121b773e61d1e0fb264a895da3"
+    },
+    {
+      "bytes": 16046,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2014-2025.json",
+      "sha256": "872a99d4772655a013e9b89465acb753c3646d3077fd587fa67cf22d335ca902"
+    },
+    {
+      "bytes": 11356,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2015-2015.json",
+      "sha256": "824d3785be3e2e97f5a3b4f4368b03c34c6f4defba063860567b1056f8f29e8e"
+    },
+    {
+      "bytes": 11914,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2015-2016.json",
+      "sha256": "e858d32959867604686ab6f575e9a6ebe7ff2b1fe921a9d82477f2c54be31827"
+    },
+    {
+      "bytes": 12150,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2015-2017.json",
+      "sha256": "b6333e00f01bf60767d1df2aeb5a08eeb0ccbbf009ba0dab6f28433757c799dd"
+    },
+    {
+      "bytes": 12470,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2015-2018.json",
+      "sha256": "78392f822ccf1703c44ff726c4b3cc22427328eace9ba33b5058e58b7f38a31c"
+    },
+    {
+      "bytes": 12929,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2015-2019.json",
+      "sha256": "c709f8810ab954a1f6412351defc075bf04e1037f3f30a789ecba4147cd26ee9"
+    },
+    {
+      "bytes": 13393,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2015-2020.json",
+      "sha256": "f6d7933496d6aea5467a30afef1e7a6e410f67406d3273dbd16525c4645b96e7"
+    },
+    {
+      "bytes": 13778,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2015-2021.json",
+      "sha256": "2f61ee8a87783065a5a7e434e371f460d8be5dfc2e2a1452536eb271e16bbfd8"
+    },
+    {
+      "bytes": 14246,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2015-2022.json",
+      "sha256": "3e576852819e8bfb4281fd26393047e8b141746fedf10fc857036320ff6ed02e"
+    },
+    {
+      "bytes": 14728,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2015-2023.json",
+      "sha256": "49a717e23e10eb992b1096bfbd9967bda1f8c629611109ef36ffeca1bfbebea3"
+    },
+    {
+      "bytes": 15335,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2015-2024.json",
+      "sha256": "75fcc698d88d87cac22d7b33f016177693171959cadd2834d6524ac1c0d2fc6b"
+    },
+    {
+      "bytes": 15630,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2015-2025.json",
+      "sha256": "3109d816133f44f2da888a2f0509cce55cdb2df5c4c8926334dd8bd61a0ff231"
+    },
+    {
+      "bytes": 11458,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2016-2016.json",
+      "sha256": "07d71fea7dbbeb717581a79e5cb1644ccd260aee07c5fe7a9b31f6dd59b92eac"
+    },
+    {
+      "bytes": 11750,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2016-2017.json",
+      "sha256": "503cdfe3dd4bafa5cbf4071c2e42f07ed5f4c1c7ac99ac17fe20a6018c4138cd"
+    },
+    {
+      "bytes": 12150,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2016-2018.json",
+      "sha256": "ab3b16b0b20bef2b8b02d885387c509a65bdc5d3b64476335c2ff6a7153da6ae"
+    },
+    {
+      "bytes": 12499,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2016-2019.json",
+      "sha256": "9d66fae353b23f022e41395e9566e70aaf68d1c200528c37614f9875b748c26b"
+    },
+    {
+      "bytes": 12979,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2016-2020.json",
+      "sha256": "1e2085a050f20419901d5113427651aee42f2900aa06180cc10edccab21d18b9"
+    },
+    {
+      "bytes": 13409,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2016-2021.json",
+      "sha256": "b53a1550b8a8800f7ec850aa24d1f6f36734660eeae91a6ac7028ff571ed1501"
+    },
+    {
+      "bytes": 13789,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2016-2022.json",
+      "sha256": "2e03a9df09a326e686f96d408a658275b314c2d4663ef5065a2f593e16101711"
+    },
+    {
+      "bytes": 14373,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2016-2023.json",
+      "sha256": "a84fd4d37602f8a90d327c6f7cc76523e35f1d8e374b3e6f873d025cc09de33e"
+    },
+    {
+      "bytes": 14778,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2016-2024.json",
+      "sha256": "560c2320d2b8479b5e685a76bf28c2c0428fe66a924221f22c41222fe5090b05"
+    },
+    {
+      "bytes": 15281,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2016-2025.json",
+      "sha256": "df9416512d9e8944a3657e0ce862a78d5ccb4806b0dac56495b9deaf390623fe"
+    },
+    {
+      "bytes": 11307,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2017-2017.json",
+      "sha256": "d96bc2996a62506cc9af13ad8d5ee3e4044f241f9746ac23a6676aea9ce892b3"
+    },
+    {
+      "bytes": 11727,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2017-2018.json",
+      "sha256": "ffc85f4639898c7119d09d1a625a7f76157f5bf98a55d0291365c7d0db988a89"
+    },
+    {
+      "bytes": 11984,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2017-2019.json",
+      "sha256": "09691b83089f58450bbc3fa53a0b6e3ddacb9ef12f12ca86f52391b7190fb732"
+    },
+    {
+      "bytes": 12525,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2017-2020.json",
+      "sha256": "7c3ce48227ff3599bab9cc8154db3c277199c4875b78f790cc29db62cbc336d8"
+    },
+    {
+      "bytes": 12952,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2017-2021.json",
+      "sha256": "b2cd0dd50bf3ca4b37c8bf132aca8b7d0e5e61c1a9e3469ec379dee6aa1c8a36"
+    },
+    {
+      "bytes": 13478,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2017-2022.json",
+      "sha256": "83b9ddfee84faf689ddbe31ff2e02fd8c828db499b2dbb83e61d8241550bff04"
+    },
+    {
+      "bytes": 13843,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2017-2023.json",
+      "sha256": "548346eb3d1d875a5796c97ee3f18b9f26ae7526cf75aacf9fb69bce0a18ff0d"
+    },
+    {
+      "bytes": 14453,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2017-2024.json",
+      "sha256": "4b6ff65696509a8865fbb51b975ca929c3a4a57a9c9d3bc6d5c001d32a5f3450"
+    },
+    {
+      "bytes": 14783,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2017-2025.json",
+      "sha256": "3da5f03cd3d461b7429650b934280b7016b64346d415d95c5c1773bc4d30805d"
+    },
+    {
+      "bytes": 11402,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2018-2018.json",
+      "sha256": "2a326dcd19cd895cf26aeb37a17b859a31c2ad218aed25eac22fe1097bae86a3"
+    },
+    {
+      "bytes": 11862,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2018-2019.json",
+      "sha256": "c039a6cdfae8ed4ec1728479160bfebe089f011b6adf21f4e0f49bcaa7e5646e"
+    },
+    {
+      "bytes": 11982,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2018-2020.json",
+      "sha256": "44762a6031e8fc608fe6ae5ebbb7840101019f65aee65b8dd99cd2373793d6c0"
+    },
+    {
+      "bytes": 12518,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2018-2021.json",
+      "sha256": "6e6dd2a652e46b58e5844b97d07806b188b7a80c57f5e514cc57970eefe6cfa7"
+    },
+    {
+      "bytes": 12982,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2018-2022.json",
+      "sha256": "807ab297f6e8afe027260a309fed64c73ba29e4738fadc8c46f444f11810535f"
+    },
+    {
+      "bytes": 13539,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2018-2023.json",
+      "sha256": "8eb961e4e11b2dd87e8e9f81e089346532b67ac0d5ae5c0f672a77e580b2fb5b"
+    },
+    {
+      "bytes": 13880,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2018-2024.json",
+      "sha256": "4e5634a6d10e6990136383c48af313a78895fb361d2b43af8d8c26ea389bc92c"
+    },
+    {
+      "bytes": 14376,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2018-2025.json",
+      "sha256": "e8e7968f648ddb74c1cbf0e46d520a87cc394be315523b0b5a552f4942fa1f80"
+    },
+    {
+      "bytes": 11328,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2019-2019.json",
+      "sha256": "2d14e3be93ee7a1dcbca400b93752bba97fe5d2832dd278b383b27964f098eaf"
+    },
+    {
+      "bytes": 11844,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2019-2020.json",
+      "sha256": "326a16a983f21f4d8baa5a2faaa3bd7d51cb62d2095de25195bc7412fe76f45f"
+    },
+    {
+      "bytes": 12101,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2019-2021.json",
+      "sha256": "cdf0af8b0d270be0b2d547b8f96e03c3a4db0e62c16b03e92c46aec694ccf932"
+    },
+    {
+      "bytes": 12624,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2019-2022.json",
+      "sha256": "e0d4756906132065dc0cfc67cbadffcf96f032c028896985dc9cb537307bfa24"
+    },
+    {
+      "bytes": 13014,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2019-2023.json",
+      "sha256": "3aac9ecd911496a7740cdf38ca7bb351f20dfaf0083d43121ce90cabd44b9ee5"
+    },
+    {
+      "bytes": 13535,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2019-2024.json",
+      "sha256": "27ddf035771ad02da7f9a7d76f30db527411abd7886fb94a02f410cb748b8687"
+    },
+    {
+      "bytes": 13978,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2019-2025.json",
+      "sha256": "ff397a910b6d1092a7972b5609c06d1f02dbfcf2f9c0f084edf2eaf0a730f14b"
+    },
+    {
+      "bytes": 11400,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2020-2020.json",
+      "sha256": "3b449301dbb711439e75811880ea63437a24d73231d127d18c1dec812378c4bf"
+    },
+    {
+      "bytes": 11834,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2020-2021.json",
+      "sha256": "ff1735ae31dad79df9deab913b52f5ba826b377a6404f117f3483785729ab216"
+    },
+    {
+      "bytes": 12036,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2020-2022.json",
+      "sha256": "fed1b64146bc4cc47981f5e0d7cf917c71949a78bb24c978db97a41cb6e66193"
+    },
+    {
+      "bytes": 12566,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2020-2023.json",
+      "sha256": "7d5a822b8da82f43911f4a7c46ab1652ab9ff929ce3b5ab6e65798f99dda5c2f"
+    },
+    {
+      "bytes": 13013,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2020-2024.json",
+      "sha256": "25903e58163d22e8aadd4be13ea20b8a1277cadde0e8bcc036477942f0cf464f"
+    },
+    {
+      "bytes": 13503,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2020-2025.json",
+      "sha256": "6fef92311f39a384c241a8615e9562cec02d782581611bc2e7875e26e5d459d9"
+    },
+    {
+      "bytes": 11433,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2021-2021.json",
+      "sha256": "fc96629798b2f6d5f32b4902b4b24be630f518881b09961feba9f880490cdac7"
+    },
+    {
+      "bytes": 11905,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2021-2022.json",
+      "sha256": "ae757976b96e508373d14bf252b5f12f268fff6a14604b7512990a7c349e400b"
+    },
+    {
+      "bytes": 12252,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2021-2023.json",
+      "sha256": "e4fee0da4133e3d78e1fe166dc875932dd66f9cc5efecb9fa08a71f967b6a290"
+    },
+    {
+      "bytes": 12778,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2021-2024.json",
+      "sha256": "8960fe55986f9d242237f4ece3ae464daaa58dede86afa0908b6d747e095dbfb"
+    },
+    {
+      "bytes": 13288,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2021-2025.json",
+      "sha256": "5610dab65ef84927677302d09a9fdd559cb4d17de5094858234dec8c9676bb04"
+    },
+    {
+      "bytes": 11382,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/periods/2022-2022.json",
+      "sha256": "5ddddb12b34a46887c3b6ea4fc659bdd0c70430ad030f78b42cac24add7bbf3a"
+    },
+    {
+      "bytes": 12009,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2022-2023.json",
+      "sha256": "5b1ac139a4dec238b81ba7a995319331af5e7e2cd918290e1e7a2d4828014f42"
+    },
+    {
+      "bytes": 12358,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2022-2024.json",
+      "sha256": "7899a9184ebff9b00fb0b85e0b56a5116cf07a2179eeca419fea24c60023bc56"
+    },
+    {
+      "bytes": 12857,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/periods/2022-2025.json",
+      "sha256": "d0bd7b91b005a79e448b352b6b8ca2225464d245406324c3b9348267f2519091"
+    },
+    {
+      "bytes": 11706,
+      "kinds": [
+        "harmonized"
+      ],
+      "path": "us/periods/2023-2023.json",
+      "sha256": "3dbef853312247e0877a775efa538c42cfadb4ce6bf4d87f92d486deda4cebf8"
+    },
+    {
+      "bytes": 12167,
+      "kinds": [
+        "harmonized"
+      ],
+      "path": "us/periods/2023-2024.json",
+      "sha256": "4528c0432d751717573dc46c54560ebbc3c7baa274f374d7cf01bcea9a9d998f"
+    },
+    {
+      "bytes": 12376,
+      "kinds": [
+        "harmonized"
+      ],
+      "path": "us/periods/2023-2025.json",
+      "sha256": "87e51d8a8635791fd2e3a56dcf4bf34ecee3868dfe1161065e4d02c8a8584bd7"
+    },
+    {
+      "bytes": 11745,
+      "kinds": [
+        "harmonized"
+      ],
+      "path": "us/periods/2024-2024.json",
+      "sha256": "b2681ae2ab58c02706e3743990bff958b498c8aec39cc504030773fad3d1c6b8"
+    },
+    {
+      "bytes": 12077,
+      "kinds": [
+        "harmonized"
+      ],
+      "path": "us/periods/2024-2025.json",
+      "sha256": "271635f3f26ce272c0deb5161b13bd3a3238a0c558d85eb8a5cd7f8560d8168e"
+    },
+    {
+      "bytes": 11769,
+      "kinds": [
+        "harmonized"
+      ],
+      "path": "us/periods/2025-2025.json",
+      "sha256": "84bdb12dd5b4cb4dd8d03dafd79e0819d8bd82f3e2fe990b063b77f8478959c6"
+    },
+    {
       "bytes": 4066,
       "kinds": [
         "harmonized",
         "observed"
       ],
       "path": "us/ruler.json",
-      "sha256": "b011ad9781d00a02b368c05ee9d6e30a5a389faf321901cb8dca0a91c8c47821"
+      "sha256": "e0594e2e8f6dad4f2cebc25459e04fa6eda075841c9bd5efda15d937aa43fea4"
     },
     {
       "bytes": 10170,
@@ -204,19 +4991,246 @@
         "observed"
       ],
       "path": "us/season.json",
-      "sha256": "824020073b322a2c8f249a849212a5f8b7e713628162df71a6f4410c1abf7b4c"
+      "sha256": "69d9e48780c2bc5790313c34f5370f714da2cb64b996a33f80fef6973b62b617"
     },
     {
-      "bytes": 5302,
+      "bytes": 2593498,
+      "kinds": [
+        "estimated",
+        "missing",
+        "observed"
+      ],
+      "path": "us/spatial/2003.json",
+      "sha256": "21b4afa2fb4b56e7f2cb1d72316da9efb9c268793227b1fd186cc2d40c246185"
+    },
+    {
+      "bytes": 2630161,
+      "kinds": [
+        "estimated",
+        "missing",
+        "observed"
+      ],
+      "path": "us/spatial/2004.json",
+      "sha256": "a5042cc4dc1c959741a823021eb52de9e81bfc0c9ef5ea0282e4e74f9f9bb5cf"
+    },
+    {
+      "bytes": 2985105,
+      "kinds": [
+        "estimated",
+        "missing",
+        "observed"
+      ],
+      "path": "us/spatial/2005.json",
+      "sha256": "e4e6ed805cec8609358daa09434acbc586baaf2947b123f50af2c668d102a673"
+    },
+    {
+      "bytes": 2937761,
+      "kinds": [
+        "estimated",
+        "missing",
+        "observed"
+      ],
+      "path": "us/spatial/2006.json",
+      "sha256": "de5a4cd020eacf35d8720db5228bf22071f2b5f32416fc710ef117648f811c3a"
+    },
+    {
+      "bytes": 2877447,
+      "kinds": [
+        "estimated",
+        "missing",
+        "observed"
+      ],
+      "path": "us/spatial/2007.json",
+      "sha256": "71d1896685e8be1e6b8476c180794192f1bc8e1bb5323a02be243f416a450441"
+    },
+    {
+      "bytes": 2775898,
+      "kinds": [
+        "estimated",
+        "missing",
+        "observed"
+      ],
+      "path": "us/spatial/2008.json",
+      "sha256": "074fa88d6e5d502c02a5cb1f0d80a732a6d33cb9c15cfaff0416e4ee7e5e7695"
+    },
+    {
+      "bytes": 2523665,
+      "kinds": [
+        "estimated",
+        "missing",
+        "observed"
+      ],
+      "path": "us/spatial/2009.json",
+      "sha256": "a72d52d481bc66ad448dc72b3fb807d7ecd9b0980cfa9129550b64e91a398cb1"
+    },
+    {
+      "bytes": 2687440,
+      "kinds": [
+        "estimated",
+        "missing",
+        "observed"
+      ],
+      "path": "us/spatial/2010.json",
+      "sha256": "9cc10b65372c78d0f9dd994d35a6cade136f4113825f114840d85fd0c4d67cec"
+    },
+    {
+      "bytes": 2827260,
+      "kinds": [
+        "estimated",
+        "missing",
+        "observed"
+      ],
+      "path": "us/spatial/2011.json",
+      "sha256": "bb396d8648ce455f9ba56e84a37db101731f2c1268c6c52993d945cc96da8bfe"
+    },
+    {
+      "bytes": 7692677,
+      "kinds": [
+        "estimated",
+        "harmonized",
+        "missing",
+        "observed"
+      ],
+      "path": "us/spatial/2012.json",
+      "sha256": "f4ceec16126ac877cb0c21212b5fe75d8eb314fae9479542f2b867ea6bd42069"
+    },
+    {
+      "bytes": 7076599,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/spatial/2013.json",
+      "sha256": "bb9606f28c4447133d12ff0e6f021cc5a3021ba68ff8d8e3ed3ea585b333617e"
+    },
+    {
+      "bytes": 7208314,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/spatial/2014.json",
+      "sha256": "4cb7646b6502cf2012f982e1d0d152df5a2cd11595c9b186503eabb4ade2684e"
+    },
+    {
+      "bytes": 7435773,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/spatial/2015.json",
+      "sha256": "acfecb0145fec85a17698e8e5a486de755f95306bbde3b25fdd492802f19df40"
+    },
+    {
+      "bytes": 7722565,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/spatial/2016.json",
+      "sha256": "8ed16d41a4fea55b1395d2441c0766f5cef068dc8db969090352263da5603b28"
+    },
+    {
+      "bytes": 7870863,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/spatial/2017.json",
+      "sha256": "e34975b23b07840e6964581f17a08a850d54769d3746f3e69080b4f1d7056cf5"
+    },
+    {
+      "bytes": 6909606,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/spatial/2018.json",
+      "sha256": "83e97ff51fbaa7fad2f0683af29dba7d21c710f5ccf951036b9531cbae2b8787"
+    },
+    {
+      "bytes": 6682436,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/spatial/2019.json",
+      "sha256": "f3e816cc0baf0f6734eaaba34e299c9ce34d1004c5af46a991a87903b8c4708b"
+    },
+    {
+      "bytes": 7584439,
+      "kinds": [
+        "harmonized",
+        "missing",
+        "observed"
+      ],
+      "path": "us/spatial/2020.json",
+      "sha256": "9fed380fcf0ebcfa2cb3a65dfe16012bda94148dffbc94daf3925b49da8a8236"
+    },
+    {
+      "bytes": 7625587,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/spatial/2021.json",
+      "sha256": "9d6964399f66466f4b5473782b786df8dea07f7ed6d79700f7260d0f67d89aac"
+    },
+    {
+      "bytes": 7757680,
+      "kinds": [
+        "harmonized",
+        "missing",
+        "observed"
+      ],
+      "path": "us/spatial/2022.json",
+      "sha256": "d595ab387b39d107cbfa18c987e2610e27311e5b4536ba3ffbe94de8619fea90"
+    },
+    {
+      "bytes": 10052897,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/spatial/2023.json",
+      "sha256": "56e154d2c2078a8bd915d189eeff17398eb26aa29a314c005e15b4041b45fb3f"
+    },
+    {
+      "bytes": 10130139,
+      "kinds": [
+        "harmonized",
+        "missing",
+        "observed"
+      ],
+      "path": "us/spatial/2024.json",
+      "sha256": "f1f94dfd984b26efeeb8390f5932c3a59dfb857a85f8ddc5eb3f4c0a1b7c0e80"
+    },
+    {
+      "bytes": 10612521,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/spatial/2025.json",
+      "sha256": "c042f2c36150eac3c138dd4da7810e7d684b511e6fb64d08188d238d6c36bb7c"
+    },
+    {
+      "bytes": 4426,
+      "kinds": [],
+      "path": "us/spatial_index.json",
+      "sha256": "832ef54595e5b0827369931292245958e21c5479d3507b947c74ca0a1da54df6"
+    },
+    {
+      "bytes": 5537,
       "kinds": [
         "harmonized",
         "observed"
       ],
       "path": "us/trend.json",
-      "sha256": "31cf6ed2808b49c04ced642ae0aa51c9af6477d199644c641e29005ab3900668"
+      "sha256": "e17a7b82ff6c991b023dbd2f07742a07c158ef89da3b69116de08c3c43f95da5"
     },
     {
-      "bytes": 1147098,
+      "bytes": 1147697,
       "kinds": [
         "estimated",
         "harmonized",
@@ -224,9 +5238,9 @@
         "observed"
       ],
       "path": "us/weekly.json",
-      "sha256": "0ea1cec3ffeaf4d09f762393983c66a86daf637e0b65a5ad174c9994a6817252"
+      "sha256": "791167a618e21a4d983da8e1e1402c2e0d58f931d475cc83060fa23adf41d694"
     }
   ],
-  "generated_at": "2026-11-15T05:54:45Z",
+  "generated_at": "2026-11-15T18:00:00Z",
   "schema_version": "1.0"
 }

@@ -2,7 +2,7 @@
 
 Every headline number on the site, with the file and JSON Pointer it comes from. No number may appear in the pitch, slides, README or video unless it is on this list. Values are copied exactly from the files; sentences are quoted exactly.
 
-Built from code_version a25fb442, bf23ae97.
+Built from code_version 1bb5e8f4, 29a6fe64, 4389fe3d.
 
 ## United States (`us`)
 
@@ -12,8 +12,8 @@ Built from code_version a25fb442, bf23ae97.
 - jump multiple years: [2013, 2022]  us/ruler.json#/jump_multiple/years
 - ruler sentence: "In United States, VIIRS reports about 3.7 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  us/ruler.json#/sentence
 - harmonized trend pct_per_decade: -2.35  us/trend.json#/harmonized/pct_per_decade
-- harmonized trend lo: -8.527  us/trend.json#/harmonized/lo
-- harmonized trend hi: 1.641  us/trend.json#/harmonized/hi
+- harmonized trend lo: -8.539  us/trend.json#/harmonized/lo
+- harmonized trend hi: 1.657  us/trend.json#/harmonized/hi
 - harmonized trend direction: "no_clear_change"  us/trend.json#/harmonized/direction
 - naive trend pct_per_decade: 59.414  us/trend.json#/naive/pct_per_decade
 - naive trend lo: 38.762  us/trend.json#/naive/lo
@@ -59,8 +59,11 @@ Built from code_version a25fb442, bf23ae97.
 - LOYO weekly WAPE baseline annual_ratio: 0.138  methods.json#/validation/0/baselines/annual_ratio
 - LOYO weekly WAPE baseline raw_viirs: 1.706  methods.json#/validation/0/baselines/raw_viirs
 - LOYO years: [2013, 2022]  methods.json#/validation/0/years
-- LOYO weekly WAPE (tier2): 0.166  methods.json#/validation/14/value
-- LOYO years: [2013, 2022]  methods.json#/validation/14/years
+- LOYO weekly WAPE (tier2): 0.166  methods.json#/validation/15/value
+- LOYO years: [2013, 2022]  methods.json#/validation/15/years
+- reliability_err (tier2): 0.0  methods.json#/validation/13/value
+- reliability_year_absolute_err (tier2): 0.019  methods.json#/validation/14/value
+- t1_t2_wape (tier2): 0.164  methods.json#/validation/17/value
 - eyesight status: "exploratory"  methods.json#/eyesight/0/status
 - eyesight param a: -3.475  methods.json#/eyesight/0/params/a
 - eyesight param a_hi: -3.441  methods.json#/eyesight/0/params/a_hi
@@ -81,8 +84,8 @@ Built from code_version a25fb442, bf23ae97.
 - jump multiple years: [2013, 2022]  synthland/ruler.json#/jump_multiple/years
 - ruler sentence: "In Synthland (planted-truth test), VIIRS reports about 3.5 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  synthland/ruler.json#/sentence
 - harmonized trend pct_per_decade: 12.459  synthland/trend.json#/harmonized/pct_per_decade
-- harmonized trend lo: 11.025  synthland/trend.json#/harmonized/lo
-- harmonized trend hi: 13.557  synthland/trend.json#/harmonized/hi
+- harmonized trend lo: 11.027  synthland/trend.json#/harmonized/lo
+- harmonized trend hi: 13.565  synthland/trend.json#/harmonized/hi
 - harmonized trend direction: "rising"  synthland/trend.json#/harmonized/direction
 - naive trend pct_per_decade: 43.676  synthland/trend.json#/naive/pct_per_decade
 - naive trend lo: 18.259  synthland/trend.json#/naive/lo
@@ -124,12 +127,15 @@ Built from code_version a25fb442, bf23ae97.
 - month to date ratio: null  synthland/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  synthland/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  synthland/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.054  methods.json#/validation/17/value
-- LOYO weekly WAPE baseline annual_ratio: 0.054  methods.json#/validation/17/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 1.139  methods.json#/validation/17/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/17/years
-- LOYO weekly WAPE (tier2): 0.049  methods.json#/validation/31/value
-- LOYO years: [2013, 2022]  methods.json#/validation/31/years
+- LOYO weekly WAPE (tier1): 0.054  methods.json#/validation/18/value
+- LOYO weekly WAPE baseline annual_ratio: 0.054  methods.json#/validation/18/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.139  methods.json#/validation/18/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/18/years
+- LOYO weekly WAPE (tier2): 0.049  methods.json#/validation/33/value
+- LOYO years: [2013, 2022]  methods.json#/validation/33/years
+- reliability_err (tier2): 0.0  methods.json#/validation/31/value
+- reliability_year_absolute_err (tier2): 0.012  methods.json#/validation/32/value
+- t1_t2_wape (tier2): 0.024  methods.json#/validation/35/value
 - eyesight status: "validated"  methods.json#/eyesight/1/status
 - eyesight param a: -2.176  methods.json#/eyesight/1/params/a
 - eyesight param a_hi: -2.143  methods.json#/eyesight/1/params/a_hi
@@ -162,7 +168,7 @@ Built from code_version a25fb442, bf23ae97.
 - g tolerance: 0.03  methods.json#/planted_truth/3/tolerance
 - g pass: true  methods.json#/planted_truth/3/pass
 - reliability_err truth: 0.0  methods.json#/planted_truth/4/truth
-- reliability_err recovered: 0.012  methods.json#/planted_truth/4/recovered
+- reliability_err recovered: 0.0  methods.json#/planted_truth/4/recovered
 - reliability_err tolerance: 0.05  methods.json#/planted_truth/4/tolerance
 - reliability_err pass: true  methods.json#/planted_truth/4/pass
 - trend_pct_per_decade truth: 12.512  methods.json#/planted_truth/5/truth

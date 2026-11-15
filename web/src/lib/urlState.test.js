@@ -11,11 +11,11 @@ const parse = (q) => parseUrlState(new URLSearchParams(q), LAST);
 describe("URL state (contracts section 7)", () => {
   it("defaults when empty", () => {
     expect(parse("")).toEqual(defaultUrlState(LAST));
-    expect(parse("")).toEqual({ from: "2003-01-01", to: LAST, lens: "harmonized", view: "clock", mode: "activity", aoi: [] });
+    expect(parse("")).toEqual({ from: "2003-01-01", to: LAST, lens: "harmonized", view: "clock", mode: "activity", aoi: [], analysis_from: null, analysis_to: null });
   });
 
   it("round-trips every parameter", () => {
-    const state = { from: "2012-01-20", to: "2020-02-29", lens: "naive_splice", view: "months", mode: "anomaly", aoi: [r5a, r5b] };
+    const state = { from: "2012-01-20", to: "2020-02-29", lens: "naive_splice", view: "months", mode: "anomaly", aoi: [r5a, r5b], analysis_from: "2013", analysis_to: "2020" };
     const written = writeUrlState(new URLSearchParams("debug=1"), state, LAST);
     expect(written.get("debug")).toBe("1");
     expect(parse(written.toString())).toEqual(state);

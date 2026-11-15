@@ -5,9 +5,8 @@ results afterwards to make them look better (AGENTS.md science rule 8 applies to
 
 ## Setup
 - Build: `#/gallery` (or `#/r/<region>?view=clock`) on the deployed site or `npm run dev`.
-- Region: the role file says "the Punjab sample". **Open question:** the team may switch to US
-  regions (see team chat). Use whichever real-region *sample* R1 has published; write its id below.
-  Do **not** use the "Fabricated fixture (not data)" region: its shapes are not a real place.
+- Region: use the repaired real US publication (`#/r/us?view=clock`). Record the selected analysis years
+  and publication code version. The test remains unrun until both people supply actual answers.
 - Lens `harmonized`, mode `activity`, whole record, laptop screen, no hover.
 - Testers: two teammates who have **not** seen the clock before (not R6).
 

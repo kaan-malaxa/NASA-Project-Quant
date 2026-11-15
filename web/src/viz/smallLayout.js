@@ -23,7 +23,7 @@ export function hasTrend(t) {
 /**
  * Shared percent-per-decade axis for both bars: always includes 0, symmetric padding of 10%,
  * at least ±10 so a near-zero pair still has a readable axis.
- * @param {Array<{lo: number, hi: number} | undefined>} trends
+ * @param {Array<{pct_per_decade: number, lo: number, hi: number} | undefined>} trends
  * @returns {[number, number]}
  */
 export function trendDomain(trends) {

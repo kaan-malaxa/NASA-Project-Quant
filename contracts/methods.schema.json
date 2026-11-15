@@ -57,6 +57,9 @@
         },
         "science_yaml_sha256": {
           "$ref": "common.schema.json#/$defs/sha256"
+        },
+        "configuration_sha256": {
+          "$ref": "common.schema.json#/$defs/sha256"
         }
       }
     },
@@ -238,6 +241,45 @@
                 },
                 "k_tier2": {
                   "$ref": "common.schema.json#/$defs/number"
+                }
+              }
+            }
+          },
+          "heldout_compare": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "year",
+                "week",
+                "excluded_year",
+                "observed",
+                "tier1",
+                "tier2",
+                "kind"
+              ],
+              "properties": {
+                "year": {
+                  "$ref": "common.schema.json#/$defs/year"
+                },
+                "week": {
+                  "$ref": "common.schema.json#/$defs/week"
+                },
+                "excluded_year": {
+                  "$ref": "common.schema.json#/$defs/year"
+                },
+                "observed": {
+                  "$ref": "common.schema.json#/$defs/number"
+                },
+                "tier1": {
+                  "$ref": "common.schema.json#/$defs/number"
+                },
+                "tier2": {
+                  "$ref": "common.schema.json#/$defs/number"
+                },
+                "kind": {
+                  "$ref": "common.schema.json#/$defs/kind"
                 }
               }
             }

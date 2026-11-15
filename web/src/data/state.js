@@ -14,7 +14,7 @@ export const LOADING = Object.freeze({ status: "loading" });
 
 /** @param {import("./fetchJson.js").FetchResult} r @returns {FileState} */
 export function toFileState(r) {
-  if (r.ok) return { status: "ok", data: r.data };
+  if (r.ok === true) return { status: "ok", data: r.data };
   if (r.reason === "missing") return { status: "absent", detail: r.detail };
   return { status: r.reason, detail: r.detail };
 }

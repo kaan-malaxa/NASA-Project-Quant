@@ -1,17 +1,35 @@
-# Text for methods.json (contracts 6.13). Owner R1; R2 and R3 send entries, R1 merges them here.
-# Read by `python -m pipeline.export`. Plain language, no numbers typed by hand (AGENTS science rule 5).
-#
-# sources: one entry per verified claim. claim_id must be one of
-#   snpp_end, snpp_anomaly_2026, aqua_drift, aqua_end_science, submission_rules
-# Each needs text, url (the page that proves it) and checked (YYYY-MM-DD, the day someone opened the url).
-# An entry without a url or checked date is dropped, so the claim stays out of the site and the pitch.
-sources: []
-
-# Limitations the science register says the Methods page must state.
+sources:
+- claim_id: snpp_end
+  text: NASA FIRMS lists Suomi NPP fire observations through 2 November 2026.
+  url: https://firms.modaps.eosdis.nasa.gov/content/descriptions/FIRMS_VIIRS_Firehotspots.html
+  checked: '2026-11-15'
+- claim_id: aqua_drift
+  text: NASA describes Aqua moving away from its maintained orbit and observing later in the afternoon.
+  url: https://science.nasa.gov/mission/aqua/
+  checked: '2026-11-15'
 limitations:
-  - "Only daytime detections are used in this version. Night-time detections are kept in the data but not shown."   # SD-01
-  - "Near-real-time detections are filtered per map cell by a static heat-source mask; standard detections are filtered one by one."   # SD-18
-  - "From 2026 the record uses NOAA-20 with the S-NPP eyesight curve, assuming the two instruments see fires the same way."   # SD-16
-
-# DRAFT for the team to confirm before release.
-ai_use: "AI coding assistants helped write and test the pipeline and website code. They did not produce any of the numbers: every number on this site comes from the pipeline's output files."
+- Only daytime detections are used in this version. Night-time detections are kept in the data but not shown.
+- Near-real-time detections are filtered per map cell by a static heat-source mask; standard detections are filtered
+  one by one.
+- From 2026 the record uses NOAA-20 with the S-NPP eyesight curve, assuming the two instruments see fires the same
+  way.
+- Fire cell-days describe the spread of satellite-detected burning activity, not burned area, fire counts, severity
+  or damage.
+- The analysis covers the approved whole-US polygon, including Alaska and Hawaii. A display wrap does not change
+  membership.
+- Calibration measured across the whole region is applied to smaller selected areas. Small areas can have different
+  detection conditions.
+- Cloud, smoke, viewing geometry and overpass time can affect detections; coverage rules cannot measure every missed
+  observation.
+- Recent activity remains unavailable until genuine near-real-time detections and independent coverage metadata
+  exist.
+- The trend always uses the count-based translation. The eyesight route is used for the estimated historical lens
+  only when it passes the fixed acceptance tests.
+- Pooled reliability can cancel errors of opposite sign across years. The separately reported absolute-year diagnostic
+  exposes that cancellation.
+- Anomaly ranks use the fixed configured historical baseline; selected-period seasons use only the selected complete
+  years.
+- Spatial maps exclude years with missing required bins. Published sparse contributions omit covered zero cells
+  but retain missing bins as null.
+ai_use: 'AI coding assistants helped write and test the pipeline and website code. They did not produce any of the
+  numbers: every number on this site comes from the pipeline''s output files.'

@@ -19,7 +19,7 @@ export default class ErrorBoundary extends Component {
   }
 
   componentDidCatch(error, info) {
-    console.error("FireRosetta screen error:", error, info?.componentStack);
+    console.error("Prometheus Torch screen error:", error, info?.componentStack);
   }
 
   render() {

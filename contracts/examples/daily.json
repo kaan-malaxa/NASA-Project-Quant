@@ -45,23 +45,65 @@
     {
       "series": "harmonized",
       "from": "2003-01-01",
-      "to": "2022-12-31",
+      "to": "2003-01-01",
       "kind": "observed",
       "source": "aqua"
     },
     {
       "series": "harmonized",
-      "from": "2023-01-01",
-      "to": "2025-12-31",
-      "kind": "harmonized",
-      "source": "snpp"
+      "from": "2003-01-02",
+      "to": "2003-01-02",
+      "kind": "observed",
+      "source": "aqua"
     },
     {
       "series": "harmonized",
-      "from": "2026-01-01",
-      "to": "2026-11-13",
-      "kind": "harmonized",
-      "source": "noaa20"
+      "from": "2003-01-03",
+      "to": "2003-01-03",
+      "kind": "missing",
+      "source": null
+    },
+    {
+      "series": "aqua_raw",
+      "from": "2003-01-01",
+      "to": "2003-01-01",
+      "kind": "observed",
+      "source": "aqua"
+    },
+    {
+      "series": "aqua_raw",
+      "from": "2003-01-02",
+      "to": "2003-01-02",
+      "kind": "observed",
+      "source": "aqua"
+    },
+    {
+      "series": "aqua_raw",
+      "from": "2003-01-03",
+      "to": "2003-01-03",
+      "kind": "missing",
+      "source": null
+    },
+    {
+      "series": "viirs_raw",
+      "from": "2003-01-01",
+      "to": "2003-01-01",
+      "kind": "missing",
+      "source": null
+    },
+    {
+      "series": "viirs_raw",
+      "from": "2003-01-02",
+      "to": "2003-01-02",
+      "kind": "missing",
+      "source": null
+    },
+    {
+      "series": "viirs_raw",
+      "from": "2003-01-03",
+      "to": "2003-01-03",
+      "kind": "missing",
+      "source": null
     }
   ]
 }

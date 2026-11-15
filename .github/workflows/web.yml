@@ -1,5 +1,5 @@
-# Owner: R5. Builds the static site in web/ and deploys it to GitHub Pages.
-# Typecheck is intentionally not run (the web app is plain JavaScript).
+# Owner: R5. Builds the static site in web/ and deploys it to GitHub Pages, served from the custom domain prometheus-torch.design.
+# JavaScript is checked by the installed compiler against generated contract declarations.
 name: web
 
 on:
@@ -31,11 +31,17 @@ jobs:
           cache: npm
           cache-dependency-path: web/package-lock.json
       - run: npm ci
+      - run: npm run gen:types
+      - run: git diff --exit-code -- src/data/types.gen.d.ts
+      - run: npm run typecheck
+      - run: npm run lint
       - run: npm run test
+      - run: npx playwright install --with-deps chromium
+      - run: npm run e2e
       - run: npm run build
         env:
-          VITE_BASE: /${{ github.event.repository.name }}/
-          VITE_SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+          VITE_BASE: /
+          VITE_SITE_URL: https://prometheus-torch.design/
       - if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v5
       - if: github.event_name != 'pull_request'

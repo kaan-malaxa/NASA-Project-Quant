@@ -77,8 +77,6 @@ def main(argv: list[str] | None = None) -> int:
 
     log = compat.get_logger(STAGE)
     log.setLevel(getattr(args, "log_level", "INFO").upper())
-    if not compat.HAVE_COMMON:
-        log.warning("pipeline.common not found; using pipeline/synth/compat.py fallbacks")
     if science is None:
         log.warning("science.yaml not found; seed defaults to %d", P.FALLBACK_SEED)
 

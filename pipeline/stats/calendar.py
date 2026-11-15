@@ -171,7 +171,9 @@ def smooth_circular(values: list[float], width: int) -> list[float]:
     """Centred moving average that wraps around the year (week 52 uses week 1)."""
     half = width // 2
     n = len(values)
-    return [sum(values[(i + j) % n] for j in range(-half, half + 1)) / (2 * half + 1) for i in range(n)]
+    return [None if values[i] is None else
+            float(np.mean([values[(i + j) % n] for j in range(-half, half + 1)
+                           if values[(i + j) % n] is not None])) for i in range(n)]
 
 
 def climatology_json(weekly_rows: list[dict[str, Any]], monthly_rows: list[dict[str, Any]], region: str,
@@ -184,10 +186,8 @@ def climatology_json(weekly_rows: list[dict[str, Any]], monthly_rows: list[dict[
         for r in rows:
             if r["series"] == "harmonized" and y0 <= r["year"] <= y1 and r["value"] is not None:
                 per_bin[r[grain]].append(r["value"])
-        empty = [b for b, v in per_bin.items() if not v]
-        if empty:
-            raise ValueError(f"climatology: no baseline years with data for {grain}s {empty}")
-        curves = {name: [float(np.quantile(per_bin[b], q, method="linear")) for b in range(1, n_bins + 1)]
+        curves = {name: [float(np.quantile(per_bin[b], q, method="linear")) if per_bin[b] else None
+                         for b in range(1, n_bins + 1)]
                   for name, q in QUANTILES}
         if smooth:
             curves = {name: smooth_circular(c, smooth) for name, c in curves.items()}
@@ -220,9 +220,14 @@ def build_calendar_files(daily: pd.DataFrame, region: str, science: dict[str, An
         table = pd.concat([daily, t2[(t2_days >= days.min()) & (t2_days <= days.max())]], ignore_index=True)
     weekly = calendar_json(table, region, "week", header, method)
     monthly = calendar_json(table, region, "month", header, method)
-    return {
+    documents = {
         "weekly": weekly,
         "monthly": monthly,
         "daily": daily_json(table, region, header, method),
         "climatology": climatology_json(weekly["rows"], monthly["rows"], region, science, header),
     }
+
+    for document in documents.values():
+        document["configuration"] = {"anomaly": science["anomaly"], "timebins": science["timebins"],
+                                      "eras": science["eras"], "baseline_years": science["climatology"]["baseline_years"]}
+    return documents

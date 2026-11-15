@@ -19,8 +19,8 @@ describe("cellDetail", () => {
 
   it("returns the row and ranks it among other baseline years, skipping missing", () => {
     const d = cellDetail(weekly, { year: 2004, week: 44 }, "harmonized", [2003, 2006], spy);
-    expect(d).toMatchObject({ value: 20, kind: "observed", source: "aqua", grain: "week", slot: 44, nOthers: 2 });
-    expect(d.percentile).toEqual({ value: 20, others: [10, 40] });
+    expect(d).toMatchObject({ value: 20, kind: "observed", source: "aqua", grain: "week", slot: 44, nOthers: 3 });
+    expect(d.percentile).toEqual({ value: 20, others: [10, 20, 40] });
   });
 
   it("reports a missing cell as missing with no percentile", () => {

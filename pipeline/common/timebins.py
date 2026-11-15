@@ -6,15 +6,25 @@ from typing import Literal
 
 import pandas as pd
 
-from pipeline.common.config import load_science
+from pipeline.common import config
+
+
+def load_science():
+    return config.load_science()
 
 
 def local_day(acq_datetime_utc, longitude) -> date:
+    degrees = load_science()["timebins"]["solar_degrees_per_hour"]
     if isinstance(acq_datetime_utc, pd.Series) or isinstance(longitude, pd.Series):
         timestamps = pd.to_datetime(acq_datetime_utc, utc=True)
-        return (timestamps + pd.to_timedelta(longitude / 15, unit="h")).dt.date
+        return (timestamps + pd.to_timedelta(longitude / degrees, unit="h")).dt.date
     timestamp = pd.to_datetime(acq_datetime_utc, utc=True)
-    return (timestamp + pd.to_timedelta(longitude / 15, unit="h")).date()
+    return (timestamp + pd.to_timedelta(longitude / degrees, unit="h")).date()
+
+
+def last_complete_local_day(fetched_at, centroid_lon: float, west_lon: float) -> date:
+    """Last day complete at both the centroid and western edge (SD-12)."""
+    return min(local_day(fetched_at, centroid_lon), local_day(fetched_at, west_lon)) - timedelta(days=1)
 
 
 def week_of_year(d: date) -> int:
@@ -114,8 +124,10 @@ def doy_window(
     daily: pd.DataFrame, end_doy: int, n_days: int, year: int,
     value_cols: Sequence[str] = ("value",),
 ) -> dict:
-    if not 1 <= end_doy <= (366 if calendar.isleap(year) else 365):
+    if not 1 <= end_doy <= 366:
         raise ValueError("end_doy is outside the requested year")
+    # Day 366 in a leap-year observation corresponds to the last day of a shorter comparison year.
+    end_doy = min(end_doy, 366 if calendar.isleap(year) else 365)
     if n_days <= 0:
         raise ValueError("n_days must be positive")
     frame, columns = _prepare(daily, value_cols)

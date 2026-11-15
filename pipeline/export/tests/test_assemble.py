@@ -5,6 +5,7 @@ from __future__ import annotations
 import hashlib
 import json
 import shutil
+from dataclasses import replace
 from datetime import date
 from pathlib import Path
 
@@ -32,7 +33,7 @@ def realify(node):
     if isinstance(node, dict):
         out = {k: realify(v) for k, v in node.items()}
         if out.get("kind") == "sample":
-            out["kind"] = "observed"
+            out["kind"] = "missing" if out.get("value", 0) is None else "observed"
         if out.get("code_version") == "sample":
             out["code_version"] = "abc1234"
         return out
@@ -56,11 +57,18 @@ def write_cells(path: Path, membership: bytes | None = b"polygon") -> None:
     pq.write_table(table, path)
 
 
+@pytest.fixture(scope="module")
+def sample_template(tmp_path_factory):
+    directory = tmp_path_factory.mktemp("assemble-sample")
+    write_sample(directory)
+    return directory
+
+
 @pytest.fixture
-def tree(tmp_path: Path) -> Inputs:
+def tree(tmp_path: Path, sample_template) -> Inputs:
     """--sample site with us turned real (and a sample-only synthland/), plus the R2/R3 inputs us needs."""
     web, data = tmp_path / "web", tmp_path / "data"
-    write_sample(web)
+    shutil.copytree(sample_template, web)
     shutil.copytree(web / "us", web / "synthland")          # a leftover sample-only folder
     for f in (web / "us").iterdir():
         if f.suffix in (".json", ".geojson"):
@@ -86,7 +94,9 @@ def tree(tmp_path: Path) -> Inputs:
                data / "clean" / "us" / "filter_log.json")
     regions = [{**r, "centroid": [(r["bbox"][0] + r["bbox"][2]) / 2, (r["bbox"][1] + r["bbox"][3]) / 2]}
                for r in REGIONS_4_1]
-    return Inputs(web_dir=web, regions=regions, science=SCIENCE_4_2, science_sha256="1" * 64,
+    methods_text = tmp_path / "methods-text.yaml"
+    methods_text.write_text("sources: []\nlimitations: [one, two, three]\nai_use: Test fixture.\n", encoding="utf-8")
+    return Inputs(methods_text=methods_text, web_dir=web, regions=regions, science=SCIENCE_4_2, science_sha256="1" * 64,
                   harmonized_dir=lambda r: data / "harmonized" / r, eyesight_dir=lambda r: data / "eyesight" / r,
                   grid_dir=lambda r: data / "grid" / r, raw_dir=lambda r: data / "raw" / r,
                   clean_dir=lambda r: data / "clean" / r, read_parquet=lambda p, name: pd.read_parquet(p),
@@ -95,6 +105,35 @@ def tree(tmp_path: Path) -> Inputs:
 
 def load(inp: Inputs, name: str):
     return json.loads((inp.web_dir / name).read_text(encoding="utf-8"))
+
+
+def test_compatible_published_region_needs_no_local_intermediates(tree):
+    assemble(tree)
+    before = (tree.web_dir / "us" / "monthly.json").read_bytes()
+
+    def unavailable(region):
+        raise AssertionError(f"Preserved region must not read intermediates: {region}")
+
+    scoped = replace(tree, scope=[], harmonized_dir=unavailable, grid_dir=unavailable,
+                     eyesight_dir=unavailable, raw_dir=lambda region: tree.web_dir / "absent",
+                     clean_dir=unavailable)
+    assemble(scoped)
+    assert (tree.web_dir / "us" / "monthly.json").read_bytes() == before
+    assert all(result.ok for result in run_check(tree.web_dir))
+
+
+def test_scoped_rebuild_installs_the_privately_staged_recent_csv(tree, tmp_path, monkeypatch):
+    from pipeline.export import assemble as module
+    assemble(tree)
+    private = tmp_path / "stats-us"
+    shutil.copytree(tree.web_dir / "us", private)
+    header = "latitude,longitude,acq_date,acq_time,satellite,confidence,frp,daynight,local_day,h3_r6\n"
+    (private / "hotspots_recent.csv").write_text(header, encoding="utf-8")
+    monkeypatch.setattr(module.paths, "stats_dir", lambda region: private)
+    monkeypatch.setattr(module.provenance, "verify_stage", lambda region, stage: {})
+    assemble(replace(tree, scope=["us"]))
+    assert (tree.web_dir / "us" / "hotspots_recent.csv").read_text(encoding="utf-8") == header
+    assert "hotspots_recent" in load(tree, "regions.json")["regions"][0]["optional_files"]
 
 
 # ------------------------------------------------------------------ the happy path
@@ -138,7 +177,7 @@ def test_manifest_covers_every_file_and_flags_leftover_sample(tree):
     assert {f["path"] for f in man["files"]} == on_disk - {"manifest.json"}
     assert man["contains_sample"] is True                     # synthland/ is still sample
     kinds = {f["path"]: f["kinds"] for f in man["files"]}
-    assert kinds["us/weekly.json"] == ["observed"] and kinds["synthland/weekly.json"] == ["sample"]
+    assert kinds["us/weekly.json"] == ["missing", "observed"] and kinds["synthland/weekly.json"] == ["sample"]
     assert kinds["us/cells_monthly.csv"] == []
     audit = tree.web_dir / "numbers_audit.md"                 # written before the manifest
     entry = next(f for f in man["files"] if f["path"] == "numbers_audit.md")

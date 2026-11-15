@@ -7,12 +7,12 @@ import { clearFetchCache } from "@/data/fetchJson.js";
 import { mockFetch } from "@/test/mockFetch.js";
 
 const cases = [
-  ["/", "Is it really burning more, or did the satellite get better eyes?", "FireRosetta"],
-  ["/pick", "Pick a place", "Pick a place · FireRosetta"],
-  ["/r/punjab", "Region", "Region · FireRosetta"],
-  ["/methods", "Methods and honesty", "Methods and honesty · FireRosetta"],
-  ["/gallery", "Component gallery", "Component gallery · FireRosetta"],
-  ["/no/such/page", "Page not found", "Page not found · FireRosetta"],
+  ["/", "Is it really burning more, or did the satellite get better eyes?", "Prometheus Torch"],
+  ["/pick", "Pick a place", "Pick a place · Prometheus Torch"],
+  ["/r/punjab", "Region", "Region · Prometheus Torch"],
+  ["/methods", "Methods and honesty", "Methods and honesty · Prometheus Torch"],
+  ["/gallery", "Component gallery", "Component gallery · Prometheus Torch"],
+  ["/no/such/page", "Page not found", "Page not found · Prometheus Torch"],
 ];
 
 beforeEach(() => {
@@ -36,7 +36,7 @@ const renderAt = (path) =>
 describe("routes (contracts section 7)", () => {
   it.each(cases)("%s renders its heading, title, the nav and the FIRMS credit", async (path, heading, title) => {
     renderAt(path);
-    expect((await screen.findByRole("heading", { level: 1, name: heading })).textContent).toBe(heading);
+    expect((await screen.findByRole("heading", { level: 1, name: heading }, { timeout: 10000 })).textContent).toBe(heading);
     await waitFor(() => expect(document.title).toBe(title));
     const credit = within(screen.getByRole("contentinfo")).getByRole("link", { name: "NASA FIRMS" });
     expect(credit.getAttribute("href")).toBe("https://firms.modaps.eosdis.nasa.gov/");

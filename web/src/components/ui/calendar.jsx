@@ -11,14 +11,15 @@ import { DayPicker, getDefaultClassNames } from "react-day-picker";
 
 import { Button, buttonVariants } from "@/components/ui/button"
 
+/** @param {import("react-day-picker").DayPickerProps & {buttonVariant?: import("class-variance-authority").VariantProps<typeof buttonVariants>["variant"]; [key: string]: any}} props */
 function Calendar({
-  className,
-  classNames,
+  className = undefined,
+  classNames = undefined,
   showOutsideDays = true,
   captionLayout = "label",
   buttonVariant = "ghost",
-  formatters,
-  components,
+  formatters = undefined,
+  components = undefined,
   ...props
 }) {
   const defaultClassNames = getDefaultClassNames()
@@ -174,7 +175,7 @@ function Calendar({
 }
 
 function CalendarDayButton({
-  className,
+  className = undefined,
   day,
   modifiers,
   ...props

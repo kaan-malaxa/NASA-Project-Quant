@@ -1,5 +1,6 @@
 import csv
 import json
+import os
 from dataclasses import replace
 from datetime import date, timedelta
 from pathlib import Path
@@ -9,13 +10,15 @@ import pandas as pd
 import pytest
 import requests
 
-from pipeline.common import config, io, paths
+from pipeline.common import config, io, paths, provenance
 from pipeline.ingest import clean, download
 from pipeline.ingest import nowcast_fetch as nowcast
 
 NOW = pd.Timestamp("2026-11-15T12:00:00Z")
 SCIENCE = {
-    "filters": {"modis_min_confidence": 30, "viirs_keep": ["n", "h"]},
+    "timebins": {"solar_degrees_per_hour": 15},
+    "filters": {"modis_min_confidence": 30, "viirs_keep": ["n", "h"], "keep_type": 0},
+    "static_mask": {"types": [1, 2, 3]},
     "grid": {"count_res": 6, "map_res": 5, "mask_res": 8},
 }
 
@@ -26,7 +29,7 @@ def environment(tmp_path, monkeypatch):
     monkeypatch.setattr(config, "get_region", lambda region_id: region)
     monkeypatch.setattr(config, "region_centroid", lambda region: (-120, 40))
     monkeypatch.setattr(config, "load_science", lambda: SCIENCE)
-    monkeypatch.setenv("FIREROSETTA_DATA_ROOT", str(tmp_path / "derived"))
+    monkeypatch.setenv("PROMETHEUS_TORCH_DATA_ROOT", str(tmp_path / "derived"))
     source = tmp_path / "originals"
     source.mkdir()
     monkeypatch.setattr(paths, "source_data_root", lambda: source)
@@ -34,6 +37,10 @@ def environment(tmp_path, monkeypatch):
     outages = paths.config_file("outages.yaml")
     outages.parent.mkdir(parents=True)
     outages.write_text("outages: []\n", encoding="utf-8")
+    for name, value in (("science.yaml", SCIENCE), ("regions.yaml", {"regions": []})):
+        paths.config_file(name).write_text(json.dumps(value), encoding="utf-8")
+    verify = provenance.verify_stage
+    monkeypatch.setattr(provenance, "verify_stage", lambda region, stage: {} if stage == "grid" else verify(region, stage))
     monkeypatch.setattr(clean, "region_cells", lambda *args: {h3.latlng_to_cell(40, -120, 6)})
     paths.tmp_dir().mkdir(parents=True)
     io.write_parquet(clean.typed(pd.DataFrame(), "static_mask"), paths.static_mask("us"), "static_mask")
@@ -57,6 +64,7 @@ def previous_outputs():
     values = {
         paths.celldays_nrt("us"): b"old parquet",
         paths.hotspots_recent("us"): b"old csv",
+        paths.staged_hotspots_recent("us"): b"old staged csv",
         paths.manifest("us"): b"[]\n",
     }
     for path, content in values.items():
@@ -126,7 +134,8 @@ def test_success_uses_clean_mask_membership_and_contract_header(environment):
     before = source.read_bytes()
     assert nowcast.run("us", 31, now=NOW) == 31
     assert source.read_bytes() == before
-    with paths.hotspots_recent("us").open(encoding="utf-8", newline="") as handle:
+    assert not paths.hotspots_recent("us").exists(), "Ingestion must not mutate the published site"
+    with paths.staged_hotspots_recent("us").open(encoding="utf-8", newline="") as handle:
         reader = csv.reader(handle)
         assert next(reader) == [
             "latitude", "longitude", "acq_date", "acq_time", "satellite",
@@ -156,7 +165,7 @@ def test_static_mask_can_remove_every_recent_detection(environment):
                      paths.static_mask("us"), "static_mask")
     assert nowcast.run("us", 31, now=NOW) == 0
     assert io.read_parquet(paths.celldays_nrt("us"), "celldays_nrt").empty
-    assert paths.hotspots_recent("us").read_text(encoding="utf-8").strip() == ",".join(nowcast.HOTSPOT_HEADER)
+    assert paths.staged_hotspots_recent("us").read_text(encoding="utf-8").strip() == ",".join(nowcast.HOTSPOT_HEADER)
 
 
 def test_invalid_coordinates_do_not_break_solar_date_conversion(environment):
@@ -200,7 +209,7 @@ def test_publication_failure_rolls_back_earlier_replacements(tmp_path, monkeypat
         source.write_text("new " + name, encoding="utf-8")
         old[destination] = destination.read_bytes()
         new[destination] = source
-    replace_file = nowcast.os.replace
+    replace_file = os.replace
     failed = False
     def fail_once(source, destination):
         nonlocal failed
@@ -208,7 +217,7 @@ def test_publication_failure_rolls_back_earlier_replacements(tmp_path, monkeypat
             failed = True
             raise OSError("simulated publication failure")
         return replace_file(source, destination)
-    monkeypatch.setattr(nowcast.os, "replace", fail_once)
+    monkeypatch.setattr(os, "replace", fail_once)
     with pytest.raises(OSError):
         nowcast.publish(new)
     assert_unchanged(old)
@@ -219,3 +228,22 @@ def test_clean_historical_run_does_not_consume_nrt_only_manifest(environment):
     nowcast.run("us", 31, now=NOW)
     with pytest.raises(ValueError, match="No verified historical"):
         clean.run("us")
+
+
+def test_empty_source_with_independent_coverage_keeps_covered_zero_days(environment):
+    input_csv(environment, days=0)
+    start, end = nowcast.recent_window(NOW, -120, 31, -121)
+    metadata = {"source": "VIIRS_NOAA20_NRT", "days": [
+        {"local_day": day.isoformat(), "covered": True} for day in pd.date_range(start, end).date]}
+    assert nowcast.run("us", 31, now=NOW, coverage_metadata=metadata) == 0
+    assert io.read_parquet(paths.celldays_nrt("us"), "celldays_nrt").empty
+    coverage = io.read_json(paths.nrt_coverage("us"))
+    assert len(coverage["days"]) == 31 and all(row["covered"] is True for row in coverage["days"])
+    assert {row["reason"] for row in coverage["days"]} == {"independent_coverage"}
+    assert provenance.verify_stage("us", "nowcast")
+    io.write_json({**coverage, "start": "2026-01-01"}, paths.nrt_coverage("us"))
+    with pytest.raises(ValueError, match="Stale nowcast outputs"):
+        provenance.verify_stage("us", "nowcast")
+    metadata["days"][0]["covered"] = "false"
+    with pytest.raises(nowcast.NowcastUnavailable, match="boolean covered"):
+        nowcast.run("us", 31, now=NOW, coverage_metadata=metadata)

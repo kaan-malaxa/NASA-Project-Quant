@@ -103,6 +103,7 @@ const META = {
 export const FIXTURE_WEEKLY = {
   schema_version: "1.0",
   code_version: "sample",
+  generated_at: "1970-01-01T00:00:00Z",
   region: FIXTURE_REGION.id,
   series_meta: META,
   rows: SERIES.flatMap((s) =>
@@ -116,6 +117,7 @@ const monthOfWeek = (week) => new Date(Date.UTC(2001, 0, 1 + (week - 1) * 7)).ge
 export const FIXTURE_MONTHLY = {
   schema_version: "1.0",
   code_version: "sample",
+  generated_at: "1970-01-01T00:00:00Z",
   region: FIXTURE_REGION.id,
   series_meta: Object.fromEntries(
     Object.entries(META).map(([k, m]) => [k, { ...m, unit: m.unit.replace("per week", "per month") }]),
@@ -166,6 +168,7 @@ const harmonizedValues = (rows, pick) =>
 export const FIXTURE_CLIMATOLOGY = {
   schema_version: "1.0",
   code_version: "sample",
+  generated_at: "1970-01-01T00:00:00Z",
   region: FIXTURE_REGION.id,
   baseline_years: [2003, 2025],
   unit_week: META.harmonized.unit,
@@ -184,6 +187,7 @@ const range0 = { value: 0, lo: 0, hi: 0 };
 export const FIXTURE_SEASON = {
   schema_version: "1.0",
   code_version: "sample",
+  generated_at: "1970-01-01T00:00:00Z",
   region: FIXTURE_REGION.id,
   definition: "The fewest weeks that hold 80% of a typical year's burning",
   critical_weeks: [15, 16, 17, 18, 19, 42, 43, 44, 45, 46],
@@ -215,6 +219,7 @@ export const FIXTURE_SEASON = {
 
 // ---- trend / nowcast (fabricated) ----------------------------------------------------------
 
+/** @returns {import("../../data/types.gen").CommonEstimate} */
 const trendSummary = (pct, lo, hi) => ({
   pct_per_decade: pct,
   lo,
@@ -222,9 +227,11 @@ const trendSummary = (pct, lo, hi) => ({
   direction: lo <= 0 && hi >= 0 ? "no_clear_change" : pct > 0 ? "rising" : "falling",
 });
 
+/** @type {import("../../data/types.gen").TrendJson} */
 export const FIXTURE_TREND = {
   schema_version: "1.0",
   code_version: "sample",
+  generated_at: "1970-01-01T00:00:00Z",
   region: FIXTURE_REGION.id,
   years: [2003, 2025],
   annual: YEARS.map((year) => {
@@ -263,6 +270,7 @@ export const FIXTURE_TREND_VARIANTS = [
   },
 ];
 
+/** @type {import("../../data/types.gen").NowcastJson["history"]} */
 const NOWCAST_HISTORY = YEARS.map((year) => {
   if (year === 2007) return { year, value: null, kind: "missing" }; // fixture outage: skipped, not 0
   const w = FIXTURE_WEEKLY.rows.find((r) => r.series === "harmonized" && r.year === year && r.week === 45);
@@ -271,11 +279,13 @@ const NOWCAST_HISTORY = YEARS.map((year) => {
 const pastValues = NOWCAST_HISTORY.map((h) => h.value).filter((v) => v !== null);
 const sortedPast = [...pastValues].sort((a, b) => a - b);
 
-function nowcastWith(value, forcedStatus) {
+/** @returns {import("../../data/types.gen").NowcastJson} */
+function nowcastWith(value, forcedStatus = undefined) {
   const percentile = value === null ? null : r1(percentileRank(value, pastValues));
   return {
     schema_version: "1.0",
     code_version: "sample",
+  generated_at: "1970-01-01T00:00:00Z",
     region: FIXTURE_REGION.id,
     as_of: "2025-11-15T12:00:00Z",
     source: "VIIRS_NOAA20_NRT",

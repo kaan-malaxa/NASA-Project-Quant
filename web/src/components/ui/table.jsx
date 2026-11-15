@@ -2,13 +2,14 @@ import * as React from "react"
 import { cn } from "@/lib/utils"
 
 function Table({
-  className,
+  className = undefined,
   ...props
 }) {
   return (
     <div
       data-slot="table-container"
-      className="relative w-full overflow-x-auto"
+      tabIndex={0}
+      className="relative w-full overflow-x-auto focus-visible:ring-2 focus-visible:ring-ring"
     >
       <table
         data-slot="table"
@@ -20,7 +21,7 @@ function Table({
 }
 
 function TableHeader({
-  className,
+  className = undefined,
   ...props
 }) {
   return (
@@ -33,7 +34,7 @@ function TableHeader({
 }
 
 function TableBody({
-  className,
+  className = undefined,
   ...props
 }) {
   return (
@@ -46,7 +47,7 @@ function TableBody({
 }
 
 function TableFooter({
-  className,
+  className = undefined,
   ...props
 }) {
   return (
@@ -62,7 +63,7 @@ function TableFooter({
 }
 
 function TableRow({
-  className,
+  className = undefined,
   ...props
 }) {
   return (
@@ -78,7 +79,7 @@ function TableRow({
 }
 
 function TableHead({
-  className,
+  className = undefined,
   ...props
 }) {
   return (
@@ -94,7 +95,7 @@ function TableHead({
 }
 
 function TableCell({
-  className,
+  className = undefined,
   ...props
 }) {
   return (
@@ -110,7 +111,7 @@ function TableCell({
 }
 
 function TableCaption({
-  className,
+  className = undefined,
   ...props
 }) {
   return (

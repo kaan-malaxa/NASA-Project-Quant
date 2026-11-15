@@ -1,0 +1,16 @@
+{
+  "operating_system": "Windows",
+  "regions": [
+    {
+      "independent_windows_runs_match": true,
+      "region": "us",
+      "scientific_payloads": 313
+    },
+    {
+      "independent_windows_runs_match": true,
+      "region": "synthland",
+      "scientific_payloads": 314
+    }
+  ],
+  "ubuntu_macos_ci_execution": "pending"
+}

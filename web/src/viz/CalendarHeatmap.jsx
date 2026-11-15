@@ -48,6 +48,9 @@ export const CalendarHeatmap = forwardRef(function CalendarHeatmap(
     () =>
       buildHeatGrid({
         rows: file?.rows,
+        baselineRows: file?.baseline_rows,
+        configuration: file?.configuration,
+        calibration: file?.calibration,
         grain,
         lens,
         mode,

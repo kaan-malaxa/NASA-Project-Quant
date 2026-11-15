@@ -1,25 +1,16 @@
-The production pipeline uses only the local NASA FIRMS United States exports
-under workspace-root `data/MODIS_data/`, `data/VIIRS-SNPP_data/`, and
-`data/VIIRS-JPSS_data/`. It performs no downloads and rejects other region ids.
+# Historical US inputs and scientific scope
 
-From the repository root:
+The pipeline reads the supplied NASA FIRMS country CSVs under the repository's original data folders.
+It preserves those originals, validates filename years against observation dates, stages derived copies,
+and applies the committed whole-US polygon during gridding. Alaska and Hawaii are included. Puerto Rico
+is outside the approved analysis polygon. The polygon is geographic reference metadata, not invented
+hotspot data; the analysis uses its original coordinates, separately from display wrapping.
 
-```text
-uv sync
-uv run python -m pipeline.run --region us
-uv run pytest pipeline -q
-```
+Run `uv run python -m pipeline.run --region us`. For planted truth use the separately labelled
+`--region synthland`; a real US dataset has no planted-truth file. The obsolete US truth integration test
+has been removed; fabricated known-answer helper tests and the full synthetic recovery check remain.
 
-Ingestion creates the US cell-days, coverage and hotspot-count tables, plus
-source and output hashes. Harmonization verifies these hashes before reading
-the tables. A changed source, config or derived input requires rerunning ingest.
-`--data-root` and `FIREROSETTA_DATA_ROOT` move derived outputs only; they never
-redirect the raw US source files.
-
-Results are in workspace-root `data/harmonized/us/`. Unit tests use
-explicit fabricated tables; their values are never substituted for real US
-inputs. The supplied country exports do not include a polygon, centroid or
-planted truth. Country-file membership is retained without inventing those
-missing inputs. A US polygon is still needed for a full-region cell denominator
-and the V5 saturation diagnostic. Calendar availability comes from the files,
-so no current-year detections or missing days are invented.
+Every scientific stage verifies upstream output hashes and the original/staged input, configuration,
+outage and polygon attestations. Changed inputs require rebuilding their downstream stages. Outputs live
+under data/harmonized/us/ and are published only after staged contract and semantic validation.
+Directory overrides move derived data, not the authoritative source folders. See docs/source_fingerprints.md.

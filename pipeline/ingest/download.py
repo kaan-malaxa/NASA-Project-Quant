@@ -162,6 +162,10 @@ def download_country(region, years, products):
     if not jobs:
         raise DownloadError(f"No requested local US CSVs exist in {paths.source_data_root()}")
     for year, product, source, relative in jobs:
+        source_facts = _file_facts(source)
+        if any(value and int(value[:4]) != year for value in
+               (source_facts["first_date"], source_facts["last_date"])):
+            raise DownloadError(f"Filename year {year} disagrees with observation dates in {source.name}")
         LOGGER.info("LOCAL %s", relative)
         LOGGER.info("HEADER %s: %s", product, ",".join(csv_header(source)))
         destination = paths.raw_csv("us", PRODUCTS[product], "country", year)

@@ -6,7 +6,7 @@ export const LENSES = ["harmonized", "aqua_raw", "viirs_raw", "naive_splice", "v
 export const VIEWS = ["clock", "weeks", "months"];
 export const MODES = ["activity", "anomaly"];
 export const FIRST_DAY = "2003-01-01";
-export const URL_KEYS = ["from", "to", "lens", "view", "mode", "aoi"];
+export const URL_KEYS = ["from", "to", "lens", "view", "mode", "aoi", "analysis_from", "analysis_to"];
 
 /** True for a real calendar date written YYYY-MM-DD. */
 export function isIsoDate(s) {
@@ -31,6 +31,8 @@ export function defaultUrlState(lastDataDay) {
     view: "clock",
     mode: "activity",
     aoi: [],
+    analysis_from: null,
+    analysis_to: null,
   };
 }
 
@@ -55,7 +57,9 @@ export function parseUrlState(params, lastDataDay = null) {
   const view = VIEWS.includes(get("view")) ? get("view") : d.view;
   const mode = MODES.includes(get("mode")) ? get("mode") : d.mode;
   const aoi = [...new Set((get("aoi") || "").split(",").map((s) => s.trim().toLowerCase()).filter(isR5Cell))];
-  return { from, to, lens, view, mode, aoi };
+  const analysis_from = /^\d{4}$/.test(get("analysis_from") || "") ? get("analysis_from") : null;
+  const analysis_to = /^\d{4}$/.test(get("analysis_to") || "") ? get("analysis_to") : null;
+  return { from, to, lens, view, mode, aoi, analysis_from, analysis_to };
 }
 
 /**

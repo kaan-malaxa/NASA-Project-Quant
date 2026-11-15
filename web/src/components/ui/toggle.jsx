@@ -26,9 +26,9 @@ const toggleVariants = cva(
 )
 
 function Toggle({
-  className,
-  variant,
-  size,
+  className = undefined,
+  variant = undefined,
+  size = undefined,
   ...props
 }) {
   return (

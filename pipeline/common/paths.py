@@ -6,7 +6,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 
 def data_root() -> Path:
-    return Path(os.environ.get("FIREROSETTA_DATA_ROOT", PROJECT_ROOT / "data")).expanduser().resolve()
+    return Path(os.environ.get("PROMETHEUS_TORCH_DATA_ROOT", PROJECT_ROOT / "data")).expanduser().resolve()
 
 
 def source_data_root() -> Path:
@@ -35,8 +35,28 @@ def eyesight_dir(region) -> Path:
 
 
 def web_data_dir(region: str | None = None) -> Path:
-    base = PROJECT_ROOT / "web" / "public" / "data"
+    base = Path(os.environ.get("PROMETHEUS_TORCH_WEB_DATA_DIR", PROJECT_ROOT / "web" / "public" / "data")).resolve()
     return base if region is None else base / region
+
+
+def stage_provenance(region, stage) -> Path:
+    return data_root() / "provenance" / region / f"{stage}.json"
+
+
+def stats_dir(region) -> Path:
+    return data_root() / "stats" / region
+
+
+def nrt_coverage(region) -> Path:
+    return grid_dir(region) / "nrt_coverage.json"
+
+
+def local_nrt_coverage(region) -> Path:
+    return raw_dir(region) / "nrt_input_coverage.json"
+
+
+def heldout_predictions(region, stage) -> Path:
+    return (harmonized_dir(region) if stage == "harmonize" else eyesight_dir(region)) / "heldout_weekly.parquet"
 
 
 def config_file(name: str) -> Path:
@@ -137,6 +157,10 @@ def celldays_nrt(region) -> Path:
 
 def hotspots_recent(region) -> Path:
     return web_data_dir(region) / "hotspots_recent.csv"
+
+
+def staged_hotspots_recent(region) -> Path:
+    return grid_dir(region) / "hotspots_recent.csv"
 
 
 def nrt_snapshot(region, utc_date) -> Path:

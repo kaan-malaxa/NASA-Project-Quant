@@ -1,0 +1,230 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "daily.json — contracts 6.4 (columnar)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "generated_at",
+    "code_version",
+    "region",
+    "start",
+    "n_days",
+    "series",
+    "kind_runs"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schema_version"
+    },
+    "generated_at": {
+      "$ref": "common.schema.json#/$defs/generated_at"
+    },
+    "code_version": {
+      "$ref": "common.schema.json#/$defs/code_version"
+    },
+    "region": {
+      "$ref": "common.schema.json#/$defs/region_id"
+    },
+    "start": {
+      "$ref": "common.schema.json#/$defs/date"
+    },
+    "n_days": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "series": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [],
+      "properties": {
+        "harmonized": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "unit",
+            "value"
+          ],
+          "properties": {
+            "unit": {
+              "type": "string"
+            },
+            "value": {
+              "type": "array",
+              "items": {
+                "$ref": "common.schema.json#/$defs/nullable_number"
+              }
+            },
+            "lo": {
+              "type": "array",
+              "items": {
+                "$ref": "common.schema.json#/$defs/nullable_number"
+              }
+            },
+            "hi": {
+              "type": "array",
+              "items": {
+                "$ref": "common.schema.json#/$defs/nullable_number"
+              }
+            }
+          }
+        },
+        "aqua_raw": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "unit",
+            "value"
+          ],
+          "properties": {
+            "unit": {
+              "type": "string"
+            },
+            "value": {
+              "type": "array",
+              "items": {
+                "$ref": "common.schema.json#/$defs/nullable_number"
+              }
+            },
+            "lo": {
+              "type": "array",
+              "items": {
+                "$ref": "common.schema.json#/$defs/nullable_number"
+              }
+            },
+            "hi": {
+              "type": "array",
+              "items": {
+                "$ref": "common.schema.json#/$defs/nullable_number"
+              }
+            }
+          }
+        },
+        "viirs_raw": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "unit",
+            "value"
+          ],
+          "properties": {
+            "unit": {
+              "type": "string"
+            },
+            "value": {
+              "type": "array",
+              "items": {
+                "$ref": "common.schema.json#/$defs/nullable_number"
+              }
+            },
+            "lo": {
+              "type": "array",
+              "items": {
+                "$ref": "common.schema.json#/$defs/nullable_number"
+              }
+            },
+            "hi": {
+              "type": "array",
+              "items": {
+                "$ref": "common.schema.json#/$defs/nullable_number"
+              }
+            }
+          }
+        },
+        "viirs_as_aqua": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "unit",
+            "value"
+          ],
+          "properties": {
+            "unit": {
+              "type": "string"
+            },
+            "value": {
+              "type": "array",
+              "items": {
+                "$ref": "common.schema.json#/$defs/nullable_number"
+              }
+            },
+            "lo": {
+              "type": "array",
+              "items": {
+                "$ref": "common.schema.json#/$defs/nullable_number"
+              }
+            },
+            "hi": {
+              "type": "array",
+              "items": {
+                "$ref": "common.schema.json#/$defs/nullable_number"
+              }
+            }
+          }
+        },
+        "viirs_equiv": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "unit",
+            "value"
+          ],
+          "properties": {
+            "unit": {
+              "type": "string"
+            },
+            "value": {
+              "type": "array",
+              "items": {
+                "$ref": "common.schema.json#/$defs/nullable_number"
+              }
+            },
+            "lo": {
+              "type": "array",
+              "items": {
+                "$ref": "common.schema.json#/$defs/nullable_number"
+              }
+            },
+            "hi": {
+              "type": "array",
+              "items": {
+                "$ref": "common.schema.json#/$defs/nullable_number"
+              }
+            }
+          }
+        }
+      }
+    },
+    "kind_runs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "series",
+          "from",
+          "to",
+          "kind",
+          "source"
+        ],
+        "properties": {
+          "series": {
+            "$ref": "common.schema.json#/$defs/web_series"
+          },
+          "from": {
+            "$ref": "common.schema.json#/$defs/date"
+          },
+          "to": {
+            "$ref": "common.schema.json#/$defs/date"
+          },
+          "kind": {
+            "$ref": "common.schema.json#/$defs/kind"
+          },
+          "source": {
+            "$ref": "common.schema.json#/$defs/nullable_sensor"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,335 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FireRosetta shared definitions (contracts section 9 and shared shapes)",
+  "$defs": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "generated_at": {
+      "type": "string",
+      "description": "UTC ISO 8601 timestamp ending in Z",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?Z$"
+    },
+    "code_version": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Short git sha, or 'sample' for sample data"
+    },
+    "kind": {
+      "enum": [
+        "observed",
+        "harmonized",
+        "estimated",
+        "missing",
+        "sample"
+      ]
+    },
+    "sensor": {
+      "enum": [
+        "aqua",
+        "terra",
+        "snpp",
+        "noaa20",
+        "noaa21"
+      ]
+    },
+    "nullable_sensor": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/sensor"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "status": {
+      "enum": [
+        "unavailable",
+        "low_activity",
+        "below_normal",
+        "normal",
+        "above_normal",
+        "extreme"
+      ]
+    },
+    "direction": {
+      "enum": [
+        "rising",
+        "falling",
+        "no_clear_change"
+      ]
+    },
+    "sentence_id": {
+      "enum": [
+        "artifact_flat",
+        "artifact_rising",
+        "artifact_falling",
+        "agree",
+        "unclear"
+      ]
+    },
+    "eyesight_status": {
+      "enum": [
+        "validated",
+        "exploratory",
+        "absent"
+      ]
+    },
+    "membership": {
+      "enum": [
+        "polygon",
+        "bbox"
+      ]
+    },
+    "web_series": {
+      "enum": [
+        "aqua_raw",
+        "viirs_raw",
+        "viirs_as_aqua",
+        "harmonized",
+        "viirs_equiv"
+      ]
+    },
+    "region_file": {
+      "enum": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "cells_monthly",
+        "downloads",
+        "hotspots_recent"
+      ]
+    },
+    "naive_source": {
+      "enum": [
+        "modis",
+        "snpp"
+      ]
+    },
+    "validation_method": {
+      "enum": [
+        "tier1",
+        "tier2",
+        "none"
+      ]
+    },
+    "validation_test": {
+      "enum": [
+        "loyo_weekly_wape",
+        "loyo_weekly_r",
+        "loyo_bias",
+        "handoff_annual_mape",
+        "step_naive",
+        "step_harmonized",
+        "sat_agreement_wape",
+        "k_direct_vs_chained_pct",
+        "backcast_weekly_wape",
+        "t1_t2_wape",
+        "reliability_err",
+        "saturation_r5",
+        "saturation_r6"
+      ]
+    },
+    "claim_id": {
+      "enum": [
+        "snpp_end",
+        "snpp_anomaly_2026",
+        "aqua_drift",
+        "aqua_end_science",
+        "submission_rules"
+      ]
+    },
+    "region_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "date": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "nullable_date": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/date"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "datetime_utc": {
+      "$ref": "#/$defs/generated_at"
+    },
+    "year": {
+      "type": "integer"
+    },
+    "week": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 52
+    },
+    "month": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 12
+    },
+    "doy": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 366
+    },
+    "number": {
+      "type": "number"
+    },
+    "nullable_number": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "year_range": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/year"
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "date_range": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/date"
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "value_lo_hi": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "lo",
+        "hi"
+      ],
+      "properties": {
+        "value": {
+          "$ref": "#/$defs/nullable_number"
+        },
+        "lo": {
+          "$ref": "#/$defs/nullable_number"
+        },
+        "hi": {
+          "$ref": "#/$defs/nullable_number"
+        }
+      }
+    },
+    "k_lo_hi": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "k",
+        "lo",
+        "hi"
+      ],
+      "properties": {
+        "k": {
+          "$ref": "#/$defs/number"
+        },
+        "lo": {
+          "$ref": "#/$defs/number"
+        },
+        "hi": {
+          "$ref": "#/$defs/number"
+        }
+      }
+    },
+    "estimate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pct_per_decade",
+        "lo",
+        "hi",
+        "direction"
+      ],
+      "properties": {
+        "pct_per_decade": {
+          "$ref": "#/$defs/number"
+        },
+        "lo": {
+          "$ref": "#/$defs/number"
+        },
+        "hi": {
+          "$ref": "#/$defs/number"
+        },
+        "direction": {
+          "$ref": "#/$defs/direction"
+        }
+      }
+    },
+    "ValidationRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "region",
+        "test",
+        "method",
+        "value",
+        "n",
+        "years",
+        "note"
+      ],
+      "properties": {
+        "region": {
+          "$ref": "#/$defs/region_id"
+        },
+        "test": {
+          "$ref": "#/$defs/validation_test"
+        },
+        "method": {
+          "$ref": "#/$defs/validation_method"
+        },
+        "value": {
+          "$ref": "#/$defs/number"
+        },
+        "baselines": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "raw_viirs": {
+              "$ref": "#/$defs/number"
+            },
+            "annual_ratio": {
+              "$ref": "#/$defs/number"
+            }
+          }
+        },
+        "n": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "years": {
+          "$ref": "#/$defs/year_range"
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

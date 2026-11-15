@@ -86,8 +86,8 @@ Severity: **A** = would produce a wrong result or a failed demo; **B** = would c
 | C04 | A | Data contracts: `naive` and `invisible_estimate` inside a file whose unit is Aqua-equivalent cell-days | Three different units in one series list; the "3–4×" jump is in hotspot counts while the product is in cell-days. | `ruler.json` with unit-free indices; `series_meta` with a unit per series; `viirs_equiv` as its own lens. | Contracts §6.2, 6.8; SD-09 |
 | C05 | A | Mission sentence: "jumped three to four times" | Hand-typed result, taken from other teams' regions, breaking the charter's own rule. | `{jump_multiple}` from `ruler.json`, per region. | §4 below; SD-09 |
 | C06 | A | Hard rule "never add MODIS and VIIRS" vs screen 1 "naive MODIS plus VIIRS record" | The naive line was undefined and read as a sum. | Naive = splice (MODIS to 2011, VIIRS from 2012), defined once. | SD-09 |
-| C07 | A | Step 0: H3 resolution 5 (~250 km²) | Peak-season saturation in Punjab-like regions flattens k and the anomaly signal. | Count at resolution 6; diagnostic V5 at both. | SD-04 |
-| C08 | A | Tier 3: season = 10 %–90 % of the year's activity | Punjab has two seasons; one six-month "season" is meaningless. Glossary also said "middle 80 %". | Critical weeks = fewest weeks holding 80 %; up to two windows. | SD-13 |
+| C07 | A | Step 0: H3 resolution 5 (~250 km²) | Peak-season saturation in intensely burning regions flattens k and the anomaly signal. | Count at resolution 6; diagnostic V5 at both. | SD-04 |
+| C08 | A | Tier 3: season = 10 %–90 % of the year's activity | A region with two burning seasons gets one six-month "season", which is meaningless. Glossary also said "middle 80 %". | Critical weeks = fewest weeks holding 80 %; up to two windows. | SD-13 |
 | C09 | A | Tier 3 anomaly status | Thresholds need the 95th percentile but the climatology stores up to p90; off-season weeks with median 0 make one detection "extreme". Two of three regions are off-season this week. | Empirical percentile formula; `low_activity` status. | SD-11 |
 | C10 | A | Screen 6: "last 7 days … against the same week in every past year" with weekly climatology | Rolling window compared with fixed weeks. | Same day-of-year window in each past year from daily data. | SD-12 |
 | C11 | A | Tier 2 fit: MODIS pixel size from `scan`/`track` as a predictor | Those fields exist only when Aqua detected, so the predictor leaks the outcome. | Dropped. Predictor is VIIRS FRP only. | SD-16 |
@@ -106,7 +106,7 @@ Severity: **A** = would produce a wrong result or a failed demo; **B** = would c
 | C24 | B | MODIS NRT "live comparison while Aqua still flies" | Aqua instruments were projected to stop in August 2026. | Dropped; verify last Aqua day. | §5 item 3 |
 | C25 | B | "The demo cannot break because a service is down" | The map basemap and web fonts are external services. | Basemap optional with fallback; fonts bundled. | Contracts E8; R6 D2 |
 | C26 | B | Data: Area API "up to 10 days per call" | Sources disagree (5 vs 10). | Use ≤ 5. | Contracts E3 |
-| C27 | B | Showcase regions left to "the science lead after the first data pull"; Brazil flagged as too large | An open decision on the critical path and a known volume risk. | Regions locked: Punjab, British Columbia, Santa Fe + Entre Ríos; Mato Grosso is a stretch. Reversible (§6). | SD-19 |
+| C27 | B | Showcase regions left to "the science lead after the first data pull"; Brazil flagged as too large | An open decision on the critical path and a known volume risk. | Regions locked: Punjab, British Columbia, Santa Fe + Entre Ríos; Mato Grosso is a stretch. Reversible (§6). **Superseded 2026-11-14 (R1, scope owner): one US region, `conus`.** | SD-19 |
 | C28 | B | `regions.json` has only a bbox; "region outlines from Natural Earth" | Counting region undefined (box or outline?). | Polygon membership by cell centre; bbox for download only. | SD-04 |
 | C29 | B | Near-real-time rows: "drop detections in grid cells flagged as static" | Grid resolution and threshold unspecified; the last ~5 archive months are also NRT. | Res-8 mask, ≥ 3 static detections, one-ring dilation, applied to every row without `type`. | SD-18 |
 | C30 | B | "52 weeks around the circle" | ISO weeks have 53 and cross year boundaries. | Week = min(52, (doy − 1)//7 + 1), with coverage scaling. | SD-08 |
@@ -120,7 +120,7 @@ Severity: **A** = would produce a wrong result or a failed demo; **B** = would c
 | C38 | C | Submission checklist: "English subtitles burned in" | The rule requires subtitles when the video is not in English. Burned-in subtitles are still a good idea. | Kept as a team choice, not described as a rule. | R2 §11 |
 | C39 | C | "Terra is currently FIRMS's only morning overpass" | Not verified; Terra's own end date is unclear in the sources found. | Not used in the pitch unless R2 finds a source. | §5 item 4 |
 | C40 | C | Validation metric: mean absolute percentage error | Explodes on near-zero weeks. | WAPE as headline; r and bias alongside. | SD section G |
-| C41 | C | Local award: "let a judge choose which region we open first" | Two regions are off-season this week. | `low_activity` layout; the demo defaults to Punjab but any choice works. | SD-11; Architecture §11 |
+| C41 | C | Local award: "let a judge choose which region we open first" | Two regions are off-season this week. | `low_activity` layout; the demo defaults to Punjab but any choice works. **Superseded 2026-11-14: one region, `conus`.** | SD-11; Architecture §11 |
 | C42 | C | Sample data banner | The trigger was "any loaded row has kind sample"; a file with no rows could slip through. | `manifest.contains_sample` as a second trigger; export refuses mixed sample/real regions. | Contracts §6.14; R1 C2 |
 
 ---
@@ -135,7 +135,7 @@ Severity: **A** = would produce a wrong result or a failed demo; **B** = would c
 | IGNIS (`github.com/Hisernberg/ignis-public`) | 26-year monthly record for nine regions, a median-ratio "continuity coefficient", forecasts, many models. | Breadth and model count are covered by others; depth of validation is not. |
 | Flare-Chronos, NasaSpaceApp2026, Chronofire, FireChronicle, Kiln Watch | Pentad calendars, gradient-boosted mapping, 14-day forecasts, agent harnesses, printable local calendars. | Printable briefs and forecasts exist elsewhere too. |
 
-One of these READMEs states the challenge was written by CONAE, Argentina's space agency. That is a third-party statement, not verified here. If the challenge page confirms it, an Argentine showcase region is a small extra reason to feel relevant to the authors; it is already in the plan on data-volume grounds.
+One of these READMEs states the challenge was written by CONAE, Argentina's space agency. That is a third-party statement, not verified here. If the challenge page confirms it, an Argentine showcase region is a small extra reason to feel relevant to the authors; it was in the plan on data-volume grounds. **Superseded 2026-11-14: the project now covers the United States only.**
 
 **Where no repo found overlaps (as far as their READMEs show):** stopping calibration where Aqua's orbit starts drifting and showing the drift; a planted-truth simulator run through the full pipeline; a verdict sentence with an explicit "unclear" branch and robustness variants; a cross-plot of the empirical ratio against the curve-predicted ratio. These are the four proof points in `01_ARCHITECTURE.md` §1. This is a reading of README files on one afternoon; other teams may have more than they describe.
 
@@ -164,7 +164,7 @@ Words to avoid: "number of fires", "real fires", "nobody else", "3 to 4 times" (
 | 2 | Read the **2026** Project Submission Guide and Judging & Awards Guide (limits, deadline, required fields, AI disclosure) | R2 | Sun 10:00 | Update `docs/submission.md` and the video plan |
 | 3 | FIRMS `data_availability`: first and last dates of MODIS (Aqua rows), S-NPP SP, NOAA-20 SP and NRT | R2 | Sat 17:00 | R3 adjusts nothing in code (eras are data-aware) but notes it in limitations |
 | 4 | How much S-NPP data exists after 10 July 2026 | R2 | Sat 22:00 | Update `outages.yaml` |
-| 5 | Country yearly CSV URL pattern | R2 | Sat 16:30 | Download by hand for Punjab |
+| 5 | Country yearly CSV URL pattern | R2 | Sat 16:30 | Download by hand for the United States |
 | 6 | Real CSV headers and satellite codes vs contracts §4.4 and the simulator's §9.4 | R2 → R4 | Sat 20:00 | R4 changes the simulator to match |
 | 7 | Seed outages (Aqua Aug–Sep 2020, S-NPP Jul–Aug 2022) against FIRMS notices | R2 | Sun 09:00 | Remove unconfirmed entries |
 | 8 | Natural Earth admin-1 names for the three regions | R2 | Sat 18:30 | Fall back to bbox membership (recorded in outputs) |
@@ -180,7 +180,7 @@ These were decided to remove open questions. Each is a config change, not a code
 
 | Decision | To reverse |
 |---|---|
-| Third region is Santa Fe + Entre Ríos instead of a Brazilian state | Add `mato_grosso` to `regions.yaml` (bbox in SD-19) and download; drop `litoral` if you prefer |
+| One US region (`conus`) instead of three non-US regions | Add more US regions to `regions.yaml` (one entry each) and download |
 | Counting resolution 6 instead of 5 | `grid.count_res: 5` in `science.yaml` (re-run from `ingest`) |
 | Aqua trusted through 2022 | `eras.aqua_trusted_through` (re-run from `harmonize`); the robustness variants already show the alternatives |
 | Day pass only | run with `--pass N` for a night series |
@@ -202,9 +202,7 @@ These were decided to remove open questions. Each is a config change, not a code
 ### 7.2 Validation summary (R3 fills from `methods.json`; one row per region)
 | Region | LOYO WAPE (ours) | raw VIIRS | annual ratio | Handoff annual % | Sat. agreement WAPE | k direct vs chained % | Drift visible after 2022? | Saturation r5 / r6 | Backcast WAPE | Tier 2 status |
 |---|---|---|---|---|---|---|---|---|---|---|
-| punjab | | | | | | | | | | |
-| bc | | | | | | | | | | |
-| litoral | | | | | | | | | | |
+| conus | | | | | | | | | | |
 
 Planted truth (`synthland`): __ of __ quantities recovered within tolerance. Failures: ______.
 
@@ -218,9 +216,9 @@ Signed by R3: ________ at ____.
 ### 7.4 Cross-OS reproducibility (R2 + one teammate)
 | File | OS 1 (____) sha256 | OS 2 (____) sha256 | Same |
 |---|---|---|---|
-| `punjab/weekly.json` | | | ☐ |
-| `punjab/trend.json` | | | ☐ |
-| `punjab/calibration.json` | | | ☐ |
+| `conus/weekly.json` | | | ☐ |
+| `conus/trend.json` | | | ☐ |
+| `conus/calibration.json` | | | ☐ |
 | `manifest.json` | | | ☐ |
 
 ### 7.5 Accessibility and device check (R6 and R5)

@@ -67,32 +67,16 @@ Website commands (inside `web/`): `npm ci`, `npm run dev`, `npm run typecheck`, 
 ### 4.1 `pipeline/config/regions.yaml` (owner R2)
 ```yaml
 regions:
-  - id: punjab
-    name: "Punjab and Haryana, India"
-    country: IN
-    firms_country_names: ["India"]          # for E2
-    bbox: [73.8, 27.6, 77.6, 32.6]          # W,S,E,N — download only
-    polygon: pipeline/config/regions/punjab.geojson
-    fire_type: "Crop residue burning"
-    story: "Farmers burn crop residue every April–May and October–November; the smoke reaches Delhi."
-    synthetic: false
-  - id: bc
-    name: "British Columbia, Canada"
-    country: CA
-    firms_country_names: ["Canada"]
-    bbox: [-139.1, 48.2, -114.0, 60.1]
-    polygon: pipeline/config/regions/bc.geojson
-    fire_type: "Forest wildfire"
-    story: "Summer wildfire, including the record 2023 season."
-    synthetic: false
-  - id: litoral
-    name: "Santa Fe and Entre Ríos, Argentina"
-    country: AR
-    firms_country_names: ["Argentina"]
-    bbox: [-63.0, -34.5, -57.7, -27.9]
-    polygon: pipeline/config/regions/litoral.geojson
-    fire_type: "Wetland and pasture burning"
-    story: "Paraná Delta wetland fires and pasture burning; a crisis in 2020–2022."
+  # US only (decided by R1 as scope owner, 2026-11-14; replaces the three non-US showcase regions). bbox is the usual
+  # lower-48 extent until R2 derives it from the Natural Earth polygon.
+  - id: conus
+    name: "Contiguous United States"
+    country: US
+    firms_country_names: ["United States"]  # for E2
+    bbox: [-124.8, 24.4, -66.9, 49.4]       # W,S,E,N — download only
+    polygon: pipeline/config/regions/conus.geojson
+    fire_type: "Wildfire, prescribed and agricultural burning"
+    story: "Summer and autumn wildfire in the West; prescribed and agricultural burning in the Southeast and the Great Plains, mostly in spring."
     synthetic: false
   - id: synthland
     name: "Synthland (planted-truth test)"
@@ -195,14 +179,14 @@ All under `web/public/data/`. **Only R1's code writes here, with one exception: 
 
 Every JSON file starts with: `"schema_version": "1.0", "generated_at": "<UTC ISO>", "code_version": "<git sha or 'sample'>"`.
 
-Static URL of every file: `{BASE}data/<path>` (so `GET {BASE}data/punjab/weekly.json`).
+Static URL of every file: `{BASE}data/<path>` (so `GET {BASE}data/conus/weekly.json`).
 
 ### 6.1 `regions.json`
 ```json
 {"schema_version":"1.0","generated_at":"…","code_version":"…",
- "regions":[{"id":"punjab","name":"Punjab and Haryana, India","country":"IN",
-   "bbox":[73.8,27.6,77.6,32.6],"centroid":[75.7,30.1],
-   "fire_type":"Crop residue burning","story":"…","n_cells_r6":5600,
+ "regions":[{"id":"conus","name":"Contiguous United States","country":"US",
+   "bbox":[-124.8,24.4,-66.9,49.4],"centroid":[-95.85,36.9],
+   "fire_type":"Wildfire, prescribed and agricultural burning","story":"…","n_cells_r6":5600,
    "membership":"polygon","last_data_day":"2026-11-13","synthetic":false,
    "files":["weekly","monthly","daily","climatology","season","trend","ruler","nowcast","hex","calibration","outline"],
    "optional_files":["cells_monthly","downloads","hotspots_recent"]}]}
@@ -211,7 +195,7 @@ Static URL of every file: `{BASE}data/<path>` (so `GET {BASE}data/punjab/weekly.
 
 ### 6.2 `{region}/weekly.json`
 ```json
-{"schema_version":"1.0","region":"punjab",
+{"schema_version":"1.0","region":"conus",
  "series_meta":{
    "aqua_raw":{"label":"MODIS Aqua, as recorded","unit":"fire cell-days per week"},
    "viirs_raw":{"label":"VIIRS, as recorded","unit":"fire cell-days per week"},
@@ -230,7 +214,7 @@ Same as 6.2 with `"month": 1–12` instead of `week`, and units "… per month".
 
 ### 6.4 `{region}/daily.json` (columnar, for date-range analytics and CSV export)
 ```json
-{"schema_version":"1.0","region":"punjab","start":"2003-01-01","n_days":8718,
+{"schema_version":"1.0","region":"conus","start":"2003-01-01","n_days":8718,
  "series":{
    "harmonized":{"unit":"Aqua-equivalent fire cell-days per day","value":[0,2.0,null],"lo":[0,2.0,null],"hi":[0,2.0,null]},
    "aqua_raw":{"unit":"fire cell-days per day","value":[0,2,null]},
@@ -243,7 +227,7 @@ Index `i` is day `start + i`. `null` means missing (`kind: missing` overrides th
 
 ### 6.5 `{region}/climatology.json`
 ```json
-{"schema_version":"1.0","region":"punjab","baseline_years":[2003,2025],
+{"schema_version":"1.0","region":"conus","baseline_years":[2003,2025],
  "unit_week":"Aqua-equivalent fire cell-days per week","unit_month":"Aqua-equivalent fire cell-days per month",
  "weeks":[{"week":1,"min":0,"p10":0,"p25":0,"p50":0,"p75":0,"p90":0,"max":0,"n_years":23}],
  "months":[{"month":1,"min":0,"p10":0,"p25":0,"p50":0,"p75":0,"p90":0,"max":0,"n_years":23}]}
@@ -251,7 +235,7 @@ Index `i` is day `start + i`. `null` means missing (`kind: missing` overrides th
 
 ### 6.6 `{region}/season.json`
 ```json
-{"schema_version":"1.0","region":"punjab",
+{"schema_version":"1.0","region":"conus",
  "definition":"The fewest weeks that hold 80% of a typical year's burning",
  "critical_weeks":[17,18,19,42,43,44,45,46],
  "windows":[{"id":"w1","label":"mid-October to mid-November","start_week":42,"peak_week":44,"end_week":46,"share":0.71,
@@ -263,7 +247,7 @@ Index `i` is day `start + i`. `null` means missing (`kind: missing` overrides th
 
 ### 6.7 `{region}/trend.json`
 ```json
-{"schema_version":"1.0","region":"punjab","years":[2003,2025],
+{"schema_version":"1.0","region":"conus","years":[2003,2025],
  "annual":[{"year":2003,"harmonized":1234.0,"lo":1234.0,"hi":1234.0,"kind":"observed","naive_count":5678.0,"naive_source":"modis"}],
  "harmonized":{"pct_per_decade":0,"lo":0,"hi":0,"direction":"no_clear_change"},
  "naive":{"pct_per_decade":0,"lo":0,"hi":0,"direction":"rising"},
@@ -274,7 +258,7 @@ Index `i` is day `start + i`. `null` means missing (`kind: missing` overrides th
 
 ### 6.8 `{region}/ruler.json`
 ```json
-{"schema_version":"1.0","region":"punjab","index_base_years":[2003,2011],
+{"schema_version":"1.0","region":"conus","index_base_years":[2003,2011],
  "jump_multiple":{"value":0,"lo":0,"hi":0,"years":[2013,2022],
    "definition":"Mean yearly S-NPP VIIRS hotspot count divided by mean yearly MODIS (Terra + Aqua) hotspot count, same years, same place"},
  "rows":[{"year":2003,"naive_index":1.0,"harmonized_index":1.0,"naive_source":"modis","kind":"observed"}],
@@ -283,7 +267,7 @@ Index `i` is day `start + i`. `null` means missing (`kind: missing` overrides th
 
 ### 6.9 `{region}/nowcast.json`
 ```json
-{"schema_version":"1.0","region":"punjab","as_of":"2026-11-15T12:00:00Z","source":"VIIRS_NOAA20_NRT",
+{"schema_version":"1.0","region":"conus","as_of":"2026-11-15T12:00:00Z","source":"VIIRS_NOAA20_NRT",
  "window":{"start":"2026-11-08","end":"2026-11-14","days_covered":7},
  "value":0,"lo":0,"hi":0,"unit":"Aqua-equivalent fire cell-days per 7 days",
  "percentile":0,"status":"normal","baseline_years":[2003,2025],
@@ -294,7 +278,7 @@ Index `i` is day `start + i`. `null` means missing (`kind: missing` overrides th
 
 ### 6.10 `{region}/hex.json`
 ```json
-{"schema_version":"1.0","region":"punjab","resolution":5,
+{"schema_version":"1.0","region":"conus","resolution":5,
  "unit":"VIIRS fire cell-days per year","source":"snpp","years":[2013,2025],"kind":"observed",
  "cells":[{"h3":"85…","critical":12.3,"all_year":20.1}]}
 ```
@@ -302,7 +286,7 @@ Index `i` is day `start + i`. `null` means missing (`kind: missing` overrides th
 
 ### 6.11 `{region}/calibration.json`
 ```json
-{"schema_version":"1.0","region":"punjab","reference":"aqua_day","count_resolution":6,"shrinkage_n0":50,
+{"schema_version":"1.0","region":"conus","reference":"aqua_day","count_resolution":6,"shrinkage_n0":50,
  "eras":[{"from":"2003-01-01","to":"2022-12-31","source":"aqua","kind":"observed"},
          {"from":"2023-01-01","to":"2025-12-31","source":"snpp","kind":"harmonized"},
          {"from":"2026-01-01","to":null,"source":"noaa20","kind":"harmonized"}],
@@ -317,23 +301,23 @@ Index `i` is day `start + i`. `null` means missing (`kind: missing` overrides th
 - `{region}/outline.geojson` — the region polygon (FeatureCollection, one feature).
 - `{region}/cells_monthly.csv` — area-of-interest lens. Header `h3_r5,ym,aqua,viirs`. `ym` = `YYYYMM`; `aqua` = Aqua daytime res-6 fire cell-days inside that res-5 cell that month; `viirs` = the same for the primary VIIRS. Rows with both zero are omitted.
 - `{region}/hotspots_recent.csv` — last 31 days of cleaned NOAA-20 near-real-time detections. Header `latitude,longitude,acq_date,acq_time,satellite,confidence,frp,daynight,local_day,h3_r6`.
-- `{region}/downloads.json` — `{"schema_version":"1.0","region":"punjab","hotspot_archives":[{"year":2024,"sensor":"snpp","url":"https://…/hotspots_punjab_snpp_2024.csv.gz","rows":0,"bytes":0}]}`.
+- `{region}/downloads.json` — `{"schema_version":"1.0","region":"conus","hotspot_archives":[{"year":2024,"sensor":"snpp","url":"https://…/hotspots_conus_snpp_2024.csv.gz","rows":0,"bytes":0}]}`.
 
 ### 6.13 `methods.json` (one file, all regions)
 ```json
 {"schema_version":"1.0","generated_at":"…","code_version":"…",
  "decisions":{"reference":"MODIS Aqua, daytime","count_resolution":6,"aqua_trusted_through":"2022-12-31",
               "snpp_through":"2025-12-31","baseline_years":[2003,2025],"science_yaml_sha256":"…"},
- "validation":[{"region":"punjab","test":"loyo_weekly_wape","method":"tier1","value":0,
+ "validation":[{"region":"conus","test":"loyo_weekly_wape","method":"tier1","value":0,
                 "baselines":{"raw_viirs":0,"annual_ratio":0},"n":520,"years":[2013,2022],"note":""}],
- "drift":[{"region":"punjab","sensor":"snpp","year":2013,"k_annual":0.5,"lo":0.45,"hi":0.55}],
- "eyesight":[{"region":"punjab","status":"validated","params":{"a":0,"b":0,"c":0,"a_lo":0,"a_hi":0,"b_lo":0,"b_hi":0,"c_lo":0,"c_hi":0},
+ "drift":[{"region":"conus","sensor":"snpp","year":2013,"k_annual":0.5,"lo":0.45,"hi":0.55}],
+ "eyesight":[{"region":"conus","status":"validated","params":{"a":0,"b":0,"c":0,"a_lo":0,"a_hi":0,"b_lo":0,"b_hi":0,"c_lo":0,"c_hi":0},
               "g":1.0,"n_celldays":0,"curve":[{"frp_mw":1,"p":0,"lo":0,"hi":0}],
               "binned":[{"frp_mw":1,"p_obs":0,"n":0}],
               "k_compare":[{"month":1,"k_tier1":0.5,"k_tier2":0.5}]}],
  "planted_truth":[{"quantity":"k_annual_snpp","truth":0.5,"recovered":0.49,"tolerance":0.03,"pass":true}],
- "inputs":[{"source":"MODIS_SP","region":"punjab","rows":0,"first_date":"…","last_date":"…","downloaded":"…","via":"archive"}],
- "filters":[{"region":"punjab","sensor":"aqua","step":"confidence","rows_in":0,"rows_dropped":0}],
+ "inputs":[{"source":"MODIS_SP","region":"conus","rows":0,"first_date":"…","last_date":"…","downloaded":"…","via":"archive"}],
+ "filters":[{"region":"conus","sensor":"aqua","step":"confidence","rows_in":0,"rows_dropped":0}],
  "sources":[{"claim_id":"snpp_end","text":"…","url":"…","checked":"2026-11-15"}],
  "limitations":["…"],"ai_use":"…"}
 ```
@@ -342,12 +326,14 @@ Index `i` is day `start + i`. `null` means missing (`kind: missing` overrides th
 
 `eyesight[].status` is `validated`, `exploratory` or `absent`.
 
+`planted_truth[]` has one row per entry of `truth.json → expected`. `recovered` is `null` (and `pass` is `false`) when the output needed to evaluate it is absent, so a missing check shows as a failure instead of disappearing. *(Changed after Gate A by R1: `recovered` was a plain number.)*
+
 `sources[].claim_id` uses these fixed ids so the web and the pitch can look them up: `snpp_end`, `snpp_anomaly_2026`, `aqua_drift`, `aqua_end_science`, `submission_rules`. A claim without a verified URL is left out of the file and therefore out of the pitch.
 
 Also written next to `methods.json`: `numbers_audit.md` (every headline number with its JSON path; produced by `python -m pipeline.export.audit`).
 
 ### 6.14 `manifest.json`
-`{"schema_version":"1.0","generated_at":"…","code_version":"…","contains_sample":false,"files":[{"path":"punjab/weekly.json","sha256":"…","bytes":0,"kinds":["observed","harmonized","missing"]}]}`. The website shows the **SAMPLE DATA** banner when `contains_sample` is true or any loaded row has `kind: "sample"`.
+`{"schema_version":"1.0","generated_at":"…","code_version":"…","contains_sample":false,"files":[{"path":"conus/weekly.json","sha256":"…","bytes":0,"kinds":["observed","harmonized","missing"]}]}`. The website shows the **SAMPLE DATA** banner when `contains_sample` is true or any loaded row has `kind: "sample"`.
 
 ---
 

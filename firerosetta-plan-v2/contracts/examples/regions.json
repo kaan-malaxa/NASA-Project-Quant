@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-11-14T12:00:00Z",
+  "code_version": "example",
+  "regions": [
+    {
+      "id": "conus",
+      "name": "Contiguous United States",
+      "country": "US",
+      "bbox": [
+        -124.8,
+        24.4,
+        -66.9,
+        49.4
+      ],
+      "centroid": [
+        -95.85,
+        36.9
+      ],
+      "fire_type": "Wildfire, prescribed and agricultural burning",
+      "story": "Summer and autumn wildfire in the West; prescribed and agricultural burning in the Southeast and the Great Plains, mostly in spring.",
+      "n_cells_r6": 5600,
+      "membership": "polygon",
+      "last_data_day": "2026-11-13",
+      "synthetic": false,
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline"
+      ],
+      "optional_files": [
+        "cells_monthly",
+        "downloads",
+        "hotspots_recent"
+      ]
+    }
+  ]
+}

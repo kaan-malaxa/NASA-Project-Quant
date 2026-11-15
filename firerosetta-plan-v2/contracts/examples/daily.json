@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-11-14T12:00:00Z",
+  "code_version": "example",
+  "region": "conus",
+  "start": "2003-01-01",
+  "n_days": 3,
+  "series": {
+    "harmonized": {
+      "unit": "Aqua-equivalent fire cell-days per day",
+      "value": [
+        0,
+        2.0,
+        null
+      ],
+      "lo": [
+        0,
+        2.0,
+        null
+      ],
+      "hi": [
+        0,
+        2.0,
+        null
+      ]
+    },
+    "aqua_raw": {
+      "unit": "fire cell-days per day",
+      "value": [
+        0,
+        2,
+        null
+      ]
+    },
+    "viirs_raw": {
+      "unit": "fire cell-days per day",
+      "value": [
+        null,
+        null,
+        null
+      ]
+    }
+  },
+  "kind_runs": [
+    {
+      "series": "harmonized",
+      "from": "2003-01-01",
+      "to": "2022-12-31",
+      "kind": "observed",
+      "source": "aqua"
+    },
+    {
+      "series": "harmonized",
+      "from": "2023-01-01",
+      "to": "2025-12-31",
+      "kind": "harmonized",
+      "source": "snpp"
+    },
+    {
+      "series": "harmonized",
+      "from": "2026-01-01",
+      "to": "2026-11-13",
+      "kind": "harmonized",
+      "source": "noaa20"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "downloads.json — contracts 6.12",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "generated_at",
+    "code_version",
+    "region",
+    "hotspot_archives"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schema_version"
+    },
+    "generated_at": {
+      "$ref": "common.schema.json#/$defs/generated_at"
+    },
+    "code_version": {
+      "$ref": "common.schema.json#/$defs/code_version"
+    },
+    "region": {
+      "$ref": "common.schema.json#/$defs/region_id"
+    },
+    "hotspot_archives": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "year",
+          "sensor",
+          "url",
+          "rows",
+          "bytes"
+        ],
+        "properties": {
+          "year": {
+            "$ref": "common.schema.json#/$defs/year"
+          },
+          "sensor": {
+            "$ref": "common.schema.json#/$defs/sensor"
+          },
+          "url": {
+            "type": "string",
+            "minLength": 1
+          },
+          "rows": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    }
+  }
+}

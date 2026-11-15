@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trend.json — contracts 6.7",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "generated_at",
+    "code_version",
+    "region",
+    "years",
+    "annual",
+    "harmonized",
+    "naive",
+    "robustness",
+    "sentence_id",
+    "sentence"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schema_version"
+    },
+    "generated_at": {
+      "$ref": "common.schema.json#/$defs/generated_at"
+    },
+    "code_version": {
+      "$ref": "common.schema.json#/$defs/code_version"
+    },
+    "region": {
+      "$ref": "common.schema.json#/$defs/region_id"
+    },
+    "years": {
+      "$ref": "common.schema.json#/$defs/year_range"
+    },
+    "annual": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "year",
+          "harmonized",
+          "lo",
+          "hi",
+          "kind",
+          "naive_count",
+          "naive_source"
+        ],
+        "properties": {
+          "year": {
+            "$ref": "common.schema.json#/$defs/year"
+          },
+          "harmonized": {
+            "$ref": "common.schema.json#/$defs/nullable_number"
+          },
+          "lo": {
+            "$ref": "common.schema.json#/$defs/nullable_number"
+          },
+          "hi": {
+            "$ref": "common.schema.json#/$defs/nullable_number"
+          },
+          "kind": {
+            "$ref": "common.schema.json#/$defs/kind"
+          },
+          "naive_count": {
+            "$ref": "common.schema.json#/$defs/nullable_number"
+          },
+          "naive_source": {
+            "$ref": "common.schema.json#/$defs/naive_source"
+          }
+        }
+      }
+    },
+    "harmonized": {
+      "$ref": "common.schema.json#/$defs/estimate"
+    },
+    "naive": {
+      "$ref": "common.schema.json#/$defs/estimate"
+    },
+    "robustness": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "variant",
+          "pct_per_decade",
+          "lo",
+          "hi",
+          "direction"
+        ],
+        "properties": {
+          "variant": {
+            "enum": [
+              "aqua_only_2003_2022",
+              "translated_from_2012"
+            ]
+          },
+          "pct_per_decade": {
+            "$ref": "common.schema.json#/$defs/number"
+          },
+          "lo": {
+            "$ref": "common.schema.json#/$defs/number"
+          },
+          "hi": {
+            "$ref": "common.schema.json#/$defs/number"
+          },
+          "direction": {
+            "$ref": "common.schema.json#/$defs/direction"
+          }
+        }
+      }
+    },
+    "sentence_id": {
+      "$ref": "common.schema.json#/$defs/sentence_id"
+    },
+    "sentence": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-11-14T12:00:00Z",
+  "code_version": "example",
+  "region": "conus",
+  "reference": "aqua_day",
+  "count_resolution": 6,
+  "shrinkage_n0": 50,
+  "eras": [
+    {
+      "from": "2003-01-01",
+      "to": "2022-12-31",
+      "source": "aqua",
+      "kind": "observed"
+    },
+    {
+      "from": "2023-01-01",
+      "to": "2025-12-31",
+      "source": "snpp",
+      "kind": "harmonized"
+    },
+    {
+      "from": "2026-01-01",
+      "to": null,
+      "source": "noaa20",
+      "kind": "harmonized"
+    }
+  ],
+  "fit_window": {
+    "snpp": [
+      "2013-01-01",
+      "2022-12-31"
+    ],
+    "noaa20": [
+      "2019-01-01",
+      "2022-12-31"
+    ]
+  },
+  "noaa20_method": "direct",
+  "k_annual": {
+    "snpp": {
+      "k": 0.5,
+      "lo": 0.45,
+      "hi": 0.55
+    },
+    "noaa20": {
+      "k": 0.5,
+      "lo": 0.45,
+      "hi": 0.55
+    }
+  },
+  "k": {
+    "snpp": [
+      {
+        "month": 1,
+        "k": 0.5,
+        "lo": 0.4,
+        "hi": 0.6,
+        "aqua_celldays": 123,
+        "viirs_celldays": 246
+      }
+    ],
+    "noaa20": [
+      {
+        "month": 1,
+        "k": 0.5,
+        "lo": 0.4,
+        "hi": 0.6,
+        "aqua_celldays": 60,
+        "viirs_celldays": 120
+      }
+    ]
+  }
+}

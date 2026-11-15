@@ -1,0 +1,96 @@
+/*
+ * Season Brief: print-first, one page, light background and black text whatever the site theme.
+ * The page box is sized for the SMALLER of A4 (210 x 297 mm) and US Letter (216 x 279 mm) with 12 mm margins:
+ * 186 mm wide x 255 mm tall, so the same layout fits one sheet of either paper.
+ * White and black here are the print requirement of prompt D2, not theme colours (theme colours stay in tokens.css).
+ */
+@page {
+  size: portrait;
+  margin: 12mm;
+}
+
+.brief {
+  color-scheme: light;
+  background: #fff;
+  color: #000;
+  min-height: 100svh;
+  font-size: 10pt;
+  line-height: 1.35;
+}
+
+.brief-page {
+  width: 186mm;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 8mm 0;
+}
+
+/* Fixed chart boxes keep the page height predictable; R6's charts fill their box. */
+.brief-calendar {
+  height: 48mm;
+  overflow: hidden;
+}
+
+/* Text column + map column (map 70 mm wide). */
+.brief-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 70mm;
+  column-gap: 6mm;
+  align-items: start;
+}
+
+.brief-map {
+  height: 62mm;
+  overflow: hidden;
+}
+
+.brief a {
+  color: inherit;
+}
+
+@media screen {
+  .brief {
+    background: #f4f4f4;
+  }
+
+  .brief-page {
+    background: #fff;
+    padding: 10mm 12mm;
+    width: calc(186mm + 24mm);
+    box-shadow: 0 0 0 1px #ccc;
+    margin: 6mm auto;
+  }
+}
+
+@media print {
+  html,
+  body {
+    background: #fff !important;
+  }
+
+  .brief,
+  .brief-page {
+    background: #fff;
+    min-height: 0;
+  }
+
+  .brief-page {
+    width: auto;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+  }
+
+  .brief .no-print {
+    display: none !important;
+  }
+
+  .brief [data-testid="sample-banner"] {
+    position: static;
+  }
+
+  .brief section,
+  .brief figure {
+    break-inside: avoid;
+  }
+}

@@ -49,7 +49,7 @@ export default function Methods() {
         <Drift drift={m.drift || []} regions={regions} nameOf={nameOf} trustedThrough={m.decisions?.aqua_trusted_through} />
       ) : null}
       {has(m?.validation) ? <Validation rows={m.validation} nameOf={nameOf} /> : null}
-      {has(m?.planted_truth) ? <PlantedTruth rows={m.planted_truth} /> : null}
+      {has(m?.planted_truth) ? <PlantedTruth rows={m.planted_truth} manifest={manifest} /> : null}
       {has(m?.eyesight) ? <Eyesight entries={m.eyesight} nameOf={nameOf} /> : null}
       {m && (has(m.inputs) || has(m.filters) || has(m.sources)) ? <Data m={m} nameOf={nameOf} manifest={manifest} /> : null}
       <Closing m={m} />
@@ -223,8 +223,8 @@ function PassFail({ pass }) {
   );
 }
 
-function PlantedTruth({ rows }) {
-  const audit = useFileExists("numbers_audit.md");
+function PlantedTruth({ rows, manifest }) {
+  const audit = useFileExists("numbers_audit.md", manifest);
   return (
     <MethodsSection
       id="planted-truth"

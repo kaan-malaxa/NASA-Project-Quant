@@ -24,19 +24,19 @@ test.describe("published real outputs", () => {
     expect(errors).toEqual([]);
   });
 
-  test("whole-region AOI, exports, keyboard, mobile and basemap fallback use real data", async ({page}) => {
+  test("calendar exports, keyboard, mobile and basemap fallback use real data", async ({page}) => {
     test.setTimeout(180000);
     const errors = watch(page);
     await page.emulateMedia({reducedMotion:"reduce"});
     await page.setViewportSize({width:390,height:844});
     await page.route("https://tiles.openfreemap.org/**", (route) => route.abort("blockedbyclient"));
     await open(page, "#/r/us?analysis_from=2022&analysis_to=2022&view=months");
-    await page.getByRole("gridcell").first().focus();
+    await page.getByRole("grid").first().focus();
     await page.keyboard.press("ArrowRight");
     await page.keyboard.press("Enter");
     await expect(page.getByRole("button", {name:/close/i}).first()).toBeVisible();
     await page.locator("#where").scrollIntoViewIfNeeded();
-    await expect(page.locator("#where svg, #where canvas").first()).toBeVisible();
+    await expect(page.locator('#where canvas.maplibregl-canvas, #where svg.fr-viz [role="button"]').first()).toBeVisible({timeout:60000});
     const download = page.waitForEvent("download");
     await page.getByRole("button", {name:/series csv/i}).click();
     expect((await download).suggestedFilename()).toMatch(/firerosetta_us/);

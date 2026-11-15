@@ -27,6 +27,18 @@ jobs:
           FIREROSETTA_WEB_DATA_DIR: ${{ runner.temp }}/firerosetta/web-data
         run: uv run python -m pipeline.export --check
       - name: Snapshot scientific payloads
+        env:
+          FIREROSETTA_WEB_DATA_DIR: ${{ runner.temp }}/firerosetta/web-data
+        # Keep recovery failures visible even when their JSON is structurally valid.
+        # The snapshot command runs after the explicit assertion below.
+        run: >-
+          uv run python -c "import json, os, pathlib;
+          site = pathlib.Path(os.environ['FIREROSETTA_WEB_DATA_DIR']);
+          rows = json.loads((site / 'methods.json').read_text(encoding='utf-8'))['planted_truth'];
+          assert rows and all(row['pass'] for row in rows), rows;
+          assert not json.loads((site / 'manifest.json').read_text(encoding='utf-8'))['contains_sample'];
+          print('OK CI planted truth', len(rows))"
+      - name: Write reproducibility snapshot
         run: uv run python -m pipeline.export.reproducibility --snapshot "${{ runner.temp }}/firerosetta/web-data" --output "repro/${{ matrix.os }}.json"
       - uses: actions/upload-artifact@v4
         with:

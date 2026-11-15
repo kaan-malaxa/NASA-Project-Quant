@@ -102,7 +102,7 @@ function chartSpec(id, d) {
     "fire cell-days";
   switch (id) {
     case "agreement":
-      return {title: "Agreement on matching years excluded from fitting", el: <HeldoutAgreement
+      return {title: "Agreement on matching years excluded from fitting", width: 800, el: <HeldoutAgreement
         comparison={methods?.eyesight?.find((row) => row.region === region.id)?.heldout_compare ?? []} />};
     case "ruler":
       return {
@@ -170,7 +170,7 @@ function chartSpec(id, d) {
     }
     case "hexmap":
       return {
-        title: "Where the hotspots were",
+          title: "Where the record shows burning activity",
         el: (
           <Suspense fallback={null}>
             <HexMap hex={files.hex} outline={files.outline} metric="critical" />

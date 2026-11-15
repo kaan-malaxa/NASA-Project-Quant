@@ -32,15 +32,16 @@ jobs:
           cache-dependency-path: web/package-lock.json
       - run: npm ci
       - run: npm run gen:types
+      - run: git diff --exit-code -- src/data/types.gen.d.ts
       - run: npm run typecheck
       - run: npm run lint
       - run: npm run test
+      - run: npx playwright install --with-deps chromium
+      - run: npm run e2e
       - run: npm run build
         env:
           VITE_BASE: /${{ github.event.repository.name }}/
           VITE_SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
-      - run: npx playwright install --with-deps chromium
-      - run: npm run e2e
       - if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v5
       - if: github.event_name != 'pull_request'

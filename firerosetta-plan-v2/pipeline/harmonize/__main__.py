@@ -31,6 +31,7 @@ def run_region(region: str, pass_: str | None = None, *, shared=None):
     from pipeline.harmonize.calibrate import daily_counts
     from pipeline.harmonize.naive import naive_annual
     from pipeline.harmonize.series import SENSORS, build_daily_series, build_outputs
+    from pipeline.harmonize.validate import validate_tier1, validation_figures
 
     shared = _common() if shared is None else shared
     science = shared.config.load_science()
@@ -68,6 +69,16 @@ def run_region(region: str, pass_: str | None = None, *, shared=None):
     result.naive_annual = naive_annual(
         hotspots, coverage, science, last_year, aggregate=shared.timebins.aggregate
     )
+    inventory_path = shared.paths.grid_dir(region).joinpath("region_cells.parquet")
+    inventory = (shared.io.read_parquet(inventory_path, schema_name="region_cells")
+                 if inventory_path.exists() else None)
+    validation = validate_tier1(
+        counts, result.daily, result.naive_annual, result.fits, science, region,
+        aggregate=shared.timebins.aggregate,
+        celldays=cells, coverage=coverage, region_cells=inventory,
+        pass_=pass_ or science["reference"]["pass"],
+    )
+    result.validation = validation.document
 
     # The repository root is anchored by the contracted web/public/data path;
     # data paths themselves always come from the common path helpers.
@@ -96,6 +107,10 @@ def run_region(region: str, pass_: str | None = None, *, shared=None):
         output.joinpath("naive_annual.parquet"),
         schema_name="naive_annual",
     )
+    shared.io.write_json(result.validation, output.joinpath("validation_t1.json"))
+    for name, figure in validation_figures(validation).items():
+        shared.io.write_figure(figure, output.joinpath("figures", name))
+        figure.clear()
     return result
 
 

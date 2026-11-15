@@ -29,6 +29,7 @@ def test_science_yaml_matches_contract():
             "n20_min_detection_days": 300,
             "monthly": True,
         },
+        "validation": {"step_window_years": 3, "drift_bootstrap_b": 200},
         "timebins": {
             "solar_degrees_per_hour": 15,
             "week_days": 7,

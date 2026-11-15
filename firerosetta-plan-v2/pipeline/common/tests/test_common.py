@@ -105,3 +105,64 @@ def test_runner_uses_only_us_subprocesses_and_logs(monkeypatch, capsys):
     log.get_logger("test")
     log.finish("test", "united_states", 1, 0)
     assert "OK test united_states rows=1" in capsys.readouterr().out
+
+
+def test_figure_writer_creates_png_and_preserves_previous_output_on_failure(tmp_path):
+    from matplotlib.figure import Figure
+
+    figure = Figure()
+    figure.subplots().plot([0, 1], [0, 1])
+    path = tmp_path / "figures" / "known.png"
+    io.write_figure(figure, path)
+    original = path.read_bytes()
+    assert original.startswith(b"\x89PNG\r\n\x1a\n")
+    broken = Mock()
+    broken.savefig.side_effect = RuntimeError("cannot draw")
+    with pytest.raises(RuntimeError, match="cannot draw"):
+        io.write_figure(broken, path)
+    assert path.read_bytes() == original
+    assert list(path.parent.iterdir()) == [path]
+
+
+def test_region_inventory_requires_membership_metadata(tmp_path):
+    inventory = pd.DataFrame(
+        {"h3_r6": ["known-cell"], "h3_r5": ["known-parent"], "lat": [38.0], "lon": [-100.0]}
+    )
+    path = tmp_path / "region_cells.parquet"
+    with pytest.raises(ValueError, match="membership"):
+        io.write_parquet(inventory, path, "region_cells")
+    inventory.attrs["membership"] = "polygon"
+    io.write_parquet(inventory, path, "region_cells")
+    assert io.read_parquet(path, "region_cells").equals(inventory)
+
+
+def test_optional_inventory_must_be_attested_by_us_provenance(tmp_path, monkeypatch):
+    monkeypatch.setenv("FIREROSETTA_DATA_ROOT", str(tmp_path))
+    monkeypatch.setattr(io, "source_inventory", lambda: [])
+    monkeypatch.setattr(io, "sha256", lambda path: "test-hash")
+    region = "united_states"
+    required = [
+        paths.celldays(region),
+        paths.coverage(region),
+        paths.grid_dir(region) / "hotspot_counts_daily.parquet",
+    ]
+    record = {
+        "region": region,
+        "source_files": [],
+        "config_sha256": {"science.yaml": "test-hash", "outages.yaml": "test-hash"},
+        "outputs": [
+            {"file": path.relative_to(tmp_path).as_posix(), "sha256": "test-hash"} for path in required
+        ],
+    }
+    io.write_json(record, paths.provenance(region))
+    inventory_path = paths.grid_dir(region) / "region_cells.parquet"
+    inventory = pd.DataFrame(
+        {"h3_r6": ["test-cell"], "h3_r5": ["test-parent"], "lat": [38.0], "lon": [-100.0]}
+    )
+    inventory.attrs["membership"] = "polygon"
+    io.write_parquet(inventory, inventory_path, "region_cells")
+    with pytest.raises(ValueError, match="does not attest"):
+        io.verify_us_inputs(region)
+    record["outputs"].append({"file": inventory_path.relative_to(tmp_path).as_posix(), "sha256": "test-hash"})
+    io.write_json(record, paths.provenance(region))
+    io.verify_us_inputs(region)

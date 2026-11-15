@@ -67,6 +67,9 @@ SCHEMAS = {
         [("sensor", pa.string()), ("utc_date", pa.date32()), ("n_raw_rows", pa.int64())]
     ),
     "static_mask": pa.schema([("h3_r8", pa.string())]),
+    "region_cells": pa.schema(
+        [("h3_r6", pa.string()), ("h3_r5", pa.string()), ("lat", pa.float64()), ("lon", pa.float64())]
+    ),
 }
 
 
@@ -111,6 +114,13 @@ def write_parquet(df, path, schema_name):
     if set(df.columns) != set(schema.names):
         raise ValueError(f"{schema_name} columns must be {schema.names}, got {list(df.columns)}")
     table = pa.Table.from_pandas(df[schema.names], schema=schema, preserve_index=False, safe=True)
+    if schema_name == "region_cells":
+        membership = df.attrs.get("membership")
+        if membership not in ("polygon", "bbox"):
+            raise ValueError("Region-cell inventory requires membership=polygon|bbox metadata")
+        table = table.replace_schema_metadata(
+            {**(table.schema.metadata or {}), b"membership": membership.encode()}
+        )
     path.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.NamedTemporaryFile(dir=path.parent, delete=False) as stream:
         temporary = Path(stream.name)
@@ -126,7 +136,25 @@ def read_parquet(path, schema_name):
     expected = SCHEMAS[schema_name]
     if not table.schema.equals(expected, check_metadata=False):
         raise ValueError(f"{path}: schema does not match {schema_name}")
+    if schema_name == "region_cells" and (table.schema.metadata or {}).get(b"membership") not in (
+        b"polygon",
+        b"bbox",
+    ):
+        raise ValueError("Region-cell inventory requires membership=polygon|bbox metadata")
     return table.to_pandas()
+
+
+def write_figure(figure, path):
+    """Atomically write a headless PNG using the same output policy as tables."""
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.NamedTemporaryFile(dir=path.parent, delete=False) as stream:
+        temporary = Path(stream.name)
+    try:
+        figure.savefig(temporary, format="png")
+        os.replace(temporary, path)
+    finally:
+        temporary.unlink(missing_ok=True)
 
 
 def sha256(path):
@@ -161,6 +189,9 @@ def verify_us_inputs(region):
         paths.coverage(region),
         paths.grid_dir(region) / "hotspot_counts_daily.parquet",
     }
+    region_cells = paths.grid_dir(region) / "region_cells.parquet"
+    if region_cells.exists():
+        required.add(region_cells)
     attested = {paths.data_root() / output["file"] for output in record["outputs"]}
     if not required.issubset(attested):
         raise ValueError("US provenance does not attest every harmonization input")

@@ -61,6 +61,7 @@ class SeriesResult:
     bootstrap: BootstrapDraws | None = None
     annual_bootstrap: pd.DataFrame | None = None
     naive_annual: pd.DataFrame | None = None
+    validation: dict | None = None
 
 
 def first_noaa20_full_year(celldays: pd.DataFrame, min_detection_days: int) -> int | None:

@@ -214,6 +214,31 @@ Language rules: say "satellite-detected burning activity", never "number of fire
 | V7 | **Planted truth:** run recovery checks only on explicitly fabricated unit inputs; local US observations are not planted truth | R4 + all | pass/fail per quantity | shown on the Methods page |
 | V8 | Tier 1 vs Tier 2 forward, held-out years | R4 | WAPE between them | feeds SD-17 |
 
+V2 uses `validation.step_window_years: 3` (R3-approved config extension; R3 coordinates R1):
+compare the three calendar years beginning in the year of `eras.snpp_first_day` with the
+three immediately preceding years. Report the `tier1.interval_percentiles` endpoints of
+the same adjacent three-year/three-year ratio for every consecutive six-year window
+from `eras.record_start` through the year before that splice. Missing annual totals
+invalidate a comparison window; no missing year is replaced by zero. Both step notes
+state: "totals match partly by construction; see LOYO". V1 and its annual-only baseline
+refit every component, including the shrinkage target, without the held-out year.
+
+V4 uses `validation.drift_bootstrap_b: 200` (R3-approved config extension; R3
+coordinates R1), the configured `seed`, and `tier1.interval_percentiles`. Resample
+observed calendar-week blocks within each year; sum their **unscaled** paired
+counts before taking the annual Aqua/VIIRS ratio. This preserves the raw annual
+ratio, including the longer final calendar week. Zero-VIIRS draws have undefined
+ratios and are excluded from the percentile calculation. The scalar
+`drift_summary.mean_k_fit_window` is the arithmetic mean of valid yearly **S-NPP**
+ratios inside `tier1.snpp_fit`; `departure_pct_by_year` reports each later year's
+percentage departure from that mean. NOAA-20 has separate sensor-labeled drift
+entries from its first full year. These diagnostics never change calibration.
+V5 requires an R2-attested US region-cell inventory; absent that input, report
+null saturation with a reason, never use the union of detected cells as its
+denominator. Average covered-day activity within the peak week per fit year,
+then average those annual fractions. V6 uses V1's independently held-out factors
+in reverse; zero factors give unavailable predictions rather than division by zero.
+
 Rules: training and test years never mix; any split is by year. A result that looks too good is treated as a leak until proven otherwise. Use WAPE, not MAPE, as the headline (MAPE explodes on near-zero weeks).
 
 ---

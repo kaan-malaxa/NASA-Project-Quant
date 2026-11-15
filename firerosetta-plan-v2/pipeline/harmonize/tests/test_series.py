@@ -36,7 +36,7 @@ def science():
         "seed": 7,
         "scope": {"region_id": "united_states", "country": "US"},
         "reference": {"sensor": "aqua", "pass": "D"},
-        "grid": {"count_res": 6},
+        "grid": {"count_res": 6, "map_res": 5},
         "eras": {
             "record_start": "2003-01-01",
             "aqua_trusted_through": "2022-12-31",
@@ -52,7 +52,8 @@ def science():
             "n20_min_detection_days": 300,
             "monthly": True,
         },
-        "timebins": {"year_min_covered_frac": 0.9},
+        "timebins": {"year_min_covered_frac": 0.9, "week_days": 7},
+        "validation": {"step_window_years": 3, "drift_bootstrap_b": 200},
     }
 
 
@@ -348,6 +349,7 @@ def shared(tmp_path, tables, science):
             read_parquet=Mock(side_effect=lambda path, schema_name: reads[schema_name]),
             write_parquet=Mock(),
             write_json=Mock(),
+            write_figure=Mock(),
             read_json=Mock(),
         ),
         timebins=SimpleNamespace(
@@ -379,11 +381,20 @@ def test_stage_uses_common_io_and_prints_results(shared, monkeypatch, capsys):
     assert naive_call.kwargs == {"schema_name": "naive_annual"}
     assert len(bootstrap_call.args[0]) == 500 * 23
     assert bootstrap_call.args[0]["year"].max() == 2025
-    assert shared.timebins.aggregate.call_count == 3
-    assert all(call.kwargs["grain"] == "year" for call in shared.timebins.aggregate.call_args_list)
-    doc, path = shared.io.write_json.call_args.args
+    assert {call.kwargs["grain"] for call in shared.timebins.aggregate.call_args_list} == {"week", "year"}
+    assert shared.io.write_json.call_count == 2
+    doc, path = shared.io.write_json.call_args_list[0].args
     assert path == shared.paths.harmonized_dir("united_states") / "calibration.json"
     assert doc["noaa20_method"] == "direct"
+    validation, path = shared.io.write_json.call_args_list[1].args
+    assert path == shared.paths.harmonized_dir("united_states") / "validation_t1.json"
+    assert len(validation["validation"]) == 13
+    assert validation["drift"]
+    assert validation["drift_summary"]["mean_k_fit_window"] == pytest.approx(0.5)
+    assert all(row["region"] == "united_states" for row in validation["validation"])
+    assert {call.args[1].name for call in shared.io.write_figure.call_args_list} == {
+        "loyo_scatter.png", "overlay_aqua_vs_translated.png", "drift_k_by_year.png",
+    }
     assert len(frame) > 0
     output = capsys.readouterr().out
     assert "snpp k_annual=0.5" in output
@@ -437,6 +448,7 @@ def test_stage_validates_existing_schema_before_writing(shared, tmp_path):
     shared.io.read_json.assert_called_once_with(schema_path)
     shared.io.write_parquet.reset_mock()
     shared.io.write_json.reset_mock()
+    shared.io.write_figure.reset_mock()
     shared.io.read_json.return_value = {"type": "object", "required": ["nonexistent"]}
     from jsonschema import ValidationError
 
@@ -444,6 +456,7 @@ def test_stage_validates_existing_schema_before_writing(shared, tmp_path):
         stage.run_region("united_states", shared=shared)
     shared.io.write_parquet.assert_not_called()
     shared.io.write_json.assert_not_called()
+    shared.io.write_figure.assert_not_called()
 
 
 def test_stage_data_root_override_and_restore(shared, monkeypatch):

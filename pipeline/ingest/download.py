@@ -183,6 +183,12 @@ def download_country(region, years, products):
     return update_manifest("us")
 
 
+def default_years(science):
+    """Every year of the analysis record: record start through the last baseline year."""
+    first = date.fromisoformat(science["eras"]["record_start"]).year
+    return range(first, science["climatology"]["baseline_years"][1] + 1)
+
+
 def parse_years(raw):
     try:
         first, last = map(int, raw.split(":"))
@@ -213,8 +219,8 @@ def main(argv=None):
                 science = config.load_science()
             except FileNotFoundError:
                 raise DownloadError("Supply --years YYYY:YYYY until R3 provides science.yaml") from None
-            args.years = f'{date.fromisoformat(science["eras"]["record_start"]).year}:'
-            args.years += str(science["climatology"]["baseline_years"][1])
+            years = default_years(science)
+            args.years = f"{years[0]}:{years[-1]}"
         selected = (
             [item for value in args.sources for item in value.split(",")]
             if args.sources else list(PRODUCTS)

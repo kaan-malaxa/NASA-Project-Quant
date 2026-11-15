@@ -22,7 +22,7 @@ from pipeline.harmonize.tests.planted_truth import (
 def fixture_truth():
     """Known answers for the fabricated 4:8:10 tables, never actual US truth."""
     return {
-        "region": "united_states",
+        "region": "us",
         "country": "US",
         "verification": {"verified_by": "R4", "celldays_sha256": "0" * 64},
         "planted": {
@@ -74,17 +74,17 @@ def fixture_truth():
 def us_paths(tmp_path, monkeypatch):
     monkeypatch.setattr(paths, "data_root", lambda: tmp_path)
     cells, _ = planted_tables(["2019-01-01"])
-    io.write_parquet(cells, paths.celldays("united_states"), "celldays")
+    io.write_parquet(cells, paths.celldays("us"), "celldays")
     truth = fixture_truth()
-    truth["verification"]["celldays_sha256"] = io.sha256(paths.celldays("united_states"))
-    return paths.raw_dir("united_states") / "truth.json", truth
+    truth["verification"]["celldays_sha256"] = io.sha256(paths.celldays("us"))
+    return paths.raw_dir("us") / "truth.json", truth
 
 
 @pytest.fixture(scope="module")
 def snapshot():
     cells, coverage = series_tables()
     science = config.load_science()
-    result = build_outputs(cells, coverage, science, "united_states")
+    result = build_outputs(cells, coverage, science, "us")
     return cells, coverage, science, result
 
 
@@ -92,7 +92,7 @@ def test_missing_truth_does_not_fall_back_to_other_region(us_paths):
     path, truth = us_paths
     other = path.parent.parent / "another_region" / "truth.json"
     io.write_json(truth, other)
-    actual, reason = us_truth_inputs("united_states")
+    actual, reason = us_truth_inputs("us")
     assert actual is None
     assert "no R4-verified US truth.json" in reason
     assert "observations, not planted truth" in reason
@@ -101,11 +101,11 @@ def test_missing_truth_does_not_fall_back_to_other_region(us_paths):
 def test_verified_truth_requires_exact_us_cell_hash(us_paths):
     path, truth = us_paths
     io.write_json(truth, path)
-    actual, reason = us_truth_inputs("united_states")
+    actual, reason = us_truth_inputs("us")
     assert reason is None and actual == truth
-    with paths.celldays("united_states").open("ab") as stream:
+    with paths.celldays("us").open("ab") as stream:
         stream.write(b"different input")
-    actual, reason = us_truth_inputs("united_states")
+    actual, reason = us_truth_inputs("us")
     assert actual is None and "does not match" in reason
 
 
@@ -121,15 +121,15 @@ def test_unverified_or_non_us_truth_is_skipped(us_paths, field, value, reason_fr
     path, truth = us_paths
     truth[field] = value
     io.write_json(truth, path)
-    actual, reason = us_truth_inputs("united_states")
+    actual, reason = us_truth_inputs("us")
     assert actual is None and reason_fragment in reason
 
 
 def test_absent_matching_cells_skip(us_paths):
     path, truth = us_paths
     io.write_json(truth, path)
-    paths.celldays("united_states").unlink()
-    actual, reason = us_truth_inputs("united_states")
+    paths.celldays("us").unlink()
+    actual, reason = us_truth_inputs("us")
     assert actual is None and "matching US celldays are absent" in reason
 
 
@@ -142,7 +142,7 @@ def test_symlink_truth_is_never_read_as_us_truth(us_paths):
         path.symlink_to(other)
     except OSError:
         pytest.skip("Test symlinks unavailable on this platform")
-    actual, reason = us_truth_inputs("united_states")
+    actual, reason = us_truth_inputs("us")
     assert actual is None and "symlinked input" in reason
 
 
@@ -157,7 +157,7 @@ def test_unreadable_truth_skips_with_explicit_reason(us_paths):
     path, _ = us_paths
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text("{malformed", encoding="utf-8")
-    actual, reason = us_truth_inputs("united_states")
+    actual, reason = us_truth_inputs("us")
     assert actual is None and "truth.json cannot be verified" in reason
 
 

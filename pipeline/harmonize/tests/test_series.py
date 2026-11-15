@@ -34,7 +34,7 @@ def science():
     # separate test_science_yaml test still requires and checks the real loader.
     return {
         "seed": 7,
-        "scope": {"region_id": "united_states", "country": "US"},
+        "scope": {"region_id": "us", "country": "US"},
         "reference": {"sensor": "aqua", "pass": "D"},
         "grid": {"count_res": 6, "map_res": 5},
         "eras": {
@@ -64,7 +64,7 @@ def tables():
 
 @pytest.fixture
 def result(tables, science):
-    return build_outputs(*tables, science, "united_states")
+    return build_outputs(*tables, science, "us")
 
 
 def row(result, day, series="harmonized"):
@@ -128,7 +128,7 @@ def test_covered_days_without_detections_remain_zero(tables, science):
     cells, coverage = tables
     zeros = [date(2003, 1, 1), date(2026, 1, 1)]
     cells = cells.loc[~cells["local_day"].isin(zeros)]
-    actual = build_outputs(cells, coverage, science, "united_states")
+    actual = build_outputs(cells, coverage, science, "us")
     for day, series in (
         ("2003-01-01", "harmonized"),
         ("2003-01-01", "viirs_equiv_t1"),
@@ -222,7 +222,7 @@ def test_uncertainty_bands_multiply_forward_and_reverse_on_inverse(result, table
 
 def test_no_qualifying_noaa_year_is_absent_with_snpp_fallback(tables, science):
     science["tier1"]["n20_min_detection_days"] = 366
-    actual = build_outputs(*tables, science, "united_states")
+    actual = build_outputs(*tables, science, "us")
     assert actual.fits.n20_first_full_year is None
     assert actual.calibration["noaa20_method"] is None
     assert actual.calibration["fit_window"]["noaa20"] is None
@@ -251,7 +251,7 @@ def test_chained_method_keeps_distinct_direct_and_chained_candidates(tables, sci
     extra["h3_r6"] += "-extra"
     cells = pd.concat([cells, extra], ignore_index=True)
     science["tier1"]["n20_min_fit_years"] = 5
-    actual = build_outputs(cells, coverage, science, "united_states")
+    actual = build_outputs(cells, coverage, science, "us")
     assert actual.calibration["noaa20_method"] == "chained"
     assert actual.calibration["fit_window"]["noaa20"] == ["2019-01-01", "2025-12-31"]
     assert actual.fits.noaa20_direct[1] == pytest.approx(0.4)
@@ -260,7 +260,7 @@ def test_chained_method_keeps_distinct_direct_and_chained_candidates(tables, sci
 
 
 def test_late_first_noaa_year_keeps_direct_unavailability(science):
-    actual = build_outputs(*series_tables(n20_first_year=2023), science, "united_states")
+    actual = build_outputs(*series_tables(n20_first_year=2023), science, "us")
     assert actual.fits.noaa20_direct is None
     assert "direct" in actual.fits.unavailable
     assert actual.fits.noaa20_chained is not None
@@ -275,14 +275,14 @@ def test_selected_method_is_not_silently_replaced(tables, science):
     )
     coverage.loc[no_overlap, "covered"] = False
     with pytest.raises(ValueError, match="NOAA-20 direct calibration unavailable"):
-        build_outputs(cells, coverage, science, "united_states")
+        build_outputs(cells, coverage, science, "us")
 
 
 def test_post_fit_aqua_drift_does_not_leak_into_either_candidate(tables, result, science):
     cells, coverage = tables
     extra = cells.loc[cells["sensor"].eq("aqua") & cells["local_day"].ge(date(2023, 1, 1))].copy()
     extra["h3_r6"] += "-drift"
-    altered = build_outputs(pd.concat([cells, extra]), coverage, science, "united_states")
+    altered = build_outputs(pd.concat([cells, extra]), coverage, science, "us")
     assert altered.calibration["k_annual"] == result.calibration["k_annual"]
     assert_frame_equal(altered.fits.snpp[0], result.fits.snpp[0])
     assert_frame_equal(altered.fits.noaa20_direct[0], result.fits.noaa20_direct[0])
@@ -297,7 +297,7 @@ def test_annual_fallback_and_inputs_not_modified(tables, science):
     cells_before, coverage_before = cells.copy(deep=True), coverage.copy(deep=True)
     science["tier1"]["monthly"] = False
     science_before = deepcopy(science)
-    actual = build_outputs(cells, coverage, science, "united_states")
+    actual = build_outputs(cells, coverage, science, "us")
     assert actual.fits.snpp[0]["k"].nunique() > 1
     for sensor in ("snpp", "noaa20"):
         annual = actual.calibration["k_annual"][sensor]["k"]
@@ -309,7 +309,7 @@ def test_annual_fallback_and_inputs_not_modified(tables, science):
 
 def test_night_pass_uses_night_rows(tables, science):
     cells, coverage = tables
-    actual = build_outputs(cells.assign(daynight="N"), coverage, science, "united_states", pass_="N")
+    actual = build_outputs(cells.assign(daynight="N"), coverage, science, "us", pass_="N")
     assert actual.calibration["reference"] == "aqua_night"
     assert row(actual, "2023-01-01").value == 4
 
@@ -364,16 +364,16 @@ def shared(tmp_path, tables, science):
 
 def test_stage_uses_common_io_and_prints_results(shared, monkeypatch, capsys):
     monkeypatch.setattr(stage, "_common", lambda: shared)
-    assert stage.main(["--region", "united_states"]) == 0
+    assert stage.main(["--region", "us"]) == 0
     shared.cli.stage_parser.assert_called_once_with("harmonize")
     shared.config.load_science.assert_called_once()
-    shared.config.get_region.assert_called_once_with("united_states")
-    shared.io.verify_us_inputs.assert_called_once_with("united_states")
+    shared.config.get_region.assert_called_once_with("us")
+    shared.io.verify_us_inputs.assert_called_once_with("us")
     assert shared.io.read_parquet.call_count == 3
     assert shared.io.write_parquet.call_count == 3
     daily_call, bootstrap_call, naive_call = shared.io.write_parquet.call_args_list
     frame, path = daily_call.args
-    assert path == shared.paths.harmonized_dir("united_states") / "daily.parquet"
+    assert path == shared.paths.harmonized_dir("us") / "daily.parquet"
     assert daily_call.kwargs == {"schema_name": "daily"}
     assert bootstrap_call.args[1].name == "annual_bootstrap.parquet"
     assert bootstrap_call.kwargs == {"schema_name": "annual_bootstrap"}
@@ -384,14 +384,14 @@ def test_stage_uses_common_io_and_prints_results(shared, monkeypatch, capsys):
     assert {call.kwargs["grain"] for call in shared.timebins.aggregate.call_args_list} == {"week", "year"}
     assert shared.io.write_json.call_count == 2
     doc, path = shared.io.write_json.call_args_list[0].args
-    assert path == shared.paths.harmonized_dir("united_states") / "calibration.json"
+    assert path == shared.paths.harmonized_dir("us") / "calibration.json"
     assert doc["noaa20_method"] == "direct"
     validation, path = shared.io.write_json.call_args_list[1].args
-    assert path == shared.paths.harmonized_dir("united_states") / "validation_t1.json"
+    assert path == shared.paths.harmonized_dir("us") / "validation_t1.json"
     assert len(validation["validation"]) == 13
     assert validation["drift"]
     assert validation["drift_summary"]["mean_k_fit_window"] == pytest.approx(0.5)
-    assert all(row["region"] == "united_states" for row in validation["validation"])
+    assert all(row["region"] == "us" for row in validation["validation"])
     assert {call.args[1].name for call in shared.io.write_figure.call_args_list} == {
         "loyo_scatter.png", "overlay_aqua_vs_translated.png", "drift_k_by_year.png",
     }
@@ -403,7 +403,7 @@ def test_stage_uses_common_io_and_prints_results(shared, monkeypatch, capsys):
     assert "harmonized missing_days=" in output
     assert shared.log.finish.call_args.args[:3] == (
         "harmonize",
-        "united_states",
+        "us",
         len(frame),
     )
 
@@ -411,7 +411,7 @@ def test_stage_uses_common_io_and_prints_results(shared, monkeypatch, capsys):
 def test_stage_reports_one_line_failure_without_writing(shared, monkeypatch, capsys):
     shared.io.read_parquet.side_effect = FileNotFoundError("missing\ninput")
     monkeypatch.setattr(stage, "_common", lambda: shared)
-    assert stage.main(["--region", "united_states"]) == 1
+    assert stage.main(["--region", "us"]) == 1
     assert capsys.readouterr().err == "ERROR harmonize: missing input\n"
     shared.io.write_parquet.assert_not_called()
     shared.io.write_json.assert_not_called()
@@ -426,7 +426,7 @@ def test_stage_writes_bootstrap_bands_into_daily_translations(shared):
     shared.io.read_parquet.side_effect = lambda path, schema_name: (
         altered if schema_name == "celldays" else read(path, schema_name)
     )
-    result = stage.run_region("united_states", shared=shared)
+    result = stage.run_region("us", shared=shared)
     factor = result.calibration["k"]["snpp"][0]
     assert factor["lo"] < factor["hi"]
     translated = row(result, "2023-01-01")
@@ -444,7 +444,7 @@ def test_stage_validates_existing_schema_before_writing(shared, tmp_path):
     schema_path.parent.mkdir()
     schema_path.touch()
     shared.io.read_json.return_value = {"type": "object", "required": ["noaa20_method"]}
-    stage.run_region("united_states", shared=shared)
+    stage.run_region("us", shared=shared)
     shared.io.read_json.assert_called_once_with(schema_path)
     shared.io.write_parquet.reset_mock()
     shared.io.write_json.reset_mock()
@@ -453,7 +453,7 @@ def test_stage_validates_existing_schema_before_writing(shared, tmp_path):
     from jsonschema import ValidationError
 
     with pytest.raises(ValidationError):
-        stage.run_region("united_states", shared=shared)
+        stage.run_region("us", shared=shared)
     shared.io.write_parquet.assert_not_called()
     shared.io.write_json.assert_not_called()
     shared.io.write_figure.assert_not_called()
@@ -466,6 +466,6 @@ def test_stage_data_root_override_and_restore(shared, monkeypatch):
     monkeypatch.setattr(stage, "_common", lambda: shared)
     seen = []
     shared.config.get_region.side_effect = lambda region: seen.append(os.environ["FIREROSETTA_DATA_ROOT"])
-    assert stage.main(["--region", "united_states", "--data-root", "new-root"]) == 0
+    assert stage.main(["--region", "us", "--data-root", "new-root"]) == 0
     assert seen == ["new-root"]
     assert os.environ["FIREROSETTA_DATA_ROOT"] == "original-root"

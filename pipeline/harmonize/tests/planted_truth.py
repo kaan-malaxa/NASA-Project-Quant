@@ -1,8 +1,8 @@
 """US planted-truth gate and comparisons, used only by tests.
 
-R4 must supply data/raw/united_states/truth.json with the existing expected and
+R4 must supply data/raw/us/truth.json with the existing expected and
 planted structure from its role primer. R3 approved these additional fields:
-region='united_states', country='US', and verification containing verified_by=
+region='us', country='US', and verification containing verified_by=
 'R4' plus celldays_sha256. No truth values are inferred from observed outputs.
 
 Coefficient expectations use source_file='calibration.json' and paths such as

@@ -48,16 +48,16 @@ def test_paths_and_cli_override(tmp_path, monkeypatch):
     assert paths.natural_earth_source() == paths.tmp_dir() / "ne_10m_admin_1_states_provinces.geojson"
     candidates = paths.country_csv_candidates("modis", 2023, "United_States")
     assert candidates == [
-        paths.PROJECT_ROOT.parent / "data" / "MODIS_data" / "modis_2023_United_States.csv",
+        paths.PROJECT_ROOT / "data" / "MODIS_data" / "modis_2023_United_States.csv",
     ]
-    assert paths.source_data_root() == (paths.PROJECT_ROOT.parent / "data").resolve()
+    assert paths.source_data_root() == (paths.PROJECT_ROOT / "data").resolve()
 
 
 def test_regions_and_science(tmp_path, monkeypatch):
-    assert [r.id for r in config.load_regions()] == ["us"]
+    assert [r.id for r in config.load_regions()] == ["us", "synthland"]
     assert not config.get_region("us").synthetic
-    with pytest.raises(ValueError, match="Unknown region"):
-        config.get_region("synthland")
+    assert config.real_region().id == "us"
+    assert config.get_region("synthland").synthetic
     with pytest.raises(ValueError, match="Unknown region"):
         config.get_region("unknown")
     monkeypatch.setattr(paths, "config_file", lambda name: tmp_path / name)

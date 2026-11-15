@@ -6,7 +6,7 @@ From `firerosetta-plan-v2/`:
 
 ```text
 uv sync
-uv run python -m pipeline.run --region united_states
+uv run python -m pipeline.run --region us
 uv run pytest pipeline -q
 ```
 
@@ -16,7 +16,7 @@ the tables. A changed source, config or derived input requires rerunning ingest.
 `--data-root` and `FIREROSETTA_DATA_ROOT` move derived outputs only; they never
 redirect the raw US source files.
 
-Results are in workspace-root `data/harmonized/united_states/`. Unit tests use
+Results are in workspace-root `data/harmonized/us/`. Unit tests use
 explicit fabricated tables; their values are never substituted for real US
 inputs. The supplied country exports do not include a polygon, centroid or
 planted truth. Country-file membership is retained without inventing those

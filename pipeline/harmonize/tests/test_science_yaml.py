@@ -10,7 +10,7 @@ def test_science_yaml_matches_contract():
     """Load the real config through common and check every key and value."""
     expected = {
         "seed": 7,
-        "scope": {"region_id": "united_states", "country": "US"},
+        "scope": {"region_id": "us", "country": "US", "planted_truth_region_ids": ["synthland"]},
         "reference": {"sensor": "aqua", "pass": "D"},
         "filters": {"modis_min_confidence": 30, "viirs_keep": ["n", "h"], "keep_type": 0},
         "grid": {"count_res": 6, "map_res": 5, "mask_res": 8},

@@ -11,7 +11,7 @@ def data_root() -> Path:
 
 def source_data_root() -> Path:
     """The sole hotspot input directory; output overrides cannot change it."""
-    return (PROJECT_ROOT.parent / "data").resolve()
+    return (PROJECT_ROOT / "data").resolve()
 
 
 def raw_dir(region) -> Path:

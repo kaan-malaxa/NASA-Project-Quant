@@ -28,7 +28,7 @@ from pipeline.harmonize.tests.fabricate import (
 def science():
     return {
         "seed": 7,
-        "scope": {"region_id": "united_states", "country": "US"},
+        "scope": {"region_id": "us", "country": "US"},
         "reference": {"sensor": "aqua", "pass": "D"},
         "grid": {"count_res": 6},
         "eras": {
@@ -57,7 +57,7 @@ def test_constant_ratio_has_zero_width_for_both_sensors(science, method):
     fits = fit_calibrations(counts, cells, science)
     assert fits.noaa20_method == method
     draws = bootstrap_k(counts, science, fits)
-    doc = with_intervals(calibration_document("united_states", science, fits), draws, [5, 95])
+    doc = with_intervals(calibration_document("us", science, fits), draws, [5, 95])
     for sensor, expected in (("snpp", 0.5), ("noaa20", 0.4)):
         assert doc["k_annual"][sensor] == {
             "k": expected,
@@ -73,7 +73,7 @@ def test_variable_year_ratios_cover_half_within_planted_range(science):
     counts, cells = ratio_daily_tables([0.4, 0.45, 0.5, 0.55, 0.6])
     fits = fit_calibrations(counts, cells, science)
     draws = bootstrap_k(counts, science, fits)
-    before = calibration_document("united_states", science, fits)
+    before = calibration_document("us", science, fits)
     doc = with_intervals(before, draws, science["tier1"]["interval_percentiles"])
     annual = doc["k_annual"]["snpp"]
     assert 0.4 <= annual["lo"] < 0.5 < annual["hi"] <= 0.6
@@ -287,7 +287,7 @@ def test_custom_percentiles_are_used_exactly(science):
     counts, cells = ratio_daily_tables([0.4, 0.6])
     fits = fit_calibrations(counts, cells, science)
     draws = bootstrap_k(counts, science, fits)
-    doc = with_intervals(calibration_document("united_states", science, fits), draws, [20, 80])
+    doc = with_intervals(calibration_document("us", science, fits), draws, [20, 80])
     expected = np.percentile(draws.monthly["snpp"], [20, 80], axis=0)
     assert doc["k"]["snpp"][0]["lo"] == expected[0, 0]
     assert doc["k"]["snpp"][0]["hi"] == expected[1, 0]

@@ -1,4 +1,5 @@
 """Contract section 5 schemas and deterministic file IO."""
+import hashlib
 import json
 import math
 import subprocess
@@ -92,6 +93,11 @@ def write_parquet(df, path, schema_name: str) -> None:
         if (
             (pa.types.is_string(field.type) and pa.types.is_large_string(column.type))
             or (field.nullable and column.null_count == len(column))
+            # Same-kind numeric widths (pandas defaults to int64/float64): a checked cast, which
+            # raises on overflow instead of silently changing a value.
+            or (pa.types.is_integer(field.type) and pa.types.is_integer(column.type))
+            or (pa.types.is_floating(field.type)
+                and (pa.types.is_floating(column.type) or pa.types.is_integer(column.type)))
         ):
             table = table.set_column(table.column_names.index(field.name), field, column.cast(field.type))
     metadata = dict(table.schema.metadata or {})
@@ -134,6 +140,31 @@ def write_json(obj, path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="\n") as handle:
         handle.write(text)
+
+
+def sha256(path) -> str:
+    digest = hashlib.sha256()
+    with Path(path).open("rb") as handle:
+        for block in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def read_json(path):
+    with Path(path).open(encoding="utf-8") as handle:
+        return json.load(handle)
+
+
+def write_figure(figure, path) -> None:
+    """Write a matplotlib figure as PNG; a failed render leaves the previous file in place."""
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    staging = path.with_name(path.name + ".part")
+    try:
+        figure.savefig(staging, format="png")
+        staging.replace(path)
+    finally:
+        staging.unlink(missing_ok=True)
 
 
 def code_version() -> str:

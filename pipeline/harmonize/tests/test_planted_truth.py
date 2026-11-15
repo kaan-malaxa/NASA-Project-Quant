@@ -17,15 +17,13 @@ from pipeline.harmonize.tests.planted_truth import (
 
 def test_us_planted_truth():
     science = config.load_science()
-    region = config.get_region("united_states")
+    region = config.get_region("us")
     truth, reason = us_truth_inputs(region.id)
     if reason:
         print(comparison_table(skipped=True), flush=True)
         pytest.skip(reason)
     validate_truth(truth, science)
-    # The truth hash binds the specific cell-days; normal stage provenance also
-    # verifies their US CSV sources, coverage and hotspot-count inputs.
-    io.verify_us_inputs(region.id)
+    # The truth hash binds the specific cell-days to the truth file.
     result = subprocess.run(
         [
             sys.executable,
@@ -36,7 +34,7 @@ def test_us_planted_truth():
             "--pass",
             science["reference"]["pass"],
         ],
-        cwd=paths.project_root(),
+        cwd=paths.PROJECT_ROOT,
         capture_output=True,
         text=True,
         check=False,

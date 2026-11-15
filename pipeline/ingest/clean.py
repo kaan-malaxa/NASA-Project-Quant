@@ -187,12 +187,35 @@ def clean_files(inputs, region, science, *, publish=True):
     return sum(len(frame) for frame in outputs.values())
 
 
+def synthetic_inputs(region_id, manifest_path):
+    """Raw files of a simulated region: exactly what its simulator listed in MANIFEST.json."""
+    if not manifest_path.is_file():
+        raise FileNotFoundError(f"Run pipeline.synth --region {region_id} first: {manifest_path} is missing")
+    inputs = []
+    for entry in json.loads(manifest_path.read_text(encoding="utf-8")):
+        name = entry["file"]
+        if entry.get("via") != "synth" or Path(name).name != name:
+            raise ValueError("A simulated region may only contain simulator output")
+        path = paths.raw_dir(region_id) / name
+        if not path.is_file():
+            raise FileNotFoundError(f"Simulated raw file listed in MANIFEST.json is missing: {name}")
+        file_family(path)
+        inputs.append(path)
+    if not inputs:
+        raise ValueError("No simulated inputs are listed in MANIFEST.json")
+    return inputs
+
+
 def run(region_id):
     region = config.get_region(region_id)
     science = config.load_science()
     manifest_path = paths.manifest(region_id)
+    if region.synthetic:
+        return clean_files(synthetic_inputs(region_id, manifest_path), region, science)
+    config.require_us_region(region)
     if not manifest_path.is_file():
-        raise FileNotFoundError("Stage the local US CSVs first with pipeline.ingest.download")
+        # First run on this machine: stage the local country CSVs (no network), then clean them.
+        download.download_country(region, download.default_years(science), list(download.PRODUCTS))
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     if not manifest:
         raise ValueError("No staged US inputs are listed in MANIFEST.json")

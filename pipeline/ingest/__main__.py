@@ -4,7 +4,7 @@ import time
 
 import duckdb
 
-from pipeline.common import cli, log
+from pipeline.common import cli, config, log
 from pipeline.ingest import clean, grid
 
 
@@ -17,10 +17,11 @@ def main(argv=None):
         steps = args.steps.split(",")
         if steps not in [["clean"], ["grid"], ["clean", "grid"]]:
             raise ValueError("--steps must be clean, grid, or clean,grid")
+        region = args.region or config.real_region().id
         rows = 0
         for step in steps:
-            rows = (clean.run if step == "clean" else grid.run)(args.region or "us")
-        log.finish("ingest", args.region or "us", rows, t0)
+            rows = (clean.run if step == "clean" else grid.run)(region)
+        log.finish("ingest", region, rows, t0)
         return 0
     except (OSError, ValueError, KeyError, duckdb.Error) as error:
         print(f"FAIL ingest: {error}", file=sys.stderr)

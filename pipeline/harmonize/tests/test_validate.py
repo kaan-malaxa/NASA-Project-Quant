@@ -52,7 +52,7 @@ def outputs(counts, science):
         ignore_index=True,
     )
     daily = build_daily_series(
-        counts, coverage, science, calibration_document("united_states", science, fits)
+        counts, coverage, science, calibration_document("us", science, fits)
     )
     # Known annual hotspot counts, distinct from the cell-day series. The naive
     # splice doubles at the VIIRS arrival, independent of changing fire activity.
@@ -62,7 +62,7 @@ def outputs(counts, science):
 
 def validate(counts, science):
     daily, naive, fits = outputs(counts, science)
-    return validate_tier1(counts, daily, naive, fits, science, "united_states")
+    return validate_tier1(counts, daily, naive, fits, science, "us")
 
 
 def rows(result):
@@ -92,7 +92,7 @@ def test_constant_ratio_loyo_and_raw_baseline(science):
     assert actual["backcast_weekly_wape"]["n"] == 520
     for entry in actual.values():
         assert entry.keys() >= {"region", "test", "method", "value", "n", "years", "note"}
-        assert entry["region"] == "united_states"
+        assert entry["region"] == "us"
         assert entry["value"] is None or np.isfinite(entry["value"])
     for name in ("step_naive", "step_harmonized"):
         assert "totals match partly by construction; see LOYO" in actual[name]["note"]
@@ -175,12 +175,12 @@ def test_unavailable_comparisons_are_null_not_zero(science):
     counts = planted_counts(science)
     daily, naive, fits = outputs(counts, science)
     fits = replace(fits, noaa20_direct=None, unavailable={"direct": "no eligible observations"})
-    result = validate_tier1(counts, daily, naive, fits, science, "united_states")
+    result = validate_tier1(counts, daily, naive, fits, science, "us")
     entry = rows(result)["k_direct_vs_chained_pct"]
     assert entry["value"] is None and entry["n"] == 0
     assert "no eligible observations" in entry["note"]
     fits = replace(fits, n20_first_full_year=None, noaa20_chained=None)
-    result = validate_tier1(counts, daily, naive, fits, science, "united_states")
+    result = validate_tier1(counts, daily, naive, fits, science, "us")
     assert rows(result)["sat_agreement_wape"]["value"] is None
     assert rows(result)["sat_agreement_wape"]["n"] == 0
     assert rows(result)["sat_agreement_wape"]["years"] == []
@@ -301,7 +301,7 @@ def saturation_inputs(science):
 
 def test_every_region_cell_active_every_day_gives_saturation_one(science, saturation_inputs):
     cells, coverage, inventory, aqua = saturation_inputs
-    actual = saturation_rows(cells, coverage, aqua, inventory, science, "united_states")
+    actual = saturation_rows(cells, coverage, aqua, inventory, science, "us")
     assert len(actual) == 4
     assert {entry["test"] for entry in actual} == {"saturation_r5", "saturation_r6"}
     for entry in actual:
@@ -317,18 +317,18 @@ def test_saturation_uses_full_inventory_and_unique_parents(science, saturation_i
         {"h3_r6": [f"cell-{i}" for i in range(8)], "h3_r5": [f"parent-{i % 2}" for i in range(8)]}
     )
     cells["h3_r5"] = cells["h3_r6"].map(inventory.set_index("h3_r6")["h3_r5"])
-    actual = saturation_rows(cells, coverage, aqua, inventory, science, "united_states")
+    actual = saturation_rows(cells, coverage, aqua, inventory, science, "us")
     for entry in actual:
         assert entry["value"] == pytest.approx(1 if entry["test"] == "saturation_r5" else 0.5)
 
 
 def test_missing_inventory_is_unavailable_and_invalid_inventory_rejected(science, saturation_inputs):
     cells, coverage, inventory, aqua = saturation_inputs
-    actual = saturation_rows(cells, coverage, aqua, None, science, "united_states")
+    actual = saturation_rows(cells, coverage, aqua, None, science, "us")
     assert all(entry["value"] is None and entry["n"] == 0 for entry in actual)
     assert all("denominator cannot be inferred" in entry["note"] for entry in actual)
     with pytest.raises(ValueError, match="do not match"):
-        saturation_rows(cells, coverage, aqua, inventory.iloc[1:], science, "united_states")
+        saturation_rows(cells, coverage, aqua, inventory.iloc[1:], science, "us")
 
 
 def test_backcast_honors_held_out_factors_and_coverage(science):

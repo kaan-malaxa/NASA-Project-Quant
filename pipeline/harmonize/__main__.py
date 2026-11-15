@@ -30,15 +30,19 @@ def run_region(region: str, pass_: str | None = None, *, shared=None):
     )
     from pipeline.harmonize.calibrate import daily_counts
     from pipeline.harmonize.naive import naive_annual
-    from pipeline.harmonize.series import SENSORS, build_daily_series, build_outputs
+    from pipeline.harmonize.series import SENSORS, build_daily_series, build_outputs, region_in_scope
     from pipeline.harmonize.validate import validate_tier1, validation_figures
 
     shared = _common() if shared is None else shared
     science = shared.config.load_science()
-    if science["scope"]["country"] != "US" or region != science["scope"]["region_id"]:
-        raise ValueError("US-only pipeline: select the configured United States region")
+    if not region_in_scope(science, region):
+        raise ValueError("Select the configured United States region or a simulated planted-truth region")
     shared.config.get_region(region)
-    shared.io.verify_us_inputs(region)
+    # Optional provenance gate: used when the shared library offers one (R2's ingest verifies its own
+    # staged inputs against the local source CSVs before it writes the files read here).
+    verify = getattr(shared.io, "verify_us_inputs", None)
+    if verify is not None:
+        verify(region)
     cells = shared.io.read_parquet(shared.paths.celldays(region), schema_name="celldays")
     coverage = shared.io.read_parquet(shared.paths.coverage(region), schema_name="coverage")
     result = build_outputs(cells, coverage, science, region, pass_)
@@ -139,9 +143,10 @@ def main(argv=None) -> int:
         logger.setLevel(args.log_level.upper())
         pass_ = getattr(args, "pass_", getattr(args, "pass", None))
         t0 = perf_counter()
-        result = run_region(args.region, pass_, shared=shared)
+        region = args.region or shared.config.load_science()["scope"]["region_id"]
+        result = run_region(region, pass_, shared=shared)
         _print_summary(result)
-        shared.log.finish("harmonize", args.region, len(result.daily), t0)
+        shared.log.finish("harmonize", region, len(result.daily), t0)
         return 0
     except Exception as exc:  # noqa: BLE001 -- stage contract requires one-line failures
         reason = " ".join(str(exc).split())

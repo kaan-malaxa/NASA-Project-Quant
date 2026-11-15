@@ -135,6 +135,14 @@ def fit_calibrations(
     return fits
 
 
+def region_in_scope(science: Mapping, region: str) -> bool:
+    """The real United States region, or a simulated planted-truth region (never other real data)."""
+    scope = science["scope"]
+    return scope["country"] == "US" and region in (
+        scope["region_id"], *scope.get("planted_truth_region_ids", ())
+    )
+
+
 def calibration_document(
     region: str, science: Mapping, fits: CalibrationFits, pass_: str | None = None
 ) -> dict:
@@ -143,7 +151,7 @@ def calibration_document(
     In a chained fit, aqua_celldays are the Aqua-equivalent S-NPP proxy totals
     documented in fit_chained, rather than observed Aqua detections.
     """
-    if science["scope"]["country"] != "US" or region != science["scope"]["region_id"]:
+    if not region_in_scope(science, region):
         raise ValueError("Only the configured United States data scope is permitted")
     eras, tier1 = science["eras"], science["tier1"]
     next_aqua = (pd.Timestamp(eras["aqua_trusted_through"]) + pd.Timedelta(days=1)).date()
@@ -339,7 +347,7 @@ def build_outputs(
     pass_: str | None = None,
 ) -> SeriesResult:
     """Fit and build the reference pass by default; an explicit N uses night rows."""
-    if science["scope"]["country"] != "US" or region != science["scope"]["region_id"]:
+    if not region_in_scope(science, region):
         raise ValueError("Only the configured United States data scope is permitted")
     if pass_ is None:
         pass_ = science["reference"]["pass"]

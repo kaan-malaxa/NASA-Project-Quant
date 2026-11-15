@@ -22,16 +22,25 @@ class Region:
 
 
 def load_regions() -> list[Region]:
+    """One real United States region, plus any simulated (planted-truth) regions."""
     with paths.config_file("regions.yaml").open(encoding="utf-8") as handle:
         regions = [Region(**row) for row in yaml.safe_load(handle)["regions"]]
-    if len(regions) != 1:
+    real = [region for region in regions if not region.synthetic]
+    if len(real) != 1:
         raise ValueError("Configure exactly one real-data region: us")
-    for region in regions:
-        require_us_region(region)
+    require_us_region(real[0])
+    if len({region.id for region in regions}) != len(regions):
+        raise ValueError("Region ids must be unique")
     return regions
 
 
+def real_region() -> Region:
+    """The single real-data region (contracts section 4.1)."""
+    return next(region for region in load_regions() if not region.synthetic)
+
+
 def require_us_region(region) -> None:
+    """Real hotspot data may only come from the local United_States country CSVs."""
     if (
         region.id != "us" or region.country != "US" or region.synthetic
         or region.firms_country_names != ["United_States"]

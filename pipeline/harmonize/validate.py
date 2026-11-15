@@ -13,6 +13,7 @@ import pandas as pd
 from pipeline.common.timebins import aggregate as common_aggregate
 from pipeline.common.timebins import week_of_year
 from pipeline.harmonize.calibrate import daily_counts, fit_k, paired_fit_days
+from pipeline.harmonize.series import region_in_scope
 
 PREDICTIONS = ("tier1", "raw_viirs", "annual_ratio")
 VALUE_COLUMNS = ("observed", *PREDICTIONS)
@@ -323,7 +324,7 @@ def validate_tier1(
     pass_=None,
 ):
     """Build contracted ValidationRows, drift, and evidence for the figures."""
-    if science["scope"]["country"] != "US" or region != science["scope"]["region_id"]:
+    if not region_in_scope(science, region):
         raise ValueError("Validation requires the configured United States region")
     start, end = map(pd.Timestamp, science["tier1"]["snpp_fit"])
     rows = []

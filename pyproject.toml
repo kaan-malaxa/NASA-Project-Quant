@@ -15,4 +15,6 @@ line-length = 110
 
 [tool.pytest.ini_options]
 testpaths = ["pipeline"]
+# Several stages have test files with the same basename (test_planted_truth.py, conftest.py).
+addopts = "--import-mode=importlib"
 pythonpath = ["."]

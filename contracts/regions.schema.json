@@ -100,6 +100,101 @@
           }
         }
       }
+    },
+    "configuration": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "anomaly": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "low_activity_threshold": {
+              "type": "number"
+            },
+            "extreme_pct": {
+              "type": "number"
+            },
+            "above_pct": {
+              "type": "number"
+            },
+            "below_pct": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "low_activity_threshold",
+            "extreme_pct",
+            "above_pct",
+            "below_pct"
+          ]
+        },
+        "timebins": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "solar_degrees_per_hour": {
+              "type": "number"
+            },
+            "week_days": {
+              "type": "number"
+            },
+            "weeks_per_year": {
+              "type": "number"
+            },
+            "week_min_covered_days": {
+              "type": "number"
+            },
+            "month_min_covered_frac": {
+              "type": "number"
+            },
+            "year_min_covered_frac": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "solar_degrees_per_hour",
+            "week_days",
+            "weeks_per_year",
+            "week_min_covered_days",
+            "month_min_covered_frac",
+            "year_min_covered_frac"
+          ]
+        },
+        "eras": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "record_start": {
+              "type": "string"
+            },
+            "aqua_trusted_through": {
+              "type": "string"
+            },
+            "snpp_through": {
+              "type": "string"
+            },
+            "snpp_first_day": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "record_start",
+            "aqua_trusted_through",
+            "snpp_through",
+            "snpp_first_day"
+          ]
+        },
+        "baseline_years": {
+          "$ref": "common.schema.json#/$defs/year_range"
+        }
+      },
+      "required": [
+        "anomaly",
+        "timebins",
+        "eras",
+        "baseline_years"
+      ]
     }
   }
 }

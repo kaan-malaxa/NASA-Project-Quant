@@ -35,8 +35,28 @@ def eyesight_dir(region) -> Path:
 
 
 def web_data_dir(region: str | None = None) -> Path:
-    base = PROJECT_ROOT / "web" / "public" / "data"
+    base = Path(os.environ.get("FIREROSETTA_WEB_DATA_DIR", PROJECT_ROOT / "web" / "public" / "data")).resolve()
     return base if region is None else base / region
+
+
+def stage_provenance(region, stage) -> Path:
+    return data_root() / "provenance" / region / f"{stage}.json"
+
+
+def stats_dir(region) -> Path:
+    return data_root() / "stats" / region
+
+
+def nrt_coverage(region) -> Path:
+    return grid_dir(region) / "nrt_coverage.json"
+
+
+def local_nrt_coverage(region) -> Path:
+    return raw_dir(region) / "nrt_input_coverage.json"
+
+
+def heldout_predictions(region, stage) -> Path:
+    return (harmonized_dir(region) if stage == "harmonize" else eyesight_dir(region)) / "heldout_weekly.parquet"
 
 
 def config_file(name: str) -> Path:

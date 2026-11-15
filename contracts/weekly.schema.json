@@ -166,6 +166,9 @@
           }
         }
       }
+    },
+    "configuration": {
+      "$ref": "regions.schema.json#/properties/configuration"
     }
   }
 }

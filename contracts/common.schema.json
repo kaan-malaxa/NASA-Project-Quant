@@ -107,7 +107,9 @@
         "outline",
         "cells_monthly",
         "downloads",
-        "hotspots_recent"
+        "hotspots_recent",
+        "period_index",
+        "spatial_index"
       ]
     },
     "naive_source": {
@@ -137,7 +139,8 @@
         "t1_t2_wape",
         "reliability_err",
         "saturation_r5",
-        "saturation_r6"
+        "saturation_r6",
+        "reliability_year_absolute_err"
       ]
     },
     "claim_id": {
@@ -247,13 +250,13 @@
       ],
       "properties": {
         "k": {
-          "$ref": "#/$defs/number"
+          "$ref": "#/$defs/nullable_number"
         },
         "lo": {
-          "$ref": "#/$defs/number"
+          "$ref": "#/$defs/nullable_number"
         },
         "hi": {
-          "$ref": "#/$defs/number"
+          "$ref": "#/$defs/nullable_number"
         }
       }
     },
@@ -268,16 +271,25 @@
       ],
       "properties": {
         "pct_per_decade": {
-          "$ref": "#/$defs/number"
+          "$ref": "#/$defs/nullable_number"
         },
         "lo": {
-          "$ref": "#/$defs/number"
+          "$ref": "#/$defs/nullable_number"
         },
         "hi": {
-          "$ref": "#/$defs/number"
+          "$ref": "#/$defs/nullable_number"
         },
         "direction": {
           "$ref": "#/$defs/direction"
+        },
+        "availability": {
+          "enum": [
+            "available",
+            "unavailable"
+          ]
+        },
+        "reason": {
+          "type": "string"
         }
       }
     },
@@ -304,7 +316,7 @@
           "$ref": "#/$defs/validation_method"
         },
         "value": {
-          "$ref": "#/$defs/number"
+          "$ref": "#/$defs/nullable_number"
         },
         "baselines": {
           "type": "object",

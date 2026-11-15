@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "spatial_index",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "2.0"
+    },
+    "generated_at": {
+      "$ref": "common.schema.json#/$defs/generated_at"
+    },
+    "code_version": {
+      "$ref": "common.schema.json#/$defs/code_version"
+    },
+    "region": {
+      "$ref": "common.schema.json#/$defs/region_id"
+    },
+    "membership": {
+      "$ref": "common.schema.json#/$defs/membership"
+    },
+    "science_yaml_sha256": {
+      "$ref": "common.schema.json#/$defs/sha256"
+    },
+    "calibration_scope": {
+      "type": "string"
+    },
+    "coverage_note": {
+      "type": "string"
+    },
+    "years": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "year": {
+            "type": "integer"
+          },
+          "path": {
+            "type": "string",
+            "pattern": "^[a-z_]+/[0-9-]+\\.json$"
+          },
+          "sha256": {
+            "$ref": "common.schema.json#/$defs/sha256"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "year",
+          "path",
+          "sha256",
+          "bytes"
+        ]
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "generated_at",
+    "code_version",
+    "region",
+    "membership",
+    "science_yaml_sha256",
+    "calibration_scope",
+    "coverage_note",
+    "years"
+  ]
+}

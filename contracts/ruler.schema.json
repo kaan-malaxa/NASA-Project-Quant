@@ -41,13 +41,13 @@
       ],
       "properties": {
         "value": {
-          "$ref": "common.schema.json#/$defs/number"
+          "$ref": "common.schema.json#/$defs/nullable_number"
         },
         "lo": {
-          "$ref": "common.schema.json#/$defs/number"
+          "$ref": "common.schema.json#/$defs/nullable_number"
         },
         "hi": {
-          "$ref": "common.schema.json#/$defs/number"
+          "$ref": "common.schema.json#/$defs/nullable_number"
         },
         "years": {
           "$ref": "common.schema.json#/$defs/year_range"

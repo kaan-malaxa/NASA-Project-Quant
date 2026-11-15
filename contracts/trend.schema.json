@@ -97,16 +97,25 @@
             ]
           },
           "pct_per_decade": {
-            "$ref": "common.schema.json#/$defs/number"
+            "$ref": "common.schema.json#/$defs/nullable_number"
           },
           "lo": {
-            "$ref": "common.schema.json#/$defs/number"
+            "$ref": "common.schema.json#/$defs/nullable_number"
           },
           "hi": {
-            "$ref": "common.schema.json#/$defs/number"
+            "$ref": "common.schema.json#/$defs/nullable_number"
           },
           "direction": {
             "$ref": "common.schema.json#/$defs/direction"
+          },
+          "availability": {
+            "enum": [
+              "available",
+              "unavailable"
+            ]
+          },
+          "reason": {
+            "type": "string"
           }
         }
       }
@@ -115,6 +124,9 @@
       "$ref": "common.schema.json#/$defs/sentence_id"
     },
     "sentence": {
+      "type": "string"
+    },
+    "qualification": {
       "type": "string"
     }
   }

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "period",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "2.0"
+    },
+    "generated_at": {
+      "$ref": "common.schema.json#/$defs/generated_at"
+    },
+    "code_version": {
+      "$ref": "common.schema.json#/$defs/code_version"
+    },
+    "region": {
+      "$ref": "common.schema.json#/$defs/region_id"
+    },
+    "analysis_years": {
+      "$ref": "common.schema.json#/$defs/year_range"
+    },
+    "anomaly_baseline_years": {
+      "$ref": "common.schema.json#/$defs/year_range"
+    },
+    "trend": {
+      "$ref": "trend.schema.json"
+    },
+    "season": {
+      "$ref": "season.schema.json"
+    },
+    "climatology": {
+      "$ref": "climatology.schema.json"
+    },
+    "ruler": {
+      "$ref": "ruler.schema.json"
+    }
+  },
+  "required": [
+    "schema_version",
+    "generated_at",
+    "code_version",
+    "region",
+    "analysis_years",
+    "anomaly_baseline_years",
+    "trend",
+    "season",
+    "climatology",
+    "ruler"
+  ]
+}

@@ -64,7 +64,7 @@ def test_subprocess_order_export_once_and_flags(monkeypatch, tmp_path):
         assert command[0] == sys.executable
         assert command[command.index("--data-root") + 1] == str(tmp_path)
         assert command[command.index("--pass") + 1] == "N"
-    assert "--region" not in commands[-1]
+    assert commands[-1].count("--region") == 3
 
 
 def test_failure_stops_and_reports(monkeypatch, capsys):

@@ -57,25 +57,25 @@
             "$ref": "common.schema.json#/$defs/week"
           },
           "min": {
-            "$ref": "common.schema.json#/$defs/number"
+            "$ref": "common.schema.json#/$defs/nullable_number"
           },
           "p10": {
-            "$ref": "common.schema.json#/$defs/number"
+            "$ref": "common.schema.json#/$defs/nullable_number"
           },
           "p25": {
-            "$ref": "common.schema.json#/$defs/number"
+            "$ref": "common.schema.json#/$defs/nullable_number"
           },
           "p50": {
-            "$ref": "common.schema.json#/$defs/number"
+            "$ref": "common.schema.json#/$defs/nullable_number"
           },
           "p75": {
-            "$ref": "common.schema.json#/$defs/number"
+            "$ref": "common.schema.json#/$defs/nullable_number"
           },
           "p90": {
-            "$ref": "common.schema.json#/$defs/number"
+            "$ref": "common.schema.json#/$defs/nullable_number"
           },
           "max": {
-            "$ref": "common.schema.json#/$defs/number"
+            "$ref": "common.schema.json#/$defs/nullable_number"
           },
           "n_years": {
             "type": "integer",
@@ -105,25 +105,25 @@
             "$ref": "common.schema.json#/$defs/month"
           },
           "min": {
-            "$ref": "common.schema.json#/$defs/number"
+            "$ref": "common.schema.json#/$defs/nullable_number"
           },
           "p10": {
-            "$ref": "common.schema.json#/$defs/number"
+            "$ref": "common.schema.json#/$defs/nullable_number"
           },
           "p25": {
-            "$ref": "common.schema.json#/$defs/number"
+            "$ref": "common.schema.json#/$defs/nullable_number"
           },
           "p50": {
-            "$ref": "common.schema.json#/$defs/number"
+            "$ref": "common.schema.json#/$defs/nullable_number"
           },
           "p75": {
-            "$ref": "common.schema.json#/$defs/number"
+            "$ref": "common.schema.json#/$defs/nullable_number"
           },
           "p90": {
-            "$ref": "common.schema.json#/$defs/number"
+            "$ref": "common.schema.json#/$defs/nullable_number"
           },
           "max": {
-            "$ref": "common.schema.json#/$defs/number"
+            "$ref": "common.schema.json#/$defs/nullable_number"
           },
           "n_years": {
             "type": "integer",
@@ -131,6 +131,9 @@
           }
         }
       }
+    },
+    "configuration": {
+      "$ref": "regions.schema.json#/properties/configuration"
     }
   }
 }

@@ -24,8 +24,8 @@ def raw_inputs(region):
     """Original source bytes and staged bytes, never a silently refreshed cache."""
     manifest = paths.manifest(region)
     entries = io.read_json(manifest)
-    files = [manifest]
     meta = config.get_region(region)
+    files = [manifest] if meta.synthetic else []
     if not entries:
         raise ValueError(f"Empty raw manifest for {region}; rerun ingest")
     for entry in entries:
@@ -40,6 +40,8 @@ def raw_inputs(region):
         name = entry["file"]
         if Path(name).name != name:
             raise ValueError("Raw manifest contains a path outside its region")
+        if not meta.synthetic and entry.get("via") == "local":
+            continue  # recent inputs have their own attestation; they do not change historical cleaning
         staged = paths.raw_dir(region) / name
         if not staged.is_file() or io.sha256(staged) != entry["sha256"]:
             raise ValueError(f"Raw provenance mismatch: {staged}; rerun ingest")
@@ -56,11 +58,18 @@ def _fingerprints(files):
     return {str(Path(file).resolve()): io.sha256(file) for file in sorted(set(map(Path, files)))}
 
 
+def _manifest_entries(region, recent=False):
+    entries = io.read_json(paths.manifest(region))
+    return sorted((row for row in entries if (row.get("via") == "local") == recent), key=lambda row: row["file"])
+
+
 def record_stage(region, stage, inputs, outputs, upstream=()):
     """Record only after every output has been written successfully."""
     doc = {"version": 1, "region": region, "stage": stage, "upstream": list(upstream),
            "inputs": _fingerprints([*configuration_inputs(region), *inputs]),
            "outputs": _fingerprints(outputs)}
+    if stage == "nowcast" or (stage == "clean" and not config.get_region(region).synthetic):
+        doc["manifest_entries"] = _manifest_entries(region, recent=stage == "nowcast")
     io.write_json(doc, paths.stage_provenance(region, stage))
 
 
@@ -75,6 +84,8 @@ def verify_stage(region, stage):
     expected_config = {str(file.resolve()) for file in configuration_inputs(region)}
     if not expected_config <= doc["inputs"].keys():
         raise ValueError(f"Incomplete configuration provenance: {stamp}; rerun ingest")
+    if "manifest_entries" in doc and doc["manifest_entries"] != _manifest_entries(region, recent=stage == "nowcast"):
+        raise ValueError(f"Stale {stage} manifest entries for {region}; rerun that stage")
     for group in ("inputs", "outputs"):
         for name, expected in doc[group].items():
             file = Path(name)

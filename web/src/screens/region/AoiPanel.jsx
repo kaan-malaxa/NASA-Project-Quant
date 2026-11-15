@@ -10,19 +10,12 @@ import { areaClimatology, areaKm2, latestRatio, toMonthlyJson, topMonths } from 
 import { fmtNumber, monthName } from "@/lib/format.js";
 
 const km2Format = new Intl.NumberFormat("en", { maximumSignificantDigits: 2 });
-const mbFormat = new Intl.NumberFormat("en", { maximumFractionDigits: 1, minimumFractionDigits: 1 });
-/** Download progress in megabytes (1 MB = 1,000,000 bytes). */
-const mb = (bytes) => `${mbFormat.format(bytes / 1e6)} MB`;
 
-function Progress({ progress }) {
-  const { loaded = 0, total = null } = progress || {};
+function Progress() {
   return (
     <div role="status" className="space-y-1 text-sm">
-      <p>
-        Loading area data… {mb(loaded)}
-        {total ? ` of ${mb(total)}` : ""}
-      </p>
-      <progress className="h-2 w-full max-w-sm" value={total ? loaded : undefined} max={total || undefined} />
+      <p>Loading selected-area history…</p>
+      <progress className="h-2 w-full max-w-sm" aria-label="Loading selected-area history" />
     </div>
   );
 }
@@ -74,7 +67,7 @@ export default function AoiPanel({ region, files, url, setUrl }) {
       {files.spatial_index?.status === "absent" ? (
         <p className="text-sm">Area data are not available for this place.</p>
       ) : csv.state?.status === "loading" || csv.state?.status === "lazy" ? (
-        <Progress progress={csv.progress} />
+        <Progress />
       ) : csv.state?.status !== "ok" ? (
         <SectionState state={csv.state} title="Area data" />
       ) : files.calibration?.status !== "ok" ? (
@@ -125,7 +118,7 @@ export default function AoiPanel({ region, files, url, setUrl }) {
                 ))}
               </ol>
             ) : (
-              <p className="text-muted-foreground mt-1 text-sm">No burning recorded in your area in this date range.</p>
+              <p className="text-muted-foreground mt-1 text-sm">No covered months are available for this area in the selected analysis years and exact dates.</p>
             )}
           </div>
         </>

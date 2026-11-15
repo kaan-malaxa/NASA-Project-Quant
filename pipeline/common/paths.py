@@ -159,6 +159,10 @@ def hotspots_recent(region) -> Path:
     return web_data_dir(region) / "hotspots_recent.csv"
 
 
+def staged_hotspots_recent(region) -> Path:
+    return grid_dir(region) / "hotspots_recent.csv"
+
+
 def nrt_snapshot(region, utc_date) -> Path:
     return raw_dir(region) / f"nrt_viirs_noaa20_{utc_date}.csv"
 

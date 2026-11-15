@@ -65,7 +65,7 @@ def normalise(frame, family, nrt_prefix):
     aliases = {value: sensors.normalise_sensor(value, family) for value in frame.satellite.unique()}
     result["sensor"] = frame.satellite.map(aliases)
     instruments = set(frame.instrument.dropna().str.upper())
-    if instruments != {family.upper()}:
+    if not frame.empty and instruments != {family.upper()}:
         raise ValueError(f"Unexpected instrument values: {sorted(instruments)}")
     for column in ("latitude", "longitude", "frp", "scan", "track"):
         result[column] = pd.to_numeric(frame[column], errors="coerce")

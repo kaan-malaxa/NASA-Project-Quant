@@ -134,6 +134,7 @@ async function runExport() {
     "this-week",
     "drift",
     "eyesight",
+    "agreement",
     "hexmap",
   ];
   let sample = null;
@@ -152,10 +153,7 @@ async function runExport() {
       { reducedMotion: "reduce", deviceScaleFactor: 1.5 },
     );
     await p.waitForSelector("[data-ready], [data-error]", { timeout: 20000 });
-    const err = await p
-      .locator("[data-error]")
-      .textContent()
-      .catch(() => null);
+    const err = await p.locator("[data-error]").count() ? await p.locator("[data-error]").textContent() : null;
     if (err) throw new Error(`${id}: ${err}`);
     if (sample === null) {
       sample =

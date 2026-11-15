@@ -506,3 +506,11 @@ Optional `configuration` metadata in `regions.json`, `weekly.json`, `monthly.jso
 `npm run gen:types` generates `web/src/data/types.gen.d.ts` from the JSON Schemas with the repository's dependency-free Node generator. Runtime code remains `.js`/`.jsx`, with generated declarations consumed via JSDoc. `npm run typecheck` runs the installed compiler with `allowJs`, `checkJs`, and `noEmit`. JSON shapes are not maintained as handwritten duplicates.
 
 The checker rejects duplicate JSON keys, duplicate period keys, non-finite numbers, misaligned daily arrays/runs, missing-kind inconsistencies, inverted uncertainty bounds, unsafe/missing references, manifest/index hash mismatches and byte-count mismatches. Whole-region AOI acceptance runs in Node, checks every nonmissing month including outages and partial coverage, and fails when required published fixtures are absent.
+
+Recent observations are private until export: ingestion writes `data/grid/<region>/hotspots_recent.csv`,
+`celldays_nrt.parquet` and `nrt_coverage.json`, with a mandatory `nowcast` provenance stamp. Statistics
+verify that stamp, include the private CSV in their staged regional publication, and export installs the
+public `hotspots_recent.csv` with the complete validated site. Historical cleaning attests original/staged
+country bytes and the historical manifest entries; unrelated NRT entry additions do not invalidate history.
+The recent stamp separately attests NRT manifest entries, original local files, mask, coverage and outputs.
+This supersedes the earlier direct-to-public NRT CSV handoff and preserves its public filename and header.

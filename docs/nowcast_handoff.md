@@ -19,3 +19,11 @@ All fetch outputs are staged and validated, with backups and rollback on publica
 CSV preserves its contracted header. Statistics label actual source, coverage, comparison years and input
 clock. Current supplied observations do not contain genuine recent inputs, so the published recent cards
 remain explicitly unavailable. See repair_acceptance.md for regression evidence.
+
+The recent CSV is staged privately at `data/grid/us/hotspots_recent.csv`. Ingestion verifies the grid,
+attests NRT source files, mask, coverage, manifest entries and outputs as the `nowcast` stage, and does not
+write the live website. Statistics require that attestation and carry the CSV into the complete regional
+export. Historical provenance compares the historical manifest entries separately, so adding NRT entries
+does not invalidate unchanged history. Existing verified historical stamps are migrated during refresh.
+Empty retained tables, including a header-only source with independent covered-day metadata, preserve
+covered zero activity. Non-boolean coverage flags are rejected rather than treated as truthy values.

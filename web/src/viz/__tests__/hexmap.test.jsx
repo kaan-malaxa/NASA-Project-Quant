@@ -84,6 +84,15 @@ describe("hexLayout", () => {
     expect(cellsInPolygon(null)).toEqual([]);
   });
 
+  it("normalises drawn longitudes across the Aleutian antimeridian", () => {
+    const ring = [[175,51],[-170,51],[-170,54],[175,54],[175,51]];
+    const displayRing = ring.map(([longitude,latitude]) => [longitude > 0 ? longitude - 360 : longitude,latitude]);
+    const actual = cellsInPolygon(displayRing);
+    expect(actual).toEqual(cellsInPolygon(ring));
+    expect(actual).toContain(latLngToCell(52,177,5));
+    expect(actual).toContain(latLngToCell(52,-175,5));
+  });
+
   it("toggleCell adds and removes", () => {
     expect(toggleCell([], A)).toEqual([A]);
     expect(toggleCell([A, B].sort(), A)).toEqual([B]);

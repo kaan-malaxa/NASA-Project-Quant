@@ -122,6 +122,20 @@ def test_compatible_published_region_needs_no_local_intermediates(tree):
     assert all(result.ok for result in run_check(tree.web_dir))
 
 
+def test_scoped_rebuild_installs_the_privately_staged_recent_csv(tree, tmp_path, monkeypatch):
+    from pipeline.export import assemble as module
+    assemble(tree)
+    private = tmp_path / "stats-us"
+    shutil.copytree(tree.web_dir / "us", private)
+    header = "latitude,longitude,acq_date,acq_time,satellite,confidence,frp,daynight,local_day,h3_r6\n"
+    (private / "hotspots_recent.csv").write_text(header, encoding="utf-8")
+    monkeypatch.setattr(module.paths, "stats_dir", lambda region: private)
+    monkeypatch.setattr(module.provenance, "verify_stage", lambda region, stage: {})
+    assemble(replace(tree, scope=["us"]))
+    assert (tree.web_dir / "us" / "hotspots_recent.csv").read_text(encoding="utf-8") == header
+    assert "hotspots_recent" in load(tree, "regions.json")["regions"][0]["optional_files"]
+
+
 # ------------------------------------------------------------------ the happy path
 def test_assemble_real_region_next_to_sample_ones(tree):
     warnings = assemble(tree)

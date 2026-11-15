@@ -110,7 +110,8 @@ export function displayGeometry(geo, bbox) {
 /** Res-5 cells whose centre is inside a drawn polygon ring ([lng, lat], GeoJSON order). Sorted. */
 export function cellsInPolygon(ring, res = 5) {
   if (!Array.isArray(ring) || ring.length < 4) return [];
-  return polygonToCells([ring], res, true).sort();
+  const normalised = ring.map(([longitude, latitude]) => [((longitude + 180) % 360 + 360) % 360 - 180, latitude]);
+  return polygonToCells([normalised], res, true).sort();
 }
 
 /** Add or remove one cell from a selection; returns a new sorted array. */

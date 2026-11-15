@@ -8,7 +8,8 @@ function Table({
   return (
     <div
       data-slot="table-container"
-      className="relative w-full overflow-x-auto"
+      tabIndex={0}
+      className="relative w-full overflow-x-auto focus-visible:ring-2 focus-visible:ring-ring"
     >
       <table
         data-slot="table"

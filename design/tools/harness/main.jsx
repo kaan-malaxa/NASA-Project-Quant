@@ -19,10 +19,12 @@ import {
   FireYearClock,
   Gallery,
   HexMap,
+  HeldoutAgreement,
   Legend,
   PercentileStrip,
   TrendBars,
 } from "../../../web/src/viz/index.js";
+import { spatialMap } from "../../../web/src/lib/spatial.js";
 
 const BASE = `${import.meta.env.BASE_URL}data/`;
 const q = new URLSearchParams(location.search);
@@ -61,6 +63,12 @@ async function loadRegion(id) {
   files.outline = await getJson(`${region.id}/outline.geojson`).catch(
     () => undefined,
   );
+  if (q.get("chart") === "hexmap" && region.files.includes("spatial_index")) {
+    const index = await getJson(`${region.id}/spatial_index.json`);
+    const shards = [];
+    for (const entry of index.years) shards.push(await getJson(`${region.id}/${entry.path}`));
+    files.hex = spatialMap(shards, "harmonized", files.season?.critical_weeks ?? [], files.hex);
+  }
   const sample =
     manifest?.contains_sample === true ||
     manifest?.code_version === "sample" ||
@@ -93,6 +101,9 @@ function chartSpec(id, d) {
     files.climatology?.[`unit_${grain}`] ??
     "fire cell-days";
   switch (id) {
+    case "agreement":
+      return {title: "Agreement on matching years excluded from fitting", el: <HeldoutAgreement
+        comparison={methods?.eyesight?.find((row) => row.region === region.id)?.heldout_compare ?? []} />};
     case "ruler":
       return {
         title: "The raw record and the harmonized record, as an index",

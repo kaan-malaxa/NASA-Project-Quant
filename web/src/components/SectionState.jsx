@@ -1,6 +1,7 @@
 import { Skeleton } from "@/components/ui/skeleton";
 
 const MESSAGES = {
+  lazy: "This section will appear when you scroll to it.",
   absent: "Not available for this region yet.",
   invalid: "This file failed validation.",
   network: "This file could not be loaded.",

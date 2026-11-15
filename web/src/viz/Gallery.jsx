@@ -6,6 +6,7 @@ import { BrokenRuler } from "./BrokenRuler";
 import { CalendarHeatmap } from "./CalendarHeatmap";
 import { DriftChart } from "./DriftChart";
 import { EyesightCurve } from "./EyesightCurve";
+import { HeldoutAgreement } from "./HeldoutAgreement";
 import { FireYearClock } from "./FireYearClock";
 import { KindBadge } from "./KindBadge";
 import { Legend } from "./Legend";
@@ -232,6 +233,10 @@ const ENTRIES = [
       ) : (
         <Absent file="methods.json" />
       ),
+  },
+  {
+    name: "HeldoutAgreement",
+    render: (b, c) => <HeldoutAgreement comparison={eyesightFor(b.methods, c.region.id)?.heldout_compare ?? []} />,
   },
 ];
 

@@ -56,6 +56,9 @@ def main(argv: list[str] | None = None) -> int:
     calibration = json.loads(calibration_path.read_text(encoding="utf-8"))
     celldays = io.read_parquet(celldays_path, "celldays")
     nrt_path, coverage_path = paths.celldays_nrt(region), paths.coverage(region)
+    recent = any(file.is_file() for file in (nrt_path, paths.nrt_coverage(region), paths.staged_hotspots_recent(region)))
+    if recent:
+        provenance.verify_stage(region, "nowcast")
     # no NRT file yet -> an empty table, which gives status "unavailable"
     nrt = io.read_parquet(nrt_path, "celldays_nrt") if nrt_path.is_file() else pd.DataFrame(
         columns=["sensor", "local_day", "daynight", "fetched_at"])
@@ -101,6 +104,11 @@ def main(argv: list[str] | None = None) -> int:
     io.write_json(outline, out / "outline.geojson")
     (out / "cells_monthly.csv").write_text(cells_monthly_csv(cells_monthly_rows(celldays, science)),
                                            encoding="utf-8", newline="")
+    recent_csv = out / "hotspots_recent.csv"
+    if recent:
+        shutil.copyfile(paths.staged_hotspots_recent(region), recent_csv)
+    else:
+        recent_csv.unlink(missing_ok=True)
     spatial_daily = tables["daily"]
     if curve is not None and curve.get("status") == "validated":
         translated = daily_t2.loc[daily_t2.series.eq("viirs_equiv_t2")].copy()
@@ -120,8 +128,9 @@ def main(argv: list[str] | None = None) -> int:
                   out / "spatial_index.json")
     io.write_json(write_periods(out, tables["daily"], tables["annual_bootstrap"], tables["naive_annual"], docs,
                                 region, meta.name, science, header), out / "period_index.json")
-    provenance.record_stage(region, "stats", [], sorted(file for file in out.rglob("*") if file.is_file()),
-                            upstream=("eyesight",) if curve is not None else ("harmonize",))
+    recent_inputs = [file for file in (nrt_path, paths.nrt_coverage(region), paths.staged_hotspots_recent(region)) if file.is_file()]
+    provenance.record_stage(region, "stats", recent_inputs, sorted(file for file in out.rglob("*") if file.is_file()),
+                            upstream=(("eyesight",) if curve is not None else ("harmonize",)) + (("nowcast",) if recent else ()))
     log.finish("stats", region, len(daily), t0)
     return 0
 

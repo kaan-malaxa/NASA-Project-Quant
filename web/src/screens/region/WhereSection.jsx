@@ -25,7 +25,7 @@ export default function WhereSection({ region, files, url, setUrl }) {
   const shards = useSpatialShards(region.id, files.spatial_index, years, visible);
   const hex = files.spatial_index?.status === "absent" ? canonicalHex : shards.status === "ok" ?
     {status: "ok", data: spatialMap(shards.data, url.lens, files.season?.data?.critical_weeks ?? [], canonicalHex?.data)} :
-    visible ? shards : {status: "loading"};
+    visible ? shards : {status: "lazy"};
   const [metric, setMetric] = useState("critical");
   // The draw control exists only when cells_monthly.csv is listed for this region.
   const canDraw = files.spatial_index?.status === "ok";

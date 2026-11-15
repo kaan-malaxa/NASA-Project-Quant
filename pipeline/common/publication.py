@@ -28,7 +28,7 @@ def publish(staged):
             return Path(handle.name)
 
     try:
-        for destination, source in sorted(staged.items(), key=lambda pair: (pair[0].name == "manifest.json",
+        for destination, source in sorted(staged.items(), key=lambda pair: (pair[0].name.lower() == "manifest.json",
                                                                            str(pair[0]))):
             destination.parent.mkdir(parents=True, exist_ok=True)
             prepared[destination] = temporary_for(destination) if source is not None else None

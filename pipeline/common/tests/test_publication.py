@@ -39,3 +39,20 @@ def test_successful_publication_removes_obsolete_assets(tmp_path):
         (stage / "new.json").write_bytes(b"new")
         publication.publish_tree(stage, destination)
     assert {file.name for file in destination.iterdir()} == {"new.json"}
+
+
+def test_raw_manifest_is_installed_last_too(tmp_path, monkeypatch):
+    stage = tmp_path / "stage"
+    stage.mkdir()
+    for name in ("MANIFEST.json", "z.csv"):
+        (stage / name).write_bytes(b"new")
+    order = []
+    replace = publication.os.replace
+
+    def capture(source, target):
+        order.append(target.name)
+        replace(source, target)
+
+    monkeypatch.setattr(publication.os, "replace", capture)
+    publication.publish_tree(stage, tmp_path / "destination")
+    assert order == ["z.csv", "MANIFEST.json"]

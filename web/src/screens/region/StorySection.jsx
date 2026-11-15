@@ -1,0 +1,27 @@
+/** One section of the region story; scroll-margin keeps its heading clear of the sticky bars. */
+export default function StorySection({ id, title, intro, children }) {
+  return (
+    <section
+      id={id}
+      aria-labelledby={`${id}-title`}
+      className="scroll-mt-[calc(var(--sticky-offset,0px)+4rem)] space-y-4 border-t pt-8"
+    >
+      <div className="space-y-1">
+        <h2 id={`${id}-title`} className="text-xl font-semibold tracking-tight">
+          {title}
+        </h2>
+        {intro ? <p className="text-muted-foreground max-w-3xl text-sm">{intro}</p> : null}
+      </div>
+      {children}
+    </section>
+  );
+}
+
+/** The first file state that is not ok (an unknown state counts as loading), or null when all are ok. */
+export function firstNotOk(...states) {
+  for (const s of states) {
+    if (!s) return { status: "loading" };
+    if (s.status !== "ok") return s;
+  }
+  return null;
+}

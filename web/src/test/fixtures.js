@@ -82,3 +82,24 @@ export function methodsJson(sources) {
     sources, limitations: [], ai_use: "Test.",
   };
 }
+
+const SERIES_META = {
+  aqua_raw: { label: "MODIS Aqua, as recorded", unit: "fire cell-days per week" },
+  viirs_raw: { label: "VIIRS, as recorded", unit: "fire cell-days per week" },
+  viirs_as_aqua: { label: "VIIRS translated to the Aqua scale", unit: "Aqua-equivalent fire cell-days per week" },
+  harmonized: { label: "Harmonized record", unit: "Aqua-equivalent fire cell-days per week" },
+  viirs_equiv: { label: "What VIIRS would have seen", unit: "VIIRS-equivalent fire cell-days per week", method: "tier1" },
+};
+
+export function weeklyFullJson() {
+  return { ...weeklyJson(), series_meta: SERIES_META };
+}
+
+export function climatologyJson() {
+  const p = { min: 0, p10: 0, p25: 1, p50: 2, p75: 3, p90: 4, max: 5, n_years: 23 };
+  return {
+    ...header, region: "testland", baseline_years: [2003, 2025],
+    unit_week: "Aqua-equivalent fire cell-days per week", unit_month: "Aqua-equivalent fire cell-days per month",
+    weeks: [{ week: 1, ...p }], months: [{ month: 1, ...p }],
+  };
+}

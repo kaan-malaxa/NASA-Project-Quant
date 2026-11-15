@@ -36,7 +36,13 @@ function fullMethods() {
     ],
     drift: [{ region: "testland", sensor: "snpp", year: 2013, k_annual: 0.5, lo: 0.45, hi: 0.55 }],
     eyesight: [
-      { region: "testland", status: "exploratory", k_compare: [{ month: 1, k_tier1: 0.5, k_tier2: 0.6 }] },
+      {
+        region: "testland", status: "exploratory",
+        params: { a: -1, b: 2, c: 0.8, a_lo: -1.1, a_hi: -0.9, b_lo: 1.9, b_hi: 2.1, c_lo: 0.7, c_hi: 0.9 },
+        g: 1.1, n_celldays: 1000, curve: [{ frp_mw: 1, p: 0.2, lo: 0.1, hi: 0.3 }, { frp_mw: 10, p: 0.6, lo: 0.5, hi: 0.7 }],
+        binned: [{ frp_mw: 1, p_obs: 0.2, n: 500 }, { frp_mw: 10, p_obs: 0.6, n: 500 }],
+        k_compare: [{ month: 1, k_tier1: 0.5, k_tier2: 0.6 }],
+      },
       { region: "synthland", status: "absent" },
     ],
     planted_truth: [
@@ -51,13 +57,14 @@ function fullMethods() {
 }
 
 const calibration = {
-  schema_version: "1.0", generated_at: "x", code_version: "test", region: "testland", reference: "aqua_day",
+  schema_version: "1.0", generated_at: "2026-11-14T00:00:00Z", code_version: "test", region: "testland", reference: "aqua_day",
   count_resolution: 6, shrinkage_n0: 50,
   eras: [
     { from: "2003-01-01", to: "2022-12-31", source: "aqua", kind: "observed" },
     { from: "2023-01-01", to: null, source: "snpp", kind: "harmonized" },
   ],
-  fit_window: {}, noaa20_method: "direct", k_annual: {}, k: {},
+  fit_window: { snpp: ["2013-01-01", "2022-12-31"], noaa20: ["2018-01-01", "2022-12-31"] }, noaa20_method: "direct",
+  k_annual: { snpp: { k: 0.5, lo: 0.4, hi: 0.6 }, noaa20: { k: 0.5, lo: 0.4, hi: 0.6 } }, k: { snpp: [], noaa20: [] },
 };
 
 const section = (name) => screen.getByRole("region", { name });
@@ -76,7 +83,7 @@ describe("Methods page", () => {
   it("renders all seven parts from methods.json", async () => {
     mockFetch({
       "methods.json": fullMethods(),
-      "manifest.json": { ...manifestJson(false), files: [{ path: "numbers_audit.md", sha256: "x", bytes: 8, kinds: [] }] },
+      "manifest.json": { ...manifestJson(false), files: [{ path: "numbers_audit.md", sha256: "0".repeat(64), bytes: 8, kinds: [] }] },
       "regions.json": regionsJson({ files: ["calibration"] }),
       "testland/calibration.json": calibration,
       "numbers_audit.md": "# audit",

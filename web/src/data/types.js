@@ -70,7 +70,7 @@
  */
 
 /**
- * @typedef {{ region: string, as_of: string, source: string,
+ * @typedef {{ region: string, as_of: string | null, source: string,
  *   window: { start: string, end: string, days_covered: number },
  *   value: number | null, lo: number | null, hi: number | null, unit: string, percentile: number | null,
  *   status: NowcastStatus, baseline_years: number[], history: { year: number, value: number, kind: Kind }[],

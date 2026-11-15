@@ -1,5 +1,5 @@
-import Ajv from "ajv";
-import { getSchema, schemaNameForPath } from "./schemas.js";
+import Ajv2020 from "ajv/dist/2020";
+import { getSchema, schemaFiles, schemaNameForPath } from "./schemas.js";
 import { containsSampleKind, markSample } from "./sample.js";
 
 /**
@@ -8,7 +8,9 @@ import { containsSampleKind, markSample } from "./sample.js";
  * @typedef {FetchOk | FetchFail} FetchResult
  */
 
-const ajv = new Ajv({ allErrors: true, strict: false });
+// The contract schemas are JSON Schema draft 2020-12 and point at each other by file name.
+const ajv = new Ajv2020({ allErrors: true, strict: false });
+for (const [file, schema] of schemaFiles()) ajv.addSchema(schema, file);
 const validators = new Map();
 /** @type {Map<string, Promise<FetchResult>>} */
 const cache = new Map();
@@ -20,8 +22,7 @@ export function dataUrl(path) {
 
 function getValidator(name) {
   if (validators.has(name)) return validators.get(name);
-  const schema = getSchema(name);
-  const validate = schema ? ajv.compile(schema) : null;
+  const validate = getSchema(name) ? ajv.getSchema(`${name}.schema.json`) : null;
   validators.set(name, validate);
   return validate;
 }

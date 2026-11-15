@@ -21,11 +21,20 @@ export function regionsJson(overrides = {}) {
   };
 }
 
+const SERIES_META = {
+  aqua_raw: { label: "MODIS Aqua, as recorded", unit: "fire cell-days per week" },
+  viirs_raw: { label: "VIIRS, as recorded", unit: "fire cell-days per week" },
+  viirs_as_aqua: { label: "VIIRS translated to the Aqua scale", unit: "Aqua-equivalent fire cell-days per week" },
+  harmonized: { label: "Harmonized record", unit: "Aqua-equivalent fire cell-days per week" },
+  viirs_equiv: { label: "What VIIRS would have seen", unit: "VIIRS-equivalent fire cell-days per week", method: "tier1" },
+};
+
+/** weekly.json: the contract requires series_meta for all five series, whatever rows are present. */
 export function weeklyJson(kind = "observed") {
   return {
     ...header,
     region: "testland",
-    series_meta: { harmonized: { label: "Harmonized record", unit: "Aqua-equivalent fire cell-days per week" } },
+    series_meta: SERIES_META,
     rows: [{ year: 2015, week: 43, series: "harmonized", value: 3, lo: 3, hi: 3, kind, source: "aqua" }],
   };
 }
@@ -77,19 +86,11 @@ export function outlineGeojson() {
 export function methodsJson(sources) {
   return {
     ...header,
-    decisions: { reference: "MODIS Aqua, daytime", count_resolution: 6, aqua_trusted_through: "2022-12-31", snpp_through: "2025-12-31", baseline_years: [2003, 2025], science_yaml_sha256: "x" },
+    decisions: { reference: "MODIS Aqua, daytime", count_resolution: 6, aqua_trusted_through: "2022-12-31", snpp_through: "2025-12-31", baseline_years: [2003, 2025], science_yaml_sha256: "0".repeat(64) },
     validation: [], drift: [], eyesight: [], planted_truth: [], inputs: [], filters: [],
     sources, limitations: [], ai_use: "Test.",
   };
 }
-
-const SERIES_META = {
-  aqua_raw: { label: "MODIS Aqua, as recorded", unit: "fire cell-days per week" },
-  viirs_raw: { label: "VIIRS, as recorded", unit: "fire cell-days per week" },
-  viirs_as_aqua: { label: "VIIRS translated to the Aqua scale", unit: "Aqua-equivalent fire cell-days per week" },
-  harmonized: { label: "Harmonized record", unit: "Aqua-equivalent fire cell-days per week" },
-  viirs_equiv: { label: "What VIIRS would have seen", unit: "VIIRS-equivalent fire cell-days per week", method: "tier1" },
-};
 
 export function weeklyFullJson() {
   return { ...weeklyJson(), series_meta: SERIES_META };

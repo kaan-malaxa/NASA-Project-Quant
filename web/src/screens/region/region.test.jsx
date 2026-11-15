@@ -96,6 +96,24 @@ describe("Region page", () => {
     expect(week.textContent).toContain("Too little burning at this time of year to rank.");
   });
 
+  it("shows an unavailable nowcast exactly as the pipeline writes it, with no made-up date", async () => {
+    // pipeline.stats output when there is no near-real-time input: as_of, window and values are null.
+    const unavailable = {
+      ...nowcastJson("unavailable"), as_of: null, window: { start: null, end: null, days_covered: 0 },
+      value: null, lo: null, hi: null, percentile: null, history: [], kind: "missing",
+      month_to_date: { month: 12, through_day: 31, value: null, median: null, ratio: null, percentile: null },
+      sentence: "No recent satellite data.",
+    };
+    mockFetch({ "regions.json": regionsJson(files), "testland/nowcast.json": unavailable });
+    renderRegion();
+    const week = await screen.findByRole("region", { name: "This week" });
+    await waitFor(() => expect(week.querySelector('[data-layout="unavailable"]'), week.textContent).toBeTruthy());
+    expect(week.textContent).toContain("No recent satellite data.");
+    expect(week.textContent).not.toContain("failed validation");
+    expect(week.textContent).not.toContain("As of");
+    expect(week.textContent).not.toContain("1970");
+  });
+
   it("says so for an unknown region", async () => {
     mockFetch({ "regions.json": regionsJson(files) });
     renderRegion("/r/atlantis");
@@ -144,13 +162,14 @@ describe("Region page: date range and In this period", () => {
 describe("Region page: your area (AOI)", () => {
   const A = "85283473fffffff";
   const calibration = {
-    schema_version: "1.0", generated_at: "x", code_version: "test", region: "testland", reference: "aqua_day",
+    schema_version: "1.0", generated_at: "2026-11-14T00:00:00Z", code_version: "test", region: "testland", reference: "aqua_day",
     count_resolution: 6, shrinkage_n0: 50,
     eras: [
       { from: "2003-01-01", to: "2022-12-31", source: "aqua", kind: "observed" },
       { from: "2023-01-01", to: null, source: "snpp", kind: "harmonized" },
     ],
-    fit_window: {}, noaa20_method: "direct", k_annual: { snpp: { k: 0.5, lo: 0.4, hi: 0.6 } }, k: { snpp: [] },
+    fit_window: { snpp: ["2013-01-01", "2022-12-31"], noaa20: ["2018-01-01", "2022-12-31"] }, noaa20_method: "direct",
+    k_annual: { snpp: { k: 0.5, lo: 0.4, hi: 0.6 }, noaa20: { k: 0.5, lo: 0.4, hi: 0.6 } }, k: { snpp: [], noaa20: [] },
   };
   const csv = `h3_r5,ym,aqua,viirs\n${A},202211,7,20\n${A},202311,1,30\n85283477fffffff,202311,9,99\n`;
 
@@ -199,7 +218,7 @@ describe("Region page: downloads", () => {
 
   it("downloads the series and calendar CSVs and lists overlapping archives", async () => {
     const downloads = {
-      schema_version: "1.0", generated_at: "x", code_version: "test", region: "testland",
+      schema_version: "1.0", generated_at: "2026-11-14T00:00:00Z", code_version: "test", region: "testland",
       hotspot_archives: [
         { year: 2026, sensor: "noaa20", url: "https://example.org/a.csv.gz", rows: 1200, bytes: 34567 },
         { year: 2010, sensor: "snpp", url: "https://example.org/b.csv.gz", rows: 1, bytes: 1 },

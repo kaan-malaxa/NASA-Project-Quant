@@ -158,7 +158,7 @@ export default function Brief() {
                   <span className="font-medium">{statusLabel(nowcast.data.status)}.</span> {nowcast.data.sentence}
                 </p>
                 <p className="mt-0.5 flex flex-wrap items-center gap-2 text-[8pt]">
-                  <span>As of {fmtAsOf(nowcast.data.as_of).utc}; near-real-time input.</span>
+                  {nowcast.data.as_of ? <span>As of {fmtAsOf(nowcast.data.as_of).utc}; near-real-time input.</span> : null}
                   <KindBadge kind={nowcast.data.kind} />
                 </p>
               </Block>

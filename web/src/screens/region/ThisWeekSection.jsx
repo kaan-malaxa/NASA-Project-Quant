@@ -11,6 +11,8 @@ import StorySection from "./StorySection.jsx";
 const LOW_ACTIVITY_COPY = "Too little burning at this time of year to rank.";
 
 function AsOf({ nowcast }) {
+  // No near-real-time input yet: the pipeline writes as_of and the window as null (status "unavailable").
+  if (!nowcast.as_of) return null;
   const t = fmtAsOf(nowcast.as_of);
   return (
     <p className="text-muted-foreground text-sm">

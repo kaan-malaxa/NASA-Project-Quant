@@ -26,7 +26,7 @@ const renderBrief = () =>
   );
 
 const seasonJson = {
-  schema_version: "1.0", generated_at: "x", code_version: "test", region: "testland",
+  schema_version: "1.0", generated_at: "2026-11-14T00:00:00Z", code_version: "test", region: "testland",
   definition: "The fewest weeks that hold 80% of a typical year's burning", critical_weeks: [42, 43],
   windows: [{ id: "w1", label: "x", start_week: 42, peak_week: 43, end_week: 44, share: 0.7, by_year: [],
     shift_days_per_decade: { start: { value: 0, lo: 0, hi: 0 }, centroid: { value: 0, lo: 0, hi: 0 }, end: { value: 0, lo: 0, hi: 0 } },

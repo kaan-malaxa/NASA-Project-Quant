@@ -32,6 +32,8 @@ export default defineConfig({
   resolve: {
     alias: { "@": fileURLToPath(new URL("./src", import.meta.url)) },
   },
+  // src/data/schemas.js bundles ../contracts/*.schema.json (R1's schemas, one level above web/).
+  server: { fs: { allow: [fileURLToPath(new URL("..", import.meta.url))] } },
   test: {
     environment: "jsdom",
     globals: false,

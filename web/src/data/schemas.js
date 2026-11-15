@@ -1,26 +1,36 @@
 /**
  * Schemas used by fetchJson. Bundled at build time.
  *
- * TEMPORARY: contracts/ has no schemas yet, so these come from ./schemas-temp/ (written by R5 from contracts section 6,
- * required fields and types only). When R1's schemas land, switch with this ONE line:
- *   const modules = import.meta.glob("../../../contracts/*.schema.json", { eager: true, import: "default" });
+ * The site validates every data file against the SAME JSON Schemas the pipeline checks its output with:
+ * contracts/*.schema.json (owner R1). They refer to each other by file name (common.schema.json), so
+ * fetchJson registers all of them under their file names.
+ *
+ * contracts/ has no schema for outline.geojson, so that one still comes from ./schemas-temp/ (R5).
  */
-const modules = import.meta.glob("./schemas-temp/*.schema.json", { eager: true, import: "default" });
+const contract = import.meta.glob("../../../contracts/*.schema.json", { eager: true, import: "default" });
+const local = import.meta.glob("./schemas-temp/*.schema.json", { eager: true, import: "default" });
 
-const byName = Object.fromEntries(
-  Object.entries(modules).map(([file, schema]) => [file.split("/").pop().replace(".schema.json", ""), schema]),
+const fileName = (file) => file.split("/").pop();
+const byFile = Object.fromEntries(
+  // contracts/ wins if a schema ever exists in both places
+  [...Object.entries(local), ...Object.entries(contract)].map(([file, schema]) => [fileName(file), schema]),
 );
+
+/** Every schema as [file name, schema], e.g. ["weekly.schema.json", {...}]: the keys cross-references use. */
+export function schemaFiles() {
+  return Object.entries(byFile);
+}
 
 /** @param {string} name e.g. "weekly" @returns {object | undefined} */
 export function getSchema(name) {
-  return byName[name];
+  return byFile[`${name}.schema.json`];
 }
 
 export function schemaNames() {
-  return Object.keys(byName).sort();
+  return Object.keys(byFile).map((file) => file.replace(".schema.json", "")).sort();
 }
 
-/** "punjab/weekly.json" -> "weekly"; "punjab/outline.geojson" -> "outline"; "regions.json" -> "regions". */
+/** "us/weekly.json" -> "weekly"; "us/outline.geojson" -> "outline"; "regions.json" -> "regions". */
 export function schemaNameForPath(path) {
   return path.split("/").pop().replace(/\.(geo)?json$/, "");
 }

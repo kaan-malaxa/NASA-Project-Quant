@@ -73,6 +73,23 @@ def country_csv_candidates(product, year, country) -> list[Path]:
     return [source_data_root() / folders[product] / filename]
 
 
+def source_country_files() -> list[tuple[str, Path]]:
+    result = []
+    for product, folder in (
+        ("modis", "MODIS_data"), ("viirs-snpp", "VIIRS-SNPP_data"), ("viirs-jpss1", "VIIRS-JPSS_data"),
+    ):
+        for path in sorted((source_data_root() / folder).glob(f"{product}_????_United_States.csv")):
+            if not path.resolve().is_relative_to(source_data_root()):
+                raise ValueError("US source file resolves outside the designated source directory")
+            if path.name.split("_")[1].isdigit():
+                result.append((product, path))
+    return result
+
+
+def profile_report(region) -> Path:
+    return PROJECT_ROOT / "docs" / f"profile_{region}.md"
+
+
 def detections(region, sensor) -> Path:
     return clean_dir(region) / f"detections_{sensor}.parquet"
 

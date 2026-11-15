@@ -24,6 +24,8 @@ def _run_stage(stage, region, args):
     ]
     if stage != "export":
         command.extend(["--region", region.id])
+    if stage == "synth":
+        command.extend(["--size", args.synth_size])
     result = subprocess.run(command, check=False)
     if result.returncode:
         print(f"FAIL {stage} {region.id}: exit {result.returncode}", file=sys.stderr, flush=True)
@@ -36,6 +38,8 @@ def main(argv=None):
     parser.add_argument("--all-regions", action="store_true")
     parser.add_argument("--from", dest="from_stage", choices=STAGES)
     parser.add_argument("--to", dest="to_stage", choices=STAGES)
+    # The planted-truth test (V7) is defined on the full simulated world; tiny is for quick smoke runs.
+    parser.add_argument("--synth-size", choices=("tiny", "full"), default="full")
     args = parser.parse_args(argv)
     if bool(args.region) == args.all_regions:
         parser.error("choose exactly one of --region or --all-regions")

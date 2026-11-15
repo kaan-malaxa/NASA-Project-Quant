@@ -83,7 +83,7 @@ def main(argv: list[str] | None = None) -> int:
         log.warning("science.yaml not found; seed defaults to %d", P.FALLBACK_SEED)
 
     compat.set_data_root(getattr(args, "data_root", None))
-    t0 = time.time()
+    t0 = time.perf_counter()  # the clock pipeline.common.log.finish subtracts from
     try:
         counts = run(args.region, args.seed, args.size, compat.raw_dir(args.region))
     except ValueError as exc:

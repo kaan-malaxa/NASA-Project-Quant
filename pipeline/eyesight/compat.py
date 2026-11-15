@@ -211,4 +211,4 @@ def finish(stage: str, region: str, rows: int, t0: float) -> None:
     if HAVE_COMMON:
         _log.finish(stage, region, rows, t0)
         return
-    print(f"OK {stage} {region} rows={rows} seconds={time.time() - t0:.1f}")
+    print(f"OK {stage} {region} rows={rows} seconds={time.perf_counter() - t0:.1f}")

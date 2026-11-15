@@ -135,3 +135,19 @@ def test_entrypoint_success_and_failure(monkeypatch, capsys):
     assert "OK ingest us rows=12" in capsys.readouterr().out
     assert entry.main(["--region", "us", "--steps", "invalid"]) == 1
     assert "--steps must be" in capsys.readouterr().err
+
+
+def test_map_cell_is_the_parent_of_the_counting_cell(setup):
+    """A point whose own res-5 cell is not its res-6 cell's parent must still get the parent."""
+    directory, region = setup
+    point = next(
+        (lat / 1000, lon / 1000)
+        for lat in range(10500, 11500, 7) for lon in range(10500, 11500, 7)
+        if h3.latlng_to_cell(lat / 1000, lon / 1000, 5)
+        != h3.cell_to_parent(h3.latlng_to_cell(lat / 1000, lon / 1000, 6), 5)
+    )
+    source = write_csv(directory / "modis_edge.csv", [row(latitude=point[0], longitude=point[1])])
+    clean.clean_files([source], region, SCIENCE)
+    aqua = io.read_parquet(paths.detections("us", "aqua"), "detections")
+    assert len(aqua) == 1
+    assert aqua.h3_r5.iloc[0] == h3.cell_to_parent(aqua.h3_r6.iloc[0], 5)

@@ -20,7 +20,7 @@ def main(argv: list[str] | None = None) -> int:
     compat.set_data_root(getattr(args, "data_root", None))
     pass_ = getattr(args, "pass_", None) or getattr(args, "pass", "D")
 
-    t0 = time.time()
+    t0 = time.perf_counter()  # the clock pipeline.common.log.finish subtracts from
     try:
         entry, diag = run(args.region, pass_, log)
     except (FileNotFoundError, RegionClipError) as exc:

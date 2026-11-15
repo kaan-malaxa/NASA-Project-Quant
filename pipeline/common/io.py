@@ -45,7 +45,8 @@ SCHEMAS = {
     ),
     "annual_bootstrap": _schema("replicate:i32 year:i32 harmonized:f64"),
     "naive_annual": _schema(
-        "year:i32 modis_count:f64 snpp_count:f64 modis_covered_frac:f64 snpp_covered_frac:f64"
+        # A year the sensor did not cover has no count: null, never zero (science rule 3).
+        "year:i32 modis_count:f64? snpp_count:f64? modis_covered_frac:f64 snpp_covered_frac:f64"
     ),
     "daily_t2": _schema(
         "local_day:date series:str value:f64? lo:f64? hi:f64? kind:str source:str covered:bool"

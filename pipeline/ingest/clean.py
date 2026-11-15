@@ -160,12 +160,18 @@ def clean_files(inputs, region, science, *, publish=True):
                 raise ValueError("Retained row has invalid frp, scan or track; contract requires finite values")
             frame["local_day"] = timebins.local_day(frame.acq_datetime_utc, frame.longitude)
             for column, resolution in (
-                ("h3_r6", science["grid"]["count_res"]), ("h3_r5", science["grid"]["map_res"]),
-                ("h3_r8", science["grid"]["mask_res"]),
+                ("h3_r6", science["grid"]["count_res"]), ("h3_r8", science["grid"]["mask_res"]),
             ):
                 frame[column] = [
                     h3.latlng_to_cell(lat, lon, resolution) for lat, lon in zip(frame.latitude, frame.longitude)
                 ]
+            # The map cell is the parent of the counting cell, never the point's own coarse cell: H3
+            # hexagons do not nest exactly, so a point near an edge can sit in a coarse cell that is not
+            # its fine cell's parent. That would split one cell-day into two rows and count it twice.
+            parents = {
+                cell: h3.cell_to_parent(cell, science["grid"]["map_res"]) for cell in frame.h3_r6.unique()
+            }
+            frame["h3_r5"] = frame.h3_r6.map(parents)
             frame["in_region"] = frame.h3_r6.isin(cells)
             outputs[sensor] = typed(frame.sort_values(["acq_datetime_utc", "latitude", "longitude"]), "detections")
         counts = (

@@ -54,6 +54,14 @@ def run_region(region: str, pass_: str | None = None, *, shared=None):
     result.calibration = with_intervals(
         result.calibration, result.bootstrap, science["tier1"]["interval_percentiles"]
     )
+    # Contracts section 6: every JSON file carries schema_version, generated_at and code_version.
+    epoch = os.environ.get("SOURCE_DATE_EPOCH")  # set for byte-identical rebuilds
+    stamp = datetime.fromtimestamp(int(epoch), timezone.utc) if epoch else datetime.now(timezone.utc)  # noqa: UP017
+    result.calibration = {
+        **result.calibration,
+        "generated_at": stamp.strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "code_version": shared.io.code_version(),
+    }
     result.daily = build_daily_series(counts, coverage, science, result.calibration)
     last_year = complete_year_limit(
         max(coverage["local_day"]),
@@ -88,7 +96,9 @@ def run_region(region: str, pass_: str | None = None, *, shared=None):
     # data paths themselves always come from the common path helpers.
     schema_path = shared.paths.web_data_dir().parents[2].joinpath("contracts", "calibration.schema.json")
     if schema_path.exists():
-        from jsonschema import validate
+        from jsonschema import Draft202012Validator
+        from referencing import Registry, Resource
+        from referencing.jsonschema import DRAFT202012
 
         read_json = getattr(shared.io, "read_json", None)
         if read_json is None:
@@ -96,7 +106,13 @@ def run_region(region: str, pass_: str | None = None, *, shared=None):
                 "Calibration schema exists but common.io.read_json is unavailable; "
                 "R2 must supply shared JSON reading before outputs can be validated"
             )
-        validate(instance=result.calibration, schema=read_json(schema_path))
+        # The contract schemas refer to each other by file name (common.schema.json), so every
+        # schema in contracts/ is registered under its file name before validating.
+        registry = Registry().with_resources(
+            (path.name, Resource(contents=read_json(path), specification=DRAFT202012))
+            for path in sorted(schema_path.parent.glob("*.schema.json"))
+        )
+        Draft202012Validator(read_json(schema_path), registry=registry).validate(result.calibration)
 
     output = shared.paths.harmonized_dir(region)
     shared.io.write_parquet(result.daily, output.joinpath("daily.parquet"), schema_name="daily")

@@ -17,8 +17,22 @@ import { compareToBaselines, groupByRegion } from "@/lib/validation.js";
 import { FIRMS_URL } from "@/app/AppShell.jsx";
 import { DataTable, MethodsSection, RegionHeading } from "./methods/parts.jsx";
 import { useDocumentMeta } from "@/lib/useDocumentMeta.js";
+import SectionNav from "./region/SectionNav.jsx";
 
 const has = (a) => Array.isArray(a) && a.length > 0;
+
+/** Contents of the page, in order. Sections whose data is absent are not rendered and drop out of the list. */
+const METHODS_SECTIONS = [
+  { id: "steps", label: "Five steps" },
+  { id: "drift", label: "The bending ruler" },
+  { id: "validation", label: "Does it work?" },
+  { id: "planted-truth", label: "Planted-truth test" },
+  { id: "eyesight", label: "Satellite eyesight" },
+  { id: "data", label: "Data" },
+  { id: "limitations", label: "Limitations" },
+  { id: "ai-use", label: "How we used AI" },
+  { id: "attribution", label: "Credits" },
+];
 
 /** #/methods — screen 9, from methods.json, manifest.json and each region's calibration.json. */
 export default function Methods() {
@@ -46,15 +60,32 @@ export default function Methods() {
 
       {m ? null : <SectionState state={methods} title="Methods data" />}
 
-      {m?.decisions ? <FiveSteps d={m.decisions} /> : null}
-      {m && (has(m.drift) || regions.some((r) => r.files?.includes("calibration"))) ? (
-        <Drift drift={m.drift || []} regions={regions} nameOf={nameOf} trustedThrough={m.decisions?.aqua_trusted_through} />
-      ) : null}
-      {has(m?.validation) ? <Validation rows={m.validation} nameOf={nameOf} /> : null}
-      {has(m?.planted_truth) ? <PlantedTruth rows={m.planted_truth} manifest={manifest} /> : null}
-      {has(m?.eyesight) ? <Eyesight entries={m.eyesight} nameOf={nameOf} /> : null}
-      {m && (has(m.inputs) || has(m.filters) || has(m.sources)) ? <Data m={m} nameOf={nameOf} manifest={manifest} /> : null}
-      <Closing m={m} />
+      <div className="lg:grid lg:grid-cols-[13rem_minmax(0,1fr)] lg:gap-8">
+        {/* Contents: a sticky list beside the sections on wide screens, a scrolling row of chips above them on phones. */}
+        <aside className="bg-background/95 sticky top-[var(--sticky-offset,0px)] z-30 -mx-4 mb-6 border-b px-4 backdrop-blur lg:top-[calc(var(--sticky-offset,0px)+1rem)] lg:mx-0 lg:mb-0 lg:self-start lg:border-b-0 lg:bg-transparent lg:px-0 lg:backdrop-blur-none">
+          <p className="text-muted-foreground hidden px-3 pb-2 text-xs font-medium tracking-wide uppercase lg:block">
+            On this page
+          </p>
+          <div className="lg:hidden">
+            <SectionNav sections={METHODS_SECTIONS} label="Methods sections" watch={m} />
+          </div>
+          <div className="hidden lg:block">
+            <SectionNav sections={METHODS_SECTIONS} orientation="vertical" label="Methods contents" watch={m} />
+          </div>
+        </aside>
+
+        <div className="min-w-0 space-y-6">
+          {m?.decisions ? <FiveSteps d={m.decisions} /> : null}
+          {m && (has(m.drift) || regions.some((r) => r.files?.includes("calibration"))) ? (
+            <Drift drift={m.drift || []} regions={regions} nameOf={nameOf} trustedThrough={m.decisions?.aqua_trusted_through} />
+          ) : null}
+          {has(m?.validation) ? <Validation rows={m.validation} nameOf={nameOf} /> : null}
+          {has(m?.planted_truth) ? <PlantedTruth rows={m.planted_truth} manifest={manifest} /> : null}
+          {has(m?.eyesight) ? <Eyesight entries={m.eyesight} nameOf={nameOf} /> : null}
+          {m && (has(m.inputs) || has(m.filters) || has(m.sources)) ? <Data m={m} nameOf={nameOf} manifest={manifest} /> : null}
+          <Closing m={m} />
+        </div>
+      </div>
     </article>
   );
 }

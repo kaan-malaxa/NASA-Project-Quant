@@ -4,7 +4,7 @@ export default function StorySection({ id, title, intro, children }) {
     <section
       id={id}
       aria-labelledby={`${id}-title`}
-      className="scroll-mt-[calc(var(--sticky-offset,0px)+var(--region-bar-h,6rem)+0.5rem)] space-y-4 border-t pt-8"
+      className="bg-card scroll-mt-[calc(var(--sticky-offset,0px)+var(--region-bar-h,6rem)+0.5rem)] space-y-4 rounded-xl border p-5 shadow-sm sm:p-6"
     >
       <div className="space-y-1">
         <h2 id={`${id}-title`} className="text-xl font-semibold tracking-tight">

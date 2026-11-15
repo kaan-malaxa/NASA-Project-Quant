@@ -13,13 +13,21 @@ const reducedMotion = () =>
   typeof window !== "undefined" && window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
 
 /**
- * Sticky in-page navigation. Uses buttons + scrollIntoView, because the URL hash already holds the route.
- * Highlights the section currently in view.
+ * In-page navigation. Uses buttons + scrollIntoView, because the URL hash already holds the route.
+ * Highlights the section currently in view and leaves out sections that are not on the page.
+ *
+ * sections:    [{ id, label }] in page order (default: the region story).
+ * orientation: "horizontal" (a row of chips) or "vertical" (a numbered table of contents).
+ * watch:       re-check which sections exist when this value changes (e.g. after data loads).
  */
-export default function SectionNav() {
-  const [active, setActive] = useState(SECTIONS[0].id);
+export default function SectionNav({ sections = SECTIONS, orientation = "horizontal", label = "Sections", watch }) {
+  const [active, setActive] = useState(sections[0]?.id);
+  const [present, setPresent] = useState(sections);
 
   useEffect(() => {
+    const found = sections.filter((s) => document.getElementById(s.id));
+    // Before the page has rendered its sections (or in tests without them), keep the full list.
+    setPresent(found.length ? found : sections);
     if (typeof IntersectionObserver === "undefined") return;
     const obs = new IntersectionObserver(
       (entries) => {
@@ -28,35 +36,37 @@ export default function SectionNav() {
       },
       { rootMargin: "-20% 0px -70% 0px" },
     );
-    for (const s of SECTIONS) {
-      const el = document.getElementById(s.id);
-      if (el) obs.observe(el);
-    }
+    for (const s of found) obs.observe(document.getElementById(s.id));
     return () => obs.disconnect();
-  }, []);
+  }, [sections, watch]);
 
   const go = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: reducedMotion() ? "auto" : "smooth", block: "start" });
     setActive(id);
   };
 
+  const vertical = orientation === "vertical";
   return (
-    <nav aria-label="Sections" className="py-1">
-      <ul className="flex gap-1 overflow-x-auto [scrollbar-width:none]">
-        {SECTIONS.map((s) => (
-          <li key={s.id} className="shrink-0">
-            <button
-              type="button"
-              onClick={() => go(s.id)}
-              aria-current={active === s.id ? "true" : undefined}
-              className={`rounded-md px-3 py-1.5 text-sm whitespace-nowrap focus-visible:outline-2 focus-visible:outline-offset-2 ${
-                active === s.id ? "bg-muted font-semibold underline underline-offset-4" : "hover:bg-muted"
-              }`}
-            >
-              {s.label}
-            </button>
-          </li>
-        ))}
+    <nav aria-label={label} className="py-1">
+      <ul className={vertical ? "space-y-0.5" : "flex gap-1 overflow-x-auto [scrollbar-width:none]"}>
+        {present.map((s, i) => {
+          const on = active === s.id;
+          return (
+            <li key={s.id} className={vertical ? undefined : "shrink-0"}>
+              <button
+                type="button"
+                onClick={() => go(s.id)}
+                aria-current={on ? "true" : undefined}
+                className={`rounded-md text-sm focus-visible:outline-2 focus-visible:outline-offset-2 ${
+                  vertical ? "flex w-full items-baseline gap-2 px-3 py-1.5 text-left" : "px-3 py-1.5 whitespace-nowrap"
+                } ${on ? "bg-muted text-foreground font-semibold" : "text-muted-foreground hover:bg-muted hover:text-foreground"}`}
+              >
+                {vertical ? <span className="w-4 shrink-0 text-xs tabular-nums opacity-70">{i + 1}</span> : null}
+                {s.label}
+              </button>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );

@@ -49,7 +49,7 @@ export default function Region() {
   }
 
   return (
-    <article aria-labelledby="region-title" className="space-y-8">
+    <article aria-labelledby="region-title" className="space-y-6">
       <header className="space-y-2">
         <p className="text-muted-foreground text-sm">
           <Link to="/pick" className="underline underline-offset-4">

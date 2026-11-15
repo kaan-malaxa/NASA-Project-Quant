@@ -3,11 +3,15 @@ import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, Tabl
 /** One Methods section: heading, one plain-language paragraph, content. */
 export function MethodsSection({ id, title, intro, children }) {
   return (
-    <section id={id} aria-labelledby={`${id}-title`} className="space-y-4 border-t pt-8">
+    <section
+      id={id}
+      aria-labelledby={`${id}-title`}
+      className="bg-card scroll-mt-[calc(var(--sticky-offset,0px)+1rem)] space-y-4 rounded-xl border p-5 shadow-sm sm:p-6"
+    >
       <h2 id={`${id}-title`} className="text-xl font-semibold tracking-tight">
         {title}
       </h2>
-      {intro ? <p className="max-w-3xl text-pretty">{intro}</p> : null}
+      {intro ? <p className="text-muted-foreground max-w-3xl leading-relaxed text-pretty">{intro}</p> : null}
       {children}
     </section>
   );

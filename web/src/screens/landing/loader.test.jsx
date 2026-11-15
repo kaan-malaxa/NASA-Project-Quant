@@ -3,7 +3,10 @@ import { act, cleanup, fireEvent, render, screen } from "@testing-library/react"
 import { MemoryRouter } from "react-router-dom";
 import Landing from "../Landing.jsx";
 import LandingLoader from "./LandingLoader.jsx";
-import { LOADER } from "./loaderMath.js";
+import { LOADER, resetLoaderBoot } from "./loaderMath.js";
+import { createReadiness } from "./readiness.js";
+
+const oneTask = () => createReadiness([{ id: "all", weight: 1, word: "Loading orbit data" }]);
 import { clearFetchCache } from "@/data/fetchJson.js";
 import { resetSample } from "@/data/sample.js";
 import { mockFetch } from "@/test/mockFetch.js";
@@ -12,7 +15,8 @@ import { methodsJson, regionsJson, rulerJson } from "@/test/fixtures.js";
 beforeEach(() => {
   clearFetchCache();
   resetSample();
-  sessionStorage.clear();
+  localStorage.clear();
+  resetLoaderBoot({ hash: "#/" }); // as if the landing page was just loaded
   // jsdom has no 2D canvas; the loader then animates without drawing, which is what these tests need.
   vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockReturnValue(null);
 });
@@ -24,37 +28,53 @@ afterEach(() => {
 });
 
 describe("landing loader", () => {
-  it("covers the page on the first visit while the h1 stays in the document, then marks the session", () => {
-    mockFetch({
-      "regions.json": regionsJson({ files: ["ruler"], optional_files: [] }),
-      "testland/ruler.json": rulerJson(),
-      "methods.json": methodsJson([]),
-    });
+  const renderLanding = () =>
     render(
       <MemoryRouter>
         <Landing />
       </MemoryRouter>,
     );
+
+  it("covers the landing page on a full page load while the h1 stays in the document", () => {
+    mockFetch({
+      "regions.json": regionsJson({ files: ["ruler"], optional_files: [] }),
+      "testland/ruler.json": rulerJson(),
+      "methods.json": methodsJson([]),
+    });
+    renderLanding();
     expect(screen.getByTestId("landing-loader")).toBeTruthy();
     expect(screen.getByText("Loading FireRosetta").getAttribute("role")).toBe("status");
     expect(screen.getByTestId("landing-loader").querySelector("canvas").getAttribute("aria-hidden")).toBe(
       "true",
     );
     expect(screen.getByRole("heading", { level: 1 })).toBeTruthy();
-    expect(sessionStorage.getItem("firerosetta-landing-loader")).toBe("1");
   });
 
-  it("is not shown again in the same session", () => {
-    sessionStorage.setItem("firerosetta-landing-loader", "1");
+  it("shows on every full load: each new page load starts with the loader again", () => {
     mockFetch({
       "regions.json": regionsJson({ files: [], optional_files: [] }),
       "methods.json": methodsJson([]),
     });
-    render(
-      <MemoryRouter>
-        <Landing />
-      </MemoryRouter>,
-    );
+    renderLanding();
+    expect(screen.getByTestId("landing-loader")).toBeTruthy();
+    cleanup();
+    resetLoaderBoot({ hash: "#/" }); // refresh
+    renderLanding();
+    expect(screen.getByTestId("landing-loader")).toBeTruthy();
+  });
+
+  it("not on in-app navigation to #/ (after the landing load, or when the page was opened elsewhere)", () => {
+    mockFetch({
+      "regions.json": regionsJson({ files: [], optional_files: [] }),
+      "methods.json": methodsJson([]),
+    });
+    renderLanding(); // the page load's landing render
+    cleanup();
+    renderLanding(); // landing -> elsewhere -> landing, inside the app
+    expect(screen.queryByTestId("landing-loader")).toBeNull();
+    cleanup();
+    resetLoaderBoot({ hash: "#/r/us" }); // opened on a region page, then the logo was clicked
+    renderLanding();
     expect(screen.queryByTestId("landing-loader")).toBeNull();
   });
 
@@ -76,11 +96,12 @@ describe("landing loader", () => {
     loaderData();
     fakeTime();
     const onDone = vi.fn();
-    const { rerender } = render(<LandingLoader sceneReady={false} onDone={onDone} />);
+    const tracker = oneTask();
+    render(<LandingLoader tracker={tracker} onDone={onDone} />);
     await act(async () => vi.advanceTimersByTime(4000));
     expect(screen.getByTestId("landing-loader").dataset.stage).toBe("split");
     expect(onDone).not.toHaveBeenCalled();
-    rerender(<LandingLoader sceneReady onDone={onDone} />);
+    act(() => tracker.done("all"));
     await act(async () => vi.advanceTimersByTime(LOADER.merge / 2));
     expect(screen.getByTestId("landing-loader").dataset.stage).toBe("merge");
     await act(async () => vi.advanceTimersByTime(LOADER.merge / 2 + LOADER.flat + 50));
@@ -93,7 +114,9 @@ describe("landing loader", () => {
     loaderData();
     fakeTime();
     const onDone = vi.fn();
-    render(<LandingLoader sceneReady onDone={onDone} />);
+    const tracker = oneTask();
+    tracker.done("all");
+    render(<LandingLoader tracker={tracker} onDone={onDone} />);
     await settle();
     await act(async () => vi.advanceTimersByTime(2900));
     expect(onDone).not.toHaveBeenCalled();
@@ -105,7 +128,7 @@ describe("landing loader", () => {
     loaderData();
     fakeTime();
     const onDone = vi.fn();
-    render(<LandingLoader sceneReady={false} onDone={onDone} />);
+    render(<LandingLoader tracker={oneTask()} onDone={onDone} />);
     await act(async () => vi.advanceTimersByTime(300));
     fireEvent.click(screen.getByRole("button", { name: "Skip" }));
     await act(async () => vi.advanceTimersByTime(LOADER.fade + 100));
@@ -113,7 +136,7 @@ describe("landing loader", () => {
   });
 
   it("stops the page scrolling underneath while it is shown", () => {
-    const { unmount } = render(<LandingLoader sceneReady={false} onDone={() => {}} />);
+    const { unmount } = render(<LandingLoader tracker={oneTask()} onDone={() => {}} />);
     expect(document.documentElement.style.overflow).toBe("hidden");
     unmount();
     expect(document.documentElement.style.overflow).toBe("");

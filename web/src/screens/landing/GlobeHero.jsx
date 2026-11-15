@@ -47,10 +47,21 @@ class SceneBoundary extends Component {
  * @param {object} [props.story] ref read by the 3D scene each frame: { t, globe } (scroll-story position)
  * @param {"stacked" | "story"} [props.mode]
  * @param {object} [props.chipsRef] ref to the satellite button row (measured by the story layout)
+ * @param {boolean} [props.hold] pause drawing (the landing loader is on top); loading carries on
  * @param {boolean} [props.forceStatic] show the static picture instead of the 3D scene (e.g. the scene took too long)
  */
 const GlobeHero = forwardRef(function GlobeHero(
-  { calibration, onReady, story, mode = "stacked", chipsRef, forceStatic = false, children },
+  {
+    calibration,
+    onReady,
+    onTexture,
+    story,
+    mode = "stacked",
+    chipsRef,
+    forceStatic = false,
+    hold = false,
+    children,
+  },
   ref,
 ) {
   const [webglOk] = useState(webglAvailable);
@@ -61,7 +72,18 @@ const GlobeHero = forwardRef(function GlobeHero(
   }, [webgl, onReady]);
   const reduced = usePrefersReducedMotion();
   const stageRef = useRef(null);
+  // Not drawn while off screen or the tab is hidden. Under the loader (`hold`) it draws only the frames it needs to
+  // get ready (texture upload, shader compile, two frames), so the globe is drawn before the loader fades.
   const running = useOnScreen(stageRef);
+  const [drawn, setDrawn] = useState(false);
+  const ready = useCallback(() => {
+    setDrawn(true);
+    onReady?.();
+  }, [onReady]);
+  const failed = useCallback(() => {
+    onTexture?.(false);
+    onReady?.();
+  }, [onTexture, onReady]);
   const [hovered, setHovered] = useState(null);
   const [selected, setSelected] = useState(null);
   const [side, setSide] = useState("right");
@@ -96,10 +118,11 @@ const GlobeHero = forwardRef(function GlobeHero(
         role="img"
         aria-label={SCENE_LABEL}
         data-testid="globe-stage"
+        data-drawn={drawn}
         className="absolute inset-0"
       >
         {webgl ? (
-          <SceneBoundary fallback={still} onFail={onReady}>
+          <SceneBoundary fallback={still} onFail={failed}>
             <Suspense fallback={still}>
               <GlobeScene
                 running={running}
@@ -108,7 +131,9 @@ const GlobeHero = forwardRef(function GlobeHero(
                 selected={selected}
                 onHover={setHovered}
                 onSelect={select}
-                onReady={onReady}
+                onReady={ready}
+                onTexture={onTexture}
+                hold={hold}
                 story={story}
               />
             </Suspense>

@@ -2,7 +2,8 @@ import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react
 import GlobeHero from "./GlobeHero.jsx";
 import { usePrefersReducedMotion } from "./motion.js";
 import { ORBIT_FRACTION, SHELLS } from "./satellites.js";
-import { MOVE_MS, STORY_EXTRA_VH, easeInOut, storyLayout, storyTarget } from "./storyLayout.js";
+import { STORY_EXTRA_VH, storyLayout } from "./storyLayout.js";
+import { useTriggeredMove } from "./useTriggeredMove.js";
 
 const px = (v) => `${Math.round(v * 100) / 100}px`;
 
@@ -32,8 +33,22 @@ function boxIn(stage, el) {
  *   time it comes into view, so the chart's draw-in animation plays when it can be seen
  * @param {() => void} [props.onReady] the globe is ready (see GlobeHero)
  * @param {boolean} [props.forceStatic] show the static Earth instead of the 3D scene
+ * @param {() => void} [props.onTexture] the Earth texture is on the GPU (see GlobeScene)
+ * @param {() => void} [props.onLayout] the positions have been measured with the ruler block in place
+ * @param {boolean} [props.layoutReady] the ruler block has its final content (data or its fallback)
  */
-export default function LandingStory({ calibration, head, cta, renderRuler, onReady, forceStatic = false }) {
+export default function LandingStory({
+  calibration,
+  head,
+  cta,
+  renderRuler,
+  onReady,
+  onTexture,
+  onLayout,
+  layoutReady = true,
+  forceStatic = false,
+  hold = false,
+}) {
   const reduced = usePrefersReducedMotion();
   const [fits, setFits] = useState(true);
   const story = !reduced && fits;
@@ -46,6 +61,10 @@ export default function LandingStory({ calibration, head, cta, renderRuler, onRe
   const chipsRef = useRef(null);
   const storyRef = useRef({ t: 0, hero: null, globe: null, invalidate: null });
   const layoutRef = useRef(null);
+  const layoutReadyRef = useRef(layoutReady);
+  layoutReadyRef.current = layoutReady;
+  const onLayoutRef = useRef(onLayout);
+  onLayoutRef.current = onLayout;
   const fitTimer = useRef(0);
   const [phase2, setPhase2] = useState(false);
   const [revealed, setRevealed] = useState(false);
@@ -66,34 +85,9 @@ export default function LandingStory({ calibration, head, cta, renderRuler, onRe
     if (t > 0.3) setRevealed(true);
   }, []);
 
-  // The move plays over time toward `target`, from wherever it is now (so a reversal mid-way is smooth).
-  const anim = useRef({ target: 0, from: 0, start: 0, dur: 0, frame: 0 });
-  const tick = useCallback(
-    (now) => {
-      const a = anim.current;
-      const p = a.dur > 0 ? Math.min(1, (now - a.start) / a.dur) : 1;
-      setT(a.from + (a.target - a.from) * easeInOut(p));
-      a.frame = p < 1 ? requestAnimationFrame(tick) : 0;
-    },
-    [setT],
-  );
-
-  // Scroll -> which end state to head to. Starts the move when that changes.
-  const apply = useCallback(() => {
-    const stage = stageRef.current;
-    const box = containerRef.current;
-    if (!stage || !box) return;
-    const a = anim.current;
-    const stickyTop = parseFloat(getComputedStyle(stage).top) || 0;
-    const target = storyTarget(stickyTop - box.getBoundingClientRect().top, window.innerHeight, a.target);
-    if (target === a.target) return;
-    cancelAnimationFrame(a.frame);
-    a.from = storyRef.current.t;
-    a.target = target;
-    a.dur = MOVE_MS * Math.abs(target - a.from);
-    a.start = performance.now();
-    a.frame = requestAnimationFrame(tick);
-  }, [tick]);
+  // Scroll -> the threshold-triggered move (shared with the problem stage).
+  const getT = useCallback(() => storyRef.current.t, []);
+  const { apply, cancel } = useTriggeredMove({ containerRef, stageRef, setT, getT });
 
   // Measure the pieces and place them (on load, on resize, and when the ruler's data arrive). The globe's hero
   // placement (and the warm glow behind it) applies in both layouts; the text positions only in the story.
@@ -141,6 +135,7 @@ export default function LandingStory({ calibration, head, cta, renderRuler, onRe
     storyRef.current.hero = L.hero;
     storyRef.current.globe = after;
     storyRef.current.invalidate?.();
+    if (layoutReadyRef.current) onLayoutRef.current?.();
     if (!story) return;
     setCtaFades(L.ctaFades);
     layoutRef.current = L;
@@ -168,11 +163,15 @@ export default function LandingStory({ calibration, head, cta, renderRuler, onRe
     return () => {
       ro?.disconnect();
       cancelAnimationFrame(frame);
-      cancelAnimationFrame(anim.current.frame);
+      cancel();
       clearTimeout(fitTimer.current);
       window.removeEventListener("scroll", onScroll);
     };
-  }, [story, measure, apply]);
+  }, [story, measure, apply, cancel]);
+
+  useLayoutEffect(() => {
+    if (layoutReady) measure();
+  }, [layoutReady, measure]);
 
   // A layout that did not fit may fit after the window changes size: try the story again.
   useEffect(() => {
@@ -192,7 +191,9 @@ export default function LandingStory({ calibration, head, cta, renderRuler, onRe
           calibration={calibration}
           chipsRef={chipsRef}
           onReady={onReady}
+          onTexture={onTexture}
           forceStatic={forceStatic}
+          hold={hold}
         >
           <div ref={headRef} className="stacked-head max-w-4xl space-y-6 sm:order-first sm:mt-auto">
             {head}
@@ -219,7 +220,9 @@ export default function LandingStory({ calibration, head, cta, renderRuler, onRe
         calibration={calibration}
         chipsRef={chipsRef}
         onReady={onReady}
+        onTexture={onTexture}
         forceStatic={forceStatic}
+        hold={hold}
       >
         <div ref={headRef} className="story-head">
           {head}

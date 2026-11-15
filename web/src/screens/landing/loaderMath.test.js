@@ -6,8 +6,11 @@ import {
   lineTargets,
   loaderTimeline,
   loaderYears,
-  markLoaderSeen,
-  shouldShowLoader,
+  loaderParam,
+  stepProgress,
+  statusWord,
+  loaderRule,
+  isLandingHash,
   slotCount,
   yearAt,
 } from "./loaderMath.js";
@@ -45,34 +48,40 @@ describe("easeInOutCubic", () => {
   });
 });
 
-describe("shouldShowLoader", () => {
-  const fakeWindow = ({ reduced = false, store = {}, broken = false } = {}) => ({
-    matchMedia: () => ({ matches: reduced }),
-    sessionStorage: {
-      getItem: (k) => {
-        if (broken) throw new Error("blocked");
-        return store[k] ?? null;
-      },
-      setItem: (k, v) => {
-        if (broken) throw new Error("blocked");
-        store[k] = v;
-      },
-    },
+describe("loaderRule: when the loader shows", () => {
+  const load = (bootHash, extra = {}) =>
+    loaderRule({ bootHash, used: false, reducedMotion: false, ...extra });
+
+  it("shows on every full load of the landing page (open, refresh, new tab)", () => {
+    for (const hash of ["", "#", "#/", "#/?debug=1"]) expect(load(hash)).toBe(true);
+    // A refresh starts the app again: nothing is remembered between loads, so it shows again.
+    expect(load("#/")).toBe(true);
   });
 
-  it("shows once per session", () => {
-    const w = fakeWindow();
-    expect(shouldShowLoader(w)).toBe(true);
-    markLoaderSeen(w);
-    expect(shouldShowLoader(w)).toBe(false);
+  it("not on in-app navigation to #/: the page was loaded on another route, or the landing load was used", () => {
+    expect(load("#/r/us")).toBe(false); // opened on a region page, then clicked the logo
+    expect(load("#/pick")).toBe(false);
+    expect(load("#/", { used: true })).toBe(false); // landing -> picker -> landing inside the app
   });
 
-  it("never shows with reduced motion, without a window, or when storage is blocked", () => {
-    expect(shouldShowLoader(fakeWindow({ reduced: true }))).toBe(false);
-    expect(shouldShowLoader(null)).toBe(false);
-    const blocked = fakeWindow({ broken: true });
-    expect(shouldShowLoader(blocked)).toBe(false);
-    expect(() => markLoaderSeen(blocked)).not.toThrow();
+  it("is skipped with reduced motion, unless ?loader=1 forces it", () => {
+    expect(load("#/", { reducedMotion: true })).toBe(false);
+    expect(load("#/?loader=1", { reducedMotion: true })).toBe(true);
+    expect(load("#/", { reducedMotion: true, search: "?loader=1" })).toBe(true);
+    expect(load("#/?loader=1", { used: true })).toBe(false); // still only on a real page load
+  });
+
+  it("is off with ?loader=0 or the test flag", () => {
+    expect(load("#/?loader=0")).toBe(false);
+    expect(load("#/", { testOff: true })).toBe(false);
+    expect(load("#/?loader=1", { testOff: true })).toBe(true); // forcing wins over the test flag
+  });
+
+  it("reads the switch from the page query or the hash route", () => {
+    expect(loaderParam("?loader=1", "#/")).toBe("1");
+    expect(loaderParam("", "#/?loader=0")).toBe("0");
+    expect(loaderParam("", "#/")).toBeNull();
+    expect(isLandingHash("#/methods")).toBe(false);
   });
 });
 
@@ -158,5 +167,30 @@ describe("loaderYears and yearAt", () => {
     expect(yearAt(LOADER.count1 + LOADER.count2, y)).toBe(2025);
     expect(yearAt(9999, y)).toBe(2025);
     expect(yearAt(500, null)).toBeNull();
+  });
+});
+
+describe("loading progress and status", () => {
+  it("the shown line eases forward, never goes backwards, and reaches 100% only when loading is done", () => {
+    let shown = 0;
+    const seen = [];
+    for (const target of [0.15, 0.15, 0.7, 0.7, 0.7, 0.15 /* a stale value must not pull it back */, 0.7]) {
+      for (let i = 0; i < 10; i++) {
+        shown = stepProgress(shown, target, 16);
+        seen.push(shown);
+      }
+    }
+    for (let i = 1; i < seen.length; i++) expect(seen[i]).toBeGreaterThanOrEqual(seen[i - 1]);
+    expect(Math.max(...seen)).toBeLessThan(1);
+    for (let i = 0; i < 200; i++) shown = stepProgress(shown, 1, 16);
+    expect(shown).toBe(1);
+  });
+
+  it("status: the pending task's word, then 'Aligning records', then 'Ready'", () => {
+    expect(statusWord({ pendingWord: "Loading Earth imagery", stage: "split" })).toBe(
+      "Loading Earth imagery",
+    );
+    expect(statusWord({ pendingWord: null, stage: "merge" })).toBe("Aligning records");
+    expect(statusWord({ pendingWord: null, stage: "flatten" })).toBe("Ready");
   });
 });

@@ -83,15 +83,36 @@ function StoryRig({ story, children }) {
   );
 }
 
-function Earth({ moving, onReady }) {
+/**
+ * The Earth. Once the texture has downloaded it is uploaded to the GPU (initTexture) and the scene's shaders are
+ * compiled; then `onTexture` fires, and after two frames have actually been rendered with it, `onReady`.
+ */
+function Earth({ moving, onReady, onTexture }) {
   const map = useTexture(EARTH_TEXTURE_URL);
   const ref = useRef(null);
+  const { gl, scene, camera, invalidate } = useThree();
+  const frames = useRef(-1); // -1 = texture not ready yet
   useEffect(() => {
     map.colorSpace = SRGBColorSpace;
     map.anisotropy = 8;
     map.needsUpdate = true;
-    onReady?.();
-  }, [map, onReady]);
+    try {
+      gl.initTexture?.(map);
+      gl.compile?.(scene, camera);
+    } catch {
+      /* the first render uploads and compiles instead */
+    }
+    onTexture?.();
+    frames.current = 0;
+    invalidate();
+  }, [map, gl, scene, camera, invalidate, onTexture]);
+  useFrame(() => {
+    if (frames.current < 0 || frames.current > 2) return;
+    frames.current += 1;
+    // This callback runs before each render: the third call means two frames have been drawn with the texture.
+    if (frames.current === 3) onReady?.();
+    else invalidate();
+  });
   useFrame((_, dt) => {
     if (moving && ref.current) ref.current.rotation.y += Math.min(dt, 0.1) * 0.05;
   });
@@ -269,6 +290,8 @@ function Satellite({ sat, moving, active, selected, onHover, onSelect, story }) 
  */
 export default function GlobeScene({
   running,
+  hold = false,
+  onTexture,
   moving,
   hovered,
   selected,
@@ -287,7 +310,8 @@ export default function GlobeScene({
   return (
     <Canvas
       dpr={[1, 2]}
-      frameloop={!running ? "never" : moving ? "always" : "demand"}
+      // Under the loader (`hold`) only the frames the Earth asks for are drawn; then the scene runs normally.
+      frameloop={!running ? "never" : moving && !hold ? "always" : "demand"}
       camera={{ fov: FOV, near: 0.1, far: 120, position: [0, 0, 7] }}
       gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
       aria-hidden="true"
@@ -300,7 +324,7 @@ export default function GlobeScene({
       <StoryRig story={story}>
         <group rotation={[0, 0, TILT]}>
           <Suspense fallback={null}>
-            <Earth moving={moving} onReady={onReady} />
+            <Earth moving={moving} onReady={onReady} onTexture={onTexture} />
           </Suspense>
         </group>
         {SATELLITES.map((sat) => (

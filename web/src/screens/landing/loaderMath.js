@@ -127,23 +127,99 @@ export function yearAt(now, years) {
   return years.switch + Math.floor((years.last - years.switch) * clamp01((now - T.count1) / T.count2));
 }
 
-const SEEN_KEY = "firerosetta-landing-loader";
+/**
+ * The shown progress: eases toward the real value, never goes backwards, and is 1 only when the real value is 1.
+ * @param {number} shown what is on screen now
+ * @param {number} target loadProgress(...)
+ * @param {number} dt ms since the last frame
+ */
+export function stepProgress(shown, target, dt) {
+  if (target >= 1 && shown >= 0.995) return 1;
+  const next = shown + (target - shown) * (1 - Math.exp(-Math.max(0, dt) / 180));
+  // Never below what is shown already; never 100% before loading is done.
+  return Math.min(target >= 1 ? 1 : 0.999, Math.max(shown, next));
+}
 
-/** Show the loader? Only once per browser session, and never with prefers-reduced-motion. Storage may throw. */
-export function shouldShowLoader(win = typeof window === "undefined" ? undefined : window) {
-  if (!win) return false;
-  if (win.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return false;
+/**
+ * The status line: plain words, no sensor names. While loading, the readiness tracker's word for the first task still
+ * pending; once everything is loaded, "Aligning records" during the merge, then "Ready".
+ */
+export function statusWord({ pendingWord, stage }) {
+  if (stage === "flatten" || stage === "fade" || stage === "done") return "Ready";
+  return pendingWord || "Aligning records";
+}
+
+/*
+ * When the loader shows: on every full page load of the landing page (opening the URL, refresh, a new tab), never on
+ * in-app navigation to #/. A full load starts this module afresh, so the route the app opened on is recorded here,
+ * once; the first landing render of that load "uses it up".
+ *   ?loader=1  forces it on (even with prefers-reduced-motion), for testing
+ *   ?loader=0  or localStorage "firerosetta-loader-off" = "1" turns it off (the end-to-end tests set this flag)
+ * The query may sit before the hash (/?loader=1#/) or in the hash route (#/?loader=1).
+ */
+export const LOADER_OFF_KEY = "firerosetta-loader-off";
+
+const boot = {
+  hash: typeof window === "undefined" ? "" : window.location.hash,
+  search: typeof window === "undefined" ? "" : window.location.search,
+  used: false,
+};
+
+/** Tests only: pretend the page was just loaded at this URL part. */
+export function resetLoaderBoot({ hash = "", search = "" } = {}) {
+  boot.hash = hash;
+  boot.search = search;
+  boot.used = false;
+}
+
+/** The first landing render of this page load calls this; later landing renders are in-app navigation. */
+export function markLandingBootUsed() {
+  boot.used = true;
+}
+
+/** The ?loader= value from the page URL or the hash route ("1", "0" or null). */
+export function loaderParam(search, hash) {
+  const fromSearch = new URLSearchParams(search || "").get("loader");
+  const q = (hash || "").indexOf("?");
+  const fromHash = q >= 0 ? new URLSearchParams(hash.slice(q + 1)).get("loader") : null;
+  return fromHash ?? fromSearch;
+}
+
+/** Is this hash the landing route? ("", "#", "#/", "#/?...") */
+export function isLandingHash(hash) {
+  const path = (hash || "").replace(/^#/, "").split("?")[0];
+  return path === "" || path === "/";
+}
+
+/**
+ * The rule as a pure function.
+ * @param {{ bootHash: string, search?: string, used: boolean, reducedMotion: boolean, testOff?: boolean }} s
+ */
+export function loaderRule({ bootHash, search = "", used, reducedMotion, testOff = false }) {
+  if (used || !isLandingHash(bootHash)) return false; // not a full load of the landing page
+  const param = loaderParam(search, bootHash);
+  if (param === "1") return true;
+  if (param === "0" || testOff) return false;
+  return !reducedMotion;
+}
+
+function readTestOff(win) {
   try {
-    return win.sessionStorage.getItem(SEEN_KEY) !== "1";
+    return win.localStorage?.getItem(LOADER_OFF_KEY) === "1";
   } catch {
-    return false;
+    return false; // storage blocked: no test flag
   }
 }
 
-export function markLoaderSeen(win = typeof window === "undefined" ? undefined : window) {
-  try {
-    win?.sessionStorage.setItem(SEEN_KEY, "1");
-  } catch {
-    /* storage blocked: the loader may show again next time, which is harmless */
-  }
+/** Show the loader now? Reads the recorded page load, the reduced-motion setting and the test flag. */
+export function shouldShowLoader(win = typeof window === "undefined" ? undefined : window) {
+  if (!win) return false;
+  const testOff = readTestOff(win);
+  return loaderRule({
+    bootHash: boot.hash,
+    search: boot.search,
+    used: boot.used,
+    reducedMotion: Boolean(win.matchMedia?.("(prefers-reduced-motion: reduce)").matches),
+    testOff,
+  });
 }

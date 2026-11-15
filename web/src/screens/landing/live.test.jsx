@@ -7,7 +7,7 @@ import { liveRegion } from "./liveRegion.js";
 import { clearFetchCache } from "@/data/fetchJson.js";
 import { resetSample } from "@/data/sample.js";
 import { mockFetch } from "@/test/mockFetch.js";
-import { nowcastJson, regionsJson } from "@/test/fixtures.js";
+import { nowcastJson, regionsJson, trendJson, weeklyJson } from "@/test/fixtures.js";
 
 beforeEach(() => {
   clearFetchCache();
@@ -89,5 +89,86 @@ describe("LiveThisWeek", () => {
   it("shows nothing without a non-synthetic region", () => {
     const { container } = renderLive([{ id: "synthland", synthetic: true, files: ["nowcast"] }]);
     expect(container.textContent).toBe("");
+  });
+
+  describe("no recent satellite data: the latest year in the record", () => {
+    // testland: last_data_day 2026-11-13, so the latest complete year is 2025 (from JSON, not typed here).
+    const list = regionsJson({ files: ["nowcast", "trend", "weekly"], optional_files: [] }).regions;
+    const id = liveRegion(list).id;
+    const trend = () => ({
+      ...trendJson(),
+      annual: [2023, 2024, 2025].map((year, i) => ({
+        year,
+        harmonized: [100, 300, 250][i],
+        lo: [90, 280, 230][i],
+        hi: [110, 320, 270][i],
+        kind: "harmonized",
+        naive_count: 1,
+        naive_source: "snpp",
+      })),
+    });
+    const weekly = () => ({
+      ...weeklyJson(),
+      rows: [
+        {
+          year: 2025,
+          week: 1,
+          series: "harmonized",
+          value: 4,
+          lo: 4,
+          hi: 4,
+          kind: "harmonized",
+          source: "snpp",
+        },
+        {
+          year: 2025,
+          week: 2,
+          series: "harmonized",
+          value: 6,
+          lo: 6,
+          hi: 6,
+          kind: "harmonized",
+          source: "snpp",
+        },
+      ],
+    });
+    const unavailable = () => ({ ...nowcastJson("unavailable"), sentence: "No recent satellite data." });
+
+    it("shows that year's harmonized value with its range and kind, and the other baseline years' median", async () => {
+      mockFetch({
+        [`${id}/nowcast.json`]: unavailable(),
+        [`${id}/trend.json`]: trend(),
+        [`${id}/weekly.json`]: weekly(),
+      });
+      renderLive(list);
+      const card = await screen.findByTestId("latest-year");
+      await waitFor(() => expect(card.textContent).toContain("Latest year in the record: 2025"));
+      expect(card.textContent).toContain("No recent satellite data.");
+      expect(card.textContent).toContain("250"); // 2025's harmonized value
+      expect(card.textContent).toContain("230 to 270");
+      expect(card.textContent).toContain("Harmonized"); // kind badge
+      // baseline 2003-2025 includes 2025, so it is left out: median of 100 and 300
+      expect(card.textContent).toContain("median of the other baseline years, 2003 to 2025");
+      expect(card.textContent).toContain("200");
+      expect(screen.getByRole("img", { name: /2 weeks with data, 50 without/ })).toBeTruthy();
+      expect(screen.getByRole("link", { name: "See the full picture" }).getAttribute("href")).toBe(
+        `/r/${id}`,
+      );
+      expect(screen.queryByText("Live this week")).toBeNull();
+    });
+
+    it("keeps the live card when the nowcast has a real status", async () => {
+      mockFetch({ [`${id}/nowcast.json`]: nowcastJson("normal") });
+      renderLive(list);
+      await waitFor(() => expect(screen.getByText("Live this week")).toBeTruthy());
+      expect(screen.queryByTestId("latest-year")).toBeNull();
+    });
+
+    it("hides the section when trend.json or weekly.json is missing", async () => {
+      vi.spyOn(console, "info").mockImplementation(() => {});
+      mockFetch({ [`${id}/nowcast.json`]: unavailable(), [`${id}/weekly.json`]: weekly() });
+      const { container } = renderLive(list);
+      await waitFor(() => expect(container.textContent).toBe(""));
+    });
   });
 });

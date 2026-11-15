@@ -4,7 +4,7 @@ import { open, overflowsHorizontally, watch } from "./helpers.js";
 
 /** The loader shows once per session; tests about the page itself start as if it had been seen. */
 async function skipLoader(page) {
-  await page.addInitScript(() => sessionStorage.setItem("firerosetta-landing-loader", "1"));
+  await page.addInitScript(() => localStorage.setItem("firerosetta-loader-off", "1"));
 }
 
 /** The landing globe: satellites as buttons, the info panel, and the 3D scene itself (when WebGL is available). */
@@ -216,12 +216,13 @@ test.describe("landing scroll story", () => {
     expect((await storyState(page)).mode).toBe("stacked");
     await expect(page.locator(".landing-story")).toHaveCount(0);
     await expect(page.getByRole("region", { name: "The broken ruler" }).locator("figcaption")).toBeVisible();
-    await expect(page.getByRole("heading", { name: "Our mission" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Our solution" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Start here" })).toBeVisible();
   });
 
-  test("the mission cards link to methods, the picker, and a region's downloads", async ({ page }) => {
+  test("the Start here path links to methods, the picker, and a region's downloads", async ({ page }) => {
     await open(page, "#/");
-    const mission = page.getByRole("region", { name: "Our mission" });
+    const mission = page.getByRole("region", { name: "Start here" });
     await expect(mission.getByRole("link", { name: /Read the methods/ })).toHaveAttribute(
       "href",
       "#/methods",
@@ -236,23 +237,17 @@ test.describe("landing scroll story", () => {
 test.describe("landing loader", () => {
   const loader = (page) => page.getByTestId("landing-loader");
 
-  test("shows on the first visit, then fades to the page; not again in the same session", async ({
-    page,
-  }) => {
+  test("shows on a full page load, fades to the page, and shows again after a refresh", async ({ page }) => {
     const problems = watch(page);
     await serveData(page, { sample: false, showLoader: true });
     await page.goto("./#/");
     await expect(loader(page)).toBeVisible();
-    await expect(loader(page).locator("canvas")).toBeVisible();
-    // The page is already underneath for crawlers and screen readers.
     await expect(page.locator("h1#landing-title")).toHaveCount(1);
     await expect(page).toHaveTitle("FireRosetta");
     await expect(loader(page)).toHaveCount(0, { timeout: 12000 });
-    await expect(page.locator('[data-testid="globe-stage"] canvas')).toHaveCount(1);
     await page.reload();
-    await expect(page.locator("h1#landing-title")).toBeVisible();
-    await page.waitForTimeout(300);
-    await expect(loader(page)).toHaveCount(0);
+    await expect(loader(page)).toBeVisible();
+    await expect(loader(page)).toHaveCount(0, { timeout: 12000 });
     expect(problems).toEqual([]);
   });
 
@@ -287,16 +282,26 @@ test.describe("landing loader", () => {
     expect(onTop).toBe(true);
   });
 
-  test("is skipped with reduced motion and on other pages", async ({ page }) => {
+  test("not on other pages, and not when coming back to #/ inside the app", async ({ page }) => {
     await serveData(page, { sample: false, showLoader: true });
     await page.goto("./#/pick");
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
     await expect(loader(page)).toHaveCount(0);
+    await page.getByRole("link", { name: "FireRosetta" }).click();
+    await expect(page.locator("h1#landing-title")).toBeVisible();
+    await page.waitForTimeout(300);
+    await expect(loader(page)).toHaveCount(0);
+  });
 
+  test("is skipped with reduced motion; ?loader=1 forces it on", async ({ page }) => {
+    await serveData(page, { sample: false, showLoader: true });
     await page.emulateMedia({ reducedMotion: "reduce" });
     await page.goto("./#/");
     await expect(page.locator("h1#landing-title")).toBeVisible();
+    await page.waitForTimeout(300);
     await expect(loader(page)).toHaveCount(0);
+    await page.goto("./?loader=1#/");
+    await expect(loader(page)).toBeVisible();
   });
 
   test("never blocks: if the Earth texture never arrives, it finishes after 8 s and shows the static Earth", async ({
@@ -320,7 +325,7 @@ test.describe("landing loader", () => {
 });
 
 test.describe("landing live this week", () => {
-  test("loads nowcast.json only near the viewport, then shows the card with a link to the region", async ({
+  test("loads nowcast.json right away (the loader waits for it) and shows the card with a link to the region", async ({
     page,
   }) => {
     await skipLoader(page);
@@ -329,8 +334,8 @@ test.describe("landing live this week", () => {
     const nowcastRequests = [];
     page.on("request", (r) => r.url().includes("/nowcast.json") && nowcastRequests.push(r.url()));
     await open(page, "#/");
-    await page.waitForTimeout(500);
-    expect(nowcastRequests).toEqual([]); // still far below the fold
+    // requested at once, not when the card scrolls into view
+    await expect.poll(() => nowcastRequests.some((u) => u.includes("/alpha/nowcast.json"))).toBe(true);
     const card = page.getByRole("region", { name: "Alpha test region" });
     await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
     await expect(card).toBeVisible();
@@ -342,6 +347,92 @@ test.describe("landing live this week", () => {
       "#/r/alpha",
     );
     expect(await overflowsHorizontally(page)).toBe(false);
+    expect(problems).toEqual([]);
+  });
+});
+
+test.describe("landing problem -> solution stage", () => {
+  test.beforeEach(async ({ page }) => {
+    await serveData(page, { sample: false });
+  });
+
+  const stageTop = (page) =>
+    page.evaluate(
+      () => document.querySelector(".problem-story").getBoundingClientRect().top + window.scrollY,
+    );
+  const stage = (page) => page.getByTestId("problem-stage");
+
+  test("nothing moves below the threshold; past it the solution plays by itself; back reverses", async ({
+    page,
+  }) => {
+    const problems = watch(page);
+    await page.setViewportSize({ width: 1280, height: 800 });
+    await open(page, "#/");
+    const top = await stageTop(page);
+    await page.evaluate((y) => window.scrollTo(0, y), top + 0.1 * 800);
+    await page.waitForTimeout(700);
+    await expect(stage(page)).toHaveAttribute("data-t", "0");
+    await expect(stage(page)).toHaveAttribute("data-state", "problem");
+    await expect(stage(page).getByRole("img", { name: /joined record jumps/ })).toBeVisible();
+
+    await page.evaluate((y) => window.scrollTo(0, y), top + 0.35 * 800);
+    await expect(stage(page)).toHaveAttribute("data-t", "1", { timeout: 4000 });
+    await expect(stage(page)).toHaveAttribute("data-state", "solution");
+    await expect(stage(page).getByRole("img", { name: /one harmonized record/ })).toBeVisible();
+
+    await page.evaluate((y) => window.scrollTo(0, y), top - 300);
+    await expect(stage(page)).toHaveAttribute("data-t", "0", { timeout: 4000 });
+    expect(await overflowsHorizontally(page)).toBe(false);
+    expect(problems).toEqual([]);
+  });
+
+  test("with reduced motion the problem and the solution are two stacked sections", async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: "reduce" });
+    await open(page, "#/");
+    await expect(page.locator(".problem-story")).toHaveCount(0);
+    await expect(page.getByRole("heading", { name: "The problem" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Our solution" })).toBeVisible();
+    await expect(
+      page.getByTestId("solution-section").getByRole("img", { name: /one harmonized record/ }),
+    ).toBeVisible();
+  });
+});
+
+test.describe("landing ready before the loader goes", () => {
+  test("right after the loader: no skeletons, the globe drawn, no new landing requests for a second", async ({
+    page,
+  }) => {
+    test.setTimeout(40_000);
+    const problems = watch(page);
+    await serveData(page, { sample: false, showLoader: true });
+    await page.goto("./#/?loader=1");
+    const loader = page.getByTestId("landing-loader");
+    await expect(loader).toBeVisible();
+    // While it is up, the page underneath is hidden from screen readers and the keyboard.
+    await expect(page.locator("#root main")).toHaveAttribute("inert", "");
+    await expect(loader).toHaveCount(0, { timeout: 15000 });
+
+    // 1. Nothing is still loading on the landing page.
+    const loading = await page.evaluate(
+      () =>
+        document.querySelectorAll(
+          '#root [data-state="loading"], #root [role="status"][aria-label^="Loading"]',
+        ).length,
+    );
+    expect(loading).toBe(0);
+    await expect(page.locator("#root main")).not.toHaveAttribute("inert", "");
+
+    // 2. The globe has drawn: the scene reported its frames, and the stage is not a blank picture.
+    const stage = page.getByTestId("globe-stage");
+    await expect(stage).toHaveAttribute("data-drawn", "true");
+    const png = await stage.screenshot();
+    expect(png.length).toBeGreaterThan(20_000); // a flat, empty area compresses to a few kB
+
+    // 3. No new requests for landing assets in the next second.
+    const count = () => page.evaluate(() => performance.getEntriesByType("resource").length);
+    const before = await count();
+    await page.waitForTimeout(1000);
+    expect(await count()).toBe(before);
     expect(problems).toEqual([]);
   });
 });

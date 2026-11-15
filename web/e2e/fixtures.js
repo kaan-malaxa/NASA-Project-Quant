@@ -320,9 +320,9 @@ export function buildFiles({ sample }) {
 /** Serve buildFiles(...) for every request to .../data/...; anything not in the set is a 404 (and fails the test). */
 export async function serveData(page, opts = { sample: true }) {
   const files = buildFiles({ sample: opts.sample ?? true });
-  // The landing loader shows once per session; tests skip it unless they are about it ({ showLoader: true }).
-  if (!opts.showLoader)
-    await page.addInitScript(() => sessionStorage.setItem("firerosetta-landing-loader", "1"));
+  // The landing loader shows on every full load of #/; tests turn it off with the test-only flag unless they are
+  // about it ({ showLoader: true }). See src/screens/landing/loaderMath.js.
+  if (!opts.showLoader) await page.addInitScript(() => localStorage.setItem("firerosetta-loader-off", "1"));
   await page.route(/\/data\//, (route) => {
     const path = new URL(route.request().url()).pathname.replace(/^.*?\/data\//, "");
     const f = files[path];

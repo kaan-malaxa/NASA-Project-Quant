@@ -144,13 +144,13 @@ def clean_files(inputs, region, science, *, publish=True):
             retain(~frame.duplicated(["sensor", "latitude", "longitude", "acq_datetime_utc"]), "duplicates")
             west, south, east, north = region.bbox
             retain(frame.longitude.between(west, east) & frame.latitude.between(south, north), "bbox")
-            static = frame.loc[frame["type"].isin([1, 2, 3]) & frame["product"].eq("SP")]
+            static = frame.loc[frame["type"].isin(science["static_mask"]["types"]) & frame["product"].eq("SP")]
             if not static.empty:
                 candidates.extend(
                     h3.latlng_to_cell(lat, lon, science["grid"]["mask_res"])
                     for lat, lon in zip(static.latitude, static.longitude)
                 )
-            retain(frame["type"].isna() | frame["type"].eq(0), "type")
+            retain(frame["type"].isna() | frame["type"].eq(science["filters"]["keep_type"]), "type")
             if sensor in {"aqua", "terra"}:
                 quality = pd.to_numeric(frame.quality) >= science["filters"]["modis_min_confidence"]
             else:

@@ -97,4 +97,4 @@ See the [requirements matrix](plan/REQUIREMENTS_MATRIX.md) and [repair acceptanc
 
 Human completion remains pending: scientific sign-off, the two-person clock usability test, team identities and AI disclosure review, final submission links and the read-aloud check. Cross-OS CI is configured to compare scientific payloads; a Windows run alone does not establish those results. No external publication is part of this repair.
 
-OpenAI Codex assisted implementation, integration repair, regression tests, source verification and document generation. The team must confirm other assistant use and completed human review before submission.
+OpenAI Codex and Anthropic Claude assisted implementation, integration repair, regression tests, source verification and document generation. The team must confirm other assistant use and completed human review before submission.

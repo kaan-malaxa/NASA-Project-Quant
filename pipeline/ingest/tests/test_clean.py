@@ -11,7 +11,8 @@ from pipeline.ingest import __main__ as entry
 from pipeline.ingest import clean
 
 SCIENCE = {
-    "filters": {"modis_min_confidence": 30, "viirs_keep": ["n", "h"]},
+    "filters": {"modis_min_confidence": 30, "viirs_keep": ["n", "h"], "keep_type": 0},
+    "static_mask": {"types": [1, 2, 3]},
     "grid": {"count_res": 6, "map_res": 5, "mask_res": 8},
 }
 HEADER = ["latitude", "longitude", "acq_date", "acq_time", "satellite", "instrument",

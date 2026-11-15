@@ -17,7 +17,8 @@ from pipeline.ingest import nowcast_fetch as nowcast
 NOW = pd.Timestamp("2026-11-15T12:00:00Z")
 SCIENCE = {
     "timebins": {"solar_degrees_per_hour": 15},
-    "filters": {"modis_min_confidence": 30, "viirs_keep": ["n", "h"]},
+    "filters": {"modis_min_confidence": 30, "viirs_keep": ["n", "h"], "keep_type": 0},
+    "static_mask": {"types": [1, 2, 3]},
     "grid": {"count_res": 6, "map_res": 5, "mask_res": 8},
 }
 

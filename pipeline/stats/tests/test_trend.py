@@ -16,7 +16,7 @@ from pipeline.stats.tests.fabricate import (
     contract_validator,
     naive_annual,
 )
-from pipeline.stats.trend import boundaries, build_trend_files, estimate, pct_per_decade
+from pipeline.stats.trend import bootstrap_replacer, boundaries, build_trend_files, estimate, pct_per_decade
 
 YEARS = range(2003, 2026)
 
@@ -152,3 +152,18 @@ def test_outputs_validate_and_are_deterministic():
         assert text == json.dumps(second[name], sort_keys=True, allow_nan=False)
         assert [e.message for e in contract_validator(name).iter_errors(json.loads(text))] == []
         assert "{" not in first[name]["sentence"]
+
+
+def test_null_bootstrap_year_round_trips_and_is_read_as_missing(tmp_path):
+    """A year below the coverage threshold has a null replicate total: storable, and never a zero."""
+    import pandas as pd
+
+    from pipeline.common import io
+
+    frame = pd.DataFrame({"replicate": [0, 0], "year": [2023, 2024],
+                          "harmonized": pd.array([120.0, None], dtype="Float64")})
+    path = tmp_path / "annual_bootstrap.parquet"
+    io.write_parquet(frame, path, "annual_bootstrap")
+    stored = io.read_parquet(path, "annual_bootstrap")
+    assert stored["harmonized"].isna().tolist() == [False, True]
+    assert bootstrap_replacer(stored)(np.random.default_rng(0)) == {2023: 120.0}

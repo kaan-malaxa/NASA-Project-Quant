@@ -143,7 +143,7 @@ All under `data/` (git-ignored). Parquet with zstd compression. Dates are `date3
 | 5.6 | `data/grid/{region}/static_mask.parquet` | R2 → R2 | `h3_r8 str`. |
 | 5.7 | `data/grid/{region}/celldays_nrt.parquet` | R2 → R1 | Same columns as 5.2 plus `fetched_at ts`. NOAA-20 near-real-time, last 31 days. |
 | 5.8 | `data/harmonized/{region}/daily.parquet` | R3 → R1, R4 | `local_day date, series str, value f64 null, lo f64 null, hi f64 null, kind str, source str, covered bool`. Series list below. One row per series per day, 2003-01-01 → last data day. |
-| 5.9 | `data/harmonized/{region}/annual_bootstrap.parquet` | R3 → R1 | `replicate i32 (0..499), year i32, harmonized f64`. |
+| 5.9 | `data/harmonized/{region}/annual_bootstrap.parquet` | R3 → R1 | `replicate i32 (0..499), year i32, harmonized f64 null`. One row per replicate per year; `harmonized` is null for a year below the SD-08 yearly coverage threshold. |
 | 5.10 | `data/harmonized/{region}/calibration.json` | R3 → R1, R4, web | Same shape as §6.11. |
 | 5.11 | `data/harmonized/{region}/validation_t1.json` and `naive_annual.parquet` | R3 → R1 | JSON: `{"validation":[ValidationRow…], "drift":[{"year","sensor","k_annual","lo","hi"}], "drift_summary":{"mean_k_fit_window", "departure_pct_by_year":{…}}}` (ValidationRow in §6.13; saturation results are ValidationRows). Parquet: `year i32, modis_count f64, snpp_count f64, modis_covered_frac f64, snpp_covered_frac f64`. |
 | 5.12 | `data/eyesight/{region}/curve.json` | R4 → R1 | The `eyesight` entry of §6.13 for this region. |

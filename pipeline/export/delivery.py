@@ -39,7 +39,7 @@ def documents(read, audit):
                "identities and AI disclosure review, final submission links and the read-aloud check. Cross-OS CI "
                "is configured to compare scientific payloads; a Windows run alone does not establish those results. "
                "No external publication is part of this repair.")
-    ai = ("OpenAI Codex assisted implementation, integration repair, regression tests, source verification and "
+    ai = ("OpenAI Codex and Anthropic Claude assisted implementation, integration repair, regression tests, source verification and "
           "document generation. The team must confirm other assistant use and completed human review before submission.")
     readme = f"""# Prometheus Torch
 

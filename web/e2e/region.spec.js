@@ -17,7 +17,10 @@ test.describe("region page", () => {
 
     await calendar.getByRole("radio", { name: "VIIRS, as recorded" }).click();
     await expect.poll(() => query(page).get("lens")).toBe("viirs_raw");
-    await expect(calendar.getByRole("radio", { name: "VIIRS, as recorded" })).toHaveAttribute("aria-checked", "true");
+    await expect(calendar.getByRole("radio", { name: "VIIRS, as recorded" })).toHaveAttribute(
+      "aria-checked",
+      "true",
+    );
 
     await calendar.getByRole("radio", { name: "Compared with normal" }).click();
     await expect.poll(() => query(page).get("mode")).toBe("anomaly");
@@ -65,7 +68,9 @@ test.describe("region page", () => {
     await serveData(page, { sample: true });
     for (const hash of ["#/", "#/r/alpha", "#/methods", "#/r/alpha/brief"]) {
       await open(page, hash);
-      await expect(page.getByTestId("sample-banner")).toHaveText("SAMPLE DATA: these numbers are placeholders, not results.");
+      await expect(page.getByTestId("sample-banner")).toHaveText(
+        "SAMPLE DATA: these numbers are placeholders, not results.",
+      );
     }
   });
 

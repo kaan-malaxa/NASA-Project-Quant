@@ -11,6 +11,8 @@ import { methodsJson, nowcastJson, outlineGeojson, regionsJson, rulerJson } from
 beforeEach(() => {
   clearFetchCache();
   resetSample();
+  // The landing loader shows once per session; these tests are about the page under it (see landing/loader.test.jsx).
+  localStorage.setItem("firerosetta-loader-off", "1");
 });
 afterEach(() => {
   cleanup();

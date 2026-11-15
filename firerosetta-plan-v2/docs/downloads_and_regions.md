@@ -65,9 +65,9 @@ fixtures remain isolated in temporary directories; they are not production
 source files. Shared generic path/time/IO helpers remain reusable, and the pure
 API-window helper remains only for fabricated tests.
 
-The runner skips packages without a stage `__main__`. Cleaning, gridding,
-harmonization and statistics are still pending; a successful runner invocation
-with SKIP messages verifies orchestration, not scientific outputs.
+The runner skips packages without a stage `__main__`. Cleaning and gridding
+are implemented but require R3's science configuration. Harmonization and
+statistics are still pending; SKIP messages do not verify scientific outputs.
 
 `docs/us_source_inventory.json` contains the prior direct inspection of the
 real US CSVs. `docs/download_acceptance.txt` captures the latest validation.

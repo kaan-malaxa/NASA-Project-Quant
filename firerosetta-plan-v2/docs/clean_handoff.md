@@ -34,7 +34,8 @@ Current acceptance limitations:
   No real cleaning result, elapsed successful run, or real filter_log.json is claimed.
 - Runtime configuration contains only us. The synthland acceptance command reports an unknown region.
   Synthetic/fabricated validation remains isolated in tests; no synthetic inputs were substituted for US observations.
-- Grid/static-mask application is a future step; rows with null type are not yet masked.
+- Grid/static-mask application is implemented separately; null types are masked
+  when the grid step runs. See grid_handoff.md.
 - Adding the ingest entry point means the all-stage runner now attempts cleaning rather than skipping ingest.
   Until science configuration exists, that runner correctly fails at ingest.
 

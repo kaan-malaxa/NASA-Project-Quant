@@ -133,5 +133,5 @@ def test_entrypoint_success_and_failure(monkeypatch, capsys):
     monkeypatch.setattr(clean, "run", lambda region: 12)
     assert entry.main(["--region", "us", "--steps", "clean"]) == 0
     assert "OK ingest us rows=12" in capsys.readouterr().out
-    assert entry.main(["--region", "us", "--steps", "grid"]) == 1
-    assert "grid is pending" in capsys.readouterr().err
+    assert entry.main(["--region", "us", "--steps", "invalid"]) == 1
+    assert "--steps must be" in capsys.readouterr().err

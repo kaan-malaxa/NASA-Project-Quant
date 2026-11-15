@@ -55,7 +55,13 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="python -m pipeline.export")
     parser.add_argument("--sample", action="store_true", help="write the SAMPLE site into web/public/data")
     parser.add_argument("--check", action="store_true", help="validate web/public/data against contracts/")
+    # The common stage flags (contracts section 3). pipeline.run passes them to every stage, export included.
+    parser.add_argument("--data-root", default=None, help="folder holding the pipeline's intermediate files")
+    parser.add_argument("--pass", dest="pass_", choices=("D", "N"), default="D")
+    parser.add_argument("--log-level", default="INFO")
     args = parser.parse_args(argv)
+    if args.data_root:
+        os.environ["FIREROSETTA_DATA_ROOT"] = str(args.data_root)
 
     t0 = time.monotonic()
     if args.sample:

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 import shutil
 from pathlib import Path
 
@@ -213,3 +214,14 @@ def test_outline_must_have_one_feature(site):
     (site / "us/outline.geojson").write_text(
         json.dumps({"type": "FeatureCollection", "features": []}), encoding="utf-8")
     assert not _by_path(run_check(site))["us/outline.geojson"].ok
+
+
+def test_cli_accepts_the_common_stage_flags(site, monkeypatch, tmp_path):
+    """pipeline.run passes --data-root, --pass and --log-level to every stage, export included."""
+    from pipeline.export import __main__ as cli
+
+    monkeypatch.setattr(cli, "default_data_dir", lambda: site)
+    monkeypatch.setenv("FIREROSETTA_DATA_ROOT", "unset-by-test")
+    args = ["--check", "--data-root", str(tmp_path), "--pass", "D", "--log-level", "INFO"]
+    assert cli.main(args) == 0
+    assert os.environ["FIREROSETTA_DATA_ROOT"] == str(tmp_path)

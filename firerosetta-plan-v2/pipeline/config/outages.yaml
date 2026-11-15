@@ -1,5 +1,95 @@
-# Seed list. R2 verifies each entry against FIRMS notices (E5) on Saturday evening and adds its URL.
+# Checked 2026-11-14 against FIRMS missing-day data and NASA notices.
+# Standard-processing full missing dates are grouped without merging gaps.
+# Confirmed partial-day seed events are conservative inclusive-date masks; see notes and docs/fact_verification.md.
 outages:
-  - {sensor: aqua,  start: "2020-08-16", end: "2020-09-02", note: "Aqua formatter anomaly", url: ""}
-  - {sensor: snpp,  start: "2022-07-26", end: "2022-08-10", note: "S-NPP anomaly",          url: ""}
-  - {sensor: snpp,  start: "2026-07-10", end: null,          note: "S-NPP non-nominal state; fire data ended 2026-11-02", url: ""}
+- sensor: aqua
+  start: '2002-07-30'
+  end: '2002-08-07'
+  note: FIRMS standard-processing missing-day table; inclusive full UTC dates
+  url: https://firms.modaps.eosdis.nasa.gov/api/missing_data/
+- sensor: aqua
+  start: '2002-09-13'
+  end: '2002-09-13'
+  note: FIRMS standard-processing missing-day table; inclusive full UTC dates
+  url: https://firms.modaps.eosdis.nasa.gov/api/missing_data/
+- sensor: aqua
+  start: '2020-08-16'
+  end: '2020-09-02'
+  note: Confirmed FMU/recorder event (FIRMS notice 200117); conservative inclusive-date
+    seed mask. Partial-day boundaries and later direct-broadcast recovery mean not
+    all data were absent.
+  url: https://firms.modaps.eosdis.nasa.gov/api/articles/all
+- sensor: aqua
+  start: '2022-04-01'
+  end: '2022-04-16'
+  note: FIRMS standard-processing missing-day table; inclusive full UTC dates
+  url: https://firms.modaps.eosdis.nasa.gov/api/missing_data/
+- sensor: noaa20
+  start: '2023-07-19'
+  end: '2023-07-22'
+  note: FIRMS standard-processing missing-day table; inclusive full UTC dates
+  url: https://firms.modaps.eosdis.nasa.gov/api/missing_data/
+- sensor: noaa20
+  start: '2023-09-30'
+  end: '2023-09-30'
+  note: FIRMS standard-processing missing-day table; inclusive full UTC dates
+  url: https://firms.modaps.eosdis.nasa.gov/api/missing_data/
+- sensor: noaa20
+  start: '2024-02-04'
+  end: '2024-02-04'
+  note: FIRMS standard-processing missing-day table; inclusive full UTC dates
+  url: https://firms.modaps.eosdis.nasa.gov/api/missing_data/
+- sensor: snpp
+  start: '2012-03-25'
+  end: '2012-03-25'
+  note: FIRMS standard-processing missing-day table; inclusive full UTC dates
+  url: https://firms.modaps.eosdis.nasa.gov/api/missing_data/
+- sensor: snpp
+  start: '2022-07-26'
+  end: '2022-08-10'
+  note: Confirmed safe-mode event (FIRMS notice 200040); seed includes the partial
+    start day. FIRMS full missing dates are July 27 through August 10; distribution
+    recovery is a separate timeline.
+  url: https://firms.modaps.eosdis.nasa.gov/api/articles/all
+- sensor: snpp
+  start: '2024-05-30'
+  end: '2024-06-03'
+  note: FIRMS standard-processing missing-day table; inclusive full UTC dates
+  url: https://firms.modaps.eosdis.nasa.gov/api/missing_data/
+- sensor: snpp
+  start: '2024-07-10'
+  end: '2024-07-15'
+  note: FIRMS standard-processing missing-day table; inclusive full UTC dates
+  url: https://firms.modaps.eosdis.nasa.gov/api/missing_data/
+- sensor: snpp
+  start: '2024-07-25'
+  end: '2024-07-28'
+  note: FIRMS standard-processing missing-day table; inclusive full UTC dates
+  url: https://firms.modaps.eosdis.nasa.gov/api/missing_data/
+- sensor: snpp
+  start: '2024-09-26'
+  end: '2024-09-26'
+  note: FIRMS standard-processing missing-day table; inclusive full UTC dates
+  url: https://firms.modaps.eosdis.nasa.gov/api/missing_data/
+- sensor: snpp
+  start: '2024-11-03'
+  end: '2024-11-05'
+  note: FIRMS standard-processing missing-day table; inclusive full UTC dates
+  url: https://firms.modaps.eosdis.nasa.gov/api/missing_data/
+- sensor: snpp
+  start: '2026-03-10'
+  end: '2026-03-12'
+  note: FIRMS standard-processing missing-day table; inclusive full UTC dates
+  url: https://firms.modaps.eosdis.nasa.gov/api/missing_data/
+- sensor: snpp
+  start: '2026-04-28'
+  end: '2026-06-02'
+  note: FIRMS standard-processing missing-day table; inclusive full UTC dates
+  url: https://firms.modaps.eosdis.nasa.gov/api/missing_data/
+- sensor: snpp
+  start: '2026-07-10'
+  end: '2026-07-17'
+  note: Temporary July anomaly; conservative inclusive UTC dates of the interval in
+    NASA's July 27 recovery update. FIRMS full missing dates are July 11-16; this
+    is not an ongoing outage.
+  url: https://www.earthdata.nasa.gov/data/alerts-outages/suomi-npp-viirs-data-outage-anomaly-july-10-2026

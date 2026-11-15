@@ -1,0 +1,11 @@
+PASS: all 112 listed standard-processing missing sensor-days are covered
+PASS: all 17 outage entries have finite validated date ranges and source URLs
+PASS: all five pitch claims retain required UNVERIFIED draft markers
+> uv run pytest pipeline/ingest -q
+..........................................................               [100%]
+58 passed in 4.21s
+Exit code: 0
+
+> uv run python -m pipeline.ingest --region us --steps grid
+FAIL ingest: Missing science configuration: C:\Users\siv_l\Downloads\firerosetta-plan-v2\NASA-Project-Quant\firerosetta-plan-v2\pipeline\config\science.yaml. R3 must supply pipeline/config/science.yaml.
+Exit code: 1

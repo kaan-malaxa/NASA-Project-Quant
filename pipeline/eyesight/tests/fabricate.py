@@ -29,7 +29,7 @@ def cell(lat: float, lon: float) -> str:
 
 def neighbour_of(c: str) -> str:
     """A cell in the first ring around c (deterministic: smallest index that is not c)."""
-    return sorted(set(h3.grid_disk(c, 1)) - {c})[0]
+    return min(set(h3.grid_disk(c, 1)) - {c})
 
 
 def celldays(rows: list[tuple]) -> pd.DataFrame:

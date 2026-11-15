@@ -66,6 +66,8 @@
           "path": {"type": "string"},
           "fit_window": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string"}},
           "share": {"type": "number", "minimum": 0, "maximum": 1},
+          "static_cells_r6": {"type": "array", "items": {"type": "string"}},
+          "static_detections_surviving_spec": {"type": "integer", "minimum": 0},
           "truth_by_month": {
             "type": "array", "minItems": 12, "maxItems": 12,
             "items": {"type": "object", "required": ["month", "k"],

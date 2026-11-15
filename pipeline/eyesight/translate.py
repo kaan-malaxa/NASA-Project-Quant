@@ -93,9 +93,9 @@ def k_t2_monthly(matched: pd.DataFrame, params: dict, g: float) -> pd.DataFrame:
     for m in range(1, 13):
         ky = yearly.loc[m].to_numpy() if m in yearly.index.get_level_values(0) else np.array([])
         lo, hi = np.percentile(ky, BAND_Q) if ky.size else (np.nan, np.nan)
-        n = monthly.loc[m, "size"]
-        rows.append({"month": m, "k_t2": g * monthly.loc[m, "mean"] if n == n and n > 0 else np.nan,
-                     "k_lo": lo, "k_hi": hi, "n": int(n) if n == n else 0, "n_years": int(ky.size)})
+        n = 0 if pd.isna(monthly.loc[m, "size"]) else int(monthly.loc[m, "size"])  # NaN: month absent
+        rows.append({"month": m, "k_t2": g * monthly.loc[m, "mean"] if n > 0 else np.nan,
+                     "k_lo": lo, "k_hi": hi, "n": n, "n_years": int(ky.size)})
     return pd.DataFrame(rows)
 
 

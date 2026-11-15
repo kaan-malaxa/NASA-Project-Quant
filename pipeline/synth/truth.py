@@ -67,7 +67,46 @@ def detections_from_rows(det: pd.DataFrame, rows: pd.DataFrame) -> pd.DataFrame:
         "daynight": rows["daynight"].to_numpy(), "lat": rows["latitude"].astype(float).to_numpy(),
         "lon": rows["longitude"].astype(float).to_numpy(), "frp": rows["frp"].astype(float).to_numpy(),
         "confidence": rows["confidence"].to_numpy(), "type": rows["type"].to_numpy(),
+        "static": det["static"].to_numpy(dtype=bool),
     })
+
+
+def static_cell_check(det: pd.DataFrame, points: pd.DataFrame, bbox, science: dict, mask_res: int = 8,
+                      min_static: int = 3, dilate: int = 1) -> dict:
+    """Expected cell-days in the res-6 cells of the static points after SD-02 and SD-18, all sensors and passes.
+
+    Fires land in those cells too, so the right answer is not 0: it is the count a correct pipeline produces.
+    Standard rows keep type 0 only; rows without type are dropped when their res-8 cell is in the static mask
+    (res-8 cells with >= 3 standard detections of type 1, 2 or 3, dilated by one ring). Also returns how many
+    true static detections survive the rules (information: 0 means the spec removes them all)."""
+    import h3
+
+    f = science["filters"]
+    west, south, east, north = bbox
+    d = det[det["lon"].between(west, east) & det["lat"].between(south, north)]
+    r8 = np.array([h3.latlng_to_cell(a, b, mask_res) for a, b in zip(d["lat"], d["lon"])], dtype=object)
+    counts = pd.Series(r8[d["type"].isin(["1", "2", "3"]).to_numpy()]).value_counts()
+    seeds = counts[counts >= min_static].index
+    mask = set().union(*[h3.grid_disk(c, dilate) for c in seeds]) if len(seeds) else set()
+
+    is_modis = d["sensor"].isin(["aqua", "terra"]).to_numpy()
+    conf = d["confidence"].astype(str).to_numpy().astype(str)
+    conf_ok = np.where(is_modis, pd.to_numeric(pd.Series(conf), errors="coerce").fillna(-1).to_numpy()
+                       >= f["modis_min_confidence"], np.isin(np.char.lower(conf).astype("<U1"), f["viirs_keep"]))
+    typ = d["type"].to_numpy()
+    keep = conf_ok & ((typ == "0") | ((typ == "") & ~np.isin(r8, list(mask))))
+    k = d[keep]
+    res = int(science["grid"]["count_res"])
+    cells = np.array([h3.latlng_to_cell(a, b, res) for a, b in zip(k["lat"], k["lon"])], dtype=object)
+    centre = {c: h3.cell_to_latlng(c) for c in pd.unique(cells)}
+    inside = np.array([south <= centre[c][0] <= north and west <= centre[c][1] <= east for c in cells], dtype=bool)
+    static_cells = {h3.latlng_to_cell(p.lat, p.lon, res) for p in points.itertuples()}
+    in_static = inside & np.isin(cells, list(static_cells))
+    cd = pd.DataFrame({"sensor": k["sensor"].to_numpy()[in_static], "day": k["local_day"].to_numpy()[in_static],
+                       "dn": k["daynight"].to_numpy()[in_static], "cell": cells[in_static]}).drop_duplicates()
+    return {"celldays_in_static_cells": len(cd),
+            "static_detections_surviving": int((k["static"].to_numpy() & inside).sum()),
+            "static_cells_r6": sorted(static_cells)}
 
 
 def reference_aqua(fires: pd.DataFrame, seed: int) -> pd.DataFrame:
@@ -79,7 +118,7 @@ def reference_aqua(fires: pd.DataFrame, seed: int) -> pd.DataFrame:
         "sensor": "aqua_ref", "local_day": det["local_day"].to_numpy().astype("datetime64[D]"), "daynight": "D",
         "lat": np.round(det["lat"].to_numpy(), 4), "lon": np.round(det["lon"].to_numpy(), 4), "frp": frp,
         "confidence": modis_confidence(frp, rng.normal(0.0, P.MODIS_CONF["noise_sd"], len(det))).astype(str),
-        "type": "0",
+        "type": "0", "static": False,
     })
 
 
@@ -208,6 +247,10 @@ def build_truth(seed: int, size: str, bbox, fires: pd.DataFrame, points: pd.Data
     det = pd.concat([detections_from_rows(d, r) for d, r in written.values()]
                     + [reference_aqua(fires, seed)], ignore_index=True)
     cd = celldays(det[det["sensor"] != "terra"], bbox, science)
+    sm = science.get("static_mask", {"min_static_detections": 3, "dilate_rings": 1})
+    static = static_cell_check(det[det["sensor"] != "aqua_ref"], points, bbox, science,
+                               mask_res=int(science["grid"].get("mask_res", 8)),
+                               min_static=int(sm["min_static_detections"]), dilate=int(sm["dilate_rings"]))
 
     t1 = science["tier1"]
     snpp_fit = [str(v) for v in t1["snpp_fit"]]
@@ -264,15 +307,19 @@ def build_truth(seed: int, size: str, bbox, fires: pd.DataFrame, points: pd.Data
                   share=share_second),
             entry("aqua_outage_days_missing", len(aqua_out), TOL["aqua_outage_days_missing"], "coverage.parquet",
                   "aqua covered=false in outage"),
-            entry("static_rows_surviving", 0, TOL["static_rows_surviving"], "celldays.parquet",
-                  "cells of the 5 static points"),
+            entry("static_rows_surviving", static["celldays_in_static_cells"], TOL["static_rows_surviving"],
+                  "celldays.parquet",
+                  "count of cell-days (all sensors and passes) in static_cells_r6; fires land there too, so the "
+                  "truth is the SD-02 + SD-18 count, and any static leak raises it",
+                  static_cells_r6=static["static_cells_r6"],
+                  static_detections_surviving_spec=static["static_detections_surviving"]),
         ],
         "binned_rates": binned_rates(matched),
         "k_monthly": {"snpp": k_snpp["monthly"], "noaa20": k_n20["monthly"]},
         "noaa20": {"first_full_year": n20_year, "fit_years": n20_years,
                    "method": "direct" if n20_years >= int(t1["n20_min_fit_years"]) else "chained"},
         "aqua_scale_annual": annual.to_dict(orient="records"),
-        "matched_celldays": int(len(matched)),
+        "matched_celldays": len(matched),
         "counts": counts,
-        "world": {"start": P.WORLD_START, "end": P.WORLD_END, "n_fires": int(len(fires))},
+        "world": {"start": P.WORLD_START, "end": P.WORLD_END, "n_fires": len(fires)},
     }

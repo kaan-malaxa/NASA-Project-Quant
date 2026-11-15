@@ -93,7 +93,8 @@ def load_science() -> dict | None:
 # science.yaml is not in the repo yet; science.yaml always wins once it exists.
 _FALLBACK_SCIENCE = {
     "seed": 7,
-    "grid": {"count_res": 6},
+    "grid": {"count_res": 6, "mask_res": 8},
+    "static_mask": {"min_static_detections": 3, "dilate_rings": 1},
     "filters": {"modis_min_confidence": 30, "viirs_keep": ["n", "h"]},
     "eras": {"aqua_trusted_through": "2022-12-31"},
     "tier1": {"n0": 50, "snpp_fit": ["2013-01-01", "2022-12-31"], "n20_min_fit_years": 3},

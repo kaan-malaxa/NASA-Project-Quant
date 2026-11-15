@@ -11,8 +11,15 @@ import pandas as pd
 import pytest
 
 from pipeline.synth import planted as P
-from pipeline.synth.truth import (TOL, binned_rates, celldays, g_and_matched, k_factors, n20_first_full_year,
-                                  theil_sen_pct_per_decade)
+from pipeline.synth.truth import (
+    TOL,
+    binned_rates,
+    celldays,
+    g_and_matched,
+    k_factors,
+    n20_first_full_year,
+    theil_sen_pct_per_decade,
+)
 
 SCHEMA_PATH = Path(__file__).resolve().parents[1] / "truth_schema.json"
 # R4 section 9.5 sets these two exact-count quantities to tolerance 0; every other tolerance must be > 0.
@@ -208,3 +215,9 @@ def test_celldays_filters_and_merging():
     assert sorted(cd["sensor"]) == ["aqua", "snpp"]
     snpp = cd[cd["sensor"] == "snpp"].iloc[0]
     assert snpp["n_det"] == 2 and snpp["frp_sum"] == pytest.approx(5.0)
+
+
+def test_static_cell_truth_counts_fires_not_static(truth):
+    e = next(x for x in truth["expected"] if x["quantity"] == "static_rows_surviving")
+    assert e["static_detections_surviving_spec"] == 0  # SD-02 + SD-18 remove every static detection
+    assert e["truth"] > 0 and len(e["static_cells_r6"]) == 5  # fires land in those cells too

@@ -14,8 +14,8 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from pipeline.synth.__main__ import run  # noqa: E402
-from pipeline.synth.write_firms import FILE_NAMES  # noqa: E402
+from pipeline.synth.__main__ import run
+from pipeline.synth.write_firms import FILE_NAMES
 
 _CACHE: dict[int, Path] = {}
 

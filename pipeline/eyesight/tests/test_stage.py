@@ -86,8 +86,8 @@ def test_outside_conus_counts_known_answer():
 def test_usa_with_alaska_rows_refuses_to_fit(tmp_path):
     import h3
 
-    from pipeline.eyesight.stage import RegionClipError, fit_entry
     from pipeline.eyesight.compat import science
+    from pipeline.eyesight.stage import RegionClipError, fit_entry
 
     cd = celldays([("snpp", "2015-06-01", h3.latlng_to_cell(61.2, -149.9, 6), 10.0)])
     with pytest.raises(RegionClipError):

@@ -94,7 +94,7 @@ def build_matched(celldays: pd.DataFrame, coverage: pd.DataFrame, fit_start: str
 
     matched["local_day"] = pd.to_datetime(matched["local_day"]).dt.date
     counts = {"aqua_celldays_total": int(total), "aqua_celldays_matched": int(both),
-              "n_matched_rows": int(len(matched)),
+              "n_matched_rows": len(matched),
               "by_year": {int(y): (int(t), int(m)) for y, t, m in by_year}}
     return matched[MATCHED_COLUMNS], counts
 

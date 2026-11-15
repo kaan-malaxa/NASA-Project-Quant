@@ -12,8 +12,8 @@ from . import compat
 from .figures import eyesight_by_year_png, eyesight_curve_png, k_tier1_vs_tier2_png
 from .fit import band_width_at, binned, bootstrap_curve, curve, curve_points, fit_curve
 from .match import build_matched, g_factor
-from .validate import validate
 from .translate import NOAA20_NOTE, backward_t2, forward_t2, g_per_draw, k_compare, k_t2_monthly
+from .validate import validate
 
 MIN_MATCHED_ROWS = 2000
 STATUS_DEFAULT = "exploratory"  # SD-17 decides validated/exploratory in D1

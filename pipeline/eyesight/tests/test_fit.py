@@ -7,8 +7,16 @@ import pandas as pd
 import pytest
 from scipy.special import expit
 
-from pipeline.eyesight.fit import (CURVE_FRP, _nll_and_grad, band_width_at, binned, bootstrap_curve, curve,
-                                   curve_points, fit_curve)
+from pipeline.eyesight.fit import (
+    CURVE_FRP,
+    _nll_and_grad,
+    band_width_at,
+    binned,
+    bootstrap_curve,
+    curve,
+    curve_points,
+    fit_curve,
+)
 
 TRUE = (-2.0, 2.2, 0.88)
 

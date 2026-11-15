@@ -29,7 +29,7 @@ def loyo_fits(matched: pd.DataFrame, by_year: dict[int, tuple[int, int]], init) 
         tot = sum(t for yy, (t, _) in by_year.items() if yy != y)
         mat = sum(m for yy, (_, m) in by_year.items() if yy != y)
         out[y] = {"params": f, "g": tot / mat if mat else np.nan, "n_used": int(train.sum()),
-                  "years_used": sorted(set(int(v) for v in yr[train]))}
+                  "years_used": sorted({int(v) for v in yr[train]})}
     return out
 
 
@@ -49,8 +49,8 @@ def reliability_heldout(matched: pd.DataFrame, fits: dict[int, dict]) -> tuple[f
         total_p += sp
         total_y += sy
     if not total_y:
-        return float("inf"), float("inf"), int(len(matched))
-    return abs_sum / total_y, abs(total_p - total_y) / total_y, int(len(matched))
+        return float("inf"), float("inf"), len(matched)
+    return abs_sum / total_y, abs(total_p - total_y) / total_y, len(matched)
 
 
 # ------------------------------------------------------------------ daily and weekly series
@@ -105,8 +105,8 @@ def weekly_wape(daily: pd.DataFrame, pred: str, obs: str) -> tuple[float | None,
     w = w[w[pred].notna() & w[obs].notna()]
     denom = float(w[obs].sum())
     if len(w) == 0 or denom == 0:
-        return None, int(len(w))
-    return float(np.abs(w[pred] - w[obs]).sum()) / denom, int(len(w))
+        return None, len(w)
+    return float(np.abs(w[pred] - w[obs]).sum()) / denom, len(w)
 
 
 def t1_t2_weekly_wape(daily_t2: pd.DataFrame, daily_r3: pd.DataFrame, fit_start: str, fit_end: str

@@ -7,7 +7,7 @@ from pathlib import Path
 import matplotlib
 
 matplotlib.use("Agg")
-import matplotlib.pyplot as plt  # noqa: E402
+import matplotlib.pyplot as plt
 
 MIN_MARKER, MAX_MARKER = 15.0, 300.0
 

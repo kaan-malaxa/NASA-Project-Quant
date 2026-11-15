@@ -3,212 +3,212 @@
   {
    "covered_days": 365,
    "source": "aqua",
-   "value": 689.0,
+   "value": 3229.0,
    "year": 2003
   },
   {
    "covered_days": 366,
    "source": "aqua",
-   "value": 749.0,
+   "value": 3274.0,
    "year": 2004
   },
   {
    "covered_days": 365,
    "source": "aqua",
-   "value": 737.0,
+   "value": 3420.0,
    "year": 2005
   },
   {
    "covered_days": 365,
    "source": "aqua",
-   "value": 689.0,
+   "value": 3407.0,
    "year": 2006
   },
   {
    "covered_days": 365,
    "source": "aqua",
-   "value": 751.0,
+   "value": 3380.0,
    "year": 2007
   },
   {
    "covered_days": 366,
    "source": "aqua",
-   "value": 727.0,
+   "value": 3641.0,
    "year": 2008
   },
   {
    "covered_days": 365,
    "source": "aqua",
-   "value": 782.0,
+   "value": 3702.0,
    "year": 2009
   },
   {
    "covered_days": 365,
    "source": "aqua",
-   "value": 813.0,
+   "value": 3699.0,
    "year": 2010
   },
   {
    "covered_days": 365,
    "source": "aqua",
-   "value": 784.0,
+   "value": 3637.0,
    "year": 2011
   },
   {
    "covered_days": 366,
    "source": "aqua",
-   "value": 740.0,
+   "value": 3746.0,
    "year": 2012
   },
   {
    "covered_days": 365,
    "source": "aqua",
-   "value": 815.0,
+   "value": 3783.0,
    "year": 2013
   },
   {
    "covered_days": 365,
    "source": "aqua",
-   "value": 794.0,
+   "value": 3721.0,
    "year": 2014
   },
   {
    "covered_days": 365,
    "source": "aqua",
-   "value": 801.0,
+   "value": 3833.0,
    "year": 2015
   },
   {
    "covered_days": 366,
    "source": "aqua",
-   "value": 814.0,
+   "value": 3858.0,
    "year": 2016
   },
   {
    "covered_days": 365,
    "source": "aqua",
-   "value": 817.0,
+   "value": 3967.0,
    "year": 2017
   },
   {
    "covered_days": 365,
    "source": "aqua",
-   "value": 814.0,
+   "value": 3965.0,
    "year": 2018
   },
   {
    "covered_days": 365,
    "source": "aqua",
-   "value": 823.0,
+   "value": 4070.0,
    "year": 2019
   },
   {
    "covered_days": 348,
    "source": "aqua",
-   "value": 862.414,
+   "value": 4288.931,
    "year": 2020
   },
   {
    "covered_days": 365,
    "source": "aqua",
-   "value": 908.0,
+   "value": 4056.0,
    "year": 2021
   },
   {
    "covered_days": 365,
    "source": "aqua",
-   "value": 933.0,
+   "value": 4219.0,
    "year": 2022
   },
   {
    "covered_days": 365,
    "source": "aqua_ref",
-   "value": 851.0,
+   "value": 4233.0,
    "year": 2023
   },
   {
    "covered_days": 366,
    "source": "aqua_ref",
-   "value": 931.0,
+   "value": 4326.0,
    "year": 2024
   },
   {
    "covered_days": 365,
    "source": "aqua_ref",
-   "value": 863.0,
+   "value": 4230.0,
    "year": 2025
   }
  ],
  "binned_rates": [
   {
-   "frp_hi": 2.92,
-   "frp_lo": 1.08,
-   "frp_mw": 1.776,
-   "n": 2208,
-   "p_true": 0.15,
+   "frp_hi": 2.84,
+   "frp_lo": 0.95,
+   "frp_mw": 1.643,
+   "n": 10497,
+   "p_true": 0.145,
    "tolerance": 0.04
   },
   {
-   "frp_hi": 4.53,
-   "frp_lo": 2.92,
-   "frp_mw": 3.637,
-   "n": 2219,
-   "p_true": 0.25,
+   "frp_hi": 4.44,
+   "frp_lo": 2.84,
+   "frp_mw": 3.551,
+   "n": 10579,
+   "p_true": 0.238,
    "tolerance": 0.04
   },
   {
-   "frp_hi": 6.44,
-   "frp_lo": 4.53,
-   "frp_mw": 5.401,
-   "n": 2214,
-   "p_true": 0.298,
+   "frp_hi": 6.38,
+   "frp_lo": 4.44,
+   "frp_mw": 5.322,
+   "n": 10623,
+   "p_true": 0.302,
    "tolerance": 0.04
   },
   {
-   "frp_hi": 9.0,
-   "frp_lo": 6.44,
-   "frp_mw": 7.613,
-   "n": 2217,
-   "p_true": 0.375,
+   "frp_hi": 8.96,
+   "frp_lo": 6.38,
+   "frp_mw": 7.561,
+   "n": 10576,
+   "p_true": 0.384,
    "tolerance": 0.04
   },
   {
-   "frp_hi": 12.795,
-   "frp_lo": 9.0,
-   "frp_mw": 10.731,
-   "n": 2215,
-   "p_true": 0.434,
+   "frp_hi": 12.725,
+   "frp_lo": 8.96,
+   "frp_mw": 10.678,
+   "n": 10598,
+   "p_true": 0.447,
    "tolerance": 0.04
   },
   {
-   "frp_hi": 18.96,
-   "frp_lo": 12.795,
-   "frp_mw": 15.575,
-   "n": 2212,
-   "p_true": 0.505,
+   "frp_hi": 19.05,
+   "frp_lo": 12.725,
+   "frp_mw": 15.57,
+   "n": 10566,
+   "p_true": 0.514,
    "tolerance": 0.04
   },
   {
-   "frp_hi": 32.8,
-   "frp_lo": 18.96,
-   "frp_mw": 24.938,
-   "n": 2213,
-   "p_true": 0.589,
+   "frp_hi": 33.1,
+   "frp_lo": 19.05,
+   "frp_mw": 25.111,
+   "n": 10579,
+   "p_true": 0.591,
    "tolerance": 0.04
   },
   {
-   "frp_hi": 1133.3,
-   "frp_lo": 32.8,
-   "frp_mw": 192.801,
-   "n": 2219,
-   "p_true": 0.697,
+   "frp_hi": 921.8,
+   "frp_lo": 33.1,
+   "frp_mw": 174.676,
+   "n": 10579,
+   "p_true": 0.702,
    "tolerance": 0.04
   }
  ],
  "counts": {
-  "modis_rows": 122275,
-  "viirs_noaa20_rows": 76707,
-  "viirs_snpp_rows": 120593
+  "modis_rows": 267734,
+  "viirs_noaa20_rows": 310329,
+  "viirs_snpp_rows": 486042
  },
  "expected": [
   {
@@ -220,7 +220,7 @@
    "quantity": "k_annual_snpp",
    "source_file": "calibration.json",
    "tolerance": 0.03,
-   "truth": 0.471
+   "truth": 0.468
   },
   {
    "fit_window": [
@@ -231,7 +231,7 @@
    "quantity": "k_annual_noaa20",
    "source_file": "calibration.json",
    "tolerance": 0.04,
-   "truth": 0.473
+   "truth": 0.468
   },
   {
    "path": "k.snpp[*].k",
@@ -241,51 +241,51 @@
    "truth": 0.0,
    "truth_by_month": [
     {
-     "k": 0.489,
+     "k": 0.46,
      "month": 1
     },
     {
-     "k": 0.482,
+     "k": 0.442,
      "month": 2
     },
     {
-     "k": 0.442,
+     "k": 0.495,
      "month": 3
     },
     {
-     "k": 0.469,
+     "k": 0.463,
      "month": 4
     },
     {
-     "k": 0.475,
+     "k": 0.465,
      "month": 5
     },
     {
-     "k": 0.48,
+     "k": 0.442,
      "month": 6
     },
     {
-     "k": 0.449,
+     "k": 0.474,
      "month": 7
     },
     {
-     "k": 0.457,
+     "k": 0.462,
      "month": 8
     },
     {
-     "k": 0.48,
+     "k": 0.453,
      "month": 9
     },
     {
-     "k": 0.461,
+     "k": 0.469,
      "month": 10
     },
     {
-     "k": 0.479,
+     "k": 0.472,
      "month": 11
     },
     {
-     "k": 0.469,
+     "k": 0.465,
      "month": 12
     }
    ]
@@ -299,7 +299,7 @@
    "quantity": "g",
    "source_file": "curve.json",
    "tolerance": 0.03,
-   "truth": 1.142
+   "truth": 1.125
   },
   {
    "path": "reliability_err",
@@ -313,12 +313,12 @@
    "quantity": "trend_pct_per_decade",
    "source_file": "trend.json",
    "tolerance": 5.0,
-   "truth": 10.284
+   "truth": 12.512
   },
   {
    "path": "windows[0].peak_week",
    "quantity": "peak_week_main",
-   "share": 0.109,
+   "share": 0.107,
    "source_file": "season.json",
    "tolerance": 1,
    "truth": 44
@@ -326,7 +326,7 @@
   {
    "path": "windows[1].peak_week",
    "quantity": "peak_week_second",
-   "share": 0.047,
+   "share": 0.048,
    "source_file": "season.json",
    "tolerance": 1,
    "truth": 18
@@ -339,164 +339,172 @@
    "truth": 18
   },
   {
-   "path": "cells of the 5 static points",
+   "path": "count of cell-days (all sensors and passes) in static_cells_r6; fires land there too, so the truth is the SD-02 + SD-18 count, and any static leak raises it",
    "quantity": "static_rows_surviving",
    "source_file": "celldays.parquet",
+   "static_cells_r6": [
+    "865852797ffffff",
+    "8658e0acfffffff",
+    "8658e0aefffffff",
+    "8658e1907ffffff",
+    "8658e591fffffff"
+   ],
+   "static_detections_surviving_spec": 0,
    "tolerance": 0,
-   "truth": 0
+   "truth": 1552
   }
  ],
  "k_monthly": {
   "noaa20": [
    {
-    "aqua_celldays": 56,
-    "k": 0.538,
-    "month": 1,
-    "viirs_celldays": 98
-   },
-   {
-    "aqua_celldays": 46,
-    "k": 0.464,
-    "month": 2,
-    "viirs_celldays": 100
-   },
-   {
-    "aqua_celldays": 52,
-    "k": 0.47,
-    "month": 3,
-    "viirs_celldays": 111
-   },
-   {
-    "aqua_celldays": 434,
-    "k": 0.448,
-    "month": 4,
-    "viirs_celldays": 972
-   },
-   {
-    "aqua_celldays": 603,
+    "aqua_celldays": 221,
     "k": 0.476,
+    "month": 1,
+    "viirs_celldays": 464
+   },
+   {
+    "aqua_celldays": 156,
+    "k": 0.471,
+    "month": 2,
+    "viirs_celldays": 331
+   },
+   {
+    "aqua_celldays": 277,
+    "k": 0.474,
+    "month": 3,
+    "viirs_celldays": 584
+   },
+   {
+    "aqua_celldays": 2179,
+    "k": 0.467,
+    "month": 4,
+    "viirs_celldays": 4666
+   },
+   {
+    "aqua_celldays": 2754,
+    "k": 0.468,
     "month": 5,
-    "viirs_celldays": 1266
+    "viirs_celldays": 5879
    },
    {
-    "aqua_celldays": 57,
-    "k": 0.48,
+    "aqua_celldays": 270,
+    "k": 0.447,
     "month": 6,
-    "viirs_celldays": 118
+    "viirs_celldays": 607
    },
    {
-    "aqua_celldays": 37,
-    "k": 0.46,
+    "aqua_celldays": 190,
+    "k": 0.485,
     "month": 7,
-    "viirs_celldays": 82
+    "viirs_celldays": 390
    },
    {
-    "aqua_celldays": 33,
-    "k": 0.506,
+    "aqua_celldays": 174,
+    "k": 0.469,
     "month": 8,
-    "viirs_celldays": 62
+    "viirs_celldays": 371
    },
    {
-    "aqua_celldays": 141,
-    "k": 0.479,
+    "aqua_celldays": 648,
+    "k": 0.437,
     "month": 9,
-    "viirs_celldays": 294
+    "viirs_celldays": 1485
    },
    {
-    "aqua_celldays": 1281,
-    "k": 0.459,
+    "aqua_celldays": 6356,
+    "k": 0.468,
     "month": 10,
-    "viirs_celldays": 2793
+    "viirs_celldays": 13580
    },
    {
-    "aqua_celldays": 1390,
-    "k": 0.488,
+    "aqua_celldays": 6352,
+    "k": 0.472,
     "month": 11,
-    "viirs_celldays": 2845
+    "viirs_celldays": 13452
    },
    {
-    "aqua_celldays": 168,
-    "k": 0.495,
+    "aqua_celldays": 811,
+    "k": 0.466,
     "month": 12,
-    "viirs_celldays": 337
+    "viirs_celldays": 1742
    }
   ],
   "snpp": [
    {
-    "aqua_celldays": 91,
-    "k": 0.489,
+    "aqua_celldays": 389,
+    "k": 0.46,
     "month": 1,
-    "viirs_celldays": 184
+    "viirs_celldays": 846
    },
    {
-    "aqua_celldays": 84,
-    "k": 0.482,
-    "month": 2,
-    "viirs_celldays": 173
-   },
-   {
-    "aqua_celldays": 94,
+    "aqua_celldays": 312,
     "k": 0.442,
+    "month": 2,
+    "viirs_celldays": 709
+   },
+   {
+    "aqua_celldays": 534,
+    "k": 0.495,
     "month": 3,
-    "viirs_celldays": 216
+    "viirs_celldays": 1075
    },
    {
-    "aqua_celldays": 886,
-    "k": 0.469,
+    "aqua_celldays": 4201,
+    "k": 0.463,
     "month": 4,
-    "viirs_celldays": 1891
+    "viirs_celldays": 9083
    },
    {
-    "aqua_celldays": 1135,
-    "k": 0.475,
+    "aqua_celldays": 5353,
+    "k": 0.465,
     "month": 5,
-    "viirs_celldays": 2389
+    "viirs_celldays": 11516
    },
    {
-    "aqua_celldays": 120,
-    "k": 0.48,
+    "aqua_celldays": 534,
+    "k": 0.442,
     "month": 6,
-    "viirs_celldays": 249
+    "viirs_celldays": 1210
    },
    {
-    "aqua_celldays": 72,
-    "k": 0.449,
+    "aqua_celldays": 362,
+    "k": 0.474,
     "month": 7,
-    "viirs_celldays": 163
+    "viirs_celldays": 763
    },
    {
-    "aqua_celldays": 66,
-    "k": 0.457,
+    "aqua_celldays": 365,
+    "k": 0.462,
     "month": 8,
-    "viirs_celldays": 146
+    "viirs_celldays": 790
    },
    {
-    "aqua_celldays": 271,
-    "k": 0.48,
+    "aqua_celldays": 1309,
+    "k": 0.453,
     "month": 9,
-    "viirs_celldays": 564
+    "viirs_celldays": 2891
    },
    {
-    "aqua_celldays": 2504,
-    "k": 0.461,
-    "month": 10,
-    "viirs_celldays": 5438
-   },
-   {
-    "aqua_celldays": 2694,
-    "k": 0.479,
-    "month": 11,
-    "viirs_celldays": 5618
-   },
-   {
-    "aqua_celldays": 322,
+    "aqua_celldays": 12303,
     "k": 0.469,
+    "month": 10,
+    "viirs_celldays": 26217
+   },
+   {
+    "aqua_celldays": 12318,
+    "k": 0.472,
+    "month": 11,
+    "viirs_celldays": 26121
+   },
+   {
+    "aqua_celldays": 1570,
+    "k": 0.465,
     "month": 12,
-    "viirs_celldays": 686
+    "viirs_celldays": 3376
    }
   ]
  },
- "matched_celldays": 17717,
+ "matched_celldays": 84597,
  "noaa20": {
   "first_full_year": 2018,
   "fit_years": 5,
@@ -576,10 +584,10 @@
   "trend_pct_per_decade_fires": 15.0
  },
  "seed": 7,
- "size": "tiny",
+ "size": "full",
  "world": {
   "end": "2026-11-13",
-  "n_fires": 45297,
+  "n_fires": 217378,
   "start": "2003-01-01"
  }
 }

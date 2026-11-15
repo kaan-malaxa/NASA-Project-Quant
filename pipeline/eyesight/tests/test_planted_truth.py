@@ -54,3 +54,11 @@ def test_planted_truth_g(planted):
     _, counts, truth = planted
     want = next(e for e in truth["expected"] if e["quantity"] == "g")
     assert abs(g_factor(counts) - want["truth"]) <= want["tolerance"]
+
+
+def test_planted_truth_static_cells(planted):
+    _, _, truth = planted
+    want = next(e for e in truth["expected"] if e["quantity"] == "static_rows_surviving")
+    cd = compat.read_parquet(compat.celldays_path(REGION), "celldays")
+    got = int(cd["h3_r6"].isin(want["static_cells_r6"]).sum())
+    assert abs(got - want["truth"]) <= want["tolerance"], (got, want["truth"])

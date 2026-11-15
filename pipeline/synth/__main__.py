@@ -5,7 +5,7 @@ from __future__ import annotations
 import hashlib
 import sys
 import time
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 import pandas as pd
@@ -51,7 +51,7 @@ def run(region: str, seed: int, size: str, out_dir: Path) -> dict:
               "viirs_noaa20_rows": len(tables["noaa20"])}
 
     out_dir.mkdir(parents=True, exist_ok=True)
-    now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    now = datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
     manifest = []
     for key, rows in tables.items():
         path = out_dir / FILE_NAMES[key]

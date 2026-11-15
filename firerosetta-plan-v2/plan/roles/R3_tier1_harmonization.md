@@ -15,7 +15,7 @@ Your method is deliberately simple (a shrunken monthly ratio). Its strength is t
 | `data/grid/{region}/celldays.parquet` | R2 | §5.2 |
 | `data/grid/{region}/coverage.parquet` | R2 | §5.3 |
 | `data/grid/{region}/hotspot_counts_daily.parquet` | R2 | §5.4 |
-| `data/raw/synthland/truth.json` (tests only) | R4 | §5.16 |
+| Explicit fabricated unit inputs (tests only; no local US planted truth supplied) | R3 | Unit tests |
 
 | You write | For | Contract |
 |---|---|---|
@@ -26,7 +26,7 @@ Your method is deliberately simple (a shrunken monthly ratio). Its strength is t
 | `data/harmonized/{region}/validation_t1.json`, `naive_annual.parquet` | R1 | §5.11 |
 | `data/harmonized/{region}/figures/*.png` | R2 (slides) | §5.19 |
 
-Command you provide: `python -m pipeline.harmonize --region R`.
+Command you provide: `python -m pipeline.harmonize --region united_states`.
 
 ## 4. What the other five are doing
 | Role | Doing | Touches you how |
@@ -44,8 +44,8 @@ Command you provide: `python -m pipeline.harmonize --region R`.
 | Gate | You deliver |
 |---|---|
 | A · Sat 18:30 | `science.yaml` on main (by **17:15**, others need it); `calibrate.py` passing fabricated tests |
-| B · Sat 23:00 | `pipeline.harmonize` end to end on `synthland` (planted k recovered) and on real Punjab; `daily.parquet`, `calibration.json`, bootstrap files written |
-| C · Sun 10:00 | V1–V5 for three regions in `validation_t1.json`; drift and LOYO figures |
+| B · Sat 23:00 | `pipeline.harmonize` end to end on the local United States data; planted ratios checked in unit tests; `daily.parquet`, `calibration.json`, bootstrap files written |
+| C · Sun 10:00 | V1–V5 for the United States (V5 requires a supplied US polygon) in `validation_t1.json`; drift and LOYO figures |
 | D · Sun 14:00 | V6 backcast; direct vs chained NOAA-20; limitations text sent to R1; Tier 2 status agreed with R4 |
 | E · Sun 17:00 | **Numbers audit signed** (`REPORTS.md` §7.3) |
 
@@ -108,9 +108,13 @@ Acceptance:
 
 ### B1 · The daily series and calibration.json (start 18:30)
 ```text
-Task: implement pipeline/harmonize/series.py and the stage entry point `python -m pipeline.harmonize --region R`.
+US-only real-data scope: use the United States CSVs in workspace-root data/MODIS_data/,
+data/VIIRS-SNPP_data/ and data/VIIRS-JPSS_data/ (../data/ from firerosetta-plan-v2/).
+Use R2-ingested US intermediates. united_states is the configured United States region id. Do not substitute another region or invent missing inputs.
 
-Build data/harmonized/R/daily.parquet with every series in the table under contracts section 5.8, one row per series
+Task: implement pipeline/harmonize/series.py and the stage entry point `python -m pipeline.harmonize --region united_states`.
+
+Build data/harmonized/united_states/daily.parquet with every series in the table under contracts section 5.8, one row per series
 per day from eras.record_start to the last local_day in coverage:
 - aqua_raw, snpp_raw, noaa20_raw from daily_counts (kind observed, or missing with value null where not covered);
 - viirs_raw: snpp through eras.snpp_through, noaa20 after;
@@ -126,7 +130,7 @@ NOAA-20 fit window: from n20_first_full_year (computed here from celldays: first
 >= 300 distinct days; if none, NOAA-20 is treated as absent and the 2026 era falls back to S-NPP where covered) to the
 end of tier1.snpp_fit. Apply choose_noaa20_method; compute BOTH direct and chained and keep both in memory for validation.
 
-Write data/harmonized/R/calibration.json exactly as contracts section 6.11 (eras, fit_window, noaa20_method, k_annual,
+Write data/harmonized/united_states/calibration.json exactly as contracts section 6.11 (eras, fit_window, noaa20_method, k_annual,
 k per month with cell-day sums). Validate with the JSON Schema in contracts/calibration.schema.json if it exists.
 
 Tests (fabricated): the era switch happens on the right days; a planted Aqua outage in 2020 is filled from S-NPP x k and
@@ -135,13 +139,16 @@ aqua/k; no value is ever negative or NaN; every series has exactly one row per d
 
 Acceptance:
   uv run pytest pipeline/harmonize -q
-  uv run python -m pipeline.harmonize --region synthland
-  uv run python -m pipeline.harmonize --region punjab
+  uv run python -m pipeline.harmonize --region united_states
 Paste: k_annual and the 12 monthly k for both sensors, noaa20_method, and the count of missing days in `harmonized`.
 ```
 
 ### B2 · Uncertainty and the naive record
 ```text
+US-only real-data scope: use the United States CSVs in workspace-root data/MODIS_data/,
+data/VIIRS-SNPP_data/ and data/VIIRS-JPSS_data/ (../data/ from firerosetta-plan-v2/).
+Use R2-ingested US intermediates. united_states is the configured United States region id. Do not substitute another region or invent missing inputs.
+
 Task: add pipeline/harmonize/bootstrap.py and pipeline/harmonize/naive.py, and wire both into the stage.
 
 bootstrap.py (SD-06): year-block bootstrap with B = tier1.bootstrap_b and the seed from science.yaml. Each replicate
@@ -162,14 +169,20 @@ for Aqua-era years have zero variance across replicates; naive counts match a ha
 
 Acceptance:
   uv run pytest pipeline/harmonize -q
-  uv run python -m pipeline.harmonize --region synthland     # must finish in under 2 minutes
-  uv run python -m pipeline.harmonize --region punjab        # paste the run time
+  uv run python -m pipeline.harmonize --region united_states  # must finish in under 2 minutes; paste the run time
 ```
 
 ### B3 · Planted-truth check for Tier 1 (before Gate B)
 ```text
-Task: add pipeline/harmonize/tests/test_planted_truth.py, skipped when data/raw/synthland/truth.json or the synthland
-celldays are absent. It runs the stage on synthland and asserts, using the tolerances stored in truth.json:
+US-only real-data scope: use the United States CSVs in workspace-root data/MODIS_data/,
+data/VIIRS-SNPP_data/ and data/VIIRS-JPSS_data/ (../data/ from firerosetta-plan-v2/).
+Use R2-ingested US intermediates and the verified configured United States region id (united_states).
+Do not substitute another region or invent missing inputs.
+
+Task: add pipeline/harmonize/tests/test_planted_truth.py for the United States only. The supplied US CSVs are
+observations, not planted truth, and no US truth.json is currently supplied. Skip planted-truth checks with an explicit
+reason unless R4 supplies a verified US-specific truth.json and the matching US celldays exist. Never use another
+region's truth file. When those US inputs exist, run the stage with --region united_states and assert, using truth.json:
 k_annual for snpp and noaa20; the 12 monthly k values (looser tolerance); the planted Aqua outage days are missing in
 aqua_raw and filled in harmonized; noaa20_method is what truth.json expects; the drift planted after 2022 does NOT
 contaminate k (k fitted on 2013-2022 matches the pre-drift truth).
@@ -178,7 +191,11 @@ Run it and paste the comparison table (quantity, truth, recovered, tolerance, pa
 
 ### C1 · Validation V1, V2, V3 (start Sun 07:00)
 ```text
-Task: implement pipeline/harmonize/validate.py; the stage writes data/harmonized/R/validation_t1.json
+US-only real-data scope: use the United States CSVs in workspace-root data/MODIS_data/,
+data/VIIRS-SNPP_data/ and data/VIIRS-JPSS_data/ (../data/ from firerosetta-plan-v2/).
+Use R2-ingested US intermediates. united_states is the configured United States region id. Do not substitute another region or invent missing inputs.
+
+Task: implement pipeline/harmonize/validate.py; the stage writes data/harmonized/united_states/validation_t1.json
 (contracts 5.11; ValidationRow in 6.13; test definitions in science section G).
 
 V1 leave-one-year-out, forward: for each year Y in the S-NPP fit window, refit k without Y, predict Aqua daily counts
@@ -193,7 +210,7 @@ V2 handoff: handoff_annual_mape = mean over fit years of |annual(LOYO prediction
 V3 satellite agreement over n20_first_full_year..2025: sat_agreement_wape between weekly snpp_as_aqua and
   noaa20_as_aqua; k_direct_vs_chained_pct = 100 * (k_ann direct - k_ann chained) / k_ann chained (value null with a
   note if direct could not be fitted).
-Every row carries n and years. Save figures to data/harmonized/R/figures/: loyo_scatter.png (pred vs obs weekly, 1:1
+Every row carries n and years. Save figures to data/harmonized/united_states/figures/: loyo_scatter.png (pred vs obs weekly, 1:1
 line), overlay_aqua_vs_translated.png (annual, 2012-2025).
 
 Tests (fabricated): with a constant planted ratio LOYO WAPE < 0.01 and the raw_viirs baseline WAPE is about 1.0;
@@ -202,12 +219,16 @@ with a planted month-dependent ratio, monthly k beats the annual_ratio baseline;
 
 Acceptance:
   uv run pytest pipeline/harmonize -q
-  uv run python -m pipeline.harmonize --region punjab
+  uv run python -m pipeline.harmonize --region united_states
 Paste the validation rows as a table. If WAPE is below 0.05 on real data, explain why it is not a leak before moving on.
 ```
 
 ### C2 · Drift, saturation, backcast (V4, V5, V6)
 ```text
+US-only real-data scope: use the United States CSVs in workspace-root data/MODIS_data/,
+data/VIIRS-SNPP_data/ and data/VIIRS-JPSS_data/ (../data/ from firerosetta-plan-v2/).
+Use R2-ingested US intermediates. united_states is the configured United States region id. Do not substitute another region or invent missing inputs.
+
 Task: extend validate.py.
 
 V4 drift: for each calendar year from 2013 to the last year with Aqua data, k_annual_y = sum(Aqua)/sum(S-NPP) on days both
@@ -226,14 +247,18 @@ where every cell is active every day gives saturation 1.0; backcast on a constan
 
 Acceptance:
   uv run pytest pipeline/harmonize -q
-  uv run python -m pipeline.run --all-regions --from harmonize --to harmonize
-Paste for each region: LOYO WAPE vs both baselines, drift summary, saturation r5 vs r6, backcast WAPE.
+  uv run python -m pipeline.run --region united_states --from harmonize --to harmonize
+Paste for the United States only: LOYO WAPE vs both baselines, drift summary, saturation r5 vs r6, backcast WAPE.
 ```
 
 ### D1 · Science review of the outputs (Sun 10:30, mostly reading)
 ```text
+US-only real-data scope: use the United States CSVs in workspace-root data/MODIS_data/,
+data/VIIRS-SNPP_data/ and data/VIIRS-JPSS_data/ (../data/ from firerosetta-plan-v2/).
+Review only outputs derived from those US inputs; do not substitute another region's outputs.
+
 Task: act as a sceptical reviewer of our own results. I will paste calibration.json, validation_t1.json and R1's
-trend.json for each region. For each region answer, citing the numbers:
+trend.json for the United States. Answer for the United States only, citing the numbers:
 1. Is k stable across months, and do the monthly sums (aqua_celldays, viirs_celldays) justify trusting each month?
 2. Does the drift chart support stopping Aqua at 2022-12-31? If drift is not visible, say so plainly.
 3. Do the three trend variants agree in direction? If not, the verdict must be "unclear": is that what trend.json says?
@@ -241,7 +266,7 @@ trend.json for each region. For each region answer, citing the numbers:
 5. Do direct and chained NOAA-20 factors agree within 15%? If not, what does that imply for 2026 values and the nowcast?
 Then draft 5 to 8 honest limitation sentences for the Methods page (plain language, no hedging filler), including:
 day-pass only; cell-days measure the spread of detected burning, not burned area; NRT input for recent months;
-static-source masking asymmetry; region-level k applied to sub-areas in the area lens; Tier 2 status.
+static-source masking asymmetry; US calibration applied to sub-areas in the area lens; Tier 2 status.
 I will send the limitations to R1 for methods_text.yaml. Do not change any number or constant.
 ```
 
@@ -264,7 +289,7 @@ I will copy the table into REPORTS.md section 7.3 and sign it.
 | Fallback | Aqua outage in 2020 | filled by S-NPP × k, `kind: harmonized` |
 | LOYO exclusion | absurd ratio planted in year Y | k without Y unaffected |
 | Drift | planted −5 %/yr after 2022 | visible in `drift`, absent from k |
-| Planted truth | `synthland` | all rows in the comparison table pass |
+| Planted truth | explicit fabricated unit inputs | all known-answer checks pass; never substitute these for US observations |
 | Reproducibility | same seed twice | identical bootstrap files |
 
 ## 10. Science owner duties
@@ -273,7 +298,7 @@ I will copy the table into REPORTS.md section 7.3 and sign it.
 - You sign the audit table in `REPORTS.md` §7.3 before the video is recorded.
 
 ## 11. If things go wrong
-- **`celldays` for a region is late:** develop on `synthland` and fabricated tables; nothing in your code is region-specific.
+- **US `celldays` are absent or stale:** run local US ingestion; use fabricated tables only in unit tests. Never substitute another region for the US inputs.
 - **NOAA-20 has too few years for a direct fit:** the chained method is already specified; record `noaa20_method: chained`.
 - **A month has almost no data:** shrinkage handles it; check the cell-day sums in `calibration.json` and mention the month in limitations.
 - **LOYO error is worse than the annual-ratio baseline:** publish it, switch `harmonized` to annual k for that region (one config line you add: `tier1.monthly: false`), and say so on the Methods page.

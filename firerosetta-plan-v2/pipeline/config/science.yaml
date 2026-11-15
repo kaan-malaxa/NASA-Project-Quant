@@ -1,11 +1,12 @@
 seed: 7
+scope: {region_id: united_states, country: US}
 reference: {sensor: aqua, pass: D}
-filters: {modis_min_confidence: 30, viirs_keep: [n, h]}
+filters: {modis_min_confidence: 30, viirs_keep: [n, h], keep_type: 0}
 grid: {count_res: 6, map_res: 5, mask_res: 8}
 eras: {record_start: "2003-01-01", aqua_trusted_through: "2022-12-31", snpp_through: "2025-12-31", snpp_first_day: "2012-01-20"}
-tier1: {n0: 50, bootstrap_b: 500, snpp_fit: ["2013-01-01", "2022-12-31"], n20_min_fit_years: 3, monthly: true}
-timebins: {week_min_covered_days: 5, month_min_covered_frac: 0.8, year_min_covered_frac: 0.9}
-static_mask: {min_static_detections: 3, dilate_rings: 1}
+tier1: {n0: 50, bootstrap_b: 500, interval_percentiles: [5, 95], snpp_fit: ["2013-01-01", "2022-12-31"], n20_min_fit_years: 3, n20_min_detection_days: 300, monthly: true}
+timebins: {solar_degrees_per_hour: 15, week_days: 7, weeks_per_year: 52, week_min_covered_days: 5, month_min_covered_frac: 0.8, year_min_covered_frac: 0.9}
+static_mask: {types: [1, 2, 3], min_static_detections: 3, dilate_rings: 1}
 climatology: {baseline_years: [2003, 2025], smooth_weeks: 3}
 anomaly: {low_activity_threshold: 5, extreme_pct: 95, above_pct: 75, below_pct: 25}
 season: {critical_share: 0.8, max_windows: 2, min_window_share: 0.15, extend_weeks: 4, min_year_celldays: 20}

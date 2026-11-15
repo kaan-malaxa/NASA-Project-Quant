@@ -1,0 +1,5 @@
+# Locked seed dates from contracts section 4.3; not independently verified notices.
+outages:
+  - {sensor: aqua, start: "2020-08-16", end: "2020-09-02", note: Aqua formatter anomaly, url: ""}
+  - {sensor: snpp, start: "2022-07-26", end: "2022-08-10", note: S-NPP anomaly, url: ""}
+  - {sensor: snpp, start: "2026-07-10", end: null, note: S-NPP non-nominal state, url: ""}

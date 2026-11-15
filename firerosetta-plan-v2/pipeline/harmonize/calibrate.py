@@ -19,9 +19,7 @@ def _dated(frame: pd.DataFrame) -> pd.DataFrame:
         raise ValueError("local_day must not be null")
     if result["local_day"].duplicated().any():
         raise ValueError("Expected exactly one row per local_day")
-    if result["covered"].isna().any() or not pd.api.types.is_bool_dtype(
-        result["covered"]
-    ):
+    if result["covered"].isna().any() or not pd.api.types.is_bool_dtype(result["covered"]):
         raise ValueError("covered must contain non-null booleans")
     return result
 
@@ -53,6 +51,35 @@ def daily_counts(
     return days[["local_day", "count", "covered"]]
 
 
+def paired_fit_days(
+    aqua_daily: pd.DataFrame,
+    viirs_daily: pd.DataFrame,
+    start,
+    end,
+    exclude_years: Iterable[int] = (),
+) -> pd.DataFrame:
+    """Validate and align fit days, shared by point fits and year-block fits."""
+    start, end = pd.Timestamp(start), pd.Timestamp(end)
+    if pd.isna(start) or pd.isna(end) or start > end:
+        raise ValueError("Fit bounds must be valid dates with start <= end")
+    aqua = _dated(aqua_daily[["local_day", "count", "covered"]])
+    viirs = _dated(viirs_daily[["local_day", "count", "covered"]])
+    pairs = aqua.merge(viirs, on="local_day", suffixes=("_aqua", "_viirs"), validate="one_to_one")
+    eligible = (
+        pairs["local_day"].between(start, end)
+        & ~pairs["local_day"].dt.year.isin(tuple(exclude_years))
+        & pairs["covered_aqua"]
+        & pairs["covered_viirs"]
+    )
+    pairs = pairs.loc[eligible].copy()
+    for column in ("count_aqua", "count_viirs"):
+        values = pairs[column].to_numpy(dtype=float, na_value=np.nan)
+        if not np.isfinite(values).all() or (values < 0).any():
+            raise ValueError("Jointly covered fit counts must be finite and non-negative")
+        pairs[column] = values
+    return pairs
+
+
 def fit_k(
     aqua_daily: pd.DataFrame,
     viirs_daily: pd.DataFrame,
@@ -69,48 +96,21 @@ def fit_k(
     """
     if not np.isfinite(n0) or n0 <= 0:
         raise ValueError("n0 must be finite and positive")
-    start, end = pd.Timestamp(start), pd.Timestamp(end)
-    if pd.isna(start) or pd.isna(end) or start > end:
-        raise ValueError("Fit bounds must be valid dates with start <= end")
-    aqua = _dated(aqua_daily[["local_day", "count", "covered"]])
-    viirs = _dated(viirs_daily[["local_day", "count", "covered"]])
-    pairs = aqua.merge(
-        viirs, on="local_day", suffixes=("_aqua", "_viirs"), validate="one_to_one"
-    )
-    eligible = (
-        pairs["local_day"].between(start, end)
-        & ~pairs["local_day"].dt.year.isin(tuple(exclude_years))
-        & pairs["covered_aqua"]
-        & pairs["covered_viirs"]
-    )
-    pairs = pairs.loc[eligible].copy()
-    for column in ("count_aqua", "count_viirs"):
-        values = pairs[column].to_numpy(dtype=float, na_value=np.nan)
-        if not np.isfinite(values).all() or (values < 0).any():
-            raise ValueError(
-                "Jointly covered fit counts must be finite and non-negative"
-            )
-        pairs[column] = values
+    pairs = paired_fit_days(aqua_daily, viirs_daily, start, end, exclude_years)
     annual_aqua = pairs["count_aqua"].sum()
     annual_viirs = pairs["count_viirs"].sum()
     if annual_viirs == 0:
-        raise ValueError(
-            "Cannot fit k: total VIIRS cell-days is zero on jointly covered fit days"
-        )
+        raise ValueError("Cannot fit k: total VIIRS cell-days is zero on jointly covered fit days")
     k_annual = float(annual_aqua / annual_viirs)
     pairs["month"] = pairs["local_day"].dt.month
     monthly = (
         pairs.groupby("month")[["count_aqua", "count_viirs"]]
         .sum()
         .reindex(range(1, 13), fill_value=0)
-        .rename(
-            columns={"count_aqua": "aqua_celldays", "count_viirs": "viirs_celldays"}
-        )
+        .rename(columns={"count_aqua": "aqua_celldays", "count_viirs": "viirs_celldays"})
         .reset_index()
     )
-    monthly["k"] = (monthly["aqua_celldays"] + n0 * k_annual) / (
-        monthly["viirs_celldays"] + n0
-    )
+    monthly["k"] = (monthly["aqua_celldays"] + n0 * k_annual) / (monthly["viirs_celldays"] + n0)
     return monthly[["month", "k", "aqua_celldays", "viirs_celldays"]], k_annual
 
 

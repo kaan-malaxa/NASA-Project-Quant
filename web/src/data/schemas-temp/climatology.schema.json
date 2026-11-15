@@ -1,0 +1,178 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "climatology (TEMPORARY, R5; replace with contracts/climatology.schema.json from R1)",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "code_version",
+    "region",
+    "baseline_years",
+    "unit_week",
+    "unit_month",
+    "weeks",
+    "months"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "code_version": {
+      "type": "string"
+    },
+    "region": {
+      "type": "string"
+    },
+    "baseline_years": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "unit_week": {
+      "type": "string"
+    },
+    "unit_month": {
+      "type": "string"
+    },
+    "weeks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "week",
+          "min",
+          "p10",
+          "p25",
+          "p50",
+          "p75",
+          "p90",
+          "max",
+          "n_years"
+        ],
+        "properties": {
+          "week": {
+            "type": "integer"
+          },
+          "min": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "p10": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "p25": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "p50": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "p75": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "p90": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "max": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "n_years": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "months": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "month",
+          "min",
+          "p10",
+          "p25",
+          "p50",
+          "p75",
+          "p90",
+          "max",
+          "n_years"
+        ],
+        "properties": {
+          "month": {
+            "type": "integer"
+          },
+          "min": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "p10": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "p25": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "p50": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "p75": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "p90": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "max": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "n_years": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}

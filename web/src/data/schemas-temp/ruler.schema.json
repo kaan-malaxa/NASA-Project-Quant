@@ -1,0 +1,126 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ruler (TEMPORARY, R5; replace with contracts/ruler.schema.json from R1)",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "code_version",
+    "region",
+    "index_base_years",
+    "jump_multiple",
+    "rows",
+    "sentence"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "code_version": {
+      "type": "string"
+    },
+    "region": {
+      "type": "string"
+    },
+    "index_base_years": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "jump_multiple": {
+      "type": "object",
+      "required": [
+        "value",
+        "lo",
+        "hi",
+        "years",
+        "definition"
+      ],
+      "properties": {
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "lo": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "hi": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "years": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "definition": {
+          "type": "string"
+        }
+      }
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "year",
+          "naive_index",
+          "harmonized_index",
+          "naive_source",
+          "kind"
+        ],
+        "properties": {
+          "year": {
+            "type": "integer"
+          },
+          "naive_index": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "harmonized_index": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "naive_source": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "kind": {
+            "enum": [
+              "observed",
+              "harmonized",
+              "estimated",
+              "missing",
+              "sample"
+            ]
+          }
+        }
+      }
+    },
+    "sentence": {
+      "type": "string"
+    }
+  }
+}

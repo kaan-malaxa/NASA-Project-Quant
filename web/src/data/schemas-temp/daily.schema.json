@@ -1,0 +1,98 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "daily (TEMPORARY, R5; replace with contracts/daily.schema.json from R1)",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "code_version",
+    "region",
+    "start",
+    "n_days",
+    "series",
+    "kind_runs"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "code_version": {
+      "type": "string"
+    },
+    "region": {
+      "type": "string"
+    },
+    "start": {
+      "type": "string"
+    },
+    "n_days": {
+      "type": "integer"
+    },
+    "series": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "unit",
+          "value"
+        ],
+        "properties": {
+          "unit": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "kind_runs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "series",
+          "from",
+          "to",
+          "kind",
+          "source"
+        ],
+        "properties": {
+          "series": {
+            "type": "string"
+          },
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "observed",
+              "harmonized",
+              "estimated",
+              "missing",
+              "sample"
+            ]
+          },
+          "source": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

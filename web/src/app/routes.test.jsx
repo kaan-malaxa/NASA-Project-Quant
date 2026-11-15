@@ -1,21 +1,30 @@
-import { afterEach, describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { cleanup, render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import AppRoutes from "./AppRoutes.jsx";
+import { clearFetchCache } from "@/data/fetchJson.js";
+import { mockFetch } from "@/test/mockFetch.js";
 
 const cases = [
-  ["/", "1 · The broken ruler"],
-  ["/pick", "2 · Place picker"],
+  ["/", "Is it really burning more, or did the satellite get better eyes?"],
+  ["/pick", "Pick a place"],
   ["/r/punjab", "Region story"],
   ["/r/punjab/brief", "8 · Season Brief"],
   ["/methods", "9 · Methods and honesty"],
   ["/gallery", "Component gallery"],
 ];
 
-afterEach(cleanup);
+beforeEach(() => {
+  clearFetchCache();
+  mockFetch({}); // no data files: every screen must still render
+});
+afterEach(() => {
+  cleanup();
+  vi.unstubAllGlobals();
+});
 
 describe("routes (contracts section 7)", () => {
-  it.each(cases)("%s renders its placeholder and the FIRMS credit", (path, title) => {
+  it.each(cases)("%s renders its heading, the nav and the FIRMS credit", (path, title) => {
     render(
       <MemoryRouter initialEntries={[path]}>
         <AppRoutes />
@@ -24,7 +33,9 @@ describe("routes (contracts section 7)", () => {
     expect(screen.getByRole("heading", { level: 1 }).textContent).toBe(title);
     const credit = screen.getByRole("link", { name: "NASA FIRMS" });
     expect(credit.getAttribute("href")).toBe("https://firms.modaps.eosdis.nasa.gov/");
-    expect(screen.getByRole("link", { name: "Pick a place" })).toBeTruthy();
-    expect(screen.getByRole("link", { name: "Methods" })).toBeTruthy();
+    const nav = screen.getByRole("navigation", { name: "Main" });
+    expect(nav.textContent).toContain("Pick a place");
+    expect(nav.textContent).toContain("Methods");
+    expect(nav.textContent).not.toContain("Gallery");
   });
 });

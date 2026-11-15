@@ -44,3 +44,41 @@ export function trendJson() {
 export function manifestJson(contains_sample = false) {
   return { ...header, contains_sample, files: [] };
 }
+
+export function rulerJson() {
+  return {
+    ...header,
+    region: "testland", index_base_years: [2003, 2011],
+    jump_multiple: { value: 2, lo: 1.5, hi: 2.5, years: [2013, 2022], definition: "Test definition" },
+    rows: [{ year: 2003, naive_index: 1, harmonized_index: 1, naive_source: "modis", kind: "observed" }],
+    sentence: "Ruler sentence from JSON.",
+  };
+}
+
+export function nowcastJson(status = "above_normal") {
+  return {
+    ...header,
+    region: "testland", as_of: "2026-11-14T12:00:00Z", source: "VIIRS_NOAA20_NRT",
+    window: { start: "2026-11-07", end: "2026-11-13", days_covered: 7 },
+    value: 1, lo: 1, hi: 1, unit: "Aqua-equivalent fire cell-days per 7 days", percentile: 80, status,
+    baseline_years: [2003, 2025], history: [{ year: 2003, value: 1, kind: "observed" }],
+    month_to_date: { month: 11, through_day: 13, value: 1, median: 1, ratio: 1, percentile: 50 },
+    kind: "harmonized", input_note: "Test note.", sentence: "Nowcast sentence.",
+  };
+}
+
+export function outlineGeojson() {
+  return {
+    type: "FeatureCollection",
+    features: [{ type: "Feature", properties: {}, geometry: { type: "Polygon", coordinates: [[[0, 0], [1, 0], [1, 1], [0, 1], [0, 0]]] } }],
+  };
+}
+
+export function methodsJson(sources) {
+  return {
+    ...header,
+    decisions: { reference: "MODIS Aqua, daytime", count_resolution: 6, aqua_trusted_through: "2022-12-31", snpp_through: "2025-12-31", baseline_years: [2003, 2025], science_yaml_sha256: "x" },
+    validation: [], drift: [], eyesight: [], planted_truth: [], inputs: [], filters: [],
+    sources, limitations: [], ai_use: "Test.",
+  };
+}

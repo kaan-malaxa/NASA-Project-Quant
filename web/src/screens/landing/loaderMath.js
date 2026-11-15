@@ -58,8 +58,8 @@ export const LOADER = {
   count2: 800,
   split: 400,
   merge: 600,
-  flat: 400,
-  fade: 300,
+  flat: 250, // flatten + fade together about 0.4 s
+  fade: 200,
   maxWait: 8000,
 };
 

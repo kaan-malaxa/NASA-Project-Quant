@@ -6,6 +6,13 @@ import { MOVE_MS, STORY_EXTRA_VH, easeInOut, storyLayout, storyTarget } from "./
 
 const px = (v) => `${Math.round(v * 100) / 100}px`;
 
+/** An element's box in the coordinates of the stage (for the stacked layout's text). */
+function boxIn(stage, el) {
+  const s = stage.getBoundingClientRect();
+  const r = el.getBoundingClientRect();
+  return { left: r.left - s.left, top: r.top - s.top, right: r.right - s.left, bottom: r.bottom - s.top };
+}
+
 /**
  * The landing scroll story (prompt Phase 2). One tall section with the globe stage pinned (position: sticky).
  * Scrolling does not drag the move along: once the visitor has scrolled past a threshold, the move plays by itself
@@ -101,6 +108,9 @@ export default function LandingStory({ calibration, head, cta, renderRuler, onRe
       headH: headEl.offsetHeight,
       headW: headEl.offsetWidth,
       ctaH: ctaRef.current?.offsetHeight ?? 0,
+      ctaW: ctaRef.current?.offsetWidth ?? 0,
+      // The stacked layout places the text with CSS; measure where it actually is.
+      textRects: story ? null : [boxIn(stage, headEl)],
       rulerH: rulerRef.current?.offsetHeight ?? 0,
       chipsH: chipsEl.offsetHeight,
       orbitFraction: ORBIT_FRACTION,

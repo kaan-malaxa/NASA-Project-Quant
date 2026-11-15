@@ -1,7 +1,7 @@
 import { Suspense, useEffect, useLayoutEffect, useMemo, useRef } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Html, Line, useTexture } from "@react-three/drei";
-import { SRGBColorSpace } from "three";
+import { SRGBColorSpace, Vector3 } from "three";
 import { FIT_RADIUS, INCLINATION_DEG, SATELLITES, SHELLS } from "./satellites.js";
 import { cameraDistance, orbitPoint, orbitRing } from "./orbits.js";
 import { EARTH_TEXTURE_URL } from "./earthTexture.js";
@@ -19,7 +19,8 @@ const COLORS = {
   active: "#8dffd6",
   star: "#bfeee2",
 };
-const FOV = 36;
+// A long lens: the hero globe is very large and close to the frame, and a wide angle would distort it.
+const FOV = 20;
 const TILT = (-23.4 * Math.PI) / 180;
 const VIEW_TILT = 0.125; // radians
 const stop = (e) => e.stopPropagation();
@@ -69,6 +70,9 @@ function StoryRig({ story, children }) {
     const halfW = halfH * (size.width / Math.max(1, size.height));
     g.position.set((cx - 0.5) * 2 * halfW, -(cy - 0.5) * 2 * halfH, 0);
     g.scale.setScalar(a.scale + (b.scale - a.scale) * t);
+    // For the satellites: where the Earth is and how big (world units), this frame.
+    s.center = g.position;
+    s.scaleNow = g.scale.x;
   });
   // The camera looks straight ahead (so screen placement maps exactly); the scene itself tips its north toward the
   // viewer a little, for the "seen from slightly above" look.
@@ -131,10 +135,35 @@ function Stars({ count = 500 }) {
   );
 }
 
-function Satellite({ sat, moving, active, selected, onHover, onSelect }) {
+/** How much faster a satellite moves while it cannot be seen (off-screen or behind the Earth). */
+const HIDDEN_SPEEDUP = 8;
+
+function Satellite({ sat, moving, active, selected, onHover, onSelect, story }) {
   const shell = SHELLS[sat.shell];
   const ref = useRef(null);
+  const sizeRef = useRef(null);
   const angle = useRef(sat.phase);
+  const { camera, invalidate } = useThree();
+  const world = useMemo(() => new Vector3(), []);
+  const ndc = useMemo(() => new Vector3(), []);
+  const settle = useRef({ hero: undefined, turned: 0 });
+
+  /** On screen, and not behind the Earth? */
+  const visible = () => {
+    const g = ref.current;
+    if (!g) return true;
+    g.getWorldPosition(world);
+    ndc.copy(world).project(camera);
+    if (Math.abs(ndc.x) > 0.94 || Math.abs(ndc.y) > 0.94) return false;
+    const c = story?.current?.center;
+    const r = story?.current?.scaleNow ?? 1;
+    if (c) {
+      const dx = world.x - c.x;
+      const dy = world.y - c.y;
+      if (world.z < c.z && dx * dx + dy * dy < r * r) return false;
+    }
+    return true;
+  };
   const ring = useMemo(() => orbitRing(shell.radius, INCLINATION_DEG, sat.raan), [shell.radius, sat.raan]);
 
   const place = () => {
@@ -144,9 +173,24 @@ function Satellite({ sat, moving, active, selected, onHover, onSelect }) {
   };
   useLayoutEffect(place);
   useFrame((_, dt) => {
-    if (!moving) return;
-    angle.current += Math.min(dt, 0.1) * shell.speed;
-    place();
+    // Keep the model the same size on screen when the whole globe is scaled up (the big hero).
+    // (A bit more than 1/scale: on the big globe the satellites also pass close to the camera.)
+    sizeRef.current?.scale.setScalar(Math.pow(Math.max(1, story?.current?.scaleNow ?? 1), -1.7));
+    if (moving) {
+      // Satellites hurry through the part of the orbit nobody can see, so most of the time they are in view.
+      angle.current += Math.min(dt, 0.1) * shell.speed * (visible() ? 1 : HIDDEN_SPEEDUP);
+      place();
+      return;
+    }
+    // Reduced motion: no orbiting, but each satellite rests where it can be seen and clicked (search once per layout).
+    const hero = story?.current?.hero;
+    if (settle.current.hero !== hero) settle.current = { hero, turned: 0 };
+    if (settle.current.turned < 2 * Math.PI && !visible()) {
+      angle.current += 0.06;
+      settle.current.turned += 0.06;
+      place();
+      invalidate();
+    }
   });
 
   const over = (e) => {
@@ -171,40 +215,42 @@ function Satellite({ sat, moving, active, selected, onHover, onSelect }) {
         raycast={() => null}
       />
       <group ref={ref}>
-        <group scale={lit ? 1.45 : 1}>
-          <mesh>
-            <boxGeometry args={[0.05, 0.05, 0.075]} />
-            <meshStandardMaterial
-              color={COLORS.body}
-              emissive={lit ? COLORS.active : COLORS.body}
-              emissiveIntensity={lit ? 0.9 : 0.35}
-              roughness={0.5}
-            />
-          </mesh>
-          {[-1, 1].map((side) => (
-            <mesh key={side} position={[side * 0.082, 0, 0]}>
-              <boxGeometry args={[0.1, 0.006, 0.045]} />
+        <group ref={sizeRef}>
+          <group scale={lit ? 1.45 : 1}>
+            <mesh>
+              <boxGeometry args={[0.05, 0.05, 0.075]} />
               <meshStandardMaterial
-                color={COLORS.panel}
-                emissive={lit ? COLORS.active : COLORS.panel}
-                emissiveIntensity={lit ? 0.6 : 0.5}
-                roughness={0.4}
+                color={COLORS.body}
+                emissive={lit ? COLORS.active : COLORS.body}
+                emissiveIntensity={lit ? 0.9 : 0.35}
+                roughness={0.5}
               />
             </mesh>
-          ))}
+            {[-1, 1].map((side) => (
+              <mesh key={side} position={[side * 0.082, 0, 0]}>
+                <boxGeometry args={[0.1, 0.006, 0.045]} />
+                <meshStandardMaterial
+                  color={COLORS.panel}
+                  emissive={lit ? COLORS.active : COLORS.panel}
+                  emissiveIntensity={lit ? 0.6 : 0.5}
+                  roughness={0.4}
+                />
+              </mesh>
+            ))}
+          </group>
+          {/* A larger invisible target, so the small model is easy to hover and tap. */}
+          <mesh onPointerOver={over} onPointerOut={out} onClick={click}>
+            <sphereGeometry args={[0.15, 12, 12]} />
+            <meshBasicMaterial transparent opacity={0} depthWrite={false} />
+          </mesh>
+          {lit ? (
+            <Html center position={[0, 0, -0.2]} zIndexRange={[20, 0]} style={{ pointerEvents: "none" }}>
+              <span aria-hidden="true" className="globe-label">
+                {sat.name}
+              </span>
+            </Html>
+          ) : null}
         </group>
-        {/* A larger invisible target, so the small model is easy to hover and tap. */}
-        <mesh onPointerOver={over} onPointerOut={out} onClick={click}>
-          <sphereGeometry args={[0.15, 12, 12]} />
-          <meshBasicMaterial transparent opacity={0} depthWrite={false} />
-        </mesh>
-        {lit ? (
-          <Html center position={[0, 0, -0.2]} zIndexRange={[20, 0]} style={{ pointerEvents: "none" }}>
-            <span aria-hidden="true" className="globe-label">
-              {sat.name}
-            </span>
-          </Html>
-        ) : null}
       </group>
     </>
   );
@@ -248,7 +294,8 @@ export default function GlobeScene({
     >
       <CameraRig />
       <ambientLight intensity={0.12} />
-      <directionalLight position={[2.5, 1.8, 5]} intensity={2.6} />
+      {/* Sunlight from the front-left: lights the part of the big hero globe that is on screen, keeps a night side. */}
+      <directionalLight position={[-3, 2.5, 5]} intensity={2.6} />
       <Stars />
       <StoryRig story={story}>
         <group rotation={[0, 0, TILT]}>
@@ -265,6 +312,7 @@ export default function GlobeScene({
             selected={selected === sat.id}
             onHover={onHover}
             onSelect={onSelect}
+            story={story}
           />
         ))}
       </StoryRig>

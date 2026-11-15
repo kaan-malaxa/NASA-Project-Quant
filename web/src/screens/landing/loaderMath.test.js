@@ -94,7 +94,7 @@ describe("loaderTimeline", () => {
     expect(at(1700, 0).split).toBe(1);
     expect(at(2300, 0).stage).toBe("merge");
     expect(at(2700, 0).stage).toBe("flatten");
-    expect(at(3050, 0).stage).toBe("fade");
+    expect(at(2950, 0).stage).toBe("fade");
   });
 
   it("waits for loading: the two spheres stay side by side until it is done, then merge", () => {

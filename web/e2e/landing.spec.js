@@ -258,6 +258,7 @@ test.describe("landing loader", () => {
 
   test("tells the story with the years from ruler.json, and Skip ends it at once", async ({ page }) => {
     await serveData(page, { sample: false, showLoader: true });
+    await page.route("**/textures/**", () => {}); // hold the Earth texture: the loader waits, side by side
     await page.goto("./#/");
     const l = loader(page);
     await expect(l).toBeVisible();
@@ -266,7 +267,7 @@ test.describe("landing loader", () => {
     // e2e ruler rows run 2003 to 2025, switching sensor in 2012 (e2e/fixtures.js).
     // The counter runs to the last year in the file, and the spheres have split by then.
     await expect(l).toHaveAttribute("data-year", "2025", { timeout: 6000 });
-    await expect(l).toHaveAttribute("data-stage", /split|merge|flatten|fade/);
+    await expect(l).toHaveAttribute("data-stage", "split"); // still waiting for the globe
     await page.getByRole("button", { name: "Skip" }).focus();
     await page.keyboard.press("Enter");
     await expect(l).toHaveCount(0, { timeout: 2000 });

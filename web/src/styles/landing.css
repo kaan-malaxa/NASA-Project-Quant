@@ -148,7 +148,7 @@
   z-index: 45;
   background: var(--background);
   opacity: 1;
-  transition: opacity 300ms ease;
+  transition: opacity 200ms ease; /* = LOADER.fade */
 }
 .landing-loader[data-fading="true"] {
   opacity: 0;
@@ -305,7 +305,11 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  --glow-r: calc(2.3 * (var(--er0, 30svh) + (var(--er1, 30svh) - var(--er0, 30svh)) * var(--t, 0)));
+  --glow-e: calc(
+    var(--er0, 30svh) + (var(--er1, 30svh) - var(--er0, 30svh)) * var(--t, 0)
+  ); /* Earth radius now */
+  /* A halo reaching out beyond the Earth's edge: 2.3 radii for the smaller globe, at most 320 px past the big hero one. */
+  --glow-r: min(calc(2.3 * var(--glow-e)), calc(var(--glow-e) + 320px));
   background: radial-gradient(
     circle var(--glow-r) at calc(var(--gx0, 50%) + (var(--gx1, 50%) - var(--gx0, 50%)) * var(--t, 0))
       calc(var(--gy0, 50%) + (var(--gy1, 50%) - var(--gy0, 50%)) * var(--t, 0)),

@@ -102,22 +102,22 @@ def _annual(docs, region):
 
 
 def test_conus_spring_and_larger_summer_season(docs):
-    wins = docs["conus/season.json"]["windows"]
+    wins = docs["us/season.json"]["windows"]
     assert len(wins) == 2
     assert 31 <= wins[0]["peak_week"] <= 35 and 12 <= wins[1]["peak_week"] <= 16
     assert wins[0]["share"] > wins[1]["share"]
 
 
 def test_conus_extreme_2020(docs):
-    annual = _annual(docs, "conus")
+    annual = _annual(docs, "us")
     others = [v for y, v in annual.items() if y != 2020]
     assert annual[2020] > 2 * median(others)
 
 
 def test_conus_planted_season_shift_is_visible(docs):
-    start = docs["conus/season.json"]["windows"][0]["shift_days_per_decade"]["start"]
+    start = docs["us/season.json"]["windows"][0]["shift_days_per_decade"]["start"]
     assert start["hi"] < 0
-    assert "earlier per decade" in docs["conus/season.json"]["windows"][0]["sentence"]
+    assert "earlier per decade" in docs["us/season.json"]["windows"][0]["sentence"]
 
 
 @pytest.mark.parametrize("region", SAMPLE_REGIONS)
@@ -141,7 +141,7 @@ def test_missing_weeks_and_estimated_band(docs, region):
 
 
 def test_harmonized_era_switches_in_kind_runs(docs):
-    runs = [r for r in docs["conus/daily.json"]["kind_runs"] if r["series"] == "harmonized"]
+    runs = [r for r in docs["us/daily.json"]["kind_runs"] if r["series"] == "harmonized"]
     starts = {r["from"]: r["source"] for r in runs}
     assert starts["2023-01-01"] == "snpp" and starts["2026-01-01"] == "noaa20"
     assert runs[-1]["to"] == "2026-11-13"
@@ -156,12 +156,12 @@ def test_daily_columns_have_n_days_entries(docs):
 
 def test_nowcast_statuses(docs):
     status = {r: docs[f"{r}/nowcast.json"]["status"] for r in SAMPLE_REGIONS}
-    assert status == {"conus": "above_normal"}
+    assert status == {"us": "above_normal"}
 
 
 def test_trend_sentence_ids(docs):
     ids = {r: docs[f"{r}/trend.json"]["sentence_id"] for r in SAMPLE_REGIONS}
-    assert ids == {"conus": "artifact_flat"}
+    assert ids == {"us": "artifact_flat"}
     for r in SAMPLE_REGIONS:
         s = docs[f"{r}/trend.json"]["sentence"]
         assert s and "{" not in s and "number of fires" not in s

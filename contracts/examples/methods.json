@@ -15,7 +15,7 @@
   },
   "validation": [
     {
-      "region": "conus",
+      "region": "us",
       "test": "loyo_weekly_wape",
       "method": "tier1",
       "value": 0,
@@ -33,7 +33,7 @@
   ],
   "drift": [
     {
-      "region": "conus",
+      "region": "us",
       "sensor": "snpp",
       "year": 2013,
       "k_annual": 0.5,
@@ -43,7 +43,7 @@
   ],
   "eyesight": [
     {
-      "region": "conus",
+      "region": "us",
       "status": "validated",
       "params": {
         "a": 0,
@@ -94,7 +94,7 @@
   "inputs": [
     {
       "source": "MODIS_SP",
-      "region": "conus",
+      "region": "us",
       "rows": 0,
       "first_date": "2003-01-01",
       "last_date": "2025-12-31",
@@ -104,7 +104,7 @@
   ],
   "filters": [
     {
-      "region": "conus",
+      "region": "us",
       "sensor": "aqua",
       "step": "confidence",
       "rows_in": 0,

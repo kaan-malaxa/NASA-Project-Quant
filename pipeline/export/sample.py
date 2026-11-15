@@ -1,4 +1,4 @@
-"""`python -m pipeline.export --sample`: a complete, deterministic SAMPLE site for conus.
+"""`python -m pipeline.export --sample`: a complete, deterministic SAMPLE site for us.
 
 Everything here is fabricated so the web team can build every screen before real data exists.
 Every data object carries kind "sample", every file code_version "sample", and
@@ -6,7 +6,7 @@ manifest.contains_sample is true (AGENTS.md science rule 10).
 
 How the fake data is made (shapes requested in R1 prompt A2):
 - A daily Aqua activity rate per region = seasonal bumps (circular, in weeks) x a yearly factor
-  x daily noise. conus: a spring burning season (peak week 14) and a larger summer-autumn
+  x daily noise. us: a spring burning season (peak week 14) and a larger summer-autumn
   wildfire season (peak week 33); both move earlier by about 6 days per decade, and
   one extreme year (2020, 2.5x). These shapes are invented for chart design, not real findings.
 - VIIRS (S-NPP from 2012-01-20, NOAA-20 from 2018) sees about 2.5x Aqua. k is then fitted from
@@ -48,7 +48,10 @@ from pipeline.stats.sentences import (
     verdict_sentence,
 )
 
-SAMPLE_REGIONS = ("conus",)
+SAMPLE_REGIONS = ("us",)
+# The sample series were tuned against random streams keyed by the region's first id ("conus").
+# The id is now "us"; keeping the stream key keeps every sample number, and the tests on them, unchanged.
+SEED_KEYS = {"us": "conus"}
 LAST_DAY = date(2026, 11, 13)          # fixed so output is byte-identical on every run
 GENERATED_AT = "2026-11-14T00:00:00Z"
 NOWCAST_AS_OF = "2026-11-14T03:00:00Z"
@@ -75,18 +78,18 @@ MONTH_ABBR = ("January", "February", "March", "April", "May", "June", "July", "A
 # Per-region shape of the fake data. Bumps are (centre week, amplitude, width in weeks).
 # `exact_years` get their year factor without random noise (the planted extreme year).
 SHAPES: dict[str, dict[str, Any]] = {
-    "conus": {"peak": 120.0, "bumps": [(14, 0.55, 2.5), (33, 1.0, 3.5)], "background": 0.05,
+    "us": {"peak": 120.0, "bumps": [(14, 0.55, 2.5), (33, 1.0, 3.5)], "background": 0.05,
               "shift_weeks_per_year": -0.09, "jump": 4.0, "exact_years": {2020},
               # 2026 tuned so this week's sample nowcast reads "above_normal" (about the 83rd percentile)
               "year_factor": lambda y: {2020: 2.5, 2026: 1.3}.get(y, 1.0)},
 }
 # Trend estimates (pct per decade, lo, hi) chosen so SD-15 yields the requested sentence_id.
 TRENDS = {
-    "conus": {"expect": "artifact_flat", "H": (2.0, -6.0, 9.0), "N": (38.0, 25.0, 52.0),
+    "us": {"expect": "artifact_flat", "H": (2.0, -6.0, 9.0), "N": (38.0, 25.0, 52.0),
               "aqua_only_2003_2022": (1.0, -8.0, 10.0), "translated_from_2012": (3.0, -5.0, 11.0)},
 }
 EYESIGHT = {
-    "conus": {"status": "validated", "a": -1.2, "b": 2.1, "c": 0.82, "g": 1.12, "n": 48210},
+    "us": {"status": "validated", "a": -1.2, "b": 2.1, "c": 0.82, "g": 1.12, "n": 48210},
 }
 
 
@@ -201,7 +204,8 @@ class Region:
     def __init__(self, meta: dict[str, Any], sci: dict[str, Any]):
         self.meta, self.sci, self.id = meta, sci, meta["id"]
         self.shape = SHAPES[self.id]
-        self.rng = random.Random(f"{sci['seed']}-{self.id}")
+        self.seed_key = SEED_KEYS.get(self.id, self.id)
+        self.rng = random.Random(f"{sci['seed']}-{self.seed_key}")
         self.days = _days(_d(sci["eras"]["record_start"]), LAST_DAY)
         self._simulate()
         self._fit_k()
@@ -463,7 +467,7 @@ def _season(r: Region, clim: dict[str, Any]) -> dict[str, Any]:
                             "centroid_doy": round(sum(doy * v for doy, v in pts) / tot),
                             "total": tot, "kind": KIND})
         shift = {}
-        rng = random.Random(f"{r.sci['seed']}-{r.id}-shift-{n}")
+        rng = random.Random(f"{r.sci['seed']}-{r.seed_key}-shift-{n}")
         for key in ("start", "centroid", "end"):
             xs = [b["year"] for b in by_year]
             ys = [b[f"{key}_doy"] for b in by_year]
@@ -488,7 +492,7 @@ def _season(r: Region, clim: dict[str, Any]) -> dict[str, Any]:
 
 def _annual(r: Region) -> dict[str, Any]:
     """Annual harmonized, Aqua and primary-VIIRS totals plus naive hotspot counts (SD-09)."""
-    rng = random.Random(f"{r.sci['seed']}-{r.id}-naive")
+    rng = random.Random(f"{r.sci['seed']}-{r.seed_key}-naive")
     harm, aqua, viirs = r.agg("harmonized", "year"), r.agg("aqua_raw", "year"), r.agg("viirs_raw", "year")
     modis_hpc = 3.0                                     # Terra + Aqua hotspots per Aqua cell-day
     viirs_hpc = r.shape["jump"] / 2.5 * modis_hpc       # so S-NPP / MODIS hotspots is about `jump`
@@ -633,7 +637,7 @@ def _bbox_poly(bbox: Sequence[float]) -> h3.LatLngPoly:
 def _cell_weights(r: Region) -> list[tuple[str, float]]:
     """Res-5 cells of the bbox with a fake activity weight (a few hot blobs), heaviest first."""
     w, s, e, n = r.meta["bbox"]
-    rng = random.Random(f"{r.sci['seed']}-{r.id}-space")
+    rng = random.Random(f"{r.sci['seed']}-{r.seed_key}-space")
     blobs = [(rng.uniform(s, n), rng.uniform(w, e), rng.uniform(0.3, 1.2)) for _ in range(6)]
     cells = sorted(h3.polygon_to_cells(_bbox_poly(r.meta["bbox"]), r.sci["grid"]["map_res"]))
     out = []
@@ -653,7 +657,7 @@ def _hex(r: Region, weights: list[tuple[str, float]], critical_weeks: list[int])
     all_year = sum(v for d, v in zip(r.days, snpp) if v is not None and 2013 <= d.year <= 2025) / len(years)
     in_crit = sum(v for d, v in zip(r.days, snpp)
                   if v is not None and 2013 <= d.year <= 2025 and week_of_year(d) in crit) / len(years)
-    rng = random.Random(f"{r.sci['seed']}-{r.id}-hex")
+    rng = random.Random(f"{r.sci['seed']}-{r.seed_key}-hex")
     cells = []
     for c, wt in weights:
         jitter = math.exp(rng.gauss(0, 0.1))
@@ -695,7 +699,7 @@ def _cells_monthly(r: Region, weights: list[tuple[str, float]]) -> bytes:
 
 
 def _hotspots_recent(r: Region, weights: list[tuple[str, float]]) -> bytes:
-    rng = random.Random(f"{r.sci['seed']}-{r.id}-hotspots")
+    rng = random.Random(f"{r.sci['seed']}-{r.seed_key}-hotspots")
     cells = [c for c, _ in weights[:120]]
     cum = []
     acc = 0.0
@@ -733,7 +737,7 @@ def _outline(r: Region) -> dict[str, Any]:
 
 
 def _downloads(r: Region) -> dict[str, Any]:
-    rng = random.Random(f"{r.sci['seed']}-{r.id}-downloads")
+    rng = random.Random(f"{r.sci['seed']}-{r.seed_key}-downloads")
     return _header(region=r.id, hotspot_archives=[
         {"year": y, "sensor": "snpp", "url": "#", "rows": rng.randint(20000, 90000),
          "bytes": rng.randint(900000, 4000000)} for y in (2024, 2025)])
@@ -762,7 +766,7 @@ def _eyesight(r: Region) -> dict[str, Any]:
     spec = EYESIGHT.get(r.id)
     if spec is None:
         return {"region": r.id, "status": "absent"}
-    rng = random.Random(f"{r.sci['seed']}-{r.id}-eyesight")
+    rng = random.Random(f"{r.sci['seed']}-{r.seed_key}-eyesight")
     a, b, c = spec["a"], spec["b"], spec["c"]
 
     def p(frp: float, da: float = 0.0, db: float = 0.0) -> float:

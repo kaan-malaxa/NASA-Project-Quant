@@ -12,7 +12,14 @@ from fabricate import cell, celldays, coverage
 
 from pipeline.eyesight.compat import read_parquet, write_parquet
 from pipeline.eyesight.fit import curve
-from pipeline.eyesight.translate import DAILY_COLUMNS, backward_t2, forward_t2, g_per_draw, k_compare, k_t2_monthly
+from pipeline.eyesight.translate import (
+    DAILY_COLUMNS,
+    backward_t2,
+    forward_t2,
+    g_per_draw,
+    k_compare,
+    k_t2_monthly,
+)
 
 PARAMS = {"a": -2.0, "b": 2.2, "c": 0.88}
 G = 1.25

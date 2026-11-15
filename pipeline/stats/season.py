@@ -14,9 +14,9 @@ from typing import Any
 
 import numpy as np
 import pandas as pd
-from pipeline.common import timebins
 from scipy.stats import theilslopes
 
+from pipeline.common import timebins
 from pipeline.stats.calendar import majority_kind, series_frame
 from pipeline.stats.sentences import season_shift_sentence
 

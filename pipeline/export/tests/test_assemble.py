@@ -58,32 +58,32 @@ def write_cells(path: Path, membership: bytes | None = b"polygon") -> None:
 
 @pytest.fixture
 def tree(tmp_path: Path) -> Inputs:
-    """--sample site with conus turned real (and a sample-only synthland/), plus the R2/R3 inputs conus needs."""
+    """--sample site with us turned real (and a sample-only synthland/), plus the R2/R3 inputs us needs."""
     web, data = tmp_path / "web", tmp_path / "data"
     write_sample(web)
-    shutil.copytree(web / "conus", web / "synthland")          # a leftover sample-only folder
-    for f in (web / "conus").iterdir():
+    shutil.copytree(web / "us", web / "synthland")          # a leftover sample-only folder
+    for f in (web / "us").iterdir():
         if f.suffix in (".json", ".geojson"):
             write_json(realify(json.loads(f.read_text(encoding="utf-8"))), f)
-    harm = data / "harmonized" / "conus"
-    write_json(realify(json.loads((web / "conus" / "calibration.json").read_text(encoding="utf-8"))),
+    harm = data / "harmonized" / "us"
+    write_json(realify(json.loads((web / "us" / "calibration.json").read_text(encoding="utf-8"))),
                harm / "calibration.json")
-    (web / "conus" / "calibration.json").unlink()            # assemble must copy it back
+    (web / "us" / "calibration.json").unlink()            # assemble must copy it back
     pd.DataFrame({"local_day": [date(2003, 1, 1), date(2026, 11, 13)], "series": "harmonized",
                   "value": [1.0, 2.0]}).to_parquet(harm / "daily.parquet")
     write_json({"validation": [
-        {"region": "conus", "test": "loyo_weekly_wape", "method": "tier1", "value": 0.21,
+        {"region": "us", "test": "loyo_weekly_wape", "method": "tier1", "value": 0.21,
          "baselines": {"raw_viirs": 1.4, "annual_ratio": 0.25}, "n": 520, "years": [2013, 2022], "note": ""},
-        {"region": "conus", "test": "handoff_annual_mape", "method": "tier1", "value": 0.05, "n": 10,
+        {"region": "us", "test": "handoff_annual_mape", "method": "tier1", "value": 0.05, "n": 10,
          "years": [2013, 2022], "note": "Totals match partly by construction."}],
         "drift": [{"year": 2013, "sensor": "snpp", "k_annual": 0.41, "lo": 0.39, "hi": 0.43}],
         "drift_summary": {}}, harm / "validation_t1.json")
-    write_cells(data / "grid" / "conus" / "region_cells.parquet")
+    write_cells(data / "grid" / "us" / "region_cells.parquet")
     write_json([{"file": "modis_conus.csv", "source": "MODIS_SP", "via": "archive",
                  "downloaded_at": "2026-11-14T10:00:00Z", "rows": 1234, "sha256": "0" * 64,
-                 "first_date": "2003-01-01", "last_date": "2025-12-31"}], data / "raw" / "conus" / "MANIFEST.json")
+                 "first_date": "2003-01-01", "last_date": "2025-12-31"}], data / "raw" / "us" / "MANIFEST.json")
     write_json([{"sensor": "aqua", "step": "confidence", "rows_in": 1000, "rows_dropped": 50}],
-               data / "clean" / "conus" / "filter_log.json")
+               data / "clean" / "us" / "filter_log.json")
     regions = [{**r, "centroid": [(r["bbox"][0] + r["bbox"][2]) / 2, (r["bbox"][1] + r["bbox"][3]) / 2]}
                for r in REGIONS_4_1]
     return Inputs(web_dir=web, regions=regions, science=SCIENCE_4_2, science_sha256="1" * 64,
@@ -104,13 +104,13 @@ def test_assemble_real_region_next_to_sample_ones(tree):
     regions = load(tree, "regions.json")
     assert regions["code_version"] == "abc1234"
     (r,) = regions["regions"]
-    assert (r["id"], r["n_cells_r6"], r["membership"], r["last_data_day"]) == ("conus", 3, "polygon", "2026-11-13")
+    assert (r["id"], r["n_cells_r6"], r["membership"], r["last_data_day"]) == ("us", 3, "polygon", "2026-11-13")
     assert r["files"] == ["weekly", "monthly", "daily", "climatology", "season", "trend", "ruler", "nowcast",
                           "hex", "calibration", "outline"]
     assert r["optional_files"] == ["cells_monthly", "downloads", "hotspots_recent"]
     assert r["synthetic"] is False
-    src = tree.harmonized_dir("conus") / "calibration.json"
-    assert (tree.web_dir / "conus" / "calibration.json").read_bytes() == src.read_bytes()
+    src = tree.harmonized_dir("us") / "calibration.json"
+    assert (tree.web_dir / "us" / "calibration.json").read_bytes() == src.read_bytes()
     assert [x.line() for x in run_check(tree.web_dir) if not x.ok] == []
 
 
@@ -121,11 +121,11 @@ def test_methods_contents(tree):
     assert m["decisions"]["science_yaml_sha256"] == "1" * 64
     assert m["decisions"]["baseline_years"] == [2003, 2025]
     assert [v["test"] for v in m["validation"]] == ["loyo_weekly_wape", "handoff_annual_mape"]   # unchanged
-    assert m["drift"] == [{"region": "conus", "year": 2013, "sensor": "snpp", "k_annual": 0.41, "lo": 0.39,
+    assert m["drift"] == [{"region": "us", "year": 2013, "sensor": "snpp", "k_annual": 0.41, "lo": 0.39,
                            "hi": 0.43}]
-    assert m["eyesight"] == [{"region": "conus", "status": "absent"}]
-    assert m["inputs"][0]["downloaded"] == "2026-11-14T10:00:00Z" and m["inputs"][0]["region"] == "conus"
-    assert m["filters"] == [{"region": "conus", "sensor": "aqua", "step": "confidence", "rows_in": 1000,
+    assert m["eyesight"] == [{"region": "us", "status": "absent"}]
+    assert m["inputs"][0]["downloaded"] == "2026-11-14T10:00:00Z" and m["inputs"][0]["region"] == "us"
+    assert m["filters"] == [{"region": "us", "sensor": "aqua", "step": "confidence", "rows_in": 1000,
                              "rows_dropped": 50}]
     assert m["planted_truth"] == [] and m["sources"] == []
     assert len(m["limitations"]) == 3 and m["ai_use"]
@@ -138,12 +138,12 @@ def test_manifest_covers_every_file_and_flags_leftover_sample(tree):
     assert {f["path"] for f in man["files"]} == on_disk - {"manifest.json"}
     assert man["contains_sample"] is True                     # synthland/ is still sample
     kinds = {f["path"]: f["kinds"] for f in man["files"]}
-    assert kinds["conus/weekly.json"] == ["observed"] and kinds["synthland/weekly.json"] == ["sample"]
-    assert kinds["conus/cells_monthly.csv"] == []
+    assert kinds["us/weekly.json"] == ["observed"] and kinds["synthland/weekly.json"] == ["sample"]
+    assert kinds["us/cells_monthly.csv"] == []
     audit = tree.web_dir / "numbers_audit.md"                 # written before the manifest
     entry = next(f for f in man["files"] if f["path"] == "numbers_audit.md")
     assert entry["sha256"] == hashlib.sha256(audit.read_bytes()).hexdigest()
-    assert "conus/trend.json#/harmonized/pct_per_decade" in audit.read_text(encoding="utf-8")
+    assert "us/trend.json#/harmonized/pct_per_decade" in audit.read_text(encoding="utf-8")
 
 
 def test_manifest_has_no_sample_once_sample_folders_are_gone(tree):
@@ -154,29 +154,29 @@ def test_manifest_has_no_sample_once_sample_folders_are_gone(tree):
 
 
 def test_eyesight_and_t2_validation_are_included_when_present(tree):
-    eye = tree.eyesight_dir("conus")
+    eye = tree.eyesight_dir("us")
     curve = {"status": "exploratory", "params": {k: 0.1 for k in ("a", "b", "c", "a_lo", "a_hi", "b_lo", "b_hi",
                                                                    "c_lo", "c_hi")},
              "g": 1.1, "n_celldays": 10, "curve": [], "binned": [], "k_compare": []}
     write_json(curve, eye / "curve.json")
-    write_json({"validation": [{"region": "conus", "test": "t1_t2_wape", "method": "tier2", "value": 0.1,
+    write_json({"validation": [{"region": "us", "test": "t1_t2_wape", "method": "tier2", "value": 0.1,
                                 "n": 10, "years": [2013, 2022], "note": ""}]}, eye / "validation_t2.json")
     assemble(tree)
     m = load(tree, "methods.json")
-    assert m["eyesight"][0]["status"] == "exploratory" and m["eyesight"][0]["region"] == "conus"
+    assert m["eyesight"][0]["status"] == "exploratory" and m["eyesight"][0]["region"] == "us"
     assert m["validation"][-1]["test"] == "t1_t2_wape"
 
 
 def test_validated_curve_goes_into_methods_unchanged_with_k_compare(tree):
-    curve = {"region": "conus", "status": "validated",
+    curve = {"region": "us", "status": "validated",
              "params": {k: 0.25 for k in ("a", "b", "c", "a_lo", "a_hi", "b_lo", "b_hi", "c_lo", "c_hi")},
              "g": 1.142, "n_celldays": 48210,
              "curve": [{"frp_mw": 1.0, "p": 0.1, "lo": 0.09, "hi": 0.11}],
              "binned": [{"frp_mw": 1.0, "p_obs": 0.1, "n": 500}],
              "k_compare": [{"month": m, "k_tier1": 0.47, "k_tier2": 0.46 + m / 1000} for m in range(1, 13)]}
-    write_json(curve, tree.eyesight_dir("conus") / "curve.json")
+    write_json(curve, tree.eyesight_dir("us") / "curve.json")
     assemble(tree)
-    stored = json.loads((tree.eyesight_dir("conus") / "curve.json").read_text(encoding="utf-8"))
+    stored = json.loads((tree.eyesight_dir("us") / "curve.json").read_text(encoding="utf-8"))
     assert load(tree, "methods.json")["eyesight"] == [stored]
 
 
@@ -193,16 +193,16 @@ def test_sources_without_url_are_dropped(tree, tmp_path):
 
 # ------------------------------------------------------------------ refusals
 def test_mixed_sample_and_real_is_rejected_and_nothing_is_written(tree):
-    (tree.web_dir / "conus" / "hex.json").write_bytes((tree.web_dir / "synthland" / "hex.json").read_bytes())
+    (tree.web_dir / "us" / "hex.json").write_bytes((tree.web_dir / "synthland" / "hex.json").read_bytes())
     before = (tree.web_dir / "regions.json").read_bytes()
-    with pytest.raises(AssembleError, match=r"conus: sample \['hex.json'\]"):
+    with pytest.raises(AssembleError, match=r"us: sample \['hex.json'\]"):
         assemble(tree)
     assert (tree.web_dir / "regions.json").read_bytes() == before
-    assert not (tree.web_dir / "conus" / "calibration.json").exists()
+    assert not (tree.web_dir / "us" / "calibration.json").exists()
 
 
 def test_invalid_calibration_is_rejected(tree):
-    path = tree.harmonized_dir("conus") / "calibration.json"
+    path = tree.harmonized_dir("us") / "calibration.json"
     doc = json.loads(path.read_text(encoding="utf-8"))
     doc["k_annual"]["snpp"]["k"] = "half"
     write_json(doc, path)
@@ -211,7 +211,7 @@ def test_invalid_calibration_is_rejected(tree):
 
 
 def test_missing_membership_metadata_is_rejected(tree):
-    write_cells(tree.grid_dir("conus") / "region_cells.parquet", membership=None)
+    write_cells(tree.grid_dir("us") / "region_cells.parquet", membership=None)
     with pytest.raises(AssembleError, match="membership"):
         assemble(tree)
 

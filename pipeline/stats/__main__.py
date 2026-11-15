@@ -25,8 +25,8 @@ def generated_at() -> str:
 
 def main(argv: list[str] | None = None) -> int:
     import pandas as pd
-    from pipeline.common import cli, config, io, log, paths
 
+    from pipeline.common import cli, config, io, log, paths
     from pipeline.stats.calendar import build_calendar_files
     from pipeline.stats.nowcast import build_nowcast
     from pipeline.stats.season import build_season

@@ -53,9 +53,9 @@ def test_every_value_is_exactly_what_its_pointer_holds(site):
 
 def test_required_headline_numbers_are_listed(site):
     text = (site / AUDIT_FILE).read_text(encoding="utf-8")
-    for needle in ("conus/ruler.json#/jump_multiple/value", "conus/trend.json#/harmonized/pct_per_decade",
-                   "conus/trend.json#/naive/lo", "conus/trend.json#/sentence", "conus/season.json#/windows/0/label",
-                   "conus/nowcast.json#/percentile", "conus/nowcast.json#/status", "conus/nowcast.json#/as_of",
+    for needle in ("us/ruler.json#/jump_multiple/value", "us/trend.json#/harmonized/pct_per_decade",
+                   "us/trend.json#/naive/lo", "us/trend.json#/sentence", "us/season.json#/windows/0/label",
+                   "us/nowcast.json#/percentile", "us/nowcast.json#/status", "us/nowcast.json#/as_of",
                    "LOYO weekly WAPE baseline raw_viirs",
                    "eyesight status", "eyesight param a", "planted truth passed"):
         assert needle in text, needle

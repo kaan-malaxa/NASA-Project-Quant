@@ -1,8 +1,7 @@
-"""Temporary stand-in for pipeline/config/science.yaml (R3) and regions.yaml (R2).
+"""Fixed inputs for the `--sample` site. Nothing else may import this module.
 
-Used ONLY by `--sample`, and only while pipeline.common.config does not exist yet. The values
-below are a verbatim copy of contracts section 4.2 (science.yaml) and 4.1 (regions.yaml).
-Delete this module once pipeline.common.config lands; nothing else may import it.
+SCIENCE_4_2 is a copy of contracts section 4.2 and is used only if pipeline.common.config cannot be
+imported; science.yaml wins whenever it exists. REGIONS_4_1 holds the sample site's own region records.
 """
 
 from __future__ import annotations
@@ -41,7 +40,7 @@ SCIENCE_4_2: dict[str, Any] = {
 }
 
 REGIONS_4_1: list[dict[str, Any]] = [
-    {"id": "conus", "name": "Contiguous United States", "country": "US",
+    {"id": "us", "name": "United States", "country": "US",
      "bbox": [-124.8, 24.4, -66.9, 49.4], "fire_type": "Wildfire, prescribed and agricultural burning",
      "story": "Summer and autumn wildfire in the West; prescribed and agricultural burning in the Southeast "
               "and the Great Plains, mostly in spring.",
@@ -64,10 +63,10 @@ def load_science() -> tuple[dict[str, Any], str]:
 
 
 def load_regions() -> list[dict[str, Any]]:
-    """Region records as dicts. Prefers pipeline.common.config when it exists."""
-    try:
-        from pipeline.common.config import load_regions as real  # type: ignore[import-not-found]
-    except ImportError:
-        return [dict(r) for r in REGIONS_4_1]
-    keys = ("id", "name", "country", "bbox", "fire_type", "story", "synthetic")
-    return [{k: getattr(r, k) for k in keys} for r in real()]
+    """Region records for the SAMPLE site, as dicts.
+
+    Always the fixed records above, never regions.yaml: the sample generator places its made-up cells
+    inside this lower-48 box, and the real `us` region's box spans the antimeridian (Alaska's Aleutians),
+    which no simple box sampler can fill. Sample output is marked kind "sample" throughout.
+    """
+    return [dict(r) for r in REGIONS_4_1]

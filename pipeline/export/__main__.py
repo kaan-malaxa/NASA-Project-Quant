@@ -25,7 +25,6 @@ def generated_at() -> str:
 
 def run_assemble(t0: float) -> int:
     from pipeline.common import config, io, paths
-
     from pipeline.export.assemble import AssembleError, Inputs, assemble
 
     regions = []

@@ -22,7 +22,7 @@ from pipeline.stats.tests.fabricate import (
 )
 
 SCI = {**SCIENCE, "anomaly": {"low_activity_threshold": 5, "extreme_pct": 95, "above_pct": 75, "below_pct": 25}}
-FETCHED = datetime(2026, 11, 15, 18, 0)         # conus: local solar date 15 Nov at centroid and west edge
+FETCHED = datetime(2026, 11, 15, 18, 0)         # us: local solar date 15 Nov at centroid and west edge
 CONUS = {"centroid_lon": -95.85, "west_lon": -124.8}
 CALIBRATION = {"k": {"noaa20": [{"month": m, "k": 0.5, "lo": 0.4, "hi": 0.6} for m in range(1, 13)]}}
 
@@ -51,7 +51,7 @@ def history(per_year_daily: dict[int, float] | float, last: date = date(2026, 11
 
 
 def run(nrt, hist, coverage=None, **kw):
-    return build_nowcast(nrt, CALIBRATION, hist, coverage, "conus", "Testland", CONUS["centroid_lon"],
+    return build_nowcast(nrt, CALIBRATION, hist, coverage, "us", "Testland", CONUS["centroid_lon"],
                          CONUS["west_lon"], SCI, HEADER, **kw)
 
 

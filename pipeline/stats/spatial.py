@@ -15,6 +15,7 @@ from datetime import date
 from typing import Any
 
 import pandas as pd
+
 from pipeline.common import timebins
 
 CELLS_MONTHLY_HEADER = ["h3_r5", "ym", "aqua", "viirs"]          # contracts 6.12

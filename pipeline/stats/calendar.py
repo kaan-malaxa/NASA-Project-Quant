@@ -14,6 +14,7 @@ from typing import Any
 
 import numpy as np
 import pandas as pd
+
 from pipeline.common import timebins
 
 # web series -> series in daily.parquet (R1 prompt B1; Tier 2 selection comes in D2)

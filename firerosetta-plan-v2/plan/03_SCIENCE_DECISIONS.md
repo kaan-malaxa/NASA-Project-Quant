@@ -35,16 +35,13 @@ Supersedes the "Science method" section of the Draft v1 charter wherever they di
 - **Region membership:** a cell belongs to a region if its centre is inside the region polygon (`h3.geo_to_cells(polygon, 6)`). The bounding box is used only for downloading. If no polygon file exists, fall back to the bounding box and record `membership: bbox` in the outputs.
 - Config: `grid.count_res: 6`, `grid.map_res: 5`, `grid.mask_res: 8`.
 
-### SD-19 · Showcase regions (locked)
-| id | Name | Fire story | Download bbox (W,S,E,N) |
-|---|---|---|---|
-| `punjab` | Punjab and Haryana, India | Crop residue burning, Apr–May and Oct–Nov; live this week | 73.8, 27.6, 77.6, 32.6 |
-| `bc` | British Columbia, Canada | Boreal and mountain wildfire; record 2023 season | -139.1, 48.2, -114.0, 60.1 |
-| `litoral` | Santa Fe and Entre Ríos, Argentina | Wetland (Paraná Delta) and pasture burning; 2020–2022 crisis | -63.0, -34.5, -57.7, -27.9 |
-| `synthland` | Synthetic test region | Planted-truth simulator, never shown as real | 10.0, 10.0, 12.0, 12.0 |
-
-- **Why `litoral` replaces the charter's Brazilian state:** the charter itself flagged Brazil's file size as a schedule risk. Argentina's files are roughly an order of magnitude smaller, the 2020–2022 delta fires make the verdict card interesting, and it is a third fire type. **Stretch only** (after Gate D): add `mato_grosso` (bbox -61.7, -18.1, -50.2, -7.3) by adding one entry to `regions.yaml`; no code changes.
-- Polygons: Natural Earth admin-1 (public domain), stored as `pipeline/config/regions/{id}.geojson`.
+### SD-19 · United States local-data scope
+- **Scope:** the configured region is `united_states` (country `US`). No other region or synthetic dataset may be selected for a production run.
+- **Only sources:** workspace-root `data/MODIS_data/modis_*_United_States.csv`, `data/VIIRS-SNPP_data/viirs-snpp_*_United_States.csv`, and `data/VIIRS-JPSS_data/viirs-jpss1_*_United_States.csv`.
+- These are the supplied NASA FIRMS country exports. There is no local US polygon or authoritative download bounding box. Keep their country membership; do not invent a polygon, centroid, or full-region cell denominator. SD-04 cell-centre polygon membership and saturation denominators require a supplied US polygon before they can be evaluated.
+- Source and derived-input hashes are recorded at ingestion and verified before harmonization. Alternate output roots do not redirect the raw source directory. Unknown satellites, mismatched file years, stale derived inputs and non-US region requests fail.
+- The user's US-only instruction supersedes the previous showcase-region list. Country-file membership is an explicit limitation, not a claim that cell centres were checked against a US boundary.
+- Existing SD-02/SD-03 constants are now carried explicitly by `filters.keep_type: 0`, `timebins.solar_degrees_per_hour: 15`, `timebins.week_days: 7`, `timebins.weeks_per_year: 52`, and `static_mask.types: [1, 2, 3]`. Numeric decisions are unchanged.
 
 ---
 
@@ -80,8 +77,10 @@ k_m   = (A_m + n0 * k_ann) / (V_m + n0)        with n0 = 50 cell-days
 - **Fit window, S-NPP:** 2013-01-01 → 2022-12-31 (ten complete years; 2012 is partial and is kept as an out-of-sample check).
 - **Fit window, NOAA-20:** first full calendar year of NOAA-20 data in our files (`n20_first_full_year`, the first year with detections on ≥ 300 distinct days somewhere in our regions) → 2022-12-31.
 - **NOAA-20 method rule:** if that window has **≥ 3 complete years**, use the **direct** fit. Otherwise use the **chained** factor `k_noaa20,m = k_snpp,m × r_m`, where `r_m` = S-NPP cell-days ÷ NOAA-20 cell-days over `n20_first_full_year` → 2025-12-31 with the same shrinkage. Always compute both and report their difference (V3). Record `noaa20_method: direct|chained`.
-- **Uncertainty:** year-block bootstrap, B = 500 (resample fit years with replacement, refit). `lo`/`hi` = 5th / 95th percentile.
-- Config: `tier1.n0: 50`, `tier1.bootstrap_b: 500`, `tier1.snpp_fit: [2013-01-01, 2022-12-31]`.
+- **Uncertainty:** year-block bootstrap, B = 500 (resample fit years with replacement, refit). `lo`/`hi` = 5th / 95th percentile, configured as `tier1.interval_percentiles: [5, 95]` (R3-approved config extension; R3 coordinates with R1).
+- **Annual bootstrap and Aqua outages:** years made entirely from observed Aqua have identical totals across replicates. An Aqua-era year containing translated S-NPP outage fills inherits those fills' calibration uncertainty; the observed Aqua contribution remains fixed. This clarifies SD-05 and SD-14: the deterministic-year check applies to years with no translated fills.
+- Config: `tier1.n0: 50`, `tier1.bootstrap_b: 500`, `tier1.snpp_fit: [2013-01-01, 2022-12-31]`, `tier1.n20_min_detection_days: 300` (the locked full-year threshold above).
+- **Unavailable NOAA-20 calibration:** if no year meets that threshold, keep NOAA-20 uncalibrated and use covered, calibrated S-NPP as the harmonized fallback. In `calibration.json`, use `noaa20_method: null`, `fit_window.noaa20: null`, null NOAA-20 annual `k`/`lo`/`hi`, and an empty NOAA-20 monthly list. Raw NOAA-20 observations remain available in the sensor lens. This missing-calibration representation and the new config key were approved by R3; R3 coordinates the contract/schema update with R1.
 - **Pre-approved fallback:** if leave-one-year-out error (V1) with monthly k is worse than with the annual ratio for a region, R3 sets `tier1.monthly: false` (annual k only) and says so on the Methods page.
 
 ### SD-07 · Daily translated value
@@ -155,7 +154,7 @@ The `low_activity` rule exists because off-season weeks have a median of zero; w
 - **Per-year timing inside a window** (window extended by ±4 weeks; years with < 20 cell-days there are skipped): `start_doy` = day the cumulative total reaches 10 %, `end_doy` = 90 %, `centroid_doy` = activity-weighted mean day.
 - **Shift** = Theil–Sen slope across 2003–2025, in days per decade, with a 5th–95th percentile range from 1 000 bootstrap resamples of years.
 - Wording rule: if the range includes 0, the sentence says "no clear shift".
-- **Why not the charter's 10 %/90 % of the whole year:** Punjab has two burning seasons; a single window would span six months and mean nothing.
+- **Why not the charter's 10 %/90 % of the whole year:** a region can have multiple burning seasons; one whole-year window could bridge unrelated seasons.
 
 ### SD-14 · Trend
 - Theil–Sen slope of **annual harmonized totals, 2003–2025**. `pct_per_decade = 100 × 10 × slope ÷ median(annual totals)`.
@@ -212,8 +211,33 @@ Language rules: say "satellite-detected burning activity", never "number of fire
 | V4 | **Drift diagnostic:** k_ann fitted separately for each year 2013–2025 | R3 | yearly k with range | flat to 2022, departing after: the evidence for SD-05 |
 | V5 | Saturation: share of cells active per day in the peak week, res 5 vs res 6 | R3 | fraction | justifies SD-04 |
 | V6 | Backcast: hide S-NPP in year Y, predict VIIRS weekly cell-days from Aqua | R3 (Tier 1), R4 (Tier 2) | WAPE | validates the `viirs_equiv` lens |
-| V7 | **Planted truth:** run the whole pipeline on `synthland` and recover the planted k, curve, trend, season, outage and static sources | R4 + all | pass/fail per quantity | shown on the Methods page |
+| V7 | **Planted truth:** run recovery checks only on explicitly fabricated unit inputs; local US observations are not planted truth | R4 + all | pass/fail per quantity | shown on the Methods page |
 | V8 | Tier 1 vs Tier 2 forward, held-out years | R4 | WAPE between them | feeds SD-17 |
+
+V2 uses `validation.step_window_years: 3` (R3-approved config extension; R3 coordinates R1):
+compare the three calendar years beginning in the year of `eras.snpp_first_day` with the
+three immediately preceding years. Report the `tier1.interval_percentiles` endpoints of
+the same adjacent three-year/three-year ratio for every consecutive six-year window
+from `eras.record_start` through the year before that splice. Missing annual totals
+invalidate a comparison window; no missing year is replaced by zero. Both step notes
+state: "totals match partly by construction; see LOYO". V1 and its annual-only baseline
+refit every component, including the shrinkage target, without the held-out year.
+
+V4 uses `validation.drift_bootstrap_b: 200` (R3-approved config extension; R3
+coordinates R1), the configured `seed`, and `tier1.interval_percentiles`. Resample
+observed calendar-week blocks within each year; sum their **unscaled** paired
+counts before taking the annual Aqua/VIIRS ratio. This preserves the raw annual
+ratio, including the longer final calendar week. Zero-VIIRS draws have undefined
+ratios and are excluded from the percentile calculation. The scalar
+`drift_summary.mean_k_fit_window` is the arithmetic mean of valid yearly **S-NPP**
+ratios inside `tier1.snpp_fit`; `departure_pct_by_year` reports each later year's
+percentage departure from that mean. NOAA-20 has separate sensor-labeled drift
+entries from its first full year. These diagnostics never change calibration.
+V5 requires an R2-attested US region-cell inventory; absent that input, report
+null saturation with a reason, never use the union of detected cells as its
+denominator. Average covered-day activity within the peak week per fit year,
+then average those annual fractions. V6 uses V1's independently held-out factors
+in reverse; zero factors give unavailable predictions rather than division by zero.
 
 Rules: training and test years never mix; any split is by year. A result that looks too good is treated as a leak until proven otherwise. Use WAPE, not MAPE, as the headline (MAPE explodes on near-zero weeks).
 

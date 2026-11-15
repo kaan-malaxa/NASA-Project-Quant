@@ -1,0 +1,71 @@
+"""Lock section 4.2 plus R3's approved SD-06 config extensions.
+
+Expected constants are deliberately literal so config edits fail this test.
+"""
+
+from pipeline.common.config import load_science
+
+
+def test_science_yaml_matches_contract():
+    """Load the real config through common and check every key and value."""
+    expected = {
+        "seed": 7,
+        "scope": {"region_id": "united_states", "country": "US"},
+        "reference": {"sensor": "aqua", "pass": "D"},
+        "filters": {"modis_min_confidence": 30, "viirs_keep": ["n", "h"], "keep_type": 0},
+        "grid": {"count_res": 6, "map_res": 5, "mask_res": 8},
+        "eras": {
+            "record_start": "2003-01-01",
+            "aqua_trusted_through": "2022-12-31",
+            "snpp_through": "2025-12-31",
+            "snpp_first_day": "2012-01-20",
+        },
+        "tier1": {
+            "n0": 50,
+            "bootstrap_b": 500,
+            "interval_percentiles": [5, 95],
+            "snpp_fit": ["2013-01-01", "2022-12-31"],
+            "n20_min_fit_years": 3,
+            "n20_min_detection_days": 300,
+            "monthly": True,
+        },
+        "validation": {"step_window_years": 3, "drift_bootstrap_b": 200},
+        "timebins": {
+            "solar_degrees_per_hour": 15,
+            "week_days": 7,
+            "weeks_per_year": 52,
+            "week_min_covered_days": 5,
+            "month_min_covered_frac": 0.8,
+            "year_min_covered_frac": 0.9,
+        },
+        "static_mask": {"types": [1, 2, 3], "min_static_detections": 3, "dilate_rings": 1},
+        "climatology": {"baseline_years": [2003, 2025], "smooth_weeks": 3},
+        "anomaly": {
+            "low_activity_threshold": 5,
+            "extreme_pct": 95,
+            "above_pct": 75,
+            "below_pct": 25,
+        },
+        "season": {
+            "critical_share": 0.8,
+            "max_windows": 2,
+            "min_window_share": 0.15,
+            "extend_weeks": 4,
+            "min_year_celldays": 20,
+        },
+        "trend": {
+            "years": [2003, 2025],
+            "bootstrap_b": 1000,
+            "artifact_gap_points": 10,
+        },
+        "tier2": {
+            "fit": ["2013-01-01", "2022-12-31"],
+            "frp_floor_mw": 0.1,
+            "bootstrap_b": 200,
+            "max_band_at_10mw": 0.30,
+            "max_reliability_err": 0.05,
+            "max_wape_ratio_vs_t1": 1.10,
+        },
+    }
+
+    assert load_science() == expected

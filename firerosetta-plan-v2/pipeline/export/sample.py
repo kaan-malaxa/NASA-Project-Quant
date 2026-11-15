@@ -37,6 +37,7 @@ from typing import Any
 import h3
 
 from pipeline.export._contract_defaults import load_regions, load_science
+from pipeline.export.audit import AUDIT_FILE, build_audit
 from pipeline.export.check import CSV_HEADERS
 from pipeline.stats.sentences import (
     Estimate,
@@ -880,6 +881,8 @@ def build_sample() -> dict[str, bytes]:
         raw[f"{r.id}/cells_monthly.csv"] = _cells_monthly(r, weights)
         raw[f"{r.id}/hotspots_recent.csv"] = _hotspots_recent(r, weights)
     files = {path: json_bytes(doc) for path, doc in docs.items()} | raw
+    # the audit reads the files exactly as they will be on disk (rounded), before the manifest lists it
+    files[AUDIT_FILE] = build_audit(lambda rel: json.loads(files[rel]) if rel in files else None).encode("utf-8")
     manifest = _header(contains_sample=True, files=[
         {"path": path, "sha256": hashlib.sha256(data).hexdigest(), "bytes": len(data),
          "kinds": sorted(_kinds(docs[path], set())) if path in docs else []}

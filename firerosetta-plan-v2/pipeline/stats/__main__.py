@@ -39,14 +39,11 @@ def main(argv: list[str] | None = None) -> int:
     from pipeline.stats.trend import build_trend_files
 
     args = cli.stage_parser("stats").parse_args(argv)
-    t0 = time.monotonic()
+    t0 = time.perf_counter()          # log.finish measures with perf_counter
     region = args.region
-    hdir = paths.harmonized_dir(region)
-    inputs = {"daily": hdir / "daily.parquet", "annual_bootstrap": hdir / "annual_bootstrap.parquet",
-              "naive_annual": hdir / "naive_annual.parquet"}
-    calibration_path = hdir / "calibration.json"
-    gdir = paths.grid_dir(region)
-    celldays_path = gdir / "celldays.parquet"
+    inputs = {"daily": paths.daily(region), "annual_bootstrap": paths.annual_bootstrap(region),
+              "naive_annual": paths.naive_annual(region)}
+    calibration_path, celldays_path = paths.calibration(region), paths.celldays(region)
     absent = [str(p) for p in [*inputs.values(), calibration_path, celldays_path] if not p.is_file()]
     if absent:
         print(f"FAIL stats {region}: missing {', '.join(absent)} (run ingest and harmonize first)")
@@ -54,15 +51,20 @@ def main(argv: list[str] | None = None) -> int:
     tables = {name: io.read_parquet(path, name) for name, path in inputs.items()}
     calibration = json.loads(calibration_path.read_text(encoding="utf-8"))
     celldays = io.read_parquet(celldays_path, "celldays")
-    nrt_path, coverage_path = gdir / "celldays_nrt.parquet", gdir / "coverage.parquet"
+    nrt_path, coverage_path = paths.celldays_nrt(region), paths.coverage(region)
     # no NRT file yet -> an empty table, which gives status "unavailable"
     nrt = io.read_parquet(nrt_path, "celldays_nrt") if nrt_path.is_file() else pd.DataFrame(
         columns=["sensor", "local_day", "daynight", "fetched_at"])
     coverage = io.read_parquet(coverage_path, "coverage") if coverage_path.is_file() else None
+    # SD-17: Tier 2 inputs are optional; only a validated curve switches the viirs_equiv lens to them
+    curve_path, t2_path = paths.curve(region), paths.daily_t2(region)
+    curve = json.loads(curve_path.read_text(encoding="utf-8")) if curve_path.is_file() else None
+    daily_t2 = io.read_parquet(t2_path, "daily_t2") if t2_path.is_file() else None
     science = config.load_science()
     meta = config.get_region(region)
     header = {"schema_version": "1.0", "generated_at": generated_at(), "code_version": io.code_version()}
-    docs = build_calendar_files(tables["daily"], region, science, header)
+    docs = build_calendar_files(tables["daily"], region, science, header, curve=curve, daily_t2=daily_t2)
+    # The trend verdict always uses Tier 1 (SD-17): build_trend_files never sees daily_t2.
     docs |= build_trend_files(tables["daily"], tables["annual_bootstrap"], tables["naive_annual"], region,
                               meta.name, science, header)
     docs["season"] = build_season(docs["climatology"], tables["daily"], region, science, header)

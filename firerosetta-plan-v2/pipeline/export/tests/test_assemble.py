@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import shutil
 from datetime import date
@@ -139,6 +140,10 @@ def test_manifest_covers_every_file_and_flags_leftover_sample(tree):
     kinds = {f["path"]: f["kinds"] for f in man["files"]}
     assert kinds["conus/weekly.json"] == ["observed"] and kinds["synthland/weekly.json"] == ["sample"]
     assert kinds["conus/cells_monthly.csv"] == []
+    audit = tree.web_dir / "numbers_audit.md"                 # written before the manifest
+    entry = next(f for f in man["files"] if f["path"] == "numbers_audit.md")
+    assert entry["sha256"] == hashlib.sha256(audit.read_bytes()).hexdigest()
+    assert "conus/trend.json#/harmonized/pct_per_decade" in audit.read_text(encoding="utf-8")
 
 
 def test_manifest_has_no_sample_once_sample_folders_are_gone(tree):
@@ -160,6 +165,19 @@ def test_eyesight_and_t2_validation_are_included_when_present(tree):
     m = load(tree, "methods.json")
     assert m["eyesight"][0]["status"] == "exploratory" and m["eyesight"][0]["region"] == "conus"
     assert m["validation"][-1]["test"] == "t1_t2_wape"
+
+
+def test_validated_curve_goes_into_methods_unchanged_with_k_compare(tree):
+    curve = {"region": "conus", "status": "validated",
+             "params": {k: 0.25 for k in ("a", "b", "c", "a_lo", "a_hi", "b_lo", "b_hi", "c_lo", "c_hi")},
+             "g": 1.142, "n_celldays": 48210,
+             "curve": [{"frp_mw": 1.0, "p": 0.1, "lo": 0.09, "hi": 0.11}],
+             "binned": [{"frp_mw": 1.0, "p_obs": 0.1, "n": 500}],
+             "k_compare": [{"month": m, "k_tier1": 0.47, "k_tier2": 0.46 + m / 1000} for m in range(1, 13)]}
+    write_json(curve, tree.eyesight_dir("conus") / "curve.json")
+    assemble(tree)
+    stored = json.loads((tree.eyesight_dir("conus") / "curve.json").read_text(encoding="utf-8"))
+    assert load(tree, "methods.json")["eyesight"] == [stored]
 
 
 def test_sources_without_url_are_dropped(tree, tmp_path):

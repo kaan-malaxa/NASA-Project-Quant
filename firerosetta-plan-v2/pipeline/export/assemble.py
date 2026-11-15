@@ -22,6 +22,7 @@ import pandas as pd
 import pyarrow.parquet as pq
 import yaml
 
+from pipeline.export.audit import write_audit
 from pipeline.export.check import (
     has_sample_kind,
     load_json_strict,
@@ -293,5 +294,6 @@ def assemble(inp: Inputs) -> list[str]:
             raise AssembleError(f"{name}.json would not match its contract: {'; '.join(errors)}")
     inp.write_json(regions, inp.web_dir / "regions.json")
     inp.write_json(methods, inp.web_dir / "methods.json")
+    write_audit(inp.web_dir)                             # before the manifest, so its hash is listed
     inp.write_json(manifest_doc(inp), inp.web_dir / "manifest.json")
     return warnings

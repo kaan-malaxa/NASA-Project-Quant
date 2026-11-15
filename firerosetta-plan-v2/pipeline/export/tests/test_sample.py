@@ -42,7 +42,7 @@ def test_two_runs_give_identical_bytes(tmp_path):
     env = {**os.environ, "PYTHONHASHSEED": "123", "PYTHONPATH": str(REPO_ROOT)}
     subprocess.run([sys.executable, "-c", code], check=True, cwd=REPO_ROOT, env=env)
     ha, hb = _hashes(a), _hashes(b)
-    assert len(ha) == 3 + 14 * len(SAMPLE_REGIONS)
+    assert len(ha) == 4 + 14 * len(SAMPLE_REGIONS)          # regions, methods, manifest, numbers_audit.md
     assert ha == hb
 
 
@@ -56,7 +56,7 @@ def test_every_file_of_section_6_exists(files):
     per_region = ["weekly.json", "monthly.json", "daily.json", "climatology.json", "season.json", "trend.json",
                   "ruler.json", "nowcast.json", "hex.json", "calibration.json", "downloads.json",
                   "outline.geojson", "cells_monthly.csv", "hotspots_recent.csv"]
-    expected = {"regions.json", "methods.json", "manifest.json"} | {
+    expected = {"regions.json", "methods.json", "manifest.json", "numbers_audit.md"} | {
         f"{r}/{f}" for r in SAMPLE_REGIONS for f in per_region}
     assert set(files) == expected
 

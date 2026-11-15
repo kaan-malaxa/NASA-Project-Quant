@@ -24,6 +24,8 @@ SERIES_MAP = {
     "harmonized": "harmonized",
     "viirs_equiv": "viirs_equiv_t1",
 }
+# SD-17: when the eyesight curve is validated, the viirs_equiv lens comes from Tier 2 (daily_t2.parquet).
+EQUIV_SOURCE = {"tier1": "viirs_equiv_t1", "tier2": "viirs_equiv_t2"}
 LABELS = {
     "aqua_raw": "MODIS Aqua, as recorded",
     "viirs_raw": "VIIRS, as recorded",
@@ -54,16 +56,25 @@ def _str(x: Any) -> str | None:
     return None if x is None or pd.isna(x) else str(x)
 
 
-def series_frame(daily: pd.DataFrame, web_series: str) -> pd.DataFrame:
+def viirs_equiv_method(curve: dict[str, Any] | None) -> str:
+    """SD-17: 'tier2' only when curve.json exists with status 'validated'; otherwise 'tier1'."""
+    return "tier2" if curve is not None and curve.get("status") == "validated" else "tier1"
+
+
+def series_map_for(method: str) -> dict[str, str]:
+    return {**SERIES_MAP, "viirs_equiv": EQUIV_SOURCE[method]}
+
+
+def series_frame(daily: pd.DataFrame, web_series: str, series_map: dict[str, str] = SERIES_MAP) -> pd.DataFrame:
     """One series of daily.parquet as local_day, value, lo, hi, kind, source, sorted by day.
 
     Observed days may store lo/hi as null; SD-07 says they equal value, so fill them from value.
     """
-    f = daily.loc[daily["series"] == SERIES_MAP[web_series],
+    f = daily.loc[daily["series"] == series_map[web_series],
                   ["local_day", "value", "lo", "hi", "kind", "source"]].copy()
     f["local_day"] = pd.to_datetime(f["local_day"]).dt.date
     if f["local_day"].duplicated().any():
-        raise ValueError(f"daily.parquet has duplicate days for series {SERIES_MAP[web_series]}")
+        raise ValueError(f"daily table has duplicate days for series {series_map[web_series]}")
     for col in ("lo", "hi"):
         f[col] = f[col].where(f[col].notna() | f["value"].isna(), f["value"])
     return f.sort_values("local_day").reset_index(drop=True)
@@ -84,11 +95,12 @@ def _bin_of(d: date, grain: str) -> int:
     return timebins.week_of_year(d) if grain == "week" else d.month
 
 
-def calendar_rows(daily: pd.DataFrame, grain: str, last_day: date) -> list[dict[str, Any]]:
+def calendar_rows(daily: pd.DataFrame, grain: str, last_day: date,
+                  series_map: dict[str, str] = SERIES_MAP) -> list[dict[str, Any]]:
     """Weekly or monthly rows for every web series. Bins ending after last_day are omitted."""
     rows = []
     for web in SERIES_MAP:
-        f = series_frame(daily, web)
+        f = series_frame(daily, web, series_map)
         agg = timebins.aggregate(f, grain, value_cols=("value", "lo", "hi"))
         covered = f[f["value"].notna()]
         kinds: dict[tuple[int, int], Counter[str]] = {}
@@ -110,12 +122,14 @@ def calendar_rows(daily: pd.DataFrame, grain: str, last_day: date) -> list[dict[
     return rows
 
 
-def calendar_json(daily: pd.DataFrame, region: str, grain: str, header: dict[str, Any]) -> dict[str, Any]:
+def calendar_json(daily: pd.DataFrame, region: str, grain: str, header: dict[str, Any],
+                  method: str = "tier1") -> dict[str, Any]:
     per = "per week" if grain == "week" else "per month"
     meta = {s: {"label": LABELS[s], "unit": UNIT_DAY[s].replace("per day", per)} for s in SERIES_MAP}
-    meta["viirs_equiv"]["method"] = "tier1"
+    meta["viirs_equiv"]["method"] = method
     last_day = pd.to_datetime(daily["local_day"]).dt.date.max()
-    return {**header, "region": region, "series_meta": meta, "rows": calendar_rows(daily, grain, last_day)}
+    return {**header, "region": region, "series_meta": meta,
+            "rows": calendar_rows(daily, grain, last_day, series_map_for(method))}
 
 
 def kind_runs(days: list[date], kinds: list[str], sources: list[str | None], series: str) -> list[dict[str, Any]]:
@@ -130,7 +144,7 @@ def kind_runs(days: list[date], kinds: list[str], sources: list[str | None], ser
     return runs
 
 
-def daily_json(daily: pd.DataFrame, region: str, header: dict[str, Any]) -> dict[str, Any]:
+def daily_json(daily: pd.DataFrame, region: str, header: dict[str, Any], method: str = "tier1") -> dict[str, Any]:
     """Columnar daily file (6.4). Days absent from the table are missing (null, kind missing)."""
     all_days = pd.to_datetime(daily["local_day"]).dt.date
     start, end = all_days.min(), all_days.max()
@@ -138,7 +152,7 @@ def daily_json(daily: pd.DataFrame, region: str, header: dict[str, Any]) -> dict
     series: dict[str, Any] = {}
     runs: list[dict[str, Any]] = []
     for web in SERIES_MAP:
-        f = series_frame(daily, web).set_index("local_day").reindex(days)
+        f = series_frame(daily, web, series_map_for(method)).set_index("local_day").reindex(days)
         missing = f["value"].isna()
         kinds = ["missing" if m else str(k) for m, k in zip(missing, f["kind"])]
         sources = [None if m else _str(s) for m, s in zip(missing, f["source"])]
@@ -186,14 +200,28 @@ def climatology_json(weekly_rows: list[dict[str, Any]], monthly_rows: list[dict[
             "months": table(monthly_rows, "month", 12, None)}
 
 
-def build_calendar_files(daily: pd.DataFrame, region: str, science: dict[str, Any],
-                         header: dict[str, Any]) -> dict[str, dict[str, Any]]:
-    """All four documents, keyed by file stem."""
-    weekly = calendar_json(daily, region, "week", header)
-    monthly = calendar_json(daily, region, "month", header)
+def build_calendar_files(daily: pd.DataFrame, region: str, science: dict[str, Any], header: dict[str, Any],
+                         curve: dict[str, Any] | None = None,
+                         daily_t2: pd.DataFrame | None = None) -> dict[str, dict[str, Any]]:
+    """All four documents, keyed by file stem.
+
+    SD-17: the viirs_equiv lens uses daily_t2's viirs_equiv_t2 only when curve.json is validated.
+    Only that one series is taken from Tier 2; the climatology is built from Tier 1 harmonized.
+    """
+    method = viirs_equiv_method(curve)
+    table = daily
+    if method == "tier2":
+        t2 = None if daily_t2 is None else daily_t2[daily_t2["series"] == EQUIV_SOURCE["tier2"]]
+        if t2 is None or t2.empty:
+            raise ValueError("eyesight curve is validated but daily_t2.parquet has no viirs_equiv_t2 series")
+        days = pd.to_datetime(daily["local_day"])
+        t2_days = pd.to_datetime(t2["local_day"])
+        table = pd.concat([daily, t2[(t2_days >= days.min()) & (t2_days <= days.max())]], ignore_index=True)
+    weekly = calendar_json(table, region, "week", header, method)
+    monthly = calendar_json(table, region, "month", header, method)
     return {
         "weekly": weekly,
         "monthly": monthly,
-        "daily": daily_json(daily, region, header),
+        "daily": daily_json(table, region, header, method),
         "climatology": climatology_json(weekly["rows"], monthly["rows"], region, science, header),
     }

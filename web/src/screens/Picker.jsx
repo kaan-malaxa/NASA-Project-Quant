@@ -7,6 +7,7 @@ import { regionFilePath } from "@/data/files.js";
 import { outlinePath } from "@/lib/outline.js";
 import { statusLabel } from "@/lib/labels.js";
 import { useDocumentMeta } from "@/lib/useDocumentMeta.js";
+import CountryBrowser from "./CountryBrowser.jsx";
 
 /** Screen 2 · Place picker: one card per region from regions.json. */
 export default function Picker() {
@@ -32,6 +33,7 @@ export default function Picker() {
           )
         }
       </SectionState>
+      <CountryBrowser regions={regions} />
     </section>
   );
 }

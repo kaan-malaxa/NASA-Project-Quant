@@ -25,7 +25,7 @@ FILE_SCHEMAS.remove("common")
 EXPECTED = {
     "regions", "weekly", "monthly", "daily", "climatology", "season", "trend", "ruler",
     "nowcast", "hex", "calibration", "downloads", "methods", "manifest",
-    "outline", "period", "period_index", "spatial", "spatial_index",
+    "outline", "period", "period_index", "spatial", "spatial_index", "world",
 }
 
 

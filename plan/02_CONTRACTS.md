@@ -199,6 +199,16 @@ Every JSON file starts with: `"schema_version": "1.0", "generated_at": "<UTC ISO
 Static URL of every file: `{BASE}data/<path>` (so `GET {BASE}data/us/weekly.json`).
 
 ### 6.1 `regions.json`
+
+The place picker also reads optional `world.json`, validated by `contracts/world.schema.json`.
+`python -m pipeline.export.world` publishes it from `data/FIRMS_world/index.json` and updates its manifest
+entry transactionally. Its `countries` contain FIRMS names, stable region ids (`United_States` maps to `us`)
+and per-product/year original detection counts, observation dates, source CSV URLs and SHA-256 checksums.
+All records carry `kind: observed`. Products remain separate. These are original source archive totals
+including day and night and all confidence levels. Calibrated analysis availability continues to come
+from `regions.json`. The picker accepts optional `country` and `product` query parameters to restore
+the selected archive. Countries without an archive for a product/year have no record for that pair.
+
 ```json
 {"schema_version":"1.0","generated_at":"…","code_version":"…",
  "regions":[{"id":"us","name":"United States","country":"US",

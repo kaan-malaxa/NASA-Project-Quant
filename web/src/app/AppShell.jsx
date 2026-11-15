@@ -26,8 +26,14 @@ export default function AppShell({ banner = <SampleBanner />, resetKey }) {
       </div>
       <header className="border-b">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-3">
-          <Link to="/" className="text-lg font-semibold tracking-tight focus-visible:outline-2">
-            Prometheus Torch
+          <Link to="/" className="site-brand focus-visible:outline-2 focus-visible:outline-offset-4">
+            <img
+              src={`${import.meta.env.BASE_URL}prometheus-torch-logo.png`}
+              alt="Prometheus Torch"
+              width="1360"
+              height="768"
+              className="site-brand-logo"
+            />
           </Link>
           <nav aria-label="Main" className="flex gap-1">
             <NavLink to="/pick" className={navClass}>

@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-11-15T12:00:00Z",
+  "code_version": "example",
+  "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "products": [{ "id": "viirs-snpp", "label": "VIIRS · Suomi NPP" }],
+  "countries": [{
+    "id": "portugal",
+    "name": "Portugal",
+    "firms_name": "Portugal",
+    "records": [{
+      "product": "viirs-snpp",
+      "year": 2025,
+      "detections": 3,
+      "kind": "observed",
+      "first_date": "2025-02-01",
+      "last_date": "2025-08-31",
+      "csv_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "url": "https://firms.modaps.eosdis.nasa.gov/data/country/viirs-snpp/2025/viirs-snpp_2025_Portugal.csv"
+    }]
+  }]
+}

@@ -1,18 +1,15 @@
 /*
  * Landing hero (owner R5). Text and panel colours come from R6's tokens (--foreground, --card, ...).
  * The --hero-* values below are the 3D scene's own colours: the space backdrop, the atmosphere glow and the one
- * bright call-to-action. They are used only inside .landing-hero.
+ * call-to-action. They are used only inside .landing-hero.
  */
 .landing-hero {
   --hero-teal: #07383c;
   --hero-deep: #041a1e;
   --hero-black: #020708;
   --hero-accent: #4dffc3; /* outlines of the satellite buttons and labels */
-  --hero-cta: #3df58c;
-  --hero-cta-hover: #7dffb3;
-  --hero-cta-text: #02170c;
   --pad: 16px;
-  --landing-stage-h: calc(100svh - var(--sticky-offset, 0px) - 3.75rem);
+  --landing-stage-h: calc(100svh - var(--sticky-offset, 0px) - 4.8125rem);
   min-height: var(--landing-stage-h);
   display: grid;
   color: var(--foreground);
@@ -50,7 +47,7 @@
 
 /* ---- Scroll story (Phase 2). JS sets --t (0..1), --t2 (late part of t) and the --head/--cta/--ruler positions. ---- */
 .landing-story {
-  --landing-stage-h: calc(100svh - var(--sticky-offset, 0px) - 3.75rem);
+  --landing-stage-h: calc(100svh - var(--sticky-offset, 0px) - 4.8125rem);
   position: relative;
   background: #020708;
 }
@@ -382,19 +379,21 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--foreground) 50%, transparent);
+  border-radius: 6px;
   padding: 0.85rem 1.75rem;
   font-size: 1.0625rem;
-  font-weight: 700;
-  color: var(--hero-cta-text);
-  background: var(--hero-cta);
-  box-shadow: 0 0 32px color-mix(in srgb, var(--hero-cta) 45%, transparent);
+  font-weight: 600;
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--card) 90%, transparent);
   transition:
     background-color 150ms,
+    border-color 150ms,
     transform 150ms;
 }
 .landing-cta:hover {
-  background: var(--hero-cta-hover);
+  background: var(--accent);
+  border-color: var(--foreground);
   transform: translateY(-1px);
 }
 .landing-cta:focus-visible {

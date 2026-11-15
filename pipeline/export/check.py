@@ -28,7 +28,8 @@ CSV_HEADERS: dict[str, list[str]] = {
         "confidence", "frp", "daynight", "local_day", "h3_r6",
     ],
 }
-TOP_LEVEL_SCHEMAS = {"regions.json": "regions", "methods.json": "methods", "manifest.json": "manifest"}
+TOP_LEVEL_SCHEMAS = {"regions.json": "regions", "methods.json": "methods", "manifest.json": "manifest",
+                     "world.json": "world"}
 REGION_SCHEMAS = {
     "weekly", "monthly", "daily", "climatology", "season", "trend", "ruler",
     "nowcast", "hex", "calibration", "downloads", "period_index", "spatial_index",

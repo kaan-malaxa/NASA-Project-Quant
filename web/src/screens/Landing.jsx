@@ -112,6 +112,7 @@ export default function Landing() {
         cta={
           <Link to="/pick" className="landing-cta pointer-events-auto">
             Pick a place
+            <ArrowRight aria-hidden="true" className="size-4" />
           </Link>
         }
         renderRuler={renderRuler}

@@ -7,6 +7,9 @@
  *                                  SAMPLE banner can be tested as absent. Used only inside these tests.
  */
 
+import { readFileSync } from "node:fs";
+
+const WORLD = JSON.parse(readFileSync(new URL("../../contracts/examples/world.json", import.meta.url), "utf8"));
 const LAST = "2026-11-13";
 const DAYS = 8718; // 2003-01-01 .. 2026-11-13
 const SERIES = ["aqua_raw", "viirs_raw", "viirs_as_aqua", "harmonized", "viirs_equiv"];
@@ -320,6 +323,7 @@ export function buildFiles({ sample }) {
 /** Serve buildFiles(...) for every request to .../data/...; anything not in the set is a 404 (and fails the test). */
 export async function serveData(page, opts = { sample: true }) {
   const files = buildFiles({ sample: opts.sample ?? true });
+  files["world.json"] = { body: JSON.stringify(WORLD), type: "application/json" };
   // The landing loader shows on every full load of #/; tests turn it off with the test-only flag unless they are
   // about it ({ showLoader: true }). See src/screens/landing/loaderMath.js.
   if (!opts.showLoader) await page.addInitScript(() => localStorage.setItem("firerosetta-loader-off", "1"));

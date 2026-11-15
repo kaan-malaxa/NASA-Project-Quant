@@ -20,10 +20,10 @@ const median = (xs) => {
 /**
  * That year's harmonized annual value, and the median of the baseline years for comparison. If the year is itself a
  * baseline year it is left out of the comparison ("the other baseline years").
- * @param {object[]} annual trend.json annual rows
+ * @param {any[]} annual trend.json annual rows
  * @param {number} year
  * @param {[number, number] | null} baselineYears
- * @returns {{ row: object, median: number | null, n: number, baseline: [number, number] | null, others: boolean } | null}
+ * @returns {{ row: any, median: number | null, n: number, baseline: [number, number] | null, others: boolean } | null}
  */
 export function compareWithBaseline(annual, year, baselineYears) {
   const row = (annual || []).find(

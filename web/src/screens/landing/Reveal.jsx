@@ -5,6 +5,7 @@ import { usePrefersReducedMotion } from "./motion.js";
  * A landing section that fades and slides in the first time it scrolls into view (landing.css .landing-reveal).
  * With prefers-reduced-motion, or without IntersectionObserver, it is shown straight away.
  */
+/** @param {any} props */
 export default function Reveal({ as: Tag = "section", className = "", children, ...rest }) {
   const ref = useRef(null);
   const reduced = usePrefersReducedMotion();

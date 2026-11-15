@@ -8,6 +8,7 @@ import { useRegions } from "@/data/useRegions.js";
 import { useJson } from "@/data/useJson.js";
 import { regionFilePath } from "@/data/files.js";
 import { useDocumentMeta } from "@/lib/useDocumentMeta.js";
+import { siteUrl } from "@/lib/siteUrl.js";
 import LandingStory from "./landing/LandingStory.jsx";
 import LandingLoader from "./landing/LandingLoader.jsx";
 import Reveal from "./landing/Reveal.jsx";
@@ -71,6 +72,7 @@ export default function Landing() {
   useEffect(() => markLandingBootUsed(), []);
   const hideLoader = useCallback(() => setShowLoader(false), []);
 
+  /** @param {boolean} revealed */
   const renderRuler = (revealed) =>
     regionsState.status !== "ok" ? (
       <SectionState state={regionsState} title="Places" />
@@ -248,7 +250,7 @@ function WhyNow({ sources }) {
 }
 
 function PhoneQr() {
-  const url = typeof window !== "undefined" ? window.location.origin + window.location.pathname : "";
+  const url = siteUrl();
   if (!url) return null;
   return (
     <figure className="flex items-center gap-3">

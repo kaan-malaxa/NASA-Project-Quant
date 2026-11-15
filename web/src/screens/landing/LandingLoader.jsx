@@ -48,8 +48,12 @@ const SWEEP_TIME = 1100; // ms a sweep takes
 const PULSE_TIME = 600;
 const MONO_FALLBACK = 'ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace';
 
+/** @typedef {(p: number[], a: number) => number[]} Rotate */
+/** @type {Rotate} */
 const rotY = ([x, y, z], a) => [x * Math.cos(a) + z * Math.sin(a), y, -x * Math.sin(a) + z * Math.cos(a)];
+/** @type {Rotate} */
 const rotX = ([x, y, z], a) => [x, y * Math.cos(a) - z * Math.sin(a), y * Math.sin(a) + z * Math.cos(a)];
+/** @type {Rotate} */
 const rotZ = ([x, y, z], a) => [x * Math.cos(a) - y * Math.sin(a), x * Math.sin(a) + y * Math.cos(a), z];
 const clamp01 = (x) => Math.min(1, Math.max(0, x));
 
@@ -69,7 +73,7 @@ async function loadYears() {
 
 /**
  * @param {object} props
- * @param {ReturnType<import("./readiness.js").createReadiness>} props.tracker the landing page's readiness tasks: the
+ * @param {ReturnType<typeof import("./readiness.js").createReadiness>} props.tracker the landing page's readiness tasks: the
  *   loader ends only when every one is done (and the 3 s minimum has passed), or at the 8 s limit
  * @param {() => void} props.onDone called after the fade
  */

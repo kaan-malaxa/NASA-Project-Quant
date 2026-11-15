@@ -46,15 +46,17 @@ const cancelIdle = (id) =>
   typeof window.cancelIdleCallback === "function" ? window.cancelIdleCallback(id) : window.clearTimeout(id);
 
 /**
- * After the landing page is ready (`when`), prefetch the region page chunk and the default region's main JSON, one
+ * After the landing page is ready (`when`), prefetch the picker and region page chunks and the default region's main JSON, one
  * item per idle period, starting a couple of seconds later so it never competes with the landing page.
  * Skipped when the visitor asked to save data.
  */
 export function usePrefetchRegion(region, when) {
   useEffect(() => {
     if (!when || !region) return;
-    if (typeof navigator !== "undefined" && navigator.connection?.saveData) return;
+    if (typeof navigator !== "undefined" && /** @type {any} */ (navigator).connection?.saveData) return;
+    /** @type {(() => Promise<unknown>)[]} */
     const jobs = [
+      () => import("@/screens/Picker.jsx"),
       () => import("@/screens/Region.jsx"),
       ...PREFETCH_FILES.filter((n) => (region.files || []).includes(n)).map(
         (n) => () => fetchJson(regionFilePath(region.id, n)),

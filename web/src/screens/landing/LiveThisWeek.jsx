@@ -63,7 +63,7 @@ export default function LiveThisWeek({ regions }) {
       const why = failed
         ? `nowcast.json ${state.status}`
         : `trend.json ${trend.status}, weekly.json ${weekly.status}`;
-      console.info(`Live this week hidden: ${region?.id} ${why}.`, state.detail ?? "");
+      console.info(`Live this week hidden: ${region?.id} ${why}.`, /** @type {any} */ (state).detail ?? "");
     }
   }, [hidden, failed, region, state, trend.status, weekly.status]);
 

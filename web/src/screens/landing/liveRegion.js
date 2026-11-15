@@ -1,8 +1,8 @@
 /**
  * The region for the landing page's "Live this week" card: the first region in regions.json with synthetic: false
  * that lists a nowcast. Synthetic regions (synthland) are never shown here, even with ?debug=1.
- * @param {object[] | undefined} regions regions.json `regions`
- * @returns {object | null}
+ * @param {any[] | undefined} regions regions.json `regions`
+ * @returns {any}
  */
 export function liveRegion(regions) {
   return (regions || []).find((r) => r.synthetic === false && (r.files || []).includes("nowcast")) ?? null;

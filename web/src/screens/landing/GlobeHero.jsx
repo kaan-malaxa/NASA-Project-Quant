@@ -99,8 +99,10 @@ const GlobeHero = forwardRef(function GlobeHero(
   const close = useCallback(
     (how) => {
       // Give focus back to the satellite's button, except after a press elsewhere (that press decides the focus).
-      if (how !== "outside" && selected)
-        document.querySelector(`[data-satellite="${selected}"]`)?.focus({ preventScroll: true });
+      if (how !== "outside" && selected) {
+        const el = document.querySelector(`[data-satellite="${selected}"]`);
+        if (el instanceof HTMLElement) el.focus({ preventScroll: true });
+      }
       setSelected(null);
     },
     [selected],

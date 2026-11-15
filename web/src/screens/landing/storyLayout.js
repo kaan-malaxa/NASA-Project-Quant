@@ -27,7 +27,7 @@ export const STORY_EXTRA_VH = TRIGGER.forward + TRIGGER.hold;
  * Which end state the story should be heading to (0 = full globe, 1 = globe small with the ruler).
  * @param {number} scrolled px scrolled since the stage was pinned (negative before)
  * @param {number} viewportH px
- * @param {0 | 1} current the state it is heading to now (kept between the two lines)
+ * @param {number} current the state it is heading to now (kept between the two lines)
  */
 export function storyTarget(scrolled, viewportH, current) {
   if (!(viewportH > 0)) return current;

@@ -37,7 +37,7 @@ function Arrow({ x1, x2, y, color, width, opacity }) {
  * @param {number} p.intro 0..1 the collision animation (plays once)
  * @param {number} p.merge 0..1 the move to the solution
  * @param {number | null} [p.pulse] 0..1 the ring pulse along the joined arrow, or null
- * @param {object | null} p.years { first, switch, last } from loaderYears(ruler.json)
+ * @param {{ first: number, switch: number, last: number } | null} p.years from loaderYears(ruler.json)
  * @param {boolean} [p.still] reduced motion: no pulsing gap
  */
 export default function SensorArrows({ intro, merge, pulse = null, years, still = false }) {

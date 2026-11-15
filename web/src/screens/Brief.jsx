@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { siteUrl } from "@/lib/siteUrl.js";
 import { Link, useLocation, useParams } from "react-router-dom";
 import { QRCodeSVG } from "qrcode.react";
 import { Printer } from "lucide-react";
@@ -92,7 +93,7 @@ export default function Brief() {
   const { trend, monthly, climatology, season, nowcast, hex, outline } = files;
   const stillLoading = viz === null || Object.values(files).some((f) => f?.status === "loading");
   const lastDay = region.last_data_day;
-  const pageUrl = `${window.location.origin}${window.location.pathname}#/r/${region.id}${window.location.hash.includes("?") ? "?" + window.location.hash.split("?")[1] : ""}`;
+  const pageUrl = `${siteUrl()}#/r/${region.id}${window.location.hash.includes("?") ? "?" + window.location.hash.split("?")[1] : ""}`;
   const codeVersion = manifest.status === "ok" ? manifest.data.code_version : [trend, monthly, nowcast].find(ok)?.data.code_version;
   const generated = manifest.status === "ok" ? manifest.data.generated_at : trend?.data?.generated_at;
   const today = generated ? new Date(generated).toLocaleDateString("en-GB", {day:"numeric",month:"long",year:"numeric",timeZone:"UTC"}) : "unavailable";

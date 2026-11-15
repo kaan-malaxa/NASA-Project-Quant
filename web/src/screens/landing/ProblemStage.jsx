@@ -87,7 +87,7 @@ function TextBlock({ id, title, text }) {
  * (useTriggeredMove). State A: the problem text and the two arrows, collided and apart. State B: the solution text,
  * the arrows joined into one harmonized record. With reduced motion, or when the stage does not fit the screen, the
  * two states are two normal stacked sections.
- * @param {{ years: object | null, problem: string, solution: string }} props
+ * @param {{ years: { first: number, switch: number, last: number } | null, problem: string, solution: string }} props
  */
 export default function ProblemStage({ years, problem, solution }) {
   const reduced = usePrefersReducedMotion();

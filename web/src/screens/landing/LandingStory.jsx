@@ -27,14 +27,15 @@ function boxIn(stage, el) {
  *
  * @param {object} props
  * @param {object | null} props.calibration passed to the hero (satellite roles)
- * @param {React.ReactNode} props.head the h1
- * @param {React.ReactNode} props.cta the "Pick a place" link
- * @param {(revealed: boolean) => React.ReactNode} props.renderRuler the ruler block; `revealed` turns true the first
+ * @param {import("react").ReactNode} props.head the h1
+ * @param {import("react").ReactNode} props.cta the "Pick a place" link
+ * @param {(revealed: boolean) => import("react").ReactNode} props.renderRuler the ruler block; `revealed` turns true the first
  *   time it comes into view, so the chart's draw-in animation plays when it can be seen
  * @param {() => void} [props.onReady] the globe is ready (see GlobeHero)
  * @param {boolean} [props.forceStatic] show the static Earth instead of the 3D scene
  * @param {() => void} [props.onTexture] the Earth texture is on the GPU (see GlobeScene)
  * @param {() => void} [props.onLayout] the positions have been measured with the ruler block in place
+ * @param {boolean} [props.hold] the landing loader is on top (the globe draws only what it needs to get ready)
  * @param {boolean} [props.layoutReady] the ruler block has its final content (data or its fallback)
  */
 export default function LandingStory({

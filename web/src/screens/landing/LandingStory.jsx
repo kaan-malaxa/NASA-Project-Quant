@@ -1,0 +1,217 @@
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
+import GlobeHero from "./GlobeHero.jsx";
+import { usePrefersReducedMotion } from "./motion.js";
+import { ORBIT_FRACTION } from "./satellites.js";
+import { MOVE_MS, STORY_EXTRA_VH, easeInOut, storyLayout, storyTarget } from "./storyLayout.js";
+
+const px = (v) => `${Math.round(v * 100) / 100}px`;
+
+/**
+ * The landing scroll story (prompt Phase 2). One tall section with the globe stage pinned (position: sticky).
+ * Scrolling does not drag the move along: once the visitor has scrolled past a threshold, the move plays by itself
+ * to the end, and scrolling back above it plays it in reverse (storyTarget). One number, t (0..1), animated over
+ * time,
+ *   - moves and shrinks the 3D globe (read by the scene every frame through `story`, no React re-render), and
+ *   - moves the headline, the button and the broken-ruler block (CSS variables on the stage).
+ *
+ * Falls back to plain stacked sections (hero, then the ruler) with prefers-reduced-motion, and when the second
+ * state does not fit the screen.
+ *
+ * @param {object} props
+ * @param {object | null} props.calibration passed to the hero (satellite roles)
+ * @param {React.ReactNode} props.head the h1
+ * @param {React.ReactNode} props.cta the "Pick a place" link
+ * @param {(revealed: boolean) => React.ReactNode} props.renderRuler the ruler block; `revealed` turns true the first
+ *   time it comes into view, so the chart's draw-in animation plays when it can be seen
+ * @param {() => void} [props.onReady] the globe is ready (see GlobeHero)
+ * @param {boolean} [props.forceStatic] show the static Earth instead of the 3D scene
+ */
+export default function LandingStory({ calibration, head, cta, renderRuler, onReady, forceStatic = false }) {
+  const reduced = usePrefersReducedMotion();
+  const [fits, setFits] = useState(true);
+  const story = !reduced && fits;
+
+  const containerRef = useRef(null);
+  const stageRef = useRef(null);
+  const headRef = useRef(null);
+  const ctaRef = useRef(null);
+  const rulerRef = useRef(null);
+  const chipsRef = useRef(null);
+  const storyRef = useRef({ t: 0, globe: null });
+  const layoutRef = useRef(null);
+  const fitTimer = useRef(0);
+  const [phase2, setPhase2] = useState(false);
+  const [revealed, setRevealed] = useState(false);
+  const [ctaFades, setCtaFades] = useState(false);
+  const [ctaGone, setCtaGone] = useState(false);
+
+  // t -> CSS variables (written directly); React state changes only when t crosses a few fixed points.
+  const setT = useCallback((t) => {
+    const stage = stageRef.current;
+    if (!stage) return;
+    // The ruler fades in over the second half of the move, once the headline has mostly left its place.
+    const t2 = Math.min(1, Math.max(0, (t - 0.55) / 0.45));
+    stage.style.setProperty("--t", String(Math.round(t * 1e4) / 1e4));
+    stage.style.setProperty("--t2", String(Math.round(t2 * 1e4) / 1e4));
+    storyRef.current.t = t;
+    setPhase2(t > 0.5);
+    setCtaGone(t > 0.25);
+    if (t > 0.3) setRevealed(true);
+  }, []);
+
+  // The move plays over time toward `target`, from wherever it is now (so a reversal mid-way is smooth).
+  const anim = useRef({ target: 0, from: 0, start: 0, dur: 0, frame: 0 });
+  const tick = useCallback(
+    (now) => {
+      const a = anim.current;
+      const p = a.dur > 0 ? Math.min(1, (now - a.start) / a.dur) : 1;
+      setT(a.from + (a.target - a.from) * easeInOut(p));
+      a.frame = p < 1 ? requestAnimationFrame(tick) : 0;
+    },
+    [setT],
+  );
+
+  // Scroll -> which end state to head to. Starts the move when that changes.
+  const apply = useCallback(() => {
+    const stage = stageRef.current;
+    const box = containerRef.current;
+    if (!stage || !box) return;
+    const a = anim.current;
+    const stickyTop = parseFloat(getComputedStyle(stage).top) || 0;
+    const target = storyTarget(stickyTop - box.getBoundingClientRect().top, window.innerHeight, a.target);
+    if (target === a.target) return;
+    cancelAnimationFrame(a.frame);
+    a.from = storyRef.current.t;
+    a.target = target;
+    a.dur = MOVE_MS * Math.abs(target - a.from);
+    a.start = performance.now();
+    a.frame = requestAnimationFrame(tick);
+  }, [tick]);
+
+  // Measure the pieces and place them (on load, on resize, and when the ruler's data arrive).
+  const measure = useCallback(() => {
+    const stage = stageRef.current;
+    const [headEl, ctaEl, rulerEl, chipsEl] = [headRef, ctaRef, rulerRef, chipsRef].map((r) => r.current);
+    if (!stage || !headEl || !ctaEl || !rulerEl || !chipsEl || !stage.clientWidth) return;
+    const L = storyLayout({
+      w: stage.clientWidth,
+      h: stage.clientHeight,
+      headH: headEl.offsetHeight,
+      headW: headEl.offsetWidth,
+      ctaH: ctaEl.offsetHeight,
+      rulerH: rulerEl.offsetHeight,
+      chipsH: chipsEl.offsetHeight,
+      orbitFraction: ORBIT_FRACTION,
+    });
+    const vars = {
+      "--head-y0": px(L.headY0),
+      "--head-y1": px(L.headY1),
+      "--head-s1": String(Math.round(L.headS1 * 1e4) / 1e4),
+      "--cta-y0": px(L.ctaY0),
+      "--cta-y1": px(L.ctaY1),
+      "--ruler-top": px(L.rulerTop),
+      "--ruler-dx": px(L.rulerDx),
+      "--ruler-dy": px(L.rulerDy),
+    };
+    for (const [k, v] of Object.entries(vars)) stage.style.setProperty(k, v);
+    storyRef.current.globe = L.globe;
+    setCtaFades(L.ctaFades);
+    layoutRef.current = L;
+    // Decide "does it fit" only once sizes have settled: charts draw at a default width before they measure themselves.
+    clearTimeout(fitTimer.current);
+    fitTimer.current = setTimeout(() => {
+      if (layoutRef.current && !layoutRef.current.fits) setFits(false);
+      stage.dataset.fits = String(layoutRef.current?.fits);
+    }, 700);
+    setT(storyRef.current.t);
+    apply();
+  }, [apply, setT]);
+
+  useLayoutEffect(() => {
+    if (!story) {
+      storyRef.current.t = 0;
+      return;
+    }
+    measure();
+    const ro = typeof ResizeObserver !== "undefined" ? new ResizeObserver(() => measure()) : null;
+    for (const r of [stageRef, headRef, ctaRef, rulerRef, chipsRef]) if (r.current) ro?.observe(r.current);
+    let frame = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(apply);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      ro?.disconnect();
+      cancelAnimationFrame(frame);
+      cancelAnimationFrame(anim.current.frame);
+      clearTimeout(fitTimer.current);
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, [story, measure, apply]);
+
+  // A layout that did not fit may fit after the window changes size: try the story again.
+  useEffect(() => {
+    if (fits) return;
+    const retry = () => setFits(true);
+    window.addEventListener("resize", retry, { once: true });
+    return () => window.removeEventListener("resize", retry);
+  }, [fits]);
+
+  if (!story) {
+    return (
+      <>
+        <GlobeHero
+          ref={stageRef}
+          mode="stacked"
+          calibration={calibration}
+          chipsRef={chipsRef}
+          onReady={onReady}
+          forceStatic={forceStatic}
+        >
+          <div className="stacked-head max-w-4xl space-y-6 sm:order-first sm:mt-auto">
+            {head}
+            {cta}
+          </div>
+        </GlobeHero>
+        <section aria-label="The broken ruler" className="mx-auto w-full max-w-6xl px-4 py-8">
+          {renderRuler(true)}
+        </section>
+      </>
+    );
+  }
+
+  return (
+    <div
+      ref={containerRef}
+      className="landing-story"
+      style={{ height: `calc(var(--landing-stage-h) + ${Math.round(STORY_EXTRA_VH * 100)}svh)` }}
+    >
+      <GlobeHero
+        ref={stageRef}
+        mode="story"
+        story={storyRef}
+        calibration={calibration}
+        chipsRef={chipsRef}
+        onReady={onReady}
+        forceStatic={forceStatic}
+      >
+        <div ref={headRef} className="story-head">
+          {head}
+        </div>
+        <div ref={ctaRef} className="story-cta" data-fades={ctaFades} inert={ctaFades && ctaGone}>
+          {cta}
+        </div>
+        <section
+          ref={rulerRef}
+          aria-label="The broken ruler"
+          className="story-ruler"
+          data-shown={phase2}
+          data-testid="story-ruler"
+        >
+          {renderRuler(revealed)}
+        </section>
+      </GlobeHero>
+    </div>
+  );
+}

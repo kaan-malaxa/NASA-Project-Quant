@@ -112,10 +112,14 @@ export function buildFiles({ sample }) {
       kind: k("harmonized"), input_note: "Test input note.", sentence: "Test nowcast sentence.",
     });
     put(`${r.id}/hex.json`, { ...head, region: r.id, resolution: 5, unit: "VIIRS fire cell-days per year", source: "snpp", years: [2013, 2025], kind: k("observed"), cells: [{ h3: "85283473fffffff", critical: 1, all_year: 2 }] });
+    const months = Array.from({ length: 12 }, (_, i) => i + 1);
+    const kRow = (month) => ({ month, k: 0.5, lo: 0.45, hi: 0.55, aqua_celldays: 100, viirs_celldays: 200 });
     put(`${r.id}/calibration.json`, {
       ...head, region: r.id, reference: "aqua_day", count_resolution: 6, shrinkage_n0: 50,
       eras: [{ from: "2003-01-01", to: "2022-12-31", source: "aqua", kind: k("observed") }, { from: "2023-01-01", to: null, source: "snpp", kind: k("harmonized") }],
-      fit_window: {}, noaa20_method: "direct", k_annual: { snpp: { k: 0.5, lo: 0.45, hi: 0.55 } }, k: {},
+      fit_window: { snpp: ["2013-01-01", "2022-12-31"], noaa20: ["2019-01-01", "2022-12-31"] }, noaa20_method: "direct",
+      k_annual: { snpp: { k: 0.5, lo: 0.45, hi: 0.55 }, noaa20: { k: 0.5, lo: 0.45, hi: 0.55 } },
+      k: { snpp: months.map(kRow), noaa20: months.map(kRow) },
     });
     files[`${r.id}/outline.geojson`] = {
       body: JSON.stringify({ type: "FeatureCollection", features: [{ type: "Feature", properties: {}, geometry: { type: "Polygon", coordinates: r.poly } }] }),

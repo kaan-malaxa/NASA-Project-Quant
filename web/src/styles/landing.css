@@ -1,0 +1,271 @@
+/*
+ * Landing hero (owner R5). Text and panel colours come from R6's tokens (--foreground, --card, ...).
+ * The --hero-* values below are the 3D scene's own colours: the space backdrop, the atmosphere glow and the one
+ * bright call-to-action. They are used only inside .landing-hero.
+ */
+.landing-hero {
+  --hero-teal: #07383c;
+  --hero-deep: #041a1e;
+  --hero-black: #020708;
+  --hero-glow: #4dffc3;
+  --hero-cta: #3df58c;
+  --hero-cta-hover: #7dffb3;
+  --hero-cta-text: #02170c;
+  --pad: 16px;
+  --landing-stage-h: calc(100svh - var(--sticky-offset, 0px) - 3.75rem);
+  min-height: var(--landing-stage-h);
+  display: grid;
+  color: var(--foreground);
+  background:
+    radial-gradient(90% 70% at 50% 45%, var(--hero-teal) 0%, var(--hero-deep) 48%, var(--hero-black) 100%),
+    var(--hero-black);
+}
+@media (min-width: 768px) {
+  .landing-hero {
+    --pad: 40px;
+  }
+}
+
+/* Text layer over the scene. It ignores the pointer (the globe underneath stays clickable); links and buttons opt in. */
+.landing-hero-content {
+  min-height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.5rem 1rem;
+  /* Keeps the headline readable where it crosses the globe. */
+  background:
+    linear-gradient(to top, color-mix(in srgb, var(--hero-black) 82%, transparent) 0%, transparent 46%),
+    linear-gradient(to bottom, color-mix(in srgb, var(--hero-black) 70%, transparent) 0%, transparent 30%);
+}
+@media (min-width: 640px) {
+  .landing-hero-content {
+    padding: 2.5rem;
+  }
+  .landing-hero[data-mode="stacked"] .satellite-chips {
+    align-self: flex-end;
+  }
+}
+
+/* ---- Scroll story (Phase 2). JS sets --t (0..1), --t2 (late part of t) and the --head/--cta/--ruler positions. ---- */
+.landing-story {
+  --landing-stage-h: calc(100svh - var(--sticky-offset, 0px) - 3.75rem);
+  position: relative;
+  background: #020708;
+}
+.landing-hero[data-mode="story"] {
+  position: sticky;
+  top: var(--sticky-offset, 0px);
+  height: var(--landing-stage-h);
+  min-height: 0;
+}
+.landing-hero[data-mode="story"] .landing-hero-content {
+  position: absolute;
+  inset: 0;
+  padding: 0;
+  display: block;
+}
+.landing-hero[data-mode="story"] .landing-hero-content::before {
+  /* Extra shade on the text side once the globe has moved away from it (wide screens). */
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: var(--t, 0);
+  background: linear-gradient(
+    to right,
+    color-mix(in srgb, var(--hero-black) 60%, transparent) 0%,
+    transparent 55%
+  );
+}
+.story-head,
+.story-cta,
+.story-ruler {
+  position: absolute;
+  top: 0;
+  left: var(--pad);
+}
+.story-head {
+  width: min(56rem, calc(100% - 2 * var(--pad)));
+  transform-origin: top left;
+  transform: translateY(calc(var(--head-y0, 0px) + (var(--head-y1, 0px) - var(--head-y0, 0px)) * var(--t, 0)))
+    scale(calc(1 + (var(--head-s1, 1) - 1) * var(--t, 0)));
+  will-change: transform;
+}
+.story-cta {
+  transform: translateY(calc(var(--cta-y0, 0px) + (var(--cta-y1, 0px) - var(--cta-y0, 0px)) * var(--t, 0)));
+  will-change: transform;
+}
+/* Phones: the headline moves down past the button, so the button fades out early (the header keeps "Pick a place"). */
+.story-cta[data-fades="true"] {
+  opacity: clamp(0, 1 - 4 * var(--t, 0), 1);
+}
+.story-ruler {
+  top: var(--ruler-top, 0px);
+  width: calc(50% - var(--pad) - 24px);
+  opacity: var(--t2, 0);
+  transform: translate(
+    calc((1 - var(--t2, 0)) * var(--ruler-dx, 0px)),
+    calc((1 - var(--t2, 0)) * var(--ruler-dy, 0px))
+  );
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+.story-ruler[data-shown="true"] {
+  pointer-events: auto;
+}
+.landing-hero[data-mode="story"] .satellite-chips {
+  position: absolute;
+  bottom: var(--pad);
+  right: var(--pad);
+}
+@media (max-width: 767px) {
+  .landing-hero[data-mode="story"] .satellite-chips {
+    left: var(--pad);
+  }
+  .story-ruler {
+    width: calc(100% - 2 * var(--pad));
+  }
+  .landing-hero[data-mode="story"] .landing-hero-content::before {
+    display: none;
+  }
+}
+
+/* ---- Loader (Phase 3): below the SAMPLE DATA banner, above everything else ---- */
+.landing-loader {
+  position: fixed;
+  inset: var(--sticky-offset, 0px) 0 0 0;
+  z-index: 45;
+  background: radial-gradient(70% 60% at 50% 50%, #07383c 0%, #041a1e 50%, #020708 100%), #020708;
+  opacity: 1;
+  transition: opacity 500ms ease;
+}
+.landing-loader[data-fading="true"] {
+  opacity: 0;
+  pointer-events: none;
+}
+.landing-loader-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- Mission ---- */
+.landing-mission {
+  background: linear-gradient(to bottom, #020708 0%, var(--background) 100%);
+}
+.mission-card {
+  transition: border-color 150ms;
+}
+.mission-card:hover {
+  border-color: var(--ring);
+}
+
+.landing-headline {
+  text-shadow: 0 2px 24px var(--hero-black);
+}
+
+.landing-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  padding: 0.85rem 1.75rem;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--hero-cta-text);
+  background: var(--hero-cta);
+  box-shadow: 0 0 32px color-mix(in srgb, var(--hero-cta) 45%, transparent);
+  transition:
+    background-color 150ms,
+    transform 150ms;
+}
+.landing-cta:hover {
+  background: var(--hero-cta-hover);
+  transform: translateY(-1px);
+}
+.landing-cta:focus-visible {
+  outline: 3px solid var(--foreground);
+  outline-offset: 3px;
+}
+
+.satellite-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--hero-glow) 35%, transparent);
+  padding: 0.4rem 0.8rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--hero-black) 72%, transparent);
+  backdrop-filter: blur(6px);
+}
+.satellite-chip:hover,
+.satellite-chip[data-active="true"] {
+  border-color: var(--hero-glow);
+  box-shadow: 0 0 0 1px var(--hero-glow);
+}
+.satellite-chip:focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 2px;
+}
+.satellite-chip-tag {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+}
+/* Phones: one compact row of chips (the instrument is in each satellite's panel). */
+@media (max-width: 639px) {
+  .satellite-chip {
+    padding: 0.3rem 0.55rem;
+    font-size: 0.75rem;
+  }
+  .satellite-chip-tag {
+    display: none;
+  }
+}
+
+.globe-label {
+  display: block;
+  white-space: nowrap;
+  border-radius: 999px;
+  border: 1px solid var(--hero-glow);
+  padding: 0.15rem 0.6rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--hero-black) 85%, transparent);
+}
+
+/* The flat Earth picture (no WebGL, or while the 3D scene loads): the map on a disc, shaded like a lit sphere. */
+.static-earth {
+  position: relative;
+  width: min(62svh, 78vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-size: auto 100%;
+  background-position: 22% 50%;
+  box-shadow:
+    0 0 60px 6px color-mix(in srgb, var(--hero-glow) 45%, transparent),
+    inset 0 0 18px 2px color-mix(in srgb, var(--hero-glow) 55%, transparent);
+}
+.static-earth::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 35%,
+    transparent 0%,
+    transparent 32%,
+    color-mix(in srgb, var(--hero-black) 92%, transparent) 78%
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing-cta,
+  .mission-card {
+    transition: none;
+  }
+}

@@ -1,56 +1,166 @@
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { QRCodeSVG } from "qrcode.react";
-import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 import SectionState from "@/components/SectionState.jsx";
 import { VizSlot } from "@/components/Viz.jsx";
 import { useRegions } from "@/data/useRegions.js";
 import { useJson } from "@/data/useJson.js";
 import { regionFilePath } from "@/data/files.js";
 import { useDocumentMeta } from "@/lib/useDocumentMeta.js";
+import LandingStory from "./landing/LandingStory.jsx";
+import LandingLoader from "./landing/LandingLoader.jsx";
+import { LOADER, markLoaderSeen, shouldShowLoader } from "./landing/loaderMath.js";
+import "@/styles/landing.css";
 
 const WHY_NOW_CLAIMS = ["snpp_end", "aqua_drift"];
 
-/** Screen 1 · The broken ruler (contracts section 7, R5 role file section 9). */
+// Mission copy from the product owner (prompt Phase 2); fixed text, no results in it.
+const MISSION =
+  "NASA has watched fires from space for over two decades, but the cameras changed along the way. FireRosetta puts the old and new satellite records on one scale, so a jump in the record means more fire, not a better camera.";
+
+/** Screen 1 · The broken ruler (contracts section 7, R5 role file section 9), as a scroll story over the globe. */
 export default function Landing() {
-  useDocumentMeta("", "Is it really burning more, or did the satellite get better eyes? Satellite fire records from MODIS and VIIRS, put on one scale.");
+  useDocumentMeta(
+    "",
+    "Is it really burning more, or did the satellite get better eyes? Satellite fire records from MODIS and VIIRS, put on one scale.",
+  );
   const { state: regionsState, defaultRegion } = useRegions();
   const rulerListed = defaultRegion?.files?.includes("ruler");
   const ruler = useJson(rulerListed ? regionFilePath(defaultRegion.id, "ruler") : null);
   const methods = useJson("methods.json");
+  // Each satellite's role in the record (reference, translated, not used) is read from calibration.json, never typed.
+  const calibrationListed = defaultRegion?.files?.includes("calibration");
+  const calibration = useJson(calibrationListed ? regionFilePath(defaultRegion.id, "calibration") : null);
+
+  // First visit in this session (and not reduced motion): the dot-sphere loader until the globe is ready.
+  const [showLoader, setShowLoader] = useState(shouldShowLoader);
+  const [ready, setReady] = useState(false);
+  const [forceStatic, setForceStatic] = useState(false);
+  const readyRef = useRef(false);
+  const onReady = useCallback(() => {
+    readyRef.current = true;
+    setReady(true);
+  }, []);
+  useEffect(() => {
+    if (!showLoader) return;
+    markLoaderSeen();
+    // Never wait forever: after LOADER.maxWait the loader finishes and the page shows the static Earth.
+    const id = setTimeout(() => {
+      if (!readyRef.current) setForceStatic(true);
+    }, LOADER.maxWait);
+    return () => clearTimeout(id);
+  }, [showLoader]);
+  const hideLoader = useCallback(() => setShowLoader(false), []);
+
+  const renderRuler = (revealed) =>
+    regionsState.status !== "ok" ? (
+      <SectionState state={regionsState} title="Places" />
+    ) : !defaultRegion ? (
+      <SectionState state={{ status: "absent" }} title="The broken ruler" />
+    ) : (
+      <SectionState state={ruler} title="The broken ruler" skeletonClassName="h-64">
+        {(data) => (
+          <figure className="space-y-3">
+            {/* Remounted when first revealed, so its draw-in animation plays where it can be seen. */}
+            <VizSlot
+              key={revealed ? "shown" : "waiting"}
+              name="BrokenRuler"
+              ruler={data}
+              animate={revealed}
+              placeholderClassName="h-64"
+            />
+            <figcaption className="max-w-3xl text-base text-pretty sm:text-lg">{data.sentence}</figcaption>
+            <p className="text-muted-foreground text-sm">Shown for {defaultRegion.name}.</p>
+          </figure>
+        )}
+      </SectionState>
+    );
 
   return (
-    <div className="space-y-8">
-      <section aria-labelledby="landing-title" className="space-y-4">
-        <h1 id="landing-title" className="max-w-3xl text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
-          Is it really burning more, or did the satellite get better eyes?
-        </h1>
+    <div>
+      <LandingStory
+        calibration={calibration.status === "ok" ? calibration.data : null}
+        head={
+          <h1
+            id="landing-title"
+            className="landing-headline text-4xl leading-[1.05] font-extrabold tracking-tight text-balance sm:text-6xl lg:text-7xl"
+          >
+            Is it really burning more, or did the satellite get better eyes?
+          </h1>
+        }
+        cta={
+          <Link to="/pick" className="landing-cta pointer-events-auto">
+            Pick a place
+          </Link>
+        }
+        renderRuler={renderRuler}
+        onReady={onReady}
+        forceStatic={forceStatic}
+      />
+      {showLoader ? <LandingLoader finish={ready || forceStatic} onDone={hideLoader} /> : null}
 
-        {regionsState.status !== "ok" ? (
-          <SectionState state={regionsState} title="Places" />
-        ) : !defaultRegion ? (
-          <SectionState state={{ status: "absent" }} title="The broken ruler" />
-        ) : (
-          <SectionState state={ruler} title="The broken ruler" skeletonClassName="h-64">
-            {(data) => (
-              <figure className="space-y-3">
-                <VizSlot name="BrokenRuler" ruler={data} animate placeholderClassName="h-64" />
-                <figcaption className="max-w-3xl text-lg text-pretty">{data.sentence}</figcaption>
-                <p className="text-muted-foreground text-sm">Shown for {defaultRegion.name}.</p>
-              </figure>
-            )}
-          </SectionState>
-        )}
+      <Mission downloadsRegion={defaultRegion} />
 
+      <div className="mx-auto w-full max-w-6xl space-y-8 px-4 pb-10">
         {methods.status === "ok" ? <WhyNow sources={methods.data.sources} /> : null}
-      </section>
-
-      <div className="flex flex-wrap items-end justify-between gap-6">
-        <Button asChild size="lg">
-          <Link to="/pick">Pick a place</Link>
-        </Button>
-        <PhoneQr />
+        <div className="flex flex-wrap items-end justify-end gap-6">
+          <PhoneQr />
+        </div>
       </div>
     </div>
+  );
+}
+
+function Mission({ downloadsRegion }) {
+  const cards = [
+    {
+      title: "One honest record",
+      text: "MODIS and VIIRS counts translated onto one scale, with every method choice written down.",
+      to: "/methods",
+      link: "Read the methods",
+    },
+    {
+      title: "See your place",
+      text: "Pick a region to see when it burns, how that has changed, and how this week compares.",
+      to: "/pick",
+      link: "Pick a place",
+    },
+    {
+      title: "Open data",
+      text: "Every chart comes with its numbers to download, with units and where each value comes from.",
+      to: downloadsRegion ? `/r/${downloadsRegion.id}` : "/pick",
+      state: downloadsRegion ? { section: "downloads" } : undefined,
+      link: downloadsRegion ? `Downloads for ${downloadsRegion.name}` : "Pick a place for its downloads",
+    },
+  ];
+  return (
+    <section aria-labelledby="mission-title" className="landing-mission">
+      <div className="mx-auto w-full max-w-6xl space-y-10 px-4 py-16 sm:py-24">
+        <div className="max-w-3xl space-y-4">
+          <h2 id="mission-title" className="text-3xl font-bold tracking-tight sm:text-4xl">
+            Our mission
+          </h2>
+          <p className="text-lg text-pretty sm:text-xl">{MISSION}</p>
+        </div>
+        <ul className="grid gap-4 sm:grid-cols-3">
+          {cards.map((c) => (
+            <li key={c.title} className="mission-card bg-card flex flex-col gap-3 rounded-xl border p-5">
+              <h3 className="text-lg font-semibold">{c.title}</h3>
+              <p className="text-muted-foreground flex-1 text-sm text-pretty">{c.text}</p>
+              <Link
+                to={c.to}
+                state={c.state}
+                className="inline-flex items-center gap-1 text-sm font-medium underline underline-offset-4"
+              >
+                {c.link}
+                <ArrowRight aria-hidden="true" className="size-4" />
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
   );
 }
 
@@ -80,7 +190,13 @@ function PhoneQr() {
   return (
     <figure className="flex items-center gap-3">
       <div className="bg-background text-foreground rounded-md border p-2">
-        <QRCodeSVG value={url} size={88} fgColor="currentColor" bgColor="transparent" title={`QR code for ${url}`} />
+        <QRCodeSVG
+          value={url}
+          size={88}
+          fgColor="currentColor"
+          bgColor="transparent"
+          title={`QR code for ${url}`}
+        />
       </div>
       <figcaption className="text-sm">Open on your phone</figcaption>
     </figure>

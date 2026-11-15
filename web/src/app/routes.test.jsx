@@ -18,6 +18,7 @@ const cases = [
 beforeEach(() => {
   clearFetchCache();
   mockFetch({}); // no data files: every screen must still render
+  sessionStorage.setItem("firerosetta-landing-loader", "1"); // the loader has its own tests (screens/landing)
 });
 afterEach(() => {
   cleanup();

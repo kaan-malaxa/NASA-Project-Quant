@@ -1,4 +1,4 @@
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import SampleBanner from "@/components/SampleBanner.jsx";
 import ErrorBoundary from "@/components/ErrorBoundary.jsx";
 
@@ -17,6 +17,8 @@ function navClass({ isActive }) {
  * only while the sample context is true.
  */
 export default function AppShell({ banner = <SampleBanner />, resetKey }) {
+  // The landing page lays out its own full-width sections (the globe hero); every other page sits in the column.
+  const fullWidth = useLocation().pathname === "/";
   return (
     <div className="flex min-h-svh flex-col">
       <div data-slot="sample-banner" className="sticky top-0 z-50">
@@ -37,7 +39,7 @@ export default function AppShell({ banner = <SampleBanner />, resetKey }) {
           </nav>
         </div>
       </header>
-      <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-6">
+      <main className={fullWidth ? "w-full flex-1" : "mx-auto w-full max-w-6xl flex-1 px-4 py-6"}>
         {/* A crashing screen keeps the header and footer (and the FIRMS credit) on the page. */}
         <ErrorBoundary resetKey={resetKey}>
           <Outlet />

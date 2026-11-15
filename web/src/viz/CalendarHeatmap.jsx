@@ -334,7 +334,8 @@ export const CalendarHeatmap = forwardRef(function CalendarHeatmap(
         viewBox={`0 0 ${W} ${H}`}
         width="100%"
         height={H}
-        role="grid"
+        // A grid must contain rows; with no data the chart is announced as an image with its "no data" label.
+        role={cells.length === 0 ? "img" : "grid"}
         aria-label={aria}
         aria-activedescendant={focused && safeActive !== null ? `${uid}-c${safeActive}` : undefined}
         tabIndex={0}

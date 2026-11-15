@@ -23,6 +23,8 @@ for (const [hash, name] of ROUTES) {
     });
 
     test("has no serious or critical axe violations", async ({ page }) => {
+      // R6's gallery draws every chart in every state; axe needs about a minute to scan it.
+      if (hash === "#/gallery") test.setTimeout(180_000);
       await serveData(page);
       await open(page, hash);
       expect(await seriousAxe(page)).toEqual([]);

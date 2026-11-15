@@ -103,3 +103,13 @@ export function climatologyJson() {
     weeks: [{ week: 1, ...p }], months: [{ month: 1, ...p }],
   };
 }
+
+/** daily.json from 2026-11-01 to 2026-11-13: values 1..13 with day 5 missing. */
+export function dailyJson() {
+  const value = Array.from({ length: 13 }, (_, i) => (i === 4 ? null : i + 1));
+  return {
+    ...header, region: "testland", start: "2026-11-01", n_days: 13,
+    series: { harmonized: { unit: "Aqua-equivalent fire cell-days per day", value, lo: value, hi: value } },
+    kind_runs: [{ series: "harmonized", from: "2026-11-01", to: "2026-11-13", kind: "harmonized", source: "noaa20" }],
+  };
+}

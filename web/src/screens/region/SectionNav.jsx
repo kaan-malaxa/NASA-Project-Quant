@@ -41,10 +41,7 @@ export default function SectionNav() {
   };
 
   return (
-    <nav
-      aria-label="Sections"
-      className="bg-background/95 sticky top-[var(--sticky-offset,0px)] z-40 -mx-4 border-b px-4 py-2 backdrop-blur"
-    >
+    <nav aria-label="Sections" className="py-1">
       <ul className="flex gap-1 overflow-x-auto [scrollbar-width:none]">
         {SECTIONS.map((s) => (
           <li key={s.id} className="shrink-0">

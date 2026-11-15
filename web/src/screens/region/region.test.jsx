@@ -7,7 +7,7 @@ import { monthToDateLine } from "./ThisWeekSection.jsx";
 import { clearFetchCache } from "@/data/fetchJson.js";
 import { resetSample } from "@/data/sample.js";
 import { mockFetch } from "@/test/mockFetch.js";
-import { climatologyJson, nowcastJson, regionsJson, trendJson, weeklyFullJson } from "@/test/fixtures.js";
+import { climatologyJson, dailyJson, nowcastJson, regionsJson, trendJson, weeklyFullJson } from "@/test/fixtures.js";
 
 beforeEach(() => {
   clearFetchCache();
@@ -100,6 +100,44 @@ describe("Region page", () => {
     mockFetch({ "regions.json": regionsJson(files) });
     renderRegion("/r/atlantis");
     expect(await screen.findByText(/There is no place called/)).toBeTruthy();
+  });
+});
+
+describe("Region page: date range and In this period", () => {
+  it("shows range analytics, the this-month line, and presets write from/to", async () => {
+    mockFetch({
+      "regions.json": regionsJson({ files: ["daily", "nowcast"] }),
+      "testland/daily.json": dailyJson(),
+      "testland/nowcast.json": nowcastJson("normal"),
+    });
+    renderRegion();
+    const panel = await screen.findByRole("region", { name: "In this period and downloads" });
+    // 1+2+3+4+6+...+13 = 91 - 5 = 86; one missing day.
+    await waitFor(() => expect(panel.textContent).toContain("86"));
+    expect(panel.textContent).toContain("12 with data, 1 without (of 13)");
+    expect(panel.textContent).toContain("shortened to fit");
+    expect(panel.textContent).toContain("This month vs normal: November so far");
+    expect(within(panel).getByText("Harmonized")).toBeTruthy();
+
+    const bar = screen.getByRole("group", { name: "Date range" });
+    await act(async () => within(bar).getByRole("button", { name: "VIIRS era 2012+" }).click());
+    expect(new URLSearchParams(currentSearch).get("from")).toBe("2012-01-01");
+    expect(new URLSearchParams(currentSearch).get("to")).toBeNull(); // default (last data day) is omitted
+    await act(async () => within(bar).getByRole("button", { name: "This year" }).click());
+    expect(new URLSearchParams(currentSearch).get("from")).toBe("2026-01-01");
+    expect(within(bar).getByRole("button", { name: "This year" }).getAttribute("aria-pressed")).toBe("true");
+  });
+
+  it("hides the this-month line when the range ends before the last data day", async () => {
+    mockFetch({
+      "regions.json": regionsJson({ files: ["daily", "nowcast"] }),
+      "testland/daily.json": dailyJson(),
+      "testland/nowcast.json": nowcastJson("normal"),
+    });
+    renderRegion("/r/testland?from=2026-11-02&to=2026-11-04");
+    const panel = await screen.findByRole("region", { name: "In this period and downloads" });
+    await waitFor(() => expect(panel.textContent).toContain("3 with data, 0 without (of 3)"));
+    expect(panel.textContent).not.toContain("This month vs normal");
   });
 });
 

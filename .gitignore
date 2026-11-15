@@ -1,1 +1,18 @@
-/data/
+# Raw FIRMS country CSVs under data/MODIS_data, data/VIIRS-SNPP_data and data/VIIRS-JPSS_data
+# were committed before this file existed and stay tracked. Everything else under data/ is
+# pipeline output and is rebuilt by `uv run python -m pipeline.run`.
+/data/*
+!/data/MODIS_data/
+!/data/VIIRS-SNPP_data/
+!/data/VIIRS-JPSS_data/
+
+.env
+.venv/
+.claude/
+node_modules/
+dist/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.py[cod]
+.DS_Store

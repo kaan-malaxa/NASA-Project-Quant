@@ -102,7 +102,9 @@ describe("Methods page", () => {
     const e = section("How well did the old satellite see?");
     expect(e.textContent).toContain("Exploratory");
     expect(e.textContent).toContain("Not available");
-    expect(e.querySelectorAll('[data-viz-placeholder="EyesightCurve"]')).toHaveLength(1);
+    // R6's EyesightCurve draws the exploratory curve; the "absent" region gets text only, and no placeholder remains.
+    expect(e.querySelectorAll('[data-viz-placeholder="EyesightCurve"]')).toHaveLength(0);
+    expect(e.querySelectorAll("svg.fr-viz")).toHaveLength(1);
 
     const d = section("Data");
     expect(d.textContent).toContain("12,345");

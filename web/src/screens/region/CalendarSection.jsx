@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import SectionState from "@/components/SectionState.jsx";
 import KindBadge from "@/components/KindBadge.jsx";
 import GlossaryTerm from "@/components/GlossaryTerm.jsx";
-import { VizSlot, viz } from "@/components/Viz.jsx";
+import { VizSlot, useViz } from "@/components/Viz.jsx";
 import { buildLensList, seriesForLens } from "@/lib/lenses.js";
 import { cellDetail } from "@/lib/cellDetail.js";
 import { fmtNumber, monthName, ordinal } from "@/lib/format.js";
@@ -46,6 +46,7 @@ function Toggle({ label, value, options, onChange, renderItem }) {
 export default function CalendarSection({ files, url, setUrl, lastDataDay }) {
   const { weekly, monthly, climatology, season } = files;
   const [selected, setSelected] = useState(null);
+  const viz = useViz();
 
   const lenses = useMemo(() => (weekly?.status === "ok" ? buildLensList(weekly.data.series_meta) : []), [weekly]);
   const lens = lenses.some((l) => l.id === url.lens) ? url.lens : "harmonized";
@@ -62,9 +63,9 @@ export default function CalendarSection({ files, url, setUrl, lastDataDay }) {
     if (!selected || climatology?.status !== "ok") return null;
     const table = selected.week != null ? weekly : monthly;
     if (table?.status !== "ok") return null;
-    const d = cellDetail(table.data, selected, lens, climatology.data.baseline_years, viz.percentileRank);
+    const d = cellDetail(table.data, selected, lens, climatology.data.baseline_years, viz?.percentileRank);
     return { ...d, unit: unitFor(table.data, selected.year), baseline: climatology.data.baseline_years };
-  }, [selected, lens, weekly, monthly, climatology]);
+  }, [selected, lens, weekly, monthly, climatology, viz]);
 
   return (
     <StorySection

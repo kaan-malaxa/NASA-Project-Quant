@@ -6,11 +6,13 @@ import { VizSlot } from "@/components/Viz.jsx";
 import { useRegions } from "@/data/useRegions.js";
 import { useJson } from "@/data/useJson.js";
 import { regionFilePath } from "@/data/files.js";
+import { useDocumentMeta } from "@/lib/useDocumentMeta.js";
 
 const WHY_NOW_CLAIMS = ["snpp_end", "aqua_drift"];
 
 /** Screen 1 · The broken ruler (contracts section 7, R5 role file section 9). */
 export default function Landing() {
+  useDocumentMeta("", "Is it really burning more, or did the satellite get better eyes? Satellite fire records from MODIS and VIIRS, put on one scale.");
   const { state: regionsState, defaultRegion } = useRegions();
   const rulerListed = defaultRegion?.files?.includes("ruler");
   const ruler = useJson(rulerListed ? regionFilePath(defaultRegion.id, "ruler") : null);

@@ -6,9 +6,11 @@ import { useJson } from "@/data/useJson.js";
 import { regionFilePath } from "@/data/files.js";
 import { outlinePath } from "@/lib/outline.js";
 import { statusLabel } from "@/lib/labels.js";
+import { useDocumentMeta } from "@/lib/useDocumentMeta.js";
 
 /** Screen 2 · Place picker: one card per region from regions.json. */
 export default function Picker() {
+  useDocumentMeta("Pick a place", "Choose a place to see its fire calendar, its long-term trend and this week's burning.");
   const { state, regions, debug } = useRegions();
   return (
     <section aria-labelledby="picker-title" className="space-y-6">

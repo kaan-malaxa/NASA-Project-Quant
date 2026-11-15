@@ -1,6 +1,6 @@
 # Compare outputs across operating systems
 
-Run from the Python project root, `NASA-Project-Quant/firerosetta-plan-v2`. Both people need the same commit, local US source CSVs, science configuration and outage configuration. Complete the integrated pipeline on each computer:
+Run from the repository root. Both people need the same commit, local US source CSVs, science configuration and outage configuration. Complete the integrated pipeline on each computer:
 
 ```text
 uv sync

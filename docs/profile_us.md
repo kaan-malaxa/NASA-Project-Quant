@@ -9,7 +9,7 @@ It includes all local source years and detections outside the counting polygon.
 These records have not passed SD-02, deduplication, or the static mask.
 R3 must confirm n20_first_full_year after clean/grid succeeds.
 
-Source directory: NASA-Project-Quant/data/
+Source directory: data/
 
 | Sensor | First local_day | Last local_day |
 |---|---|---|

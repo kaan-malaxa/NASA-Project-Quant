@@ -46,7 +46,7 @@ Commands you provide: `python -m pipeline.synth --region synthland [--seed 7] [-
 |---|---|
 | A · Sat 18:30 | `pipeline.synth --size tiny` writes valid FIRMS-format files + `truth.json` (**files in R2's hands by 18:00**) |
 | B · Sat 23:00 | Matching + three-parameter fit recover the planted curve on `synthland`; `curve.json` written; `--size full` available |
-| C · Sun 10:00 | Curve fitted on real `conus` with bootstrap bands and figures |
+| C · Sun 10:00 | Curve fitted on real `us` with bootstrap bands and figures |
 | D · Sun 14:00 | Forward and backward translation, V6/V8, reliability, status decided with R3 by 13:30 |
 | E · Sun 17:00 | Planted-truth run green end to end; sensitivity note sent to R1 |
 
@@ -174,7 +174,7 @@ Paste a, b, c with their ranges, g, n_celldays and the reliability error.
 
 ### C1 · Real data (Sun 07:00)
 ```text
-Task: run the stage on conus and make it robust to what real data throws at it.
+Task: run the stage on us and make it robust to what real data throws at it.
 - Print before fitting: matched rows per year, share with y = 1 per year, FRP quantiles (5, 25, 50, 75, 95).
 - If a region has fewer than 2,000 matched rows in some years, keep those years but report them.
 - Check for year effects: fit the curve separately for each year and plot the 10 curves faintly behind the pooled one
@@ -183,7 +183,7 @@ Task: run the stage on conus and make it robust to what real data throws at it.
 Do not change the model, the predictor or the fit window to improve the numbers. If something looks wrong, report it.
 
 Acceptance:
-  uv run python -m pipeline.eyesight --region conus
+  uv run python -m pipeline.eyesight --region us
 ```
 
 ### C2 · Forward and backward translation
@@ -206,7 +206,7 @@ k_T2 returns aqua_raw; no negative values; one row per series per day.
 
 Acceptance:
   uv run pytest pipeline/eyesight -q
-  uv run python -m pipeline.eyesight --region synthland && uv run python -m pipeline.eyesight --region conus
+  uv run python -m pipeline.eyesight --region synthland && uv run python -m pipeline.eyesight --region us
 ```
 
 ### D1 · Validation and the status decision (by Sun 13:00)

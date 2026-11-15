@@ -147,7 +147,7 @@ Rules that keep the split clean:
 | Rehearsal | When | What is joined | Pass means |
 |---|---|---|---|
 | IR-1 | Sat 18:30 (Gate A) | R1 sample JSON → R5 shell → R6 first chart | Deployed site renders sample data with the SAMPLE banner |
-| IR-2 | Sat 23:00 (Gate B) | `pipeline.run --region synthland` through every stage that exists; conus real data through Tier 1 | One command, exit 0, JSON validates |
+| IR-2 | Sat 23:00 (Gate B) | `pipeline.run --region synthland` through every stage that exists; us real data through Tier 1 | One command, exit 0, JSON validates |
 | IR-3 | Sun 10:00 (Gate C) | All regions, real data, site switched off sample | No SAMPLE banner; Methods page shows real validation |
 | IR-4 | Sun 14:00 (Gate D) | Should features | Each Should either merged or cut |
 | Final | Sun 17:00 (Gate E) | Feature freeze | Only bug fixes after this |
@@ -237,8 +237,8 @@ About 30 working hours remain. Sleep is in the plan because tired people break `
 |---|---|---|
 | **Sat 16:00–16:30** | Kickoff | Roles assigned; repo created and public; everyone has cloned, run `uv sync` and `npm ci`; **R2 has submitted FIRMS archive requests and started country downloads**; MAP_KEY obtained |
 | **Sat 16:30–18:30** | **A · Foundations** | **Gate A 18:30:** scaffold + `common/` on main (R2) · JSON Schemas + `--sample` data on main (R1) · `science.yaml` on main (R3) · simulator writes tiny `synthland` raw CSVs (R4) · site deployed and rendering sample `ruler.json` (R5) · tokens + first chart in the gallery (R6) · **contracts frozen** |
-| **Sat 18:30–23:00** | **B · Vertical slices** | **Gate B 23:00:** `pipeline.run --region synthland` exits 0 through ingest → harmonize → stats → export · conus real data cleaned and gridded, Tier 1 k fitted · eyesight fit recovers the planted curve on `synthland` · every Must screen works on sample data · IR-2 passed |
-| Sat 23:00–07:00 | Sleep | R2 leaves the overnight `ingest` for the full `conus` record running |
+| **Sat 18:30–23:00** | **B · Vertical slices** | **Gate B 23:00:** `pipeline.run --region synthland` exits 0 through ingest → harmonize → stats → export · us real data cleaned and gridded, Tier 1 k fitted · eyesight fit recovers the planted curve on `synthland` · every Must screen works on sample data · IR-2 passed |
+| Sat 23:00–07:00 | Sleep | R2 leaves the overnight `ingest` for the full `us` record running |
 | **Sun 07:00–10:00** | **C · Real data everywhere** | **Gate C 10:00:** three regions through ingest → harmonize → stats → export · V1–V5 numbers in `methods.json` · nowcast fetched · site on real data with no SAMPLE banner · IR-3 passed |
 | **Sun 10:00–14:00** | **D · Should features** | **Gate D 14:00:** each Should item is merged or cut, decided by R1 · Tier 2 status decided per SD-17 · README draft and slide skeleton exist |
 | **Sun 14:00–17:00** | **E · Hardening** | **Gate E 17:00 feature freeze:** all branches merged · full re-run from raw data on a second laptop with a different OS produces identical JSON · accessibility and phone checks done · numbers audit signed by R3 |

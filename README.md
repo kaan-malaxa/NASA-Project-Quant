@@ -6,7 +6,7 @@ FireRosetta asks whether satellite-detected burning activity in the United State
 
 **Draft status:** numerical claims remain `{{audit:label}}` placeholders until supplied through `web/public/data/numbers_audit.md`. These labels request audit entries; they do not imply that results exist. The audit, `methods.json`, and web assets are absent from this checkout. Local ingestion and its shared library are implemented; the scientific conclusions and product screens described below await integration and review.
 
-The supplied `NASA-Project-Quant/data/` folder contains raw US country CSVs in `MODIS_data/`, `VIIRS-SNPP_data/` and `VIIRS-JPSS_data/`. It contains no numbers audit or methods export. These observations establish the input source; calibration results and validation claims still require the pipeline's reviewed outputs. Placeholders for other contributors' limitations, team details, AI disclosures and published assets are reserved for later completion.
+The supplied `data/` folder contains raw US country CSVs in `MODIS_data/`, `VIIRS-SNPP_data/` and `VIIRS-JPSS_data/`. It contains no numbers audit or methods export. These observations establish the input source; calibration results and validation claims still require the pipeline's reviewed outputs. Placeholders for other contributors' limitations, team details, AI disclosures and published assets are reserved for later completion.
 
 ## What it answers
 
@@ -18,7 +18,7 @@ The supplied `NASA-Project-Quant/data/` folder contains raw US country CSVs in `
 
 The intended end-to-end workflow is:
 
-- **Stage local inputs.** Preserve the US NASA FIRMS CSVs in `NASA-Project-Quant/data/`, clip staged copies to the configured download bounds, and record their provenance in `data/raw/us/MANIFEST.json`.
+- **Stage local inputs.** Preserve the US NASA FIRMS CSVs in `data/`, clip staged copies to the configured download bounds, and record their provenance in `data/raw/us/MANIFEST.json`.
 - **Clean and establish coverage.** Normalize sensor names, apply the configured detection filters and static-source mask, remove duplicates, and assign local solar days. Keep missing observation days explicit.
 - **Count activity consistently.** Group each sensor's detections into fire cell-days: a grid cell active on a local day. Apply US polygon membership and keep sensor totals separate.
 - **Calibrate and test.** Translate each VIIRS sensor to Aqua's reference scale using the configured stable reference period. Test on held-out years, check drift, and compare the planned planted-truth and detection-probability results.
@@ -35,7 +35,7 @@ These are the evidence checks required by the plan; their outcomes are pending.
 
 ## How to run
 
-Run from `NASA-Project-Quant/firerosetta-plan-v2`, the Python project root inside the Git repository. Install uv and use the Python version pinned by the repository.
+Run from the repository root. Install uv and use the Python version pinned by the repository.
 
 ```text
 uv sync

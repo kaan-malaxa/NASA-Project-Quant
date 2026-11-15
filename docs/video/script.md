@@ -38,7 +38,7 @@ The subtitle cues are contiguous from the start through thirty seconds. After in
 
 ## Burn subtitles into the recording
 
-Run from `NASA-Project-Quant/firerosetta-plan-v2`, with the finished recording saved there as `video.mp4` and the integrated subtitle file at `docs/video/subtitles.srt`:
+Run from the repository root, with the finished recording saved there as `video.mp4` and the integrated subtitle file at `docs/video/subtitles.srt`:
 
 ```text
 ffmpeg -i video.mp4 -vf "subtitles=filename=docs/video/subtitles.srt:charenc=UTF-8" -t 30 -c:v libx264 -crf 18 -preset medium -pix_fmt yuv420p -c:a copy -movflags +faststart video_subtitled.mp4

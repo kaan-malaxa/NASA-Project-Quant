@@ -204,7 +204,7 @@ def parse_years(raw):
 def main(argv=None):
     t0 = time.perf_counter()
     parser = cli.stage_parser("ingest.download")
-    parser.description = "Stage only local US CSVs from NASA-Project-Quant/data; no network downloads."
+    parser.description = "Stage only local US CSVs from data/; no network downloads."
     parser.add_argument("--via", choices=("country", "api"), default="country")
     parser.add_argument("--years")
     parser.add_argument("--sources", nargs="+")

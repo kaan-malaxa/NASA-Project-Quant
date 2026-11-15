@@ -41,7 +41,7 @@ Python 3.11 via `uv`, DuckDB, pandas, numpy, scipy (`scipy.stats.theilslopes`), 
 ## 6. Your timeline
 | Gate | You deliver |
 |---|---|
-| A · Sat 18:30 | All JSON Schemas; `export --sample` writes a complete, plausible sample site for `conus`; `export --check` works; **contracts frozen** |
+| A · Sat 18:30 | All JSON Schemas; `export --sample` writes a complete, plausible sample site for `us`; `export --check` works; **contracts frozen** |
 | B · Sat 23:00 | `pipeline.stats` produces weekly, monthly, daily, climatology, trend, ruler, season (critical weeks) from a real or simulated `daily.parquet`; planted trend and season recovered on `synthland` |
 | C · Sun 10:00 | Nowcast; `methods.json` with real validation; real JSON for three regions committed; SAMPLE gone |
 | D · Sun 14:00 | Season shift, hex, `cells_monthly.csv`, Tier 2 selection (SD-17) |
@@ -91,19 +91,19 @@ Acceptance:
 ### A2 · Sample data generator (45 min, must be merged by 18:15)
 ```text
 Task: implement `python -m pipeline.export --sample`, which writes a complete, realistic-looking sample site into
-web/public/data for region conus, so the web team can build every screen today.
+web/public/data for region us, so the web team can build every screen today.
 
 Requirements:
 - Every file of section 6 (including optional ones: outline.geojson as the bbox rectangle, cells_monthly.csv,
   hotspots_recent.csv, downloads.json with two fake entries pointing at "#").
 - Every data row has kind "sample"; code_version is "sample"; manifest.contains_sample is true.
 - Shapes must look like the real thing so charts can be designed against them:
-  conus: a spring burning season (peak week 14) and a larger summer-autumn wildfire season (peak week 33) whose
+  us: a spring burning season (peak week 14) and a larger summer-autumn wildfire season (peak week 33) whose
   timing moves earlier, and one extreme year (2020).
   Add year-to-year noise from a seeded generator (seed 7). viirs_raw exists only from 2012 and is about 2.5x aqua_raw.
   Include at least: 3 missing weeks in harmonized (value null), the estimated viirs_equiv band for 2003-2011 with lo < value < hi,
   a harmonized era switch at 2023 and 2026 (kind_runs), nowcast status "above_normal".
-- trend.json: give conus sentence_id "artifact_flat", with sentences built from the
+- trend.json: give us sentence_id "artifact_flat", with sentences built from the
   SD-15 templates (implement the template function now in pipeline/stats/sentences.py; the sample generator calls it).
 - methods.json: 10 curve points, 6 binned points, drift 2013-2025 with a visible departure after 2022,
   planted_truth with 6 rows, at least 8 validation rows, 3 sources, 3 limitations.
@@ -220,7 +220,7 @@ all-zero history and value 2 -> low_activity; empty NRT -> unavailable with valu
 
 Acceptance:
   uv run pytest pipeline/stats -q
-  uv run python -m pipeline.stats --region conus && uv run python -m pipeline.export --check
+  uv run python -m pipeline.stats --region us && uv run python -m pipeline.export --check
 ```
 
 ### C2 · Assemble regions.json, methods.json, manifest; go real

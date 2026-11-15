@@ -1,6 +1,6 @@
 # Python foundations
 
-Run commands from `NASA-Project-Quant/firerosetta-plan-v2`:
+Run commands from the repository root:
 
 ```text
 uv sync
@@ -19,7 +19,7 @@ coverage thresholds without creating or changing the project science file.
 The seed outage entries are copied from the contract and still need verification.
 
 All file locations are in `pipeline.common.paths`. The sole hotspot source
-is the existing US country files under `NASA-Project-Quant/data/`.
+is the existing US country files under `data/`.
 `--data-root` overrides `FIREROSETTA_DATA_ROOT` for derived output storage
 only; neither setting can redirect hotspot inputs. The runtime region is
 `us`; fabricated and synthetic examples are isolated test fixtures.

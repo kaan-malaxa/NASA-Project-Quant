@@ -44,7 +44,7 @@ Command you provide: `python -m pipeline.harmonize --region R`.
 | Gate | You deliver |
 |---|---|
 | A · Sat 18:30 | `science.yaml` on main (by **17:15**, others need it); `calibrate.py` passing fabricated tests |
-| B · Sat 23:00 | `pipeline.harmonize` end to end on `synthland` (planted k recovered) and on real `conus`; `daily.parquet`, `calibration.json`, bootstrap files written |
+| B · Sat 23:00 | `pipeline.harmonize` end to end on `synthland` (planted k recovered) and on real `us`; `daily.parquet`, `calibration.json`, bootstrap files written |
 | C · Sun 10:00 | V1–V5 for three regions in `validation_t1.json`; drift and LOYO figures |
 | D · Sun 14:00 | V6 backcast; direct vs chained NOAA-20; limitations text sent to R1; Tier 2 status agreed with R4 |
 | E · Sun 17:00 | **Numbers audit signed** (`REPORTS.md` §7.3) |
@@ -136,7 +136,7 @@ aqua/k; no value is ever negative or NaN; every series has exactly one row per d
 Acceptance:
   uv run pytest pipeline/harmonize -q
   uv run python -m pipeline.harmonize --region synthland
-  uv run python -m pipeline.harmonize --region conus
+  uv run python -m pipeline.harmonize --region us
 Paste: k_annual and the 12 monthly k for both sensors, noaa20_method, and the count of missing days in `harmonized`.
 ```
 
@@ -163,7 +163,7 @@ for Aqua-era years have zero variance across replicates; naive counts match a ha
 Acceptance:
   uv run pytest pipeline/harmonize -q
   uv run python -m pipeline.harmonize --region synthland     # must finish in under 2 minutes
-  uv run python -m pipeline.harmonize --region conus        # paste the run time
+  uv run python -m pipeline.harmonize --region us        # paste the run time
 ```
 
 ### B3 · Planted-truth check for Tier 1 (before Gate B)
@@ -202,7 +202,7 @@ with a planted month-dependent ratio, monthly k beats the annual_ratio baseline;
 
 Acceptance:
   uv run pytest pipeline/harmonize -q
-  uv run python -m pipeline.harmonize --region conus
+  uv run python -m pipeline.harmonize --region us
 Paste the validation rows as a table. If WAPE is below 0.05 on real data, explain why it is not a leak before moving on.
 ```
 

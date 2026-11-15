@@ -7,7 +7,7 @@ FireRosetta asks whether satellite-detected burning activity changed or the obse
 Project details
 The project addresses the Harmonization of MODIS and VIIRS Hot Spots challenge through the United States region. A hotspot is a heat detection in a satellite pixel; it does not identify an individual fire.
 
-The implemented ingestion path preserves the original US CSVs in NASA-Project-Quant/data/, stages copies, records provenance, applies configured filters, groups detections into sensor-specific fire cell-days, and tracks observation coverage. A fire cell-day means a grid cell active on a local day for a given sensor. Missing observations remain explicit. Sensor counts and radiative-power totals are kept separate.
+The implemented ingestion path preserves the original US CSVs in data/, stages copies, records provenance, applies configured filters, groups detections into sensor-specific fire cell-days, and tracks observation coverage. A fire cell-day means a grid cell active on a local day for a given sensor. Missing observations remain explicit. Sensor counts and radiative-power totals are kept separate.
 
 The planned science stages calibrate against Aqua's configured stable period, test on held-out years, and compare an empirical calibration with a detection-probability model. Isolated synthetic validation inputs provide planted truth; they are separate from US observations. The planned static website presents the verdict, seasonal calendar, critical periods, sources and printable Season Brief. Proposed users include land managers, researchers, journalists and community planners; adoption has not been demonstrated.
 
@@ -24,7 +24,7 @@ Limitations from methods.json, pending verbatim insertion: {{methods:limitations
 Current build status: the science configuration, downstream science stages, exported website data and web scaffold are not present in this checkout. Recent comparisons require genuine local near-real-time inputs with sufficient coverage; historical country files are not relabeled as recent observations.
 
 NASA data used
-NASA FIRMS MODIS active-fire / thermal-anomaly observations from Terra and Aqua, and VIIRS active-fire observations from S-NPP and NOAA-20, supplied as local US country CSVs in NASA-Project-Quant/data/. Genuine local NOAA-20 near-real-time inputs are supported when available; recent coverage is not claimed here. The pipeline does not fetch new hotspot observations from the Area API.
+NASA FIRMS MODIS active-fire / thermal-anomaly observations from Terra and Aqua, and VIIRS active-fire observations from S-NPP and NOAA-20, supplied as local US country CSVs in data/. Genuine local NOAA-20 near-real-time inputs are supported when available; recent coverage is not claimed here. The pipeline does not fetch new hotspot observations from the Area API.
 
 Space agency partner data
 None.
@@ -52,4 +52,4 @@ Public repository: {{link:repository}}
 Slide deck: {{link:slide_deck}}
 
 Draft completion note
-NASA-Project-Quant/data/ contains the raw US CSV inputs; it contains no numbers audit or methods export. Keep numerical claims as audit placeholders until reviewed pipeline outputs are supplied. Other contributors will add the methods limitations, team details, AI disclosures and published assets later. The team read-aloud and final source review remain pending.
+data/ contains the raw US CSV inputs; it contains no numbers audit or methods export. Keep numerical claims as audit placeholders until reviewed pipeline outputs are supplied. Other contributors will add the methods limitations, team details, AI disclosures and published assets later. The team read-aloud and final source review remain pending.

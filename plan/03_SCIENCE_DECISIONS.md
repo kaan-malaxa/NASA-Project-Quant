@@ -36,7 +36,7 @@ Supersedes the "Science method" section of the Draft v1 charter wherever they di
 - Config: `grid.count_res: 6`, `grid.map_res: 5`, `grid.mask_res: 8`.
 
 ### SD-19 · United States local-data scope
-- **Scope:** the configured region is `united_states` (country `US`). No other region or synthetic dataset may be selected for a production run.
+- **Scope:** the configured real region is `us` (country `US`, the whole United States). No other real region may be selected. The simulated `synthland` region (`scope.planted_truth_region_ids`) runs through the same code for the planted-truth test only and is never mixed with real data.
 - **Only sources:** workspace-root `data/MODIS_data/modis_*_United_States.csv`, `data/VIIRS-SNPP_data/viirs-snpp_*_United_States.csv`, and `data/VIIRS-JPSS_data/viirs-jpss1_*_United_States.csv`.
 - These are the supplied NASA FIRMS country exports. There is no local US polygon or authoritative download bounding box. Keep their country membership; do not invent a polygon, centroid, or full-region cell denominator. SD-04 cell-centre polygon membership and saturation denominators require a supplied US polygon before they can be evaluated.
 - Source and derived-input hashes are recorded at ingestion and verified before harmonization. Alternate output roots do not redirect the raw source directory. Unknown satellites, mismatched file years, stale derived inputs and non-US region requests fail.

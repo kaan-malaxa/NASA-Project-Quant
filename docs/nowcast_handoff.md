@@ -8,7 +8,7 @@ uv run python -m pipeline.ingest.nowcast_fetch --region us --days 31
 ```
 
 The command searches only local `nrt_viirs_noaa20_*.csv` files beneath the
-designated source directory `NASA-Project-Quant/data/` and staged
+designated source directory `data/` and staged
 `data/raw/us/`. Paths resolving outside their allowed directories are rejected.
 No HTTP/API client, MAP_KEY reader or remote fetch is used.
 

@@ -106,7 +106,7 @@ Severity: **A** = would produce a wrong result or a failed demo; **B** = would c
 | C24 | B | MODIS NRT "live comparison while Aqua still flies" | Aqua instruments were projected to stop in August 2026. | Dropped; verify last Aqua day. | §5 item 3 |
 | C25 | B | "The demo cannot break because a service is down" | The map basemap and web fonts are external services. | Basemap optional with fallback; fonts bundled. | Contracts E8; R6 D2 |
 | C26 | B | Data: Area API "up to 10 days per call" | Sources disagree (5 vs 10). | Use ≤ 5. | Contracts E3 |
-| C27 | B | Showcase regions left to "the science lead after the first data pull"; Brazil flagged as too large | An open decision on the critical path and a known volume risk. | Regions locked: Punjab, British Columbia, Santa Fe + Entre Ríos; Mato Grosso is a stretch. Reversible (§6). **Superseded 2026-11-14 (R1, scope owner): one US region, `conus`.** | SD-19 |
+| C27 | B | Showcase regions left to "the science lead after the first data pull"; Brazil flagged as too large | An open decision on the critical path and a known volume risk. | Regions locked: Punjab, British Columbia, Santa Fe + Entre Ríos; Mato Grosso is a stretch. Reversible (§6). **Superseded 2026-11-14 (R1, scope owner): one US region, `us`.** | SD-19 |
 | C28 | B | `regions.json` has only a bbox; "region outlines from Natural Earth" | Counting region undefined (box or outline?). | Polygon membership by cell centre; bbox for download only. | SD-04 |
 | C29 | B | Near-real-time rows: "drop detections in grid cells flagged as static" | Grid resolution and threshold unspecified; the last ~5 archive months are also NRT. | Res-8 mask, ≥ 3 static detections, one-ring dilation, applied to every row without `type`. | SD-18 |
 | C30 | B | "52 weeks around the circle" | ISO weeks have 53 and cross year boundaries. | Week = min(52, (doy − 1)//7 + 1), with coverage scaling. | SD-08 |
@@ -120,7 +120,7 @@ Severity: **A** = would produce a wrong result or a failed demo; **B** = would c
 | C38 | C | Submission checklist: "English subtitles burned in" | The rule requires subtitles when the video is not in English. Burned-in subtitles are still a good idea. | Kept as a team choice, not described as a rule. | R2 §11 |
 | C39 | C | "Terra is currently FIRMS's only morning overpass" | Not verified; Terra's own end date is unclear in the sources found. | Not used in the pitch unless R2 finds a source. | §5 item 4 |
 | C40 | C | Validation metric: mean absolute percentage error | Explodes on near-zero weeks. | WAPE as headline; r and bias alongside. | SD section G |
-| C41 | C | Local award: "let a judge choose which region we open first" | Two regions are off-season this week. | `low_activity` layout; the demo defaults to Punjab but any choice works. **Superseded 2026-11-14: one region, `conus`.** | SD-11; Architecture §11 |
+| C41 | C | Local award: "let a judge choose which region we open first" | Two regions are off-season this week. | `low_activity` layout; the demo defaults to Punjab but any choice works. **Superseded 2026-11-14: one region, `us`.** | SD-11; Architecture §11 |
 | C42 | C | Sample data banner | The trigger was "any loaded row has kind sample"; a file with no rows could slip through. | `manifest.contains_sample` as a second trigger; export refuses mixed sample/real regions. | Contracts §6.14; R1 C2 |
 
 ---
@@ -180,7 +180,7 @@ These were decided to remove open questions. Each is a config change, not a code
 
 | Decision | To reverse |
 |---|---|
-| One US region (`conus`) instead of three non-US regions | Add more US regions to `regions.yaml` (one entry each) and download |
+| One US region (`us`, the whole country; first named `conus`) instead of three non-US regions | Add more US regions to `regions.yaml` (one entry each) and download |
 | Counting resolution 6 instead of 5 | `grid.count_res: 5` in `science.yaml` (re-run from `ingest`) |
 | Aqua trusted through 2022 | `eras.aqua_trusted_through` (re-run from `harmonize`); the robustness variants already show the alternatives |
 | Day pass only | run with `--pass N` for a night series |
@@ -202,7 +202,7 @@ These were decided to remove open questions. Each is a config change, not a code
 ### 7.2 Validation summary (R3 fills from `methods.json`; one row per region)
 | Region | LOYO WAPE (ours) | raw VIIRS | annual ratio | Handoff annual % | Sat. agreement WAPE | k direct vs chained % | Drift visible after 2022? | Saturation r5 / r6 | Backcast WAPE | Tier 2 status |
 |---|---|---|---|---|---|---|---|---|---|---|
-| conus | | | | | | | | | | |
+| us | | | | | | | | | | |
 
 Planted truth (`synthland`): __ of __ quantities recovered within tolerance. Failures: ______.
 
@@ -216,9 +216,9 @@ Signed by R3: ________ at ____.
 ### 7.4 Cross-OS reproducibility (R2 + one teammate)
 | File | OS 1 (____) sha256 | OS 2 (____) sha256 | Same |
 |---|---|---|---|
-| `conus/weekly.json` | | | ☐ |
-| `conus/trend.json` | | | ☐ |
-| `conus/calibration.json` | | | ☐ |
+| `us/weekly.json` | | | ☐ |
+| `us/trend.json` | | | ☐ |
+| `us/calibration.json` | | | ☐ |
 | `manifest.json` | | | ☐ |
 
 ### 7.5 Accessibility and device check (R6 and R5)

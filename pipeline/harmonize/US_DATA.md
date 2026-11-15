@@ -2,7 +2,7 @@ The production pipeline uses only the local NASA FIRMS United States exports
 under workspace-root `data/MODIS_data/`, `data/VIIRS-SNPP_data/`, and
 `data/VIIRS-JPSS_data/`. It performs no downloads and rejects other region ids.
 
-From `firerosetta-plan-v2/`:
+From the repository root:
 
 ```text
 uv sync

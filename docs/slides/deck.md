@@ -100,7 +100,7 @@ Proposed use cases, not claims of adoption:
 # Follow the evidence
 
 Inputs: [NASA FIRMS US country files](https://firms.modaps.eosdis.nasa.gov/country/).
-Local source: `NASA-Project-Quant/data/`.
+Local source: `data/`.
 Boundary: [Natural Earth](https://www.naturalearthdata.com/about/terms-of-use/).
 Optional maps: [OpenFreeMap](https://openfreemap.org/), [© OpenMapTiles](https://www.openmaptiles.org/), [© OpenStreetMap contributors](https://www.openstreetmap.org/copyright).
 

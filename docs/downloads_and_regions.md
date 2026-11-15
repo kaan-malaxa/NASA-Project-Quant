@@ -1,7 +1,7 @@
 # Local US data policy
 
 The only runtime region is `us`. The authoritative hotspot inputs are the
-existing files in `NASA-Project-Quant/data/`:
+existing files in `data/`:
 
 - `MODIS_data/modis_<year>_United_States.csv`
 - `VIIRS-SNPP_data/viirs-snpp_<year>_United_States.csv`
@@ -24,7 +24,7 @@ If none of the requested source files exist, the command fails.
 
 ## Run
 
-From `NASA-Project-Quant/firerosetta-plan-v2`:
+From the repository root:
 
 ```text
 uv run python -m pipeline.ingest.download --region us --via country --years 2023:2023

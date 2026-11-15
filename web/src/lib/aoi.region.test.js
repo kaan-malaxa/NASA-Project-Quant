@@ -25,6 +25,13 @@ for (const region of regions) {
       expect(actual, `missing ${reference.year}-${reference.month}`).toBeDefined();
       const error = reference.value === 0 ? Math.abs(actual.value) : Math.abs(actual.value - reference.value) / Math.abs(reference.value);
       expect(error, `${reference.year}-${reference.month}: ${actual.value} vs ${reference.value}`).toBeLessThanOrEqual(0.005);
+      for (const bound of ["lo", "hi"]) {
+        if (reference[bound] === null) continue;
+        const boundError = reference[bound] === 0 ? Math.abs(actual[bound]) : Math.abs(actual[bound] - reference[bound]) / Math.abs(reference[bound]);
+        expect(boundError, `${reference.year}-${reference.month} ${bound}`).toBeLessThanOrEqual(0.005);
+      }
+      expect(actual.kind).toBe(reference.kind);
+      expect(actual.source).toBe(reference.source);
       checked++;
     }
     expect(checked).toBeGreaterThan(0);

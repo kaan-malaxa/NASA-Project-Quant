@@ -326,6 +326,9 @@ def _assemble(inp: Inputs) -> list[str]:
             methods[key] += [row for row in old_methods[key] if row.get("region") in preserved]
         if "synthland" in preserved:
             methods["planted_truth"] = old_methods["planted_truth"]
+    order = {rid: index for index, rid in enumerate(real)}
+    for key in ("validation", "drift", "eyesight", "inputs", "filters"):
+        methods[key].sort(key=lambda row: order.get(row.get("region"), len(order)))
     for name, doc in (("regions", regions), ("methods", methods)):
         errors = schema_errors(json.loads(json.dumps(doc)), validator_for(name, registry))
         if errors:

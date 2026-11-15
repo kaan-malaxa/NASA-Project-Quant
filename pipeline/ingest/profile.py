@@ -91,8 +91,7 @@ def peak_aqua_week(cells, covered):
     aqua = cells.loc[cells.sensor.eq("aqua") & cells.daynight.eq("D")]
     days = aqua.groupby("local_day").h3_r6.nunique()
     frame = covered.loc[covered.sensor.eq("aqua"), ["local_day", "covered"]].copy()
-    frame["value"] = frame.local_day.map(days).fillna(0).astype(float)
-    frame.loc[~frame.covered, "value"] = np.nan
+    frame["value"] = frame.local_day.map(days).fillna(0).astype(float).where(frame.covered)
     weekly = timebins.aggregate(frame, "week", value_cols=("value",))
     usable = weekly.loc[~weekly.missing]
     if usable.empty:

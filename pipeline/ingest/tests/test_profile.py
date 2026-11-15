@@ -74,6 +74,16 @@ def test_peak_week_uses_aqua_day_and_coverage_scaling(monkeypatch):
     assert profile.peak_aqua_week(cells, covered) is None
 
 
+def test_peak_week_accepts_arrow_backed_immutable_input():
+    import pyarrow as pa
+    days = pd.date_range("2023-01-01", periods=14).date
+    covered = pd.DataFrame({"sensor": "aqua", "local_day": days, "covered": [False] + [True] * 13})
+    cells = pd.DataFrame({"sensor": ["aqua"] * 2, "daynight": ["D"] * 2,
+                          "local_day": [days[7]] * 2, "h3_r6": ["one", "two"]})
+    arrow = lambda frame: pa.Table.from_pandas(frame).to_pandas(types_mapper=pd.ArrowDtype)
+    assert profile.peak_aqua_week(arrow(cells), arrow(covered)) == (2023, 2, 2.)
+
+
 def test_processed_profile_uses_contract_files(tmp_path, monkeypatch):
     from pipeline.ingest.clean import typed
     monkeypatch.setenv("FIREROSETTA_DATA_ROOT", str(tmp_path))

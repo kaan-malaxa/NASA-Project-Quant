@@ -168,6 +168,7 @@ export const BrokenRuler = forwardRef(function BrokenRuler({ ruler, animate }, r
         width="100%"
         height={H}
         role="img"
+        tabIndex={0}
         aria-label={aria}
         style={{ display: "block", maxWidth: "100%", overflow: "visible" }}
       >
@@ -196,7 +197,7 @@ export const BrokenRuler = forwardRef(function BrokenRuler({ ruler, animate }, r
                 y1={y(v)}
                 y2={y(v)}
                 style={{
-                  stroke: v === 1 ? "var(--fr-border)" : "var(--fr-gridline)",
+                  stroke: v === 1 ? "var(--fr-axis)" : "var(--fr-gridline)",
                   strokeWidth: 1,
                   strokeDasharray: v === 1 ? "4 3" : undefined,
                 }}
@@ -212,23 +213,28 @@ export const BrokenRuler = forwardRef(function BrokenRuler({ ruler, animate }, r
             </g>
           ))}
           {/* x ticks: every 5 years */}
-          {xTicks.map((yr) => (
-            <text
-              key={yr}
-              x={x(yr)}
-              y={plotB + 20}
-              textAnchor="middle"
-              style={{ fill: "var(--fr-muted)", fontSize: CHART_FONT.small }}
-            >
-              {yr}
-            </text>
-          ))}
+          {xTicks.map((yr) => {
+            // A tick at the plot edge is anchored inward so it is not cut off (C1: "2025" at 360 px).
+            const half = (String(yr).length * CHART_FONT.small * 0.58) / 2;
+            const anchor = x(yr) + half > W - 2 ? "end" : x(yr) - half < 2 ? "start" : "middle";
+            return (
+              <text
+                key={yr}
+                x={anchor === "end" ? W - 2 : x(yr)}
+                y={plotB + 20}
+                textAnchor={anchor}
+                style={{ fill: "var(--fr-muted)", fontSize: CHART_FONT.small }}
+              >
+                {yr}
+              </text>
+            );
+          })}
           <line
             x1={M.left}
             x2={plotR}
             y1={plotB}
             y2={plotB}
-            style={{ stroke: "var(--fr-border)", strokeWidth: 1 }}
+            style={{ stroke: "var(--fr-axis)", strokeWidth: 1 }}
           />
         </g>
 
@@ -369,7 +375,12 @@ export const BrokenRuler = forwardRef(function BrokenRuler({ ruler, animate }, r
             return (
               <text
                 key={e.key}
-                x={narrow ? Math.min(e.x, plotR) : e.x + 8}
+                // Right-aligned labels never start left of the chart (C1: single-year state at 360 px).
+                x={
+                  narrow
+                    ? Math.max(Math.min(e.x, plotR), 4 + e.label.length * (CHART_FONT.small + 1) * 0.62)
+                    : e.x + 8
+                }
                 y={labelYs[i]}
                 textAnchor={narrow ? "end" : "start"}
                 style={{
@@ -401,37 +412,39 @@ export const BrokenRuler = forwardRef(function BrokenRuler({ ruler, animate }, r
         )}
       </svg>
 
-      <table className="fr-sr-only">
-        <caption>
-          {NAIVE_LABEL} and {HARMONIZED_LABEL.toLowerCase()} record as indices
-          {base ? ` (1 = the ${base[0]}–${base[1]} average)` : ""}.{jump ? ` ${jump.title}` : ""}
-          {sw ? ` ${MARKER_LABEL} from ${sw.year}.` : ""}
-        </caption>
-        <thead>
-          <tr>
-            <th scope="col">Year</th>
-            <th scope="col">{NAIVE_LABEL} (index)</th>
-            <th scope="col">Raw record source</th>
-            <th scope="col">{HARMONIZED_LABEL} (index)</th>
-            <th scope="col">Kind</th>
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((r) => (
-            <tr key={r.year}>
-              <th scope="row">{r.year}</th>
-              <td>{formatNumber(r.naive_index)}</td>
-              <td>
-                {r.naive_source === "modis"
-                  ? "MODIS (Terra + Aqua)"
-                  : (SENSOR_STYLE[r.naive_source]?.label ?? r.naive_source)}
-              </td>
-              <td>{formatNumber(r.harmonized_index)}</td>
-              <td>{KIND_STYLE[r.kind]?.label ?? r.kind}</td>
+      <div className="fr-sr-only">
+        <table>
+          <caption>
+            {NAIVE_LABEL} and {HARMONIZED_LABEL.toLowerCase()} record as indices
+            {base ? ` (1 = the ${base[0]}–${base[1]} average)` : ""}.{jump ? ` ${jump.title}` : ""}
+            {sw ? ` ${MARKER_LABEL} from ${sw.year}.` : ""}
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Year</th>
+              <th scope="col">{NAIVE_LABEL} (index)</th>
+              <th scope="col">Raw record source</th>
+              <th scope="col">{HARMONIZED_LABEL} (index)</th>
+              <th scope="col">Kind</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {rows.map((r) => (
+              <tr key={r.year}>
+                <th scope="row">{r.year}</th>
+                <td>{formatNumber(r.naive_index)}</td>
+                <td>
+                  {r.naive_source === "modis"
+                    ? "MODIS (Terra + Aqua)"
+                    : (SENSOR_STYLE[r.naive_source]?.label ?? r.naive_source)}
+                </td>
+                <td>{formatNumber(r.harmonized_index)}</td>
+                <td>{KIND_STYLE[r.kind]?.label ?? r.kind}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </>
   );
 });

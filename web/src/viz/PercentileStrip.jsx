@@ -62,12 +62,18 @@ function PercentileStripImpl({ nowcast }, ref) {
         width="100%"
         height={H}
         role="img"
+        tabIndex={0}
         aria-label={`${sentenceOf(nowcast)} ${footerText(nowcast)}.`}
         style={{ display: "block", maxWidth: "100%" }}
       >
         <Icon x={M.left} y={6} width={16} height={16} color="var(--fr-muted)" aria-hidden="true" />
         {lines.map((l, i) => (
-          <text key={i} x={M.left + 24} y={19 + i * 20} style={{ fill: "var(--fr-text)", fontSize: CHART_FONT.body }}>
+          <text
+            key={i}
+            x={M.left + 24}
+            y={19 + i * 20}
+            style={{ fill: "var(--fr-text)", fontSize: CHART_FONT.body }}
+          >
             {l}
           </text>
         ))}
@@ -100,10 +106,17 @@ function PercentileStripImpl({ nowcast }, ref) {
     W - M.left - M.right,
     CHART_FONT.small,
   );
-  const top = 22 + valueLines.length * 16 + 18; // header, value lines, band labels
+  // Header and footnotes wrap too (C1: they ran past the right edge in narrow cards). Bold text is wider.
+  const headLines = wrapText(head, W - M.left - M.right - 22, CHART_FONT.body * 1.12);
+  const footLines = [
+    ...wrapText(`${nowcast.unit} · ticks: past years`, W - M.left - M.right, CHART_FONT.min),
+    ...wrapText(footerText(nowcast), W - M.left - M.right, CHART_FONT.min),
+  ];
+  const valueY0 = 16 + headLines.length * 18 + 2;
+  const top = valueY0 + valueLines.length * 16 + 4; // header, value lines, band labels
   const stripH = 26;
   const axisY = top + stripH;
-  const H = axisY + 48;
+  const H = axisY + 18 + footLines.length * 14 + 2;
   const vx = x(nowcast.value);
 
   const aria =
@@ -119,17 +132,30 @@ function PercentileStripImpl({ nowcast }, ref) {
         width="100%"
         height={H}
         role="img"
+        tabIndex={0}
         aria-label={aria}
         style={{ display: "block", maxWidth: "100%" }}
       >
         <g aria-hidden="true">
           {/* header: status (icon + text) and value */}
           <Icon x={M.left} y={3} width={16} height={16} color={st.color} strokeWidth={2.5} />
-          <text x={M.left + 22} y={16} style={{ fill: st.color, fontSize: CHART_FONT.body, fontWeight: 700 }}>
-            {head}
-          </text>
+          {headLines.map((l, i) => (
+            <text
+              key={i}
+              x={M.left + 22}
+              y={16 + i * 18}
+              style={{ fill: st.color, fontSize: CHART_FONT.body, fontWeight: 700 }}
+            >
+              {l}
+            </text>
+          ))}
           {valueLines.map((l, i) => (
-            <text key={i} x={M.left} y={36 + i * 16} style={{ fill: "var(--fr-text)", fontSize: CHART_FONT.small }}>
+            <text
+              key={i}
+              x={M.left}
+              y={valueY0 + i * 16}
+              style={{ fill: "var(--fr-text)", fontSize: CHART_FONT.small }}
+            >
               {l}
             </text>
           ))}
@@ -181,7 +207,13 @@ function PercentileStripImpl({ nowcast }, ref) {
           ))}
 
           {/* this week */}
-          <line x1={vx} x2={vx} y1={top - 2} y2={top + stripH + 2} style={{ stroke: st.color, strokeWidth: 3 }} />
+          <line
+            x1={vx}
+            x2={vx}
+            y1={top - 2}
+            y2={top + stripH + 2}
+            style={{ stroke: st.color, strokeWidth: 3 }}
+          />
           <path
             d={`M${vx - 7},${top - 10} L${vx + 7},${top - 10} L${vx},${top - 1} Z`}
             style={{
@@ -197,38 +229,39 @@ function PercentileStripImpl({ nowcast }, ref) {
               {formatNumber(v)}
             </text>
           ))}
-          <text x={M.left} y={axisY + 29} style={muted}>
-            {nowcast.unit} · ticks: past years
-          </text>
-          <text x={M.left} y={axisY + 43} style={muted}>
-            {footerText(nowcast)}
-          </text>
+          {footLines.map((l, i) => (
+            <text key={i} x={M.left} y={axisY + 29 + i * 14} style={muted}>
+              {l}
+            </text>
+          ))}
         </g>
       </svg>
 
-      <table className="fr-sr-only">
-        <caption>
-          This week and the same 7 days in past years, in {nowcast.unit}. {footerText(nowcast)}.
-        </caption>
-        <thead>
-          <tr>
-            <th scope="col">Year</th>
-            <th scope="col">Value</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">This week</th>
-            <td>{formatNumber(nowcast.value)}</td>
-          </tr>
-          {(nowcast.history ?? []).map((h) => (
-            <tr key={h.year}>
-              <th scope="row">{h.year}</th>
-              <td>{formatNumber(h.value)}</td>
+      <div className="fr-sr-only">
+        <table>
+          <caption>
+            This week and the same 7 days in past years, in {nowcast.unit}. {footerText(nowcast)}.
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Year</th>
+              <th scope="col">Value</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">This week</th>
+              <td>{formatNumber(nowcast.value)}</td>
+            </tr>
+            {(nowcast.history ?? []).map((h) => (
+              <tr key={h.year}>
+                <th scope="row">{h.year}</th>
+                <td>{formatNumber(h.value)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </>
   );
 }

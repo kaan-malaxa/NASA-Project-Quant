@@ -1,6 +1,13 @@
 import { describe, expect, it } from "vitest";
 import { percentileRank } from "../percentile";
-import { crossesZero, statusFromPercentile, stripBands, stripMax, trendDomain, wrapText } from "../smallLayout";
+import {
+  crossesZero,
+  statusFromPercentile,
+  stripBands,
+  stripMax,
+  trendDomain,
+  wrapText,
+} from "../smallLayout";
 
 describe("TrendBars helpers", () => {
   it("crossesZero: a range including 0 is 'no clear change'", () => {
@@ -32,7 +39,29 @@ describe("PercentileStrip bands (SD-11)", () => {
   });
 
   it("bands are contiguous over [0, max], in status order, and agree with percentileRank", () => {
-    const history = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, null, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200];
+    const history = [
+      10,
+      20,
+      30,
+      40,
+      50,
+      60,
+      70,
+      80,
+      90,
+      100,
+      null,
+      110,
+      120,
+      130,
+      140,
+      150,
+      160,
+      170,
+      180,
+      190,
+      200,
+    ];
     const max = 220;
     const bands = stripBands(history, max);
     expect(bands[0].from).toBe(0);

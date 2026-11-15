@@ -130,7 +130,9 @@ export const ZERO_STYLE = {
   fill: ZERO_FILL,
   fillOpacity: 1,
   stroke: "var(--fr-zero-stroke)",
-  strokeWidth: 0.5,
+  // 1 px, not 0.5: in the dark theme the zero fill and the lowest ramp colour have the same lightness,
+  // so this outline is what keeps "covered, nothing burning" visible without colour (E1).
+  strokeWidth: 1,
 };
 
 /** Style for an anomaly cell that is too quiet to rank (SD-11 low_activity). */

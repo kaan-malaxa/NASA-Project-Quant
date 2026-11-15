@@ -98,7 +98,9 @@ export function wrapText(text, width, size = 14) {
   const maxChars = Math.max(8, Math.floor(width / (size * 0.56)));
   const lines = [];
   let line = "";
-  for (const word of String(text ?? "").split(/\s+/).filter(Boolean)) {
+  for (const word of String(text ?? "")
+    .split(/\s+/)
+    .filter(Boolean)) {
     if (!line) line = word;
     else if ((line + " " + word).length <= maxChars) line += " " + word;
     else {

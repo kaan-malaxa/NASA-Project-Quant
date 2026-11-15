@@ -14,7 +14,11 @@ describe("KindBadge", () => {
     const looks = KINDS.map((kind) => {
       const { container } = render(<KindBadge kind={kind} />);
       const el = container.querySelector("[data-kind]");
-      return { text: el.textContent, border: el.style.border, icon: el.querySelector("svg")?.getAttribute("class") };
+      return {
+        text: el.textContent,
+        border: el.style.border,
+        icon: el.querySelector("svg")?.getAttribute("class"),
+      };
     });
     expect(new Set(looks.map((l) => l.text)).size).toBe(5);
     expect(new Set(looks.map((l) => l.icon)).size).toBe(5);
@@ -27,12 +31,14 @@ describe("Legend", () => {
   it("anomaly: quieter / typical / busier, plus no data and estimate swatches", () => {
     const { container } = render(<Legend scale="anomaly" unit="u" />);
     const text = container.textContent;
-    for (const t of ["quieter than usual", "typical", "busier than usual", "no data", "estimate"]) expect(text).toContain(t);
+    for (const t of ["quieter than usual", "typical", "busier than usual", "no data", "estimate"])
+      expect(text).toContain(t);
   });
   it("activity: 0, highest and the unit", () => {
     const { container } = render(<Legend scale="activity" unit="fire cell-days per week" />);
     const text = container.textContent;
-    for (const t of ["0", "highest", "fire cell-days per week", "no data", "estimate"]) expect(text).toContain(t);
+    for (const t of ["0", "highest", "fire cell-days per week", "no data", "estimate"])
+      expect(text).toContain(t);
   });
 });
 
@@ -66,7 +72,9 @@ describe("PercentileStrip", () => {
       // no strip, no ticks, no marker (the status icon's own drawing is not counted)
       expect(container.querySelectorAll("svg.fr-viz > g line")).toHaveLength(0);
       expect(container.querySelectorAll("svg.fr-viz path[d^='M']").length).toBeLessThanOrEqual(2);
-      expect(container.textContent.replace(/\s+/g, " ")).toContain(v.sentence.split(" ").slice(0, 3).join(" "));
+      expect(container.textContent.replace(/\s+/g, " ")).toContain(
+        v.sentence.split(" ").slice(0, 3).join(" "),
+      );
     }
   });
 });

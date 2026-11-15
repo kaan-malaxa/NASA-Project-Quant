@@ -40,7 +40,11 @@ function LegendImpl({ scale, unit }, ref) {
   // Swatch row below the ramp.
   const swatchY = rampY + rampH + (isActivity ? 50 : 34); // activity has the unit line above the swatches
   const swatches = [
-    { key: "nodata", label: "no data", style: { fill: KIND_STYLE.missing.fill, stroke: "var(--fr-border)", strokeWidth: 0.5 } },
+    {
+      key: "nodata",
+      label: "no data",
+      style: { fill: KIND_STYLE.missing.fill, stroke: "var(--fr-border)", strokeWidth: 0.5 },
+    },
     {
       key: "estimate",
       label: "estimate",

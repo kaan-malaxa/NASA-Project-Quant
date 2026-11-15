@@ -67,7 +67,7 @@ export const CalendarHeatmap = forwardRef(function CalendarHeatmap(
   const cw = gridW / cols;
   const rowH = grain === "week" ? clamp(cw, 8, 16) : clamp(cw * 0.35, 14, 22);
   const gap = cw >= 8 ? 1 : 0.5;
-  const H = M.top + Math.max(years.length, 3) * rowH + M.bottom;
+  const gridBottom = M.top + Math.max(years.length, 3) * rowH;
   const yearIndex = useMemo(() => new Map(years.map((y, i) => [y, i])), [years]);
   const colX = (p) => M.left + (p - 1) * cw;
   const rowY = (yi) => M.top + yi * rowH;
@@ -202,6 +202,14 @@ export const CalendarHeatmap = forwardRef(function CalendarHeatmap(
         }));
 
   const showAllYears = rowH >= 11;
+  // Rows a year label needs so two labels never touch; a multiple of 5 too close to the first
+  // or last year is dropped (C1: "2025" and "2026" overlapped at 360 px).
+  const labelRows = Math.ceil((CHART_FONT.min + 2) / rowH);
+  const yearLabelled = (y, yi) =>
+    showAllYears ||
+    yi === 0 ||
+    yi === years.length - 1 ||
+    (y % 5 === 0 && yi >= labelRows && yi <= years.length - 1 - labelRows);
   const spliceIdx = lens === "naive_splice" ? yearIndex.get(NAIVE_SPLICE_YEAR) : undefined;
   const sources = [...new Set([...grid.rowSource.values()].filter((s) => s !== null))];
 
@@ -218,12 +226,26 @@ export const CalendarHeatmap = forwardRef(function CalendarHeatmap(
       label: CRITICAL_LABEL,
     });
   }
-  let lx = M.left - 6;
-  const legend = legendItems.map((it) => {
-    const x = lx;
-    lx += 16 + textW(it.label) + 14;
+  // Wrap onto a new line rather than run past the right edge (C1: clipped at 360 px).
+  const LEGEND_LINE = 16;
+  const legendX0 = M.left - 6;
+  let lx = legendX0;
+  let legendRow = 0;
+  const legendPos = legendItems.map((it) => {
+    const w = 16 + textW(it.label);
+    if (lx > legendX0 && lx + w > W - M.right) {
+      lx = legendX0;
+      legendRow += 1;
+    }
+    const pos = { x: lx, row: legendRow };
+    lx += w + 14;
+    return pos;
+  });
+  const H = gridBottom + M.bottom + legendRow * LEGEND_LINE;
+  const legend = legendItems.map((it, i) => {
+    const { x, row } = legendPos[i];
     return (
-      <g key={it.label} transform={`translate(${x},${H - 10})`}>
+      <g key={it.label} transform={`translate(${x},${gridBottom + 20 + row * LEGEND_LINE})`}>
         {it.swatch}
         <text x={16} y={0} style={{ fill: "var(--fr-muted)", fontSize: CHART_FONT.min }}>
           {it.label}
@@ -315,7 +337,7 @@ export const CalendarHeatmap = forwardRef(function CalendarHeatmap(
         role="grid"
         aria-label={aria}
         aria-activedescendant={focused && safeActive !== null ? `${uid}-c${safeActive}` : undefined}
-        tabIndex={cells.length > 0 ? 0 : -1}
+        tabIndex={0}
         onKeyDown={onKeyDown}
         onFocus={() => {
           setFocused(true);
@@ -372,7 +394,7 @@ export const CalendarHeatmap = forwardRef(function CalendarHeatmap(
         <g aria-hidden="true">
           {years.map((y, yi) => {
             const src = grid.rowSource.get(y);
-            const labelled = showAllYears || y % 5 === 0 || yi === 0 || yi === years.length - 1;
+            const labelled = yearLabelled(y, yi);
             return (
               <g key={y}>
                 {labelled && (
@@ -462,33 +484,35 @@ export const CalendarHeatmap = forwardRef(function CalendarHeatmap(
         {tooltip}
       </svg>
 
-      <table className="fr-sr-only">
-        <caption>
-          {seriesLabel}, by {grain}, in {grid.unit}. “no data” means the record does not cover that period.
-        </caption>
-        <thead>
-          <tr>
-            <th scope="col">Year</th>
-            {Array.from({ length: cols }, (_, i) => (
-              <th scope="col" key={i}>
-                {grain === "week" ? `Week ${i + 1}` : monthName(i + 1)}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {years.map((y) => (
-            <tr key={y}>
-              <th scope="row">{y}</th>
-              {Array.from({ length: cols }, (_, i) => {
-                const idx = lookup.get(`${y}:${i + 1}`);
-                const c = idx !== undefined ? cells[idx] : undefined;
-                return <td key={i}>{c ? (c.value === null ? "no data" : c.lines[1]) : ""}</td>;
-              })}
+      <div className="fr-sr-only">
+        <table>
+          <caption>
+            {seriesLabel}, by {grain}, in {grid.unit}. “no data” means the record does not cover that period.
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Year</th>
+              {Array.from({ length: cols }, (_, i) => (
+                <th scope="col" key={i}>
+                  {grain === "week" ? `Week ${i + 1}` : monthName(i + 1)}
+                </th>
+              ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {years.map((y) => (
+              <tr key={y}>
+                <th scope="row">{y}</th>
+                {Array.from({ length: cols }, (_, i) => {
+                  const idx = lookup.get(`${y}:${i + 1}`);
+                  const c = idx !== undefined ? cells[idx] : undefined;
+                  return <td key={i}>{c ? (c.value === null ? "no data" : c.lines[1]) : ""}</td>;
+                })}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </>
   );
 });

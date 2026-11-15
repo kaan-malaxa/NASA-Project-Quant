@@ -66,6 +66,7 @@ function TrendBarsImpl({ trend }, ref) {
         width="100%"
         height={H}
         role="img"
+        tabIndex={0}
         aria-label={aria}
         style={{ display: "block", maxWidth: "100%" }}
       >
@@ -174,8 +175,20 @@ function TrendBarsImpl({ trend }, ref) {
                   </>
                 ) : (
                   <>
-                    <Icon x={0} y={-12} width={14} height={14} color={color} strokeWidth={2.5} aria-hidden="true" />
-                    <text x={18} y={-1} style={{ fill: color, fontSize: CHART_FONT.small + 1, fontWeight: 600 }}>
+                    <Icon
+                      x={0}
+                      y={-12}
+                      width={14}
+                      height={14}
+                      color={color}
+                      strokeWidth={2.5}
+                      aria-hidden="true"
+                    />
+                    <text
+                      x={18}
+                      y={-1}
+                      style={{ fill: color, fontSize: CHART_FONT.small + 1, fontWeight: 600 }}
+                    >
                       {words.main}
                     </text>
                     {words.range && (
@@ -191,27 +204,29 @@ function TrendBarsImpl({ trend }, ref) {
         })}
       </svg>
 
-      <table className="fr-sr-only">
-        <caption>Change per decade, with its range.</caption>
-        <thead>
-          <tr>
-            <th scope="col">Record</th>
-            <th scope="col">Change per decade</th>
-            <th scope="col">Range</th>
-            <th scope="col">Verdict</th>
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((r) => (
-            <tr key={r.key}>
-              <th scope="row">{r.label}</th>
-              <td>{hasTrend(r.t) ? pct(r.t.pct_per_decade) : "no data"}</td>
-              <td>{hasTrend(r.t) ? `${pct(r.t.lo)} to ${pct(r.t.hi)}` : "no data"}</td>
-              <td>{trendWords(r.t).main}</td>
+      <div className="fr-sr-only">
+        <table>
+          <caption>Change per decade, with its range.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Record</th>
+              <th scope="col">Change per decade</th>
+              <th scope="col">Range</th>
+              <th scope="col">Verdict</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {rows.map((r) => (
+              <tr key={r.key}>
+                <th scope="row">{r.label}</th>
+                <td>{hasTrend(r.t) ? pct(r.t.pct_per_decade) : "no data"}</td>
+                <td>{hasTrend(r.t) ? `${pct(r.t.lo)} to ${pct(r.t.hi)}` : "no data"}</td>
+                <td>{trendWords(r.t).main}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </>
   );
 }

@@ -141,6 +141,43 @@ describe("Region page: date range and In this period", () => {
   });
 });
 
+describe("Region page: your area (AOI)", () => {
+  const A = "85283473fffffff";
+  const calibration = {
+    schema_version: "1.0", generated_at: "x", code_version: "test", region: "testland", reference: "aqua_day",
+    count_resolution: 6, shrinkage_n0: 50,
+    eras: [
+      { from: "2003-01-01", to: "2022-12-31", source: "aqua", kind: "observed" },
+      { from: "2023-01-01", to: null, source: "snpp", kind: "harmonized" },
+    ],
+    fit_window: {}, noaa20_method: "direct", k_annual: { snpp: { k: 0.5, lo: 0.4, hi: 0.6 } }, k: { snpp: [] },
+  };
+  const csv = `h3_r5,ym,aqua,viirs\n${A},202211,7,20\n${A},202311,1,30\n85283477fffffff,202311,9,99\n`;
+
+  it("loads cells_monthly on first use and shows the area series, top months and the calibration line", async () => {
+    mockFetch({
+      "regions.json": regionsJson({ files: ["calibration", "climatology"], optional_files: ["cells_monthly"] }),
+      "testland/calibration.json": calibration,
+      "testland/climatology.json": climatologyJson(),
+      "testland/cells_monthly.csv": csv,
+    });
+    renderRegion(`/r/testland?aoi=${A}`);
+    const panel = await screen.findByRole("region", { name: /Your area \(1 hexagon, about \d[\d,]* km²\)/ });
+    await waitFor(() => expect(panel.textContent).toContain("Calibration measured for the whole region is applied to your area. Treat small areas as indicative."));
+    // Nov 2023 = 30 VIIRS x 0.5 = 15 (harmonized); Nov 2022 = 7 Aqua (observed). The other cell is not selected.
+    expect(panel.textContent).toContain("November 2023: 15");
+    expect(panel.textContent).toContain("November 2022: 7");
+    expect(within(panel).getAllByText("Harmonized").length).toBeGreaterThan(0);
+    await act(async () => within(panel).getByRole("button", { name: "Clear area" }).click());
+    expect(new URLSearchParams(currentSearch).get("aoi")).toBeNull();
+    expect(screen.queryByRole("region", { name: /Your area/ })).toBeNull();
+  });
+
+  it("says the area data are missing when cells_monthly is not listed", async () => {
+    mockFetch({ "regions.json": regionsJson({ files: ["calibration"], optional_files: [] }), "testland/calibration.json": calibration });
+    renderRegion(`/r/testland?aoi=${A}`);
+    const panel = await screen.findByRole("region", { name: /Your area/ });
+    expect(panel.textContent).toContain("Area data are not available for this place.");
 describe("Region page: downloads", () => {
   function captureDownloads() {
     const saved = [];

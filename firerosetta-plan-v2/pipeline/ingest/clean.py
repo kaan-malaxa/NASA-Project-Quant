@@ -96,7 +96,7 @@ def normalise(frame, family, nrt_prefix):
     ]]
 
 
-def clean_files(inputs, region, science):
+def clean_files(inputs, region, science, *, publish=True):
     """Explicit inputs/config support isolated fabricated tests; CLI verifies US provenance."""
     cells = region_cells(region, science)
     logs, raw_counts, spool = [], [], []
@@ -176,6 +176,8 @@ def clean_files(inputs, region, science):
             pd.Series(candidates, dtype=str).value_counts().rename_axis("h3_r8").reset_index(name="n_static")
             if candidates else pd.DataFrame()
         )
+        if not publish:
+            return outputs
         # Publish only after all inputs have passed validation.
         for sensor, frame in outputs.items():
             io.write_parquet(frame, paths.detections(region.id, sensor), "detections")
@@ -196,6 +198,11 @@ def run(region_id):
         raise ValueError("No staged US inputs are listed in MANIFEST.json")
     jobs = set()
     for entry in manifest:
+        if (
+            entry["file"].startswith("nrt_viirs_noaa20_")
+            and entry["source"] == "VIIRS_NOAA20_NRT" and entry["via"] == "local"
+        ):
+            continue
         source = paths.source_data_root() / entry["source"]
         if not source.resolve().is_relative_to(paths.source_data_root()) or not source.is_file():
             raise ValueError("Staged input has no valid local US source")
@@ -207,6 +214,8 @@ def run(region_id):
         if entry["file"] != expected.name or entry["via"] != "country":
             raise ValueError("Only verified local US country inputs may be cleaned")
         jobs.add((product, year, expected))
+    if not jobs:
+        raise ValueError("No verified historical US country inputs are listed in MANIFEST.json")
     # Re-verify against original local sources; an old cache is never authoritative.
     for product, year, _ in sorted(jobs):
         download.download_country(region, [year], [product])

@@ -118,6 +118,25 @@ def celldays_nrt(region) -> Path:
     return grid_dir(region) / "celldays_nrt.parquet"
 
 
+def hotspots_recent(region) -> Path:
+    return web_data_dir(region) / "hotspots_recent.csv"
+
+
+def nrt_snapshot(region, utc_date) -> Path:
+    return raw_dir(region) / f"nrt_viirs_noaa20_{utc_date}.csv"
+
+
+def local_nrt_inputs(region) -> list[Path]:
+    result = set()
+    for root, recursive in ((source_data_root(), True), (raw_dir(region), False)):
+        files = root.rglob("nrt_viirs_noaa20_*.csv") if recursive else root.glob("nrt_viirs_noaa20_*.csv")
+        for path in files:
+            if not path.resolve().is_relative_to(root.resolve()):
+                raise ValueError("NRT source resolves outside its allowed local directory")
+            result.add(path.resolve())
+    return sorted(result)
+
+
 def daily(region) -> Path:
     return harmonized_dir(region) / "daily.parquet"
 

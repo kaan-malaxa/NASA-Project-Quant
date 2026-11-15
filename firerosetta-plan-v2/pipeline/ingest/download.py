@@ -104,6 +104,14 @@ def update_manifest(region, path=None, source=None, via="country"):
     # Do not carry old API or unverified source entries into a local-only manifest.
     by_file = {}
     for entry in entries:
+        if (
+            entry.get("source") == "VIIRS_NOAA20_NRT" and entry.get("via") == "local"
+            and Path(entry["file"]).name == entry["file"] and entry["file"].startswith("nrt_viirs_noaa20_")
+        ):
+            staged = paths.raw_dir(region) / entry["file"]
+            if staged.is_file() and all(entry.get(key) == value for key, value in _file_facts(staged).items()):
+                by_file[entry["file"]] = entry
+            continue
         relative = entry.get("source", "")
         candidate = paths.source_data_root() / relative
         if (

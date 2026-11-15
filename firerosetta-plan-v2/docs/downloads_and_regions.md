@@ -11,6 +11,11 @@ existing files in `NASA-Project-Quant/data/`:
 Neither `--data-root` nor `FIREROSETTA_DATA_ROOT` can redirect the inputs.
 Those settings control derived output storage only.
 
+The separate local nowcast command also accepts genuine NOAA-20 NRT CSVs
+from that source folder or staged `data/raw/us/`, as explicitly requested.
+It authenticates NRT version markers and recent coverage before exporting;
+it never substitutes the country archives. See nowcast_handoff.md.
+
 No HTTP client, API downloader, country URL fallback, key loading, or remote
 availability lookup remains in the acquisition code. `--via api` returns a
 clear error before inspecting inputs. Missing local product-years are reported;

@@ -8,7 +8,11 @@ import { KIND_STYLE } from "./theme";
 const LOOK = {
   observed: { Icon: Satellite, border: "1px solid var(--fr-border)", background: "var(--fr-surface)" },
   harmonized: { Icon: ArrowLeftRight, border: "1px solid var(--fr-accent)", background: "var(--fr-surface)" },
-  estimated: { Icon: CircleDashed, border: "1px dashed var(--fr-estimate-stroke)", background: "var(--fr-surface)" },
+  estimated: {
+    Icon: CircleDashed,
+    border: "1px dashed var(--fr-estimate-stroke)",
+    background: "var(--fr-surface)",
+  },
   missing: {
     Icon: Ban,
     border: "1px solid var(--fr-border)",

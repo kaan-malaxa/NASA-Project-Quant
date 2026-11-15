@@ -483,7 +483,13 @@ export function Gallery() {
         <h2 style={{ fontSize: "var(--fr-text-lg)" }}>
           TrendBars · PercentileStrip: every look (fabricated fixture variants)
         </h2>
-        <div style={previewWidth === "auto" ? S.grid : { display: "grid", gap: "var(--fr-space-4)", width: Number(previewWidth) }}>
+        <div
+          style={
+            previewWidth === "auto"
+              ? S.grid
+              : { display: "grid", gap: "var(--fr-space-4)", width: Number(previewWidth) }
+          }
+        >
           {FIXTURE_TREND_VARIANTS.map((v) => (
             <Card key={v.label} caption={`TrendBars · ${v.label}`}>
               <TrendBars trend={v.trend} />

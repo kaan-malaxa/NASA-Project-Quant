@@ -289,7 +289,7 @@ export const FireYearClock = forwardRef(function FireYearClock(
         role="grid"
         aria-label={aria}
         aria-activedescendant={focused && safeActive !== null ? `${uid}-c${safeActive}` : undefined}
-        tabIndex={cells.length > 0 ? 0 : -1}
+        tabIndex={0}
         onKeyDown={onKeyDown}
         onFocus={() => {
           setFocused(true);
@@ -481,33 +481,35 @@ export const FireYearClock = forwardRef(function FireYearClock(
         </g>
       </svg>
 
-      <table className="fr-sr-only">
-        <caption>
-          {seriesLabel}, by week, in {grid.unit}. “no data” means the record does not cover that week.
-        </caption>
-        <thead>
-          <tr>
-            <th scope="col">Year</th>
-            {Array.from({ length: 52 }, (_, i) => (
-              <th scope="col" key={i}>
-                Week {i + 1}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {grid.years.map((y) => (
-            <tr key={y}>
-              <th scope="row">{y}</th>
-              {Array.from({ length: 52 }, (_, i) => {
-                const idx = lookup.get(`${y}:${i + 1}`);
-                const c = idx !== undefined ? cells[idx] : undefined;
-                return <td key={i}>{c ? (c.value === null ? "no data" : c.lines[1]) : ""}</td>;
-              })}
+      <div className="fr-sr-only">
+        <table>
+          <caption>
+            {seriesLabel}, by week, in {grid.unit}. “no data” means the record does not cover that week.
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Year</th>
+              {Array.from({ length: 52 }, (_, i) => (
+                <th scope="col" key={i}>
+                  Week {i + 1}
+                </th>
+              ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {grid.years.map((y) => (
+              <tr key={y}>
+                <th scope="row">{y}</th>
+                {Array.from({ length: 52 }, (_, i) => {
+                  const idx = lookup.get(`${y}:${i + 1}`);
+                  const c = idx !== undefined ? cells[idx] : undefined;
+                  return <td key={i}>{c ? (c.value === null ? "no data" : c.lines[1]) : ""}</td>;
+                })}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </>
   );
 });

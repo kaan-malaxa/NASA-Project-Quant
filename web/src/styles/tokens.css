@@ -20,8 +20,9 @@
   --fr-danger: #f85149;
 
   /* ---- Colour: chart marks that are not ramps (derived ones are in the `:root, .brief` block) ---- */
-  --fr-zero-stroke: #3a4350; /* the faint outline around zero cells */
-  --fr-gridline: #222933;
+  --fr-zero-stroke: #6e7781; /* outline of zero cells: the cue that tells "none" from "a little" (E1) */
+  --fr-gridline: #222933; /* decorative only: never the sole carrier of meaning */
+  --fr-axis: #6e7781; /* axis baselines: ≥ 3:1 on bg and surface in both themes (E1) */
 
   /* ---- Colour: sensors (always shown with a text label) ---- */
   --fr-sensor-aqua: #58a6ff;
@@ -157,7 +158,7 @@
     --fr-muted: #57606a;
     --fr-accent: #0969da;
     --fr-warning: #bc4c00;
-  --fr-danger: #cf222e;
+    --fr-danger: #cf222e;
     --fr-zero-stroke: #c4ccd5;
     --fr-gridline: #e6e9ed;
     --fr-sensor-aqua: #0969da;
@@ -213,6 +214,8 @@
   stroke-width: 1.5px !important;
   stroke-dasharray: none !important;
 }
+/* The chart itself (every chart is a tab stop, E1) and anything focusable inside it. */
+.fr-viz:focus-visible,
 .fr-viz :focus-visible,
 .fr-focus-ring:focus-visible {
   outline: var(--fr-focus-width) solid var(--fr-focus-color);

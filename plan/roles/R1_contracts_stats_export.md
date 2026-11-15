@@ -1,5 +1,8 @@
 # R1 · Contracts, Calendar Statistics, Export (and scope owner)
 
+> Current integration scope: one real whole-US polygon plus planted-truth Synthland; runtime web code is JavaScript with generated JSDoc declarations. Selectable analysis years and exact dates are separate. The authorized interfaces and requirement statuses are in `../02_CONTRACTS.md` and `../REQUIREMENTS_MATRIX.md`. Earlier multi-region, TypeScript-runtime and provisional stand-in instructions are superseded.
+
+
 ## 1. Your mission
 You turn the harmonized daily series into **every number the website shows**: the calendar, the climatology, the trend verdict, the critical weeks, this week's status, the Methods data. You also own the **contracts** (the JSON Schemas everyone builds against) and the **sample data** that lets the web team start in hour two. As scope owner you call the cuts at each gate.
 
@@ -43,7 +46,7 @@ Python 3.11 via `uv`, DuckDB, pandas, numpy, scipy (`scipy.stats.theilslopes`), 
 |---|---|
 | A · Sat 18:30 | All JSON Schemas; `export --sample` writes a complete, plausible sample site for `us`; `export --check` works; **contracts frozen** |
 | B · Sat 23:00 | `pipeline.stats` produces weekly, monthly, daily, climatology, trend, ruler, season (critical weeks) from a real or simulated `daily.parquet`; planted trend and season recovered on `synthland` |
-| C · Sun 10:00 | Nowcast; `methods.json` with real validation; real JSON for three regions committed; SAMPLE gone |
+| C · Sun 10:00 | Nowcast; `methods.json` with real validation; real JSON for the approved whole-US region and separate simulator committed; SAMPLE gone |
 | D · Sun 14:00 | Season shift, hex, `cells_monthly.csv`, Tier 2 selection (SD-17) |
 | E · Sun 17:00 | Numbers audit list for R2 and R3; final regeneration; manifest hashes match on a second OS |
 
@@ -304,4 +307,4 @@ R2 uses this to fill the video script and slides; R3 signs it. No number may app
 ## 11. If things go wrong
 - **R3's `daily.parquet` is late:** build and test against a fabricated table and `synthland`; your code does not change when real data arrives.
 - **Real data for a region is missing at Gate C:** ship the regions that are real; leave the missing region out of `regions.json`. Never ship sample data without its banner.
-- **Bootstrap too slow:** drop to 300 replicates and note it in `methods.json → limitations`.
+- **Bootstrap too slow:** optimize the implementation while retaining the locked bootstrap count.

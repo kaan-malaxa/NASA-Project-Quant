@@ -38,9 +38,9 @@ Supersedes the "Science method" section of the Draft v1 charter wherever they di
 ### SD-19 · United States local-data scope
 - **Scope:** the configured real region is `us` (country `US`, the whole United States). No other real region may be selected. The simulated `synthland` region (`scope.planted_truth_region_ids`) runs through the same code for the planted-truth test only and is never mixed with real data.
 - **Only sources:** workspace-root `data/MODIS_data/modis_*_United_States.csv`, `data/VIIRS-SNPP_data/viirs-snpp_*_United_States.csv`, and `data/VIIRS-JPSS_data/viirs-jpss1_*_United_States.csv`.
-- These are the supplied NASA FIRMS country exports. There is no local US polygon or authoritative download bounding box. Keep their country membership; do not invent a polygon, centroid, or full-region cell denominator. SD-04 cell-centre polygon membership and saturation denominators require a supplied US polygon before they can be evaluated.
+- These are the supplied NASA FIRMS country exports. The approved analysis boundary is the existing `pipeline/config/regions/us.geojson`, including Alaska and Hawaii. SD-04 cell-centre membership and the region-cell denominator use that polygon. The bounding box is only a download/input filter. Display longitude wrapping never changes the analysis polygon.
 - Source and derived-input hashes are recorded at ingestion and verified before harmonization. Alternate output roots do not redirect the raw source directory. Unknown satellites, mismatched file years, stale derived inputs and non-US region requests fail.
-- The user's US-only instruction supersedes the previous showcase-region list. Country-file membership is an explicit limitation, not a claim that cell centres were checked against a US boundary.
+- The user's US-only instruction supersedes the previous showcase-region list. The approved polygon replaces the earlier country-membership-only restriction; the supplied source bytes remain unchanged.
 - Existing SD-02/SD-03 constants are now carried explicitly by `filters.keep_type: 0`, `timebins.solar_degrees_per_hour: 15`, `timebins.week_days: 7`, `timebins.weeks_per_year: 52`, and `static_mask.types: [1, 2, 3]`. Numeric decisions are unchanged.
 
 ---
@@ -249,3 +249,13 @@ Rules: training and test years never mix; any split is by year. A result that lo
 - "24-year record" means 2003–2026. "23-year baseline" means 2003–2025. Do not mix them.
 - Units are always written out: "fire cell-days", "Aqua-equivalent", "VIIRS-equivalent".
 - Dates of satellite shutdowns and anomalies in any text come from `methods.json → sources`, each with a URL and a checked date.
+
+## Integration clarification: selectable periods and validation
+
+The authorized integration repair keeps all configured calibration windows, bootstrap counts and scientific thresholds fixed. Analysis years are contiguous complete calendar years; exact dates separately control daily totals and downloads. Period statistics use only the selected years. Critical weeks are recomputed from selected-period climatology; anomalies keep `climatology.baseline_years` as their fixed comparison population.
+
+Trend and timing shift estimates require at least three valid annual observations. Zero denominators and insufficient coverage produce null estimates with reasons. A missing robustness comparison qualifies the verdict explicitly. A bootstrap draw uses one complete calibration replicate across all years, including translated outage fills before the end of the Aqua era.
+
+V8 compares matching excluded-year weekly predictions exported by both stages. SD-17 retains the locked pooled reliability error; `reliability_year_absolute_err` is an additional diagnostic, not a replacement acceptance criterion. Fitted monthly factors remain a calibration diagnostic and are not described as held-out evidence.
+
+The recent-data handoff records its fetched window and daily coverage separately from retained detections. A covered day without retained detections is zero; absent coverage is missing. The complete-local-day calculation is shared. A leap-year ordinal endpoint beyond a shorter comparison year maps to that year's final day.

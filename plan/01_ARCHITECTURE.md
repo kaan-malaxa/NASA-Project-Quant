@@ -1,5 +1,8 @@
 # 01 · Architecture and Implementation Plan
 
+> Integration repair supersedes the original multi-region and TypeScript-runtime plans: whole United States (Alaska and Hawaii included), plus synthetic validation; JavaScript with generated declarations; selectable complete analysis years and separate exact dates. See `02_CONTRACTS.md` and `REQUIREMENTS_MATRIX.md`.
+
+
 FireRosetta · NASA Space Apps 2026 · Harmonization of MODIS and VIIRS Hot Spots
 Plan v2, written Saturday 14 Nov 2026, 15:30 EST. Submission closes Sunday 15 Nov, 23:59 local; we submit by 22:00.
 
@@ -46,7 +49,7 @@ The challenge asks for: harmonized MODIS + VIIRS hotspots; a web app where a use
 ### Must (submittable with only these)
 | # | Item | Owner |
 |---|---|---|
-| M1 | Ingest + Tier 1 on real FIRMS data, three regions, with coverage and missing days | R2, R3 |
+| M1 | Ingest + Tier 1 on real FIRMS data, the approved whole-US region and separate simulator, with coverage and missing days | R2, R3 |
 | M2 | Validation V1–V5 with real numbers on the Methods page | R3, R1 |
 | M3 | Screen 1 Broken ruler · 2 Place picker · 3 Verdict card · 4 Calendar (Fire Year Clock + week × year and **month × year** heatmaps, sensor lens, **critical-weeks band**) · 6 This week (and **this month vs median**) · 9 Methods | R5, R6 |
 | M4 | **Date range selector** that filters every chart and number on the region page | R5 |
@@ -121,7 +124,7 @@ firerosetta/
     export/      sample.py assemble.py check.py tests/                R1
   data/                         raw/ clean/ grid/ harmonized/ eyesight/   (git-ignored)
   web/
-    package.json vite.config.ts index.html                            R5
+    package.json vite.config.js index.html                            R5
     src/app/ src/screens/ src/data/ src/lib/ src/components/          R5
     src/viz/                                                          R6
     src/styles/tokens.css                                             R6
@@ -239,7 +242,7 @@ About 30 working hours remain. Sleep is in the plan because tired people break `
 | **Sat 16:30–18:30** | **A · Foundations** | **Gate A 18:30:** scaffold + `common/` on main (R2) · JSON Schemas + `--sample` data on main (R1) · `science.yaml` on main (R3) · simulator writes tiny `synthland` raw CSVs (R4) · site deployed and rendering sample `ruler.json` (R5) · tokens + first chart in the gallery (R6) · **contracts frozen** |
 | **Sat 18:30–23:00** | **B · Vertical slices** | **Gate B 23:00:** `pipeline.run --region synthland` exits 0 through ingest → harmonize → stats → export · us real data cleaned and gridded, Tier 1 k fitted · eyesight fit recovers the planted curve on `synthland` · every Must screen works on sample data · IR-2 passed |
 | Sat 23:00–07:00 | Sleep | R2 leaves the overnight `ingest` for the full `us` record running |
-| **Sun 07:00–10:00** | **C · Real data everywhere** | **Gate C 10:00:** three regions through ingest → harmonize → stats → export · V1–V5 numbers in `methods.json` · nowcast fetched · site on real data with no SAMPLE banner · IR-3 passed |
+| **Sun 07:00–10:00** | **C · Real data everywhere** | **Gate C 10:00:** the approved whole-US region and separate simulator through ingest → harmonize → stats → export · V1–V5 numbers in `methods.json` · nowcast fetched · site on real data with no SAMPLE banner · IR-3 passed |
 | **Sun 10:00–14:00** | **D · Should features** | **Gate D 14:00:** each Should item is merged or cut, decided by R1 · Tier 2 status decided per SD-17 · README draft and slide skeleton exist |
 | **Sun 14:00–17:00** | **E · Hardening** | **Gate E 17:00 feature freeze:** all branches merged · full re-run from raw data on a second laptop with a different OS produces identical JSON · accessibility and phone checks done · numbers audit signed by R3 |
 | Sun 17:00–19:00 | Polish | Bug fixes only; final nowcast refresh at 18:00; video script filled from JSON |
@@ -279,7 +282,7 @@ These were added because they either answer the official challenge text, remove 
 2. Downloads: series CSV, calendar CSV, chart PNG/SVG, hotspot CSV (challenge objective).
 3. Month × year heatmap and "this month vs historical median" (challenge wording is monthly).
 4. Critical-weeks band on the calendar is a Must, so "critical periods" does not depend on a Should screen.
-5. `low_activity` status, so off-season weeks do not read as "extreme" (two of our three regions are off-season this week).
+5. `low_activity` status, so off-season weeks do not read as "extreme" (coverage and seasonal activity determine the state).
 6. Planted-truth simulator and its results on the Methods page.
 7. Drift diagnostic chart (the evidence for where we stop trusting Aqua).
 8. Robustness variants of the trend, and a verdict sentence with an "unclear" branch.
@@ -306,7 +309,7 @@ These were added because they either answer the official challenge text, remove 
 | Real data not ready at Gate C | ingest unfinished Sun 09:00 | Ship the years that are real and say which; never ship sample as real | R1 |
 | Fire Year Clock is hard to read | two teammates cannot name the peak season in 10 s | Month heatmap becomes the default view | R6 |
 | Off-season makes "This week" dull | `low_activity` | Show the last active window with its date | R5 |
-| Area-of-interest lens disagrees with the pipeline | whole-region test fails | Cut S5; keep the three regions | R5, R1 |
+| Area-of-interest lens disagrees with the pipeline | whole-region test fails | Cut S5; keep the the approved whole-US region and separate simulator | R5, R1 |
 | Deploy breaks late | build fails after 17:00 | Deploy only from `main`; tag `freeze-1700`; Pages can be rolled back by re-running the tagged workflow | R5 |
 | Scope creep | anyone on a Could before Gate D | R1 reassigns at the stand-up | R1 |
 | A claim in the pitch is wrong | cannot find a URL for it | Remove the claim; only `sources` entries may be spoken | R2 |

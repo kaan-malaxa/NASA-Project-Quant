@@ -1,5 +1,8 @@
 # FireRosetta · Start here
 
+> Integration repair supersedes the original multi-region and TypeScript-runtime plans: whole United States (Alaska and Hawaii included), plus synthetic validation; JavaScript with generated declarations; selectable complete analysis years and separate exact dates. See `02_CONTRACTS.md` and `REQUIREMENTS_MATRIX.md`.
+
+
 NASA Space Apps Challenge 2026 · Harmonization of MODIS and VIIRS Hot Spots
 Plan v2 · Saturday 14 Nov 2026 · supersedes the build sections of the Draft v1 charter
 

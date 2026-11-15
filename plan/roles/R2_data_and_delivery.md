@@ -1,5 +1,8 @@
 # R2 · Data Engineering, then Delivery
 
+> Current integration scope: one real whole-US polygon plus planted-truth Synthland; runtime web code is JavaScript with generated JSDoc declarations. Selectable analysis years and exact dates are separate. The authorized interfaces and requirement statuses are in `../02_CONTRACTS.md` and `../REQUIREMENTS_MATRIX.md`. Earlier multi-region, TypeScript-runtime and provisional stand-in instructions are superseded.
+
+
 ## 1. Your mission
 **Saturday:** you get NASA's fire detections onto our laptops and turn them into clean, gridded, coverage-aware tables that the three science roles build on. You also lay the repo's foundations so six people on three operating systems run the same commands.
 **Sunday:** once the data flows, you become the team's storyteller: README, slides, the 30-second video and the submission page.
@@ -44,7 +47,7 @@ Your first hour decides the schedule. **Archive requests go out before any code 
 | Kickoff 16:00–16:30 | Archive requests submitted (by hand); MAP_KEY; country downloads started; `data_availability` saved |
 | A · Sat 18:30 | Repo scaffold, `common/`, `run.py`, CI on three OSes, `regions.yaml` + polygons on main |
 | B · Sat 23:00 | `ingest` passes on `synthland` and on real `us` (one recent year first); data profile posted; overnight job running for the full `us` record |
-| C · Sun 10:00 | All three regions ingested; nowcast fetched; outages verified |
+| C · Sun 10:00 | All the approved whole-US region and separate simulator ingested; nowcast fetched; outages verified |
 | D · Sun 14:00 | README draft, slide skeleton, `docs/submission.md` draft; hotspot archives (Should) |
 | E · Sun 17:00 | Cross-OS reproducibility check done; video script filled from the audit list |
 | 19:00 / 22:00 | Video recorded; project submitted |
@@ -230,7 +233,7 @@ the CSV header matches the contract.
 Acceptance:
   uv run pytest pipeline/ingest -q
   uv run python -m pipeline.ingest.nowcast_fetch --region us
-Run for all three regions at 07:15 and again at 18:00; tell R1 each time.
+Run for all the approved whole-US region and separate simulator at 07:15 and again at 18:00; tell R1 each time.
 ```
 
 ### C2 · Verify outages and external facts (Sun 08:00, 45 min, mostly reading)

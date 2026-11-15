@@ -1,0 +1,920 @@
+{
+  "all_verified": true,
+  "code_version": "4389fe3d",
+  "files": [
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "b5ce25c0c52b94fca3266be4f05b190ef1f412755b833aa39dd4cd51452831c9",
+        "current": "828c387fc664a2317d4b53988fb07893f7f6ac74d759d98af1cfcec6be8e211b",
+        "lf": "828c387fc664a2317d4b53988fb07893f7f6ac74d759d98af1cfcec6be8e211b"
+      },
+      "first_date": "2000-11-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "b5ce25c0c52b94fca3266be4f05b190ef1f412755b833aa39dd4cd51452831c9",
+      "last_date": "2000-12-31",
+      "rows": 3781,
+      "sha256": "828c387fc664a2317d4b53988fb07893f7f6ac74d759d98af1cfcec6be8e211b",
+      "source": "MODIS_data/modis_2000_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "ecaff66e57238fd729cdd95902f0e32e910cc10e97243158c9e0bab6b2de28fb",
+        "current": "887d81f34a76a6461c9788f868965e24d907c9045b619478fb38498fd9191901",
+        "lf": "887d81f34a76a6461c9788f868965e24d907c9045b619478fb38498fd9191901"
+      },
+      "first_date": "2001-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "ecaff66e57238fd729cdd95902f0e32e910cc10e97243158c9e0bab6b2de28fb",
+      "last_date": "2001-12-31",
+      "rows": 44941,
+      "sha256": "887d81f34a76a6461c9788f868965e24d907c9045b619478fb38498fd9191901",
+      "source": "MODIS_data/modis_2001_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "f93cc42d03dc41f3985215521baf9b41f293f3f8f9ff8782b868af0e9d2d8b28",
+        "current": "f6eaf4b0e42d55f6cbde1bcea80e87197e7e889d3f722557e642aeed2a2441e9",
+        "lf": "f6eaf4b0e42d55f6cbde1bcea80e87197e7e889d3f722557e642aeed2a2441e9"
+      },
+      "first_date": "2002-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "f93cc42d03dc41f3985215521baf9b41f293f3f8f9ff8782b868af0e9d2d8b28",
+      "last_date": "2002-12-31",
+      "rows": 79715,
+      "sha256": "f6eaf4b0e42d55f6cbde1bcea80e87197e7e889d3f722557e642aeed2a2441e9",
+      "source": "MODIS_data/modis_2002_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "d94818cf71cfb93ccbf48b824feb2e2276f6c211f523375c0def00d9945da87c",
+        "current": "69768c918f4f1b98506200f7f35fbd0953b2309990273a84b7e5559a4147f8c8",
+        "lf": "69768c918f4f1b98506200f7f35fbd0953b2309990273a84b7e5559a4147f8c8"
+      },
+      "first_date": "2003-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "d94818cf71cfb93ccbf48b824feb2e2276f6c211f523375c0def00d9945da87c",
+      "last_date": "2003-12-31",
+      "rows": 114471,
+      "sha256": "69768c918f4f1b98506200f7f35fbd0953b2309990273a84b7e5559a4147f8c8",
+      "source": "MODIS_data/modis_2003_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "1d806335aa50c8ac81db35cfa2e16066385250e4527dde1aad36eece0b459c30",
+        "current": "a27be492f0afde16cc6d66fe0287b904b0312a6c54ab548ec61b6ed4912ea3af",
+        "lf": "a27be492f0afde16cc6d66fe0287b904b0312a6c54ab548ec61b6ed4912ea3af"
+      },
+      "first_date": "2004-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "1d806335aa50c8ac81db35cfa2e16066385250e4527dde1aad36eece0b459c30",
+      "last_date": "2004-12-31",
+      "rows": 158385,
+      "sha256": "a27be492f0afde16cc6d66fe0287b904b0312a6c54ab548ec61b6ed4912ea3af",
+      "source": "MODIS_data/modis_2004_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "28e0e1f0c628c0e2cce98574c7d78a45fcaa3c4a136e9b0d7a11fb7287fa376c",
+        "current": "60eef7a5497c4e29b25f21655cbd56c722e4b03c7909318deed5bd51a688392c",
+        "lf": "60eef7a5497c4e29b25f21655cbd56c722e4b03c7909318deed5bd51a688392c"
+      },
+      "first_date": "2005-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "28e0e1f0c628c0e2cce98574c7d78a45fcaa3c4a136e9b0d7a11fb7287fa376c",
+      "last_date": "2005-12-31",
+      "rows": 171160,
+      "sha256": "60eef7a5497c4e29b25f21655cbd56c722e4b03c7909318deed5bd51a688392c",
+      "source": "MODIS_data/modis_2005_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "5698172aa2b3ff21e507ae550254ef620d484d49185d6b098857abd3c7de6980",
+        "current": "fdab9f3e3346c915191035c2afaf6b70d6249e4c9e84a374bbb3006de9277320",
+        "lf": "fdab9f3e3346c915191035c2afaf6b70d6249e4c9e84a374bbb3006de9277320"
+      },
+      "first_date": "2006-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "5698172aa2b3ff21e507ae550254ef620d484d49185d6b098857abd3c7de6980",
+      "last_date": "2006-12-31",
+      "rows": 126737,
+      "sha256": "fdab9f3e3346c915191035c2afaf6b70d6249e4c9e84a374bbb3006de9277320",
+      "source": "MODIS_data/modis_2006_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "0150edc3656c683e78e1e5a5b626036f72fd0f7d152cf3f2769535c102546aff",
+        "current": "8e85f4ec10f1aa91598efce79c77bb5ca27181aa72556e00a5129c7f28864160",
+        "lf": "8e85f4ec10f1aa91598efce79c77bb5ca27181aa72556e00a5129c7f28864160"
+      },
+      "first_date": "2007-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "0150edc3656c683e78e1e5a5b626036f72fd0f7d152cf3f2769535c102546aff",
+      "last_date": "2007-12-31",
+      "rows": 142420,
+      "sha256": "8e85f4ec10f1aa91598efce79c77bb5ca27181aa72556e00a5129c7f28864160",
+      "source": "MODIS_data/modis_2007_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "fb6ec64ae6af21e1ad2bcf2811a553262bd99087805a7f39e11bb3c9a866893e",
+        "current": "004596cff60e50d064149fff32c781ec51f14d9078787ba93a668fea7655cee3",
+        "lf": "004596cff60e50d064149fff32c781ec51f14d9078787ba93a668fea7655cee3"
+      },
+      "first_date": "2008-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "fb6ec64ae6af21e1ad2bcf2811a553262bd99087805a7f39e11bb3c9a866893e",
+      "last_date": "2008-12-31",
+      "rows": 119797,
+      "sha256": "004596cff60e50d064149fff32c781ec51f14d9078787ba93a668fea7655cee3",
+      "source": "MODIS_data/modis_2008_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "093fb526e84200e854a1c1b4c36729b9f76e70810ea602d0f58c028fdec76816",
+        "current": "d8f3af0dd28182593d197ae0fea25a73e4189be2a4b50fe7eab03688cef05594",
+        "lf": "d8f3af0dd28182593d197ae0fea25a73e4189be2a4b50fe7eab03688cef05594"
+      },
+      "first_date": "2009-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "093fb526e84200e854a1c1b4c36729b9f76e70810ea602d0f58c028fdec76816",
+      "last_date": "2009-12-31",
+      "rows": 115174,
+      "sha256": "d8f3af0dd28182593d197ae0fea25a73e4189be2a4b50fe7eab03688cef05594",
+      "source": "MODIS_data/modis_2009_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "78fd6bc4e4bddf503b020c58533655fe22803b9a0000fd8adc9ce182fdc3185b",
+        "current": "daa9fe7565393da5520cdb13e07525916fd2a4522f0e03cc4de3dffef2b2c59f",
+        "lf": "daa9fe7565393da5520cdb13e07525916fd2a4522f0e03cc4de3dffef2b2c59f"
+      },
+      "first_date": "2010-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "78fd6bc4e4bddf503b020c58533655fe22803b9a0000fd8adc9ce182fdc3185b",
+      "last_date": "2010-12-31",
+      "rows": 98322,
+      "sha256": "daa9fe7565393da5520cdb13e07525916fd2a4522f0e03cc4de3dffef2b2c59f",
+      "source": "MODIS_data/modis_2010_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "d9bd8fcb5f92602434515846b63e3d7331ad3b1a165e72a5c968f9c459013af7",
+        "current": "25a62ab00492c04ebf0a68c211cf5c2b78536b1616b5481bb1aa85fbee3df7d4",
+        "lf": "25a62ab00492c04ebf0a68c211cf5c2b78536b1616b5481bb1aa85fbee3df7d4"
+      },
+      "first_date": "2011-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "d9bd8fcb5f92602434515846b63e3d7331ad3b1a165e72a5c968f9c459013af7",
+      "last_date": "2011-12-31",
+      "rows": 123867,
+      "sha256": "25a62ab00492c04ebf0a68c211cf5c2b78536b1616b5481bb1aa85fbee3df7d4",
+      "source": "MODIS_data/modis_2011_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "27166c289bb7b2680362642254a1ce0df029464811d545bddbc3a4664f754960",
+        "current": "d11a4d7c204981f27d9d7020b7367be49f64976b8e25464271240602d144295f",
+        "lf": "d11a4d7c204981f27d9d7020b7367be49f64976b8e25464271240602d144295f"
+      },
+      "first_date": "2012-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "27166c289bb7b2680362642254a1ce0df029464811d545bddbc3a4664f754960",
+      "last_date": "2012-12-31",
+      "rows": 137295,
+      "sha256": "d11a4d7c204981f27d9d7020b7367be49f64976b8e25464271240602d144295f",
+      "source": "MODIS_data/modis_2012_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "a96fc0795f5b847a127e417fada053f4aa988a79d7f6bdddf83600ec4086191c",
+        "current": "2ce080c702a7381bba6a9d0b2926e608da8b37db8e1b5a1ce8b905499a8aecc7",
+        "lf": "2ce080c702a7381bba6a9d0b2926e608da8b37db8e1b5a1ce8b905499a8aecc7"
+      },
+      "first_date": "2013-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "a96fc0795f5b847a127e417fada053f4aa988a79d7f6bdddf83600ec4086191c",
+      "last_date": "2013-12-31",
+      "rows": 102348,
+      "sha256": "2ce080c702a7381bba6a9d0b2926e608da8b37db8e1b5a1ce8b905499a8aecc7",
+      "source": "MODIS_data/modis_2013_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "59f5145803169b8dc242eacf14164f544671eeda43fb9686649b822e19bc6684",
+        "current": "655279188cce2caa6668f4c671fb5e6ae36259e01c4e9aaa6f0499621c8f96eb",
+        "lf": "655279188cce2caa6668f4c671fb5e6ae36259e01c4e9aaa6f0499621c8f96eb"
+      },
+      "first_date": "2014-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "59f5145803169b8dc242eacf14164f544671eeda43fb9686649b822e19bc6684",
+      "last_date": "2014-12-31",
+      "rows": 98871,
+      "sha256": "655279188cce2caa6668f4c671fb5e6ae36259e01c4e9aaa6f0499621c8f96eb",
+      "source": "MODIS_data/modis_2014_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "304cc5465c1829aaf58f0d060c8107554d22d20445bbcdb1b256e39da6d3b5e0",
+        "current": "67d731cc9e42d4279421040c33f7d23a6458ae5196b0aa445fa3115866390b5b",
+        "lf": "67d731cc9e42d4279421040c33f7d23a6458ae5196b0aa445fa3115866390b5b"
+      },
+      "first_date": "2015-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "304cc5465c1829aaf58f0d060c8107554d22d20445bbcdb1b256e39da6d3b5e0",
+      "last_date": "2015-12-31",
+      "rows": 146984,
+      "sha256": "67d731cc9e42d4279421040c33f7d23a6458ae5196b0aa445fa3115866390b5b",
+      "source": "MODIS_data/modis_2015_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "69300a906333afdb65797a0d05dac0cbabf035f54874e4a8828a7a2b7c4882bb",
+        "current": "55f87d1248deb753f3076633809004b136f5937aeab5bb39872b13aad2f03b3a",
+        "lf": "55f87d1248deb753f3076633809004b136f5937aeab5bb39872b13aad2f03b3a"
+      },
+      "first_date": "2016-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "69300a906333afdb65797a0d05dac0cbabf035f54874e4a8828a7a2b7c4882bb",
+      "last_date": "2016-12-31",
+      "rows": 112736,
+      "sha256": "55f87d1248deb753f3076633809004b136f5937aeab5bb39872b13aad2f03b3a",
+      "source": "MODIS_data/modis_2016_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "dc7adc7140f727c095c85174be611ad00846b1358d66c068801a0a664572eb8b",
+        "current": "d5256d2c936c4cc0cf84fc8fdc4aedc3ed5e7bd00e6080e4c377da51fa6b7009",
+        "lf": "d5256d2c936c4cc0cf84fc8fdc4aedc3ed5e7bd00e6080e4c377da51fa6b7009"
+      },
+      "first_date": "2017-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "dc7adc7140f727c095c85174be611ad00846b1358d66c068801a0a664572eb8b",
+      "last_date": "2017-12-31",
+      "rows": 152702,
+      "sha256": "d5256d2c936c4cc0cf84fc8fdc4aedc3ed5e7bd00e6080e4c377da51fa6b7009",
+      "source": "MODIS_data/modis_2017_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "cc30e658619a62fcc415f9879dd38834297eaee90dff16729436d35a5f8bb190",
+        "current": "5e6bf58957d2735abde985f9bbc205973f2dd5cea8705968b70c6e60afe23855",
+        "lf": "5e6bf58957d2735abde985f9bbc205973f2dd5cea8705968b70c6e60afe23855"
+      },
+      "first_date": "2018-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "cc30e658619a62fcc415f9879dd38834297eaee90dff16729436d35a5f8bb190",
+      "last_date": "2018-12-31",
+      "rows": 130986,
+      "sha256": "5e6bf58957d2735abde985f9bbc205973f2dd5cea8705968b70c6e60afe23855",
+      "source": "MODIS_data/modis_2018_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "29f8a757035744d279fa462591f3929bcd07679da1b8e021000cec64444907dc",
+        "current": "a478e23cd205e1367aaa3d543da00f15036ee5e0d81071c530ee78cd1368555e",
+        "lf": "a478e23cd205e1367aaa3d543da00f15036ee5e0d81071c530ee78cd1368555e"
+      },
+      "first_date": "2019-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "29f8a757035744d279fa462591f3929bcd07679da1b8e021000cec64444907dc",
+      "last_date": "2019-12-31",
+      "rows": 107213,
+      "sha256": "a478e23cd205e1367aaa3d543da00f15036ee5e0d81071c530ee78cd1368555e",
+      "source": "MODIS_data/modis_2019_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "e184806cbc70c32a01b46414bd0ae00f0ead6cf23bc7b3f2ce1291b06e24a562",
+        "current": "466e2c7616fe1d813a7bfa66971160b64d6baf341fab22ffe8fac06dfbf7961a",
+        "lf": "466e2c7616fe1d813a7bfa66971160b64d6baf341fab22ffe8fac06dfbf7961a"
+      },
+      "first_date": "2020-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "e184806cbc70c32a01b46414bd0ae00f0ead6cf23bc7b3f2ce1291b06e24a562",
+      "last_date": "2020-12-31",
+      "rows": 153848,
+      "sha256": "466e2c7616fe1d813a7bfa66971160b64d6baf341fab22ffe8fac06dfbf7961a",
+      "source": "MODIS_data/modis_2020_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "f1d9ca96d9171ec75df3c62b13547c16e713953f80959ce5ebdec759d28e8569",
+        "current": "bc227a3c85f03fe847d5b96da87cc67588774043c0efa4f0c85179c12187f897",
+        "lf": "bc227a3c85f03fe847d5b96da87cc67588774043c0efa4f0c85179c12187f897"
+      },
+      "first_date": "2021-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "f1d9ca96d9171ec75df3c62b13547c16e713953f80959ce5ebdec759d28e8569",
+      "last_date": "2021-12-31",
+      "rows": 163687,
+      "sha256": "bc227a3c85f03fe847d5b96da87cc67588774043c0efa4f0c85179c12187f897",
+      "source": "MODIS_data/modis_2021_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "9263f3e83135b194f5396450d3920654cb8f30a31a2cf1f92cb5f64db9575aae",
+        "current": "20710b0b6c1630ca44d39c537abb7c10f9c0050f66770b936edc412ef0e4be76",
+        "lf": "20710b0b6c1630ca44d39c537abb7c10f9c0050f66770b936edc412ef0e4be76"
+      },
+      "first_date": "2022-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "9263f3e83135b194f5396450d3920654cb8f30a31a2cf1f92cb5f64db9575aae",
+      "last_date": "2022-12-31",
+      "rows": 130358,
+      "sha256": "20710b0b6c1630ca44d39c537abb7c10f9c0050f66770b936edc412ef0e4be76",
+      "source": "MODIS_data/modis_2022_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "d0b3ef1409ba5a90a1cdaa3ce356102392a5821b2dddfa3d58c998ec68b46246",
+        "current": "8f693b80488414db0494deac1081f4c658769618100e402a830fb823f8f6ec1f",
+        "lf": "8f693b80488414db0494deac1081f4c658769618100e402a830fb823f8f6ec1f"
+      },
+      "first_date": "2023-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "d0b3ef1409ba5a90a1cdaa3ce356102392a5821b2dddfa3d58c998ec68b46246",
+      "last_date": "2023-12-31",
+      "rows": 94000,
+      "sha256": "8f693b80488414db0494deac1081f4c658769618100e402a830fb823f8f6ec1f",
+      "source": "MODIS_data/modis_2023_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "aeaf34667d4815b22ae4e2ebad553c0439595f58093773e3d7998797203caa9b",
+        "current": "26c5f22e9d41bd8d5d22402eaf5293dc7a5bc7415d37da42cd2e0a3b78b95ca4",
+        "lf": "26c5f22e9d41bd8d5d22402eaf5293dc7a5bc7415d37da42cd2e0a3b78b95ca4"
+      },
+      "first_date": "2024-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "aeaf34667d4815b22ae4e2ebad553c0439595f58093773e3d7998797203caa9b",
+      "last_date": "2024-12-31",
+      "rows": 123712,
+      "sha256": "26c5f22e9d41bd8d5d22402eaf5293dc7a5bc7415d37da42cd2e0a3b78b95ca4",
+      "source": "MODIS_data/modis_2024_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "ac386ee7f135121373f2b05fa0decf83d1efce1a4a00f6fc5aba736dcadffa8d",
+        "current": "2b66bf1932202eaa9ddbdf408e2ec590de2bd84abd6c634d68952d4d196c8730",
+        "lf": "2b66bf1932202eaa9ddbdf408e2ec590de2bd84abd6c634d68952d4d196c8730"
+      },
+      "first_date": "2025-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "ac386ee7f135121373f2b05fa0decf83d1efce1a4a00f6fc5aba736dcadffa8d",
+      "last_date": "2025-12-31",
+      "rows": 109845,
+      "sha256": "2b66bf1932202eaa9ddbdf408e2ec590de2bd84abd6c634d68952d4d196c8730",
+      "source": "MODIS_data/modis_2025_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "d0a321abc646be5ce6635c0bfe06633ed80bd6f0eb21b0125d45a6a65f9741f8",
+        "current": "2239e26a8eb8378d20b69beaf307ab49315b19e3ccf8db076a33c32280a75f8f",
+        "lf": "2239e26a8eb8378d20b69beaf307ab49315b19e3ccf8db076a33c32280a75f8f"
+      },
+      "first_date": "2018-04-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "d0a321abc646be5ce6635c0bfe06633ed80bd6f0eb21b0125d45a6a65f9741f8",
+      "last_date": "2018-12-31",
+      "rows": 461477,
+      "sha256": "2239e26a8eb8378d20b69beaf307ab49315b19e3ccf8db076a33c32280a75f8f",
+      "source": "VIIRS-JPSS_data/viirs-jpss1_2018_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "7a41662a51ce0443f353ae01555ba9e14bc71cfa6ad41787de33a12a825a8448",
+        "current": "e72e16e2cc21f1448ad16e3d70e2bdc2f9566065bd31d928a010b4987ac7f545",
+        "lf": "e72e16e2cc21f1448ad16e3d70e2bdc2f9566065bd31d928a010b4987ac7f545"
+      },
+      "first_date": "2019-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "7a41662a51ce0443f353ae01555ba9e14bc71cfa6ad41787de33a12a825a8448",
+      "last_date": "2019-12-31",
+      "rows": 451429,
+      "sha256": "e72e16e2cc21f1448ad16e3d70e2bdc2f9566065bd31d928a010b4987ac7f545",
+      "source": "VIIRS-JPSS_data/viirs-jpss1_2019_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "1704c336b1a84f2f590435c1d9c1800b35647b1f96628c76befbf2ef7d0f1527",
+        "current": "665dccf07cc84acb3e23e128886394c2b7ece6f165f66569040685e98d0fd7a1",
+        "lf": "665dccf07cc84acb3e23e128886394c2b7ece6f165f66569040685e98d0fd7a1"
+      },
+      "first_date": "2020-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "1704c336b1a84f2f590435c1d9c1800b35647b1f96628c76befbf2ef7d0f1527",
+      "last_date": "2020-12-31",
+      "rows": 665078,
+      "sha256": "665dccf07cc84acb3e23e128886394c2b7ece6f165f66569040685e98d0fd7a1",
+      "source": "VIIRS-JPSS_data/viirs-jpss1_2020_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "f78a20d1993b33f9852ef62771686f172a444030cc71d9f0c970c557e090741d",
+        "current": "9abbe7b1f7b58926b3b6a242c9b3ee9d59ba7c98b08ddc1e019d517fb8a6be21",
+        "lf": "9abbe7b1f7b58926b3b6a242c9b3ee9d59ba7c98b08ddc1e019d517fb8a6be21"
+      },
+      "first_date": "2021-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "f78a20d1993b33f9852ef62771686f172a444030cc71d9f0c970c557e090741d",
+      "last_date": "2021-12-31",
+      "rows": 670917,
+      "sha256": "9abbe7b1f7b58926b3b6a242c9b3ee9d59ba7c98b08ddc1e019d517fb8a6be21",
+      "source": "VIIRS-JPSS_data/viirs-jpss1_2021_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "553767657f9619233a79b1e4e202bfc8d9483da89d08ec508dd0d20ffae68b89",
+        "current": "5896f97ed7a926afa42f715e9a53bd014eaf97ec56fe019be8eb36a9b8ea29d9",
+        "lf": "5896f97ed7a926afa42f715e9a53bd014eaf97ec56fe019be8eb36a9b8ea29d9"
+      },
+      "first_date": "2022-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "553767657f9619233a79b1e4e202bfc8d9483da89d08ec508dd0d20ffae68b89",
+      "last_date": "2022-12-31",
+      "rows": 546431,
+      "sha256": "5896f97ed7a926afa42f715e9a53bd014eaf97ec56fe019be8eb36a9b8ea29d9",
+      "source": "VIIRS-JPSS_data/viirs-jpss1_2022_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "666850b81ff1ce5af79cd92a2465130c44d0e179422844c84c488c1e5f9bc55f",
+        "current": "4ba7e307439e9eb7ada988fddb80e5833f062da80b51b2253fe416e23234df69",
+        "lf": "4ba7e307439e9eb7ada988fddb80e5833f062da80b51b2253fe416e23234df69"
+      },
+      "first_date": "2023-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "666850b81ff1ce5af79cd92a2465130c44d0e179422844c84c488c1e5f9bc55f",
+      "last_date": "2023-12-31",
+      "rows": 390873,
+      "sha256": "4ba7e307439e9eb7ada988fddb80e5833f062da80b51b2253fe416e23234df69",
+      "source": "VIIRS-JPSS_data/viirs-jpss1_2023_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "be802e6aafb9b60a82c34e87bcce26c9193be05a02c5997ab6f5eabaab77388a",
+        "current": "50051277ace45fd5dfa833efeafc118c7fd453c227e713c11c4804a11964b077",
+        "lf": "50051277ace45fd5dfa833efeafc118c7fd453c227e713c11c4804a11964b077"
+      },
+      "first_date": "2024-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "be802e6aafb9b60a82c34e87bcce26c9193be05a02c5997ab6f5eabaab77388a",
+      "last_date": "2024-12-31",
+      "rows": 535136,
+      "sha256": "50051277ace45fd5dfa833efeafc118c7fd453c227e713c11c4804a11964b077",
+      "source": "VIIRS-JPSS_data/viirs-jpss1_2024_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "9dc9ae4d85cfb1f924ad07d4ece287179c52cb0d298f6e808635c50fe70f6cbf",
+        "current": "e16cca6624e3aebee6b86b63348d74874a0d5dd21467b27d5bd6717d64c59357",
+        "lf": "e16cca6624e3aebee6b86b63348d74874a0d5dd21467b27d5bd6717d64c59357"
+      },
+      "first_date": "2025-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "9dc9ae4d85cfb1f924ad07d4ece287179c52cb0d298f6e808635c50fe70f6cbf",
+      "last_date": "2025-12-31",
+      "rows": 485403,
+      "sha256": "e16cca6624e3aebee6b86b63348d74874a0d5dd21467b27d5bd6717d64c59357",
+      "source": "VIIRS-JPSS_data/viirs-jpss1_2025_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "00203161c5fe44c98ff1458519363ad5b96217b616f46b480c18ba78a5bf3d20",
+        "current": "a53d3cd248de33920a6eac8bfcb7c6d67642ec4adbf2162427b2021ec4ea8a4d",
+        "lf": "a53d3cd248de33920a6eac8bfcb7c6d67642ec4adbf2162427b2021ec4ea8a4d"
+      },
+      "first_date": "2012-01-20",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "00203161c5fe44c98ff1458519363ad5b96217b616f46b480c18ba78a5bf3d20",
+      "last_date": "2012-12-31",
+      "rows": 536477,
+      "sha256": "a53d3cd248de33920a6eac8bfcb7c6d67642ec4adbf2162427b2021ec4ea8a4d",
+      "source": "VIIRS-SNPP_data/viirs-snpp_2012_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "bedb3c1b1145627af64259ac28cba3cd25efd995a33fbbc121e0cdc5c0160ecf",
+        "current": "04a0b6ee7238bf349a2383fcecfa7c07d6df53ae99c4d46d634508b352fe741f",
+        "lf": "04a0b6ee7238bf349a2383fcecfa7c07d6df53ae99c4d46d634508b352fe741f"
+      },
+      "first_date": "2013-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "bedb3c1b1145627af64259ac28cba3cd25efd995a33fbbc121e0cdc5c0160ecf",
+      "last_date": "2013-12-31",
+      "rows": 404761,
+      "sha256": "04a0b6ee7238bf349a2383fcecfa7c07d6df53ae99c4d46d634508b352fe741f",
+      "source": "VIIRS-SNPP_data/viirs-snpp_2013_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "bd45a7ebc631594a877e44bb2f260e937dabc0791a988655f8d843e418980c25",
+        "current": "f6689df5187d3965dd16483736487bc42f714e683684fdeebddd40733bc5ba18",
+        "lf": "f6689df5187d3965dd16483736487bc42f714e683684fdeebddd40733bc5ba18"
+      },
+      "first_date": "2014-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "bd45a7ebc631594a877e44bb2f260e937dabc0791a988655f8d843e418980c25",
+      "last_date": "2014-12-31",
+      "rows": 377204,
+      "sha256": "f6689df5187d3965dd16483736487bc42f714e683684fdeebddd40733bc5ba18",
+      "source": "VIIRS-SNPP_data/viirs-snpp_2014_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "947e5313b30cf32188e20da571b435702f07444d9c3951dcdc002c24e41c903d",
+        "current": "40239627dbcd773dda85e80d4ded6c2ef747c40d9c413cc3755be266f30e08ae",
+        "lf": "40239627dbcd773dda85e80d4ded6c2ef747c40d9c413cc3755be266f30e08ae"
+      },
+      "first_date": "2015-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "947e5313b30cf32188e20da571b435702f07444d9c3951dcdc002c24e41c903d",
+      "last_date": "2015-12-31",
+      "rows": 581042,
+      "sha256": "40239627dbcd773dda85e80d4ded6c2ef747c40d9c413cc3755be266f30e08ae",
+      "source": "VIIRS-SNPP_data/viirs-snpp_2015_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "42579df8b025099398a5f55964ed5833f14a0b40218a98bf18c4dcd6a159d7cb",
+        "current": "beb561086694f612700a97c093f551a83835c53ab534fe430ddcfd0b4f301820",
+        "lf": "beb561086694f612700a97c093f551a83835c53ab534fe430ddcfd0b4f301820"
+      },
+      "first_date": "2016-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "42579df8b025099398a5f55964ed5833f14a0b40218a98bf18c4dcd6a159d7cb",
+      "last_date": "2016-12-31",
+      "rows": 432975,
+      "sha256": "beb561086694f612700a97c093f551a83835c53ab534fe430ddcfd0b4f301820",
+      "source": "VIIRS-SNPP_data/viirs-snpp_2016_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "8b463e2ce8ba63ea01d68e49a0fd3478e35bd33769056e0728109fb6c1a1fe63",
+        "current": "72b71216f7d53afd8fd57384f2618e0805807208e9de88a76ea2e80c059ee7f4",
+        "lf": "72b71216f7d53afd8fd57384f2618e0805807208e9de88a76ea2e80c059ee7f4"
+      },
+      "first_date": "2017-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "8b463e2ce8ba63ea01d68e49a0fd3478e35bd33769056e0728109fb6c1a1fe63",
+      "last_date": "2017-12-31",
+      "rows": 596168,
+      "sha256": "72b71216f7d53afd8fd57384f2618e0805807208e9de88a76ea2e80c059ee7f4",
+      "source": "VIIRS-SNPP_data/viirs-snpp_2017_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "9b7d6ca56fb45a5d8a95aa1de61ef5797c1bc34b07f6270e58a300dea0316f1a",
+        "current": "38963a7315959b2d6db42246c88ba06735e280507e47a70b16ead0620f967b79",
+        "lf": "38963a7315959b2d6db42246c88ba06735e280507e47a70b16ead0620f967b79"
+      },
+      "first_date": "2018-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "9b7d6ca56fb45a5d8a95aa1de61ef5797c1bc34b07f6270e58a300dea0316f1a",
+      "last_date": "2018-12-31",
+      "rows": 556244,
+      "sha256": "38963a7315959b2d6db42246c88ba06735e280507e47a70b16ead0620f967b79",
+      "source": "VIIRS-SNPP_data/viirs-snpp_2018_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "bf64efa9606ed91058c79a8fa575ca5c917011d5ac94d1b092c3db90ebe17d71",
+        "current": "368ddcfce96b63e6a61791809b959ea7e1d0322ff3de04bbd241a8fe75a43eef",
+        "lf": "368ddcfce96b63e6a61791809b959ea7e1d0322ff3de04bbd241a8fe75a43eef"
+      },
+      "first_date": "2019-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "bf64efa9606ed91058c79a8fa575ca5c917011d5ac94d1b092c3db90ebe17d71",
+      "last_date": "2019-12-31",
+      "rows": 453400,
+      "sha256": "368ddcfce96b63e6a61791809b959ea7e1d0322ff3de04bbd241a8fe75a43eef",
+      "source": "VIIRS-SNPP_data/viirs-snpp_2019_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "5017e27814d42b4ecd74118b263a8c43efec2636568d43e66b41afcde5f89c17",
+        "current": "309c1c97f0d81013a4ed28768c3078aafcf1cd49bc453b4591d66a5227dc8128",
+        "lf": "309c1c97f0d81013a4ed28768c3078aafcf1cd49bc453b4591d66a5227dc8128"
+      },
+      "first_date": "2020-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "5017e27814d42b4ecd74118b263a8c43efec2636568d43e66b41afcde5f89c17",
+      "last_date": "2020-12-31",
+      "rows": 672822,
+      "sha256": "309c1c97f0d81013a4ed28768c3078aafcf1cd49bc453b4591d66a5227dc8128",
+      "source": "VIIRS-SNPP_data/viirs-snpp_2020_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "bba768bf2911cef1962c893e7e84bb336f70117b5eb0cb1d719758af6ec7481c",
+        "current": "4130c8ce327424bb9b1a54e09667f56fbe52d20649a09dcdd8f64d5e5689b9a9",
+        "lf": "4130c8ce327424bb9b1a54e09667f56fbe52d20649a09dcdd8f64d5e5689b9a9"
+      },
+      "first_date": "2021-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "bba768bf2911cef1962c893e7e84bb336f70117b5eb0cb1d719758af6ec7481c",
+      "last_date": "2021-12-31",
+      "rows": 664995,
+      "sha256": "4130c8ce327424bb9b1a54e09667f56fbe52d20649a09dcdd8f64d5e5689b9a9",
+      "source": "VIIRS-SNPP_data/viirs-snpp_2021_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "210aee533077856c7069d59df91d45c36ddcf8045f0e457fc4f946b971166119",
+        "current": "ec3dad0560ac49ae6111bc6981af65cf0debe9379b03737489f6b1e3775ccf6c",
+        "lf": "ec3dad0560ac49ae6111bc6981af65cf0debe9379b03737489f6b1e3775ccf6c"
+      },
+      "first_date": "2022-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "210aee533077856c7069d59df91d45c36ddcf8045f0e457fc4f946b971166119",
+      "last_date": "2022-12-31",
+      "rows": 531089,
+      "sha256": "ec3dad0560ac49ae6111bc6981af65cf0debe9379b03737489f6b1e3775ccf6c",
+      "source": "VIIRS-SNPP_data/viirs-snpp_2022_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "72f191257d57cef3201f971cad64ca017cd95bf842270ef8549c353b4fb9831e",
+        "current": "d419abfb7d39d8040fd4487aee7e8003b1940ae5eb0cd95aa244cd7e303d4b4d",
+        "lf": "d419abfb7d39d8040fd4487aee7e8003b1940ae5eb0cd95aa244cd7e303d4b4d"
+      },
+      "first_date": "2023-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "72f191257d57cef3201f971cad64ca017cd95bf842270ef8549c353b4fb9831e",
+      "last_date": "2023-12-31",
+      "rows": 388672,
+      "sha256": "d419abfb7d39d8040fd4487aee7e8003b1940ae5eb0cd95aa244cd7e303d4b4d",
+      "source": "VIIRS-SNPP_data/viirs-snpp_2023_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "d878314871904f0b6178d4e4a410f608a2723a6c973f1622c8328566aa290872",
+        "current": "b282c996b6929facc1d5726045e2ad14235a8ac10900daff08edaee9a8f2b200",
+        "lf": "b282c996b6929facc1d5726045e2ad14235a8ac10900daff08edaee9a8f2b200"
+      },
+      "first_date": "2024-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "d878314871904f0b6178d4e4a410f608a2723a6c973f1622c8328566aa290872",
+      "last_date": "2024-12-31",
+      "rows": 484736,
+      "sha256": "b282c996b6929facc1d5726045e2ad14235a8ac10900daff08edaee9a8f2b200",
+      "source": "VIIRS-SNPP_data/viirs-snpp_2024_United_States.csv"
+    },
+    {
+      "content_unchanged_after_eol_normalisation": true,
+      "filename_year_matches_dates": true,
+      "fingerprints": {
+        "crlf": "cdeb898f1d5f01c42ade76a8ebdf32141f787cd181176589a8815e6956160819",
+        "current": "e7df11c2739bf4dbec98d15dcc6cd7d5d19c1fc6edfc51750a5e3a1a6dd3102d",
+        "lf": "e7df11c2739bf4dbec98d15dcc6cd7d5d19c1fc6edfc51750a5e3a1a6dd3102d"
+      },
+      "first_date": "2025-01-01",
+      "header_matches_inventory": true,
+      "historical_matches": [
+        "crlf"
+      ],
+      "historical_sha256": "cdeb898f1d5f01c42ade76a8ebdf32141f787cd181176589a8815e6956160819",
+      "last_date": "2025-12-31",
+      "rows": 469809,
+      "sha256": "e7df11c2739bf4dbec98d15dcc6cd7d5d19c1fc6edfc51750a5e3a1a6dd3102d",
+      "source": "VIIRS-SNPP_data/viirs-snpp_2025_United_States.csv"
+    }
+  ],
+  "original_csvs_rewritten": false,
+  "source_directory": "C:\\Users\\siv_l\\NASA-Project-Quant\\data"
+}

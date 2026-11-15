@@ -1,21 +1,11 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "methods (TEMPORARY, R5; replace with contracts/methods.schema.json from R1)",
+  "title": "methods (TEMPORARY, R5; replace with contracts/methods.schema.json from R1; sections optional so each missing part hides itself on the Methods page)",
   "type": "object",
   "required": [
     "schema_version",
     "generated_at",
-    "code_version",
-    "decisions",
-    "validation",
-    "drift",
-    "eyesight",
-    "planted_truth",
-    "inputs",
-    "filters",
-    "sources",
-    "limitations",
-    "ai_use"
+    "code_version"
   ],
   "properties": {
     "schema_version": {

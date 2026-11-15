@@ -1,0 +1,121 @@
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { cleanup, render, screen, waitFor, within } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import Methods from "../Methods.jsx";
+import { clearFetchCache } from "@/data/fetchJson.js";
+import { resetSample } from "@/data/sample.js";
+import { mockFetch } from "@/test/mockFetch.js";
+import { manifestJson, methodsJson, regionsJson } from "@/test/fixtures.js";
+
+beforeEach(() => {
+  clearFetchCache();
+  resetSample();
+});
+afterEach(() => {
+  cleanup();
+  vi.unstubAllGlobals();
+});
+
+const renderMethods = () =>
+  render(
+    <MemoryRouter>
+      <TooltipProvider>
+        <Methods />
+      </TooltipProvider>
+    </MemoryRouter>,
+  );
+
+function fullMethods() {
+  const m = methodsJson([{ claim_id: "snpp_end", text: "Claim text.", url: "https://example.org/x", checked: "2026-11-14" }]);
+  return {
+    ...m,
+    validation: [
+      { region: "testland", test: "loyo_weekly_wape", method: "tier1", value: 0.2, baselines: { raw_viirs: 0.9, annual_ratio: 0.15 }, n: 520, years: [2013, 2022], note: "" },
+      { region: "testland", test: "handoff_annual_mape", method: "tier1", value: 0.05, n: 10, years: [2013, 2022], note: "A note." },
+    ],
+    drift: [{ region: "testland", sensor: "snpp", year: 2013, k_annual: 0.5, lo: 0.45, hi: 0.55 }],
+    eyesight: [
+      { region: "testland", status: "exploratory", k_compare: [{ month: 1, k_tier1: 0.5, k_tier2: 0.6 }] },
+      { region: "synthland", status: "absent" },
+    ],
+    planted_truth: [
+      { quantity: "k_annual_snpp", truth: 0.5, recovered: 0.49, tolerance: 0.03, pass: true },
+      { quantity: "trend", truth: 1, recovered: 2, tolerance: 0.1, pass: false },
+    ],
+    inputs: [{ source: "MODIS_SP", region: "testland", rows: 12345, first_date: "2003-01-01", last_date: "2022-12-31", downloaded: "2026-11-14", via: "archive" }],
+    filters: [{ region: "testland", sensor: "aqua", step: "confidence", rows_in: 100, rows_dropped: 7 }],
+    limitations: ["Limitation one."],
+    ai_use: "AI use text.",
+  };
+}
+
+const calibration = {
+  schema_version: "1.0", generated_at: "x", code_version: "test", region: "testland", reference: "aqua_day",
+  count_resolution: 6, shrinkage_n0: 50,
+  eras: [
+    { from: "2003-01-01", to: "2022-12-31", source: "aqua", kind: "observed" },
+    { from: "2023-01-01", to: null, source: "snpp", kind: "harmonized" },
+  ],
+  fit_window: {}, noaa20_method: "direct", k_annual: {}, k: {},
+};
+
+const section = (name) => screen.getByRole("region", { name });
+
+describe("Methods page", () => {
+  it("renders all seven parts from methods.json", async () => {
+    mockFetch({
+      "methods.json": fullMethods(),
+      "manifest.json": manifestJson(false),
+      "regions.json": regionsJson({ files: ["calibration"] }),
+      "testland/calibration.json": calibration,
+      "numbers_audit.md": "# audit",
+    });
+    renderMethods();
+    await screen.findByRole("region", { name: "What we did, in five steps" });
+    expect(section("What we did, in five steps").textContent).toContain("H3 resolution 6");
+    expect(section("What we did, in five steps").textContent).toContain("2022-12-31");
+
+    await waitFor(() => expect(section("The ruler was bending").textContent).toContain("MODIS Aqua"));
+    expect(section("The ruler was bending").textContent).toContain("today");
+
+    const v = section("Does the translation work?");
+    expect(v.textContent).toContain("Weekly error with each year held out (WAPE)");
+    expect(v.textContent).toContain("Ours is not lower than: One factor for the whole year");
+    expect(v.textContent).toContain("match partly by construction");
+
+    const p = section("Tested on a world where we know the answer");
+    expect(within(p).getByText("Pass")).toBeTruthy();
+    expect(within(p).getByText("Fail")).toBeTruthy();
+    await waitFor(() => expect(within(p).getByRole("link", { name: "numbers audit" })).toBeTruthy());
+
+    const e = section("How well did the old satellite see?");
+    expect(e.textContent).toContain("Exploratory");
+    expect(e.textContent).toContain("Not available");
+    expect(e.querySelectorAll('[data-viz-placeholder="EyesightCurve"]')).toHaveLength(1);
+
+    const d = section("Data");
+    expect(d.textContent).toContain("12,345");
+    expect(d.textContent).toContain("checked 2026-11-14");
+    expect(section("Limitations").textContent).toContain("Limitation one.");
+    expect(section("How we used AI").textContent).toContain("AI use text.");
+    expect(section("Credits").textContent).toContain("Not affiliated with or endorsed by NASA.");
+  });
+
+  it("hides every missing part and keeps the credits", async () => {
+    const bare = { schema_version: "1.0", generated_at: "x", code_version: "test" };
+    mockFetch({ "methods.json": bare, "regions.json": regionsJson({ files: [] }) });
+    renderMethods();
+    await waitFor(() => expect(screen.getByRole("region", { name: "Credits" })).toBeTruthy());
+    for (const t of ["What we did, in five steps", "Does the translation work?", "Tested on a world where we know the answer", "How well did the old satellite see?", "Data", "Limitations"]) {
+      expect(screen.queryByRole("region", { name: t }), t).toBeNull();
+    }
+  });
+
+  it("explains a missing methods file and still shows the credits", async () => {
+    mockFetch({});
+    renderMethods();
+    await waitFor(() => expect(screen.getByText(/Not available for this region yet|could not be loaded/)).toBeTruthy());
+    expect(screen.getByRole("region", { name: "Credits" })).toBeTruthy();
+  });
+});

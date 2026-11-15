@@ -51,6 +51,14 @@ def tmp_dir() -> Path:
     return data_root() / "tmp"
 
 
+def exports_dir() -> Path:
+    return data_root() / "exports"
+
+
+def hotspot_archive(region, sensor, year) -> Path:
+    return exports_dir() / f"hotspots_{region}_{sensor}_{year}.csv.gz"
+
+
 def raw_csv(region, prefix, via, year) -> Path:
     return raw_dir(region) / f"{prefix}_{via}_{year}.csv"
 

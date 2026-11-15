@@ -36,6 +36,10 @@ def test_paths_and_cli_override(tmp_path, monkeypatch):
     assert paths.harmonized_figures_dir("test") == paths.harmonized_dir("test") / "figures"
     assert paths.eyesight_figures_dir("test") == paths.eyesight_dir("test") / "figures"
     assert paths.tmp_dir() == tmp_path / "cli" / "tmp"
+    assert paths.exports_dir() == tmp_path / "cli" / "exports"
+    assert paths.hotspot_archive("us", "aqua", 2023) == (
+        tmp_path / "cli" / "exports" / "hotspots_us_aqua_2023.csv.gz"
+    )
     assert paths.raw_csv("test", "modis", "country", 2023) == (
         tmp_path / "cli" / "raw" / "test" / "modis_country_2023.csv"
     )

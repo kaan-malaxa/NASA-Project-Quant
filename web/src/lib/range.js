@@ -26,19 +26,19 @@ export function resolveDailyLens(daily, lens) {
   return { lens: "harmonized", fellBack: lens !== "harmonized" };
 }
 
-function seriesNameAt(lens, year) {
+export function seriesNameAt(lens, year) {
   if (lens !== "naive_splice") return lens;
   return year < NAIVE_SPLICE_SWITCH_YEAR ? "aqua_raw" : "viirs_raw";
 }
 
 /** kind_runs lookup: the run for (series, date); null when no run covers it. */
-function makeKindLookup(daily) {
+export function makeKindLookup(daily) {
   const runs = (daily.kind_runs || []).map((r) => ({ ...r, toIso: r.to ?? "9999-12-31" }));
   return (series, iso) => runs.find((r) => r.series === series && r.from <= iso && iso <= r.toIso) ?? null;
 }
 
 /** Kind of a day that has data when no kind_run covers it: sample files stay sample; raw series are as recorded. */
-function fallbackKind(daily, series) {
+export function fallbackKind(daily, series) {
   if (daily.code_version === "sample") return "sample";
   return series.endsWith("_raw") ? "observed" : "harmonized";
 }

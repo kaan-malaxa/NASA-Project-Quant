@@ -43,7 +43,7 @@ function Toggle({ label, value, options, onChange, renderItem }) {
 }
 
 /** Screen 4 · Calendar: clock / weeks / months, six lenses, activity / anomaly, cell detail. */
-export default function CalendarSection({ files, url, setUrl, lastDataDay }) {
+export default function CalendarSection({ files, url, setUrl, lastDataDay, chartRef }) {
   const { weekly, monthly, climatology, season } = files;
   const [selected, setSelected] = useState(null);
 
@@ -114,6 +114,7 @@ export default function CalendarSection({ files, url, setUrl, lastDataDay }) {
               range={range}
               currentYear={currentYear}
               onSelect={setSelected}
+              ref={chartRef}
               placeholderClassName="h-80"
             />
           ) : (
@@ -128,6 +129,7 @@ export default function CalendarSection({ files, url, setUrl, lastDataDay }) {
               mode={url.mode}
               range={range}
               onSelect={setSelected}
+              ref={chartRef}
               placeholderClassName="h-80"
             />
           )}

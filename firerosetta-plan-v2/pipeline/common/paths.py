@@ -106,6 +106,15 @@ def celldays(region) -> Path:
     return grid_dir(region) / "celldays.parquet"
 
 
+def repro_inputs(region, project_root=None, derived_root=None) -> tuple[Path, Path]:
+    root = Path(project_root).expanduser().resolve() if project_root is not None else PROJECT_ROOT
+    derived = (
+        Path(derived_root).expanduser().resolve() if derived_root is not None
+        else data_root() if project_root is None else root / "data"
+    )
+    return root / "web" / "public" / "data", derived / "grid" / region / "celldays.parquet"
+
+
 def coverage(region) -> Path:
     return grid_dir(region) / "coverage.parquet"
 

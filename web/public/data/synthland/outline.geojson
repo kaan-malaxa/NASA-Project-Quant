@@ -1,0 +1,40 @@
+{
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              10.0,
+              10.0
+            ],
+            [
+              12.0,
+              10.0
+            ],
+            [
+              12.0,
+              12.0
+            ],
+            [
+              10.0,
+              12.0
+            ],
+            [
+              10.0,
+              10.0
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "id": "synthland",
+        "membership": "bbox",
+        "name": "Synthland (planted-truth test)"
+      },
+      "type": "Feature"
+    }
+  ],
+  "type": "FeatureCollection"
+}

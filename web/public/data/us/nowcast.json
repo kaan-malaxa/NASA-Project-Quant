@@ -1,0 +1,35 @@
+{
+  "as_of": null,
+  "baseline_years": [
+    2003,
+    2025
+  ],
+  "code_version": "bf23ae97",
+  "generated_at": "2026-11-15T05:54:18Z",
+  "hi": null,
+  "history": [],
+  "input_note": "Near-real-time input; calibration fitted on science-quality data.",
+  "kind": "missing",
+  "lo": null,
+  "month_to_date": {
+    "median": null,
+    "month": 12,
+    "percentile": null,
+    "ratio": null,
+    "through_day": 31,
+    "value": null
+  },
+  "percentile": null,
+  "region": "us",
+  "schema_version": "1.0",
+  "sentence": "No recent satellite data.",
+  "source": "VIIRS_NOAA20_NRT",
+  "status": "unavailable",
+  "unit": "Aqua-equivalent fire cell-days per 7 days",
+  "value": null,
+  "window": {
+    "days_covered": 0,
+    "end": null,
+    "start": null
+  }
+}

@@ -1,1 +1,81 @@
-{"code_version":"sample","generated_at":"2026-11-14T00:00:00Z","regions":[{"bbox":[-124.8,24.4,-66.9,49.4],"centroid":[-95.85,36.9],"country":"US","files":["weekly","monthly","daily","climatology","season","trend","ruler","nowcast","hex","calibration","outline"],"fire_type":"Wildfire, prescribed and agricultural burning","id":"conus","last_data_day":"2026-11-13","membership":"bbox","n_cells_r6":387103,"name":"Contiguous United States","optional_files":["cells_monthly","downloads","hotspots_recent"],"story":"Summer and autumn wildfire in the West; prescribed and agricultural burning in the Southeast and the Great Plains, mostly in spring.","synthetic":false}],"schema_version":"1.0"}
+{
+  "code_version": "bf23ae97",
+  "generated_at": "2026-11-15T05:54:45Z",
+  "regions": [
+    {
+      "bbox": [
+        -179.144,
+        18.906,
+        179.781,
+        71.413
+      ],
+      "centroid": [
+        -112.496,
+        45.688
+      ],
+      "country": "US",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "us",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 257738,
+      "name": "United States",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across the United States, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        10.0,
+        10.0,
+        12.0,
+        12.0
+      ],
+      "centroid": [
+        11.0,
+        11.0
+      ],
+      "country": "ZZ",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline"
+      ],
+      "fire_type": "Simulated",
+      "id": "synthland",
+      "last_data_day": "2026-11-13",
+      "membership": "bbox",
+      "n_cells_r6": 1355,
+      "name": "Synthland (planted-truth test)",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "A simulated region where the right answer is known.",
+      "synthetic": true
+    }
+  ],
+  "schema_version": "1.0"
+}

@@ -2,101 +2,186 @@
 
 Every headline number on the site, with the file and JSON Pointer it comes from. No number may appear in the pitch, slides, README or video unless it is on this list. Values are copied exactly from the files; sentences are quoted exactly.
 
-Built from code_version sample.
+Built from code_version a25fb442, bf23ae97.
 
-**SAMPLE DATA: these numbers are fabricated for design work. Do not use them anywhere.**
+## United States (`us`)
 
-## Contiguous United States (`conus`)
-
-- jump multiple (value): 3.947  conus/ruler.json#/jump_multiple/value
-- jump multiple (lo): 3.473  conus/ruler.json#/jump_multiple/lo
-- jump multiple (hi): 4.643  conus/ruler.json#/jump_multiple/hi
-- jump multiple years: [2013, 2022]  conus/ruler.json#/jump_multiple/years
-- ruler sentence: "In Contiguous United States, VIIRS reports about 3.9 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  conus/ruler.json#/sentence
-- harmonized trend pct_per_decade: 2.0  conus/trend.json#/harmonized/pct_per_decade
-- harmonized trend lo: -6.0  conus/trend.json#/harmonized/lo
-- harmonized trend hi: 9.0  conus/trend.json#/harmonized/hi
-- harmonized trend direction: "no_clear_change"  conus/trend.json#/harmonized/direction
-- naive trend pct_per_decade: 38.0  conus/trend.json#/naive/pct_per_decade
-- naive trend lo: 25.0  conus/trend.json#/naive/lo
-- naive trend hi: 52.0  conus/trend.json#/naive/hi
-- naive trend direction: "rising"  conus/trend.json#/naive/direction
-- trend years: [2003, 2025]  conus/trend.json#/years
-- verdict sentence_id: "artifact_flat"  conus/trend.json#/sentence_id
-- verdict sentence: "The raw record suggests burning rose 38% per decade. After correcting for the sensor change, there is no clear change (-6 to 9% per decade)."  conus/trend.json#/sentence
-- critical weeks: [11, 12, 13, 14, 15, 16, 17, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39]  conus/season.json#/critical_weeks
-- window w1 label: "early-July to late-September"  conus/season.json#/windows/0/label
-- window w1 start_week: 27  conus/season.json#/windows/0/start_week
-- window w1 peak_week: 33  conus/season.json#/windows/0/peak_week
-- window w1 end_week: 39  conus/season.json#/windows/0/end_week
-- window w1 share: 0.599  conus/season.json#/windows/0/share
-- window w1 start shift days per decade (value): -4.0  conus/season.json#/windows/0/shift_days_per_decade/start/value
-- window w1 start shift days per decade (lo): -5.294  conus/season.json#/windows/0/shift_days_per_decade/start/lo
-- window w1 start shift days per decade (hi): -2.727  conus/season.json#/windows/0/shift_days_per_decade/start/hi
-- window w1 sentence: "The early-July to late-September season now starts about 4 days earlier per decade (-5 to -3)."  conus/season.json#/windows/0/sentence
-- window w2 label: "mid-March to late-April"  conus/season.json#/windows/1/label
-- window w2 start_week: 11  conus/season.json#/windows/1/start_week
-- window w2 peak_week: 14  conus/season.json#/windows/1/peak_week
-- window w2 end_week: 17  conus/season.json#/windows/1/end_week
-- window w2 share: 0.206  conus/season.json#/windows/1/share
-- window w2 start shift days per decade (value): -4.615  conus/season.json#/windows/1/shift_days_per_decade/start/value
-- window w2 start shift days per decade (lo): -6.667  conus/season.json#/windows/1/shift_days_per_decade/start/lo
-- window w2 start shift days per decade (hi): -3.333  conus/season.json#/windows/1/shift_days_per_decade/start/hi
-- window w2 sentence: "The mid-March to late-April season now starts about 5 days earlier per decade (-7 to -3)."  conus/season.json#/windows/1/sentence
-- this week value: 57.265  conus/nowcast.json#/value
-- this week lo: 50.777  conus/nowcast.json#/lo
-- this week hi: 63.753  conus/nowcast.json#/hi
-- this week percentile: 82.609  conus/nowcast.json#/percentile
-- this week status: "above_normal"  conus/nowcast.json#/status
-- this week as_of: "2026-11-14T03:00:00Z"  conus/nowcast.json#/as_of
-- this week window start: "2026-11-07"  conus/nowcast.json#/window/start
-- this week window end: "2026-11-13"  conus/nowcast.json#/window/end
-- this week years compared: [2003, 2025]  conus/nowcast.json#/baseline_years
-- month to date value: 128.412  conus/nowcast.json#/month_to_date/value
-- month to date median: 87.0  conus/nowcast.json#/month_to_date/median
-- month to date ratio: 1.476  conus/nowcast.json#/month_to_date/ratio
-- month to date percentile: 86.957  conus/nowcast.json#/month_to_date/percentile
-- this week sentence: "In the 7 days to 13 November 2026, Contiguous United States had 57 Aqua-equivalent fire cell-days: higher than 83% of the same week in 23 past years."  conus/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.226  methods.json#/validation/0/value
-- LOYO weekly WAPE baseline annual_ratio: 0.259  methods.json#/validation/0/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 1.418  methods.json#/validation/0/baselines/raw_viirs
+- jump multiple (value): 3.678  us/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.202  us/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 4.219  us/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  us/ruler.json#/jump_multiple/years
+- ruler sentence: "In United States, VIIRS reports about 3.7 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  us/ruler.json#/sentence
+- harmonized trend pct_per_decade: -2.35  us/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -8.527  us/trend.json#/harmonized/lo
+- harmonized trend hi: 1.641  us/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  us/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 59.414  us/trend.json#/naive/pct_per_decade
+- naive trend lo: 38.762  us/trend.json#/naive/lo
+- naive trend hi: 127.357  us/trend.json#/naive/hi
+- naive trend direction: "rising"  us/trend.json#/naive/direction
+- trend years: [2003, 2025]  us/trend.json#/years
+- verdict sentence_id: "unclear"  us/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (-9 to 2% per decade)."  us/trend.json#/sentence
+- critical weeks: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47]  us/season.json#/critical_weeks
+- window w1 label: "early-July to late-November"  us/season.json#/windows/0/label
+- window w1 start_week: 28  us/season.json#/windows/0/start_week
+- window w1 peak_week: 43  us/season.json#/windows/0/peak_week
+- window w1 end_week: 47  us/season.json#/windows/0/end_week
+- window w1 share: 0.418  us/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 3.571  us/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -0.692  us/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 8.125  us/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-July to late-November season."  us/season.json#/windows/0/sentence
+- window w2 label: "late-January to early-May"  us/season.json#/windows/1/label
+- window w2 start_week: 4  us/season.json#/windows/1/start_week
+- window w2 peak_week: 11  us/season.json#/windows/1/peak_week
+- window w2 end_week: 18  us/season.json#/windows/1/end_week
+- window w2 share: 0.395  us/season.json#/windows/1/share
+- window w2 start shift days per decade (value): 0.0  us/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -5.714  us/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): 2.368  us/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "No clear shift in the timing of the late-January to early-May season."  us/season.json#/windows/1/sentence
+- this week value: null  us/nowcast.json#/value
+- this week lo: null  us/nowcast.json#/lo
+- this week hi: null  us/nowcast.json#/hi
+- this week percentile: null  us/nowcast.json#/percentile
+- this week status: "unavailable"  us/nowcast.json#/status
+- this week as_of: null  us/nowcast.json#/as_of
+- this week window start: null  us/nowcast.json#/window/start
+- this week window end: null  us/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  us/nowcast.json#/baseline_years
+- month to date value: null  us/nowcast.json#/month_to_date/value
+- month to date median: null  us/nowcast.json#/month_to_date/median
+- month to date ratio: null  us/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  us/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  us/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.122  methods.json#/validation/0/value
+- LOYO weekly WAPE baseline annual_ratio: 0.138  methods.json#/validation/0/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.706  methods.json#/validation/0/baselines/raw_viirs
 - LOYO years: [2013, 2022]  methods.json#/validation/0/years
-- eyesight status: "validated"  methods.json#/eyesight/0/status
-- eyesight param a: -1.2  methods.json#/eyesight/0/params/a
-- eyesight param a_hi: -0.95  methods.json#/eyesight/0/params/a_hi
-- eyesight param a_lo: -1.45  methods.json#/eyesight/0/params/a_lo
-- eyesight param b: 2.1  methods.json#/eyesight/0/params/b
-- eyesight param b_hi: 2.3  methods.json#/eyesight/0/params/b_hi
-- eyesight param b_lo: 1.9  methods.json#/eyesight/0/params/b_lo
-- eyesight param c: 0.82  methods.json#/eyesight/0/params/c
-- eyesight param c_hi: 0.87  methods.json#/eyesight/0/params/c_hi
-- eyesight param c_lo: 0.77  methods.json#/eyesight/0/params/c_lo
-- eyesight g: 1.12  methods.json#/eyesight/0/g
+- LOYO weekly WAPE (tier2): 0.166  methods.json#/validation/14/value
+- LOYO years: [2013, 2022]  methods.json#/validation/14/years
+- eyesight status: "exploratory"  methods.json#/eyesight/0/status
+- eyesight param a: -3.475  methods.json#/eyesight/0/params/a
+- eyesight param a_hi: -3.441  methods.json#/eyesight/0/params/a_hi
+- eyesight param a_lo: -3.509  methods.json#/eyesight/0/params/a_lo
+- eyesight param b: 2.327  methods.json#/eyesight/0/params/b
+- eyesight param b_hi: 2.394  methods.json#/eyesight/0/params/b_hi
+- eyesight param b_lo: 2.255  methods.json#/eyesight/0/params/b_lo
+- eyesight param c: 0.825  methods.json#/eyesight/0/params/c
+- eyesight param c_hi: 0.849  methods.json#/eyesight/0/params/c_hi
+- eyesight param c_lo: 0.795  methods.json#/eyesight/0/params/c_lo
+- eyesight g: 1.514  methods.json#/eyesight/0/g
+
+## Synthland (planted-truth test) (`synthland`)
+
+- jump multiple (value): 3.537  synthland/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.449  synthland/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 3.875  synthland/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  synthland/ruler.json#/jump_multiple/years
+- ruler sentence: "In Synthland (planted-truth test), VIIRS reports about 3.5 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  synthland/ruler.json#/sentence
+- harmonized trend pct_per_decade: 12.459  synthland/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: 11.025  synthland/trend.json#/harmonized/lo
+- harmonized trend hi: 13.557  synthland/trend.json#/harmonized/hi
+- harmonized trend direction: "rising"  synthland/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 43.676  synthland/trend.json#/naive/pct_per_decade
+- naive trend lo: 18.259  synthland/trend.json#/naive/lo
+- naive trend hi: 182.949  synthland/trend.json#/naive/hi
+- naive trend direction: "rising"  synthland/trend.json#/naive/direction
+- trend years: [2003, 2025]  synthland/trend.json#/years
+- verdict sentence_id: "artifact_rising"  synthland/trend.json#/sentence_id
+- verdict sentence: "Burning activity did rise, by about 12% per decade (11 to 14). The raw record overstates it at 44%."  synthland/trend.json#/sentence
+- critical weeks: [16, 17, 18, 19, 20, 40, 41, 42, 43, 44, 45, 46, 47, 48]  synthland/season.json#/critical_weeks
+- window w1 label: "early-October to early-December"  synthland/season.json#/windows/0/label
+- window w1 start_week: 40  synthland/season.json#/windows/0/start_week
+- window w1 peak_week: 44  synthland/season.json#/windows/0/peak_week
+- window w1 end_week: 48  synthland/season.json#/windows/0/end_week
+- window w1 share: 0.621  synthland/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 0.0  synthland/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): 0.0  synthland/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 0.0  synthland/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-October to early-December season."  synthland/season.json#/windows/0/sentence
+- window w2 label: "mid-April to mid-May"  synthland/season.json#/windows/1/label
+- window w2 start_week: 16  synthland/season.json#/windows/1/start_week
+- window w2 peak_week: 18  synthland/season.json#/windows/1/peak_week
+- window w2 end_week: 20  synthland/season.json#/windows/1/end_week
+- window w2 share: 0.185  synthland/season.json#/windows/1/share
+- window w2 start shift days per decade (value): 0.0  synthland/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -0.769  synthland/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): 0.0  synthland/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "No clear shift in the timing of the mid-April to mid-May season."  synthland/season.json#/windows/1/sentence
+- this week value: null  synthland/nowcast.json#/value
+- this week lo: null  synthland/nowcast.json#/lo
+- this week hi: null  synthland/nowcast.json#/hi
+- this week percentile: null  synthland/nowcast.json#/percentile
+- this week status: "unavailable"  synthland/nowcast.json#/status
+- this week as_of: null  synthland/nowcast.json#/as_of
+- this week window start: null  synthland/nowcast.json#/window/start
+- this week window end: null  synthland/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  synthland/nowcast.json#/baseline_years
+- month to date value: null  synthland/nowcast.json#/month_to_date/value
+- month to date median: null  synthland/nowcast.json#/month_to_date/median
+- month to date ratio: null  synthland/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  synthland/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  synthland/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.054  methods.json#/validation/17/value
+- LOYO weekly WAPE baseline annual_ratio: 0.054  methods.json#/validation/17/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.139  methods.json#/validation/17/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/17/years
+- LOYO weekly WAPE (tier2): 0.049  methods.json#/validation/31/value
+- LOYO years: [2013, 2022]  methods.json#/validation/31/years
+- eyesight status: "validated"  methods.json#/eyesight/1/status
+- eyesight param a: -2.176  methods.json#/eyesight/1/params/a
+- eyesight param a_hi: -2.143  methods.json#/eyesight/1/params/a_hi
+- eyesight param a_lo: -2.216  methods.json#/eyesight/1/params/a_lo
+- eyesight param b: 2.285  methods.json#/eyesight/1/params/b
+- eyesight param b_hi: 2.373  methods.json#/eyesight/1/params/b_hi
+- eyesight param b_lo: 2.208  methods.json#/eyesight/1/params/b_lo
+- eyesight param c: 0.818  methods.json#/eyesight/1/params/c
+- eyesight param c_hi: 0.84  methods.json#/eyesight/1/params/c_hi
+- eyesight param c_lo: 0.799  methods.json#/eyesight/1/params/c_lo
+- eyesight g: 1.125  methods.json#/eyesight/1/g
 
 ## Planted truth (synthland)
 
-- planted truth passed (count of pass = true): 5 of 6  methods.json#/planted_truth
-- k_annual_snpp truth: 0.4  methods.json#/planted_truth/0/truth
-- k_annual_snpp recovered: 0.41  methods.json#/planted_truth/0/recovered
+- planted truth passed (count of pass = true): 10 of 10  methods.json#/planted_truth
+- k_annual_snpp truth: 0.468  methods.json#/planted_truth/0/truth
+- k_annual_snpp recovered: 0.467  methods.json#/planted_truth/0/recovered
 - k_annual_snpp tolerance: 0.03  methods.json#/planted_truth/0/tolerance
 - k_annual_snpp pass: true  methods.json#/planted_truth/0/pass
-- trend_pct_per_decade truth: 20.0  methods.json#/planted_truth/1/truth
-- trend_pct_per_decade recovered: 18.6  methods.json#/planted_truth/1/recovered
-- trend_pct_per_decade tolerance: 3.0  methods.json#/planted_truth/1/tolerance
-- trend_pct_per_decade pass: true  methods.json#/planted_truth/1/pass
-- peak_week_1 truth: 30.0  methods.json#/planted_truth/2/truth
-- peak_week_1 recovered: 30.0  methods.json#/planted_truth/2/recovered
-- peak_week_1 tolerance: 1.0  methods.json#/planted_truth/2/tolerance
-- peak_week_1 pass: true  methods.json#/planted_truth/2/pass
-- peak_week_2 truth: 10.0  methods.json#/planted_truth/3/truth
-- peak_week_2 recovered: 11.0  methods.json#/planted_truth/3/recovered
-- peak_week_2 tolerance: 1.0  methods.json#/planted_truth/3/tolerance
-- peak_week_2 pass: true  methods.json#/planted_truth/3/pass
-- eyesight_b truth: 2.0  methods.json#/planted_truth/4/truth
-- eyesight_b recovered: 2.4  methods.json#/planted_truth/4/recovered
-- eyesight_b tolerance: 0.3  methods.json#/planted_truth/4/tolerance
-- eyesight_b pass: false  methods.json#/planted_truth/4/pass
-- outage_days_missing truth: 14.0  methods.json#/planted_truth/5/truth
-- outage_days_missing recovered: 14.0  methods.json#/planted_truth/5/recovered
-- outage_days_missing tolerance: 0.0  methods.json#/planted_truth/5/tolerance
-- outage_days_missing pass: true  methods.json#/planted_truth/5/pass
+- k_annual_noaa20 truth: 0.468  methods.json#/planted_truth/1/truth
+- k_annual_noaa20 recovered: 0.468  methods.json#/planted_truth/1/recovered
+- k_annual_noaa20 tolerance: 0.04  methods.json#/planted_truth/1/tolerance
+- k_annual_noaa20 pass: true  methods.json#/planted_truth/1/pass
+- k_month_snpp_max_abs_err truth: 0.0  methods.json#/planted_truth/2/truth
+- k_month_snpp_max_abs_err recovered: 0.004  methods.json#/planted_truth/2/recovered
+- k_month_snpp_max_abs_err tolerance: 0.08  methods.json#/planted_truth/2/tolerance
+- k_month_snpp_max_abs_err pass: true  methods.json#/planted_truth/2/pass
+- g truth: 1.125  methods.json#/planted_truth/3/truth
+- g recovered: 1.125  methods.json#/planted_truth/3/recovered
+- g tolerance: 0.03  methods.json#/planted_truth/3/tolerance
+- g pass: true  methods.json#/planted_truth/3/pass
+- reliability_err truth: 0.0  methods.json#/planted_truth/4/truth
+- reliability_err recovered: 0.012  methods.json#/planted_truth/4/recovered
+- reliability_err tolerance: 0.05  methods.json#/planted_truth/4/tolerance
+- reliability_err pass: true  methods.json#/planted_truth/4/pass
+- trend_pct_per_decade truth: 12.512  methods.json#/planted_truth/5/truth
+- trend_pct_per_decade recovered: 12.459  methods.json#/planted_truth/5/recovered
+- trend_pct_per_decade tolerance: 5.0  methods.json#/planted_truth/5/tolerance
+- trend_pct_per_decade pass: true  methods.json#/planted_truth/5/pass
+- peak_week_main truth: 44  methods.json#/planted_truth/6/truth
+- peak_week_main recovered: 44.0  methods.json#/planted_truth/6/recovered
+- peak_week_main tolerance: 1  methods.json#/planted_truth/6/tolerance
+- peak_week_main pass: true  methods.json#/planted_truth/6/pass
+- peak_week_second truth: 18  methods.json#/planted_truth/7/truth
+- peak_week_second recovered: 18.0  methods.json#/planted_truth/7/recovered
+- peak_week_second tolerance: 1  methods.json#/planted_truth/7/tolerance
+- peak_week_second pass: true  methods.json#/planted_truth/7/pass
+- aqua_outage_days_missing truth: 18  methods.json#/planted_truth/8/truth
+- aqua_outage_days_missing recovered: 18.0  methods.json#/planted_truth/8/recovered
+- aqua_outage_days_missing tolerance: 0  methods.json#/planted_truth/8/tolerance
+- aqua_outage_days_missing pass: true  methods.json#/planted_truth/8/pass
+- static_rows_surviving truth: 1552  methods.json#/planted_truth/9/truth
+- static_rows_surviving recovered: 1552.0  methods.json#/planted_truth/9/recovered
+- static_rows_surviving tolerance: 0  methods.json#/planted_truth/9/tolerance
+- static_rows_surviving pass: true  methods.json#/planted_truth/9/pass

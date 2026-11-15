@@ -1,1 +1,232 @@
-{"code_version":"sample","contains_sample":true,"files":[{"bytes":2822,"kinds":["sample"],"path":"conus/calibration.json","sha256":"ed2a69d1612755153c9327367de7538987fa0f75e65fa51641977bee921bd703"},{"bytes":481834,"kinds":[],"path":"conus/cells_monthly.csv","sha256":"53acf7d4a4f6fc30f9852e4b259699b74561d138a5c036c23fcbed4c8dd39cc3"},{"bytes":7778,"kinds":[],"path":"conus/climatology.json","sha256":"f893da1058607486a79b90e26a731140d8a1ed8b191350c364a6dbe043f60437"},{"bytes":537852,"kinds":["sample"],"path":"conus/daily.json","sha256":"7f7f0ae753ddb5d2bf312f0e93ebd568a7e07b434c7e1c31b1cbe4b43f21c066"},{"bytes":263,"kinds":[],"path":"conus/downloads.json","sha256":"ff0c25cbb44aa048ac19a1049bcd4231cf5ec9bc25fe5627046a1a2379b7901f"},{"bytes":24616,"kinds":["sample"],"path":"conus/hex.json","sha256":"39feeaf1dc4342718bcde4654f68646140d4a1a3fab076d8db71f53e92be34c7"},{"bytes":94816,"kinds":[],"path":"conus/hotspots_recent.csv","sha256":"043ce89053561c05c0a6eebdb7f8fd314fc1e049d3dcf54b367841e5a942eb0d"},{"bytes":166839,"kinds":["sample"],"path":"conus/monthly.json","sha256":"90bafc8d02af624e5aef1d14264d13c42548869af2a999c0699a823ce21f4b6d"},{"bytes":1768,"kinds":["sample"],"path":"conus/nowcast.json","sha256":"09f1781dfaa4ef79a4e64f6b696c469d5e5f2adcf23b3a715e274e45d5ea32f8"},{"bytes":275,"kinds":["sample"],"path":"conus/outline.geojson","sha256":"472a6c61d7ba77072215c555433ddb68b54499f2d5de7f12e4fa8235a1f7ea6c"},{"bytes":2769,"kinds":["sample"],"path":"conus/ruler.json","sha256":"e1b5482ac41f95870887bcbc0b61dab2da1451a8ba6dfcf5dafe021f18f54351"},{"bytes":5357,"kinds":["sample"],"path":"conus/season.json","sha256":"f9fc67d4ede5213d6600c1ff1ea71037af342b5a20d4eb409d33d88af5efadfb"},{"bytes":3589,"kinds":["sample"],"path":"conus/trend.json","sha256":"1f664fdaaed1b2c58cd12931e394ffe6ec86186a9fae863e1cf6b6f98bae3ccc"},{"bytes":709154,"kinds":["sample"],"path":"conus/weekly.json","sha256":"9e7800550ee1641010a74f079aea5f67d038f6282ff4e79207b365c9ff639420"},{"bytes":6421,"kinds":[],"path":"methods.json","sha256":"33b6cf3a4b6113b7fed5e86a1484da730e27bab4b85ecdda47e670f27747ef76"},{"bytes":7431,"kinds":[],"path":"numbers_audit.md","sha256":"8eba36a7da62faedc13ab62f7f5382b36fc2dc43bc547bd31f7ce651e58bbcf4"},{"bytes":691,"kinds":[],"path":"regions.json","sha256":"90ded8eff3900fa51316a28337b6b02538c6bb18a97f59f45a6b761436e743c5"}],"generated_at":"2026-11-14T00:00:00Z","schema_version":"1.0"}
+{
+  "code_version": "bf23ae97",
+  "contains_sample": false,
+  "files": [
+    {
+      "bytes": 53064,
+      "kinds": [],
+      "path": "methods.json",
+      "sha256": "525856132dc3bc1897bc3c6a03981483f9a1f9aeec5122f6cf330711d0331af3"
+    },
+    {
+      "bytes": 13662,
+      "kinds": [],
+      "path": "numbers_audit.md",
+      "sha256": "82e562aa371f51b6e2c0a20fcb2bc3ea6bd67f94c1674212303e84193c22dc91"
+    },
+    {
+      "bytes": 1668,
+      "kinds": [],
+      "path": "regions.json",
+      "sha256": "f81ca6c5e17da785069d2fa906a642f7a28213c00abfe4967c12223e8c5bdb11"
+    },
+    {
+      "bytes": 4905,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/calibration.json",
+      "sha256": "8ad5f7a47276337fa21e2be568361324ab4db5cabd23193341b63e8351bd6d4f"
+    },
+    {
+      "bytes": 932656,
+      "kinds": [],
+      "path": "synthland/cells_monthly.csv",
+      "sha256": "b99b8a81748c3cbdd5f6156b32cbf00e780abafe0b9c2c06e809726fb015f815"
+    },
+    {
+      "bytes": 12747,
+      "kinds": [],
+      "path": "synthland/climatology.json",
+      "sha256": "4313ce5f26369ecada83dfaecc56414772f3b2acc5b7deb541e0e80d211b294c"
+    },
+    {
+      "bytes": 1353954,
+      "kinds": [
+        "estimated",
+        "harmonized",
+        "missing",
+        "observed"
+      ],
+      "path": "synthland/daily.json",
+      "sha256": "bf40380984761fa7425a74b19fcd71f9b8348ae00d3dc9c52eff1c6ecae7de23"
+    },
+    {
+      "bytes": 20614,
+      "kinds": [
+        "observed"
+      ],
+      "path": "synthland/hex.json",
+      "sha256": "79c9d412cffaee096c27ed5ee6e38bf2a1f4ad8814ddaf694799530945aa6610"
+    },
+    {
+      "bytes": 273402,
+      "kinds": [
+        "estimated",
+        "harmonized",
+        "missing",
+        "observed"
+      ],
+      "path": "synthland/monthly.json",
+      "sha256": "6eb75548a01e8df472c7f42dea23693e1f4bb7c6f9fab5c6b884d017d68508a1"
+    },
+    {
+      "bytes": 761,
+      "kinds": [
+        "missing"
+      ],
+      "path": "synthland/nowcast.json",
+      "sha256": "7dabcf10fa06c23bdcb67f9dd6a4e9c04e3480cb4f55540e3f1eeee34be61fbd"
+    },
+    {
+      "bytes": 682,
+      "kinds": [],
+      "path": "synthland/outline.geojson",
+      "sha256": "f6326dfd3597bcd7458d03a17c9fc39c5415bf448b13d45063cc8e09152dee80"
+    },
+    {
+      "bytes": 4092,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/ruler.json",
+      "sha256": "a9dd8c89c81f09ba9c6275cb360c1d7dc3c5504e5f31fe297a20db5b3df4a711"
+    },
+    {
+      "bytes": 10174,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/season.json",
+      "sha256": "700a180faf4f930a74f5fa65c40b71f2560558185b0969df7cbbd91ffbf1222a"
+    },
+    {
+      "bytes": 5207,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/trend.json",
+      "sha256": "f20fb7ed4c4edc0020907cf5ff17e6c5dc022baba88ae978c97174321a478b3a"
+    },
+    {
+      "bytes": 1170944,
+      "kinds": [
+        "estimated",
+        "harmonized",
+        "missing",
+        "observed"
+      ],
+      "path": "synthland/weekly.json",
+      "sha256": "202ecd64ac870f9f7b0fc6bceef007fee4b73f45a33c70095831da49bcb5c4e3"
+    },
+    {
+      "bytes": 4948,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/calibration.json",
+      "sha256": "31b92c4588f7fde1dc8efcf3f057d0fe5917b17252220bf73143a8b47ea16b9c"
+    },
+    {
+      "bytes": 21386970,
+      "kinds": [],
+      "path": "us/cells_monthly.csv",
+      "sha256": "d49795b3fa245ccada67591e08a83579d02937086d8e56849c1a50e523ed9003"
+    },
+    {
+      "bytes": 13321,
+      "kinds": [],
+      "path": "us/climatology.json",
+      "sha256": "7e74041f48ff3561b4dc07be2d88963d4f2babc8581f50c38631e75edb5a73ef"
+    },
+    {
+      "bytes": 1398234,
+      "kinds": [
+        "estimated",
+        "harmonized",
+        "missing",
+        "observed"
+      ],
+      "path": "us/daily.json",
+      "sha256": "79596a3b56b996df51a950a3c3c85ab58e61621855a5bcb7b68b2f90a1a1a54e"
+    },
+    {
+      "bytes": 2576291,
+      "kinds": [
+        "observed"
+      ],
+      "path": "us/hex.json",
+      "sha256": "56662e5336fa9823a7629a4797597668a62601dec4f560adf08fe15012a172fd"
+    },
+    {
+      "bytes": 268287,
+      "kinds": [
+        "estimated",
+        "harmonized",
+        "missing",
+        "observed"
+      ],
+      "path": "us/monthly.json",
+      "sha256": "3842ee86dd62a8607a15d282e287515f6f51a66a031bacbe5f81ae3b71ff02e9"
+    },
+    {
+      "bytes": 754,
+      "kinds": [
+        "missing"
+      ],
+      "path": "us/nowcast.json",
+      "sha256": "e2316d7083c9be3416a6aad7ae7290a145af0e5f25c8a97f42034b99e41938a8"
+    },
+    {
+      "bytes": 4356352,
+      "kinds": [],
+      "path": "us/outline.geojson",
+      "sha256": "167451974865aa049bac5a7ba4a4c2b15f13d6f963a306c1c321f9c92db6d92b"
+    },
+    {
+      "bytes": 4066,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/ruler.json",
+      "sha256": "b011ad9781d00a02b368c05ee9d6e30a5a389faf321901cb8dca0a91c8c47821"
+    },
+    {
+      "bytes": 10170,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/season.json",
+      "sha256": "824020073b322a2c8f249a849212a5f8b7e713628162df71a6f4410c1abf7b4c"
+    },
+    {
+      "bytes": 5302,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/trend.json",
+      "sha256": "31cf6ed2808b49c04ced642ae0aa51c9af6477d199644c641e29005ab3900668"
+    },
+    {
+      "bytes": 1147098,
+      "kinds": [
+        "estimated",
+        "harmonized",
+        "missing",
+        "observed"
+      ],
+      "path": "us/weekly.json",
+      "sha256": "0ea1cec3ffeaf4d09f762393983c66a86daf637e0b65a5ad174c9994a6817252"
+    }
+  ],
+  "generated_at": "2026-11-15T05:54:45Z",
+  "schema_version": "1.0"
+}

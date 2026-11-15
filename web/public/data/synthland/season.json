@@ -1,0 +1,449 @@
+{
+  "code_version": "a25fb442",
+  "critical_weeks": [
+    16,
+    17,
+    18,
+    19,
+    20,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48
+  ],
+  "definition": "The fewest weeks that hold 80% of a typical year's burning",
+  "generated_at": "2026-11-15T05:49:19Z",
+  "region": "synthland",
+  "schema_version": "1.0",
+  "windows": [
+    {
+      "by_year": [
+        {
+          "centroid_doy": 306,
+          "end_doy": 329,
+          "kind": "observed",
+          "start_doy": 283,
+          "total": 2233.0,
+          "year": 2003
+        },
+        {
+          "centroid_doy": 305,
+          "end_doy": 329,
+          "kind": "observed",
+          "start_doy": 282,
+          "total": 2292.0,
+          "year": 2004
+        },
+        {
+          "centroid_doy": 306,
+          "end_doy": 329,
+          "kind": "observed",
+          "start_doy": 282,
+          "total": 2380.0,
+          "year": 2005
+        },
+        {
+          "centroid_doy": 305,
+          "end_doy": 328,
+          "kind": "observed",
+          "start_doy": 281,
+          "total": 2448.0,
+          "year": 2006
+        },
+        {
+          "centroid_doy": 305,
+          "end_doy": 329,
+          "kind": "observed",
+          "start_doy": 281,
+          "total": 2399.0,
+          "year": 2007
+        },
+        {
+          "centroid_doy": 305,
+          "end_doy": 328,
+          "kind": "observed",
+          "start_doy": 281,
+          "total": 2531.0,
+          "year": 2008
+        },
+        {
+          "centroid_doy": 305,
+          "end_doy": 329,
+          "kind": "observed",
+          "start_doy": 282,
+          "total": 2552.0,
+          "year": 2009
+        },
+        {
+          "centroid_doy": 305,
+          "end_doy": 329,
+          "kind": "observed",
+          "start_doy": 282,
+          "total": 2548.0,
+          "year": 2010
+        },
+        {
+          "centroid_doy": 305,
+          "end_doy": 330,
+          "kind": "observed",
+          "start_doy": 282,
+          "total": 2538.0,
+          "year": 2011
+        },
+        {
+          "centroid_doy": 304,
+          "end_doy": 327,
+          "kind": "observed",
+          "start_doy": 281,
+          "total": 2585.0,
+          "year": 2012
+        },
+        {
+          "centroid_doy": 305,
+          "end_doy": 329,
+          "kind": "observed",
+          "start_doy": 282,
+          "total": 2605.0,
+          "year": 2013
+        },
+        {
+          "centroid_doy": 305,
+          "end_doy": 329,
+          "kind": "observed",
+          "start_doy": 281,
+          "total": 2593.0,
+          "year": 2014
+        },
+        {
+          "centroid_doy": 305,
+          "end_doy": 328,
+          "kind": "observed",
+          "start_doy": 282,
+          "total": 2661.0,
+          "year": 2015
+        },
+        {
+          "centroid_doy": 305,
+          "end_doy": 329,
+          "kind": "observed",
+          "start_doy": 281,
+          "total": 2665.0,
+          "year": 2016
+        },
+        {
+          "centroid_doy": 305,
+          "end_doy": 328,
+          "kind": "observed",
+          "start_doy": 282,
+          "total": 2784.0,
+          "year": 2017
+        },
+        {
+          "centroid_doy": 305,
+          "end_doy": 330,
+          "kind": "observed",
+          "start_doy": 281,
+          "total": 2743.0,
+          "year": 2018
+        },
+        {
+          "centroid_doy": 305,
+          "end_doy": 329,
+          "kind": "observed",
+          "start_doy": 282,
+          "total": 2789.0,
+          "year": 2019
+        },
+        {
+          "centroid_doy": 305,
+          "end_doy": 329,
+          "kind": "observed",
+          "start_doy": 282,
+          "total": 2845.359,
+          "year": 2020
+        },
+        {
+          "centroid_doy": 305,
+          "end_doy": 328,
+          "kind": "observed",
+          "start_doy": 282,
+          "total": 2857.0,
+          "year": 2021
+        },
+        {
+          "centroid_doy": 305,
+          "end_doy": 330,
+          "kind": "observed",
+          "start_doy": 282,
+          "total": 2917.0,
+          "year": 2022
+        },
+        {
+          "centroid_doy": 305,
+          "end_doy": 329,
+          "kind": "harmonized",
+          "start_doy": 281,
+          "total": 2947.794,
+          "year": 2023
+        },
+        {
+          "centroid_doy": 305,
+          "end_doy": 329,
+          "kind": "harmonized",
+          "start_doy": 282,
+          "total": 3023.53,
+          "year": 2024
+        },
+        {
+          "centroid_doy": 305,
+          "end_doy": 329,
+          "kind": "harmonized",
+          "start_doy": 281,
+          "total": 2961.575,
+          "year": 2025
+        }
+      ],
+      "end_week": 48,
+      "id": "w1",
+      "label": "early-October to early-December",
+      "peak_week": 44,
+      "sentence": "No clear shift in the timing of the early-October to early-December season.",
+      "share": 0.621,
+      "shift_days_per_decade": {
+        "centroid": {
+          "hi": 0.173,
+          "lo": -0.195,
+          "value": 0.011
+        },
+        "end": {
+          "hi": 0.0,
+          "lo": 0.0,
+          "value": 0.0
+        },
+        "start": {
+          "hi": 0.0,
+          "lo": 0.0,
+          "value": 0.0
+        }
+      },
+      "start_week": 40
+    },
+    {
+      "by_year": [
+        {
+          "centroid_doy": 124,
+          "end_doy": 145,
+          "kind": "observed",
+          "start_doy": 103,
+          "total": 843.0,
+          "year": 2003
+        },
+        {
+          "centroid_doy": 124,
+          "end_doy": 145,
+          "kind": "observed",
+          "start_doy": 105,
+          "total": 818.0,
+          "year": 2004
+        },
+        {
+          "centroid_doy": 123,
+          "end_doy": 143,
+          "kind": "observed",
+          "start_doy": 105,
+          "total": 867.0,
+          "year": 2005
+        },
+        {
+          "centroid_doy": 123,
+          "end_doy": 144,
+          "kind": "observed",
+          "start_doy": 103,
+          "total": 807.0,
+          "year": 2006
+        },
+        {
+          "centroid_doy": 123,
+          "end_doy": 142,
+          "kind": "observed",
+          "start_doy": 103,
+          "total": 831.0,
+          "year": 2007
+        },
+        {
+          "centroid_doy": 123,
+          "end_doy": 141,
+          "kind": "observed",
+          "start_doy": 105,
+          "total": 928.0,
+          "year": 2008
+        },
+        {
+          "centroid_doy": 122,
+          "end_doy": 144,
+          "kind": "observed",
+          "start_doy": 102,
+          "total": 953.0,
+          "year": 2009
+        },
+        {
+          "centroid_doy": 122,
+          "end_doy": 141,
+          "kind": "observed",
+          "start_doy": 103,
+          "total": 976.0,
+          "year": 2010
+        },
+        {
+          "centroid_doy": 123,
+          "end_doy": 143,
+          "kind": "observed",
+          "start_doy": 103,
+          "total": 910.0,
+          "year": 2011
+        },
+        {
+          "centroid_doy": 123,
+          "end_doy": 142,
+          "kind": "observed",
+          "start_doy": 104,
+          "total": 976.0,
+          "year": 2012
+        },
+        {
+          "centroid_doy": 123,
+          "end_doy": 144,
+          "kind": "observed",
+          "start_doy": 102,
+          "total": 999.0,
+          "year": 2013
+        },
+        {
+          "centroid_doy": 123,
+          "end_doy": 143,
+          "kind": "observed",
+          "start_doy": 103,
+          "total": 946.0,
+          "year": 2014
+        },
+        {
+          "centroid_doy": 123,
+          "end_doy": 143,
+          "kind": "observed",
+          "start_doy": 104,
+          "total": 981.0,
+          "year": 2015
+        },
+        {
+          "centroid_doy": 123,
+          "end_doy": 143,
+          "kind": "observed",
+          "start_doy": 103,
+          "total": 1015.0,
+          "year": 2016
+        },
+        {
+          "centroid_doy": 123,
+          "end_doy": 142,
+          "kind": "observed",
+          "start_doy": 104,
+          "total": 996.0,
+          "year": 2017
+        },
+        {
+          "centroid_doy": 123,
+          "end_doy": 142,
+          "kind": "observed",
+          "start_doy": 102,
+          "total": 1037.0,
+          "year": 2018
+        },
+        {
+          "centroid_doy": 123,
+          "end_doy": 143,
+          "kind": "observed",
+          "start_doy": 104,
+          "total": 1068.0,
+          "year": 2019
+        },
+        {
+          "centroid_doy": 123,
+          "end_doy": 143,
+          "kind": "observed",
+          "start_doy": 103,
+          "total": 1054.0,
+          "year": 2020
+        },
+        {
+          "centroid_doy": 123,
+          "end_doy": 142,
+          "kind": "observed",
+          "start_doy": 104,
+          "total": 1029.0,
+          "year": 2021
+        },
+        {
+          "centroid_doy": 123,
+          "end_doy": 142,
+          "kind": "observed",
+          "start_doy": 103,
+          "total": 1087.941,
+          "year": 2022
+        },
+        {
+          "centroid_doy": 123,
+          "end_doy": 143,
+          "kind": "harmonized",
+          "start_doy": 103,
+          "total": 1074.585,
+          "year": 2023
+        },
+        {
+          "centroid_doy": 122,
+          "end_doy": 144,
+          "kind": "harmonized",
+          "start_doy": 102,
+          "total": 1081.761,
+          "year": 2024
+        },
+        {
+          "centroid_doy": 123,
+          "end_doy": 142,
+          "kind": "harmonized",
+          "start_doy": 104,
+          "total": 1089.803,
+          "year": 2025
+        }
+      ],
+      "end_week": 20,
+      "id": "w2",
+      "label": "mid-April to mid-May",
+      "peak_week": 18,
+      "sentence": "No clear shift in the timing of the mid-April to mid-May season.",
+      "share": 0.185,
+      "shift_days_per_decade": {
+        "centroid": {
+          "hi": -0.087,
+          "lo": -0.535,
+          "value": -0.314
+        },
+        "end": {
+          "hi": 0.0,
+          "lo": -1.25,
+          "value": 0.0
+        },
+        "start": {
+          "hi": 0.0,
+          "lo": -0.769,
+          "value": 0.0
+        }
+      },
+      "start_week": 16
+    }
+  ]
+}

@@ -1,0 +1,250 @@
+{
+  "code_version": "bf23ae97",
+  "count_resolution": 6,
+  "eras": [
+    {
+      "from": "2003-01-01",
+      "kind": "observed",
+      "source": "aqua",
+      "to": "2022-12-31"
+    },
+    {
+      "from": "2023-01-01",
+      "kind": "harmonized",
+      "source": "snpp",
+      "to": "2025-12-31"
+    },
+    {
+      "from": "2026-01-01",
+      "kind": "harmonized",
+      "source": "noaa20",
+      "to": null
+    }
+  ],
+  "fit_window": {
+    "noaa20": [
+      "2019-01-01",
+      "2022-12-31"
+    ],
+    "snpp": [
+      "2013-01-01",
+      "2022-12-31"
+    ]
+  },
+  "generated_at": "2026-11-15T05:52:38Z",
+  "k": {
+    "noaa20": [
+      {
+        "aqua_celldays": 6745.0,
+        "hi": 0.34,
+        "k": 0.332,
+        "lo": 0.322,
+        "month": 1,
+        "viirs_celldays": 20326.0
+      },
+      {
+        "aqua_celldays": 8522.0,
+        "hi": 0.358,
+        "k": 0.345,
+        "lo": 0.321,
+        "month": 2,
+        "viirs_celldays": 24730.0
+      },
+      {
+        "aqua_celldays": 19251.0,
+        "hi": 0.377,
+        "k": 0.369,
+        "lo": 0.361,
+        "month": 3,
+        "viirs_celldays": 52115.0
+      },
+      {
+        "aqua_celldays": 12838.0,
+        "hi": 0.356,
+        "k": 0.338,
+        "lo": 0.319,
+        "month": 4,
+        "viirs_celldays": 37941.0
+      },
+      {
+        "aqua_celldays": 5705.0,
+        "hi": 0.285,
+        "k": 0.277,
+        "lo": 0.262,
+        "month": 5,
+        "viirs_celldays": 20576.0
+      },
+      {
+        "aqua_celldays": 6126.0,
+        "hi": 0.35,
+        "k": 0.324,
+        "lo": 0.303,
+        "month": 6,
+        "viirs_celldays": 18885.0
+      },
+      {
+        "aqua_celldays": 8353.0,
+        "hi": 0.422,
+        "k": 0.38,
+        "lo": 0.333,
+        "month": 7,
+        "viirs_celldays": 21960.0
+      },
+      {
+        "aqua_celldays": 7248.0,
+        "hi": 0.42,
+        "k": 0.352,
+        "lo": 0.284,
+        "month": 8,
+        "viirs_celldays": 20618.0
+      },
+      {
+        "aqua_celldays": 12981.0,
+        "hi": 0.405,
+        "k": 0.371,
+        "lo": 0.334,
+        "month": 9,
+        "viirs_celldays": 35004.0
+      },
+      {
+        "aqua_celldays": 12466.0,
+        "hi": 0.388,
+        "k": 0.37,
+        "lo": 0.35,
+        "month": 10,
+        "viirs_celldays": 33681.0
+      },
+      {
+        "aqua_celldays": 11546.0,
+        "hi": 0.384,
+        "k": 0.365,
+        "lo": 0.338,
+        "month": 11,
+        "viirs_celldays": 31653.0
+      },
+      {
+        "aqua_celldays": 6210.0,
+        "hi": 0.339,
+        "k": 0.327,
+        "lo": 0.31,
+        "month": 12,
+        "viirs_celldays": 19007.0
+      }
+    ],
+    "snpp": [
+      {
+        "aqua_celldays": 17665.0,
+        "hi": 0.363,
+        "k": 0.351,
+        "lo": 0.339,
+        "month": 1,
+        "viirs_celldays": 50286.0
+      },
+      {
+        "aqua_celldays": 25178.0,
+        "hi": 0.393,
+        "k": 0.378,
+        "lo": 0.36,
+        "month": 2,
+        "viirs_celldays": 66685.0
+      },
+      {
+        "aqua_celldays": 48603.0,
+        "hi": 0.4,
+        "k": 0.39,
+        "lo": 0.38,
+        "month": 3,
+        "viirs_celldays": 124605.0
+      },
+      {
+        "aqua_celldays": 34276.0,
+        "hi": 0.362,
+        "k": 0.349,
+        "lo": 0.336,
+        "month": 4,
+        "viirs_celldays": 98167.0
+      },
+      {
+        "aqua_celldays": 14356.0,
+        "hi": 0.29,
+        "k": 0.283,
+        "lo": 0.276,
+        "month": 5,
+        "viirs_celldays": 50696.0
+      },
+      {
+        "aqua_celldays": 15366.0,
+        "hi": 0.361,
+        "k": 0.336,
+        "lo": 0.309,
+        "month": 6,
+        "viirs_celldays": 45758.0
+      },
+      {
+        "aqua_celldays": 19209.0,
+        "hi": 0.401,
+        "k": 0.38,
+        "lo": 0.356,
+        "month": 7,
+        "viirs_celldays": 50567.0
+      },
+      {
+        "aqua_celldays": 23127.0,
+        "hi": 0.425,
+        "k": 0.398,
+        "lo": 0.36,
+        "month": 8,
+        "viirs_celldays": 58145.0
+      },
+      {
+        "aqua_celldays": 28325.0,
+        "hi": 0.4,
+        "k": 0.376,
+        "lo": 0.351,
+        "month": 9,
+        "viirs_celldays": 75364.0
+      },
+      {
+        "aqua_celldays": 33025.0,
+        "hi": 0.421,
+        "k": 0.404,
+        "lo": 0.389,
+        "month": 10,
+        "viirs_celldays": 81717.0
+      },
+      {
+        "aqua_celldays": 24869.0,
+        "hi": 0.398,
+        "k": 0.383,
+        "lo": 0.364,
+        "month": 11,
+        "viirs_celldays": 64879.0
+      },
+      {
+        "aqua_celldays": 13667.0,
+        "hi": 0.361,
+        "k": 0.349,
+        "lo": 0.337,
+        "month": 12,
+        "viirs_celldays": 39119.0
+      }
+    ]
+  },
+  "k_annual": {
+    "noaa20": {
+      "hi": 0.36,
+      "k": 0.351,
+      "lo": 0.341
+    },
+    "snpp": {
+      "hi": 0.375,
+      "k": 0.369,
+      "lo": 0.363
+    }
+  },
+  "noaa20_method": "direct",
+  "reference": "aqua_day",
+  "region": "us",
+  "schema_version": "1.0",
+  "shrinkage_n0": 50
+}

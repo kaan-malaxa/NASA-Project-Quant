@@ -1,1 +1,2195 @@
-{"ai_use":"SAMPLE placeholder: this text is replaced by the real statement before release.","code_version":"sample","decisions":{"aqua_trusted_through":"2022-12-31","baseline_years":[2003,2025],"count_resolution":6,"reference":"MODIS Aqua, daytime","science_yaml_sha256":"c5fa02600345714e846898ae941ad57c7cc8fb541f5b5f817efd2b3a8778c508","snpp_through":"2025-12-31"},"drift":[{"hi":0.423,"k_annual":0.407,"lo":0.39,"region":"conus","sensor":"snpp","year":2013},{"hi":0.424,"k_annual":0.408,"lo":0.392,"region":"conus","sensor":"snpp","year":2014},{"hi":0.429,"k_annual":0.412,"lo":0.396,"region":"conus","sensor":"snpp","year":2015},{"hi":0.416,"k_annual":0.4,"lo":0.384,"region":"conus","sensor":"snpp","year":2016},{"hi":0.43,"k_annual":0.413,"lo":0.397,"region":"conus","sensor":"snpp","year":2017},{"hi":0.425,"k_annual":0.408,"lo":0.392,"region":"conus","sensor":"snpp","year":2018},{"hi":0.428,"k_annual":0.412,"lo":0.395,"region":"conus","sensor":"snpp","year":2019},{"hi":0.419,"k_annual":0.403,"lo":0.387,"region":"conus","sensor":"snpp","year":2020},{"hi":0.417,"k_annual":0.401,"lo":0.385,"region":"conus","sensor":"snpp","year":2021},{"hi":0.413,"k_annual":0.397,"lo":0.381,"region":"conus","sensor":"snpp","year":2022},{"hi":0.398,"k_annual":0.383,"lo":0.368,"region":"conus","sensor":"snpp","year":2023},{"hi":0.373,"k_annual":0.359,"lo":0.344,"region":"conus","sensor":"snpp","year":2024},{"hi":0.343,"k_annual":0.33,"lo":0.317,"region":"conus","sensor":"snpp","year":2025}],"eyesight":[{"binned":[{"frp_mw":0.562,"n":1747,"p_obs":0.151},{"frp_mw":2.239,"n":604,"p_obs":0.335},{"frp_mw":8.913,"n":2542,"p_obs":0.553},{"frp_mw":35.481,"n":8119,"p_obs":0.71},{"frp_mw":141.254,"n":504,"p_obs":0.81},{"frp_mw":562.341,"n":4662,"p_obs":0.764}],"curve":[{"frp_mw":0.316,"hi":0.089,"lo":0.068,"p":0.078},{"frp_mw":0.774,"hi":0.189,"lo":0.131,"p":0.158},{"frp_mw":1.896,"hi":0.347,"lo":0.233,"p":0.287},{"frp_mw":4.642,"hi":0.526,"lo":0.373,"p":0.451},{"frp_mw":11.365,"hi":0.668,"lo":0.521,"p":0.602},{"frp_mw":27.826,"hi":0.75,"lo":0.644,"p":0.707},{"frp_mw":68.129,"hi":0.79,"lo":0.725,"p":0.766},{"frp_mw":166.81,"hi":0.807,"lo":0.772,"p":0.795},{"frp_mw":408.424,"hi":0.815,"lo":0.796,"p":0.809},{"frp_mw":1000.0,"hi":0.818,"lo":0.808,"p":0.815}],"g":1.12,"k_compare":[{"k_tier1":0.382,"k_tier2":0.418,"month":1},{"k_tier1":0.368,"k_tier2":0.364,"month":2},{"k_tier1":0.36,"k_tier2":0.349,"month":3},{"k_tier1":0.367,"k_tier2":0.369,"month":4},{"k_tier1":0.382,"k_tier2":0.384,"month":5},{"k_tier1":0.4,"k_tier2":0.388,"month":6},{"k_tier1":0.42,"k_tier2":0.41,"month":7},{"k_tier1":0.438,"k_tier2":0.436,"month":8},{"k_tier1":0.442,"k_tier2":0.45,"month":9},{"k_tier1":0.438,"k_tier2":0.438,"month":10},{"k_tier1":0.424,"k_tier2":0.421,"month":11},{"k_tier1":0.402,"k_tier2":0.418,"month":12}],"n_celldays":48210,"params":{"a":-1.2,"a_hi":-0.95,"a_lo":-1.45,"b":2.1,"b_hi":2.3,"b_lo":1.9,"c":0.82,"c_hi":0.87,"c_lo":0.77},"region":"conus","status":"validated"}],"filters":[{"region":"conus","rows_dropped":34906,"rows_in":420991,"sensor":"aqua","step":"confidence"},{"region":"conus","rows_dropped":22365,"rows_in":586333,"sensor":"snpp","step":"confidence"},{"region":"conus","rows_dropped":53472,"rows_in":717334,"sensor":"snpp","step":"type"}],"generated_at":"2026-11-14T00:00:00Z","inputs":[{"downloaded":"2026-11-14T00:00:00Z","first_date":"2003-01-01","last_date":"2026-11-13","region":"conus","rows":339321,"source":"MODIS_SP","via":"archive"},{"downloaded":"2026-11-14T00:00:00Z","first_date":"2012-01-20","last_date":"2026-11-13","region":"conus","rows":553205,"source":"VIIRS_SNPP_SP","via":"archive"},{"downloaded":"2026-11-14T00:00:00Z","first_date":"2018-01-01","last_date":"2026-11-13","region":"conus","rows":823286,"source":"VIIRS_NOAA20_SP","via":"archive"},{"downloaded":"2026-11-14T00:00:00Z","first_date":"2026-10-14","last_date":"2026-11-13","region":"conus","rows":556750,"source":"VIIRS_NOAA20_NRT","via":"api"}],"limitations":["Only daytime detections are used in this version.","Near-real-time rows are filtered per cell by a static-source mask, standard rows per detection.","The NOAA-20 era uses the S-NPP eyesight curve (same instrument design)."],"planted_truth":[{"pass":true,"quantity":"k_annual_snpp","recovered":0.41,"tolerance":0.03,"truth":0.4},{"pass":true,"quantity":"trend_pct_per_decade","recovered":18.6,"tolerance":3.0,"truth":20.0},{"pass":true,"quantity":"peak_week_1","recovered":30.0,"tolerance":1.0,"truth":30.0},{"pass":true,"quantity":"peak_week_2","recovered":11.0,"tolerance":1.0,"truth":10.0},{"pass":false,"quantity":"eyesight_b","recovered":2.4,"tolerance":0.3,"truth":2.0},{"pass":true,"quantity":"outage_days_missing","recovered":14.0,"tolerance":0.0,"truth":14.0}],"schema_version":"1.0","sources":[{"checked":"2026-11-14","claim_id":"snpp_end","text":"SAMPLE placeholder for claim snpp_end; no verified source yet.","url":"#"},{"checked":"2026-11-14","claim_id":"snpp_anomaly_2026","text":"SAMPLE placeholder for claim snpp_anomaly_2026; no verified source yet.","url":"#"},{"checked":"2026-11-14","claim_id":"aqua_drift","text":"SAMPLE placeholder for claim aqua_drift; no verified source yet.","url":"#"}],"validation":[{"baselines":{"annual_ratio":0.259,"raw_viirs":1.418},"method":"tier1","n":520,"note":"Sample value.","region":"conus","test":"loyo_weekly_wape","value":0.226,"years":[2013,2022]},{"method":"tier1","n":520,"note":"Sample value.","region":"conus","test":"loyo_weekly_r","value":0.962,"years":[2013,2022]},{"method":"tier1","n":10,"note":"Sample value. Totals match partly by construction.","region":"conus","test":"handoff_annual_mape","value":0.072,"years":[2013,2022]},{"method":"none","n":1,"note":"Sample value.","region":"conus","test":"step_naive","value":4.325,"years":[2011,2012]},{"method":"tier1","n":1,"note":"Sample value.","region":"conus","test":"step_harmonized","value":1.096,"years":[2011,2012]},{"method":"tier1","n":520,"note":"Sample value.","region":"conus","test":"loyo_bias","value":0.024,"years":[2013,2022]},{"method":"tier1","n":156,"note":"Sample value.","region":"conus","test":"sat_agreement_wape","value":0.047,"years":[2023,2025]},{"method":"tier1","n":12,"note":"Sample value.","region":"conus","test":"k_direct_vs_chained_pct","value":-3.849,"years":[2019,2022]},{"method":"tier1","n":520,"note":"Sample value.","region":"conus","test":"backcast_weekly_wape","value":0.244,"years":[2013,2022]}]}
+{
+  "ai_use": "AI coding assistants helped write and test the pipeline and website code. They did not produce any of the numbers: every number on this site comes from the pipeline's output files.",
+  "code_version": "bf23ae97",
+  "decisions": {
+    "aqua_trusted_through": "2022-12-31",
+    "baseline_years": [
+      2003,
+      2025
+    ],
+    "count_resolution": 6,
+    "reference": "MODIS Aqua, daytime",
+    "science_yaml_sha256": "2de1e54083be78406618a5a86ec3591e0c0dc36c4db1159e514da1784058a132",
+    "snpp_through": "2025-12-31"
+  },
+  "drift": [
+    {
+      "hi": 0.365,
+      "k_annual": 0.353,
+      "lo": 0.34,
+      "region": "us",
+      "sensor": "snpp",
+      "year": 2013
+    },
+    {
+      "hi": 0.384,
+      "k_annual": 0.369,
+      "lo": 0.354,
+      "region": "us",
+      "sensor": "snpp",
+      "year": 2014
+    },
+    {
+      "hi": 0.402,
+      "k_annual": 0.386,
+      "lo": 0.365,
+      "region": "us",
+      "sensor": "snpp",
+      "year": 2015
+    },
+    {
+      "hi": 0.386,
+      "k_annual": 0.376,
+      "lo": 0.363,
+      "region": "us",
+      "sensor": "snpp",
+      "year": 2016
+    },
+    {
+      "hi": 0.398,
+      "k_annual": 0.386,
+      "lo": 0.374,
+      "region": "us",
+      "sensor": "snpp",
+      "year": 2017
+    },
+    {
+      "hi": 0.386,
+      "k_annual": 0.368,
+      "lo": 0.35,
+      "region": "us",
+      "sensor": "snpp",
+      "year": 2018
+    },
+    {
+      "hi": 0.36,
+      "k_annual": 0.348,
+      "lo": 0.335,
+      "region": "us",
+      "sensor": "snpp",
+      "year": 2019
+    },
+    {
+      "hi": 0.385,
+      "k_annual": 0.366,
+      "lo": 0.348,
+      "region": "us",
+      "sensor": "snpp",
+      "year": 2020
+    },
+    {
+      "hi": 0.393,
+      "k_annual": 0.378,
+      "lo": 0.361,
+      "region": "us",
+      "sensor": "snpp",
+      "year": 2021
+    },
+    {
+      "hi": 0.37,
+      "k_annual": 0.357,
+      "lo": 0.345,
+      "region": "us",
+      "sensor": "snpp",
+      "year": 2022
+    },
+    {
+      "hi": 0.351,
+      "k_annual": 0.339,
+      "lo": 0.327,
+      "region": "us",
+      "sensor": "snpp",
+      "year": 2023
+    },
+    {
+      "hi": 0.364,
+      "k_annual": 0.348,
+      "lo": 0.33,
+      "region": "us",
+      "sensor": "snpp",
+      "year": 2024
+    },
+    {
+      "hi": 0.346,
+      "k_annual": 0.332,
+      "lo": 0.315,
+      "region": "us",
+      "sensor": "snpp",
+      "year": 2025
+    },
+    {
+      "hi": 0.352,
+      "k_annual": 0.34,
+      "lo": 0.328,
+      "region": "us",
+      "sensor": "noaa20",
+      "year": 2019
+    },
+    {
+      "hi": 0.37,
+      "k_annual": 0.354,
+      "lo": 0.34,
+      "region": "us",
+      "sensor": "noaa20",
+      "year": 2020
+    },
+    {
+      "hi": 0.381,
+      "k_annual": 0.365,
+      "lo": 0.346,
+      "region": "us",
+      "sensor": "noaa20",
+      "year": 2021
+    },
+    {
+      "hi": 0.355,
+      "k_annual": 0.342,
+      "lo": 0.33,
+      "region": "us",
+      "sensor": "noaa20",
+      "year": 2022
+    },
+    {
+      "hi": 0.336,
+      "k_annual": 0.324,
+      "lo": 0.311,
+      "region": "us",
+      "sensor": "noaa20",
+      "year": 2023
+    },
+    {
+      "hi": 0.355,
+      "k_annual": 0.337,
+      "lo": 0.319,
+      "region": "us",
+      "sensor": "noaa20",
+      "year": 2024
+    },
+    {
+      "hi": 0.331,
+      "k_annual": 0.318,
+      "lo": 0.305,
+      "region": "us",
+      "sensor": "noaa20",
+      "year": 2025
+    },
+    {
+      "hi": 0.481,
+      "k_annual": 0.474,
+      "lo": 0.466,
+      "region": "synthland",
+      "sensor": "snpp",
+      "year": 2013
+    },
+    {
+      "hi": 0.471,
+      "k_annual": 0.462,
+      "lo": 0.452,
+      "region": "synthland",
+      "sensor": "snpp",
+      "year": 2014
+    },
+    {
+      "hi": 0.476,
+      "k_annual": 0.469,
+      "lo": 0.463,
+      "region": "synthland",
+      "sensor": "snpp",
+      "year": 2015
+    },
+    {
+      "hi": 0.474,
+      "k_annual": 0.465,
+      "lo": 0.454,
+      "region": "synthland",
+      "sensor": "snpp",
+      "year": 2016
+    },
+    {
+      "hi": 0.475,
+      "k_annual": 0.466,
+      "lo": 0.454,
+      "region": "synthland",
+      "sensor": "snpp",
+      "year": 2017
+    },
+    {
+      "hi": 0.469,
+      "k_annual": 0.463,
+      "lo": 0.457,
+      "region": "synthland",
+      "sensor": "snpp",
+      "year": 2018
+    },
+    {
+      "hi": 0.475,
+      "k_annual": 0.465,
+      "lo": 0.456,
+      "region": "synthland",
+      "sensor": "snpp",
+      "year": 2019
+    },
+    {
+      "hi": 0.484,
+      "k_annual": 0.475,
+      "lo": 0.467,
+      "region": "synthland",
+      "sensor": "snpp",
+      "year": 2020
+    },
+    {
+      "hi": 0.472,
+      "k_annual": 0.462,
+      "lo": 0.448,
+      "region": "synthland",
+      "sensor": "snpp",
+      "year": 2021
+    },
+    {
+      "hi": 0.48,
+      "k_annual": 0.474,
+      "lo": 0.465,
+      "region": "synthland",
+      "sensor": "snpp",
+      "year": 2022
+    },
+    {
+      "hi": 0.436,
+      "k_annual": 0.43,
+      "lo": 0.425,
+      "region": "synthland",
+      "sensor": "snpp",
+      "year": 2023
+    },
+    {
+      "hi": 0.402,
+      "k_annual": 0.391,
+      "lo": 0.382,
+      "region": "synthland",
+      "sensor": "snpp",
+      "year": 2024
+    },
+    {
+      "hi": 0.356,
+      "k_annual": 0.35,
+      "lo": 0.342,
+      "region": "synthland",
+      "sensor": "snpp",
+      "year": 2025
+    },
+    {
+      "hi": 0.35,
+      "k_annual": 0.322,
+      "lo": 0.297,
+      "region": "synthland",
+      "sensor": "snpp",
+      "year": 2026
+    },
+    {
+      "hi": 0.47,
+      "k_annual": 0.464,
+      "lo": 0.458,
+      "region": "synthland",
+      "sensor": "noaa20",
+      "year": 2018
+    },
+    {
+      "hi": 0.479,
+      "k_annual": 0.469,
+      "lo": 0.459,
+      "region": "synthland",
+      "sensor": "noaa20",
+      "year": 2019
+    },
+    {
+      "hi": 0.48,
+      "k_annual": 0.473,
+      "lo": 0.466,
+      "region": "synthland",
+      "sensor": "noaa20",
+      "year": 2020
+    },
+    {
+      "hi": 0.468,
+      "k_annual": 0.46,
+      "lo": 0.449,
+      "region": "synthland",
+      "sensor": "noaa20",
+      "year": 2021
+    },
+    {
+      "hi": 0.48,
+      "k_annual": 0.474,
+      "lo": 0.466,
+      "region": "synthland",
+      "sensor": "noaa20",
+      "year": 2022
+    },
+    {
+      "hi": 0.437,
+      "k_annual": 0.43,
+      "lo": 0.424,
+      "region": "synthland",
+      "sensor": "noaa20",
+      "year": 2023
+    },
+    {
+      "hi": 0.394,
+      "k_annual": 0.387,
+      "lo": 0.379,
+      "region": "synthland",
+      "sensor": "noaa20",
+      "year": 2024
+    },
+    {
+      "hi": 0.355,
+      "k_annual": 0.348,
+      "lo": 0.34,
+      "region": "synthland",
+      "sensor": "noaa20",
+      "year": 2025
+    },
+    {
+      "hi": 0.323,
+      "k_annual": 0.309,
+      "lo": 0.298,
+      "region": "synthland",
+      "sensor": "noaa20",
+      "year": 2026
+    }
+  ],
+  "eyesight": [
+    {
+      "binned": [
+        {
+          "frp_mw": 0.512,
+          "n": 100188,
+          "p_obs": 0.036
+        },
+        {
+          "frp_mw": 3.13,
+          "n": 101285,
+          "p_obs": 0.063
+        },
+        {
+          "frp_mw": 4.44,
+          "n": 100277,
+          "p_obs": 0.098
+        },
+        {
+          "frp_mw": 6.403,
+          "n": 101129,
+          "p_obs": 0.146
+        },
+        {
+          "frp_mw": 9.822,
+          "n": 100783,
+          "p_obs": 0.216
+        },
+        {
+          "frp_mw": 16.829,
+          "n": 100811,
+          "p_obs": 0.307
+        },
+        {
+          "frp_mw": 36.497,
+          "n": 100758,
+          "p_obs": 0.43
+        },
+        {
+          "frp_mw": 1111.804,
+          "n": 100757,
+          "p_obs": 0.655
+        }
+      ],
+      "curve": [
+        {
+          "frp_mw": 0.5,
+          "hi": 0.014,
+          "lo": 0.012,
+          "p": 0.012
+        },
+        {
+          "frp_mw": 0.706,
+          "hi": 0.019,
+          "lo": 0.016,
+          "p": 0.018
+        },
+        {
+          "frp_mw": 0.998,
+          "hi": 0.026,
+          "lo": 0.023,
+          "p": 0.025
+        },
+        {
+          "frp_mw": 1.41,
+          "hi": 0.036,
+          "lo": 0.033,
+          "p": 0.035
+        },
+        {
+          "frp_mw": 1.992,
+          "hi": 0.05,
+          "lo": 0.047,
+          "p": 0.048
+        },
+        {
+          "frp_mw": 2.814,
+          "hi": 0.069,
+          "lo": 0.065,
+          "p": 0.067
+        },
+        {
+          "frp_mw": 3.976,
+          "hi": 0.094,
+          "lo": 0.09,
+          "p": 0.092
+        },
+        {
+          "frp_mw": 5.618,
+          "hi": 0.126,
+          "lo": 0.122,
+          "p": 0.124
+        },
+        {
+          "frp_mw": 7.937,
+          "hi": 0.169,
+          "lo": 0.163,
+          "p": 0.166
+        },
+        {
+          "frp_mw": 11.214,
+          "hi": 0.221,
+          "lo": 0.214,
+          "p": 0.217
+        },
+        {
+          "frp_mw": 15.843,
+          "hi": 0.282,
+          "lo": 0.273,
+          "p": 0.277
+        },
+        {
+          "frp_mw": 22.383,
+          "hi": 0.35,
+          "lo": 0.339,
+          "p": 0.344
+        },
+        {
+          "frp_mw": 31.623,
+          "hi": 0.422,
+          "lo": 0.41,
+          "p": 0.416
+        },
+        {
+          "frp_mw": 44.677,
+          "hi": 0.493,
+          "lo": 0.481,
+          "p": 0.487
+        },
+        {
+          "frp_mw": 63.121,
+          "hi": 0.561,
+          "lo": 0.548,
+          "p": 0.554
+        },
+        {
+          "frp_mw": 89.178,
+          "hi": 0.621,
+          "lo": 0.607,
+          "p": 0.613
+        },
+        {
+          "frp_mw": 125.992,
+          "hi": 0.672,
+          "lo": 0.654,
+          "p": 0.663
+        },
+        {
+          "frp_mw": 178.004,
+          "hi": 0.713,
+          "lo": 0.691,
+          "p": 0.704
+        },
+        {
+          "frp_mw": 251.487,
+          "hi": 0.747,
+          "lo": 0.719,
+          "p": 0.736
+        },
+        {
+          "frp_mw": 355.305,
+          "hi": 0.774,
+          "lo": 0.741,
+          "p": 0.76
+        },
+        {
+          "frp_mw": 501.98,
+          "hi": 0.794,
+          "lo": 0.756,
+          "p": 0.778
+        },
+        {
+          "frp_mw": 709.206,
+          "hi": 0.809,
+          "lo": 0.768,
+          "p": 0.791
+        },
+        {
+          "frp_mw": 1001.978,
+          "hi": 0.82,
+          "lo": 0.776,
+          "p": 0.801
+        },
+        {
+          "frp_mw": 1415.612,
+          "hi": 0.829,
+          "lo": 0.782,
+          "p": 0.807
+        },
+        {
+          "frp_mw": 2000.0,
+          "hi": 0.834,
+          "lo": 0.786,
+          "p": 0.812
+        }
+      ],
+      "g": 1.514,
+      "k_compare": [
+        {
+          "k_tier1": 0.351,
+          "k_tier2": 0.312,
+          "month": 1
+        },
+        {
+          "k_tier1": 0.378,
+          "k_tier2": 0.312,
+          "month": 2
+        },
+        {
+          "k_tier1": 0.39,
+          "k_tier2": 0.326,
+          "month": 3
+        },
+        {
+          "k_tier1": 0.349,
+          "k_tier2": 0.34,
+          "month": 4
+        },
+        {
+          "k_tier1": 0.283,
+          "k_tier2": 0.334,
+          "month": 5
+        },
+        {
+          "k_tier1": 0.336,
+          "k_tier2": 0.444,
+          "month": 6
+        },
+        {
+          "k_tier1": 0.38,
+          "k_tier2": 0.477,
+          "month": 7
+        },
+        {
+          "k_tier1": 0.398,
+          "k_tier2": 0.482,
+          "month": 8
+        },
+        {
+          "k_tier1": 0.376,
+          "k_tier2": 0.437,
+          "month": 9
+        },
+        {
+          "k_tier1": 0.404,
+          "k_tier2": 0.372,
+          "month": 10
+        },
+        {
+          "k_tier1": 0.383,
+          "k_tier2": 0.34,
+          "month": 11
+        },
+        {
+          "k_tier1": 0.349,
+          "k_tier2": 0.315,
+          "month": 12
+        }
+      ],
+      "n_celldays": 805988,
+      "params": {
+        "a": -3.475,
+        "a_hi": -3.441,
+        "a_lo": -3.509,
+        "b": 2.327,
+        "b_hi": 2.394,
+        "b_lo": 2.255,
+        "c": 0.825,
+        "c_hi": 0.849,
+        "c_lo": 0.795
+      },
+      "region": "us",
+      "status": "exploratory"
+    },
+    {
+      "binned": [
+        {
+          "frp_mw": 1.643,
+          "n": 10458,
+          "p_obs": 0.145
+        },
+        {
+          "frp_mw": 3.551,
+          "n": 10503,
+          "p_obs": 0.238
+        },
+        {
+          "frp_mw": 5.322,
+          "n": 10617,
+          "p_obs": 0.302
+        },
+        {
+          "frp_mw": 7.561,
+          "n": 10531,
+          "p_obs": 0.384
+        },
+        {
+          "frp_mw": 10.684,
+          "n": 10556,
+          "p_obs": 0.446
+        },
+        {
+          "frp_mw": 15.579,
+          "n": 10515,
+          "p_obs": 0.515
+        },
+        {
+          "frp_mw": 25.115,
+          "n": 10553,
+          "p_obs": 0.591
+        },
+        {
+          "frp_mw": 174.702,
+          "n": 10535,
+          "p_obs": 0.702
+        }
+      ],
+      "curve": [
+        {
+          "frp_mw": 0.5,
+          "hi": 0.047,
+          "lo": 0.041,
+          "p": 0.044
+        },
+        {
+          "frp_mw": 0.706,
+          "hi": 0.065,
+          "lo": 0.057,
+          "p": 0.061
+        },
+        {
+          "frp_mw": 0.998,
+          "hi": 0.087,
+          "lo": 0.079,
+          "p": 0.083
+        },
+        {
+          "frp_mw": 1.41,
+          "hi": 0.117,
+          "lo": 0.108,
+          "p": 0.113
+        },
+        {
+          "frp_mw": 1.992,
+          "hi": 0.155,
+          "lo": 0.145,
+          "p": 0.15
+        },
+        {
+          "frp_mw": 2.814,
+          "hi": 0.201,
+          "lo": 0.192,
+          "p": 0.197
+        },
+        {
+          "frp_mw": 3.976,
+          "hi": 0.256,
+          "lo": 0.249,
+          "p": 0.253
+        },
+        {
+          "frp_mw": 5.618,
+          "hi": 0.319,
+          "lo": 0.313,
+          "p": 0.316
+        },
+        {
+          "frp_mw": 7.937,
+          "hi": 0.387,
+          "lo": 0.382,
+          "p": 0.385
+        },
+        {
+          "frp_mw": 11.214,
+          "hi": 0.457,
+          "lo": 0.452,
+          "p": 0.454
+        },
+        {
+          "frp_mw": 15.843,
+          "hi": 0.524,
+          "lo": 0.519,
+          "p": 0.522
+        },
+        {
+          "frp_mw": 22.383,
+          "hi": 0.585,
+          "lo": 0.581,
+          "p": 0.583
+        },
+        {
+          "frp_mw": 31.623,
+          "hi": 0.64,
+          "lo": 0.632,
+          "p": 0.636
+        },
+        {
+          "frp_mw": 44.677,
+          "hi": 0.685,
+          "lo": 0.675,
+          "p": 0.68
+        },
+        {
+          "frp_mw": 63.121,
+          "hi": 0.723,
+          "lo": 0.708,
+          "p": 0.715
+        },
+        {
+          "frp_mw": 89.178,
+          "hi": 0.753,
+          "lo": 0.732,
+          "p": 0.742
+        },
+        {
+          "frp_mw": 125.992,
+          "hi": 0.775,
+          "lo": 0.751,
+          "p": 0.763
+        },
+        {
+          "frp_mw": 178.004,
+          "hi": 0.792,
+          "lo": 0.765,
+          "p": 0.778
+        },
+        {
+          "frp_mw": 251.487,
+          "hi": 0.805,
+          "lo": 0.775,
+          "p": 0.789
+        },
+        {
+          "frp_mw": 355.305,
+          "hi": 0.814,
+          "lo": 0.782,
+          "p": 0.797
+        },
+        {
+          "frp_mw": 501.98,
+          "hi": 0.822,
+          "lo": 0.787,
+          "p": 0.803
+        },
+        {
+          "frp_mw": 709.206,
+          "hi": 0.827,
+          "lo": 0.791,
+          "p": 0.807
+        },
+        {
+          "frp_mw": 1001.978,
+          "hi": 0.83,
+          "lo": 0.793,
+          "p": 0.81
+        },
+        {
+          "frp_mw": 1415.612,
+          "hi": 0.833,
+          "lo": 0.795,
+          "p": 0.813
+        },
+        {
+          "frp_mw": 2000.0,
+          "hi": 0.835,
+          "lo": 0.796,
+          "p": 0.814
+        }
+      ],
+      "g": 1.125,
+      "k_compare": [
+        {
+          "k_tier1": 0.46,
+          "k_tier2": 0.459,
+          "month": 1
+        },
+        {
+          "k_tier1": 0.442,
+          "k_tier2": 0.453,
+          "month": 2
+        },
+        {
+          "k_tier1": 0.495,
+          "k_tier2": 0.472,
+          "month": 3
+        },
+        {
+          "k_tier1": 0.462,
+          "k_tier2": 0.464,
+          "month": 4
+        },
+        {
+          "k_tier1": 0.465,
+          "k_tier2": 0.466,
+          "month": 5
+        },
+        {
+          "k_tier1": 0.442,
+          "k_tier2": 0.469,
+          "month": 6
+        },
+        {
+          "k_tier1": 0.47,
+          "k_tier2": 0.468,
+          "month": 7
+        },
+        {
+          "k_tier1": 0.463,
+          "k_tier2": 0.471,
+          "month": 8
+        },
+        {
+          "k_tier1": 0.453,
+          "k_tier2": 0.458,
+          "month": 9
+        },
+        {
+          "k_tier1": 0.469,
+          "k_tier2": 0.469,
+          "month": 10
+        },
+        {
+          "k_tier1": 0.472,
+          "k_tier2": 0.469,
+          "month": 11
+        },
+        {
+          "k_tier1": 0.465,
+          "k_tier2": 0.468,
+          "month": 12
+        }
+      ],
+      "n_celldays": 84268,
+      "params": {
+        "a": -2.176,
+        "a_hi": -2.143,
+        "a_lo": -2.216,
+        "b": 2.285,
+        "b_hi": 2.373,
+        "b_lo": 2.208,
+        "c": 0.818,
+        "c_hi": 0.84,
+        "c_lo": 0.799
+      },
+      "region": "synthland",
+      "status": "validated"
+    }
+  ],
+  "filters": [
+    {
+      "region": "us",
+      "rows_dropped": 0,
+      "rows_in": 1544192,
+      "sensor": "aqua",
+      "step": "valid_coordinates_date"
+    },
+    {
+      "region": "us",
+      "rows_dropped": 0,
+      "rows_in": 1544192,
+      "sensor": "aqua",
+      "step": "duplicates"
+    },
+    {
+      "region": "us",
+      "rows_dropped": 0,
+      "rows_in": 1544192,
+      "sensor": "aqua",
+      "step": "bbox"
+    },
+    {
+      "region": "us",
+      "rows_dropped": 64117,
+      "rows_in": 1544192,
+      "sensor": "aqua",
+      "step": "type"
+    },
+    {
+      "region": "us",
+      "rows_dropped": 78418,
+      "rows_in": 1480075,
+      "sensor": "aqua",
+      "step": "confidence"
+    },
+    {
+      "region": "us",
+      "rows_dropped": 0,
+      "rows_in": 1390726,
+      "sensor": "terra",
+      "step": "valid_coordinates_date"
+    },
+    {
+      "region": "us",
+      "rows_dropped": 0,
+      "rows_in": 1390726,
+      "sensor": "terra",
+      "step": "duplicates"
+    },
+    {
+      "region": "us",
+      "rows_dropped": 0,
+      "rows_in": 1390726,
+      "sensor": "terra",
+      "step": "bbox"
+    },
+    {
+      "region": "us",
+      "rows_dropped": 78313,
+      "rows_in": 1390726,
+      "sensor": "terra",
+      "step": "type"
+    },
+    {
+      "region": "us",
+      "rows_dropped": 83576,
+      "rows_in": 1312413,
+      "sensor": "terra",
+      "step": "confidence"
+    },
+    {
+      "region": "us",
+      "rows_dropped": 0,
+      "rows_in": 7150394,
+      "sensor": "snpp",
+      "step": "valid_coordinates_date"
+    },
+    {
+      "region": "us",
+      "rows_dropped": 3,
+      "rows_in": 7150394,
+      "sensor": "snpp",
+      "step": "duplicates"
+    },
+    {
+      "region": "us",
+      "rows_dropped": 0,
+      "rows_in": 7150391,
+      "sensor": "snpp",
+      "step": "bbox"
+    },
+    {
+      "region": "us",
+      "rows_dropped": 1214893,
+      "rows_in": 7150391,
+      "sensor": "snpp",
+      "step": "type"
+    },
+    {
+      "region": "us",
+      "rows_dropped": 279274,
+      "rows_in": 5935498,
+      "sensor": "snpp",
+      "step": "confidence"
+    },
+    {
+      "region": "us",
+      "rows_dropped": 0,
+      "rows_in": 4206744,
+      "sensor": "noaa20",
+      "step": "valid_coordinates_date"
+    },
+    {
+      "region": "us",
+      "rows_dropped": 0,
+      "rows_in": 4206744,
+      "sensor": "noaa20",
+      "step": "duplicates"
+    },
+    {
+      "region": "us",
+      "rows_dropped": 0,
+      "rows_in": 4206744,
+      "sensor": "noaa20",
+      "step": "bbox"
+    },
+    {
+      "region": "us",
+      "rows_dropped": 686437,
+      "rows_in": 4206744,
+      "sensor": "noaa20",
+      "step": "type"
+    },
+    {
+      "region": "us",
+      "rows_dropped": 173906,
+      "rows_in": 3520307,
+      "sensor": "noaa20",
+      "step": "confidence"
+    },
+    {
+      "region": "us",
+      "rows_dropped": 0,
+      "rows_in": 1401657,
+      "sensor": "aqua",
+      "step": "static_mask"
+    },
+    {
+      "region": "us",
+      "rows_dropped": 0,
+      "rows_in": 1228837,
+      "sensor": "terra",
+      "step": "static_mask"
+    },
+    {
+      "region": "us",
+      "rows_dropped": 0,
+      "rows_in": 5656224,
+      "sensor": "snpp",
+      "step": "static_mask"
+    },
+    {
+      "region": "us",
+      "rows_dropped": 0,
+      "rows_in": 3346401,
+      "sensor": "noaa20",
+      "step": "static_mask"
+    },
+    {
+      "region": "synthland",
+      "rows_dropped": 0,
+      "rows_in": 143435,
+      "sensor": "aqua",
+      "step": "valid_coordinates_date"
+    },
+    {
+      "region": "synthland",
+      "rows_dropped": 0,
+      "rows_in": 143435,
+      "sensor": "aqua",
+      "step": "duplicates"
+    },
+    {
+      "region": "synthland",
+      "rows_dropped": 269,
+      "rows_in": 143435,
+      "sensor": "aqua",
+      "step": "bbox"
+    },
+    {
+      "region": "synthland",
+      "rows_dropped": 41477,
+      "rows_in": 143166,
+      "sensor": "aqua",
+      "step": "type"
+    },
+    {
+      "region": "synthland",
+      "rows_dropped": 1730,
+      "rows_in": 101689,
+      "sensor": "aqua",
+      "step": "confidence"
+    },
+    {
+      "region": "synthland",
+      "rows_dropped": 0,
+      "rows_in": 124299,
+      "sensor": "terra",
+      "step": "valid_coordinates_date"
+    },
+    {
+      "region": "synthland",
+      "rows_dropped": 0,
+      "rows_in": 124299,
+      "sensor": "terra",
+      "step": "duplicates"
+    },
+    {
+      "region": "synthland",
+      "rows_dropped": 243,
+      "rows_in": 124299,
+      "sensor": "terra",
+      "step": "bbox"
+    },
+    {
+      "region": "synthland",
+      "rows_dropped": 41634,
+      "rows_in": 124056,
+      "sensor": "terra",
+      "step": "type"
+    },
+    {
+      "region": "synthland",
+      "rows_dropped": 1064,
+      "rows_in": 82422,
+      "sensor": "terra",
+      "step": "confidence"
+    },
+    {
+      "region": "synthland",
+      "rows_dropped": 0,
+      "rows_in": 486042,
+      "sensor": "snpp",
+      "step": "valid_coordinates_date"
+    },
+    {
+      "region": "synthland",
+      "rows_dropped": 0,
+      "rows_in": 486042,
+      "sensor": "snpp",
+      "step": "duplicates"
+    },
+    {
+      "region": "synthland",
+      "rows_dropped": 684,
+      "rows_in": 486042,
+      "sensor": "snpp",
+      "step": "bbox"
+    },
+    {
+      "region": "synthland",
+      "rows_dropped": 25578,
+      "rows_in": 485358,
+      "sensor": "snpp",
+      "step": "type"
+    },
+    {
+      "region": "synthland",
+      "rows_dropped": 48531,
+      "rows_in": 459780,
+      "sensor": "snpp",
+      "step": "confidence"
+    },
+    {
+      "region": "synthland",
+      "rows_dropped": 0,
+      "rows_in": 310329,
+      "sensor": "noaa20",
+      "step": "valid_coordinates_date"
+    },
+    {
+      "region": "synthland",
+      "rows_dropped": 0,
+      "rows_in": 310329,
+      "sensor": "noaa20",
+      "step": "duplicates"
+    },
+    {
+      "region": "synthland",
+      "rows_dropped": 450,
+      "rows_in": 310329,
+      "sensor": "noaa20",
+      "step": "bbox"
+    },
+    {
+      "region": "synthland",
+      "rows_dropped": 15077,
+      "rows_in": 309879,
+      "sensor": "noaa20",
+      "step": "type"
+    },
+    {
+      "region": "synthland",
+      "rows_dropped": 30991,
+      "rows_in": 294802,
+      "sensor": "noaa20",
+      "step": "confidence"
+    },
+    {
+      "region": "synthland",
+      "rows_dropped": 277,
+      "rows_in": 99959,
+      "sensor": "aqua",
+      "step": "static_mask"
+    },
+    {
+      "region": "synthland",
+      "rows_dropped": 662,
+      "rows_in": 81358,
+      "sensor": "terra",
+      "step": "static_mask"
+    },
+    {
+      "region": "synthland",
+      "rows_dropped": 44,
+      "rows_in": 411249,
+      "sensor": "snpp",
+      "step": "static_mask"
+    },
+    {
+      "region": "synthland",
+      "rows_dropped": 687,
+      "rows_in": 263811,
+      "sensor": "noaa20",
+      "step": "static_mask"
+    }
+  ],
+  "generated_at": "2026-11-15T05:54:45Z",
+  "inputs": [
+    {
+      "downloaded": "2026-11-15T05:20:55Z",
+      "first_date": "2003-01-01",
+      "last_date": "2003-12-31",
+      "region": "us",
+      "rows": 114471,
+      "source": "MODIS_data/modis_2003_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:20:55Z",
+      "first_date": "2004-01-01",
+      "last_date": "2004-12-31",
+      "region": "us",
+      "rows": 158385,
+      "source": "MODIS_data/modis_2004_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:20:56Z",
+      "first_date": "2005-01-01",
+      "last_date": "2005-12-31",
+      "region": "us",
+      "rows": 171160,
+      "source": "MODIS_data/modis_2005_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:20:57Z",
+      "first_date": "2006-01-01",
+      "last_date": "2006-12-31",
+      "region": "us",
+      "rows": 126737,
+      "source": "MODIS_data/modis_2006_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:20:57Z",
+      "first_date": "2007-01-01",
+      "last_date": "2007-12-31",
+      "region": "us",
+      "rows": 142420,
+      "source": "MODIS_data/modis_2007_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:20:58Z",
+      "first_date": "2008-01-01",
+      "last_date": "2008-12-31",
+      "region": "us",
+      "rows": 119797,
+      "source": "MODIS_data/modis_2008_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:20:59Z",
+      "first_date": "2009-01-01",
+      "last_date": "2009-12-31",
+      "region": "us",
+      "rows": 115174,
+      "source": "MODIS_data/modis_2009_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:20:59Z",
+      "first_date": "2010-01-01",
+      "last_date": "2010-12-31",
+      "region": "us",
+      "rows": 98322,
+      "source": "MODIS_data/modis_2010_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:00Z",
+      "first_date": "2011-01-01",
+      "last_date": "2011-12-31",
+      "region": "us",
+      "rows": 123867,
+      "source": "MODIS_data/modis_2011_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:01Z",
+      "first_date": "2012-01-01",
+      "last_date": "2012-12-31",
+      "region": "us",
+      "rows": 137295,
+      "source": "MODIS_data/modis_2012_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:02Z",
+      "first_date": "2013-01-01",
+      "last_date": "2013-12-31",
+      "region": "us",
+      "rows": 102348,
+      "source": "MODIS_data/modis_2013_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:04Z",
+      "first_date": "2014-01-01",
+      "last_date": "2014-12-31",
+      "region": "us",
+      "rows": 98871,
+      "source": "MODIS_data/modis_2014_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:05Z",
+      "first_date": "2015-01-01",
+      "last_date": "2015-12-31",
+      "region": "us",
+      "rows": 146984,
+      "source": "MODIS_data/modis_2015_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:07Z",
+      "first_date": "2016-01-01",
+      "last_date": "2016-12-31",
+      "region": "us",
+      "rows": 112736,
+      "source": "MODIS_data/modis_2016_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:08Z",
+      "first_date": "2017-01-01",
+      "last_date": "2017-12-31",
+      "region": "us",
+      "rows": 152702,
+      "source": "MODIS_data/modis_2017_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:10Z",
+      "first_date": "2018-01-01",
+      "last_date": "2018-12-31",
+      "region": "us",
+      "rows": 130986,
+      "source": "MODIS_data/modis_2018_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:12Z",
+      "first_date": "2019-01-01",
+      "last_date": "2019-12-31",
+      "region": "us",
+      "rows": 107213,
+      "source": "MODIS_data/modis_2019_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:14Z",
+      "first_date": "2020-01-01",
+      "last_date": "2020-12-31",
+      "region": "us",
+      "rows": 153848,
+      "source": "MODIS_data/modis_2020_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:16Z",
+      "first_date": "2021-01-01",
+      "last_date": "2021-12-31",
+      "region": "us",
+      "rows": 163687,
+      "source": "MODIS_data/modis_2021_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:19Z",
+      "first_date": "2022-01-01",
+      "last_date": "2022-12-31",
+      "region": "us",
+      "rows": 130358,
+      "source": "MODIS_data/modis_2022_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:21Z",
+      "first_date": "2023-01-01",
+      "last_date": "2023-12-31",
+      "region": "us",
+      "rows": 94000,
+      "source": "MODIS_data/modis_2023_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:23Z",
+      "first_date": "2024-01-01",
+      "last_date": "2024-12-31",
+      "region": "us",
+      "rows": 123712,
+      "source": "MODIS_data/modis_2024_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:25Z",
+      "first_date": "2025-01-01",
+      "last_date": "2025-12-31",
+      "region": "us",
+      "rows": 109845,
+      "source": "MODIS_data/modis_2025_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:11Z",
+      "first_date": "2018-04-01",
+      "last_date": "2018-12-31",
+      "region": "us",
+      "rows": 461477,
+      "source": "VIIRS-JPSS_data/viirs-jpss1_2018_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:13Z",
+      "first_date": "2019-01-01",
+      "last_date": "2019-12-31",
+      "region": "us",
+      "rows": 451429,
+      "source": "VIIRS-JPSS_data/viirs-jpss1_2019_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:16Z",
+      "first_date": "2020-01-01",
+      "last_date": "2020-12-31",
+      "region": "us",
+      "rows": 665078,
+      "source": "VIIRS-JPSS_data/viirs-jpss1_2020_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:18Z",
+      "first_date": "2021-01-01",
+      "last_date": "2021-12-31",
+      "region": "us",
+      "rows": 670917,
+      "source": "VIIRS-JPSS_data/viirs-jpss1_2021_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:20Z",
+      "first_date": "2022-01-01",
+      "last_date": "2022-12-31",
+      "region": "us",
+      "rows": 546431,
+      "source": "VIIRS-JPSS_data/viirs-jpss1_2022_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:22Z",
+      "first_date": "2023-01-01",
+      "last_date": "2023-12-31",
+      "region": "us",
+      "rows": 390873,
+      "source": "VIIRS-JPSS_data/viirs-jpss1_2023_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:25Z",
+      "first_date": "2024-01-01",
+      "last_date": "2024-12-31",
+      "region": "us",
+      "rows": 535136,
+      "source": "VIIRS-JPSS_data/viirs-jpss1_2024_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:27Z",
+      "first_date": "2025-01-01",
+      "last_date": "2025-12-31",
+      "region": "us",
+      "rows": 485403,
+      "source": "VIIRS-JPSS_data/viirs-jpss1_2025_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:02Z",
+      "first_date": "2012-01-20",
+      "last_date": "2012-12-31",
+      "region": "us",
+      "rows": 536477,
+      "source": "VIIRS-SNPP_data/viirs-snpp_2012_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:03Z",
+      "first_date": "2013-01-01",
+      "last_date": "2013-12-31",
+      "region": "us",
+      "rows": 404761,
+      "source": "VIIRS-SNPP_data/viirs-snpp_2013_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:04Z",
+      "first_date": "2014-01-01",
+      "last_date": "2014-12-31",
+      "region": "us",
+      "rows": 377204,
+      "source": "VIIRS-SNPP_data/viirs-snpp_2014_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:06Z",
+      "first_date": "2015-01-01",
+      "last_date": "2015-12-31",
+      "region": "us",
+      "rows": 581042,
+      "source": "VIIRS-SNPP_data/viirs-snpp_2015_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:07Z",
+      "first_date": "2016-01-01",
+      "last_date": "2016-12-31",
+      "region": "us",
+      "rows": 432975,
+      "source": "VIIRS-SNPP_data/viirs-snpp_2016_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:09Z",
+      "first_date": "2017-01-01",
+      "last_date": "2017-12-31",
+      "region": "us",
+      "rows": 596168,
+      "source": "VIIRS-SNPP_data/viirs-snpp_2017_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:10Z",
+      "first_date": "2018-01-01",
+      "last_date": "2018-12-31",
+      "region": "us",
+      "rows": 556244,
+      "source": "VIIRS-SNPP_data/viirs-snpp_2018_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:13Z",
+      "first_date": "2019-01-01",
+      "last_date": "2019-12-31",
+      "region": "us",
+      "rows": 453400,
+      "source": "VIIRS-SNPP_data/viirs-snpp_2019_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:15Z",
+      "first_date": "2020-01-01",
+      "last_date": "2020-12-31",
+      "region": "us",
+      "rows": 672822,
+      "source": "VIIRS-SNPP_data/viirs-snpp_2020_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:17Z",
+      "first_date": "2021-01-01",
+      "last_date": "2021-12-31",
+      "region": "us",
+      "rows": 664995,
+      "source": "VIIRS-SNPP_data/viirs-snpp_2021_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:19Z",
+      "first_date": "2022-01-01",
+      "last_date": "2022-12-31",
+      "region": "us",
+      "rows": 531089,
+      "source": "VIIRS-SNPP_data/viirs-snpp_2022_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:22Z",
+      "first_date": "2023-01-01",
+      "last_date": "2023-12-31",
+      "region": "us",
+      "rows": 388672,
+      "source": "VIIRS-SNPP_data/viirs-snpp_2023_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:24Z",
+      "first_date": "2024-01-01",
+      "last_date": "2024-12-31",
+      "region": "us",
+      "rows": 484736,
+      "source": "VIIRS-SNPP_data/viirs-snpp_2024_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:21:26Z",
+      "first_date": "2025-01-01",
+      "last_date": "2025-12-31",
+      "region": "us",
+      "rows": 469809,
+      "source": "VIIRS-SNPP_data/viirs-snpp_2025_United_States.csv",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T05:48:43Z",
+      "first_date": "2003-01-01",
+      "last_date": "2026-11-13",
+      "region": "synthland",
+      "rows": 267734,
+      "source": "synth:modis",
+      "via": "synth"
+    },
+    {
+      "downloaded": "2026-11-15T05:48:43Z",
+      "first_date": "2012-01-20",
+      "last_date": "2026-07-09",
+      "region": "synthland",
+      "rows": 486042,
+      "source": "synth:snpp",
+      "via": "synth"
+    },
+    {
+      "downloaded": "2026-11-15T05:48:43Z",
+      "first_date": "2018-01-01",
+      "last_date": "2026-11-13",
+      "region": "synthland",
+      "rows": 310329,
+      "source": "synth:noaa20",
+      "via": "synth"
+    }
+  ],
+  "limitations": [
+    "Only daytime detections are used in this version. Night-time detections are kept in the data but not shown.",
+    "Near-real-time detections are filtered per map cell by a static heat-source mask; standard detections are filtered one by one.",
+    "From 2026 the record uses NOAA-20 with the S-NPP eyesight curve, assuming the two instruments see fires the same way."
+  ],
+  "planted_truth": [
+    {
+      "pass": true,
+      "quantity": "k_annual_snpp",
+      "recovered": 0.467,
+      "tolerance": 0.03,
+      "truth": 0.468
+    },
+    {
+      "pass": true,
+      "quantity": "k_annual_noaa20",
+      "recovered": 0.468,
+      "tolerance": 0.04,
+      "truth": 0.468
+    },
+    {
+      "pass": true,
+      "quantity": "k_month_snpp_max_abs_err",
+      "recovered": 0.004,
+      "tolerance": 0.08,
+      "truth": 0.0
+    },
+    {
+      "pass": true,
+      "quantity": "g",
+      "recovered": 1.125,
+      "tolerance": 0.03,
+      "truth": 1.125
+    },
+    {
+      "pass": true,
+      "quantity": "reliability_err",
+      "recovered": 0.012,
+      "tolerance": 0.05,
+      "truth": 0.0
+    },
+    {
+      "pass": true,
+      "quantity": "trend_pct_per_decade",
+      "recovered": 12.459,
+      "tolerance": 5.0,
+      "truth": 12.512
+    },
+    {
+      "pass": true,
+      "quantity": "peak_week_main",
+      "recovered": 44.0,
+      "tolerance": 1,
+      "truth": 44
+    },
+    {
+      "pass": true,
+      "quantity": "peak_week_second",
+      "recovered": 18.0,
+      "tolerance": 1,
+      "truth": 18
+    },
+    {
+      "pass": true,
+      "quantity": "aqua_outage_days_missing",
+      "recovered": 18.0,
+      "tolerance": 0,
+      "truth": 18
+    },
+    {
+      "pass": true,
+      "quantity": "static_rows_surviving",
+      "recovered": 1552.0,
+      "tolerance": 0,
+      "truth": 1552
+    }
+  ],
+  "schema_version": "1.0",
+  "sources": [],
+  "validation": [
+    {
+      "baselines": {
+        "annual_ratio": 0.138,
+        "raw_viirs": 1.706
+      },
+      "method": "tier1",
+      "n": 512,
+      "note": "Entire held-out calendar year excluded from monthly and annual-baseline fits, including shrinkage; jointly covered Aqua/S-NPP days, common coverage-scaled weeks; n=paired valid weeks. Zero observed totals or constant weekly counts make the corresponding metric null.",
+      "region": "us",
+      "test": "loyo_weekly_wape",
+      "value": 0.122,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "baselines": {
+        "annual_ratio": 0.966,
+        "raw_viirs": 0.967
+      },
+      "method": "tier1",
+      "n": 512,
+      "note": "Entire held-out calendar year excluded from monthly and annual-baseline fits, including shrinkage; jointly covered Aqua/S-NPP days, common coverage-scaled weeks; n=paired valid weeks. Zero observed totals or constant weekly counts make the corresponding metric null.",
+      "region": "us",
+      "test": "loyo_weekly_r",
+      "value": 0.968,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "baselines": {
+        "annual_ratio": -0.001,
+        "raw_viirs": 1.706
+      },
+      "method": "tier1",
+      "n": 512,
+      "note": "Entire held-out calendar year excluded from monthly and annual-baseline fits, including shrinkage; jointly covered Aqua/S-NPP days, common coverage-scaled weeks; n=paired valid weeks. Zero observed totals or constant weekly counts make the corresponding metric null.",
+      "region": "us",
+      "test": "loyo_bias",
+      "value": -0.002,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "method": "tier1",
+      "n": 10,
+      "note": "LOYO annual totals on jointly covered days, scaled by common.timebins; n=valid positive-observation years; 0 years with insufficient coverage/zero totals excluded. totals match partly by construction; see LOYO",
+      "region": "us",
+      "test": "handoff_annual_mape",
+      "value": 0.029,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "method": "none",
+      "n": 6,
+      "note": "Mean 2012–2014 / mean 2009–2011; baseline 2003–2011 adjacent 3-year/3-year ratio 5th–95th percentiles: 0.778539 to 0.887476 (4 consecutive windows); totals match partly by construction; see LOYO; naive splice: MODIS Terra+Aqua day+night hotspots through 2011, S-NPP thereafter",
+      "region": "us",
+      "test": "step_naive",
+      "value": 3.302,
+      "years": [
+        2009,
+        2014
+      ]
+    },
+    {
+      "method": "tier1",
+      "n": 6,
+      "note": "Mean 2012–2014 / mean 2009–2011; baseline 2003–2011 adjacent 3-year/3-year ratio 5th–95th percentiles: 0.888262 to 0.986321 (4 consecutive windows); totals match partly by construction; see LOYO; translated splice: aqua_raw through 2011, viirs_as_aqua thereafter",
+      "region": "us",
+      "test": "step_harmonized",
+      "value": 0.909,
+      "years": [
+        2009,
+        2014
+      ]
+    },
+    {
+      "method": "tier1",
+      "n": 357,
+      "note": "WAPE denominator is S-NPP translated total; identical jointly covered days before common weekly aggregation; n=paired valid weeks. This is in-sample agreement, not LOYO.",
+      "region": "us",
+      "test": "sat_agreement_wape",
+      "value": 0.057,
+      "years": [
+        2019,
+        2025
+      ]
+    },
+    {
+      "method": "tier1",
+      "n": 1427,
+      "note": "100 × (direct annual k − chained annual k) / chained annual k; n=joint Aqua/NOAA-20 direct-fit days. Direct fit ends at the S-NPP fit-window end; chained S-NPP/NOAA-20 overlap ends at the S-NPP era end.",
+      "region": "us",
+      "test": "k_direct_vs_chained_pct",
+      "value": -1.568,
+      "years": [
+        2019,
+        2022
+      ]
+    },
+    {
+      "method": "none",
+      "n": 10,
+      "note": "sensor=aqua; peak Aqua week=13; n=valid fit years. 257738 region cells; equal-weight mean across years of covered-day mean active-cell fraction; uncovered days excluded, covered zero-count days retained.",
+      "region": "us",
+      "test": "saturation_r6",
+      "value": 0.001,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "method": "none",
+      "n": 10,
+      "note": "sensor=aqua; peak Aqua week=13; n=valid fit years. 38100 region cells; equal-weight mean across years of covered-day mean active-cell fraction; uncovered days excluded, covered zero-count days retained.",
+      "region": "us",
+      "test": "saturation_r5",
+      "value": 0.004,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "method": "none",
+      "n": 10,
+      "note": "sensor=snpp; peak Aqua week=13; n=valid fit years. 257738 region cells; equal-weight mean across years of covered-day mean active-cell fraction; uncovered days excluded, covered zero-count days retained.",
+      "region": "us",
+      "test": "saturation_r6",
+      "value": 0.002,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "method": "none",
+      "n": 10,
+      "note": "sensor=snpp; peak Aqua week=13; n=valid fit years. 38100 region cells; equal-weight mean across years of covered-day mean active-cell fraction; uncovered days excluded, covered zero-count days retained.",
+      "region": "us",
+      "test": "saturation_r5",
+      "value": 0.01,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "method": "tier1",
+      "n": 512,
+      "note": "Aqua divided by V1's year-held-out S-NPP factors; the entire test year is excluded from monthly fits and annual shrinkage targets. Joint coverage before common weekly aggregation; zero fitted factors give unavailable predictions; n=paired valid weeks.",
+      "region": "us",
+      "test": "backcast_weekly_wape",
+      "value": 0.122,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "method": "tier2",
+      "n": 805988,
+      "note": "Value = sum over held-out years of |sum p - observed| / total observed (per-year absolute). Signed pooled form |sum of all held-out (p - observed)| / observed = 0.0003 (reported only; it cancels across years). Neighbour-match sensitivity (reported, not used): c 0.825 -> 0.900 (change +0.076); mean monthly k_T2 0.374 -> 0.499 (change +0.124, largest monthly change +0.130); g kept same-cell (1.514).",
+      "region": "us",
+      "test": "reliability_err",
+      "value": 0.019,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "method": "tier2",
+      "n": 512,
+      "note": "NOAA-20 days of harmonized_t2 use the curve fitted on S-NPP (same VIIRS instrument design); no NOAA-20-specific curve was fitted. aqua_raw/snpp_raw from R3 daily.parquet.",
+      "region": "us",
+      "test": "loyo_weekly_wape",
+      "value": 0.166,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "method": "tier2",
+      "n": 512,
+      "note": "aqua_raw/snpp_raw from R3 daily.parquet.",
+      "region": "us",
+      "test": "backcast_weekly_wape",
+      "value": 0.183,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "method": "tier2",
+      "n": 517,
+      "note": "harmonized_t2 vs R3 viirs_as_aqua, weekly, fit window.",
+      "region": "us",
+      "test": "t1_t2_wape",
+      "value": 0.162,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "baselines": {
+        "annual_ratio": 0.054,
+        "raw_viirs": 1.139
+      },
+      "method": "tier1",
+      "n": 512,
+      "note": "Entire held-out calendar year excluded from monthly and annual-baseline fits, including shrinkage; jointly covered Aqua/S-NPP days, common coverage-scaled weeks; n=paired valid weeks. Zero observed totals or constant weekly counts make the corresponding metric null.",
+      "region": "synthland",
+      "test": "loyo_weekly_wape",
+      "value": 0.054,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "baselines": {
+        "annual_ratio": 0.998,
+        "raw_viirs": 0.998
+      },
+      "method": "tier1",
+      "n": 512,
+      "note": "Entire held-out calendar year excluded from monthly and annual-baseline fits, including shrinkage; jointly covered Aqua/S-NPP days, common coverage-scaled weeks; n=paired valid weeks. Zero observed totals or constant weekly counts make the corresponding metric null.",
+      "region": "synthland",
+      "test": "loyo_weekly_r",
+      "value": 0.998,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "baselines": {
+        "annual_ratio": 0.0,
+        "raw_viirs": 1.139
+      },
+      "method": "tier1",
+      "n": 512,
+      "note": "Entire held-out calendar year excluded from monthly and annual-baseline fits, including shrinkage; jointly covered Aqua/S-NPP days, common coverage-scaled weeks; n=paired valid weeks. Zero observed totals or constant weekly counts make the corresponding metric null.",
+      "region": "synthland",
+      "test": "loyo_bias",
+      "value": 0.0,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "method": "tier1",
+      "n": 10,
+      "note": "LOYO annual totals on jointly covered days, scaled by common.timebins; n=valid positive-observation years; 0 years with insufficient coverage/zero totals excluded. totals match partly by construction; see LOYO",
+      "region": "synthland",
+      "test": "handoff_annual_mape",
+      "value": 0.01,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "method": "none",
+      "n": 6,
+      "note": "Mean 2012–2014 / mean 2009–2011; baseline 2003–2011 adjacent 3-year/3-year ratio 5th–95th percentiles: 1.04967 to 1.07838 (4 consecutive windows); totals match partly by construction; see LOYO; naive splice: MODIS Terra+Aqua day+night hotspots through 2011, S-NPP thereafter",
+      "region": "synthland",
+      "test": "step_naive",
+      "value": 3.695,
+      "years": [
+        2009,
+        2014
+      ]
+    },
+    {
+      "method": "tier1",
+      "n": 6,
+      "note": "Mean 2012–2014 / mean 2009–2011; baseline 2003–2011 adjacent 3-year/3-year ratio 5th–95th percentiles: 1.05203 to 1.07877 (4 consecutive windows); totals match partly by construction; see LOYO; translated splice: aqua_raw through 2011, viirs_as_aqua thereafter",
+      "region": "synthland",
+      "test": "step_harmonized",
+      "value": 1.035,
+      "years": [
+        2009,
+        2014
+      ]
+    },
+    {
+      "method": "tier1",
+      "n": 409,
+      "note": "WAPE denominator is S-NPP translated total; identical jointly covered days before common weekly aggregation; n=paired valid weeks. This is in-sample agreement, not LOYO.",
+      "region": "synthland",
+      "test": "sat_agreement_wape",
+      "value": 0.024,
+      "years": [
+        2018,
+        2025
+      ]
+    },
+    {
+      "method": "tier1",
+      "n": 1792,
+      "note": "100 × (direct annual k − chained annual k) / chained annual k; n=joint Aqua/NOAA-20 direct-fit days. Direct fit ends at the S-NPP fit-window end; chained S-NPP/NOAA-20 overlap ends at the S-NPP era end.",
+      "region": "synthland",
+      "test": "k_direct_vs_chained_pct",
+      "value": 0.208,
+      "years": [
+        2018,
+        2022
+      ]
+    },
+    {
+      "method": "none",
+      "n": 10,
+      "note": "sensor=aqua; peak Aqua week=44; n=valid fit years. 1355 region cells; equal-weight mean across years of covered-day mean active-cell fraction; uncovered days excluded, covered zero-count days retained.",
+      "region": "synthland",
+      "test": "saturation_r6",
+      "value": 0.044,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "method": "none",
+      "n": 10,
+      "note": "sensor=aqua; peak Aqua week=44; n=valid fit years. 215 region cells; equal-weight mean across years of covered-day mean active-cell fraction; uncovered days excluded, covered zero-count days retained.",
+      "region": "synthland",
+      "test": "saturation_r5",
+      "value": 0.247,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "method": "none",
+      "n": 10,
+      "note": "sensor=snpp; peak Aqua week=44; n=valid fit years. 1355 region cells; equal-weight mean across years of covered-day mean active-cell fraction; uncovered days excluded, covered zero-count days retained.",
+      "region": "synthland",
+      "test": "saturation_r6",
+      "value": 0.095,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "method": "none",
+      "n": 10,
+      "note": "sensor=snpp; peak Aqua week=44; n=valid fit years. 215 region cells; equal-weight mean across years of covered-day mean active-cell fraction; uncovered days excluded, covered zero-count days retained.",
+      "region": "synthland",
+      "test": "saturation_r5",
+      "value": 0.442,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "method": "tier1",
+      "n": 512,
+      "note": "Aqua divided by V1's year-held-out S-NPP factors; the entire test year is excluded from monthly fits and annual shrinkage targets. Joint coverage before common weekly aggregation; zero fitted factors give unavailable predictions; n=paired valid weeks.",
+      "region": "synthland",
+      "test": "backcast_weekly_wape",
+      "value": 0.054,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "method": "tier2",
+      "n": 84268,
+      "note": "Value = sum over held-out years of |sum p - observed| / total observed (per-year absolute). Signed pooled form |sum of all held-out (p - observed)| / observed = 0.0000 (reported only; it cancels across years). Neighbour-match sensitivity (reported, not used): c 0.818 -> 0.954 (change +0.136); mean monthly k_T2 0.466 -> 0.618 (change +0.152, largest monthly change +0.154); g kept same-cell (1.125).",
+      "region": "synthland",
+      "test": "reliability_err",
+      "value": 0.012,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "method": "tier2",
+      "n": 512,
+      "note": "NOAA-20 days of harmonized_t2 use the curve fitted on S-NPP (same VIIRS instrument design); no NOAA-20-specific curve was fitted. aqua_raw/snpp_raw from R3 daily.parquet.",
+      "region": "synthland",
+      "test": "loyo_weekly_wape",
+      "value": 0.049,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "method": "tier2",
+      "n": 512,
+      "note": "aqua_raw/snpp_raw from R3 daily.parquet.",
+      "region": "synthland",
+      "test": "backcast_weekly_wape",
+      "value": 0.053,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "method": "tier2",
+      "n": 517,
+      "note": "harmonized_t2 vs R3 viirs_as_aqua, weekly, fit window.",
+      "region": "synthland",
+      "test": "t1_t2_wape",
+      "value": 0.024,
+      "years": [
+        2013,
+        2022
+      ]
+    }
+  ]
+}

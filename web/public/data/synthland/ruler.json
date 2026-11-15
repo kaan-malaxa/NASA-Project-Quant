@@ -1,0 +1,184 @@
+{
+  "code_version": "a25fb442",
+  "generated_at": "2026-11-15T05:49:19Z",
+  "index_base_years": [
+    2003,
+    2011
+  ],
+  "jump_multiple": {
+    "definition": "Mean yearly S-NPP VIIRS hotspot count divided by mean yearly MODIS (Terra + Aqua) hotspot count, same years, same place",
+    "hi": 3.875,
+    "lo": 3.449,
+    "value": 3.537,
+    "years": [
+      2013,
+      2022
+    ]
+  },
+  "region": "synthland",
+  "rows": [
+    {
+      "harmonized_index": 0.926,
+      "kind": "observed",
+      "naive_index": 0.937,
+      "naive_source": "modis",
+      "year": 2003
+    },
+    {
+      "harmonized_index": 0.939,
+      "kind": "observed",
+      "naive_index": 0.953,
+      "naive_source": "modis",
+      "year": 2004
+    },
+    {
+      "harmonized_index": 0.981,
+      "kind": "observed",
+      "naive_index": 0.961,
+      "naive_source": "modis",
+      "year": 2005
+    },
+    {
+      "harmonized_index": 0.977,
+      "kind": "observed",
+      "naive_index": 0.967,
+      "naive_source": "modis",
+      "year": 2006
+    },
+    {
+      "harmonized_index": 0.969,
+      "kind": "observed",
+      "naive_index": 0.987,
+      "naive_source": "modis",
+      "year": 2007
+    },
+    {
+      "harmonized_index": 1.044,
+      "kind": "observed",
+      "naive_index": 1.036,
+      "naive_source": "modis",
+      "year": 2008
+    },
+    {
+      "harmonized_index": 1.061,
+      "kind": "observed",
+      "naive_index": 1.05,
+      "naive_source": "modis",
+      "year": 2009
+    },
+    {
+      "harmonized_index": 1.061,
+      "kind": "observed",
+      "naive_index": 1.064,
+      "naive_source": "modis",
+      "year": 2010
+    },
+    {
+      "harmonized_index": 1.043,
+      "kind": "observed",
+      "naive_index": 1.045,
+      "naive_source": "modis",
+      "year": 2011
+    },
+    {
+      "harmonized_index": 1.074,
+      "kind": "observed",
+      "naive_index": 4.218,
+      "naive_source": "snpp",
+      "year": 2012
+    },
+    {
+      "harmonized_index": 1.085,
+      "kind": "observed",
+      "naive_index": 3.812,
+      "naive_source": "snpp",
+      "year": 2013
+    },
+    {
+      "harmonized_index": 1.067,
+      "kind": "observed",
+      "naive_index": 3.873,
+      "naive_source": "snpp",
+      "year": 2014
+    },
+    {
+      "harmonized_index": 1.099,
+      "kind": "observed",
+      "naive_index": 3.859,
+      "naive_source": "snpp",
+      "year": 2015
+    },
+    {
+      "harmonized_index": 1.106,
+      "kind": "observed",
+      "naive_index": 3.978,
+      "naive_source": "snpp",
+      "year": 2016
+    },
+    {
+      "harmonized_index": 1.137,
+      "kind": "observed",
+      "naive_index": 4.035,
+      "naive_source": "snpp",
+      "year": 2017
+    },
+    {
+      "harmonized_index": 1.137,
+      "kind": "observed",
+      "naive_index": 3.995,
+      "naive_source": "snpp",
+      "year": 2018
+    },
+    {
+      "harmonized_index": 1.167,
+      "kind": "observed",
+      "naive_index": 4.075,
+      "naive_source": "snpp",
+      "year": 2019
+    },
+    {
+      "harmonized_index": 1.176,
+      "kind": "observed",
+      "naive_index": 4.078,
+      "naive_source": "snpp",
+      "year": 2020
+    },
+    {
+      "harmonized_index": 1.163,
+      "kind": "observed",
+      "naive_index": 4.153,
+      "naive_source": "snpp",
+      "year": 2021
+    },
+    {
+      "harmonized_index": 1.209,
+      "kind": "observed",
+      "naive_index": 4.62,
+      "naive_source": "snpp",
+      "year": 2022
+    },
+    {
+      "harmonized_index": 1.212,
+      "kind": "harmonized",
+      "naive_index": 4.244,
+      "naive_source": "snpp",
+      "year": 2023
+    },
+    {
+      "harmonized_index": 1.243,
+      "kind": "harmonized",
+      "naive_index": 4.615,
+      "naive_source": "snpp",
+      "year": 2024
+    },
+    {
+      "harmonized_index": 1.223,
+      "kind": "harmonized",
+      "naive_index": 4.344,
+      "naive_source": "snpp",
+      "year": 2025
+    }
+  ],
+  "schema_version": "1.0",
+  "sentence": "In Synthland (planted-truth test), VIIRS reports about 3.5 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."
+}

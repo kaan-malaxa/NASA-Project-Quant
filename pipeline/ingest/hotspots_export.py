@@ -60,10 +60,10 @@ def write_archive(frame, destination, sensor):
             ])
 
 
-def run(region_id, url_prefix):
+def run(region_id, url_prefix=None):
     region = config.get_region(region_id)
     config.require_us_region(region)
-    prefix = validate_url_prefix(url_prefix)
+    prefix = validate_url_prefix(url_prefix) if url_prefix else None
     inputs = {sensor: paths.detections(region.id, sensor) for sensor in SENSORS}
     missing = [path.name for path in inputs.values() if not path.is_file()]
     if missing:
@@ -89,7 +89,8 @@ def run(region_id, url_prefix):
                 prepared = Path(temporary) / destination.name
                 write_archive(annual, prepared, sensor)
                 archives.append({
-                    "year": year, "sensor": sensor, "url": f"{prefix}/{destination.name}",
+                    "year": year, "sensor": sensor,
+                    **({"url": f"{prefix}/{destination.name}"} if prefix else {"file": destination.name}),
                     "rows": len(annual), "bytes": prepared.stat().st_size,
                 })
                 staged.append((prepared, destination))
@@ -105,12 +106,16 @@ def run(region_id, url_prefix):
 def main(argv=None):
     parser = cli.stage_parser("ingest.hotspots_export")
     parser.description = "Export both passes as in-region, per-sensor, local-calendar-year hotspot archives."
-    parser.add_argument("--url-prefix", required=True, help="Release download directory URL supplied by the uploader")
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument("--url-prefix", help="Release download directory URL supplied by the uploader")
+    group.add_argument("--local", action="store_true", help="prepare local archives without inventing publication URLs")
     args = parser.parse_args(argv)
     t0 = time.perf_counter()
     region_id = args.region or "us"
     try:
         fragment = run(region_id, args.url_prefix)
+        if args.local:
+            io.write_json(fragment, paths.exports_dir() / "hotspot_inventory.json")
         print(json.dumps(fragment, sort_keys=True, ensure_ascii=False, allow_nan=False, indent=2))
         with redirect_stdout(sys.stderr):
             log.finish("hotspots_export", region_id, sum(row["rows"] for row in fragment["hotspot_archives"]), t0)

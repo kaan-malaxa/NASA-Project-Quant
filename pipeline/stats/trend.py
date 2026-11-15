@@ -21,13 +21,13 @@ import pandas as pd
 from scipy.stats import theilslopes
 
 from pipeline.common import timebins
-from pipeline.stats.calendar import majority_kind, series_frame
-from pipeline.stats.sentences import (
+from pipeline.common.sentences import (
     Estimate,
     ruler_sentence,
     verdict_id,
     verdict_sentence,
 )
+from pipeline.stats.calendar import majority_kind, series_frame
 
 JUMP_DEFINITION = ("Mean yearly S-NPP VIIRS hotspot count divided by mean yearly MODIS (Terra + Aqua) "
                    "hotspot count, same years, same place")
@@ -119,28 +119,38 @@ def estimate(series: dict[int, float | None], years: range, rng: np.random.Gener
     """
     ys = [y for y in years if series.get(y) is not None]
     if len(ys) < 3:
-        raise ValueError(f"trend needs at least 3 non-missing years, got {len(ys)}")
+        return Estimate(None, None, None, "fewer than three valid annual observations")
     point = pct_per_decade(ys, [series[y] for y in ys])
     if point is None:
-        raise ValueError("trend undefined: median of annual values is zero")
-    boot = []
+        return Estimate(None, None, None, "the median annual activity is zero")
+    xs_all, vals_all = [], []
     for _ in range(n_boot):
         sub = replace(rng) if replace else {}
         pick = rng.integers(0, len(ys), len(ys))
         xs = [ys[i] for i in pick]
-        val = pct_per_decade(xs, [sub.get(x, series[x]) for x in xs])
-        if val is not None:
-            boot.append(val)
+        xs_all.append(xs)
+        vals_all.append([sub.get(x, series[x]) for x in xs])
+    xs, vals = np.array(xs_all, dtype=float), np.array(vals_all, dtype=float)
+    left, right = np.triu_indices(len(ys), 1)
+    dx = xs[:, right] - xs[:, left]
+    valid = np.any(dx != 0, axis=1) & (np.median(vals, axis=1) > 0)
+    dx, xs, vals = dx[valid], xs[valid], vals[valid]
+    with np.errstate(divide="ignore", invalid="ignore"):
+        slopes = np.where(dx != 0, (vals[:, right] - vals[:, left]) / dx, np.nan)
+        boot = 1000 * np.nanmedian(slopes, axis=1) / np.median(vals, axis=1)
+    boot = boot[np.isfinite(boot)]
+    if not len(boot):
+        return Estimate(None, None, None, "no valid bootstrap comparisons")
     lo, hi = np.percentile(boot, [5, 95])
     return Estimate(point, float(lo), float(hi))
 
 
-def bootstrap_replacer(annual_bootstrap: pd.DataFrame, after_year: int) -> Callable[[np.random.Generator], dict[int, float]]:
-    """Pick one of R3's replicates at random and return its values for years after after_year.
+def bootstrap_replacer(annual_bootstrap: pd.DataFrame) -> Callable[[np.random.Generator], dict[int, float]]:
+    """Pick one complete R3 replicate, including translated fills in Aqua-era years.
 
     One replicate per trend replicate keeps the year-to-year correlation of the k uncertainty.
     """
-    ab = annual_bootstrap[annual_bootstrap["year"] > after_year]
+    ab = annual_bootstrap
     reps = {int(r): dict(zip(g["year"].astype(int), g["harmonized"].astype(float)))
             for r, g in ab.groupby("replicate")}
     ids = sorted(reps)
@@ -151,16 +161,18 @@ def bootstrap_replacer(annual_bootstrap: pd.DataFrame, after_year: int) -> Calla
 
 # ------------------------------------------------------------------ documents
 def _est(e: Estimate) -> dict[str, Any]:
-    return {"pct_per_decade": e.pct_per_decade, "lo": e.lo, "hi": e.hi, "direction": e.direction}
+    return {"pct_per_decade": e.pct_per_decade, "lo": e.lo, "hi": e.hi, "direction": e.direction,
+            "availability": "available" if e.pct_per_decade is not None else "unavailable", "reason": e.reason}
 
 
 def build_trend_files(daily: pd.DataFrame, annual_bootstrap: pd.DataFrame, naive_annual: pd.DataFrame,
                       region: str, region_name: str, science: dict[str, Any],
-                      header: dict[str, Any]) -> dict[str, dict[str, Any]]:
+                      header: dict[str, Any], analysis_years=None) -> dict[str, dict[str, Any]]:
     b = boundaries(science)
     n_boot = science["trend"]["bootstrap_b"]
     seed = science.get("seed", 7)
-    years = range(b["trend_from"], b["trend_to"] + 1)
+    y0, y1 = analysis_years or (b["trend_from"], b["trend_to"])
+    years = range(y0, y1 + 1)
 
     def rng(name: str) -> np.random.Generator:
         return np.random.default_rng([seed, SEED_OFFSETS[name]])
@@ -174,14 +186,19 @@ def build_trend_files(daily: pd.DataFrame, annual_bootstrap: pd.DataFrame, naive
         return {y: table[y][key] for y in table}
 
     H = estimate(values(harm), years, rng("harmonized"), n_boot,
-                 bootstrap_replacer(annual_bootstrap, b["aqua_last"]))
+                 bootstrap_replacer(annual_bootstrap))
     N = estimate(values(naive, "naive"), years, rng("naive"), n_boot)
     variants = {
-        "aqua_only_2003_2022": estimate(values(aqua), range(b["trend_from"], b["aqua_last"] + 1),
+        "aqua_only_2003_2022": estimate(values(aqua), range(y0, min(y1, b["aqua_last"]) + 1),
                                         rng("aqua_only_2003_2022"), n_boot),
         "translated_from_2012": estimate(values(spliced), years, rng("translated_from_2012"), n_boot),
     }
     sid = verdict_id(H, N, [v.direction for v in variants.values()], science["trend"]["artifact_gap_points"])
+    missing_variants = [name for name, value in variants.items() if value.pct_per_decade is None]
+    if missing_variants:
+        sid = "unclear"
+    qualification = ("Robustness comparison unavailable for the selected years: " + ", ".join(missing_variants)
+                     if missing_variants else "")
 
     annual_rows = []
     for y in years:
@@ -189,33 +206,35 @@ def build_trend_files(daily: pd.DataFrame, annual_bootstrap: pd.DataFrame, naive
         nv = naive.get(y, {"naive": None, "source": "modis" if y <= b["last_modis_naive"] else "snpp"})
         annual_rows.append({"year": y, "harmonized": h["value"], "lo": h["lo"], "hi": h["hi"], "kind": h["kind"],
                             "naive_count": nv["naive"], "naive_source": nv["source"]})
-    trend = {**header, "region": region, "years": [b["trend_from"], b["trend_to"]], "annual": annual_rows,
+    trend = {**header, "region": region, "years": [y0, y1], "annual": annual_rows,
              "harmonized": _est(H), "naive": _est(N),
              "robustness": [{"variant": k, **_est(v)} for k, v in variants.items()],
-             "sentence_id": sid, "sentence": verdict_sentence(sid, H, N)}
+             "sentence_id": sid, "sentence": verdict_sentence(sid, H, N), "qualification": qualification}
 
     # ruler (SD-09)
     base = range(b["record_start"], b["last_modis_naive"] + 1)
 
-    def base_mean(key: str) -> float:
-        vals = [r[key] for r in annual_rows if r["year"] in base and r[key] is not None]
+    def base_mean(key: str) -> float | None:
+        table, field = (harm, "value") if key == "harmonized" else (naive, "naive")
+        vals = [table[y][field] for y in base if y in table and table[y][field] is not None]
         if not vals or sum(vals) == 0:
-            raise ValueError(f"ruler: no {key} values in index base years {base.start}-{base.stop - 1}")
+            return None
         return sum(vals) / len(vals)
 
     nb, hb = base_mean("naive_count"), base_mean("harmonized")
     jump_years = [y for y in range(b["jump_from"], b["jump_to"] + 1)
                   if y in naive and naive[y]["snpp"] is not None and naive[y]["modis"]]
-    if not jump_years:
-        raise ValueError("ruler: no year with both S-NPP and MODIS counts in the jump-multiple years")
-    j = sum(naive[y]["snpp"] for y in jump_years) / sum(naive[y]["modis"] for y in jump_years)
+    j = (sum(naive[y]["snpp"] for y in jump_years) / sum(naive[y]["modis"] for y in jump_years)
+         if jump_years else None)
     ratios = [naive[y]["snpp"] / naive[y]["modis"] for y in jump_years]
     ruler = {**header, "region": region, "index_base_years": [base.start, base.stop - 1],
-             "jump_multiple": {"value": j, "lo": min(ratios), "hi": max(ratios),
+             "jump_multiple": {"value": j, "lo": min(ratios) if ratios else None,
+                               "hi": max(ratios) if ratios else None,
                                "years": [b["jump_from"], b["jump_to"]], "definition": JUMP_DEFINITION},
              "rows": [{"year": r["year"],
-                       "naive_index": None if r["naive_count"] is None else r["naive_count"] / nb,
-                       "harmonized_index": None if r["harmonized"] is None else r["harmonized"] / hb,
+                       "naive_index": None if r["naive_count"] is None or nb is None else r["naive_count"] / nb,
+                       "harmonized_index": None if r["harmonized"] is None or hb is None else r["harmonized"] / hb,
                        "naive_source": r["naive_source"], "kind": r["kind"]} for r in annual_rows],
-             "sentence": ruler_sentence(region_name, j)}
+             "sentence": ruler_sentence(region_name, j) if j is not None else
+                         "The sensor comparison is unavailable: no valid paired annual observations."}
     return {"trend": trend, "ruler": ruler}

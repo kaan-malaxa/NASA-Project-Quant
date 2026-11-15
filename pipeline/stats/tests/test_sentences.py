@@ -6,7 +6,7 @@ from datetime import date
 
 import pytest
 
-from pipeline.stats.sentences import (
+from pipeline.common.sentences import (
     Estimate,
     direction_of,
     nowcast_sentence,
@@ -80,4 +80,4 @@ def test_other_templates():
     assert season_shift_sentence("summer", -6.2, -10, -4) == (
         "The summer season now starts about 6 days earlier per decade (-10 to -4).")
     assert season_shift_sentence("summer", 1, -1, 3) == "No clear shift in the timing of the summer season."
-    assert season_shift_sentence("summer", None, None, None) == ""
+    assert "unavailable" in season_shift_sentence("summer", None, None, None)

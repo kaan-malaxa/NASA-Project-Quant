@@ -6,7 +6,7 @@ import sys
 import time
 
 from . import compat
-from .stage import RegionClipError, run
+from .stage import run
 
 STAGE = "eyesight"
 
@@ -23,7 +23,7 @@ def main(argv: list[str] | None = None) -> int:
     t0 = time.perf_counter()  # the clock pipeline.common.log.finish subtracts from
     try:
         entry, diag = run(args.region, pass_, log)
-    except (FileNotFoundError, RegionClipError) as exc:
+    except (OSError, ValueError) as exc:
         print(f"eyesight failed: {exc}", file=sys.stderr)
         return 2
 

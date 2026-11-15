@@ -17,8 +17,8 @@ import pandas as pd
 from scipy.stats import theilslopes
 
 from pipeline.common import timebins
+from pipeline.common.sentences import season_shift_sentence
 from pipeline.stats.calendar import majority_kind, series_frame
-from pipeline.stats.sentences import season_shift_sentence
 
 MONTHS = ("January", "February", "March", "April", "May", "June", "July", "August", "September",
           "October", "November", "December")
@@ -29,9 +29,11 @@ SEED_OFFSET = 100          # keeps season replicates independent of the trend's 
 # ------------------------------------------------------------------ step 1: critical weeks and windows
 def critical_weeks(p50: list[float], share: float) -> list[int]:
     """Smallest set of weeks (1-52) whose p50 sum reaches `share` of the total; largest weeks first."""
+    if any(v is None for v in p50):
+        return []
     total = sum(p50)
     if total <= 0:
-        raise ValueError("season: the smoothed weekly p50 is zero everywhere; no season to describe")
+        return []
     order = sorted(range(52), key=lambda i: (-p50[i], i))
     chosen, acc = [], 0.0
     for i in order:
@@ -79,6 +81,8 @@ def week_label(start_week: int, end_week: int) -> str:
 def windows(p50: list[float], science: dict[str, Any]) -> tuple[list[int], list[dict[str, Any]]]:
     s = science["season"]
     crit = critical_weeks(p50, s["critical_share"])
+    if not crit:
+        return [], []
     total = sum(p50)
     found = []
     for run in window_runs(crit):
@@ -149,12 +153,19 @@ def shift(rows: list[dict[str, Any]], key: str, rng: np.random.Generator, n_boot
     if len(set(years)) < 3:
         return {"value": None, "lo": None, "hi": None}
     point = 10.0 * float(theilslopes(offs, years).slope)
-    boot = []
+    draws_x, draws_y = [], []
     for _ in range(n_boot):
         pick = rng.integers(0, len(years), len(years))
         xs = [years[i] for i in pick]
         if len(set(xs)) >= 2:
-            boot.append(10.0 * float(theilslopes([offs[i] for i in pick], xs).slope))
+            draws_x.append(xs)
+            draws_y.append([offs[i] for i in pick])
+    xs, ys = np.asarray(draws_x), np.asarray(draws_y)
+    left, right = np.triu_indices(len(years), 1)
+    dx = xs[:, right] - xs[:, left]
+    with np.errstate(divide="ignore", invalid="ignore"):
+        slopes = np.where(dx != 0, (ys[:, right] - ys[:, left]) / dx, np.nan)
+    boot = 10 * np.nanmedian(slopes, axis=1)
     lo, hi = np.percentile(boot, [5, 95])
     return {"value": point, "lo": float(lo), "hi": float(hi)}
 
@@ -180,5 +191,6 @@ def build_season(climatology: dict[str, Any], daily: pd.DataFrame, region: str, 
                     "sentence": season_shift_sentence(w["label"], st["value"], st["lo"], st["hi"])})
     pct = round(100 * science["season"]["critical_share"])
     return {**header, "region": region,
-            "definition": f"The fewest weeks that hold {pct}% of a typical year's burning",
+            "definition": (f"The fewest weeks that hold {pct}% of a typical year's burning" if crit else
+                           "Critical weeks unavailable: insufficient weekly coverage or zero typical activity."),
             "critical_weeks": crit, "windows": out}

@@ -3,7 +3,7 @@ import h3
 import pandas as pd
 import yaml
 
-from pipeline.common import config, io, paths
+from pipeline.common import config, io, paths, provenance
 from pipeline.ingest import clean, coverage, static_mask
 
 
@@ -37,6 +37,7 @@ def aggregate_detections(frames):
 
 
 def run(region_id):
+    provenance.verify_stage(region_id, "clean")
     region = config.get_region(region_id)
     science = config.load_science()
     raw = io.read_parquet(paths.raw_daily_counts(region_id), "raw_daily_counts")
@@ -57,4 +58,10 @@ def run(region_id):
     io.write_parquet(cells, paths.celldays(region_id), "celldays")
     io.write_parquet(counts, paths.hotspot_counts_daily(region_id), "hotspot_counts_daily")
     io.write_parquet(covered, paths.coverage(region_id), "coverage")
+    # Static masking rewrites the cleaned detections; attest those final cleaned bytes too.
+    clean.record_clean(region_id)
+    provenance.record_stage(region_id, "grid", [],
+                            [paths.region_cells(region_id), paths.celldays(region_id),
+                             paths.hotspot_counts_daily(region_id), paths.coverage(region_id),
+                             paths.static_mask(region_id)], upstream=("clean",))
     return len(cells)

@@ -1,9 +1,9 @@
 name: Python pipeline
 on:
   push:
-    paths: ["pipeline/**", "pyproject.toml"]
+    paths: ["pipeline/**", "contracts/**", "pyproject.toml", "uv.lock", ".github/workflows/pipeline.yml"]
   pull_request:
-    paths: ["pipeline/**", "pyproject.toml"]
+    paths: ["pipeline/**", "contracts/**", "pyproject.toml", "uv.lock", ".github/workflows/pipeline.yml"]
 jobs:
   test:
     strategy:
@@ -13,6 +13,36 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v6
-      - run: uv sync
+      - run: uv sync --frozen
       - run: uv run ruff check pipeline
       - run: uv run pytest -q
+      - name: Isolated synthetic pipeline and contract validation
+        env:
+          FIREROSETTA_DATA_ROOT: ${{ runner.temp }}/firerosetta/derived
+          FIREROSETTA_WEB_DATA_DIR: ${{ runner.temp }}/firerosetta/web-data
+          SOURCE_DATE_EPOCH: "1794744000"
+        run: uv run python -m pipeline.run --region synthland --synth-size full
+      - name: Check isolated publication
+        env:
+          FIREROSETTA_WEB_DATA_DIR: ${{ runner.temp }}/firerosetta/web-data
+        run: uv run python -m pipeline.export --check
+      - name: Snapshot scientific payloads
+        run: uv run python -m pipeline.export.reproducibility --snapshot "${{ runner.temp }}/firerosetta/web-data" --output "repro/${{ matrix.os }}.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reproducibility-${{ matrix.os }}
+          path: repro/*.json
+  reproducibility:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: reproducibility-*
+          merge-multiple: true
+          path: repro
+      - run: python -m pipeline.export.reproducibility --compare repro/ubuntu-latest.json repro/windows-latest.json repro/macos-latest.json

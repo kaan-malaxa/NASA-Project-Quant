@@ -13,6 +13,7 @@ Window sums and the history use pipeline.common.timebins.doy_window (coverage-sc
 
 from __future__ import annotations
 
+import calendar
 import math
 from collections import Counter
 from datetime import date, datetime, timedelta
@@ -22,8 +23,8 @@ import numpy as np
 import pandas as pd
 
 from pipeline.common import timebins
+from pipeline.common.sentences import nowcast_sentence
 from pipeline.stats.calendar import majority_kind, series_frame
-from pipeline.stats.sentences import nowcast_sentence
 
 WINDOW_DAYS = 7          # SD-12: "the last 7 complete local days"
 SOURCE = "VIIRS_NOAA20_NRT"
@@ -56,9 +57,7 @@ def status_of(value: float | None, percentile: float | None, past: list[float], 
 
 def window_dates(fetched_at: datetime, centroid_lon: float, west_lon: float) -> tuple[date, date]:
     """(start, end) of the 7-day window per the module rules."""
-    yesterday = (fetched_at + timedelta(hours=centroid_lon / 15)).date() - timedelta(1)
-    last_full = (fetched_at + timedelta(hours=west_lon / 15)).date() - timedelta(1)
-    end = min(yesterday, last_full)
+    end = timebins.last_complete_local_day(fetched_at, centroid_lon, west_lon)
     return end - timedelta(WINDOW_DAYS - 1), end
 
 
@@ -67,7 +66,7 @@ def _doy(d: date) -> int:
 
 
 def nrt_daily(nrt: pd.DataFrame, coverage: pd.DataFrame | None, calibration: dict[str, Any],
-              start: date, end: date, first_present: date) -> pd.DataFrame:
+              start: date, end: date, first_present: date, metadata=None) -> pd.DataFrame:
     """Translated NRT value per local day in [start, end]: cell-days x k_noaa20 of the month.
 
     A day is covered when it is inside the fetched span and coverage.parquet does not mark NOAA-20
@@ -81,9 +80,11 @@ def nrt_daily(nrt: pd.DataFrame, coverage: pd.DataFrame | None, calibration: dic
         cov = coverage[coverage["sensor"] == "noaa20"]
         uncovered = {d for d, c in zip(pd.to_datetime(cov["local_day"]).dt.date, cov["covered"]) if not c}
     rows = []
+    known = {date.fromisoformat(row["local_day"]): row["covered"] for row in metadata["days"]} if metadata else None
     for i in range((end - start).days + 1):
         d = start + timedelta(i)
-        if d < first_present or d in uncovered:
+        covered = known.get(d, False) if known is not None else d >= first_present and d not in uncovered
+        if not covered or d.month not in k or k[d.month]["k"] is None:
             rows.append((d, None, None, None))
         else:
             n, km = counts.get(d, 0), k[d.month]
@@ -91,16 +92,22 @@ def nrt_daily(nrt: pd.DataFrame, coverage: pd.DataFrame | None, calibration: dic
     return pd.DataFrame(rows, columns=["local_day", "value", "lo", "hi"])
 
 
-def _history(harm: pd.DataFrame, end: date, n_days: int, years: range, min_covered: float) -> list[dict[str, Any]]:
+def _history(harm: pd.DataFrame, end: date, n_days: int, years: range, min_covered: float,
+             month_fraction=None) -> list[dict[str, Any]]:
     """Coverage-scaled harmonized sum of the same day-of-year window in each year; poorly covered years skipped."""
     kinds = dict(zip(harm["local_day"], harm["kind"]))
     out = []
     for y in years:
-        res = timebins.doy_window(harm, _doy(end), n_days, y, value_cols=("value",))
-        if res["n_covered"] < min_covered or res["value"] is None:
+        if month_fraction is None:
+            last = date(y, 1, 1) + timedelta(min(_doy(end), 366 if calendar.isleap(y) else 365) - 1)
+            length, minimum = n_days, min_covered
+        else:
+            last = date(y, end.month, min(end.day, calendar.monthrange(y, end.month)[1]))
+            length, minimum = last.day, math.ceil(month_fraction * last.day)
+        res = timebins.doy_window(harm, _doy(last), length, y, value_cols=("value",))
+        if res["n_covered"] < minimum or res["value"] is None:
             continue
-        last = date(y, 1, 1) + timedelta(_doy(end) - 1)
-        window_kinds = Counter(kinds[d] for d in (last - timedelta(i) for i in range(n_days))
+        window_kinds = Counter(kinds[d] for d in (last - timedelta(i) for i in range(length))
                                if d in kinds and kinds[d] != "missing")
         out.append({"year": y, "value": float(res["value"]),
                     "kind": majority_kind(window_kinds) if window_kinds else "harmonized"})
@@ -109,13 +116,13 @@ def _history(harm: pd.DataFrame, end: date, n_days: int, years: range, min_cover
 
 def build_nowcast(nrt: pd.DataFrame, calibration: dict[str, Any], daily: pd.DataFrame,
                   coverage: pd.DataFrame | None, region: str, region_name: str, centroid_lon: float,
-                  west_lon: float, science: dict[str, Any], header: dict[str, Any]) -> dict[str, Any]:
+                  west_lon: float, science: dict[str, Any], header: dict[str, Any], metadata=None) -> dict[str, Any]:
     y0, y1 = science["climatology"]["baseline_years"]
     baseline = range(y0, y1 + 1)
     tb, anomaly = science["timebins"], science["anomaly"]
     harm = series_frame(daily, "harmonized")
 
-    if len(nrt) == 0:
+    if len(nrt) == 0 and metadata is None:
         last = harm["local_day"].max()          # no NRT clock: describe the month of the last harmonized day
         return {**header, "region": region, "as_of": None, "source": SOURCE,
                 "window": {"start": None, "end": None, "days_covered": 0},
@@ -126,12 +133,13 @@ def build_nowcast(nrt: pd.DataFrame, calibration: dict[str, Any], daily: pd.Data
                 "kind": "missing", "input_note": INPUT_NOTE,
                 "sentence": nowcast_sentence("unavailable", region_name, None, None, None, 0)}
 
-    fetched = pd.to_datetime(nrt["fetched_at"]).max().to_pydatetime().replace(tzinfo=None)
+    fetched = (pd.Timestamp(metadata["fetched_at"]) if metadata else
+               pd.to_datetime(nrt["fetched_at"]).max()).to_pydatetime().replace(tzinfo=None)
     start, end = window_dates(fetched, centroid_lon, west_lon)
-    first_present = pd.to_datetime(nrt["local_day"]).dt.date.min()
+    first_present = date.fromisoformat(metadata["start"]) if metadata else pd.to_datetime(nrt["local_day"]).dt.date.min()
 
     # this week
-    week = nrt_daily(nrt, coverage, calibration, start, end, first_present)
+    week = nrt_daily(nrt, coverage, calibration, start, end, first_present, metadata)
     days_covered = int(week["value"].notna().sum())
     cur = timebins.doy_window(week, _doy(end), WINDOW_DAYS, end.year, value_cols=("value", "lo", "hi"))
     enough = days_covered >= tb["week_min_covered_days"]
@@ -145,14 +153,14 @@ def build_nowcast(nrt: pd.DataFrame, calibration: dict[str, Any], daily: pd.Data
     month_start = end.replace(day=1)
     harm_month = harm[(harm["local_day"] >= month_start) & (harm["local_day"] <= end)][["local_day", "value"]]
     last_harm = harm["local_day"].max()
-    nrt_month = nrt_daily(nrt, coverage, calibration, month_start, end, first_present)
+    nrt_month = nrt_daily(nrt, coverage, calibration, month_start, end, first_present, metadata)
     current = pd.concat([harm_month, nrt_month[nrt_month["local_day"] > last_harm][["local_day", "value"]]],
                         ignore_index=True)
     n = end.day
     need = math.ceil(tb["month_min_covered_frac"] * n)
     mres = timebins.doy_window(current, _doy(end), n, end.year, value_cols=("value",))
     mtd = mres["value"] if mres["n_covered"] >= need else None
-    spans = [h["value"] for h in _history(harm, end, n, baseline, need)]
+    spans = [h["value"] for h in _history(harm, end, n, baseline, need, tb["month_min_covered_frac"])]
     median = float(np.median(spans)) if spans else None
     month_to_date = {"month": end.month, "through_day": n, "value": mtd, "median": median,
                      "ratio": mtd / median if mtd is not None and median else None,

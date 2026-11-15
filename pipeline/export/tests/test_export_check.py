@@ -11,7 +11,6 @@ import pytest
 from jsonschema import Draft202012Validator
 
 from pipeline.export.check import (
-    CSV_HEADERS,
     SCHEMA_DIR,
     load_json_strict,
     load_registry,
@@ -26,6 +25,7 @@ FILE_SCHEMAS.remove("common")
 EXPECTED = {
     "regions", "weekly", "monthly", "daily", "climatology", "season", "trend", "ruler",
     "nowcast", "hex", "calibration", "downloads", "methods", "manifest",
+    "outline", "period", "period_index", "spatial", "spatial_index",
 }
 
 
@@ -70,7 +70,7 @@ def test_example_validates_against_its_schema(name):
 @pytest.mark.parametrize("name", FILE_SCHEMAS)
 def test_header_fields_are_required(name):
     validator = validator_for(name, load_registry())
-    for key in ("schema_version", "generated_at", "code_version"):
+    for key in (("type", "features") if name == "outline" else ("schema_version", "generated_at", "code_version")):
         doc = load_json_strict(EXAMPLES / f"{name}.json")
         del doc[key]
         assert not validator.is_valid(doc), key
@@ -100,26 +100,18 @@ def test_eyesight_absent_needs_only_region_and_status():
 
 
 # ------------------------------------------------------------------ the checker on a data tree
+@pytest.fixture(scope="module")
+def sample_template(tmp_path_factory):
+    from pipeline.export.sample import write_sample
+    data = tmp_path_factory.mktemp("sample-template")
+    write_sample(data)
+    return data
+
+
 @pytest.fixture
-def site(tmp_path: Path) -> Path:
-    """A complete, valid web/public/data tree for one region built from the examples."""
+def site(tmp_path: Path, sample_template) -> Path:
     data = tmp_path / "data"
-    region = data / "us"
-    region.mkdir(parents=True)
-    for name in ("regions", "methods", "manifest"):
-        shutil.copy(EXAMPLES / f"{name}.json", data / f"{name}.json")
-    for name in EXPECTED - {"regions", "methods", "manifest"}:
-        shutil.copy(EXAMPLES / f"{name}.json", region / f"{name}.json")
-    outline = {"type": "FeatureCollection", "features": [
-        {"type": "Feature", "properties": {}, "geometry": {
-            "type": "Polygon",
-            "coordinates": [[[-124.8, 24.4], [-66.9, 24.4], [-66.9, 49.4], [-124.8, 49.4], [-124.8, 24.4]]]}}]}
-    (region / "outline.geojson").write_text(json.dumps(outline), encoding="utf-8")
-    (region / "cells_monthly.csv").write_text(
-        "h3_r5,ym,aqua,viirs\n85283473fffffff,201510,3,7\n", encoding="utf-8")
-    (region / "hotspots_recent.csv").write_text(
-        ",".join(CSV_HEADERS["hotspots_recent.csv"]) + "\n"
-        "36.9,-95.85,2026-11-10,1914,N20,n,4.2,D,2026-11-10,86283473fffffff\n", encoding="utf-8")
+    shutil.copytree(sample_template, data)
     return data
 
 
@@ -130,10 +122,10 @@ def _by_path(results):
 def test_valid_site_passes(site, capsys):
     results = run_check(site)
     assert [r.line() for r in results if not r.ok] == []
-    assert len(results) == 17
+    assert len(results) == 18
     assert report(results) == 0
     out = capsys.readouterr().out.splitlines()
-    assert len(out) == 17 and all(line.startswith("OK") for line in out)
+    assert len(out) == 18 and all(line.startswith("OK") for line in out)
 
 
 def test_missing_data_folder_fails(tmp_path):
@@ -153,8 +145,10 @@ def test_schema_violation_fails_with_path(site, capsys):
 
 @pytest.mark.parametrize("token", ["NaN", "Infinity", "-Infinity", "1e400"])
 def test_non_finite_json_fails(site, token):
-    text = (site / "us/weekly.json").read_text(encoding="utf-8").replace('"value": 812.0', f'"value": {token}')
-    (site / "us/weekly.json").write_text(text, encoding="utf-8")
+    path = site / "us/weekly.json"
+    doc = json.loads(path.read_text(encoding="utf-8"))
+    doc["rows"][0]["value"] = "NON_FINITE_TOKEN"
+    path.write_text(json.dumps(doc).replace('"NON_FINITE_TOKEN"', token), encoding="utf-8")
     res = _by_path(run_check(site))["us/weekly.json"]
     assert not res.ok and "not valid JSON" in res.errors[0]
 
@@ -193,6 +187,9 @@ def test_missing_regions_json_fails(site):
 
 
 def test_sample_kind_requires_manifest_flag(site):
+    manifest = json.loads((site / "manifest.json").read_text(encoding="utf-8"))
+    manifest["contains_sample"] = False
+    (site / "manifest.json").write_text(json.dumps(manifest), encoding="utf-8")
     doc = json.loads((site / "us/weekly.json").read_text(encoding="utf-8"))
     doc["rows"][0]["kind"] = "sample"
     (site / "us/weekly.json").write_text(json.dumps(doc), encoding="utf-8")

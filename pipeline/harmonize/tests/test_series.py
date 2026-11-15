@@ -315,7 +315,10 @@ def test_night_pass_uses_night_rows(tables, science):
 
 
 @pytest.fixture
-def shared(tmp_path, tables, science):
+def shared(tmp_path, tables, science, monkeypatch):
+    from pipeline.common import provenance
+    monkeypatch.setattr(provenance, "verify_stage", Mock())
+    monkeypatch.setattr(provenance, "record_stage", Mock())
     """Contract-level IO spies; no common module or data files are fabricated."""
     paths = SimpleNamespace(
         celldays=lambda region: tmp_path / "grid" / region / "celldays.parquet",
@@ -369,10 +372,12 @@ def test_stage_uses_common_io_and_prints_results(shared, monkeypatch, capsys):
     shared.cli.stage_parser.assert_called_once_with("harmonize")
     shared.config.load_science.assert_called_once()
     shared.config.get_region.assert_called_once_with("us")
-    shared.io.verify_us_inputs.assert_called_once_with("us")
+    from pipeline.common import provenance
+    provenance.verify_stage.assert_called_once_with("us", "grid")
     assert shared.io.read_parquet.call_count == 3
-    assert shared.io.write_parquet.call_count == 3
-    daily_call, bootstrap_call, naive_call = shared.io.write_parquet.call_args_list
+    assert shared.io.write_parquet.call_count == 4
+    daily_call, bootstrap_call, naive_call, heldout_call = shared.io.write_parquet.call_args_list
+    assert heldout_call.args[1].name == "heldout_weekly.parquet"
     frame, path = daily_call.args
     assert path == shared.paths.harmonized_dir("us") / "daily.parquet"
     assert daily_call.kwargs == {"schema_name": "daily"}
@@ -383,7 +388,7 @@ def test_stage_uses_common_io_and_prints_results(shared, monkeypatch, capsys):
     assert len(bootstrap_call.args[0]) == 500 * 23
     assert bootstrap_call.args[0]["year"].max() == 2025
     assert {call.kwargs["grain"] for call in shared.timebins.aggregate.call_args_list} == {"week", "year"}
-    assert shared.io.write_json.call_count == 2
+    assert shared.io.write_json.call_count == 3
     doc, path = shared.io.write_json.call_args_list[0].args
     assert path == shared.paths.harmonized_dir("us") / "calibration.json"
     assert doc["noaa20_method"] == "direct"

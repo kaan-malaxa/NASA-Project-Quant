@@ -1,5 +1,6 @@
 import csv
 import json
+import os
 from dataclasses import replace
 from datetime import date, timedelta
 from pathlib import Path
@@ -15,6 +16,7 @@ from pipeline.ingest import nowcast_fetch as nowcast
 
 NOW = pd.Timestamp("2026-11-15T12:00:00Z")
 SCIENCE = {
+    "timebins": {"solar_degrees_per_hour": 15},
     "filters": {"modis_min_confidence": 30, "viirs_keep": ["n", "h"]},
     "grid": {"count_res": 6, "map_res": 5, "mask_res": 8},
 }
@@ -200,7 +202,7 @@ def test_publication_failure_rolls_back_earlier_replacements(tmp_path, monkeypat
         source.write_text("new " + name, encoding="utf-8")
         old[destination] = destination.read_bytes()
         new[destination] = source
-    replace_file = nowcast.os.replace
+    replace_file = os.replace
     failed = False
     def fail_once(source, destination):
         nonlocal failed
@@ -208,7 +210,7 @@ def test_publication_failure_rolls_back_earlier_replacements(tmp_path, monkeypat
             failed = True
             raise OSError("simulated publication failure")
         return replace_file(source, destination)
-    monkeypatch.setattr(nowcast.os, "replace", fail_once)
+    monkeypatch.setattr(os, "replace", fail_once)
     with pytest.raises(OSError):
         nowcast.publish(new)
     assert_unchanged(old)

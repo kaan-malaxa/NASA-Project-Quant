@@ -16,6 +16,7 @@ from referencing.jsonschema import DRAFT202012
 
 # Test constants: the SD-08 / SD-10 values of contracts 4.2, so expected answers are literal.
 SCIENCE = {
+    "anomaly": {"low_activity_threshold": 5, "extreme_pct": 95, "above_pct": 75, "below_pct": 25},
     "seed": 7,
     "reference": {"sensor": "aqua", "pass": "D"},
     "grid": {"count_res": 6, "map_res": 5, "mask_res": 8},
@@ -23,7 +24,7 @@ SCIENCE = {
              "snpp_through": "2025-12-31", "snpp_first_day": "2012-01-20"},
     "tier1": {"snpp_fit": ["2013-01-01", "2022-12-31"]},
     "climatology": {"baseline_years": [2003, 2025], "smooth_weeks": 3},
-    "timebins": {"week_min_covered_days": 5, "month_min_covered_frac": 0.8, "year_min_covered_frac": 0.9},
+    "timebins": {"solar_degrees_per_hour": 15, "week_days": 7, "weeks_per_year": 52, "week_min_covered_days": 5, "month_min_covered_frac": 0.8, "year_min_covered_frac": 0.9},
     "trend": {"years": [2003, 2025], "bootstrap_b": 1000, "artifact_gap_points": 10},
     "season": {"critical_share": 0.8, "max_windows": 2, "min_window_share": 0.15, "extend_weeks": 4,
                "min_year_celldays": 20},

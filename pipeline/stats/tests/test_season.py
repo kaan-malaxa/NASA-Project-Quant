@@ -82,9 +82,8 @@ def test_one_week_gaps_merge_and_small_windows_drop():
     assert [w["peak_week"] for w in wins] == [10]
 
 
-def test_flat_zero_climatology_is_an_error():
-    with pytest.raises(ValueError, match="zero everywhere"):
-        windows([0.0] * 52, SCIENCE)
+def test_flat_zero_climatology_has_no_critical_weeks_or_windows():
+    assert windows([0.0] * 52, SCIENCE) == ([], [])
 
 
 @pytest.mark.parametrize(("start", "end", "label"), [
@@ -154,7 +153,7 @@ def test_years_without_enough_activity_are_skipped_and_step2_falls_back():
     w = doc["windows"][0]
     assert [r["year"] for r in w["by_year"]] == [2010]
     assert w["shift_days_per_decade"]["start"] == {"value": None, "lo": None, "hi": None}
-    assert w["sentence"] == ""
+    assert "unavailable" in w["sentence"]
 
 
 def test_document_validates_and_is_deterministic():

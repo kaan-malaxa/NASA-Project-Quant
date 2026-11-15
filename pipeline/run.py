@@ -24,6 +24,9 @@ def _run_stage(stage, region, args):
     ]
     if stage != "export":
         command.extend(["--region", region.id])
+    else:
+        for rid in args.export_regions:
+            command.extend(["--region", rid])
     if stage == "synth":
         command.extend(["--size", args.synth_size])
     result = subprocess.run(command, check=False)
@@ -36,6 +39,7 @@ def main(argv=None):
     t0 = time.perf_counter()
     parser = cli.stage_parser("run")
     parser.add_argument("--all-regions", action="store_true")
+    parser.add_argument("--include-synthetic", action="store_true", help="include planted-truth regions with --all-regions")
     parser.add_argument("--from", dest="from_stage", choices=STAGES)
     parser.add_argument("--to", dest="to_stage", choices=STAGES)
     # The planted-truth test (V7) is defined on the full simulated world; tiny is for quick smoke runs.
@@ -49,10 +53,11 @@ def main(argv=None):
         parser.error("--from must not follow --to")
     try:
         regions = (
-            [region for region in config.load_regions() if not region.synthetic]
+            [region for region in config.load_regions() if not region.synthetic or args.include_synthetic]
             if args.all_regions else [config.get_region(args.region)]
         )
         selected = STAGES[first:last + 1]
+        args.export_regions = [region.id for region in regions]
         for region in regions:
             for stage in selected:
                 if stage == "export" or (stage == "synth" and not region.synthetic):

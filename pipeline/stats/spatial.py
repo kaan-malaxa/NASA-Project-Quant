@@ -17,6 +17,7 @@ from typing import Any
 import pandas as pd
 
 from pipeline.common import timebins
+from pipeline.stats.calendar import SERIES_MAP, series_frame
 
 CELLS_MONTHLY_HEADER = ["h3_r5", "ym", "aqua", "viirs"]          # contracts 6.12
 HEX_UNIT = "VIIRS fire cell-days per year"
@@ -70,6 +71,71 @@ def cells_monthly_csv(rows: list[list[Any]]) -> str:
     writer.writerow(CELLS_MONTHLY_HEADER)
     writer.writerows(rows)
     return buf.getvalue()
+
+
+def yearly_contributions(celldays, daily, region, science, header, calendars):
+    """Sparse per-cell contributions to the authoritative daily series, with identical bin scaling.
+
+    Rows use indexes into cells/series: [cell, period, series, value, lo, hi]. A missing bin stays
+    null in bins; an omitted cell in a covered bin is a covered zero. No browser calibration.
+    """
+    raw = _day_pass(celldays, science)
+    raw = raw.drop_duplicates(["sensor", "local_day", "h3_r6"])
+    counts = raw.groupby(["local_day", "sensor", "h3_r5"]).size().rename("count").reset_index()
+    totals = counts.groupby(["local_day", "sensor"])["count"].transform("sum")
+    counts["fraction"] = counts["count"] / totals
+    series = list(SERIES_MAP)
+    years = sorted(pd.to_datetime(daily.local_day).dt.year.unique())
+    docs = {int(year): {**header, "schema_version": "2.0", "region": region, "year": int(year),
+                        "series": series, "cells": [], "monthly": [], "weekly": [],
+                        "monthly_bins": [], "weekly_bins": [],
+                        "unit_month": "fire cell-days per month; scale specified by series",
+                        "unit_week": "fire cell-days per week; scale specified by series"} for year in years}
+    cells_by_year = {int(year): set() for year in years}
+    pending = {int(year): {} for year in years}
+    for index, name in enumerate(series):
+        frame = series_frame(daily, name)
+        contribution = counts.merge(frame, left_on=["local_day", "sensor"],
+                                    right_on=["local_day", "source"], how="inner")
+        contribution = contribution[contribution.value.notna()].copy()
+        dates = pd.to_datetime(contribution.local_day)
+        contribution["year"] = dates.dt.year
+        contribution["month"] = dates.dt.month
+        contribution["week"] = contribution.local_day.map(timebins.week_of_year)
+        for column in ("value", "lo", "hi"):
+            contribution[column] = contribution[column].astype(float) * contribution.fraction
+        for grain, key in (("month", "monthly"), ("week", "weekly")):
+            canonical = {(r["year"], r[grain]): r for r in calendars[key]["rows"] if r["series"] == name}
+            bins = timebins.aggregate(frame, grain, value_cols=("value", "lo", "hi"))
+            scales = {}
+            for row in bins.to_dict("records"):
+                year, slot = int(row["year"]), int(row[grain])
+                if (year, slot) not in canonical:
+                    continue
+                doc = canonical[(year, slot)]
+                covered = int(row["n_covered"])
+                scales[year, slot] = (science["timebins"]["week_days"] if grain == "week"
+                                     else int(row["n_days"])) / covered if covered and doc["value"] is not None else None
+                docs[year][key + "_bins"].append({grain: slot, "series": index, "value": doc["value"],
+                                                  "lo": doc["lo"], "hi": doc["hi"], "kind": doc["kind"],
+                                                  "source": doc["source"], "n_days": int(row["n_days"]),
+                                                  "n_covered": covered})
+            grouped = contribution.groupby(["year", grain, "h3_r5"])[["value", "lo", "hi"]].sum()
+            for (year, slot, cell), row in grouped.iterrows():
+                scale = scales.get((year, slot))
+                if scale is None:
+                    continue
+                cells_by_year[year].add(str(cell))
+                values = [float(row[c]) * scale for c in ("value", "lo", "hi")]
+                pending[year].setdefault(key, []).append([str(cell), int(slot), index, values[0],
+                                                         *([] if values[0] == values[1] == values[2] else values[1:])])
+    for year, doc in docs.items():
+        doc["cells"] = sorted(cells_by_year[year])
+        cell_index = {cell: i for i, cell in enumerate(doc["cells"])}
+        for key in ("monthly", "weekly"):
+            doc[key] = sorted([[cell_index[row[0]], *row[1:]] for row in pending[year].get(key, [])],
+                              key=lambda row: (row[2], row[1], row[0]))
+    return docs
 
 
 def _geometries(geojson: dict[str, Any]) -> list[dict[str, Any]]:

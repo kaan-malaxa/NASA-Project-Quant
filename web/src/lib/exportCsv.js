@@ -21,7 +21,7 @@ export function commentRow({ code_version, generated_at, region, lens, unit }) {
 }
 
 /** firerosetta_<region>_<lens>_<from>_<to>[_<suffix>].<ext> */
-export function exportFileName({ region, lens, from, to, suffix, ext }) {
+export function exportFileName({ region, lens, from, to, suffix = undefined, ext }) {
   return ["firerosetta", region, lens, from, to, suffix].filter(Boolean).join("_") + `.${ext}`;
 }
 
@@ -69,7 +69,7 @@ const WEEK_COLS = Array.from({ length: 52 }, (_, i) => `w${String(i + 1).padStar
  * 12 month value columns (empty = no data), and a trailing "kinds" column listing the kinds in that row so estimated
  * and harmonized values stay distinguishable from observed ones.
  * @param {"week" | "month"} grain
- * @param {object} table weekly.json or monthly.json
+ * @param {import("../data/types").SeriesJson} table weekly.json or monthly.json
  */
 export function buildCalendarCsv(grain, table, lens, range) {
   const n = grain === "week" ? 52 : 12;

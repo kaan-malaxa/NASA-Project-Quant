@@ -8,6 +8,10 @@ import KindBadge from "@/components/KindBadge.jsx";
 import { VizSlot, hasViz, useViz } from "@/components/Viz.jsx";
 import { FIRMS_URL } from "@/app/AppShell.jsx";
 import { useRegionData } from "@/data/useRegionData.js";
+import { useUrlState } from "@/data/useUrlState.js";
+import { useAnalysisPeriod } from "@/data/useAnalysisPeriod.js";
+import { useSpatialShards } from "@/data/useSpatialShards.js";
+import { spatialMap } from "@/lib/spatial.js";
 import { useJson } from "@/data/useJson.js";
 import { fmtAsOf, fmtRangePct, fmtSignedPct } from "@/lib/format.js";
 import { statusLabel } from "@/lib/labels.js";
@@ -30,7 +34,13 @@ function Block({ title, children }) {
 /** #/r/:region/brief — screen 8, one printable page. Every sentence comes from the JSON sentence fields. */
 export default function Brief() {
   const { region: id } = useParams();
-  const { status, region, files } = useRegionData(id);
+  const { status, region, files: originalFiles, regionsState } = useRegionData(id);
+  const [url] = useUrlState(region?.last_data_day);
+  const analysis = useAnalysisPeriod(region, originalFiles, url, regionsState.status === "ok" ? regionsState.data?.configuration : undefined);
+  const selectedFiles = analysis.files;
+  const spatial = useSpatialShards(id, selectedFiles.spatial_index, [analysis.from, analysis.to], true);
+  const files = selectedFiles.spatial_index?.status === "ok" ? {...selectedFiles, hex: spatial.status === "ok" ?
+    {status:"ok", data:spatialMap(spatial.data, url.lens, selectedFiles.season?.data?.critical_weeks ?? [], selectedFiles.hex?.data)} : spatial} : selectedFiles;
   const manifest = useJson("manifest.json");
   const viz = useViz();
   useDocumentMeta(region ? `Season Brief: ${region.name}` : "Season Brief", "A one-page printable summary of a place's fire season.");
@@ -81,9 +91,10 @@ export default function Brief() {
   const { trend, monthly, climatology, season, nowcast, hex, outline } = files;
   const stillLoading = viz === null || Object.values(files).some((f) => f?.status === "loading");
   const lastDay = region.last_data_day;
-  const pageUrl = `${window.location.origin}${window.location.pathname}#/r/${region.id}`;
+  const pageUrl = `${window.location.origin}${window.location.pathname}#/r/${region.id}${window.location.hash.includes("?") ? "?" + window.location.hash.split("?")[1] : ""}`;
   const codeVersion = manifest.status === "ok" ? manifest.data.code_version : [trend, monthly, nowcast].find(ok)?.data.code_version;
-  const today = new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+  const generated = manifest.status === "ok" ? manifest.data.generated_at : trend?.data?.generated_at;
+  const today = generated ? new Date(generated).toLocaleDateString("en-GB", {day:"numeric",month:"long",year:"numeric",timeZone:"UTC"}) : "unavailable";
   const showCalendar = ok(monthly) && ok(climatology) && hasViz("CalendarHeatmap", viz);
   const showMap = ok(hex) && hasViz("HexMap", viz);
 
@@ -105,6 +116,7 @@ export default function Brief() {
         <header className="border-b border-black pb-2">
           <p className="text-[8pt] tracking-wider uppercase">FireRosetta · Season Brief</p>
           <h1 className="text-[18pt] leading-tight font-semibold">{region.name}</h1>
+          {analysis.index ? <p>Analysis years: {analysis.from}?{analysis.to}</p> : null}
           <p className="text-[9pt]">
             {region.fire_type} · Data through {lastDay} · Brief generated {today}
           </p>
@@ -131,9 +143,9 @@ export default function Brief() {
                 monthly={monthly.data}
                 climatology={climatology.data}
                 season={ok(season) ? season.data : undefined}
-                lens="harmonized"
+                lens={url.lens}
                 mode="activity"
-                range={{ from: "2003-01-01", to: lastDay }}
+                range={{ from: url.from, to: url.to ?? lastDay }}
               />
             </figure>
           </Block>

@@ -5,6 +5,7 @@ import { activePreset, computeRange, presetRange } from "./range.js";
 function daily(start, values, extra = {}) {
   return {
     start,
+    configuration: {timebins:{month_min_covered_frac:0.8,year_min_covered_frac:0.9}},
     n_days: values.length,
     series: {
       harmonized: {

@@ -309,9 +309,10 @@ function Eyesight({ entries, nameOf }) {
           {e.status !== "absent" ? (
             <>
               <VizSlot name="EyesightCurve" eyesight={e} placeholderClassName="h-56" />
+              <VizSlot name="HeldoutAgreement" comparison={e.heldout_compare ?? []} placeholderClassName="h-56" />
               {has(e.k_compare) ? (
                 <DataTable
-                  caption="Translation factor per month from the two routes"
+                  caption="Fitted monthly factors (calibration diagnostic; held-out evidence is shown above)"
                   rowKey={(r) => r.month}
                   columns={[
                     { key: "month", label: "Month", render: (r) => monthName(r.month) },

@@ -17,7 +17,15 @@ export function watch(page) {
       problems.push(`external request: ${r.url()}`);
     }
   });
-  page.on("console", (m) => m.type() === "error" && problems.push(`console: ${m.text()}`));
+  page.on("console", (message) => {
+    if (message.type() !== "error") return;
+    const location = message.location().url;
+    const networkFailure = /Failed to load resource|Failed to fetch|AJAXError/.test(message.text());
+    const optionalLocation = OPTIONAL_HOSTS.some((host) => location?.startsWith(`https://${host}/`));
+    const optionalMessage = OPTIONAL_HOSTS.some((host) => message.text().includes(`https://${host}/`));
+    if (networkFailure && (optionalLocation || optionalMessage)) return;
+    problems.push(`console: ${message.text()}`);
+  });
   page.on("pageerror", (e) => problems.push(`page error: ${e.message}`));
   const optional = (url) => OPTIONAL_HOSTS.some((h) => new URL(url).host === h);
   page.on("requestfailed", (r) => !optional(r.url()) && problems.push(`request failed: ${r.url()} (${r.failure()?.errorText})`));

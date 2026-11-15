@@ -12,6 +12,7 @@ export { CalendarHeatmap } from "./CalendarHeatmap";
 export { SeasonShiftChart } from "./SeasonShiftChart";
 export { TrendBars } from "./TrendBars";
 export { PercentileStrip } from "./PercentileStrip";
+export { HeldoutAgreement } from "./HeldoutAgreement";
 export { EyesightCurve } from "./EyesightCurve";
 export { DriftChart } from "./DriftChart";
 export { KindBadge } from "./KindBadge";

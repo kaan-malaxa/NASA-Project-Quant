@@ -248,7 +248,7 @@ function eyesightFor(m, region) {
 export function Gallery() {
   const [regions, setRegions] = useState(null);
   const [regionId, setRegionId] = useState("");
-  const [bundle, setBundle] = useState({});
+  const [bundle, setBundle] = useState(/** @type {Record<string, any>} */ ({}));
   const [errors, setErrors] = useState([]);
   const [loading, setLoading] = useState(false);
   const [stateFilter, setStateFilter] = useState("all");
@@ -466,7 +466,7 @@ export function Gallery() {
           <Card caption="KindBadge · every kind">
             <div style={{ display: "flex", flexWrap: "wrap", gap: "var(--fr-space-2)" }}>
               {KINDS.map((k) => (
-                <KindBadge key={k} kind={k} />
+                <KindBadge key={k} kind={/** @type {import("./types").Kind} */ (k)} />
               ))}
             </div>
           </Card>

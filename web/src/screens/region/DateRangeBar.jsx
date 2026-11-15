@@ -57,7 +57,7 @@ export default function DateRangeBar({ url, setUrl, lastDataDay }) {
   const range = { from: url.from, to: url.to ?? lastDataDay };
   const active = activePreset(range, lastDataDay);
   return (
-    <div role="group" aria-label="Date range" className="flex flex-wrap items-center gap-x-2 gap-y-1 py-2">
+    <div role="group" aria-label="Exact dates" className="flex flex-wrap items-center gap-x-2 gap-y-1 py-2">
       <div className="flex items-center gap-1">
         <DateField
           label="From"

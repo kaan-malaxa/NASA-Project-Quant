@@ -78,10 +78,33 @@ export function bounds(geo) {
     if (y < s) s = y;
     if (y > n) n = y;
   }
-  return [
-    [w, s],
-    [e, n],
-  ];
+  const longitudes = [...new Set(pts.map(([x]) => ((x % 360) + 360) % 360))].sort((a, b) => a - b);
+  let gap = -1;
+  let first = longitudes[0];
+  for (let i = 0; i < longitudes.length; i++) {
+    const next = longitudes[(i + 1) % longitudes.length] + (i + 1 === longitudes.length ? 360 : 0);
+    if (next - longitudes[i] > gap) { gap = next - longitudes[i]; first = next % 360; }
+  }
+  w = first;
+  e = first + 360 - gap;
+  if ((w + e) / 2 > 180) { w -= 360; e -= 360; }
+  return [[w, s], [e, n]];
+}
+
+/** Display-only longitude wrapping; analysis polygons and H3 membership remain untouched. */
+export function displayGeometry(geo, bbox) {
+  if (!geo || !bbox) return geo;
+  const centre = (bbox[0][0] + bbox[1][0]) / 2;
+  const walk = (value) => {
+    if (Array.isArray(value)) {
+      if (typeof value[0] === "number") return [value[0] + 360 * Math.round((centre - value[0]) / 360), ...value.slice(1)];
+      return value.map(walk);
+    }
+    if (value && typeof value === "object") return Object.fromEntries(Object.entries(value).map(([key, child]) =>
+      [key, key === "coordinates" ? walk(child) : key === "geometry" || key === "features" || key === "geometries" ? walk(child) : child]));
+    return value;
+  };
+  return walk(geo);
 }
 
 /** Res-5 cells whose centre is inside a drawn polygon ring ([lng, lat], GeoJSON order). Sorted. */
@@ -117,7 +140,10 @@ export function fitProjection(bbox, width, height, pad = 8) {
   const scale = Math.min((width - 2 * pad) / spanX, (height - 2 * pad) / spanY);
   const ox = (width - spanX * scale) / 2;
   const oy = (height - spanY * scale) / 2;
-  return ([lng, lat]) => [ox + (lng - w) * k * scale, oy + (n - lat) * scale];
+  return ([lng, lat]) => {
+    const wrapped = lng + 360 * Math.round(((w + e) / 2 - lng) / 360);
+    return [ox + (wrapped - w) * k * scale, oy + (n - lat) * scale];
+  };
 }
 
 /** SVG path for every ring of a (Multi)Polygon geometry, with a projection from fitProjection. */

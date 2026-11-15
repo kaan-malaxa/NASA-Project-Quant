@@ -15,7 +15,7 @@ function PopoverTrigger({
 }
 
 function PopoverContent({
-  className,
+  className = undefined,
   align = "center",
   sideOffset = 4,
   ...props
@@ -43,7 +43,7 @@ function PopoverAnchor({
 }
 
 function PopoverHeader({
-  className,
+  className = undefined,
   ...props
 }) {
   return (
@@ -56,7 +56,7 @@ function PopoverHeader({
 }
 
 function PopoverTitle({
-  className,
+  className = undefined,
   ...props
 }) {
   return (
@@ -69,7 +69,7 @@ function PopoverTitle({
 }
 
 function PopoverDescription({
-  className,
+  className = undefined,
   ...props
 }) {
   return (

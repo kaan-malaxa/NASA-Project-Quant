@@ -25,8 +25,9 @@ const badgeVariants = cva(
   }
 )
 
+/** @param {import("class-variance-authority").VariantProps<typeof badgeVariants> & {className?: string; asChild?: boolean; [key: string]: any}} props */
 function Badge({
-  className,
+  className = undefined,
   variant = "default",
   asChild = false,
   ...props

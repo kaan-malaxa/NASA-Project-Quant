@@ -103,6 +103,7 @@ describe("buildHeatGrid", () => {
       lens: "harmonized",
       mode: "anomaly",
       climatology: clim(2),
+      configuration: {anomaly:{low_activity_threshold:5},timebins:{week_days:7,weeks_per_year:52}},
       unit: "u",
     });
     const cell = g.cells.find((c) => c.year === 2025 && c.period === 10);
@@ -116,11 +117,13 @@ describe("buildHeatGrid", () => {
       lens: "harmonized",
       mode: "anomaly",
       climatology: clim(50),
+      baselineRows: fullYears("harmonized", Array.from({length:23},(_,i)=>2003+i), (year)=>year===2025?3:50),
+      configuration: {anomaly:{low_activity_threshold:5},timebins:{week_days:7,weeks_per_year:52}},
       unit: "u",
     });
     const c2 = g2.cells.find((c) => c.year === 2025 && c.period === 10);
     expect(c2.unranked).toBe(false);
-    expect(c2.percentile).toBeCloseTo((100 * (22 + 0.5)) / 23, 6);
+    expect(c2.percentile).toBeCloseTo((100 * 0.5) / 23, 6);
   });
 
   it("dims cells outside the range", () => {
@@ -201,9 +204,9 @@ describe("low activity rule (SD-11)", () => {
     expect(isLowActivity(3, undefined, 5)).toBe(false);
   });
   it("week threshold is 5; a month scales it by its length", () => {
-    expect(lowActivityThreshold("week", 10)).toBe(5);
-    expect(lowActivityThreshold("month", 1)).toBeCloseTo((5 * 31) / 7, 9);
-    expect(lowActivityThreshold("month", 2)).toBeCloseTo((5 * 28) / 7, 9);
+    expect(lowActivityThreshold("week", 10, 5)).toBe(5);
+    expect(lowActivityThreshold("month", 1, 5)).toBeCloseTo((5 * 31) / 7, 9);
+    expect(lowActivityThreshold("month", 2, 5)).toBeCloseTo((5 * 28) / 7, 9);
   });
 });
 

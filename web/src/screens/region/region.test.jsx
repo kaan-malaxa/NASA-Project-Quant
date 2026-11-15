@@ -9,6 +9,8 @@ import { resetSample } from "@/data/sample.js";
 import { mockFetch } from "@/test/mockFetch.js";
 import { climatologyJson, dailyJson, nowcastJson, regionsJson, trendJson, weeklyFullJson } from "@/test/fixtures.js";
 
+const monthlyJson = (rows = []) => ({ ...weeklyFullJson(), rows });
+
 beforeEach(() => {
   clearFetchCache();
   resetSample();
@@ -137,7 +139,7 @@ describe("Region page: date range and In this period", () => {
     expect(panel.textContent).toContain("This month vs normal: November so far");
     expect(within(panel).getByText("Harmonized")).toBeTruthy();
 
-    const bar = screen.getByRole("group", { name: "Date range" });
+    const bar = screen.getByRole("group", { name: "Exact dates" });
     await act(async () => within(bar).getByRole("button", { name: "VIIRS era 2012+" }).click());
     expect(new URLSearchParams(currentSearch).get("from")).toBe("2012-01-01");
     expect(new URLSearchParams(currentSearch).get("to")).toBeNull(); // default (last data day) is omitted
@@ -175,10 +177,14 @@ describe("Region page: your area (AOI)", () => {
 
   it("loads cells_monthly on first use and shows the area series, top months and the calibration line", async () => {
     mockFetch({
-      "regions.json": regionsJson({ files: ["calibration", "climatology"], optional_files: ["cells_monthly"] }),
+      "regions.json": regionsJson({ files: ["calibration", "climatology", "monthly", "spatial_index"], optional_files: ["cells_monthly"] }),
       "testland/calibration.json": calibration,
       "testland/climatology.json": climatologyJson(),
       "testland/cells_monthly.csv": csv,
+      "testland/monthly.json": {...monthlyJson(), rows:[{year:2022,month:11,series:"harmonized",value:7,lo:7,hi:7,kind:"observed",source:"aqua"},{year:2023,month:11,series:"harmonized",value:15,lo:12,hi:18,kind:"harmonized",source:"snpp"}]},
+      "testland/spatial_index.json": {schema_version:"2.0",generated_at:"2026-11-14T00:00:00Z",code_version:"test",region:"testland",membership:"polygon",science_yaml_sha256:"a".repeat(64),calibration_scope:"whole region",coverage_note:"test",years:[2022,2023].map((year)=>({year,path:`spatial/${year}.json`,sha256:"b".repeat(64),bytes:1}))},
+      ...Object.fromEntries([2022,2023].map((year)=>[`testland/spatial/${year}.json`,{schema_version:"2.0",generated_at:"2026-11-14T00:00:00Z",code_version:"test",region:"testland",year,series:["harmonized"],cells:[A],monthly:[[0,11,0,year===2022?7:15]],weekly:[],monthly_bins:[{month:11,series:0,value:year===2022?7:15,lo:year===2022?7:15,hi:year===2022?7:15,kind:year===2022?"observed":"harmonized",source:year===2022?"aqua":"snpp",n_days:30,n_covered:30}],weekly_bins:[],unit_month:"Aqua-equivalent fire cell-days per month",unit_week:"Aqua-equivalent fire cell-days per week"}]))
+
     });
     renderRegion(`/r/testland?aoi=${A}`);
     const panel = await screen.findByRole("region", { name: /Your area \(1 hexagon, about \d[\d,]* km²\)/ });

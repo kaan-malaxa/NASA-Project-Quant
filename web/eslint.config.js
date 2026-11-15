@@ -1,7 +1,7 @@
 import js from "@eslint/js";
 
 export default [
-  { ignores: ["dist/**", "node_modules/**", "public/**", "src/viz/**"] },
+  { ignores: ["dist/**", "node_modules/**", "public/**"] },
   {
     files: ["**/*.{js,jsx}"],
     ...js.configs.recommended,

@@ -5,7 +5,7 @@ import { TEST_INFO, testLabel } from "./labels.js";
 const ALL_TESTS = [
   "loyo_weekly_wape", "loyo_weekly_r", "loyo_bias", "handoff_annual_mape", "step_naive", "step_harmonized",
   "sat_agreement_wape", "k_direct_vs_chained_pct", "backcast_weekly_wape", "t1_t2_wape", "reliability_err",
-  "saturation_r5", "saturation_r6",
+  "saturation_r5", "saturation_r6", "reliability_year_absolute_err",
 ];
 
 describe("validation helpers", () => {

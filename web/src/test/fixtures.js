@@ -1,3 +1,4 @@
+export const TEST_CONFIGURATION = {"anomaly": {"low_activity_threshold": 5, "extreme_pct": 95, "above_pct": 75, "below_pct": 25}, "timebins": {"solar_degrees_per_hour": 15, "week_days": 7, "weeks_per_year": 52, "week_min_covered_days": 5, "month_min_covered_frac": 0.8, "year_min_covered_frac": 0.9}, "eras": {"record_start": "2003-01-01", "aqua_trusted_through": "2022-12-31", "snpp_through": "2025-12-31", "snpp_first_day": "2012-01-20"}, "baseline_years": [2003, 2025]};
 // Tiny fabricated files shaped like contracts section 6. Test-only; never shipped.
 const header = { schema_version: "1.0", generated_at: "2026-11-14T00:00:00Z", code_version: "test" };
 
@@ -109,7 +110,8 @@ export function climatologyJson() {
 export function dailyJson() {
   const value = Array.from({ length: 13 }, (_, i) => (i === 4 ? null : i + 1));
   return {
-    ...header, region: "testland", start: "2026-11-01", n_days: 13,
+    ...header,
+    configuration: TEST_CONFIGURATION, region: "testland", start: "2026-11-01", n_days: 13,
     series: { harmonized: { unit: "Aqua-equivalent fire cell-days per day", value, lo: value, hi: value } },
     kind_runs: [{ series: "harmonized", from: "2026-11-01", to: "2026-11-13", kind: "harmonized", source: "noaa20" }],
   };

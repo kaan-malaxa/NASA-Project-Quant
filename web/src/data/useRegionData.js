@@ -22,7 +22,7 @@ export function initialFileStates(region) {
  * Loads every JSON file listed for one region. Each file has its own state, so one absent or invalid file
  * never blocks the others.
  * @param {string} regionId
- * @returns {{ status: "loading" | "ok" | "unknown_region" | "regions_failed", region: object | null,
+ * @returns {{ status: "loading" | "ok" | "unknown_region" | "regions_failed", region: import("./types.gen").RegionsJson["regions"][number] | null,
  *             files: Record<string, import("./state.js").FileState>, regionsState: import("./state.js").FileState }}
  */
 export function useRegionData(regionId) {
@@ -53,6 +53,7 @@ export function useRegionData(regionId) {
     return loaded.regionId === region.id ? loaded.files : initialFileStates(region);
   }, [region, loaded]);
 
+  /** @type {"loading" | "ok" | "unknown_region" | "regions_failed"} */
   let status = "loading";
   if (regionsState.status === "ok") status = region ? "ok" : "unknown_region";
   else if (regionsState.status !== "loading") status = "regions_failed";

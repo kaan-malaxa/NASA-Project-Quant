@@ -15,14 +15,18 @@ import InThisPeriod from "./region/InThisPeriod.jsx";
 import StickyBar from "./region/StickyBar.jsx";
 import DownloadsPanel from "./region/DownloadsPanel.jsx";
 import { useDocumentMeta } from "@/lib/useDocumentMeta.js";
+import { useAnalysisPeriod } from "@/data/useAnalysisPeriod.js";
+import AnalysisYears from "./region/AnalysisYears.jsx";
 
 /** #/r/:region — the region story (screens 3–7). */
 export default function Region() {
   const { region: id } = useParams();
-  const { status, region, files, regionsState } = useRegionData(id);
+  const { status, region, files: originalFiles, regionsState } = useRegionData(id);
   const lastDataDay = region?.last_data_day ?? null;
   useDocumentMeta(region?.name ?? "Region", region ? `${region.fire_type} in ${region.name}: the fire calendar, the long-term trend with the sensor change corrected, and this week's burning.` : undefined);
   const [url, setUrl] = useUrlState(lastDataDay);
+  const analysis = useAnalysisPeriod(region, originalFiles, url, regionsState.status === "ok" ? regionsState.data?.configuration : undefined);
+  const files = analysis.files;
   const [chartEl, setChartEl] = useState(null);
   const meta = files.weekly?.status === "ok" ? files.weekly.data.series_meta : {};
   const lensLabel = (id) => meta?.[id]?.label ?? id;
@@ -64,6 +68,7 @@ export default function Region() {
         <p className="text-muted-foreground text-sm">Data through {region.last_data_day}.</p>
       </header>
       <StickyBar>
+        <AnalysisYears analysis={analysis} setUrl={setUrl} />
         <DateRangeBar url={url} setUrl={setUrl} lastDataDay={lastDataDay} />
         <SectionNav />
       </StickyBar>

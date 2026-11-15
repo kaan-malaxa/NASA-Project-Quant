@@ -24,7 +24,7 @@ const MODE_OPTIONS = [
   { id: "anomaly", label: "Compared with normal" },
 ];
 
-function Toggle({ label, value, options, onChange, renderItem }) {
+function Toggle({ label, value, options, onChange, renderItem = undefined }) {
   return (
     <div className="space-y-1">
       <p className="text-muted-foreground text-xs font-medium tracking-wide uppercase">{label}</p>
@@ -195,9 +195,9 @@ function CellPanel({ detail: d, onClose }) {
           <GlossaryTerm term="percentile">Percentile</GlossaryTerm>
         </dt>
         <dd>
-          {d.percentile === null
+          {d.unranked ? "Too little burning at this time of year to rank." : d.percentile === null
             ? "Not ranked"
-            : `${ordinal(d.percentile)} among ${d.nOthers} other years, ${d.baseline[0]}–${d.baseline[1]}`}
+            : `${ordinal(d.percentile)} among ${d.nOthers} baseline years, ${d.baseline[0]}–${d.baseline[1]}`}
         </dd>
       </dl>
     </div>

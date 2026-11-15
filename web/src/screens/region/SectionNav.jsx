@@ -20,7 +20,7 @@ const reducedMotion = () =>
  * orientation: "horizontal" (a row of chips) or "vertical" (a numbered table of contents).
  * watch:       re-check which sections exist when this value changes (e.g. after data loads).
  */
-export default function SectionNav({ sections = SECTIONS, orientation = "horizontal", label = "Sections", watch }) {
+export default function SectionNav({ sections = SECTIONS, orientation = "horizontal", label = "Sections", watch = undefined }) {
   const [active, setActive] = useState(sections[0]?.id);
   const [present, setPresent] = useState(sections);
 

@@ -4,15 +4,15 @@ import { Button } from "@/components/ui/button";
 import SectionState from "@/components/SectionState.jsx";
 import KindBadge from "@/components/KindBadge.jsx";
 import { VizSlot } from "@/components/Viz.jsx";
-import { useCsv } from "@/data/useCsv.js";
-import { areaClimatology, areaKm2, areaSeries, latestRatio, toMonthlyJson, topMonths } from "@/lib/aoi.js";
+import { useSpatialShards } from "@/data/useSpatialShards.js";
+import { spatialAreaSeries } from "@/lib/spatial.js";
+import { areaClimatology, areaKm2, latestRatio, toMonthlyJson, topMonths } from "@/lib/aoi.js";
 import { fmtNumber, monthName } from "@/lib/format.js";
 
 const km2Format = new Intl.NumberFormat("en", { maximumSignificantDigits: 2 });
 const mbFormat = new Intl.NumberFormat("en", { maximumFractionDigits: 1, minimumFractionDigits: 1 });
 /** Download progress in megabytes (1 MB = 1,000,000 bytes). */
 const mb = (bytes) => `${mbFormat.format(bytes / 1e6)} MB`;
-const UNIT = "Aqua-equivalent fire cell-days per month";
 
 function Progress({ progress }) {
   const { loaded = 0, total = null } = progress || {};
@@ -27,32 +27,36 @@ function Progress({ progress }) {
   );
 }
 
-/** "Your area" panel: the area-of-interest lens built from cells_monthly.csv (loaded on first use). */
+/** Your area uses the same authoritative contributions and units as the regional lens. */
 export default function AoiPanel({ region, files, url, setUrl }) {
-  const csv = useCsv(region.id, "cells_monthly", files.cells_monthly, { auto: true });
+  const index = files.spatial_index;
+  const available = index?.data?.years ?? [];
+  const years = available.length ? [available[0].year, available.at(-1).year] : [];
+  const csv = { state: useSpatialShards(region.id, index, years, true) };
   const cells = url.aoi;
   const km2 = useMemo(() => areaKm2(cells), [cells]);
   const clear = () => setUrl({ aoi: [] });
   const baseline = files.climatology?.status === "ok" ? files.climatology.data.baseline_years : null;
+  const unit = url.lens === "viirs_equiv" ? "VIIRS-equivalent fire cell-days per month" :
+    ["aqua_raw", "viirs_raw", "naive_splice"].includes(url.lens) ? "fire cell-days per month" : "Aqua-equivalent fire cell-days per month";
 
   const result = useMemo(() => {
     if (csv.state?.status !== "ok" || files.calibration?.status !== "ok") return null;
-    const series = areaSeries({
-      rows: csv.state.data,
-      calibration: files.calibration.data,
-      cells,
-      regionMonthly: files.monthly?.status === "ok" ? files.monthly.data : undefined,
-    });
-    const months = baseline ? areaClimatology(series, baseline) : null;
+    const allSeries = spatialAreaSeries({ shards: csv.state.data, cells, lens: url.lens });
+    const wanted = new Set((files.monthly?.data?.rows ?? []).map((row) => row.year));
+    const series = allSeries.filter((row) => wanted.has(row.year));
+    const months = baseline ? areaClimatology(allSeries, baseline) : null;
     const kinds = [...new Set(series.map((s) => s.kind))];
     return {
       series,
-      monthly: toMonthlyJson(series, files.calibration.data),
-      climatology: months ? { baseline_years: baseline, unit_week: null, unit_month: UNIT, weeks: [], months } : null,
+      monthly: { ...toMonthlyJson(series, files.calibration.data, url.lens, unit),
+        configuration: files.monthly?.data?.configuration, calibration: files.calibration.data,
+        baseline_rows: allSeries.map((row) => ({ ...row, series: url.lens })) },
+      climatology: months ? { baseline_years: baseline, unit_week: null, unit_month: unit, weeks: [], months } : null,
       latest: months ? latestRatio(series, months) : null,
       kinds: ["observed", "harmonized", "estimated", "sample", "missing"].filter((k) => kinds.includes(k)),
     };
-  }, [csv.state, files.calibration, files.monthly, cells, baseline]);
+  }, [csv.state, files.calibration, files.monthly, cells, baseline, url.lens, unit]);
 
   const top = result ? topMonths(result.series, { from: url.from, to: url.to ?? region.last_data_day }) : [];
 
@@ -67,7 +71,7 @@ export default function AoiPanel({ region, files, url, setUrl }) {
         </Button>
       </div>
 
-      {files.cells_monthly?.status === "absent" ? (
+      {files.spatial_index?.status === "absent" ? (
         <p className="text-sm">Area data are not available for this place.</p>
       ) : csv.state?.status === "loading" || csv.state?.status === "lazy" ? (
         <Progress progress={csv.progress} />
@@ -89,13 +93,13 @@ export default function AoiPanel({ region, files, url, setUrl }) {
               grain="month"
               monthly={result.monthly}
               climatology={result.climatology}
-              lens="harmonized"
+              lens={url.lens}
               mode={url.mode}
               range={{ from: url.from, to: url.to ?? region.last_data_day }}
               placeholderClassName="h-64"
             />
           ) : null}
-          <p className="text-muted-foreground text-sm">Unit: {UNIT}.</p>
+          <p className="text-muted-foreground text-sm">Unit: {unit}. Daily source selection and coverage scaling match the regional record.</p>
           {result.latest && result.latest.median !== null ? (
             <p className="text-sm">
               Latest month in the data, {monthName(result.latest.month)} {result.latest.year} (it may still be in progress):{" "}

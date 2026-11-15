@@ -2,7 +2,7 @@ import * as React from "react"
 import { cn } from "@/lib/utils"
 
 function Table({
-  className,
+  className = undefined,
   ...props
 }) {
   return (
@@ -20,7 +20,7 @@ function Table({
 }
 
 function TableHeader({
-  className,
+  className = undefined,
   ...props
 }) {
   return (
@@ -33,7 +33,7 @@ function TableHeader({
 }
 
 function TableBody({
-  className,
+  className = undefined,
   ...props
 }) {
   return (
@@ -46,7 +46,7 @@ function TableBody({
 }
 
 function TableFooter({
-  className,
+  className = undefined,
   ...props
 }) {
   return (
@@ -62,7 +62,7 @@ function TableFooter({
 }
 
 function TableRow({
-  className,
+  className = undefined,
   ...props
 }) {
   return (
@@ -78,7 +78,7 @@ function TableRow({
 }
 
 function TableHead({
-  className,
+  className = undefined,
   ...props
 }) {
   return (
@@ -94,7 +94,7 @@ function TableHead({
 }
 
 function TableCell({
-  className,
+  className = undefined,
   ...props
 }) {
   return (
@@ -110,7 +110,7 @@ function TableCell({
 }
 
 function TableCaption({
-  className,
+  className = undefined,
   ...props
 }) {
   return (

@@ -11,9 +11,9 @@ const ToggleGroupContext = React.createContext({
 })
 
 function ToggleGroup({
-  className,
-  variant,
-  size,
+  className = undefined,
+  variant = undefined,
+  size = undefined,
   spacing = 0,
   children,
   ...props
@@ -41,10 +41,10 @@ function ToggleGroup({
 }
 
 function ToggleGroupItem({
-  className,
+  className = undefined,
   children,
-  variant,
-  size,
+  variant = undefined,
+  size = undefined,
   ...props
 }) {
   const context = React.useContext(ToggleGroupContext)

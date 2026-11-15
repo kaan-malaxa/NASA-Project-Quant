@@ -1,7 +1,7 @@
 // The ONE function that maps a calendar cell to its style. CalendarHeatmap and FireYearClock both
 // use it, so the two can never disagree (role file §10: "Clock = heatmap, identical style object").
 
-import { KIND_STYLE, LOW_ACTIVITY_P90, UNRANKED_STYLE, ZERO_STYLE } from "./theme";
+import { KIND_STYLE, UNRANKED_STYLE, ZERO_STYLE } from "./theme";
 
 const isNum = (v) => typeof v === "number" && Number.isFinite(v);
 
@@ -67,13 +67,41 @@ export function cellStyle(c, mode, scales) {
  * SD-11 low_activity threshold for a period, in the period's own unit.
  * SD-11 states it per 7 days (5 cell-days); a month scales it by its length (non-leap year).
  */
-export function lowActivityThreshold(grain, period) {
-  if (grain === "week") return LOW_ACTIVITY_P90;
+export function lowActivityThreshold(grain, period, threshold = null, factor = 1) {
+  if (threshold === null || !Number.isFinite(factor)) return null;
+  if (grain === "week") return threshold * factor;
   const days = new Date(Date.UTC(2001, period, 0)).getUTCDate();
-  return (LOW_ACTIVITY_P90 * days) / 7;
+  return (threshold * days * factor) / 7;
 }
 
 /** SD-11 low_activity: x < threshold AND the climatological p90 < threshold. */
 export function isLowActivity(value, p90, threshold) {
-  return isNum(p90) && p90 < threshold && value < threshold;
+  return isNum(threshold) && isNum(p90) && p90 < threshold && value < threshold;
+}
+
+/** Convert the configured Aqua-scale threshold to the selected lens using its exported calibration. */
+export function lensActivityThreshold({grain, period, year, lens, source, configuration, calibration}) {
+  const threshold = configuration?.anomaly?.low_activity_threshold;
+  if (!isNum(threshold)) return null;
+  const weekDays = configuration.timebins?.week_days;
+  if (!isNum(weekDays)) return null;
+  const start = grain === "month" ? new Date(Date.UTC(year, period - 1, 1)) :
+    new Date(Date.UTC(year, 0, 1 + (period - 1) * weekDays));
+  const nDays = grain === "month" ? new Date(Date.UTC(year, period, 0)).getUTCDate() :
+    period === configuration.timebins?.weeks_per_year ?
+      Math.round((Date.UTC(year + 1, 0, 1) - start.getTime()) / 86400000) : weekDays;
+  const viirs = lens === "viirs_equiv" || lens === "viirs_raw" ||
+    (lens === "naive_splice" && year >= Number(configuration.eras?.snpp_first_day?.slice(0, 4)));
+  let factor = 1;
+  if (viirs) {
+    const sensor = source === "noaa20" ? "noaa20" : "snpp";
+    factor = 0;
+    for (let i = 0; i < nDays; i++) {
+      const month = new Date(start.getTime() + i * 86400000).getUTCMonth() + 1;
+      const k = calibration?.k?.[sensor]?.find((entry) => entry.month === month)?.k ?? calibration?.k_annual?.[sensor]?.k;
+      if (!(k > 0)) return null;
+      factor += 1 / k / nDays;
+    }
+  }
+  return threshold * factor * (grain === "month" ? nDays / weekDays : 1);
 }

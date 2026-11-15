@@ -1,8 +1,9 @@
 // Pure data preparation for the calendar charts (CalendarHeatmap now, FireYearClock in B2).
 // No React, no DOM. Unit-tested in __tests__/heatmap.test.js.
 
-import { cellStyle, isLowActivity, lowActivityThreshold } from "./cellStyle";
+import { cellStyle, isLowActivity, lensActivityThreshold } from "./cellStyle";
 import { percentileRank } from "./percentile";
+import { quantile } from "d3";
 import {
   KIND_STYLE,
   SENSOR_STYLE,
@@ -104,7 +105,8 @@ export function dominantSource(sources) {
 const isNum = (v) => typeof v === "number" && Number.isFinite(v);
 
 /** Everything the calendar draws, computed once per data/lens/mode change. */
-export function buildHeatGrid({ rows, grain, lens, mode, climatology, range, unit }) {
+export function buildHeatGrid({ rows, grain, lens, mode, climatology, range, unit,
+  baselineRows = undefined, configuration = undefined, calibration = undefined }) {
   const mine = lensRows(rows ?? [], lens)
     .filter((r) => {
       const p = periodOf(r);
@@ -120,7 +122,7 @@ export function buildHeatGrid({ rows, grain, lens, mode, climatology, range, uni
   const [b0, b1] = climatology?.baseline_years ?? [-Infinity, Infinity];
   const baseline = new Map();
   if (mode === "anomaly") {
-    for (const r of mine) {
+    for (const r of lensRows(baselineRows ?? rows, lens)) {
       if (r.year < b0 || r.year > b1 || r.kind === "missing" || !isNum(r.value)) continue;
       const p = periodOf(r);
       const list = baseline.get(p);
@@ -129,9 +131,7 @@ export function buildHeatGrid({ rows, grain, lens, mode, climatology, range, uni
     }
   }
   const p90 = new Map();
-  for (const s of grain === "week" ? (climatology?.weeks ?? []) : (climatology?.months ?? [])) {
-    p90.set("week" in s ? s.week : s.month, s.p90);
-  }
+  for (const [slot, values] of baseline) p90.set(slot, quantile(values, 0.9));
 
   const cells = mine.map((r, index) => {
     const period = periodOf(r);
@@ -139,7 +139,8 @@ export function buildHeatGrid({ rows, grain, lens, mode, climatology, range, uni
     let percentile = null;
     let unranked = false;
     if (mode === "anomaly" && !missing) {
-      unranked = isLowActivity(r.value, p90.get(period), lowActivityThreshold(grain, period));
+      const threshold = lensActivityThreshold({grain, period, year:r.year, lens, source:r.source, configuration, calibration});
+      unranked = isLowActivity(r.value, p90.get(period), threshold);
       const pr = percentileRank(r.value, baseline.get(period) ?? []);
       percentile = Number.isFinite(pr) ? pr : null;
     }

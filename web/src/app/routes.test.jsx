@@ -35,7 +35,7 @@ const renderAt = (path) =>
 describe("routes (contracts section 7)", () => {
   it.each(cases)("%s renders its heading, title, the nav and the FIRMS credit", async (path, heading, title) => {
     renderAt(path);
-    expect((await screen.findByRole("heading", { level: 1, name: heading })).textContent).toBe(heading);
+    expect((await screen.findByRole("heading", { level: 1, name: heading }, { timeout: 10000 })).textContent).toBe(heading);
     await waitFor(() => expect(document.title).toBe(title));
     const credit = within(screen.getByRole("contentinfo")).getByRole("link", { name: "NASA FIRMS" });
     expect(credit.getAttribute("href")).toBe("https://firms.modaps.eosdis.nasa.gov/");

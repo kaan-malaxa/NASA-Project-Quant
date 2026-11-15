@@ -12,7 +12,7 @@
 import "maplibre-gl/dist/maplibre-gl.css";
 import { forwardRef, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { VizDefs } from "./defs";
-import { bounds, cellsInPolygon, fitProjection, hexFeatures, ringsPath, toggleCell } from "./hexLayout";
+import { bounds, cellsInPolygon, displayGeometry, fitProjection, hexFeatures, ringsPath, toggleCell } from "./hexLayout";
 import { mergeRefs, useElementWidth } from "./hooks";
 import { CHART_FONT, KIND_STYLE, formatNumber } from "./theme";
 
@@ -221,16 +221,17 @@ const HexGl = forwardRef(function HexGl(
     const resolve = cssColorResolver(boxRef.current ?? document.documentElement);
     const { fc } = hexFeatures(hex?.cells, metric, resolve);
     const line = outline?.type ? outline : { type: "FeatureCollection", features: [] };
+    const fit = bounds(outline?.type ? outline : fc);
     return {
-      fc,
-      outline: line,
+      fc: displayGeometry(fc, fit),
+      outline: displayGeometry(line, fit),
       colors: {
         edge: resolve("var(--fr-bg)"),
         text: resolve("var(--fr-text)"),
         accent: resolve("var(--fr-accent)"),
         estimate: resolve("var(--fr-estimate-stroke)"),
       },
-      fit: bounds(outline?.type ? outline : fc),
+      fit,
       kind: hex?.kind,
     };
   }, [hex, metric, outline]);

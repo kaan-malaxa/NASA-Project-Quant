@@ -35,6 +35,17 @@ const HEX = {
 };
 
 describe("hexLayout", () => {
+  it("fits the US across the antimeridian and retains Alaska and Hawaii", () => {
+    const geo = { type: "MultiPoint", coordinates: [[177, 52], [-175, 52], [-155, 20], [-67, 45]] };
+    const box = bounds(geo);
+    expect(box[1][0] - box[0][0]).toBeCloseTo(116);
+    const project = fitProjection(box, 400, 240);
+    for (const point of geo.coordinates) {
+      const [x, y] = project(point);
+      expect(x).toBeGreaterThanOrEqual(0); expect(x).toBeLessThanOrEqual(400);
+      expect(y).toBeGreaterThanOrEqual(0); expect(y).toBeLessThanOrEqual(240);
+    }
+  });
   it("hexFeatures: one closed GeoJSON polygon per valid cell, metric as value", () => {
     const { fc, skipped } = hexFeatures(HEX.cells, "critical");
     expect(skipped).toBe(1);

@@ -8,12 +8,12 @@
  * contracts/ has no schema for outline.geojson, so that one still comes from ./schemas-temp/ (R5).
  */
 const contract = import.meta.glob("../../../contracts/*.schema.json", { eager: true, import: "default" });
-const local = import.meta.glob("./schemas-temp/*.schema.json", { eager: true, import: "default" });
+
 
 const fileName = (file) => file.split("/").pop();
 const byFile = Object.fromEntries(
   // contracts/ wins if a schema ever exists in both places
-  [...Object.entries(local), ...Object.entries(contract)].map(([file, schema]) => [fileName(file), schema]),
+  Object.entries(contract).map(([file, schema]) => [fileName(file), schema]),
 );
 
 /** Every schema as [file name, schema], e.g. ["weekly.schema.json", {...}]: the keys cross-references use. */

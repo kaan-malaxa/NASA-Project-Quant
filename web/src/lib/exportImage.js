@@ -32,7 +32,7 @@ export function pngSize({ width, height }, scale = 2) {
  */
 export function serializeSvg(svg, opts = {}) {
   const { width, height } = svgSize(svg);
-  const clone = svg.cloneNode(true);
+  const clone = /** @type {SVGSVGElement} */ (svg.cloneNode(true));
   const src = [svg, ...svg.querySelectorAll("*")];
   const dst = [clone, ...clone.querySelectorAll("*")];
   const view = svg.ownerDocument.defaultView;

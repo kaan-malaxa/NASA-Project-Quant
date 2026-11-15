@@ -16,11 +16,13 @@ import {
 import { compareToBaselines, groupByRegion } from "@/lib/validation.js";
 import { FIRMS_URL } from "@/app/AppShell.jsx";
 import { DataTable, MethodsSection, RegionHeading } from "./methods/parts.jsx";
+import { useDocumentMeta } from "@/lib/useDocumentMeta.js";
 
 const has = (a) => Array.isArray(a) && a.length > 0;
 
 /** #/methods — screen 9, from methods.json, manifest.json and each region's calibration.json. */
 export default function Methods() {
+  useDocumentMeta("Methods and honesty", "How FireRosetta harmonizes MODIS and VIIRS hotspot records, how it was tested, and its limits.");
   const methods = useJson("methods.json");
   const manifest = useJson("manifest.json");
   const { state: regionsState, regions } = useRegions();

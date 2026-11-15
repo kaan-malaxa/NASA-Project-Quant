@@ -1,16 +1,18 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { cleanup, render, screen, within } from "@testing-library/react";
+import { cleanup, render, screen, waitFor, within } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import AppRoutes from "./AppRoutes.jsx";
+import ErrorBoundary from "@/components/ErrorBoundary.jsx";
 import { clearFetchCache } from "@/data/fetchJson.js";
 import { mockFetch } from "@/test/mockFetch.js";
 
 const cases = [
-  ["/", "Is it really burning more, or did the satellite get better eyes?"],
-  ["/pick", "Pick a place"],
-  ["/r/punjab", "Region"],
-  ["/methods", "Methods and honesty"],
-  ["/gallery", "Component gallery"],
+  ["/", "Is it really burning more, or did the satellite get better eyes?", "FireRosetta"],
+  ["/pick", "Pick a place", "Pick a place · FireRosetta"],
+  ["/r/punjab", "Region", "Region · FireRosetta"],
+  ["/methods", "Methods and honesty", "Methods and honesty · FireRosetta"],
+  ["/gallery", "Component gallery", "Component gallery · FireRosetta"],
+  ["/no/such/page", "Page not found", "Page not found · FireRosetta"],
 ];
 
 beforeEach(() => {
@@ -20,31 +22,73 @@ beforeEach(() => {
 afterEach(() => {
   cleanup();
   vi.unstubAllGlobals();
+  vi.restoreAllMocks();
 });
 
-describe("routes (contracts section 7)", () => {
-  it("/r/punjab/brief renders without the site header or navigation", () => {
-    render(
-      <MemoryRouter initialEntries={["/r/punjab/brief"]}>
-        <AppRoutes />
-      </MemoryRouter>,
-    );
-    expect(screen.getByRole("heading", { level: 1 }).textContent).toBe("Season Brief");
-    expect(screen.queryByRole("navigation", { name: "Main" })).toBeNull();
-  });
+const renderAt = (path) =>
+  render(
+    <MemoryRouter initialEntries={[path]}>
+      <AppRoutes />
+    </MemoryRouter>,
+  );
 
-  it.each(cases)("%s renders its heading, the nav and the FIRMS credit", (path, title) => {
-    render(
-      <MemoryRouter initialEntries={[path]}>
-        <AppRoutes />
-      </MemoryRouter>,
-    );
-    expect(screen.getByRole("heading", { level: 1 }).textContent).toBe(title);
+describe("routes (contracts section 7)", () => {
+  it.each(cases)("%s renders its heading, title, the nav and the FIRMS credit", async (path, heading, title) => {
+    renderAt(path);
+    expect((await screen.findByRole("heading", { level: 1, name: heading })).textContent).toBe(heading);
+    await waitFor(() => expect(document.title).toBe(title));
     const credit = within(screen.getByRole("contentinfo")).getByRole("link", { name: "NASA FIRMS" });
     expect(credit.getAttribute("href")).toBe("https://firms.modaps.eosdis.nasa.gov/");
     const nav = screen.getByRole("navigation", { name: "Main" });
     expect(nav.textContent).toContain("Pick a place");
     expect(nav.textContent).toContain("Methods");
     expect(nav.textContent).not.toContain("Gallery");
+    expect(document.head.querySelector('meta[name="description"]').getAttribute("content").length).toBeGreaterThan(20);
+  });
+
+  it("/r/punjab/brief renders without the site header or navigation", async () => {
+    renderAt("/r/punjab/brief");
+    expect(await screen.findByRole("heading", { level: 1, name: "Season Brief" })).toBeTruthy();
+    expect(screen.queryByRole("navigation", { name: "Main" })).toBeNull();
+  });
+});
+
+describe("error boundary", () => {
+  function Boom() {
+    throw new Error("kaboom");
+  }
+
+  it("shows a friendly message and a link home instead of a blank page", () => {
+    vi.spyOn(console, "error").mockImplementation(() => {});
+    render(
+      <ErrorBoundary resetKey="/x">
+        <Boom />
+      </ErrorBoundary>,
+    );
+    expect(screen.getByRole("alert").textContent).toContain("Something went wrong on this page");
+    expect(screen.getByRole("link", { name: "Go to the home page" }).getAttribute("href")).toBe("#/");
+    expect(screen.getByText("kaboom")).toBeTruthy();
+  });
+
+  it("clears when the route changes", () => {
+    vi.spyOn(console, "error").mockImplementation(() => {});
+    let crash = true;
+    function Maybe() {
+      if (crash) throw new Error("once");
+      return <p>recovered</p>;
+    }
+    const { rerender } = render(
+      <ErrorBoundary resetKey="/a">
+        <Maybe />
+      </ErrorBoundary>,
+    );
+    expect(screen.getByRole("alert")).toBeTruthy();
+    crash = false;
+    rerender(
+      <ErrorBoundary resetKey="/b">
+        <Maybe />
+      </ErrorBoundary>,
+    );
+    expect(screen.getByText("recovered")).toBeTruthy();
   });
 });

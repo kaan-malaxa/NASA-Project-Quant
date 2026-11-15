@@ -141,6 +141,70 @@ describe("Region page: date range and In this period", () => {
   });
 });
 
+describe("Region page: downloads", () => {
+  function captureDownloads() {
+    const saved = [];
+    vi.stubGlobal("URL", Object.assign(Object.create(URL), URL, {
+      createObjectURL: (blob) => {
+        saved.push({ blob });
+        return "blob:test";
+      },
+      revokeObjectURL: () => {},
+    }));
+    const click = vi.spyOn(HTMLAnchorElement.prototype, "click").mockImplementation(function () {
+      saved.at(-1).name = this.download;
+    });
+    return { saved, restore: () => click.mockRestore() };
+  }
+
+  it("downloads the series and calendar CSVs and lists overlapping archives", async () => {
+    const downloads = {
+      schema_version: "1.0", generated_at: "x", code_version: "test", region: "testland",
+      hotspot_archives: [
+        { year: 2026, sensor: "noaa20", url: "https://example.org/a.csv.gz", rows: 1200, bytes: 34567 },
+        { year: 2010, sensor: "snpp", url: "https://example.org/b.csv.gz", rows: 1, bytes: 1 },
+      ],
+    };
+    mockFetch({
+      "regions.json": regionsJson({ files: ["daily", "weekly"], optional_files: ["downloads", "hotspots_recent"] }),
+      "testland/daily.json": dailyJson(),
+      "testland/weekly.json": weeklyFullJson(),
+      "testland/downloads.json": downloads,
+    });
+    const cap = captureDownloads();
+    renderRegion("/r/testland?from=2026-11-01");
+    const sec = await screen.findByRole("region", { name: "In this period and downloads" });
+    const seriesBtn = await within(sec).findByRole("button", { name: "Series CSV" });
+    await waitFor(() => expect(seriesBtn.disabled).toBe(false));
+    await act(async () => seriesBtn.click());
+    expect(cap.saved[0].name).toBe("firerosetta_testland_harmonized_2026-11-01_2026-11-13.csv");
+    const lines = (await cap.saved[0].blob.text()).trimEnd().split("\n");
+    expect(lines[0]).toMatch(/^# FireRosetta test .* region=testland lens=harmonized unit=Aqua-equivalent fire cell-days per day source=NASA FIRMS$/);
+    expect(lines).toHaveLength(2 + 13);
+    expect(lines[2 + 4]).toBe("2026-11-05,harmonized,,,,missing,,Aqua-equivalent fire cell-days per day");
+
+    const calBtn = within(sec).getByRole("button", { name: "Calendar CSV" });
+    await waitFor(() => expect(calBtn.disabled).toBe(false));
+    await act(async () => calBtn.click());
+    expect(cap.saved[1].name).toBe("firerosetta_testland_harmonized_2026-11-01_2026-11-13_weeks.csv");
+
+    expect(within(sec).getByRole("button", { name: "PNG" }).disabled).toBe(true);
+    expect(within(sec).getByRole("link", { name: /Last 31 days/ }).getAttribute("download")).toBe("firerosetta_testland_hotspots_recent.csv");
+    await waitFor(() => expect(sec.textContent).toContain("2026, VIIRS on NOAA-20"));
+    expect(sec.textContent).not.toContain("2010, VIIRS on Suomi NPP");
+    expect(within(sec).getByRole("link", { name: /Season Brief/ }).getAttribute("href")).toBe("/r/testland/brief?from=2026-11-01");
+    cap.restore();
+  });
+
+  it("says plainly when hotspot files are not available", async () => {
+    mockFetch({ "regions.json": regionsJson({ files: [], optional_files: [] }) });
+    renderRegion();
+    const sec = await screen.findByRole("region", { name: "In this period and downloads" });
+    expect(sec.textContent).toContain("Recent hotspot records are not available for this place.");
+    expect(sec.textContent).toContain("Yearly hotspot archives are not available for this place.");
+  });
+});
+
 describe("month-to-date line", () => {
   it("fills the challenge wording and is omitted when a number is missing", () => {
     expect(monthToDateLine({ month: 11, through_day: 14, value: 412, median: 380.25, ratio: 1.08, percentile: 60 })).toBe(

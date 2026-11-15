@@ -13,7 +13,10 @@ export function hasViz(name) {
   return typeof viz[name] === "function" || (viz[name] && typeof viz[name] === "object");
 }
 
-/** <VizSlot name="BrokenRuler" ruler={...} /> renders R6's component with the given props. */
+/**
+ * <VizSlot name="BrokenRuler" ruler={...} /> renders R6's component with the given props.
+ * `ref` is passed through (React 19 treats it as a prop), so charts can hand back their root <svg> for export.
+ */
 export function VizSlot({ name, placeholderClassName = "h-48", ...props }) {
   const Component = viz[name];
   if (Component) return <Component {...props} />;

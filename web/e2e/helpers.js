@@ -13,15 +13,24 @@ export function watch(page) {
   page.on("request", (r) => {
     const u = new URL(r.url());
     if (u.protocol === "data:" || u.protocol === "blob:") return;
-    if (u.origin !== new URL(page.url() === "about:blank" ? "http://localhost:4173/" : page.url()).origin && !OPTIONAL_HOSTS.includes(u.host)) {
+    if (
+      u.origin !== new URL(page.url() === "about:blank" ? "http://localhost:4173/" : page.url()).origin &&
+      !OPTIONAL_HOSTS.includes(u.host)
+    ) {
       problems.push(`external request: ${r.url()}`);
     }
   });
   page.on("console", (m) => m.type() === "error" && problems.push(`console: ${m.text()}`));
   page.on("pageerror", (e) => problems.push(`page error: ${e.message}`));
   const optional = (url) => OPTIONAL_HOSTS.some((h) => new URL(url).host === h);
-  page.on("requestfailed", (r) => !optional(r.url()) && problems.push(`request failed: ${r.url()} (${r.failure()?.errorText})`));
-  page.on("response", (r) => r.status() >= 400 && !optional(r.url()) && problems.push(`HTTP ${r.status()}: ${r.url()}`));
+  page.on(
+    "requestfailed",
+    (r) => !optional(r.url()) && problems.push(`request failed: ${r.url()} (${r.failure()?.errorText})`),
+  );
+  page.on(
+    "response",
+    (r) => r.status() >= 400 && !optional(r.url()) && problems.push(`HTTP ${r.status()}: ${r.url()}`),
+  );
   return problems;
 }
 
@@ -39,7 +48,13 @@ export async function seriousAxe(page) {
   const { violations } = await new AxeBuilder({ page }).analyze();
   return violations
     .filter((v) => v.impact === "serious" || v.impact === "critical")
-    .map((v) => `${v.impact} ${v.id}: ${v.help} — ${v.nodes.slice(0, 3).map((n) => n.target.join(" ")).join(" | ")}`);
+    .map(
+      (v) =>
+        `${v.impact} ${v.id}: ${v.help} — ${v.nodes
+          .slice(0, 3)
+          .map((n) => n.target.join(" "))
+          .join(" | ")}`,
+    );
 }
 
 /** True when the page scrolls sideways. */

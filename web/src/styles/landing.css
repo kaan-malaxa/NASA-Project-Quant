@@ -7,7 +7,7 @@
   --hero-teal: #07383c;
   --hero-deep: #041a1e;
   --hero-black: #020708;
-  --hero-glow: #4dffc3;
+  --hero-accent: #4dffc3; /* outlines of the satellite buttons and labels */
   --hero-cta: #3df58c;
   --hero-cta-hover: #7dffb3;
   --hero-cta-text: #02170c;
@@ -131,18 +131,46 @@
   }
 }
 
-/* ---- Loader (Phase 3): below the SAMPLE DATA banner, above everything else ---- */
+/* Wide screens: the headline keeps to the left half, so the big globe beside it never covers it. */
+@media (min-width: 768px) {
+  .story-head {
+    width: min(56rem, calc(50% - var(--pad)));
+  }
+  .stacked-head {
+    max-width: min(56rem, calc(50% - var(--pad)));
+  }
+}
+
+/* ---- Loader: below the SAMPLE DATA banner, above everything else; colours from the tokens ---- */
 .landing-loader {
   position: fixed;
   inset: var(--sticky-offset, 0px) 0 0 0;
   z-index: 45;
-  background: radial-gradient(70% 60% at 50% 50%, #07383c 0%, #041a1e 50%, #020708 100%), #020708;
+  background: var(--background);
   opacity: 1;
-  transition: opacity 500ms ease;
+  transition: opacity 300ms ease;
 }
 .landing-loader[data-fading="true"] {
   opacity: 0;
   pointer-events: none;
+}
+.landing-loader-skip {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  padding: 0.35rem 0.9rem;
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  background: var(--card);
+}
+.landing-loader-skip:hover {
+  color: var(--foreground);
+}
+.landing-loader-skip:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
 }
 .landing-loader-canvas {
   display: block;
@@ -150,7 +178,10 @@
   height: 100%;
 }
 
-/* ---- Mission ---- */
+/* ---- Problem and mission ---- */
+.landing-problem {
+  background: #020708; /* continues the hero backdrop under the pinned stage */
+}
 .landing-mission {
   background: linear-gradient(to bottom, #020708 0%, var(--background) 100%);
 }
@@ -194,7 +225,7 @@
   align-items: center;
   gap: 0.5rem;
   border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--hero-glow) 35%, transparent);
+  border: 1px solid color-mix(in srgb, var(--hero-accent) 35%, transparent);
   padding: 0.4rem 0.8rem;
   font-size: 0.875rem;
   font-weight: 500;
@@ -204,8 +235,8 @@
 }
 .satellite-chip:hover,
 .satellite-chip[data-active="true"] {
-  border-color: var(--hero-glow);
-  box-shadow: 0 0 0 1px var(--hero-glow);
+  border-color: var(--hero-accent);
+  box-shadow: 0 0 0 1px var(--hero-accent);
 }
 .satellite-chip:focus-visible {
   outline: 2px solid var(--foreground);
@@ -230,7 +261,7 @@
   display: block;
   white-space: nowrap;
   border-radius: 999px;
-  border: 1px solid var(--hero-glow);
+  border: 1px solid var(--hero-accent);
   padding: 0.15rem 0.6rem;
   font-size: 0.8125rem;
   font-weight: 600;
@@ -238,17 +269,20 @@
   background: color-mix(in srgb, var(--hero-black) 85%, transparent);
 }
 
-/* The flat Earth picture (no WebGL, or while the 3D scene loads): the map on a disc, shaded like a lit sphere. */
+/*
+ * The flat Earth picture (no WebGL, or while the 3D scene loads): the map on a disc, shaded like a lit sphere, at the
+ * 3D Earth's place and size (--gx/--gy centre, --er radius; 0 = hero, 1 = after the scroll move, blended by --t).
+ */
 .static-earth {
-  position: relative;
-  width: min(62svh, 78vw);
+  position: absolute;
+  left: calc(var(--gx0, 50%) + (var(--gx1, 50%) - var(--gx0, 50%)) * var(--t, 0));
+  top: calc(var(--gy0, 50%) + (var(--gy1, 50%) - var(--gy0, 50%)) * var(--t, 0));
+  width: calc(2 * (var(--er0, 30svh) + (var(--er1, 30svh) - var(--er0, 30svh)) * var(--t, 0)));
   aspect-ratio: 1;
+  transform: translate(-50%, -50%);
   border-radius: 50%;
   background-size: auto 100%;
   background-position: 22% 50%;
-  box-shadow:
-    0 0 60px 6px color-mix(in srgb, var(--hero-glow) 45%, transparent),
-    inset 0 0 18px 2px color-mix(in srgb, var(--hero-glow) 55%, transparent);
 }
 .static-earth::after {
   content: "";
@@ -263,9 +297,40 @@
   );
 }
 
+/*
+ * Warm light behind the globe only: a large, faint radial gradient in R6's --warning orange, centred on the globe and
+ * fading to the hero backdrop. It follows the globe on the scroll move; with reduced motion --t stays 0, so it is still.
+ */
+.hero-warm-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  --glow-r: calc(2.3 * (var(--er0, 30svh) + (var(--er1, 30svh) - var(--er0, 30svh)) * var(--t, 0)));
+  background: radial-gradient(
+    circle var(--glow-r) at calc(var(--gx0, 50%) + (var(--gx1, 50%) - var(--gx0, 50%)) * var(--t, 0))
+      calc(var(--gy0, 50%) + (var(--gy1, 50%) - var(--gy0, 50%)) * var(--t, 0)),
+    color-mix(in srgb, var(--warning) 24%, transparent) 0%,
+    color-mix(in srgb, var(--warning) 15%, transparent) 50%,
+    color-mix(in srgb, var(--warning) 6%, transparent) 75%,
+    transparent 100%
+  );
+}
+
+/* ---- Scroll-in reveal (mission, problem, live sections); none with reduced motion ---- */
+.landing-reveal {
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease;
+}
+.landing-reveal[data-reveal="hidden"] {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .landing-cta,
-  .mission-card {
+  .mission-card,
+  .landing-reveal {
     transition: none;
   }
 }

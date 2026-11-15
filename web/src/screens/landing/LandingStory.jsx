@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import GlobeHero from "./GlobeHero.jsx";
 import { usePrefersReducedMotion } from "./motion.js";
-import { ORBIT_FRACTION } from "./satellites.js";
+import { ORBIT_FRACTION, SHELLS } from "./satellites.js";
 import { MOVE_MS, STORY_EXTRA_VH, easeInOut, storyLayout, storyTarget } from "./storyLayout.js";
 
 const px = (v) => `${Math.round(v * 100) / 100}px`;
@@ -37,7 +37,7 @@ export default function LandingStory({ calibration, head, cta, renderRuler, onRe
   const ctaRef = useRef(null);
   const rulerRef = useRef(null);
   const chipsRef = useRef(null);
-  const storyRef = useRef({ t: 0, globe: null });
+  const storyRef = useRef({ t: 0, hero: null, globe: null, invalidate: null });
   const layoutRef = useRef(null);
   const fitTimer = useRef(0);
   const [phase2, setPhase2] = useState(false);
@@ -88,33 +88,50 @@ export default function LandingStory({ calibration, head, cta, renderRuler, onRe
     a.frame = requestAnimationFrame(tick);
   }, [tick]);
 
-  // Measure the pieces and place them (on load, on resize, and when the ruler's data arrive).
+  // Measure the pieces and place them (on load, on resize, and when the ruler's data arrive). The globe's hero
+  // placement (and the warm glow behind it) applies in both layouts; the text positions only in the story.
   const measure = useCallback(() => {
     const stage = stageRef.current;
-    const [headEl, ctaEl, rulerEl, chipsEl] = [headRef, ctaRef, rulerRef, chipsRef].map((r) => r.current);
-    if (!stage || !headEl || !ctaEl || !rulerEl || !chipsEl || !stage.clientWidth) return;
+    const headEl = headRef.current;
+    const chipsEl = chipsRef.current;
+    if (!stage || !headEl || !chipsEl || !stage.clientWidth) return;
     const L = storyLayout({
       w: stage.clientWidth,
       h: stage.clientHeight,
       headH: headEl.offsetHeight,
       headW: headEl.offsetWidth,
-      ctaH: ctaEl.offsetHeight,
-      rulerH: rulerEl.offsetHeight,
+      ctaH: ctaRef.current?.offsetHeight ?? 0,
+      rulerH: rulerRef.current?.offsetHeight ?? 0,
       chipsH: chipsEl.offsetHeight,
       orbitFraction: ORBIT_FRACTION,
+      orbitToEarth: SHELLS.high.radius,
     });
+    const after = story ? L.globe : L.hero;
     const vars = {
-      "--head-y0": px(L.headY0),
-      "--head-y1": px(L.headY1),
-      "--head-s1": String(Math.round(L.headS1 * 1e4) / 1e4),
-      "--cta-y0": px(L.ctaY0),
-      "--cta-y1": px(L.ctaY1),
-      "--ruler-top": px(L.rulerTop),
-      "--ruler-dx": px(L.rulerDx),
-      "--ruler-dy": px(L.rulerDy),
+      "--gx0": px(L.hero.x),
+      "--gy0": px(L.hero.y),
+      "--er0": px(L.hero.earthR),
+      "--gx1": px(after.x),
+      "--gy1": px(after.y),
+      "--er1": px(after.earthR),
     };
+    if (story) {
+      Object.assign(vars, {
+        "--head-y0": px(L.headY0),
+        "--head-y1": px(L.headY1),
+        "--head-s1": String(Math.round(L.headS1 * 1e4) / 1e4),
+        "--cta-y0": px(L.ctaY0),
+        "--cta-y1": px(L.ctaY1),
+        "--ruler-top": px(L.rulerTop),
+        "--ruler-dx": px(L.rulerDx),
+        "--ruler-dy": px(L.rulerDy),
+      });
+    }
     for (const [k, v] of Object.entries(vars)) stage.style.setProperty(k, v);
-    storyRef.current.globe = L.globe;
+    storyRef.current.hero = L.hero;
+    storyRef.current.globe = after;
+    storyRef.current.invalidate?.();
+    if (!story) return;
     setCtaFades(L.ctaFades);
     layoutRef.current = L;
     // Decide "does it fit" only once sizes have settled: charts draw at a default width before they measure themselves.
@@ -125,13 +142,10 @@ export default function LandingStory({ calibration, head, cta, renderRuler, onRe
     }, 700);
     setT(storyRef.current.t);
     apply();
-  }, [apply, setT]);
+  }, [story, apply, setT]);
 
   useLayoutEffect(() => {
-    if (!story) {
-      storyRef.current.t = 0;
-      return;
-    }
+    if (!story) storyRef.current.t = 0;
     measure();
     const ro = typeof ResizeObserver !== "undefined" ? new ResizeObserver(() => measure()) : null;
     for (const r of [stageRef, headRef, ctaRef, rulerRef, chipsRef]) if (r.current) ro?.observe(r.current);
@@ -140,7 +154,7 @@ export default function LandingStory({ calibration, head, cta, renderRuler, onRe
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(apply);
     };
-    window.addEventListener("scroll", onScroll, { passive: true });
+    if (story) window.addEventListener("scroll", onScroll, { passive: true });
     return () => {
       ro?.disconnect();
       cancelAnimationFrame(frame);
@@ -164,12 +178,13 @@ export default function LandingStory({ calibration, head, cta, renderRuler, onRe
         <GlobeHero
           ref={stageRef}
           mode="stacked"
+          story={storyRef}
           calibration={calibration}
           chipsRef={chipsRef}
           onReady={onReady}
           forceStatic={forceStatic}
         >
-          <div className="stacked-head max-w-4xl space-y-6 sm:order-first sm:mt-auto">
+          <div ref={headRef} className="stacked-head max-w-4xl space-y-6 sm:order-first sm:mt-auto">
             {head}
             {cta}
           </div>

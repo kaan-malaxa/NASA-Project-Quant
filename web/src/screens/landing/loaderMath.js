@@ -17,22 +17,6 @@ export function fibonacciSphere(n) {
 }
 
 /**
- * Turn a point about the vertical axis by `angle`, tilt it toward the viewer by `tilt`, and project it onto the screen.
- * @returns {{ x: number, y: number, z: number }} screen position (px) and depth z in -1..1 (1 = nearest)
- */
-export function projectPoint([px, py, pz], angle, tilt, cx, cy, radius) {
-  const ca = Math.cos(angle);
-  const sa = Math.sin(angle);
-  const x1 = px * ca + pz * sa;
-  const z1 = -px * sa + pz * ca;
-  const ct = Math.cos(tilt);
-  const st = Math.sin(tilt);
-  const y2 = py * ct - z1 * st;
-  const z2 = py * st + z1 * ct;
-  return { x: cx + x1 * radius, y: cy - y2 * radius, z: z2 };
-}
-
-/**
  * Where each dot lands on the line. Dots are taken left to right and shared out over `slots` evenly spaced places,
  * so the line reads as separate dots, not a solid stroke.
  * @param {number[]} xs current screen x of each dot
@@ -59,8 +43,89 @@ export function easeInOutCubic(x) {
   return c < 0.5 ? 4 * c * c * c : 1 - Math.pow(-2 * c + 2, 3) / 2;
 }
 
-/** Timings of the loader, in ms. `maxWait`: never wait longer than this for the scene. */
-export const LOADER = { minSpin: 700, collapse: 1000, hold: 250, fade: 500, maxWait: 8000 };
+/**
+ * The loader's story, in ms (prompt "Rebuild the loading screen"):
+ *   0 .. count1                     one sphere ("MODIS"), years count up from the first year to the switch year
+ *   count1 (+ split)                the sphere splits into "MODIS" and "VIIRS", sliding apart
+ *   count1 .. count1 + count2       years count on to the last year, both spheres side by side
+ *   mergeStart (+ merge)            once everything has loaded, the two merge into one ("Harmonized")
+ *   then flat, then fade            the sphere flattens into a line of dots, the loader fades out
+ * mergeStart = max(count1 + count2, the moment loading finished), and never later than maxWait.
+ * A skip jumps straight to the fade.
+ */
+export const LOADER = {
+  count1: 1200,
+  count2: 800,
+  split: 400,
+  merge: 600,
+  flat: 400,
+  fade: 300,
+  maxWait: 8000,
+};
+
+const clamp01 = (x) => Math.min(1, Math.max(0, x));
+
+/**
+ * Where the story is at time `now` (ms since the loader appeared).
+ * @param {{ now: number, loadedAt?: number | null, skippedAt?: number | null }} s
+ *   loadedAt: when the 3D globe chunk, the Earth texture and ruler.json were all ready (null while waiting)
+ * @returns {{ split: number, merge: number, flat: number, fade: number, done: boolean, stage: string,
+ *   mergeStart: number, fadeStart: number, end: number }} each of split/merge/flat/fade runs 0..1
+ */
+export function loaderTimeline({ now, loadedAt = null, skippedAt = null }) {
+  const T = LOADER;
+  const ready = loadedAt === null || loadedAt === undefined ? Infinity : loadedAt;
+  const mergeStart = Math.min(Math.max(T.count1 + T.count2, ready), T.maxWait);
+  const skipped = skippedAt !== null && skippedAt !== undefined && skippedAt < mergeStart + T.merge + T.flat;
+  const fadeStart = skipped ? skippedAt : mergeStart + T.merge + T.flat;
+  const end = fadeStart + T.fade;
+  const split = easeInOutCubic((now - T.count1) / T.split);
+  const merge = skipped ? 0 : easeInOutCubic((now - mergeStart) / T.merge);
+  const flat = skipped ? 0 : easeInOutCubic((now - mergeStart - T.merge) / T.flat);
+  const fade = clamp01((now - fadeStart) / T.fade);
+  const stage =
+    now >= end
+      ? "done"
+      : now >= fadeStart
+        ? "fade"
+        : now >= mergeStart + T.merge
+          ? "flatten"
+          : now >= mergeStart
+            ? "merge"
+            : now >= T.count1
+              ? "split"
+              : "single";
+  return { split, merge, flat, fade, done: now >= end, stage, mergeStart, fadeStart, end };
+}
+
+/**
+ * First year, last year and the year the new sensor joined, from ruler.json rows: the switch year is the first year
+ * whose naive_source differs from the year before (the same rule as R6's BrokenRuler marker). Null if not found.
+ * @param {{ rows?: { year: number, naive_source: string }[] } | null | undefined} ruler
+ */
+export function loaderYears(ruler) {
+  const rows = [...(ruler?.rows || [])]
+    .filter((r) => Number.isInteger(r?.year))
+    .sort((a, b) => a.year - b.year);
+  if (rows.length < 2) return null;
+  let switchYear = null;
+  for (let i = 1; i < rows.length; i++) {
+    if (rows[i].naive_source !== rows[i - 1].naive_source) {
+      switchYear = rows[i].year;
+      break;
+    }
+  }
+  if (switchYear === null) return null;
+  return { first: rows[0].year, switch: switchYear, last: rows[rows.length - 1].year };
+}
+
+/** The year on the counter at time `now`: first -> switch over count1, switch -> last over count2, then last. */
+export function yearAt(now, years) {
+  if (!years) return null;
+  const T = LOADER;
+  if (now < T.count1) return years.first + Math.floor((years.switch - years.first) * clamp01(now / T.count1));
+  return years.switch + Math.floor((years.last - years.switch) * clamp01((now - T.count1) / T.count2));
+}
 
 const SEEN_KEY = "firerosetta-landing-loader";
 

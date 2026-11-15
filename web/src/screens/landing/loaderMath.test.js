@@ -1,12 +1,15 @@
 import { describe, expect, it } from "vitest";
 import {
+  LOADER,
   easeInOutCubic,
   fibonacciSphere,
   lineTargets,
+  loaderTimeline,
+  loaderYears,
   markLoaderSeen,
-  projectPoint,
   shouldShowLoader,
   slotCount,
+  yearAt,
 } from "./loaderMath.js";
 
 describe("fibonacciSphere", () => {
@@ -16,16 +19,6 @@ describe("fibonacciSphere", () => {
     for (const p of pts) expect(Math.hypot(...p)).toBeCloseTo(1, 10);
     expect(pts[0][1]).toBe(1);
     expect(pts[199][1]).toBe(-1);
-  });
-});
-
-describe("projectPoint", () => {
-  it("maps the front of the sphere to the centre and turns about the vertical axis", () => {
-    expect(projectPoint([0, 0, 1], 0, 0, 100, 50, 10)).toEqual({ x: 100, y: 50, z: 1 });
-    const q = projectPoint([0, 0, 1], Math.PI / 2, 0, 100, 50, 10);
-    expect(q.x).toBeCloseTo(110, 10);
-    expect(q.z).toBeCloseTo(0, 10);
-    expect(projectPoint([0, 1, 0], 0, 0, 100, 50, 10).y).toBe(40); // up on the sphere is up on the screen
   });
 });
 
@@ -80,5 +73,90 @@ describe("shouldShowLoader", () => {
     const blocked = fakeWindow({ broken: true });
     expect(shouldShowLoader(blocked)).toBe(false);
     expect(() => markLoaderSeen(blocked)).not.toThrow();
+  });
+});
+
+describe("loaderTimeline", () => {
+  const at = (now, loadedAt, skippedAt) => loaderTimeline({ now, loadedAt, skippedAt });
+
+  it("shows for at least 3 seconds even when everything loaded at once", () => {
+    const t = at(0, 0);
+    expect(t.mergeStart).toBe(LOADER.count1 + LOADER.count2);
+    expect(t.end).toBeGreaterThanOrEqual(3000);
+    expect(at(2999, 0).done).toBe(false);
+    expect(at(t.end, 0).done).toBe(true);
+  });
+
+  it("tells the story in order: one sphere, split, merge, flatten, fade", () => {
+    expect(at(500, 0).stage).toBe("single");
+    expect(at(500, 0).split).toBe(0);
+    expect(at(1300, 0).stage).toBe("split");
+    expect(at(1700, 0).split).toBe(1);
+    expect(at(2300, 0).stage).toBe("merge");
+    expect(at(2700, 0).stage).toBe("flatten");
+    expect(at(3050, 0).stage).toBe("fade");
+  });
+
+  it("waits for loading: the two spheres stay side by side until it is done, then merge", () => {
+    expect(at(4000, null).stage).toBe("split");
+    expect(at(4000, null).merge).toBe(0);
+    const t = at(5000, 4500);
+    expect(t.mergeStart).toBe(4500);
+    expect(t.stage).toBe("merge");
+  });
+
+  it("never waits longer than 8 seconds", () => {
+    const t = at(8000, null);
+    expect(t.mergeStart).toBe(LOADER.maxWait);
+    expect(at(t.end, null).done).toBe(true);
+    expect(at(9000, 12000).mergeStart).toBe(LOADER.maxWait);
+  });
+
+  it("skip jumps straight to the fade", () => {
+    const t = at(600, null, 500);
+    expect(t.stage).toBe("fade");
+    expect(t.fadeStart).toBe(500);
+    expect(at(500 + LOADER.fade, null, 500).done).toBe(true);
+    expect(t.merge).toBe(0);
+  });
+});
+
+describe("loaderYears and yearAt", () => {
+  const rows = (pairs) => pairs.map(([year, naive_source]) => ({ year, naive_source }));
+
+  it("reads the first, switch and last year from ruler.json rows (unsorted is fine)", () => {
+    const ruler = {
+      rows: rows([
+        [2005, "modis"],
+        [2003, "modis"],
+        [2004, "modis"],
+        [2006, "snpp"],
+        [2007, "snpp"],
+      ]),
+    };
+    expect(loaderYears(ruler)).toEqual({ first: 2003, switch: 2006, last: 2007 });
+  });
+
+  it("returns null when the file or the switch is missing, so the loader runs without years", () => {
+    expect(loaderYears(null)).toBeNull();
+    expect(
+      loaderYears({
+        rows: rows([
+          [2003, "modis"],
+          [2004, "modis"],
+        ]),
+      }),
+    ).toBeNull();
+    expect(loaderYears({ rows: [] })).toBeNull();
+  });
+
+  it("counts up to the switch year by the split, then to the last year", () => {
+    const y = { first: 2003, switch: 2012, last: 2025 };
+    expect(yearAt(0, y)).toBe(2003);
+    expect(yearAt(LOADER.count1 - 1, y)).toBe(2011);
+    expect(yearAt(LOADER.count1, y)).toBe(2012);
+    expect(yearAt(LOADER.count1 + LOADER.count2, y)).toBe(2025);
+    expect(yearAt(9999, y)).toBe(2025);
+    expect(yearAt(500, null)).toBeNull();
   });
 });

@@ -14,8 +14,8 @@ import { KIND_INFO } from "@/lib/glossary.js";
 export const INCLINATION_DEG = 98;
 
 export const SHELLS = {
-  low: { radius: 1.3, speed: 0.2 },
-  high: { radius: 1.62, speed: 0.15 },
+  low: { radius: 1.1, speed: 0.2 },
+  high: { radius: 1.2, speed: 0.15 },
 };
 
 export const INSTRUMENTS = {

@@ -1,18 +1,17 @@
 import { Suspense, useEffect, useLayoutEffect, useMemo, useRef } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Html, Line, useTexture } from "@react-three/drei";
-import { AdditiveBlending, BackSide, Color, SRGBColorSpace } from "three";
+import { SRGBColorSpace } from "three";
 import { FIT_RADIUS, INCLINATION_DEG, SATELLITES, SHELLS } from "./satellites.js";
 import { cameraDistance, orbitPoint, orbitRing } from "./orbits.js";
 import { EARTH_TEXTURE_URL } from "./earthTexture.js";
 
 /**
- * The 3D landing scene: Earth, atmosphere glow, five satellites on their orbit lines.
+ * The 3D landing scene: Earth (day and night shading, no atmosphere glow), five satellites on their orbit lines.
  * This file is loaded lazily (its own chunk, with three.js); nothing else in the app imports three.
  * Scene colours are the scene's own (not page tokens): a drawing of space, not a chart.
  */
 const COLORS = {
-  glow: "#4dffc3",
   orbit: "#5fb8b0",
   orbitActive: "#8dffd6",
   body: "#dfe9ee",
@@ -22,45 +21,13 @@ const COLORS = {
 };
 const FOV = 36;
 const TILT = (-23.4 * Math.PI) / 180;
+const VIEW_TILT = 0.125; // radians
 const stop = (e) => e.stopPropagation();
-
-const GLOW_VERTEX = `
-  varying vec3 vNormal;
-  varying vec3 vView;
-  void main() {
-    vec4 mv = modelViewMatrix * vec4(position, 1.0);
-    vNormal = normalize(normalMatrix * normal);
-    vView = normalize(-mv.xyz);
-    gl_Position = projectionMatrix * mv;
-  }
-`;
-// Outer halo, drawn on the inside of a larger sphere: brightest at the Earth's edge, fading to nothing at the shell's edge.
-const HALO_FRAGMENT = `
-  uniform vec3 uColor;
-  uniform float uLimb;
-  varying vec3 vNormal;
-  varying vec3 vView;
-  void main() {
-    float d = clamp(-dot(vNormal, vView) / uLimb, 0.0, 1.0);
-    gl_FragColor = vec4(uColor, pow(d, 3.0) * 0.42);
-  }
-`;
-// Thin rim on the Earth itself.
-const RIM_FRAGMENT = `
-  uniform vec3 uColor;
-  varying vec3 vNormal;
-  varying vec3 vView;
-  void main() {
-    float f = pow(1.0 - clamp(dot(vNormal, vView), 0.0, 1.0), 3.0);
-    gl_FragColor = vec4(uColor, f * 0.35);
-  }
-`;
-const HALO_SCALE = 1.22;
 
 function CameraRig() {
   const { camera, size } = useThree();
   useLayoutEffect(() => {
-    camera.position.set(0, 0.55, cameraDistance(FIT_RADIUS, FOV, size.width / Math.max(1, size.height)));
+    camera.position.set(0, 0, cameraDistance(FIT_RADIUS, FOV, size.width / Math.max(1, size.height)));
     camera.lookAt(0, 0, 0);
     camera.updateProjectionMatrix();
   }, [camera, size.width, size.height]);
@@ -68,29 +35,48 @@ function CameraRig() {
 }
 
 /**
- * Moves and scales the globe and its satellites for the scroll story. `story.current` = { t, globe: {cx, cy, scale} }:
- * cx, cy are the target centre as shares of the canvas width and height; t blends from the centre to the target.
- * Read every frame from a ref, so scrolling never re-renders React.
+ * Places the globe and its satellites. `story.current` = { t, hero, globe }: hero and globe are placements
+ * ({ cx, cy, scale }, centre as shares of the canvas width and height) before and after the scroll move; t blends them.
+ * Read every frame from a ref, so scrolling never re-renders React. `story.current.invalidate` asks for a frame when
+ * nothing else is animating (reduced motion renders on demand).
  */
 function StoryRig({ story, children }) {
   const ref = useRef(null);
-  const { camera, size } = useThree();
+  const { camera, size, invalidate } = useThree();
+  useEffect(() => {
+    if (!story?.current) return;
+    story.current.invalidate = invalidate;
+    invalidate();
+    return () => {
+      if (story.current?.invalidate === invalidate) story.current.invalidate = null;
+    };
+  }, [story, invalidate]);
   useFrame(() => {
     const g = ref.current;
     if (!g) return;
-    const t = story?.current?.t ?? 0;
-    const target = story?.current?.globe;
-    if (!target || !(t > 0)) {
+    const s = story?.current;
+    const a = s?.hero;
+    if (!a) {
       g.position.set(0, 0, 0);
       g.scale.setScalar(1);
       return;
     }
+    const b = s.globe ?? a;
+    const t = s.t ?? 0;
+    const cx = a.cx + (b.cx - a.cx) * t;
+    const cy = a.cy + (b.cy - a.cy) * t;
     const halfH = camera.position.length() * Math.tan((FOV * Math.PI) / 360);
     const halfW = halfH * (size.width / Math.max(1, size.height));
-    g.position.set((target.cx - 0.5) * 2 * halfW * t, -(target.cy - 0.5) * 2 * halfH * t, 0);
-    g.scale.setScalar(1 + (target.scale - 1) * t);
+    g.position.set((cx - 0.5) * 2 * halfW, -(cy - 0.5) * 2 * halfH, 0);
+    g.scale.setScalar(a.scale + (b.scale - a.scale) * t);
   });
-  return <group ref={ref}>{children}</group>;
+  // The camera looks straight ahead (so screen placement maps exactly); the scene itself tips its north toward the
+  // viewer a little, for the "seen from slightly above" look.
+  return (
+    <group ref={ref}>
+      <group rotation={[VIEW_TILT, 0, 0]}>{children}</group>
+    </group>
+  );
 }
 
 function Earth({ moving, onReady }) {
@@ -110,44 +96,6 @@ function Earth({ moving, onReady }) {
       <sphereGeometry args={[1, 64, 64]} />
       <meshStandardMaterial map={map} roughness={1} metalness={0} />
     </mesh>
-  );
-}
-
-function Atmosphere() {
-  const halo = useMemo(
-    () => ({
-      uColor: { value: new Color(COLORS.glow) },
-      uLimb: { value: Math.sqrt(1 - 1 / (HALO_SCALE * HALO_SCALE)) },
-    }),
-    [],
-  );
-  const rim = useMemo(() => ({ uColor: { value: new Color(COLORS.glow) } }), []);
-  return (
-    <>
-      <mesh scale={1.006} raycast={() => null}>
-        <sphereGeometry args={[1, 64, 64]} />
-        <shaderMaterial
-          vertexShader={GLOW_VERTEX}
-          fragmentShader={RIM_FRAGMENT}
-          uniforms={rim}
-          transparent
-          depthWrite={false}
-          blending={AdditiveBlending}
-        />
-      </mesh>
-      <mesh scale={HALO_SCALE} raycast={() => null}>
-        <sphereGeometry args={[1, 64, 64]} />
-        <shaderMaterial
-          vertexShader={GLOW_VERTEX}
-          fragmentShader={HALO_FRAGMENT}
-          uniforms={halo}
-          side={BackSide}
-          transparent
-          depthWrite={false}
-          blending={AdditiveBlending}
-        />
-      </mesh>
-    </>
   );
 }
 
@@ -294,20 +242,19 @@ export default function GlobeScene({
     <Canvas
       dpr={[1, 2]}
       frameloop={!running ? "never" : moving ? "always" : "demand"}
-      camera={{ fov: FOV, near: 0.1, far: 120, position: [0, 0.55, 7] }}
+      camera={{ fov: FOV, near: 0.1, far: 120, position: [0, 0, 7] }}
       gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
       aria-hidden="true"
     >
       <CameraRig />
-      <ambientLight intensity={0.07} />
-      <directionalLight position={[5, 2.2, 3.5]} intensity={2.8} />
+      <ambientLight intensity={0.12} />
+      <directionalLight position={[2.5, 1.8, 5]} intensity={2.6} />
       <Stars />
       <StoryRig story={story}>
         <group rotation={[0, 0, TILT]}>
           <Suspense fallback={null}>
             <Earth moving={moving} onReady={onReady} />
           </Suspense>
-          <Atmosphere />
         </group>
         {SATELLITES.map((sat) => (
           <Satellite

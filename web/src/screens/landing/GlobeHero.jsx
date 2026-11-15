@@ -9,16 +9,17 @@ const GlobeScene = lazy(() => import("./GlobeScene.jsx"));
 
 const SCENE_LABEL = `The Earth seen from space, turning slowly, with five satellites circling it on near-polar orbits: ${SATELLITES.map((s) => s.name).join(", ")}. Terra and Aqua fly lower than the other three.`;
 
-/** A flat picture of the Earth: shown while the 3D scene loads, and instead of it when WebGL is not available. */
+/**
+ * A flat picture of the Earth: shown while the 3D scene loads, and instead of it when WebGL is not available.
+ * Placed by CSS variables at the same spot and size as the 3D Earth (see landing.css).
+ */
 function StaticEarth() {
   return (
-    <div className="flex h-full w-full items-center justify-center">
-      <div
-        data-testid="static-earth"
-        className="static-earth"
-        style={{ backgroundImage: `url("${EARTH_TEXTURE_URL}")` }}
-      />
-    </div>
+    <div
+      data-testid="static-earth"
+      className="static-earth"
+      style={{ backgroundImage: `url("${EARTH_TEXTURE_URL}")` }}
+    />
   );
 }
 
@@ -88,6 +89,8 @@ const GlobeHero = forwardRef(function GlobeHero(
 
   return (
     <div ref={ref} data-mode={mode} className="landing-hero relative isolate overflow-hidden">
+      {/* Soft warm light behind the globe; follows it on the scroll move (CSS variables from LandingStory). */}
+      <div aria-hidden="true" className="hero-warm-glow" />
       <div
         ref={stageRef}
         role="img"

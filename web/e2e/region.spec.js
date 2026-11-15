@@ -17,7 +17,10 @@ test.describe("region page", () => {
 
     await calendar.getByRole("radio", { name: "VIIRS, as recorded" }).click();
     await expect.poll(() => query(page).get("lens")).toBe("viirs_raw");
-    await expect(calendar.getByRole("radio", { name: "VIIRS, as recorded" })).toHaveAttribute("aria-checked", "true");
+    await expect(calendar.getByRole("radio", { name: "VIIRS, as recorded" })).toHaveAttribute(
+      "aria-checked",
+      "true",
+    );
 
     await calendar.getByRole("radio", { name: "Compared with normal" }).click();
     await expect.poll(() => query(page).get("mode")).toBe("anomaly");
@@ -57,7 +60,11 @@ test.describe("region page", () => {
     test.skip((await button.count()) === 0, "The Downloads panel (prompt C2) is not on this branch yet.");
     const [download] = await Promise.all([page.waitForEvent("download"), button.click()]);
     expect(download.suggestedFilename()).toMatch(/^firerosetta_alpha_harmonized_2003-01-01_2026-11-13\.csv$/);
-    const text = await (await download.createReadStream()).toArray().then((c) => Buffer.concat(c).toString("utf8"));
+    const text = await (
+      await download.createReadStream()
+    )
+      .toArray()
+      .then((c) => Buffer.concat(c).toString("utf8"));
     expect(text.split("\n")[0]).toMatch(/^# FireRosetta /);
   });
 
@@ -65,7 +72,9 @@ test.describe("region page", () => {
     await serveData(page, { sample: true });
     for (const hash of ["#/", "#/r/alpha", "#/methods", "#/r/alpha/brief"]) {
       await open(page, hash);
-      await expect(page.getByTestId("sample-banner")).toHaveText("SAMPLE DATA: these numbers are placeholders, not results.");
+      await expect(page.getByTestId("sample-banner")).toHaveText(
+        "SAMPLE DATA: these numbers are placeholders, not results.",
+      );
     }
   });
 

@@ -10,10 +10,16 @@ import { regionFilePath } from "@/data/files.js";
 import { useDocumentMeta } from "@/lib/useDocumentMeta.js";
 import LandingStory from "./landing/LandingStory.jsx";
 import LandingLoader from "./landing/LandingLoader.jsx";
+import Reveal from "./landing/Reveal.jsx";
+import LiveThisWeek from "./landing/LiveThisWeek.jsx";
 import { LOADER, markLoaderSeen, shouldShowLoader } from "./landing/loaderMath.js";
 import "@/styles/landing.css";
 
 const WHY_NOW_CLAIMS = ["snpp_end", "aqua_drift"];
+
+// Problem copy from the product owner (prompt: landing changes, item 5); fixed text with no numbers, dates or directions.
+const PROBLEM =
+  "Satellites have been watching fires from space for decades, but the cameras changed along the way. A newer, sharper sensor sees smaller fires than the older one, so when the records are joined the number of fires appears to jump. That jump looks like the world started burning more, when much of it is just a better camera. Anyone comparing fires then and now, such as fire planners, researchers or reporters, can be misled.";
 
 // Mission copy from the product owner (prompt Phase 2); fixed text, no results in it.
 const MISSION =
@@ -98,9 +104,11 @@ export default function Landing() {
         onReady={onReady}
         forceStatic={forceStatic}
       />
-      {showLoader ? <LandingLoader finish={ready || forceStatic} onDone={hideLoader} /> : null}
+      {showLoader ? <LandingLoader sceneReady={ready || forceStatic} onDone={hideLoader} /> : null}
 
+      <Problem />
       <Mission downloadsRegion={defaultRegion} />
+      {regionsState.status === "ok" ? <LiveThisWeek regions={regionsState.data.regions} /> : null}
 
       <div className="mx-auto w-full max-w-6xl space-y-8 px-4 pb-10">
         {methods.status === "ok" ? <WhyNow sources={methods.data.sources} /> : null}
@@ -109,6 +117,21 @@ export default function Landing() {
         </div>
       </div>
     </div>
+  );
+}
+
+function Problem() {
+  return (
+    <Reveal aria-labelledby="problem-title" className="landing-problem">
+      <div className="mx-auto w-full max-w-6xl px-4 pt-16 sm:pt-24">
+        <div className="max-w-3xl space-y-4">
+          <h2 id="problem-title" className="text-3xl font-bold tracking-tight sm:text-4xl">
+            The problem
+          </h2>
+          <p className="text-lg text-pretty sm:text-xl">{PROBLEM}</p>
+        </div>
+      </div>
+    </Reveal>
   );
 }
 
@@ -135,7 +158,7 @@ function Mission({ downloadsRegion }) {
     },
   ];
   return (
-    <section aria-labelledby="mission-title" className="landing-mission">
+    <Reveal aria-labelledby="mission-title" className="landing-mission">
       <div className="mx-auto w-full max-w-6xl space-y-10 px-4 py-16 sm:py-24">
         <div className="max-w-3xl space-y-4">
           <h2 id="mission-title" className="text-3xl font-bold tracking-tight sm:text-4xl">
@@ -160,7 +183,7 @@ function Mission({ downloadsRegion }) {
           ))}
         </ul>
       </div>
-    </section>
+    </Reveal>
   );
 }
 

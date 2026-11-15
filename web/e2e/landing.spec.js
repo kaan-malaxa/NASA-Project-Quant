@@ -240,7 +240,7 @@ test.describe("landing loader", () => {
     page,
   }) => {
     const problems = watch(page);
-    await serveData(page, { sample: false });
+    await serveData(page, { sample: false, showLoader: true });
     await page.goto("./#/");
     await expect(loader(page)).toBeVisible();
     await expect(loader(page).locator("canvas")).toBeVisible();
@@ -256,8 +256,24 @@ test.describe("landing loader", () => {
     expect(problems).toEqual([]);
   });
 
+  test("tells the story with the years from ruler.json, and Skip ends it at once", async ({ page }) => {
+    await serveData(page, { sample: false, showLoader: true });
+    await page.goto("./#/");
+    const l = loader(page);
+    await expect(l).toBeVisible();
+    await expect(page.getByText("Loading FireRosetta")).toHaveAttribute("role", "status");
+    await expect(l.locator("canvas")).toHaveAttribute("aria-hidden", "true");
+    // e2e ruler rows run 2003 to 2025, switching sensor in 2012 (e2e/fixtures.js).
+    // The counter runs to the last year in the file, and the spheres have split by then.
+    await expect(l).toHaveAttribute("data-year", "2025", { timeout: 6000 });
+    await expect(l).toHaveAttribute("data-stage", /split|merge|flatten|fade/);
+    await page.getByRole("button", { name: "Skip" }).focus();
+    await page.keyboard.press("Enter");
+    await expect(l).toHaveCount(0, { timeout: 2000 });
+  });
+
   test("keeps the SAMPLE DATA banner visible above it", async ({ page }) => {
-    await serveData(page, { sample: true });
+    await serveData(page, { sample: true, showLoader: true });
     await page.goto("./#/");
     const banner = page.getByTestId("sample-banner");
     await expect(banner).toBeVisible();
@@ -271,7 +287,7 @@ test.describe("landing loader", () => {
   });
 
   test("is skipped with reduced motion and on other pages", async ({ page }) => {
-    await serveData(page, { sample: false });
+    await serveData(page, { sample: false, showLoader: true });
     await page.goto("./#/pick");
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
     await expect(loader(page)).toHaveCount(0);
@@ -286,7 +302,7 @@ test.describe("landing loader", () => {
     page,
   }) => {
     test.setTimeout(30_000);
-    await serveData(page, { sample: false });
+    await serveData(page, { sample: false, showLoader: true });
     await page.route("**/textures/**", () => {}); // never answered
     const t0 = Date.now();
     await page.goto("./#/");
@@ -299,5 +315,32 @@ test.describe("landing loader", () => {
     await expect(page.locator('[data-testid="globe-stage"] canvas')).toHaveCount(0);
     await page.locator('[data-satellite="aqua"]').click();
     await expect(page.getByRole("dialog").getByRole("heading", { name: "Aqua" })).toBeVisible();
+  });
+});
+
+test.describe("landing live this week", () => {
+  test("loads nowcast.json only near the viewport, then shows the card with a link to the region", async ({
+    page,
+  }) => {
+    await skipLoader(page);
+    await serveData(page, { sample: false });
+    const problems = watch(page);
+    const nowcastRequests = [];
+    page.on("request", (r) => r.url().includes("/nowcast.json") && nowcastRequests.push(r.url()));
+    await open(page, "#/");
+    await page.waitForTimeout(500);
+    expect(nowcastRequests).toEqual([]); // still far below the fold
+    const card = page.getByRole("region", { name: "Alpha test region" });
+    await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
+    await expect(card).toBeVisible();
+    await expect(card.getByText("Live this week")).toBeVisible();
+    await expect(card.getByText("Test nowcast sentence.")).toBeVisible();
+    expect(nowcastRequests.some((u) => u.includes("/alpha/nowcast.json"))).toBe(true);
+    await expect(card.getByRole("link", { name: "See the full picture" })).toHaveAttribute(
+      "href",
+      "#/r/alpha",
+    );
+    expect(await overflowsHorizontally(page)).toBe(false);
+    expect(problems).toEqual([]);
   });
 });

@@ -1,1 +1,227 @@
-/* owned by R6 */
+/*
+ * FireRosetta design tokens (owner R6, spec: plan/roles/R6_visualization.md §9.1).
+ * Dark theme is the default. The light theme applies inside `.brief` (Season Brief) and on print.
+ * Every colour, size and spacing value used by web/src/viz/ comes from these variables.
+ *
+ * R5's app.css maps the shadcn variables defined below (--background, --foreground, …) to Tailwind.
+ */
+
+:root {
+  color-scheme: dark;
+
+  /* ---- Colour: surfaces and text ---- */
+  --fr-bg: #0e1116;
+  --fr-surface: #161b22;
+  --fr-border: #2a313c;
+  --fr-text: #e6edf3;
+  --fr-muted: #9aa7b4;
+  --fr-accent: #58a6ff; /* harmonized line, focus, selection */
+  --fr-warning: #f0883e;
+  --fr-danger: #f85149;
+
+  /* ---- Colour: chart marks that are not ramps (derived ones are in the `:root, .brief` block) ---- */
+  --fr-zero-stroke: #3a4350; /* the faint outline around zero cells */
+  --fr-gridline: #222933;
+
+  /* ---- Colour: sensors (always shown with a text label) ---- */
+  --fr-sensor-aqua: #58a6ff;
+  --fr-sensor-terra: #7d8a99;
+  --fr-sensor-snpp: #f0883e;
+  --fr-sensor-noaa20: #bc8cff;
+  --fr-sensor-noaa21: #56d4dd;
+
+  /* ---- Colour: nowcast status (always with text and an icon) ---- */
+  --fr-status-unavailable: #6e7781;
+  --fr-status-low-activity: #8b949e;
+  --fr-status-below-normal: #b2abd2; /* PuOr purple */
+  --fr-status-normal: #d0d7de;
+  --fr-status-above-normal: #fdb863; /* PuOr orange */
+  --fr-status-extreme: #e66101; /* PuOr deep orange, drawn with a bold outline */
+  --fr-status-extreme-outline: #ffd8b5;
+
+  /* ---- Type ---- */
+  --fr-font-sans: "Inter Variable", Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --fr-font-numeric: "tnum" 1, "lnum" 1; /* use with font-feature-settings */
+  --fr-text-xs: 12px;
+  --fr-text-sm: 14px;
+  --fr-text-md: 16px;
+  --fr-text-lg: 20px;
+  --fr-text-xl: 28px;
+  --fr-text-2xl: 40px;
+  --fr-text-chart-min: 11px; /* charts never go below this */
+  --fr-leading-tight: 1.2;
+  --fr-leading-normal: 1.5;
+  --fr-weight-regular: 400;
+  --fr-weight-medium: 500;
+  --fr-weight-bold: 650;
+
+  /* ---- Spacing: 4 px grid ---- */
+  --fr-space-1: 4px;
+  --fr-space-2: 8px;
+  --fr-space-3: 12px;
+  --fr-space-4: 16px;
+  --fr-space-5: 20px;
+  --fr-space-6: 24px;
+  --fr-space-8: 32px;
+  --fr-space-10: 40px;
+  --fr-space-12: 48px;
+  --fr-space-16: 64px;
+
+  /* ---- Shape ---- */
+  --fr-radius: 8px;
+  --fr-radius-sm: 4px;
+  --fr-radius-pill: 999px;
+
+  /* ---- Focus ring: 2 px accent, 2 px offset ---- */
+  --fr-focus-width: 2px;
+  --fr-focus-offset: 2px;
+
+  /* ---- Motion ---- */
+  --fr-duration-fast: 120ms;
+  --fr-duration-draw: 900ms;
+}
+
+/*
+ * Derived tokens. A custom property that refers to another is resolved where it is declared, so these
+ * are declared on BOTH :root and .brief; otherwise the Season Brief would keep the dark values.
+ * The second half is the shadcn/ui variable set that R5's app.css maps to Tailwind utilities.
+ */
+:root,
+.brief {
+  --fr-zero-fill: var(--fr-surface); /* "covered, nothing burning" */
+  --fr-hatch-line: var(--fr-muted); /* no-data hatch lines */
+  --fr-hatch-bg: var(--fr-bg); /* no-data hatch background */
+  --fr-estimate-stroke: var(--fr-text); /* dashed outline of estimates */
+  --fr-unranked-fill: var(--fr-surface); /* "too little to rank" (SD-11 low_activity) */
+  --fr-unranked-stroke: var(--fr-muted);
+  --fr-naive-line: var(--fr-muted); /* "Raw record, as downloaded" */
+  --fr-focus-color: var(--fr-accent);
+
+  --background: var(--fr-bg);
+  --foreground: var(--fr-text);
+  --card: var(--fr-surface);
+  --card-foreground: var(--fr-text);
+  --popover: var(--fr-surface);
+  --popover-foreground: var(--fr-text);
+  --primary: var(--fr-accent);
+  --primary-foreground: var(--fr-bg);
+  --secondary: var(--fr-surface);
+  --secondary-foreground: var(--fr-text);
+  --muted: var(--fr-surface);
+  --muted-foreground: var(--fr-muted);
+  --accent: var(--fr-border);
+  --accent-foreground: var(--fr-text);
+  --destructive: var(--fr-danger);
+  --border: var(--fr-border);
+  --input: var(--fr-border);
+  --ring: var(--fr-focus-color);
+  --warning: var(--fr-warning);
+  --warning-foreground: var(--fr-bg);
+  --radius: var(--fr-radius);
+}
+
+/* ---- Light theme: Season Brief and print. Same ramps; only surfaces, text and accent change. ---- */
+.brief {
+  color-scheme: light;
+  --fr-bg: #ffffff;
+  --fr-surface: #f6f8fa;
+  --fr-border: #d0d7de;
+  --fr-text: #111111;
+  --fr-muted: #57606a;
+  --fr-accent: #0969da; /* #58a6ff is under 3:1 on white */
+  --fr-warning: #bc4c00;
+  --fr-danger: #cf222e;
+  --fr-zero-stroke: #c4ccd5;
+  --fr-gridline: #e6e9ed;
+  --fr-sensor-aqua: #0969da;
+  --fr-sensor-terra: #57606a;
+  --fr-sensor-snpp: #bc4c00;
+  --fr-sensor-noaa20: #8250df;
+  --fr-sensor-noaa21: #1b7c83;
+  --fr-status-unavailable: #6e7781;
+  --fr-status-low-activity: #57606a;
+  --fr-status-below-normal: #5e3c99;
+  --fr-status-normal: #424a53;
+  --fr-status-above-normal: #b35806;
+  --fr-status-extreme: #a33f00;
+  --fr-status-extreme-outline: #111111;
+}
+
+@media print {
+  :root {
+    color-scheme: light;
+    --fr-bg: #ffffff;
+    --fr-surface: #f6f8fa;
+    --fr-border: #d0d7de;
+    --fr-text: #111111;
+    --fr-muted: #57606a;
+    --fr-accent: #0969da;
+    --fr-warning: #bc4c00;
+  --fr-danger: #cf222e;
+    --fr-zero-stroke: #c4ccd5;
+    --fr-gridline: #e6e9ed;
+    --fr-sensor-aqua: #0969da;
+    --fr-sensor-terra: #57606a;
+    --fr-sensor-snpp: #bc4c00;
+    --fr-sensor-noaa20: #8250df;
+    --fr-sensor-noaa21: #1b7c83;
+    --fr-status-unavailable: #6e7781;
+    --fr-status-low-activity: #57606a;
+    --fr-status-below-normal: #5e3c99;
+    --fr-status-normal: #424a53;
+    --fr-status-above-normal: #b35806;
+    --fr-status-extreme: #a33f00;
+    --fr-status-extreme-outline: #111111;
+  }
+  /* Keep chart fills, the hatch pattern and the ramps when printing. */
+  .fr-viz,
+  .fr-viz * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+/* ---- Helpers used by viz components ---- */
+
+/* Hidden data tables and long accessible text: invisible but read by screen readers. */
+.fr-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Root class of every chart. */
+.fr-viz {
+  font-family: var(--fr-font-sans);
+  font-feature-settings: var(--fr-font-numeric);
+  color: var(--fr-text);
+}
+.fr-viz text {
+  fill: var(--fr-text);
+  font-size: var(--fr-text-xs);
+}
+/* Calendar cells (clock): hover outline in pure CSS, no per-frame work. !important beats the
+   cell's inline stroke (estimated/zero outlines). */
+.fr-viz .fr-cell:hover {
+  stroke: var(--fr-text) !important;
+  stroke-width: 1.5px !important;
+  stroke-dasharray: none !important;
+}
+.fr-viz :focus-visible,
+.fr-focus-ring:focus-visible {
+  outline: var(--fr-focus-width) solid var(--fr-focus-color);
+  outline-offset: var(--fr-focus-offset);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fr-viz * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

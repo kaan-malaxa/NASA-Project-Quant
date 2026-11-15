@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { cleanup, render, screen } from "@testing-library/react";
+import { cleanup, render, screen, within } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import AppRoutes from "./AppRoutes.jsx";
 import { clearFetchCache } from "@/data/fetchJson.js";
@@ -10,7 +10,7 @@ const cases = [
   ["/pick", "Pick a place"],
   ["/r/punjab", "Region"],
   ["/r/punjab/brief", "8 · Season Brief"],
-  ["/methods", "9 · Methods and honesty"],
+  ["/methods", "Methods and honesty"],
   ["/gallery", "Component gallery"],
 ];
 
@@ -31,7 +31,7 @@ describe("routes (contracts section 7)", () => {
       </MemoryRouter>,
     );
     expect(screen.getByRole("heading", { level: 1 }).textContent).toBe(title);
-    const credit = screen.getByRole("link", { name: "NASA FIRMS" });
+    const credit = within(screen.getByRole("contentinfo")).getByRole("link", { name: "NASA FIRMS" });
     expect(credit.getAttribute("href")).toBe("https://firms.modaps.eosdis.nasa.gov/");
     const nav = screen.getByRole("navigation", { name: "Main" });
     expect(nav.textContent).toContain("Pick a place");

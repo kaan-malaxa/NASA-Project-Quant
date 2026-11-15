@@ -1,16 +1,37 @@
+import { useEffect, useState } from "react";
+import { Skeleton } from "@/components/ui/skeleton";
+
 /*
  * Bridge to R6's chart components (contracts section 8, exported from src/viz/index).
- * The glob returns {} while viz/index does not exist, so the app still builds; each missing component renders a
- * labelled placeholder box (never a substitute chart). Once R6's index lands, the real components appear with no
- * change here.
+ * The module is loaded ASYNCHRONOUSLY (its own chunk), so R6's dependencies (d3, maplibre-gl, terra-draw) never
+ * weigh on the first page load. While viz/index does not exist the glob is empty and every component renders a
+ * labelled placeholder box (never a substitute chart).
  */
-const modules = import.meta.glob("../viz/index.{js,jsx,ts,tsx}", { eager: true });
+const loaders = import.meta.glob("../viz/index.{js,jsx,ts,tsx}");
+const load = Object.values(loaders)[0];
 
-/** Everything R6 exports (components and percentileRank), or {} if viz/index is absent. */
-export const viz = Object.values(modules)[0] || {};
+let loaded = load ? null : {}; // null = still loading; {} = no viz module
+const ready = load
+  ? load().then(
+      (m) => (loaded = m),
+      () => (loaded = {}),
+    )
+  : Promise.resolve(loaded);
 
-export function hasViz(name) {
-  return typeof viz[name] === "function" || (viz[name] && typeof viz[name] === "object");
+/** R6's exports once loaded: {} when absent, null while loading. */
+export function useViz() {
+  const [mod, setMod] = useState(loaded);
+  useEffect(() => {
+    if (mod === null) ready.then((m) => setMod(m));
+  }, [mod]);
+  return mod;
+}
+
+/** For tests and non-React code: resolves to R6's exports (or {}). */
+export const vizReady = ready;
+
+export function hasViz(name, mod) {
+  return Boolean(mod && mod[name]);
 }
 
 /**
@@ -18,7 +39,15 @@ export function hasViz(name) {
  * `ref` is passed through (React 19 treats it as a prop), so charts can hand back their root <svg> for export.
  */
 export function VizSlot({ name, placeholderClassName = "h-48", ...props }) {
-  const Component = viz[name];
+  const mod = useViz();
+  if (mod === null) {
+    return (
+      <div role="status" aria-label={`Loading ${name} chart`}>
+        <Skeleton className={`w-full ${placeholderClassName}`} />
+      </div>
+    );
+  }
+  const Component = mod[name];
   if (Component) return <Component {...props} />;
   return (
     <div

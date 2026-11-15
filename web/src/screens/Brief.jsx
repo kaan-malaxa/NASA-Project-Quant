@@ -5,7 +5,7 @@ import { Printer } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SampleBanner from "@/components/SampleBanner.jsx";
 import KindBadge from "@/components/KindBadge.jsx";
-import { VizSlot, hasViz } from "@/components/Viz.jsx";
+import { VizSlot, hasViz, useViz } from "@/components/Viz.jsx";
 import { FIRMS_URL } from "@/app/AppShell.jsx";
 import { useRegionData } from "@/data/useRegionData.js";
 import { useJson } from "@/data/useJson.js";
@@ -13,6 +13,7 @@ import { fmtAsOf, fmtRangePct, fmtSignedPct } from "@/lib/format.js";
 import { statusLabel } from "@/lib/labels.js";
 import { fitScale } from "@/lib/briefFit.js";
 import "@/styles/brief.css";
+import { useDocumentMeta } from "@/lib/useDocumentMeta.js";
 
 const ok = (s) => s?.status === "ok";
 
@@ -31,6 +32,8 @@ export default function Brief() {
   const { region: id } = useParams();
   const { status, region, files } = useRegionData(id);
   const manifest = useJson("manifest.json");
+  const viz = useViz();
+  useDocumentMeta(region ? `Season Brief: ${region.name}` : "Season Brief", "A one-page printable summary of a place's fire season.");
   const pageRef = useRef(null);
   const bannerRef = useRef(null);
 
@@ -76,13 +79,13 @@ export default function Brief() {
   }
 
   const { trend, monthly, climatology, season, nowcast, hex, outline } = files;
-  const stillLoading = Object.values(files).some((f) => f?.status === "loading");
+  const stillLoading = viz === null || Object.values(files).some((f) => f?.status === "loading");
   const lastDay = region.last_data_day;
   const pageUrl = `${window.location.origin}${window.location.pathname}#/r/${region.id}`;
   const codeVersion = manifest.status === "ok" ? manifest.data.code_version : [trend, monthly, nowcast].find(ok)?.data.code_version;
   const today = new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
-  const showCalendar = ok(monthly) && ok(climatology) && hasViz("CalendarHeatmap");
-  const showMap = ok(hex) && hasViz("HexMap");
+  const showCalendar = ok(monthly) && ok(climatology) && hasViz("CalendarHeatmap", viz);
+  const showMap = ok(hex) && hasViz("HexMap", viz);
 
   return (
     <div className="brief">
@@ -162,7 +165,7 @@ export default function Brief() {
             ) : null}
 
             <Block title="How to read this">
-              {hasViz("Legend") && showCalendar ? (
+              {hasViz("Legend", viz) && showCalendar ? (
                 <div className="mb-1">
                   <VizSlot name="Legend" scale="activity" unit={monthly.data.series_meta?.harmonized?.unit ?? ""} />
                 </div>

@@ -14,12 +14,14 @@ import DateRangeBar from "./region/DateRangeBar.jsx";
 import InThisPeriod from "./region/InThisPeriod.jsx";
 import StickyBar from "./region/StickyBar.jsx";
 import DownloadsPanel from "./region/DownloadsPanel.jsx";
+import { useDocumentMeta } from "@/lib/useDocumentMeta.js";
 
 /** #/r/:region — the region story (screens 3–7). */
 export default function Region() {
   const { region: id } = useParams();
   const { status, region, files, regionsState } = useRegionData(id);
   const lastDataDay = region?.last_data_day ?? null;
+  useDocumentMeta(region?.name ?? "Region", region ? `${region.fire_type} in ${region.name}: the fire calendar, the long-term trend with the sensor change corrected, and this week's burning.` : undefined);
   const [url, setUrl] = useUrlState(lastDataDay);
   const [chartEl, setChartEl] = useState(null);
   const meta = files.weekly?.status === "ok" ? files.weekly.data.series_meta : {};

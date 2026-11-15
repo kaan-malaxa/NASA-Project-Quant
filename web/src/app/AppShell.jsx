@@ -1,5 +1,6 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
 import SampleBanner from "@/components/SampleBanner.jsx";
+import ErrorBoundary from "@/components/ErrorBoundary.jsx";
 
 export const FIRMS_URL = "https://firms.modaps.eosdis.nasa.gov/";
 
@@ -15,7 +16,7 @@ function navClass({ isActive }) {
  * `banner` is the slot for the SAMPLE DATA banner; it defaults to <SampleBanner/>, which shows itself
  * only while the sample context is true.
  */
-export default function AppShell({ banner = <SampleBanner /> }) {
+export default function AppShell({ banner = <SampleBanner />, resetKey }) {
   return (
     <div className="flex min-h-svh flex-col">
       <div data-slot="sample-banner" className="sticky top-0 z-50">
@@ -37,7 +38,10 @@ export default function AppShell({ banner = <SampleBanner /> }) {
         </div>
       </header>
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-6">
-        <Outlet />
+        {/* A crashing screen keeps the header and footer (and the FIRMS credit) on the page. */}
+        <ErrorBoundary resetKey={resetKey}>
+          <Outlet />
+        </ErrorBoundary>
       </main>
       <footer className="border-t">
         <div className="mx-auto max-w-6xl px-4 py-4 text-sm">

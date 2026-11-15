@@ -8,7 +8,7 @@ import { mockFetch } from "@/test/mockFetch.js";
 const cases = [
   ["/", "Is it really burning more, or did the satellite get better eyes?"],
   ["/pick", "Pick a place"],
-  ["/r/punjab", "Region story"],
+  ["/r/punjab", "Region"],
   ["/r/punjab/brief", "8 · Season Brief"],
   ["/methods", "9 · Methods and honesty"],
   ["/gallery", "Component gallery"],

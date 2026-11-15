@@ -28,26 +28,30 @@ export function initialFileStates(region) {
 export function useRegionData(regionId) {
   const { state: regionsState, regions } = useRegions();
   const region = useMemo(() => regions.find((r) => r.id === regionId) || null, [regions, regionId]);
-  const [files, setFiles] = useState({});
+  // Loaded states, tagged with the region they belong to so a stale set is never shown for a new region.
+  const [loaded, setLoaded] = useState({ regionId: null, files: {} });
 
   useEffect(() => {
-    if (!region) {
-      setFiles({});
-      return;
-    }
+    if (!region) return;
     let alive = true;
     const init = initialFileStates(region);
-    setFiles(init);
+    setLoaded({ regionId: region.id, files: init });
     for (const [name, st] of Object.entries(init)) {
       if (st.status !== "loading") continue;
       fetchJson(regionFilePath(region.id, name)).then((r) => {
-        if (alive) setFiles((prev) => ({ ...prev, [name]: toFileState(r) }));
+        if (alive) setLoaded((prev) => ({ regionId: region.id, files: { ...prev.files, [name]: toFileState(r) } }));
       });
     }
     return () => {
       alive = false;
     };
   }, [region]);
+
+  // Every file always has a state: before the effect runs, the initial (loading / absent / lazy) states.
+  const files = useMemo(() => {
+    if (!region) return {};
+    return loaded.regionId === region.id ? loaded.files : initialFileStates(region);
+  }, [region, loaded]);
 
   let status = "loading";
   if (regionsState.status === "ok") status = region ? "ok" : "unknown_region";

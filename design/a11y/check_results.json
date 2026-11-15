@@ -1,0 +1,108 @@
+{
+  "region": "conus",
+  "colourVision": [
+    "design/a11y/cvd_calendar-activity_normal.png",
+    "design/a11y/cvd_calendar-activity_protanopia.png",
+    "design/a11y/cvd_calendar-activity_deuteranopia.png",
+    "design/a11y/cvd_calendar-activity_tritanopia.png",
+    "design/a11y/cvd_calendar-activity_achromatopsia.png",
+    "design/a11y/cvd_calendar-anomaly_normal.png",
+    "design/a11y/cvd_calendar-anomaly_protanopia.png",
+    "design/a11y/cvd_calendar-anomaly_deuteranopia.png",
+    "design/a11y/cvd_calendar-anomaly_tritanopia.png",
+    "design/a11y/cvd_calendar-anomaly_achromatopsia.png",
+    "design/a11y/cvd_clock_normal.png",
+    "design/a11y/cvd_clock_protanopia.png",
+    "design/a11y/cvd_clock_deuteranopia.png",
+    "design/a11y/cvd_clock_tritanopia.png",
+    "design/a11y/cvd_clock_achromatopsia.png"
+  ],
+  "keyboard": {
+    "chartsTotal": 59,
+    "unreachable": [
+      "Colour key: from dark (little burning) t",
+      "Colour key: purple is quieter than usual"
+    ],
+    "staticChartFocusOutline": {
+      "chart": "Fabricated fixture: the raw record seems",
+      "outline": "solid 2px rgb(88, 166, 255)",
+      "offset": "2px"
+    },
+    "calendar": {
+      "arrowsMoveActiveCell": true,
+      "enterCallsOnSelect": true,
+      "tooltipShownOnFocus": true,
+      "escapeClosesTooltip": true,
+      "focusOutlineOnCell": true
+    },
+    "clock": {
+      "arrowsMoveActiveCell": true,
+      "enterCallsOnSelect": true,
+      "tooltipShownOnFocus": "n/a (centre text)",
+      "escapeClosesTooltip": "n/a (centre text)",
+      "focusOutlineOnCell": true
+    },
+    "pageErrors": []
+  },
+  "reducedMotion": {
+    "reduce": {
+      "harmonizedLabelOpacityAt150ms": "1",
+      "after4s": "1"
+    },
+    "no-preference": {
+      "harmonizedLabelOpacityAt150ms": "0",
+      "after4s": "1"
+    }
+  },
+  "print": {
+    "print:calendar-activity": {
+      "bg": "#fff",
+      "textColour": "#111",
+      "firstTextFill": "rgb(87, 96, 106)",
+      "hatchPattern": true,
+      "hatchedMarks": 5,
+      "screenshot": "design/a11y/print_calendar-activity.png"
+    },
+    "pdf": "design/a11y/print_calendar.pdf",
+    "brief:calendar-activity": {
+      "bg": "#fff",
+      "textColour": "#111",
+      "firstTextFill": "rgb(87, 96, 106)",
+      "hatchPattern": true,
+      "hatchedMarks": 5,
+      "screenshot": "design/a11y/brief_calendar-activity.png"
+    },
+    "print:clock": {
+      "bg": "#fff",
+      "textColour": "#111",
+      "firstTextFill": "rgb(17, 17, 17)",
+      "hatchPattern": true,
+      "hatchedMarks": 5,
+      "screenshot": "design/a11y/print_clock.png"
+    },
+    "brief:clock": {
+      "bg": "#fff",
+      "textColour": "#111",
+      "firstTextFill": "rgb(17, 17, 17)",
+      "hatchPattern": true,
+      "hatchedMarks": 5,
+      "screenshot": "design/a11y/brief_clock.png"
+    },
+    "print:drift": {
+      "bg": "#fff",
+      "textColour": "#111",
+      "firstTextFill": "rgb(17, 17, 17)",
+      "hatchPattern": true,
+      "hatchedMarks": 2,
+      "screenshot": "design/a11y/print_drift.png"
+    },
+    "brief:drift": {
+      "bg": "#fff",
+      "textColour": "#111",
+      "firstTextFill": "rgb(17, 17, 17)",
+      "hatchPattern": true,
+      "hatchedMarks": 2,
+      "screenshot": "design/a11y/brief_drift.png"
+    }
+  }
+}

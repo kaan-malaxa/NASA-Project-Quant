@@ -222,14 +222,14 @@ def run(region_id):
         rows = clean_files(inputs, region, science)
         record_clean(region_id)
         return rows
-    config.require_us_region(region)
+    config.require_real_region(region)
     staged_now = not manifest_path.is_file()
     if staged_now:
-        # First run on this machine: stage the local country CSVs (no network), then clean them.
+        # First run on this machine: stage the local country inputs (no network), then clean them.
         download.download_country(region, download.default_years(science), list(download.PRODUCTS))
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     if not manifest:
-        raise ValueError("No staged US inputs are listed in MANIFEST.json")
+        raise ValueError(f"No staged {region_id} inputs are listed in MANIFEST.json")
     jobs = set()
     for entry in manifest:
         if (
@@ -239,17 +239,17 @@ def run(region_id):
             continue
         source = paths.source_data_root() / entry["source"]
         if not source.resolve().is_relative_to(paths.source_data_root()) or not source.is_file():
-            raise ValueError("Staged input has no valid local US source")
-        parts = source.name.split("_")
-        product, year = parts[0], int(parts[1])
-        if source not in paths.country_csv_candidates(product, year, "United_States"):
-            raise ValueError("Unrecognised US source path")
-        expected = paths.raw_csv("us", download.PRODUCTS[product], "country", year)
+            raise ValueError(f"Staged input has no valid local {region_id} source")
+        try:
+            product, year = download.source_job(region, entry["source"])
+        except download.DownloadError as error:
+            raise ValueError(f"Unrecognised {region_id} source path: {error}") from None
+        expected = paths.raw_csv(region_id, download.PRODUCTS[product], "country", year)
         if entry["file"] != expected.name or entry["via"] != "country":
-            raise ValueError("Only verified local US country inputs may be cleaned")
+            raise ValueError(f"Only verified local {region_id} country inputs may be cleaned")
         jobs.add((product, year, expected))
     if not jobs:
-        raise ValueError("No verified historical US country inputs are listed in MANIFEST.json")
+        raise ValueError(f"No verified historical {region_id} country inputs are listed in MANIFEST.json")
     # Re-verify against original local sources; an old cache is never authoritative.
     if not staged_now:
         for product, year, _ in sorted(jobs):

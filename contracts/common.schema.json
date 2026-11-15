@@ -336,7 +336,16 @@
           "minimum": 0
         },
         "years": {
-          "$ref": "#/$defs/year_range"
+          "description": "Inclusive year range of the comparison; empty only when no comparison was possible (value null, n 0).",
+          "anyOf": [
+            {
+              "$ref": "#/$defs/year_range"
+            },
+            {
+              "type": "array",
+              "maxItems": 0
+            }
+          ]
         },
         "note": {
           "type": "string"

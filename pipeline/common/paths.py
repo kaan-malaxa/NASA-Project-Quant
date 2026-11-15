@@ -101,6 +101,50 @@ def country_csv_candidates(product, year, country) -> list[Path]:
     return [source_data_root() / folders[product] / filename]
 
 
+WORLD_PRODUCTS = ("modis", "viirs-snpp", "viirs-jpss1")
+
+
+def world_root() -> Path:
+    """Lossless compressed mirror of every NASA FIRMS all-country yearly archive."""
+    return source_data_root() / "FIRMS_world"
+
+
+def world_index() -> Path:
+    return world_root() / "index.json"
+
+
+def world_daily_counts() -> Path:
+    """SD-08 reference: unfiltered raw rows per sensor and UTC date across every FIRMS country."""
+    return world_root() / "raw_daily_counts.parquet"
+
+
+def world_archives_dir() -> Path:
+    return world_root() / "_archives"
+
+
+def _safe_country(country) -> str:
+    text = str(country)
+    if not text or not all(char.isalnum() or char in "_-" for char in text) or not text.isascii():
+        raise ValueError(f"Unsafe FIRMS country name: {country!r}")
+    return text
+
+
+def world_file(product, year, country) -> Path:
+    if product not in WORLD_PRODUCTS:
+        raise ValueError(f"Unknown FIRMS product: {product!r}")
+    year = int(year)
+    country = _safe_country(country)
+    return world_root() / product / str(year) / f"{product}_{year}_{country}.parquet"
+
+
+def world_regions_config() -> Path:
+    return config_file("world_regions.yaml")
+
+
+def world_polygon(region_id) -> Path:
+    return config_file("regions") / "world" / f"{_safe_country(region_id)}.geojson"
+
+
 def source_country_files() -> list[tuple[str, Path]]:
     result = []
     for product, folder in (

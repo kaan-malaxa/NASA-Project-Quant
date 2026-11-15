@@ -36,8 +36,8 @@ def run_region(region: str, pass_: str | None = None, *, shared=None):
     shared = _common() if shared is None else shared
     science = shared.config.load_science()
     if not region_in_scope(science, region):
-        raise ValueError("Select the configured United States region or a simulated planted-truth region")
-    shared.config.get_region(region)
+        raise ValueError("Select the United States, a simulated planted-truth or a FIRMS world-country region")
+    meta = shared.config.get_region(region)
     from pipeline.common import paths, provenance
 
     provenance.verify_stage(region, "grid")
@@ -132,7 +132,8 @@ def run_region(region: str, pass_: str | None = None, *, shared=None):
     shared.io.write_parquet(heldout, paths.heldout_predictions(region, "harmonize"), "heldout_weekly_t1")
     shared.io.write_json({str(year): {"training_years": fold["training_years"]}
                           for year, fold in validation.loyo.folds.items()}, output / "folds.json")
-    for name, figure in validation_figures(validation).items():
+    place = meta.name if getattr(meta, "source", None) == "firms_world" else "United States"
+    for name, figure in validation_figures(validation, place).items():
         shared.io.write_figure(figure, output.joinpath("figures", name))
         figure.clear()
     provenance.record_stage(region, "harmonize", [],

@@ -1,4 +1,6 @@
-"""Stage only the existing local United States country CSVs; never fetch data."""
+"""Stage verified local FIRMS country inputs: the tracked US CSVs or the lossless world store.
+
+Never fetches data; the world store is filled by pipeline.ingest.world_data."""
 import csv
 import hashlib
 import json
@@ -11,6 +13,7 @@ from tempfile import TemporaryDirectory
 import duckdb
 
 from pipeline.common import cli, config, io, log, paths
+from pipeline.ingest import world_data
 
 PRODUCTS = {"modis": "modis", "viirs-snpp": "viirs_snpp", "viirs-jpss1": "viirs_noaa20"}
 LOGGER = log.get_logger("download")
@@ -91,14 +94,34 @@ def _source_name(path):
     root = paths.source_data_root()
     resolved = Path(path).resolve()
     if not resolved.is_relative_to(root):
-        raise DownloadError(f"US source must remain inside {root}")
+        raise DownloadError(f"Source must remain inside {root}")
     return resolved.relative_to(root).as_posix()
+
+
+def source_job(region, relative):
+    """(product, year) of a manifest source that is a valid original input for this region."""
+    candidate = paths.source_data_root() / relative
+    if not relative or not candidate.is_file() or _source_name(candidate) != relative:
+        raise DownloadError(f"Source is not an existing file inside {paths.source_data_root()}: {relative}")
+    parts = candidate.name.split("_")
+    if len(parts) < 3 or parts[0] not in PRODUCTS or not parts[1].isdigit():
+        raise DownloadError(f"Unrecognised source name: {candidate.name}")
+    product, year = parts[0], int(parts[1])
+    if region.source == "firms_world":
+        expected = paths.world_file(product, year, region.firms_country_names[0])
+    else:
+        expected = paths.country_csv_candidates(product, year, "United_States")[0]
+    if candidate.resolve() != expected.resolve():
+        raise DownloadError(f"{relative} is not a {region.id} source")
+    return product, year
 
 
 def update_manifest(region, path=None, source=None, via="country"):
     """Upsert local provenance without inventing the original download time."""
-    if region != "us":
-        raise DownloadError("Only the local us region is supported")
+    meta = config.get_region(region)
+    if meta.synthetic:
+        raise DownloadError("Simulated regions keep simulator manifests")
+    config.require_real_region(meta)
     manifest = paths.manifest(region)
     entries = json.loads(manifest.read_text(encoding="utf-8")) if manifest.exists() else []
     # Do not carry old API or unverified source entries into a local-only manifest.
@@ -112,22 +135,16 @@ def update_manifest(region, path=None, source=None, via="country"):
             if staged.is_file() and all(entry.get(key) == value for key, value in _file_facts(staged).items()):
                 by_file[entry["file"]] = entry
             continue
-        relative = entry.get("source", "")
-        candidate = paths.source_data_root() / relative
-        if (
-            entry.get("via") == "country" and relative
-            and candidate.is_file() and _source_name(candidate) == relative
-            and candidate.name.endswith("_United_States.csv")
-        ):
+        if entry.get("via") == "country":
+            try:
+                source_job(meta, entry.get("source", ""))
+            except (DownloadError, ValueError):
+                continue
             by_file[entry["file"]] = entry
     if path is not None:
         if via != "country" or not source:
-            raise DownloadError("Manifest entries require a local US source")
-        candidate = paths.source_data_root() / source
-        if not candidate.is_file() or _source_name(candidate) != source:
-            raise DownloadError("Manifest source must be an existing file inside the US source directory")
-        if not candidate.name.endswith("_United_States.csv"):
-            raise DownloadError("Manifest source must be a United_States country CSV")
+            raise DownloadError(f"Manifest entries require a local {region} source")
+        source_job(meta, source)
         facts = _file_facts(path)
         old = by_file.get(Path(path).name)
         values = {"source": source, "via": via, **facts}
@@ -145,33 +162,48 @@ def update_manifest(region, path=None, source=None, via="country"):
     return updated
 
 
+def _source_path(region, product, year):
+    if region.source == "firms_world":
+        return paths.world_file(product, year, region.firms_country_names[0])
+    return paths.country_csv_candidates(product, year, "United_States")[0]
+
+
 def download_country(region, years, products):
-    """Stage verified local US inputs; missing files never trigger a network call."""
-    config.require_us_region(region)
+    """Stage verified local inputs; missing files never trigger a network call."""
+    config.require_real_region(region)
     paths.tmp_dir().mkdir(parents=True, exist_ok=True)
+    world = region.source == "firms_world"
     jobs = []
     for year in years:
         for product in products:
-            source = paths.country_csv_candidates(product, year, "United_States")[0]
+            source = _source_path(region, product, year)
             if not source.is_file():
-                LOGGER.warning("MISSING local US source: %s", source)
+                LOGGER.warning("MISSING local %s source: %s", region.id, source)
                 continue
             relative = _source_name(source)
-            csv_header(source)
+            if not world:
+                csv_header(source)
             jobs.append((year, product, source, relative))
     if not jobs:
-        raise DownloadError(f"No requested local US CSVs exist in {paths.source_data_root()}")
+        what = f"FIRMS world files for {region.id}" if world else "local US CSVs"
+        raise DownloadError(f"No requested {what} exist in {paths.source_data_root()}")
     for year, product, source, relative in jobs:
-        source_facts = _file_facts(source)
-        if any(value and int(value[:4]) != year for value in
-               (source_facts["first_date"], source_facts["last_date"])):
-            raise DownloadError(f"Filename year {year} disagrees with observation dates in {source.name}")
-        LOGGER.info("LOCAL %s", relative)
-        LOGGER.info("HEADER %s: %s", product, ",".join(csv_header(source)))
-        destination = paths.raw_csv("us", PRODUCTS[product], "country", year)
-        with TemporaryDirectory(dir=paths.tmp_dir(), prefix="local-us-") as temporary:
+        destination = paths.raw_csv(region.id, PRODUCTS[product], "country", year)
+        with TemporaryDirectory(dir=paths.tmp_dir(), prefix=f"local-{region.id}-") as temporary:
+            if world:
+                # Rebuild the exact original FIRMS CSV (SHA-256 checked) before treating it as input.
+                original = Path(temporary) / source.with_suffix(".csv").name
+                original.write_bytes(world_data.original_csv(product, year, region.firms_country_names[0]))
+            else:
+                original = source
+            source_facts = _file_facts(original)
+            if any(value and int(value[:4]) != year for value in
+                   (source_facts["first_date"], source_facts["last_date"])):
+                raise DownloadError(f"Filename year {year} disagrees with observation dates in {source.name}")
+            LOGGER.info("LOCAL %s", relative)
+            LOGGER.info("HEADER %s: %s", product, ",".join(csv_header(original)))
             output = Path(temporary) / "output.csv"
-            clip_bbox([source], output, region.bbox)
+            clip_bbox([original], output, region.bbox)
             facts = _file_facts(output)
             try:
                 unchanged = destination.is_file() and _file_facts(destination) == facts
@@ -183,8 +215,8 @@ def download_country(region, years, products):
                 destination.parent.mkdir(parents=True, exist_ok=True)
                 output.replace(destination)
                 LOGGER.info("SAVED %s", destination.name)
-            update_manifest("us", destination, relative)
-    return update_manifest("us")
+            update_manifest(region.id, destination, relative)
+    return update_manifest(region.id)
 
 
 def default_years(science):
@@ -208,16 +240,16 @@ def parse_years(raw):
 def main(argv=None):
     t0 = time.perf_counter()
     parser = cli.stage_parser("ingest.download")
-    parser.description = "Stage only local US CSVs from data/; no network downloads."
+    parser.description = "Stage local FIRMS country inputs from data/; no network downloads."
     parser.add_argument("--via", choices=("country", "api"), default="country")
     parser.add_argument("--years")
     parser.add_argument("--sources", nargs="+")
     args = parser.parse_args(argv)
     try:
         if args.via != "country":
-            raise DownloadError("--via api is disabled: only existing local US country CSVs may be used")
+            raise DownloadError("--via api is disabled: only existing local country inputs may be used")
         region = config.get_region(args.region or "us")
-        config.require_us_region(region)
+        config.require_real_region(region)
         if args.years is None:
             try:
                 science = config.load_science()
@@ -232,7 +264,7 @@ def main(argv=None):
         if len(selected) != len(set(selected)) or not set(selected) <= set(PRODUCTS):
             raise DownloadError("Unknown or duplicate --sources; choose from " + ", ".join(PRODUCTS))
         manifest = download_country(region, parse_years(args.years), selected)
-        log.finish("download", "us", sum(entry["rows"] for entry in manifest), t0)
+        log.finish("download", region.id, sum(entry["rows"] for entry in manifest), t0)
         return 0
     except (OSError, duckdb.Error, ValueError, KeyError) as error:
         message = str(error) if isinstance(error, (ValueError, FileNotFoundError)) else type(error).__name__

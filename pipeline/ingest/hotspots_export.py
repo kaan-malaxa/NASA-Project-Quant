@@ -62,7 +62,7 @@ def write_archive(frame, destination, sensor):
 
 def run(region_id, url_prefix=None):
     region = config.get_region(region_id)
-    config.require_us_region(region)
+    config.require_real_region(region)
     prefix = validate_url_prefix(url_prefix) if url_prefix else None
     inputs = {sensor: paths.detections(region.id, sensor) for sensor in SENSORS}
     missing = [path.name for path in inputs.values() if not path.is_file()]
@@ -115,7 +115,8 @@ def main(argv=None):
     try:
         fragment = run(region_id, args.url_prefix)
         if args.local:
-            io.write_json(fragment, paths.exports_dir() / "hotspot_inventory.json")
+            name = "hotspot_inventory.json" if region_id == "us" else f"hotspot_inventory_{region_id}.json"
+            io.write_json(fragment, paths.exports_dir() / name)
         print(json.dumps(fragment, sort_keys=True, ensure_ascii=False, allow_nan=False, indent=2))
         with redirect_stdout(sys.stderr):
             log.finish("hotspots_export", region_id, sum(row["rows"] for row in fragment["hotspot_archives"]), t0)

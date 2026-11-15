@@ -40,6 +40,8 @@ def main(argv=None):
     parser = cli.stage_parser("run")
     parser.add_argument("--all-regions", action="store_true")
     parser.add_argument("--include-synthetic", action="store_true", help="include planted-truth regions with --all-regions")
+    parser.add_argument("--world", action="store_true",
+                        help="with --all-regions, also run every FIRMS world country in world_regions.yaml")
     parser.add_argument("--from", dest="from_stage", choices=STAGES)
     parser.add_argument("--to", dest="to_stage", choices=STAGES)
     # The planted-truth test (V7) is defined on the full simulated world; tiny is for quick smoke runs.
@@ -47,13 +49,17 @@ def main(argv=None):
     args = parser.parse_args(argv)
     if bool(args.region) == args.all_regions:
         parser.error("choose exactly one of --region or --all-regions")
+    if args.world and not args.all_regions:
+        parser.error("--world requires --all-regions")
     first = STAGES.index(args.from_stage) if args.from_stage else 0
     last = STAGES.index(args.to_stage) if args.to_stage else len(STAGES) - 1
     if first > last:
         parser.error("--from must not follow --to")
     try:
         regions = (
-            [region for region in config.load_regions() if not region.synthetic or args.include_synthetic]
+            [region for region in config.load_regions()
+             if (not region.synthetic or args.include_synthetic)
+             and (args.world or region.source != "firms_world")]
             if args.all_regions else [config.get_region(args.region)]
         )
         selected = STAGES[first:last + 1]

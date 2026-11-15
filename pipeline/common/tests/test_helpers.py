@@ -54,7 +54,10 @@ def test_paths_and_cli_override(tmp_path, monkeypatch):
 
 
 def test_regions_and_science(tmp_path, monkeypatch):
-    assert [r.id for r in config.load_regions()] == ["us", "synthland"]
+    assert [r.id for r in config.load_core_regions()] == ["us", "synthland"]
+    regions = config.load_regions()
+    assert [r.id for r in regions[:2]] == ["us", "synthland"]
+    assert all(r.source == "firms_world" and not r.synthetic for r in regions[2:])
     assert not config.get_region("us").synthetic
     assert config.real_region().id == "us"
     assert config.get_region("synthland").synthetic

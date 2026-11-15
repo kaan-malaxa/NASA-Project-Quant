@@ -136,11 +136,18 @@ def fit_calibrations(
 
 
 def region_in_scope(science: Mapping, region: str) -> bool:
-    """The real United States region, or a simulated planted-truth region (never other real data)."""
+    """SD-19: the configured United States region, a simulated planted-truth region, or (amended
+    2026-11-15) one FIRMS world-country region generated in world_regions.yaml. Real regions are never
+    mixed: each is fitted only on its own country's detections."""
     scope = science["scope"]
-    return scope["country"] == "US" and region in (
-        scope["region_id"], *scope.get("planted_truth_region_ids", ())
-    )
+    if scope["country"] == "US" and region in (scope["region_id"], *scope.get("planted_truth_region_ids", ())):
+        return True
+    from pipeline.common import config
+
+    try:
+        return config.get_region(region).source == "firms_world"
+    except ValueError:
+        return False
 
 
 def calibration_document(
@@ -152,7 +159,7 @@ def calibration_document(
     documented in fit_chained, rather than observed Aqua detections.
     """
     if not region_in_scope(science, region):
-        raise ValueError("Only the configured United States data scope is permitted")
+        raise ValueError("Only the configured United States, simulated or FIRMS world-country scope is permitted")
     eras, tier1 = science["eras"], science["tier1"]
     next_aqua = (pd.Timestamp(eras["aqua_trusted_through"]) + pd.Timedelta(days=1)).date()
     next_snpp = (pd.Timestamp(eras["snpp_through"]) + pd.Timedelta(days=1)).date()
@@ -348,7 +355,7 @@ def build_outputs(
 ) -> SeriesResult:
     """Fit and build the reference pass by default; an explicit N uses night rows."""
     if not region_in_scope(science, region):
-        raise ValueError("Only the configured United States data scope is permitted")
+        raise ValueError("Only the configured United States, simulated or FIRMS world-country scope is permitted")
     if pass_ is None:
         pass_ = science["reference"]["pass"]
     if pass_ not in ("D", "N"):

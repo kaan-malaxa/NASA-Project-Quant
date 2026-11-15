@@ -232,7 +232,7 @@ function Validation({ rows, nameOf }) {
                 },
                 { key: "compare", label: "Which is lower", render: (r) => <Comparison row={r} /> },
                 { key: "n", label: "n", align: "right", render: (r) => fmtInt(r.n) },
-                { key: "years", label: "Years", render: (r) => (r.years ? `${r.years[0]}–${r.years[1]}` : "—") },
+                { key: "years", label: "Years", render: (r) => (r.years?.length === 2 ? `${r.years[0]}–${r.years[1]}` : "—") },
                 { key: "note", label: "Note", render: (r) => r.note || "—" },
               ]}
               rows={list}

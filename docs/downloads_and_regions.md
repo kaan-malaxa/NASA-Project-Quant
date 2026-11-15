@@ -27,3 +27,8 @@ compatibility download; AOI calculations use authoritative yearly spatial shards
 Recent products require genuine NOAA-20 NRT inputs and independent fetched-window/daily coverage metadata.
 The supplied historical files do not establish recent coverage. Current products remain unavailable until
 those inputs exist; no observations, URLs or API credentials are fabricated.
+
+World countries: every NASA FIRMS country from the all-country yearly archives is stored losslessly under
+data/FIRMS_world/ and configured as its own region in pipeline/config/world_regions.yaml (SD-19 amendment,
+2026-11-15). `uv run python -m pipeline.ingest.download --region portugal` stages that country's original
+CSVs, rebuilt byte for byte from the store, through the same clip, manifest and provenance. See world_data.md.

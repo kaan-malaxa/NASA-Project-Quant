@@ -190,7 +190,11 @@ def build_season(climatology: dict[str, Any], daily: pd.DataFrame, region: str, 
                     "shift_days_per_decade": shifts,
                     "sentence": season_shift_sentence(w["label"], st["value"], st["lo"], st["hi"])})
     pct = round(100 * science["season"]["critical_share"])
+    definition = (f"The fewest weeks that hold {pct}% of a typical year's burning" if crit else
+                  "Critical weeks unavailable: insufficient weekly coverage or zero typical activity.")
+    if crit and not out:
+        floor = round(100 * science["season"]["min_window_share"])
+        definition += f"; no run of them holds {floor}% of it, so there is no distinct season window"
     return {**header, "region": region,
-            "definition": (f"The fewest weeks that hold {pct}% of a typical year's burning" if crit else
-                           "Critical weeks unavailable: insufficient weekly coverage or zero typical activity."),
+            "definition": definition,
             "critical_weeks": crit, "windows": out}

@@ -163,3 +163,16 @@ def test_document_validates_and_is_deterministic():
     assert text == json.dumps(b, sort_keys=True, allow_nan=False)
     assert [e.message for e in contract_validator("season").iter_errors(json.loads(text))] == []
     assert a["definition"] == "The fewest weeks that hold 80% of a typical year's burning"
+
+
+def test_scattered_critical_weeks_give_no_window_and_the_definition_says_so():
+    # Equal bursts every third week: each run is one week (~5.6% of the year), below the 15% window floor.
+    p50 = [10.0 if (w - 1) % 3 == 0 else 0.0 for w in range(1, 53)]
+    crit, wins = windows(p50, SCIENCE)
+    assert crit and wins == []
+    doc = build_season({"weeks": [{"week": w, "p50": v} for w, v in enumerate(p50, start=1)]},
+                       seasonal_table(lambda y: 200), "testland", SCIENCE, HEADER)
+    assert doc["windows"] == [] and doc["critical_weeks"] == crit
+    assert doc["definition"] == ("The fewest weeks that hold 80% of a typical year's burning; no run of them "
+                                 "holds 15% of it, so there is no distinct season window")
+    assert [e.message for e in contract_validator("season").iter_errors(json.loads(json.dumps(doc)))] == []

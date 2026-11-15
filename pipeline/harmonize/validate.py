@@ -325,7 +325,7 @@ def validate_tier1(
 ):
     """Build contracted ValidationRows, drift, and evidence for the figures."""
     if not region_in_scope(science, region):
-        raise ValueError("Validation requires the configured United States region")
+        raise ValueError("Validation requires the configured United States, simulated or FIRMS world-country region")
     start, end = map(pd.Timestamp, science["tier1"]["snpp_fit"])
     rows = []
 
@@ -465,7 +465,7 @@ def validate_tier1(
     return ValidationResult(document, loyo, overlay, science["eras"]["aqua_trusted_through"])
 
 
-def validation_figures(result):
+def validation_figures(result, place="United States"):
     """Return headless figures; the stage writes them through common IO."""
     from matplotlib.backends.backend_agg import FigureCanvasAgg
     from matplotlib.figure import Figure
@@ -480,7 +480,7 @@ def validation_figures(result):
     ax.set(
         xlabel="Observed Aqua fire cell-days",
         ylabel="LOYO predicted Aqua-equivalent fire cell-days",
-        title="United States: leave-one-year-out weekly validation",
+        title=f"{place}: leave-one-year-out weekly validation",
     )
     ax.legend()
 
@@ -500,7 +500,7 @@ def validation_figures(result):
     ax.set(
         xlabel="Year",
         ylabel="Annual Aqua-equivalent fire cell-days",
-        title="United States: annual totals on joint coverage (coverage-scaled)",
+        title=f"{place}: annual totals on joint coverage (coverage-scaled)",
     )
     ax.legend()
     drift = Figure(figsize=(9, 4), layout="constrained")
@@ -525,7 +525,7 @@ def validation_figures(result):
     ax.set(
         xlabel="Calendar year",
         ylabel="Annual Aqua / VIIRS fire cell-day ratio",
-        title="United States: yearly ratios with within-year week-bootstrap ranges",
+        title=f"{place}: yearly ratios with within-year week-bootstrap ranges",
     )
     ax.legend()
     return {

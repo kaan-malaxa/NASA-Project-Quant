@@ -8,14 +8,17 @@ from pipeline.common import config, io, paths
 
 def configuration_inputs(region):
     meta = config.get_region(region)
-    files = [paths.config_file(name) for name in ("science.yaml", "outages.yaml", "regions.yaml")]
+    catalog = paths.world_regions_config() if meta.source == "firms_world" else paths.config_file("regions.yaml")
+    files = [paths.config_file("science.yaml"), paths.config_file("outages.yaml"), catalog]
     if meta.polygon:
         files.append(paths.PROJECT_ROOT / meta.polygon)
     return files
 
 
 def configuration_fingerprint():
-    files = {file for region in config.load_regions() for file in configuration_inputs(region.id)}
+    """Shared science/outage/core-region configuration. World regions are attested per stage instead,
+    so adding or regenerating world countries never invalidates an existing publication."""
+    files = {file for region in config.load_core_regions() for file in configuration_inputs(region.id)}
     facts = {file.relative_to(paths.PROJECT_ROOT).as_posix(): io.sha256(file) for file in sorted(files)}
     return hashlib.sha256(json.dumps(facts, sort_keys=True).encode("utf-8")).hexdigest()
 

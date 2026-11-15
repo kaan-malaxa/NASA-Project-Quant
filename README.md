@@ -22,6 +22,24 @@ For one region use `--region us` or `--region synthland`. To isolate a run, pass
 Compatible published regions are preserved without requiring their intermediates. A changed configuration
 or invalid prior manifest requires a complete rebuild. See [contracts](plan/02_CONTRACTS.md).
 
+### World data (every FIRMS country)
+
+The NASA FIRMS all-country yearly archives (MODIS 2000+, VIIRS S-NPP 2012+, VIIRS NOAA-20 2018+) are kept
+under `data/FIRMS_world/` as one zstd-compressed Parquet file per original country CSV, with every column
+stored as the original text. Each file rebuilds its original CSV byte for byte (SHA-256 checked).
+
+```text
+uv run python -m pipeline.ingest.world_data fetch
+uv run python -m pipeline.ingest.world_data build --delete-archives
+uv run python -m pipeline.ingest.world_data verify --full
+uv run python -m pipeline.ingest.world_regions
+uv run python -m pipeline.run --region portugal
+```
+
+Every FIRMS country is a region in `pipeline/config/world_regions.yaml` (id = country name in lower case
+with hyphens). `--all-regions --world` runs them all. `world_data csv` writes back any original CSV.
+See [world data](docs/world_data.md).
+
 From `web/`, run these commands separately:
 
 ```text

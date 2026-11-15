@@ -108,11 +108,12 @@ def run_region(region: str, pass_: str | None = None, *, shared=None):
             )
         # The contract schemas refer to each other by file name (common.schema.json), so every
         # schema in contracts/ is registered under its file name before validating.
+        schemas = {path.name: read_json(path) for path in sorted(schema_path.parent.glob("*.schema.json"))}
         registry = Registry().with_resources(
-            (path.name, Resource(contents=read_json(path), specification=DRAFT202012))
-            for path in sorted(schema_path.parent.glob("*.schema.json"))
+            (name, Resource(contents=contents, specification=DRAFT202012))
+            for name, contents in schemas.items()
         )
-        Draft202012Validator(read_json(schema_path), registry=registry).validate(result.calibration)
+        Draft202012Validator(schemas[schema_path.name], registry=registry).validate(result.calibration)
 
     output = shared.paths.harmonized_dir(region)
     shared.io.write_parquet(result.daily, output.joinpath("daily.parquet"), schema_name="daily")

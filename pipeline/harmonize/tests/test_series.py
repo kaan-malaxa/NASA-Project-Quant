@@ -351,6 +351,7 @@ def shared(tmp_path, tables, science):
             write_json=Mock(),
             write_figure=Mock(),
             read_json=Mock(),
+            code_version=Mock(return_value="test"),
         ),
         timebins=SimpleNamespace(
             aggregate=annual_aggregate_spy(science["timebins"]["year_min_covered_frac"])

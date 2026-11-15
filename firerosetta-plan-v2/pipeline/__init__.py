@@ -1,0 +1,1 @@
+"""FireRosetta offline pipeline."""

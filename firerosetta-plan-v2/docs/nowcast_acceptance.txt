@@ -1,0 +1,14 @@
+> uv run ruff check pipeline
+All checks passed!
+Exit code: 0
+
+> uv run pytest pipeline/ingest -q
+..........................................................               [100%]
+58 passed in 4.76s
+Exit code: 0
+
+> uv run python -m pipeline.ingest.nowcast_fetch --region us
+FAIL nowcast_fetch: No genuine local VIIRS_NOAA20_NRT CSVs; missing coverage for 2026-10-14 through 2026-11-13. Historical country CSVs were not substituted; previous outputs untouched
+Exit code: 1
+
+PASS: real incomplete-coverage check preserved the existing manifest and recent-output state

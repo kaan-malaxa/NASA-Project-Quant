@@ -1,0 +1,26 @@
+# DRAFT ONLY: exclude UNVERIFIED entries from published methods.json and the pitch.
+# The user supplied the FIRMS country entry point, not claim-specific URLs.
+# Candidate URLs below were discovered during research. The required UNVERIFIED
+# markers remain until those sources and exact sentences are accepted.
+# checked is the review date, not verification of entries still marked UNVERIFIED.
+sources:
+  - claim_id: snpp_end
+    text: "UNVERIFIED — FIRMS lists the S-NPP fire record as ending on November 2, 2026."
+    url: https://firms.modaps.eosdis.nasa.gov/content/descriptions/FIRMS_VIIRS_Firehotspots.html
+    checked: "2026-11-14"
+  - claim_id: snpp_anomaly_2026
+    text: "UNVERIFIED — S-NPP experienced a temporary data interruption in July 2026."
+    url: https://firms.modaps.eosdis.nasa.gov/api/missing_data/
+    checked: "2026-11-14"
+  - claim_id: aqua_drift
+    text: "UNVERIFIED — NASA describes Aqua's former equator crossing near 1:35 p.m. and subsequent orbital drift."
+    url: https://www.earthdata.nasa.gov/s3fs-public/2023-03/RFI_TAA_continuity_workshop.pdf
+    checked: "2026-11-14"
+  - claim_id: aqua_end_science
+    text: "UNVERIFIED — Aqua MODIS science observations {{verified_ended_or_will_end}} on {{verified_aqua_end_date}}."
+    url: UNVERIFIED
+    checked: "2026-11-14"
+  - claim_id: submission_rules
+    text: "UNVERIFIED — The Space Apps submission rules require {{verified_submission_requirements}}."
+    url: UNVERIFIED
+    checked: "2026-11-14"

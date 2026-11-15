@@ -1,0 +1,39 @@
+> uv sync
+Resolved 40 packages in 0.91ms
+Checked 36 packages in 2ms
+Exit code: 0 (expected 0)
+
+> uv run ruff check pipeline
+All checks passed!
+Exit code: 0 (expected 0)
+
+> uv run pytest -q
+......................................................................   [100%]
+70 passed in 2.19s
+Exit code: 0 (expected 0)
+
+> uv run python -m pipeline.ingest.download --region us --via country --years 2023:2023
+OK download us rows=873545 seconds=3.258
+2026-11-14 23:42:32,111Z pipeline.download INFO LOCAL MODIS_data/modis_2023_United_States.csv
+2026-11-14 23:42:32,111Z pipeline.download INFO HEADER modis: latitude,longitude,brightness,scan,track,acq_date,acq_time,satellite,instrument,confidence,version,bright_t31,frp,daynight,type
+2026-11-14 23:42:32,853Z pipeline.download INFO VERIFIED modis_country_2023.csv
+2026-11-14 23:42:33,042Z pipeline.download INFO LOCAL VIIRS-SNPP_data/viirs-snpp_2023_United_States.csv
+2026-11-14 23:42:33,042Z pipeline.download INFO HEADER viirs-snpp: latitude,longitude,bright_ti4,scan,track,acq_date,acq_time,satellite,instrument,confidence,version,bright_ti5,frp,daynight,type
+2026-11-14 23:42:33,970Z pipeline.download INFO VERIFIED viirs_snpp_country_2023.csv
+2026-11-14 23:42:34,205Z pipeline.download INFO LOCAL VIIRS-JPSS_data/viirs-jpss1_2023_United_States.csv
+2026-11-14 23:42:34,206Z pipeline.download INFO HEADER viirs-jpss1: latitude,longitude,bright_ti4,scan,track,acq_date,acq_time,satellite,instrument,confidence,version,bright_ti5,frp,daynight,type
+2026-11-14 23:42:35,120Z pipeline.download INFO VERIFIED viirs_noaa20_country_2023.csv
+Exit code: 0 (expected 0)
+
+> uv run python -m pipeline.ingest.download --region us --via api --years 2023:2023
+FAIL download: --via api is disabled: only existing local US country CSVs may be used
+Exit code: 1 (expected 1)
+
+> uv run python -m pipeline.run --region us
+SKIP ingest: not implemented yet
+SKIP harmonize: not implemented yet
+SKIP eyesight: not implemented yet
+SKIP stats: not implemented yet
+SKIP export: not implemented yet
+OK run us rows=0 seconds=0.009
+Exit code: 0 (expected 0)

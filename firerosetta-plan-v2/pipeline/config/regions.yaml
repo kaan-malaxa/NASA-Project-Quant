@@ -1,0 +1,15 @@
+regions:
+- id: us
+  name: United States
+  country: US
+  bbox:
+  - -179.144
+  - 18.906
+  - 179.781
+  - 71.413
+  polygon: pipeline/config/regions/us.geojson
+  fire_type: Satellite-detected burning activity
+  story: Satellite detections across the United States, compared across sensors.
+  synthetic: false
+  firms_country_names:
+  - United_States

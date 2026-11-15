@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import SectionState from "@/components/SectionState.jsx";
 import { useRegionData } from "@/data/useRegionData.js";
@@ -12,6 +13,7 @@ import DownloadsSection from "./region/DownloadsSection.jsx";
 import DateRangeBar from "./region/DateRangeBar.jsx";
 import InThisPeriod from "./region/InThisPeriod.jsx";
 import StickyBar from "./region/StickyBar.jsx";
+import DownloadsPanel from "./region/DownloadsPanel.jsx";
 import { useDocumentMeta } from "@/lib/useDocumentMeta.js";
 
 /** #/r/:region — the region story (screens 3–7). */
@@ -21,6 +23,7 @@ export default function Region() {
   const lastDataDay = region?.last_data_day ?? null;
   useDocumentMeta(region?.name ?? "Region", region ? `${region.fire_type} in ${region.name}: the fire calendar, the long-term trend with the sensor change corrected, and this week's burning.` : undefined);
   const [url, setUrl] = useUrlState(lastDataDay);
+  const [chartEl, setChartEl] = useState(null);
   const meta = files.weekly?.status === "ok" ? files.weekly.data.series_meta : {};
   const lensLabel = (id) => meta?.[id]?.label ?? id;
 
@@ -65,12 +68,13 @@ export default function Region() {
         <SectionNav />
       </StickyBar>
       <VerdictSection state={files.trend} />
-      <CalendarSection files={files} url={url} setUrl={setUrl} lastDataDay={lastDataDay} />
+      <CalendarSection files={files} url={url} setUrl={setUrl} lastDataDay={lastDataDay} chartRef={setChartEl} />
       <CriticalWeeksSection state={files.season} />
       <ThisWeekSection state={files.nowcast} />
       <WhereSection region={region} files={files} url={url} setUrl={setUrl} />
       <DownloadsSection>
         <InThisPeriod daily={files.daily} nowcast={files.nowcast} url={url} lastDataDay={lastDataDay} lensLabel={lensLabel} />
+        <DownloadsPanel region={region} files={files} url={url} lastDataDay={lastDataDay} chartEl={chartEl} />
       </DownloadsSection>
     </article>
   );

@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "synthland truth.json (R4 section 9.5)",
+  "type": "object",
+  "required": ["seed", "size", "planted", "expected", "binned_rates", "k_monthly", "noaa20", "aqua_scale_annual",
+               "matched_celldays", "counts", "world"],
+  "additionalProperties": false,
+  "properties": {
+    "seed": {"type": "integer"},
+    "size": {"enum": ["tiny", "full"]},
+    "planted": {
+      "type": "object",
+      "required": ["curve", "trend_pct_per_decade_fires", "season", "outages", "outage_days", "static_sources",
+                   "static_points", "aqua_drift_from", "noaa20_first_full_year", "expected_noaa20_method"],
+      "additionalProperties": false,
+      "properties": {
+        "curve": {
+          "type": "object", "required": ["a", "b", "c"], "additionalProperties": false,
+          "properties": {"a": {"type": "number"}, "b": {"type": "number"},
+                         "c": {"type": "number", "exclusiveMinimum": 0, "maximum": 1}}
+        },
+        "trend_pct_per_decade_fires": {"type": "number"},
+        "season": {
+          "type": "object", "required": ["peak_weeks", "weights"], "additionalProperties": false,
+          "properties": {
+            "peak_weeks": {"type": "array", "minItems": 2, "maxItems": 2,
+                           "items": {"type": "integer", "minimum": 1, "maximum": 52}},
+            "weights": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "number", "minimum": 0}}
+          }
+        },
+        "outages": {
+          "type": "array",
+          "items": {"type": "object", "required": ["sensor", "start", "end"], "additionalProperties": false,
+                    "properties": {"sensor": {"enum": ["aqua", "terra", "snpp", "noaa20"]},
+                                   "start": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+                                   "end": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"}}}
+        },
+        "outage_days": {
+          "type": "object", "required": ["aqua"],
+          "properties": {"aqua": {"type": "array", "items": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"}}}
+        },
+        "static_sources": {"type": "integer", "minimum": 0},
+        "static_points": {
+          "type": "array",
+          "items": {"type": "object", "required": ["lat", "lon"], "additionalProperties": false,
+                    "properties": {"lat": {"type": "number"}, "lon": {"type": "number"}}}
+        },
+        "aqua_drift_from": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+        "noaa20_first_full_year": {"type": "integer"},
+        "expected_noaa20_method": {"enum": ["direct", "chained"]}
+      }
+    },
+    "expected": {
+      "type": "array", "minItems": 10,
+      "items": {
+        "type": "object",
+        "required": ["quantity", "truth", "tolerance", "source_file", "path"],
+        "properties": {
+          "quantity": {"enum": ["k_annual_snpp", "k_annual_noaa20", "k_month_snpp_max_abs_err", "g",
+                                "reliability_err", "trend_pct_per_decade", "peak_week_main", "peak_week_second",
+                                "aqua_outage_days_missing", "static_rows_surviving"]},
+          "truth": {"type": "number"},
+          "tolerance": {"type": "number", "minimum": 0},
+          "source_file": {"enum": ["calibration.json", "curve.json", "validation_t2.json", "trend.json",
+                                   "season.json", "coverage.parquet", "celldays.parquet"]},
+          "path": {"type": "string"},
+          "fit_window": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string"}},
+          "share": {"type": "number", "minimum": 0, "maximum": 1},
+          "static_cells_r6": {"type": "array", "items": {"type": "string"}},
+          "static_detections_surviving_spec": {"type": "integer", "minimum": 0},
+          "truth_by_month": {
+            "type": "array", "minItems": 12, "maxItems": 12,
+            "items": {"type": "object", "required": ["month", "k"],
+                      "properties": {"month": {"type": "integer", "minimum": 1, "maximum": 12},
+                                     "k": {"type": "number", "exclusiveMinimum": 0}}}
+          }
+        }
+      }
+    },
+    "binned_rates": {
+      "type": "array", "minItems": 8, "maxItems": 8,
+      "items": {
+        "type": "object", "required": ["frp_mw", "frp_lo", "frp_hi", "p_true", "n", "tolerance"],
+        "additionalProperties": false,
+        "properties": {
+          "frp_mw": {"type": "number", "exclusiveMinimum": 0},
+          "frp_lo": {"type": "number", "exclusiveMinimum": 0},
+          "frp_hi": {"type": "number", "exclusiveMinimum": 0},
+          "p_true": {"type": "number", "minimum": 0, "maximum": 1},
+          "n": {"type": "integer", "minimum": 1},
+          "tolerance": {"type": "number", "exclusiveMinimum": 0}
+        }
+      }
+    },
+    "k_monthly": {
+      "type": "object", "required": ["snpp", "noaa20"],
+      "properties": {
+        "snpp": {"$ref": "#/$defs/k_months"},
+        "noaa20": {"$ref": "#/$defs/k_months"}
+      }
+    },
+    "noaa20": {
+      "type": "object", "required": ["first_full_year", "fit_years", "method"], "additionalProperties": false,
+      "properties": {"first_full_year": {"type": "integer"}, "fit_years": {"type": "integer"},
+                     "method": {"enum": ["direct", "chained"]}}
+    },
+    "aqua_scale_annual": {
+      "type": "array", "minItems": 1,
+      "items": {"type": "object", "required": ["year", "value", "source", "covered_days"],
+                "properties": {"year": {"type": "integer"}, "value": {"type": "number", "minimum": 0},
+                               "source": {"enum": ["aqua", "aqua_ref"]},
+                               "covered_days": {"type": "integer", "minimum": 1}}}
+    },
+    "matched_celldays": {"type": "integer", "minimum": 0},
+    "counts": {
+      "type": "object", "required": ["modis_rows", "viirs_snpp_rows", "viirs_noaa20_rows"],
+      "additionalProperties": false,
+      "properties": {"modis_rows": {"type": "integer", "minimum": 0},
+                     "viirs_snpp_rows": {"type": "integer", "minimum": 0},
+                     "viirs_noaa20_rows": {"type": "integer", "minimum": 0}}
+    },
+    "world": {
+      "type": "object", "required": ["start", "end", "n_fires"],
+      "properties": {"start": {"type": "string"}, "end": {"type": "string"}, "n_fires": {"type": "integer"}}
+    }
+  },
+  "$defs": {
+    "k_months": {
+      "type": "array", "minItems": 12, "maxItems": 12,
+      "items": {"type": "object", "required": ["month", "k", "aqua_celldays", "viirs_celldays"],
+                "additionalProperties": false,
+                "properties": {"month": {"type": "integer", "minimum": 1, "maximum": 12},
+                               "k": {"type": "number", "exclusiveMinimum": 0},
+                               "aqua_celldays": {"type": "integer", "minimum": 0},
+                               "viirs_celldays": {"type": "integer", "minimum": 0}}}
+    }
+  }
+}

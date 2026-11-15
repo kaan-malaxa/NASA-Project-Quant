@@ -1,0 +1,32 @@
+[
+ {
+  "downloaded_at": "2026-11-15T00:00:27Z",
+  "file": "modis_synth.csv",
+  "first_date": "2003-01-01",
+  "last_date": "2026-11-13",
+  "rows": 267734,
+  "sha256": "b7a522e3df752eb5ca617fb507505eb2c6de1286b1ff98ef7feec4880207077a",
+  "source": "synth:modis",
+  "via": "synth"
+ },
+ {
+  "downloaded_at": "2026-11-15T00:00:27Z",
+  "file": "viirs_snpp_synth.csv",
+  "first_date": "2012-01-20",
+  "last_date": "2026-07-09",
+  "rows": 486042,
+  "sha256": "5a99218d6f49718338ced0ef4384c5d4a0947a0d9c70347ed9f1d4302daa6c71",
+  "source": "synth:snpp",
+  "via": "synth"
+ },
+ {
+  "downloaded_at": "2026-11-15T00:00:27Z",
+  "file": "viirs_noaa20_synth.csv",
+  "first_date": "2018-01-01",
+  "last_date": "2026-11-13",
+  "rows": 310329,
+  "sha256": "0864a8cb630abcd2b279a7304f56b302902c0e3b4ea32fe5332653f10019504e",
+  "source": "synth:noaa20",
+  "via": "synth"
+ }
+]

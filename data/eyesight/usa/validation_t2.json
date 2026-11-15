@@ -1,0 +1,52 @@
+{
+ "validation": [
+  {
+   "method": "tier2",
+   "n": 790669,
+   "note": "Value = sum over held-out years of |sum p - observed| / total observed (per-year absolute). Signed pooled form |sum of all held-out (p - observed)| / observed = 0.0003 (reported only; it cancels across years). Neighbour-match sensitivity (reported, not used): c 0.800 -> 0.881 (change +0.081); mean monthly k_T2 0.367 -> 0.486 (change +0.120, largest monthly change +0.126); g kept same-cell (1.534).",
+   "region": "usa",
+   "test": "reliability_err",
+   "value": 0.025,
+   "years": [
+    2013,
+    2022
+   ]
+  },
+  {
+   "method": "tier2",
+   "n": 515,
+   "note": "NOAA-20 days of harmonized_t2 use the curve fitted on S-NPP (same VIIRS instrument design); no NOAA-20-specific curve was fitted. aqua_raw/snpp_raw counted from celldays (R3 daily.parquet missing).",
+   "region": "usa",
+   "test": "loyo_weekly_wape",
+   "value": 0.16,
+   "years": [
+    2013,
+    2022
+   ]
+  },
+  {
+   "method": "tier2",
+   "n": 515,
+   "note": "aqua_raw/snpp_raw counted from celldays (R3 daily.parquet missing).",
+   "region": "usa",
+   "test": "backcast_weekly_wape",
+   "value": 0.178,
+   "years": [
+    2013,
+    2022
+   ]
+  },
+  {
+   "method": "tier2",
+   "n": 0,
+   "note": "not computed: R3 daily.parquet (viirs_as_aqua) missing.",
+   "region": "usa",
+   "test": "t1_t2_wape",
+   "value": null,
+   "years": [
+    2013,
+    2022
+   ]
+  }
+ ]
+}

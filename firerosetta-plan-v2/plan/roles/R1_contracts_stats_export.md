@@ -113,7 +113,7 @@ Acceptance:
   uv run python -m pipeline.export --sample
   uv run python -m pipeline.export --check        # every line OK
   uv run pytest pipeline/export -q                # include a test that runs --sample twice into tmp dirs and compares hashes
-Then commit web/public/data and tell R5 and R6 the sample data is on main.
+Then remind me to commit web/public/data manually(DO NOT COMMIT YOURSELF) and tell R5 and R6 the sample data is on main.
 ```
 
 ### B1 · Calendar core: weekly, monthly, daily, climatology (start 18:30)

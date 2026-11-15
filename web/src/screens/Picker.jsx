@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import SectionState from "@/components/SectionState.jsx";
@@ -13,16 +14,25 @@ import CountryBrowser from "./CountryBrowser.jsx";
 export default function Picker() {
   useDocumentMeta("Pick a place", "Choose a place to see its fire calendar, its long-term trend and this week's burning.");
   const { state, regions, debug } = useRegions();
+  const [query, setQuery] = useState("");
+  const [page, setPage] = useState(0);
+  const matchingRegions = regions.filter((region) => region.name.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase()));
+  const visibleRegions = matchingRegions.slice(page * 24, (page + 1) * 24);
   return (
     <section aria-labelledby="picker-title" className="space-y-6">
       <h1 id="picker-title" className="text-2xl font-semibold tracking-tight">
         Pick a place
       </h1>
+      <label className="block max-w-md space-y-2 text-sm font-medium">
+        <span>Find a place to visualize</span>
+        <input type="search" value={query} onChange={(event) => { setQuery(event.target.value); setPage(0); }}
+          placeholder="Search countries…" className="bg-background w-full rounded-md border px-3 py-2 focus-visible:outline-2 focus-visible:outline-offset-2" />
+      </label>
       <SectionState state={state} title="Places">
         {() =>
           regions.length ? (
             <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {regions.map((r) => (
+              {visibleRegions.map((r) => (
                 <li key={r.id}>
                   <RegionCard region={r} debug={debug} />
                 </li>
@@ -33,6 +43,16 @@ export default function Picker() {
           )
         }
       </SectionState>
+      {regions.length > 0 && matchingRegions.length === 0 ? <p role="status">No places match your search.</p> : null}
+      {matchingRegions.length > 24 ? (
+        <nav aria-label="Place pages" className="flex items-center gap-4 text-sm">
+          <button type="button" disabled={page === 0} onClick={() => setPage(page - 1)}
+            className="rounded-md border px-3 py-2 disabled:opacity-40">Previous places</button>
+          <span aria-live="polite">{page + 1} / {Math.ceil(matchingRegions.length / 24)}</span>
+          <button type="button" disabled={(page + 1) * 24 >= matchingRegions.length} onClick={() => setPage(page + 1)}
+            className="rounded-md border px-3 py-2 disabled:opacity-40">Next places</button>
+        </nav>
+      ) : null}
       <CountryBrowser regions={regions} />
     </section>
   );

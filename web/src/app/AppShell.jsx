@@ -18,7 +18,9 @@ function navClass({ isActive }) {
  */
 export default function AppShell({ banner = <SampleBanner />, resetKey }) {
   // The landing page lays out its own full-width sections (the globe hero); every other page sits in the column.
-  const fullWidth = useLocation().pathname === "/";
+  const { pathname } = useLocation();
+  const fullWidth = pathname === "/";
+  const country = pathname.match(/^\/r\/([^/]+)/)?.[1];
   return (
     <div className="flex min-h-svh flex-col">
       <div data-slot="sample-banner" className="sticky top-0 z-50">
@@ -26,20 +28,14 @@ export default function AppShell({ banner = <SampleBanner />, resetKey }) {
       </div>
       <header className="border-b">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-3">
-          <Link to="/" className="site-brand focus-visible:outline-2 focus-visible:outline-offset-4">
-            <img
-              src={`${import.meta.env.BASE_URL}prometheus-torch-logo.png`}
-              alt="Prometheus Torch"
-              width="1360"
-              height="768"
-              className="site-brand-logo"
-            />
+          <Link to="/" className="text-lg font-semibold tracking-tight focus-visible:outline-2 focus-visible:outline-offset-4">
+            Prometheus Torch
           </Link>
           <nav aria-label="Main" className="flex gap-1">
             <NavLink to="/pick" className={navClass}>
               Pick a place
             </NavLink>
-            <NavLink to="/methods" className={navClass}>
+            <NavLink to={country ? `/methods?region=${encodeURIComponent(country)}` : "/methods"} className={navClass}>
               Methods
             </NavLink>
           </nav>

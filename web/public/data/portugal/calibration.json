@@ -1,0 +1,150 @@
+{
+  "code_version": "5c7271a5",
+  "count_resolution": 6,
+  "eras": [
+    {
+      "from": "2003-01-01",
+      "kind": "observed",
+      "source": "aqua",
+      "to": "2022-12-31"
+    },
+    {
+      "from": "2023-01-01",
+      "kind": "harmonized",
+      "source": "snpp",
+      "to": "2025-12-31"
+    },
+    {
+      "from": "2026-01-01",
+      "kind": "harmonized",
+      "source": "noaa20",
+      "to": null
+    }
+  ],
+  "fit_window": {
+    "noaa20": null,
+    "snpp": [
+      "2013-01-01",
+      "2022-12-31"
+    ]
+  },
+  "generated_at": "2026-11-15T22:13:55Z",
+  "k": {
+    "noaa20": [],
+    "snpp": [
+      {
+        "aqua_celldays": 228.0,
+        "hi": 0.342,
+        "k": 0.297,
+        "lo": 0.256,
+        "month": 1,
+        "viirs_celldays": 785.0
+      },
+      {
+        "aqua_celldays": 261.0,
+        "hi": 0.41,
+        "k": 0.361,
+        "lo": 0.322,
+        "month": 2,
+        "viirs_celldays": 728.0
+      },
+      {
+        "aqua_celldays": 493.0,
+        "hi": 0.378,
+        "k": 0.339,
+        "lo": 0.3,
+        "month": 3,
+        "viirs_celldays": 1463.0
+      },
+      {
+        "aqua_celldays": 290.0,
+        "hi": 0.35,
+        "k": 0.283,
+        "lo": 0.207,
+        "month": 4,
+        "viirs_celldays": 1045.0
+      },
+      {
+        "aqua_celldays": 145.0,
+        "hi": 0.29,
+        "k": 0.253,
+        "lo": 0.224,
+        "month": 5,
+        "viirs_celldays": 601.0
+      },
+      {
+        "aqua_celldays": 145.0,
+        "hi": 0.455,
+        "k": 0.4,
+        "lo": 0.335,
+        "month": 6,
+        "viirs_celldays": 362.0
+      },
+      {
+        "aqua_celldays": 341.0,
+        "hi": 0.527,
+        "k": 0.466,
+        "lo": 0.399,
+        "month": 7,
+        "viirs_celldays": 725.0
+      },
+      {
+        "aqua_celldays": 1160.0,
+        "hi": 0.665,
+        "k": 0.633,
+        "lo": 0.583,
+        "month": 8,
+        "viirs_celldays": 1815.0
+      },
+      {
+        "aqua_celldays": 506.0,
+        "hi": 0.578,
+        "k": 0.53,
+        "lo": 0.435,
+        "month": 9,
+        "viirs_celldays": 942.0
+      },
+      {
+        "aqua_celldays": 524.0,
+        "hi": 0.471,
+        "k": 0.385,
+        "lo": 0.293,
+        "month": 10,
+        "viirs_celldays": 1363.0
+      },
+      {
+        "aqua_celldays": 160.0,
+        "hi": 0.284,
+        "k": 0.246,
+        "lo": 0.219,
+        "month": 11,
+        "viirs_celldays": 681.0
+      },
+      {
+        "aqua_celldays": 119.0,
+        "hi": 0.296,
+        "k": 0.277,
+        "lo": 0.26,
+        "month": 12,
+        "viirs_celldays": 452.0
+      }
+    ]
+  },
+  "k_annual": {
+    "noaa20": {
+      "hi": null,
+      "k": null,
+      "lo": null
+    },
+    "snpp": {
+      "hi": 0.429,
+      "k": 0.399,
+      "lo": 0.362
+    }
+  },
+  "noaa20_method": null,
+  "reference": "aqua_day",
+  "region": "portugal",
+  "schema_version": "1.0",
+  "shrinkage_n0": 50
+}

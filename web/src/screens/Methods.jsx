@@ -1,4 +1,5 @@
 import { CheckCircle2, CircleAlert, XCircle } from "lucide-react";
+import { useSearchParams } from "react-router-dom";
 import SectionState from "@/components/SectionState.jsx";
 import KindBadge from "@/components/KindBadge.jsx";
 import GlossaryTerm from "@/components/GlossaryTerm.jsx";
@@ -40,7 +41,15 @@ export default function Methods() {
   const methods = useJson("methods.json");
   const manifest = useJson("manifest.json");
   const { state: regionsState, regions } = useRegions();
-  const m = methods.status === "ok" ? methods.data : null;
+  const [params, setParams] = useSearchParams();
+  const selectedRegion = regions.find((region) => region.id === params.get("region")) || regions[0];
+  const visibleRegions = regions.length > 1 && selectedRegion ? [selectedRegion] : regions;
+  const original = methods.status === "ok" && regionsState.status === "ok" ? methods.data : null;
+  const m = original && regions.length > 1 ? {
+    ...original,
+    ...Object.fromEntries(["drift", "validation", "eyesight", "inputs", "filters"].map((key) =>
+      [key, (original[key] || []).filter((row) => row.region === selectedRegion?.id)])),
+  } : original;
 
   // Region names for every id that appears (synthetic regions included: planted-truth and drift rows may use them).
   const allRegions = regionsState.status === "ok" ? regionsState.data.regions : [];
@@ -57,6 +66,15 @@ export default function Methods() {
           pipeline&apos;s output files, including the ones that do not flatter us.
         </p>
       </header>
+      {regions.length > 1 ? (
+        <label className="block max-w-md space-y-2 text-sm font-medium">
+          <span>Methods for a place</span>
+          <select value={selectedRegion?.id || ""} className="bg-background w-full rounded-md border px-3 py-2"
+            onChange={(event) => { const next = new URLSearchParams(params); next.set("region", event.target.value); setParams(next); }}>
+            {regions.map((region) => <option key={region.id} value={region.id}>{region.name}</option>)}
+          </select>
+        </label>
+      ) : null}
 
       {m ? null : <SectionState state={methods} title="Methods data" />}
 
@@ -76,8 +94,8 @@ export default function Methods() {
 
         <div className="min-w-0 space-y-6">
           {m?.decisions ? <FiveSteps d={m.decisions} /> : null}
-          {m && (has(m.drift) || regions.some((r) => r.files?.includes("calibration"))) ? (
-            <Drift drift={m.drift || []} regions={regions} nameOf={nameOf} trustedThrough={m.decisions?.aqua_trusted_through} />
+          {m && (has(m.drift) || visibleRegions.some((r) => r.files?.includes("calibration"))) ? (
+            <Drift drift={m.drift || []} regions={visibleRegions} nameOf={nameOf} trustedThrough={m.decisions?.aqua_trusted_through} />
           ) : null}
           {has(m?.validation) ? <Validation rows={m.validation} nameOf={nameOf} /> : null}
           {has(m?.planted_truth) ? <PlantedTruth rows={m.planted_truth} manifest={manifest} /> : null}

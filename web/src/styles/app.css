@@ -43,17 +43,3 @@
     @apply bg-background text-foreground font-sans antialiased;
   }
 }
-
-.site-brand {
-  display: inline-flex;
-  flex-shrink: 0;
-  align-items: center;
-  border-radius: 4px;
-}
-
-.site-brand-logo {
-  display: block;
-  width: auto;
-  height: 52px;
-  border-radius: 3px;
-}

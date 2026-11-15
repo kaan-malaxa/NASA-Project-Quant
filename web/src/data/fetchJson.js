@@ -67,7 +67,15 @@ async function load(path, opts) {
 
   let data;
   try {
-    data = JSON.parse(await res.text());
+    const bytes = new Uint8Array(await res.arrayBuffer());
+    let text;
+    if (bytes[0] === 0x1f && bytes[1] === 0x8b) {
+      const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"));
+      text = await new Response(stream).text();
+    } else {
+      text = new TextDecoder().decode(bytes);
+    }
+    data = JSON.parse(text);
   } catch (err) {
     return { ok: false, reason: "invalid", detail: `not valid JSON: ${err?.message || err}`, path };
   }

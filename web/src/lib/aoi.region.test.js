@@ -11,7 +11,7 @@ const regions = json("regions.json").regions;
 
 it("has required real region fixtures", () => expect(regions.length).toBeGreaterThan(0));
 for (const region of regions) {
-  it(`${region.id}: whole-region contributions match EVERY nonmissing month within 0.5%`, () => {
+  it(`${region.id}: whole-region contributions match EVERY nonmissing month within 0.5%`, { timeout: 120000 }, () => {
     expect(region.files).toContain("spatial_index");
     const index = json(`${region.id}/spatial_index.json`);
     const shards = index.years.map((entry) => json(`${region.id}/${entry.path}`));

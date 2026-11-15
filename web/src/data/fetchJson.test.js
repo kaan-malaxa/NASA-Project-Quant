@@ -4,6 +4,8 @@ import { getSampleState, resetSample } from "./sample.js";
 import { getSchema, schemaNameForPath } from "./schemas.js";
 import { mockFetch } from "@/test/mockFetch.js";
 import { regionsJson, weeklyJson } from "@/test/fixtures.js";
+import { gzipSync } from "node:zlib";
+import { Blob as NodeBlob } from "node:buffer";
 
 beforeEach(() => {
   clearFetchCache();
@@ -12,6 +14,15 @@ beforeEach(() => {
 afterEach(() => vi.unstubAllGlobals());
 
 describe("fetchJson", () => {
+  it("validates losslessly compressed deployed data and rejects corrupt gzip", async () => {
+    vi.stubGlobal("Blob", NodeBlob);
+    const data = weeklyJson();
+    vi.stubGlobal("fetch", vi.fn(async () => new Response(gzipSync(JSON.stringify(data)))));
+    expect(await fetchJson("testland/weekly.json")).toMatchObject({ ok: true, data });
+    clearFetchCache();
+    vi.stubGlobal("fetch", vi.fn(async () => new Response(new Uint8Array([0x1f, 0x8b, 0]))));
+    expect(await fetchJson("testland/weekly.json")).toMatchObject({ ok: false, reason: "invalid" });
+  });
   it("returns ok with data for a valid file", async () => {
     mockFetch({ "regions.json": regionsJson() });
     const r = await fetchJson("regions.json");

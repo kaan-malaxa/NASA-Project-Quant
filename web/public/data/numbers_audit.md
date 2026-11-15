@@ -2,7 +2,7 @@
 
 Every headline number on the site, with the file and JSON Pointer it comes from. No number may appear in the pitch, slides, README or video unless it is on this list. Values are copied exactly from the files; sentences are quoted exactly.
 
-Built from code_version 1bb5e8f4, 29a6fe64, 4389fe3d.
+Built from code_version 1bb5e8f4, 4389fe3d, 5c7271a5.
 
 ## United States (`us`)
 
@@ -147,6 +147,78 @@ Built from code_version 1bb5e8f4, 29a6fe64, 4389fe3d.
 - eyesight param c_hi: 0.84  methods.json#/eyesight/1/params/c_hi
 - eyesight param c_lo: 0.799  methods.json#/eyesight/1/params/c_lo
 - eyesight g: 1.125  methods.json#/eyesight/1/g
+
+## Portugal (`portugal`)
+
+- jump multiple (value): 2.672  portugal/ruler.json#/jump_multiple/value
+- jump multiple (lo): 2.32  portugal/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 2.918  portugal/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  portugal/ruler.json#/jump_multiple/years
+- ruler sentence: "In Portugal, VIIRS reports about 2.7 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  portugal/ruler.json#/sentence
+- harmonized trend pct_per_decade: -57.809  portugal/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -88.618  portugal/trend.json#/harmonized/lo
+- harmonized trend hi: -29.96  portugal/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  portugal/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 30.947  portugal/trend.json#/naive/pct_per_decade
+- naive trend lo: -8.584  portugal/trend.json#/naive/lo
+- naive trend hi: 78.925  portugal/trend.json#/naive/hi
+- naive trend direction: "no_clear_change"  portugal/trend.json#/naive/direction
+- trend years: [2003, 2025]  portugal/trend.json#/years
+- verdict sentence_id: "artifact_falling"  portugal/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 58% per decade (-89 to -30)."  portugal/trend.json#/sentence
+- critical weeks: [6, 7, 9, 10, 11, 12, 13, 14, 15, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44]  portugal/season.json#/critical_weeks
+- window w1 label: "early-July to early-November"  portugal/season.json#/windows/0/label
+- window w1 start_week: 28  portugal/season.json#/windows/0/start_week
+- window w1 peak_week: 33  portugal/season.json#/windows/0/peak_week
+- window w1 end_week: 44  portugal/season.json#/windows/0/end_week
+- window w1 share: 0.634  portugal/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 1.818  portugal/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -12.001  portugal/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 9.0  portugal/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-July to early-November season."  portugal/season.json#/windows/0/sentence
+- window w2 label: "early-February to mid-April"  portugal/season.json#/windows/1/label
+- window w2 start_week: 6  portugal/season.json#/windows/1/start_week
+- window w2 peak_week: 11  portugal/season.json#/windows/1/peak_week
+- window w2 end_week: 15  portugal/season.json#/windows/1/end_week
+- window w2 share: 0.189  portugal/season.json#/windows/1/share
+- window w2 start shift days per decade (value): -10.714  portugal/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -22.361  portugal/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): -5.0  portugal/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "The early-February to mid-April season now starts about 11 days earlier per decade (-22 to -5)."  portugal/season.json#/windows/1/sentence
+- this week value: null  portugal/nowcast.json#/value
+- this week lo: null  portugal/nowcast.json#/lo
+- this week hi: null  portugal/nowcast.json#/hi
+- this week percentile: null  portugal/nowcast.json#/percentile
+- this week status: "unavailable"  portugal/nowcast.json#/status
+- this week as_of: null  portugal/nowcast.json#/as_of
+- this week window start: null  portugal/nowcast.json#/window/start
+- this week window end: null  portugal/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  portugal/nowcast.json#/baseline_years
+- month to date value: null  portugal/nowcast.json#/month_to_date/value
+- month to date median: null  portugal/nowcast.json#/month_to_date/median
+- month to date ratio: null  portugal/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  portugal/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  portugal/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.335  methods.json#/validation/36/value
+- LOYO weekly WAPE baseline annual_ratio: 0.455  methods.json#/validation/36/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.516  methods.json#/validation/36/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/36/years
+- LOYO weekly WAPE (tier2): 0.275  methods.json#/validation/51/value
+- LOYO years: [2013, 2022]  methods.json#/validation/51/years
+- reliability_err (tier2): 0.001  methods.json#/validation/49/value
+- reliability_year_absolute_err (tier2): 0.059  methods.json#/validation/50/value
+- t1_t2_wape (tier2): 0.269  methods.json#/validation/53/value
+- eyesight status: "validated"  methods.json#/eyesight/2/status
+- eyesight param a: -3.645  methods.json#/eyesight/2/params/a
+- eyesight param a_hi: -3.492  methods.json#/eyesight/2/params/a_hi
+- eyesight param a_lo: -3.832  methods.json#/eyesight/2/params/a_lo
+- eyesight param b: 2.469  methods.json#/eyesight/2/params/b
+- eyesight param b_hi: 2.622  methods.json#/eyesight/2/params/b_hi
+- eyesight param b_lo: 2.269  methods.json#/eyesight/2/params/b_lo
+- eyesight param c: 0.868  methods.json#/eyesight/2/params/c
+- eyesight param c_hi: 0.954  methods.json#/eyesight/2/params/c_hi
+- eyesight param c_lo: 0.809  methods.json#/eyesight/2/params/c_lo
+- eyesight g: 1.525  methods.json#/eyesight/2/g
 
 ## Planted truth (synthland)
 

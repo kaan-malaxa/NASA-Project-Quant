@@ -9,7 +9,7 @@
   --hero-black: #020708;
   --hero-accent: #4dffc3; /* outlines of the satellite buttons and labels */
   --pad: 16px;
-  --landing-stage-h: calc(100svh - var(--sticky-offset, 0px) - 4.8125rem);
+  --landing-stage-h: calc(100svh - var(--sticky-offset, 0px) - 3.75rem);
   min-height: var(--landing-stage-h);
   display: grid;
   color: var(--foreground);
@@ -47,7 +47,7 @@
 
 /* ---- Scroll story (Phase 2). JS sets --t (0..1), --t2 (late part of t) and the --head/--cta/--ruler positions. ---- */
 .landing-story {
-  --landing-stage-h: calc(100svh - var(--sticky-offset, 0px) - 4.8125rem);
+  --landing-stage-h: calc(100svh - var(--sticky-offset, 0px) - 3.75rem);
   position: relative;
   background: #020708;
 }

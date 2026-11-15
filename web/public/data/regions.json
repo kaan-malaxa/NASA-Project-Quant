@@ -1,5 +1,5 @@
 {
-  "code_version": "29a6fe64",
+  "code_version": "5c7271a5",
   "configuration": {
     "anomaly": {
       "above_pct": 75,
@@ -26,7 +26,7 @@
       "year_min_covered_frac": 0.9
     }
   },
-  "generated_at": "2026-11-15T18:00:00Z",
+  "generated_at": "2026-11-15T22:17:45Z",
   "regions": [
     {
       "bbox": [
@@ -105,6 +105,45 @@
       ],
       "story": "A simulated region where the right answer is known.",
       "synthetic": true
+    },
+    {
+      "bbox": [
+        -31.285,
+        30.029,
+        -6.206,
+        42.154
+      ],
+      "centroid": [
+        -8.591,
+        39.587
+      ],
+      "country": "PT",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "portugal",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 2319,
+      "name": "Portugal",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Portugal, compared across sensors.",
+      "synthetic": false
     }
   ],
   "schema_version": "1.0"

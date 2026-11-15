@@ -1,6 +1,6 @@
 {
   "ai_use": "AI coding assistants helped write and test the pipeline and website code. They did not produce any of the numbers: every number on this site comes from the pipeline's output files.",
-  "code_version": "29a6fe64",
+  "code_version": "5c7271a5",
   "decisions": {
     "aqua_trusted_through": "2022-12-31",
     "baseline_years": [
@@ -357,6 +357,110 @@
       "region": "synthland",
       "sensor": "noaa20",
       "year": 2026
+    },
+    {
+      "hi": 0.529,
+      "k_annual": 0.453,
+      "lo": 0.341,
+      "region": "portugal",
+      "sensor": "snpp",
+      "year": 2013
+    },
+    {
+      "hi": 0.333,
+      "k_annual": 0.281,
+      "lo": 0.224,
+      "region": "portugal",
+      "sensor": "snpp",
+      "year": 2014
+    },
+    {
+      "hi": 0.404,
+      "k_annual": 0.346,
+      "lo": 0.29,
+      "region": "portugal",
+      "sensor": "snpp",
+      "year": 2015
+    },
+    {
+      "hi": 0.575,
+      "k_annual": 0.492,
+      "lo": 0.357,
+      "region": "portugal",
+      "sensor": "snpp",
+      "year": 2016
+    },
+    {
+      "hi": 0.478,
+      "k_annual": 0.428,
+      "lo": 0.365,
+      "region": "portugal",
+      "sensor": "snpp",
+      "year": 2017
+    },
+    {
+      "hi": 0.365,
+      "k_annual": 0.318,
+      "lo": 0.273,
+      "region": "portugal",
+      "sensor": "snpp",
+      "year": 2018
+    },
+    {
+      "hi": 0.401,
+      "k_annual": 0.348,
+      "lo": 0.304,
+      "region": "portugal",
+      "sensor": "snpp",
+      "year": 2019
+    },
+    {
+      "hi": 0.469,
+      "k_annual": 0.399,
+      "lo": 0.335,
+      "region": "portugal",
+      "sensor": "snpp",
+      "year": 2020
+    },
+    {
+      "hi": 0.388,
+      "k_annual": 0.348,
+      "lo": 0.304,
+      "region": "portugal",
+      "sensor": "snpp",
+      "year": 2021
+    },
+    {
+      "hi": 0.505,
+      "k_annual": 0.431,
+      "lo": 0.36,
+      "region": "portugal",
+      "sensor": "snpp",
+      "year": 2022
+    },
+    {
+      "hi": 0.451,
+      "k_annual": 0.396,
+      "lo": 0.33,
+      "region": "portugal",
+      "sensor": "snpp",
+      "year": 2023
+    },
+    {
+      "hi": 0.525,
+      "k_annual": 0.452,
+      "lo": 0.342,
+      "region": "portugal",
+      "sensor": "snpp",
+      "year": 2024
+    },
+    {
+      "hi": 0.705,
+      "k_annual": 0.632,
+      "lo": 0.517,
+      "region": "portugal",
+      "sensor": "snpp",
+      "year": 2025
     }
   ],
   "eyesight": [
@@ -10125,6 +10229,4889 @@
       },
       "region": "synthland",
       "status": "validated"
+    },
+    {
+      "binned": [
+        {
+          "frp_mw": 0.935,
+          "n": 1364,
+          "p_obs": 0.04
+        },
+        {
+          "frp_mw": 2.954,
+          "n": 1368,
+          "p_obs": 0.064
+        },
+        {
+          "frp_mw": 4.162,
+          "n": 1379,
+          "p_obs": 0.081
+        },
+        {
+          "frp_mw": 6.101,
+          "n": 1369,
+          "p_obs": 0.133
+        },
+        {
+          "frp_mw": 9.573,
+          "n": 1370,
+          "p_obs": 0.223
+        },
+        {
+          "frp_mw": 17.079,
+          "n": 1371,
+          "p_obs": 0.303
+        },
+        {
+          "frp_mw": 41.583,
+          "n": 1370,
+          "p_obs": 0.504
+        },
+        {
+          "frp_mw": 996.196,
+          "n": 1371,
+          "p_obs": 0.743
+        }
+      ],
+      "curve": [
+        {
+          "frp_mw": 0.5,
+          "hi": 0.013,
+          "lo": 0.009,
+          "p": 0.011
+        },
+        {
+          "frp_mw": 0.706,
+          "hi": 0.019,
+          "lo": 0.012,
+          "p": 0.015
+        },
+        {
+          "frp_mw": 0.998,
+          "hi": 0.026,
+          "lo": 0.018,
+          "p": 0.022
+        },
+        {
+          "frp_mw": 1.41,
+          "hi": 0.036,
+          "lo": 0.027,
+          "p": 0.032
+        },
+        {
+          "frp_mw": 1.992,
+          "hi": 0.051,
+          "lo": 0.039,
+          "p": 0.045
+        },
+        {
+          "frp_mw": 2.814,
+          "hi": 0.07,
+          "lo": 0.056,
+          "p": 0.064
+        },
+        {
+          "frp_mw": 3.976,
+          "hi": 0.097,
+          "lo": 0.08,
+          "p": 0.089
+        },
+        {
+          "frp_mw": 5.618,
+          "hi": 0.132,
+          "lo": 0.113,
+          "p": 0.124
+        },
+        {
+          "frp_mw": 7.937,
+          "hi": 0.176,
+          "lo": 0.155,
+          "p": 0.168
+        },
+        {
+          "frp_mw": 11.214,
+          "hi": 0.233,
+          "lo": 0.21,
+          "p": 0.224
+        },
+        {
+          "frp_mw": 15.843,
+          "hi": 0.301,
+          "lo": 0.274,
+          "p": 0.291
+        },
+        {
+          "frp_mw": 22.383,
+          "hi": 0.378,
+          "lo": 0.347,
+          "p": 0.367
+        },
+        {
+          "frp_mw": 31.623,
+          "hi": 0.46,
+          "lo": 0.427,
+          "p": 0.447
+        },
+        {
+          "frp_mw": 44.677,
+          "hi": 0.54,
+          "lo": 0.504,
+          "p": 0.526
+        },
+        {
+          "frp_mw": 63.121,
+          "hi": 0.616,
+          "lo": 0.574,
+          "p": 0.599
+        },
+        {
+          "frp_mw": 89.178,
+          "hi": 0.683,
+          "lo": 0.632,
+          "p": 0.662
+        },
+        {
+          "frp_mw": 125.992,
+          "hi": 0.742,
+          "lo": 0.679,
+          "p": 0.715
+        },
+        {
+          "frp_mw": 178.004,
+          "hi": 0.79,
+          "lo": 0.717,
+          "p": 0.756
+        },
+        {
+          "frp_mw": 251.487,
+          "hi": 0.83,
+          "lo": 0.743,
+          "p": 0.787
+        },
+        {
+          "frp_mw": 355.305,
+          "hi": 0.863,
+          "lo": 0.763,
+          "p": 0.81
+        },
+        {
+          "frp_mw": 501.98,
+          "hi": 0.889,
+          "lo": 0.777,
+          "p": 0.827
+        },
+        {
+          "frp_mw": 709.206,
+          "hi": 0.906,
+          "lo": 0.787,
+          "p": 0.839
+        },
+        {
+          "frp_mw": 1001.978,
+          "hi": 0.921,
+          "lo": 0.795,
+          "p": 0.848
+        },
+        {
+          "frp_mw": 1415.612,
+          "hi": 0.932,
+          "lo": 0.799,
+          "p": 0.854
+        },
+        {
+          "frp_mw": 2000.0,
+          "hi": 0.939,
+          "lo": 0.802,
+          "p": 0.858
+        }
+      ],
+      "g": 1.525,
+      "heldout_compare": [
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 1.792,
+          "tier2": 1.587,
+          "week": 1,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.597,
+          "tier2": 0.304,
+          "week": 2,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.299,
+          "tier2": 0.098,
+          "week": 3,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 4,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 1.759,
+          "tier2": 0.443,
+          "week": 5,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 5.0,
+          "tier1": 6.569,
+          "tier2": 3.282,
+          "week": 6,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 1.46,
+          "tier2": 0.696,
+          "week": 7,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 1.46,
+          "tier2": 0.7,
+          "week": 8,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 7.344,
+          "tier2": 4.052,
+          "week": 9,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 10,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 1.711,
+          "tier2": 0.582,
+          "week": 11,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.342,
+          "tier2": 0.325,
+          "week": 12,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.342,
+          "tier2": 0.189,
+          "week": 13,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 1.732,
+          "tier2": 1.063,
+          "week": 14,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 3.175,
+          "tier2": 1.797,
+          "week": 15,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 14.0,
+          "tier1": 15.585,
+          "tier2": 16.96,
+          "week": 16,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 10.0,
+          "tier1": 9.813,
+          "tier2": 8.781,
+          "week": 17,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 4.544,
+          "tier2": 4.037,
+          "week": 18,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 4.005,
+          "tier2": 3.864,
+          "week": 19,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 10.0,
+          "tier1": 4.256,
+          "tier2": 5.26,
+          "week": 20,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 6.0,
+          "tier1": 3.755,
+          "tier2": 4.226,
+          "week": 21,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 4.0,
+          "tier1": 5.97,
+          "tier2": 5.882,
+          "week": 22,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 1.652,
+          "tier2": 2.587,
+          "week": 23,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 2.891,
+          "tier2": 1.417,
+          "week": 24,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 1.652,
+          "tier2": 1.704,
+          "week": 25,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 10.0,
+          "tier1": 12.803,
+          "tier2": 10.523,
+          "week": 26,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 12.0,
+          "tier1": 12.509,
+          "tier2": 13.509,
+          "week": 27,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 15.0,
+          "tier1": 12.973,
+          "tier2": 14.403,
+          "week": 28,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 11.0,
+          "tier1": 9.729,
+          "tier2": 11.418,
+          "week": 29,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 5.0,
+          "tier1": 5.096,
+          "tier2": 5.431,
+          "week": 30,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 7.0,
+          "tier1": 12.355,
+          "tier2": 9.443,
+          "week": 31,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 36.0,
+          "tier1": 28.234,
+          "tier2": 30.25,
+          "week": 32,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 48.0,
+          "tier1": 61.488,
+          "tier2": 56.941,
+          "week": 33,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 159.0,
+          "tier1": 139.289,
+          "tier2": 146.351,
+          "week": 34,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 148.0,
+          "tier1": 134.632,
+          "tier2": 145.563,
+          "week": 35,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 35.0,
+          "tier1": 27.97,
+          "tier2": 37.286,
+          "week": 36,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 43.0,
+          "tier1": 34.239,
+          "tier2": 34.91,
+          "week": 37,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 74.0,
+          "tier1": 56.904,
+          "tier2": 65.931,
+          "week": 38,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 4.0,
+          "tier1": 3.858,
+          "tier2": 4.827,
+          "week": 39,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 10.0,
+          "tier1": 6.388,
+          "tier2": 4.398,
+          "week": 40,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 13.0,
+          "tier1": 29.942,
+          "tier2": 27.472,
+          "week": 41,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 19.0,
+          "tier1": 19.961,
+          "tier2": 18.457,
+          "week": 42,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 43,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 6.0,
+          "tier1": 13.945,
+          "tier2": 8.432,
+          "week": 44,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 5.755,
+          "tier2": 4.951,
+          "week": 45,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 11.0,
+          "tier1": 11.51,
+          "tier2": 13.527,
+          "week": 46,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 7.0,
+          "tier1": 10.986,
+          "tier2": 9.671,
+          "week": 47,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 16.0,
+          "tier1": 21.428,
+          "tier2": 22.706,
+          "week": 48,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 20.0,
+          "tier1": 23.328,
+          "tier2": 21.389,
+          "week": 49,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 5.0,
+          "tier1": 4.896,
+          "tier2": 4.69,
+          "week": 50,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 0.864,
+          "tier2": 0.451,
+          "week": 51,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2013,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.504,
+          "tier2": 0.357,
+          "week": 52,
+          "year": 2013
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 1,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 2,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 3,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 4,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 5,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.358,
+          "tier2": 0.118,
+          "week": 6,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 7,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 8,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 9,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 7.0,
+          "tier1": 15.305,
+          "tier2": 8.808,
+          "week": 10,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 44.0,
+          "tier1": 36.051,
+          "tier2": 32.178,
+          "week": 11,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 11.0,
+          "tier1": 10.543,
+          "tier2": 10.749,
+          "week": 12,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 1.36,
+          "tier2": 0.958,
+          "week": 13,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 2.065,
+          "tier2": 1.093,
+          "week": 14,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 5.0,
+          "tier1": 10.618,
+          "tier2": 4.91,
+          "week": 15,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 4.424,
+          "tier2": 2.813,
+          "week": 16,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 2.949,
+          "tier2": 1.454,
+          "week": 17,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 7.0,
+          "tier1": 6.815,
+          "tier2": 7.172,
+          "week": 18,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 6.743,
+          "tier2": 5.804,
+          "week": 19,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 7.0,
+          "tier1": 6.743,
+          "tier2": 10.231,
+          "week": 20,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 1.037,
+          "tier2": 1.311,
+          "week": 21,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 3.311,
+          "tier2": 2.028,
+          "week": 22,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 2.955,
+          "tier2": 1.076,
+          "week": 23,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 6.0,
+          "tier1": 5.488,
+          "tier2": 5.516,
+          "week": 24,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 1.689,
+          "tier2": 0.951,
+          "week": 25,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 2.955,
+          "tier2": 1.753,
+          "week": 26,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 0.947,
+          "tier2": 0.659,
+          "week": 27,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 4.262,
+          "tier2": 3.547,
+          "week": 28,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 4.735,
+          "tier2": 5.481,
+          "week": 29,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 3.315,
+          "tier2": 4.646,
+          "week": 30,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 4.0,
+          "tier1": 4.6,
+          "tier2": 5.011,
+          "week": 31,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 3.18,
+          "tier2": 3.827,
+          "week": 32,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 15.0,
+          "tier1": 15.262,
+          "tier2": 12.444,
+          "week": 33,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 10.0,
+          "tier1": 8.903,
+          "tier2": 6.693,
+          "week": 34,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 8.0,
+          "tier1": 12.289,
+          "tier2": 11.869,
+          "week": 35,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 4.0,
+          "tier1": 4.287,
+          "tier2": 4.265,
+          "week": 36,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.536,
+          "tier2": 0.286,
+          "week": 37,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 1.072,
+          "tier2": 0.205,
+          "week": 38,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 3.215,
+          "tier2": 0.675,
+          "week": 39,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 8.0,
+          "tier1": 16.48,
+          "tier2": 8.245,
+          "week": 40,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.402,
+          "tier2": 0.341,
+          "week": 41,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 4.0,
+          "tier1": 7.235,
+          "tier2": 3.399,
+          "week": 42,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 6.0,
+          "tier1": 13.666,
+          "tier2": 8.062,
+          "week": 43,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 9.0,
+          "tier1": 13.357,
+          "tier2": 10.493,
+          "week": 44,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 0.989,
+          "tier2": 1.241,
+          "week": 45,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 46,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 47,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 48,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 1.117,
+          "tier2": 1.128,
+          "week": 49,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 1.675,
+          "tier2": 1.404,
+          "week": 50,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 0.558,
+          "tier2": 0.362,
+          "week": 51,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2014,
+          "kind": "harmonized",
+          "observed": 3.5,
+          "tier1": 3.908,
+          "tier2": 4.122,
+          "week": 52,
+          "year": 2014
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 9.0,
+          "tier1": 11.603,
+          "tier2": 8.687,
+          "week": 1,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 11.0,
+          "tier1": 12.519,
+          "tier2": 11.725,
+          "week": 2,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.611,
+          "tier2": 0.232,
+          "week": 3,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 4.58,
+          "tier2": 3.499,
+          "week": 4,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 1.437,
+          "tier2": 1.089,
+          "week": 5,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 8.0,
+          "tier1": 14.713,
+          "tier2": 7.953,
+          "week": 6,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 4.15,
+          "tier2": 3.418,
+          "week": 7,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 5.281,
+          "tier2": 2.609,
+          "week": 8,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 6.0,
+          "tier1": 7.209,
+          "tier2": 4.041,
+          "week": 9,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 62.0,
+          "tier1": 59.255,
+          "tier2": 47.565,
+          "week": 10,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 23.0,
+          "tier1": 39.03,
+          "tier2": 30.271,
+          "week": 11,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 13.0,
+          "tier1": 15.612,
+          "tier2": 9.305,
+          "week": 12,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 21.0,
+          "tier1": 27.473,
+          "tier2": 24.224,
+          "week": 13,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 83.0,
+          "tier1": 28.54,
+          "tier2": 50.345,
+          "week": 14,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 8.0,
+          "tier1": 7.135,
+          "tier2": 8.652,
+          "week": 15,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 2.616,
+          "tier2": 2.224,
+          "week": 16,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 1.189,
+          "tier2": 0.55,
+          "week": 17,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 2.964,
+          "tier2": 2.23,
+          "week": 18,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 1.793,
+          "tier2": 0.979,
+          "week": 19,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 4.867,
+          "tier2": 6.524,
+          "week": 20,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 11.0,
+          "tier1": 6.404,
+          "tier2": 12.151,
+          "week": 21,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 4.348,
+          "tier2": 3.403,
+          "week": 22,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 3.826,
+          "tier2": 4.472,
+          "week": 23,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 1.148,
+          "tier2": 0.432,
+          "week": 24,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 8.0,
+          "tier1": 3.061,
+          "tier2": 2.021,
+          "week": 25,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 15.0,
+          "tier1": 5.739,
+          "tier2": 5.448,
+          "week": 26,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 7.0,
+          "tier1": 12.039,
+          "tier2": 15.637,
+          "week": 27,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 13.0,
+          "tier1": 11.557,
+          "tier2": 12.852,
+          "week": 28,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 7.705,
+          "tier2": 5.846,
+          "week": 29,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 10.0,
+          "tier1": 11.557,
+          "tier2": 13.097,
+          "week": 30,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 14.0,
+          "tier1": 16.141,
+          "tier2": 12.802,
+          "week": 31,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 57.0,
+          "tier1": 71.665,
+          "tier2": 68.831,
+          "week": 32,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 4.519,
+          "tier2": 2.858,
+          "week": 33,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 8.0,
+          "tier1": 11.621,
+          "tier2": 10.604,
+          "week": 34,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 6.0,
+          "tier1": 5.811,
+          "tier2": 7.5,
+          "week": 35,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 8.673,
+          "tier2": 8.313,
+          "week": 36,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 4.0,
+          "tier1": 5.421,
+          "tier2": 5.604,
+          "week": 37,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 3.252,
+          "tier2": 1.938,
+          "week": 38,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 6.0,
+          "tier1": 7.047,
+          "tier2": 3.12,
+          "week": 39,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 16.0,
+          "tier1": 17.718,
+          "tier2": 16.312,
+          "week": 40,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 8.0,
+          "tier1": 18.505,
+          "tier2": 9.476,
+          "week": 41,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 7.0,
+          "tier1": 6.3,
+          "tier2": 3.012,
+          "week": 42,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 7.0,
+          "tier1": 6.3,
+          "tier2": 2.146,
+          "week": 43,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 1.181,
+          "tier2": 0.383,
+          "week": 44,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 5.0,
+          "tier1": 3.927,
+          "tier2": 3.198,
+          "week": 45,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 8.0,
+          "tier1": 7.117,
+          "tier2": 5.365,
+          "week": 46,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 5.645,
+          "tier2": 4.466,
+          "week": 47,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 8.0,
+          "tier1": 7.475,
+          "tier2": 4.57,
+          "week": 48,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 1.914,
+          "tier2": 1.593,
+          "week": 49,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 5.0,
+          "tier1": 1.914,
+          "tier2": 1.208,
+          "week": 50,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 1.367,
+          "tier2": 1.071,
+          "week": 51,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2015,
+          "kind": "harmonized",
+          "observed": 0.875,
+          "tier1": 1.436,
+          "tier2": 0.498,
+          "week": 52,
+          "year": 2015
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 1,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 2,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 3,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.296,
+          "tier2": 0.404,
+          "week": 4,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 1.786,
+          "tier2": 2.155,
+          "week": 5,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 0.357,
+          "tier2": 0.38,
+          "week": 6,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.714,
+          "tier2": 0.302,
+          "week": 7,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 1.786,
+          "tier2": 0.794,
+          "week": 8,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 3.432,
+          "tier2": 1.795,
+          "week": 9,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 4.0,
+          "tier1": 1.373,
+          "tier2": 2.35,
+          "week": 10,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 9.0,
+          "tier1": 15.446,
+          "tier2": 9.096,
+          "week": 11,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 2.746,
+          "tier2": 1.596,
+          "week": 12,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 2.059,
+          "tier2": 1.302,
+          "week": 13,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 6.0,
+          "tier1": 9.042,
+          "tier2": 3.953,
+          "week": 14,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 2.625,
+          "tier2": 2.265,
+          "week": 15,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.875,
+          "tier2": 0.782,
+          "week": 16,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 3.792,
+          "tier2": 2.488,
+          "week": 17,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 18.0,
+          "tier1": 11.971,
+          "tier2": 14.683,
+          "week": 18,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 19,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 1.443,
+          "tier2": 1.17,
+          "week": 20,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 0.481,
+          "tier2": 0.508,
+          "week": 21,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 0.241,
+          "tier2": 0.482,
+          "week": 22,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 1.983,
+          "tier2": 2.037,
+          "week": 23,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 0.397,
+          "tier2": 1.213,
+          "week": 24,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 3.172,
+          "tier2": 1.806,
+          "week": 25,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 5.0,
+          "tier1": 5.551,
+          "tier2": 4.727,
+          "week": 26,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 5.302,
+          "tier2": 3.43,
+          "week": 27,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 4.0,
+          "tier1": 5.302,
+          "tier2": 3.391,
+          "week": 28,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 12.0,
+          "tier1": 15.906,
+          "tier2": 13.141,
+          "week": 29,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 13.0,
+          "tier1": 16.388,
+          "tier2": 12.842,
+          "week": 30,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 12.0,
+          "tier1": 8.815,
+          "tier2": 8.272,
+          "week": 31,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 245.0,
+          "tier1": 206.771,
+          "tier2": 280.566,
+          "week": 32,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 68.0,
+          "tier1": 53.204,
+          "tier2": 51.897,
+          "week": 33,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 16.0,
+          "tier1": 22.975,
+          "tier2": 18.995,
+          "week": 34,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 17.0,
+          "tier1": 17.583,
+          "tier2": 17.021,
+          "week": 35,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 79.0,
+          "tier1": 73.553,
+          "tier2": 90.659,
+          "week": 36,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 24.0,
+          "tier1": 23.117,
+          "tier2": 30.104,
+          "week": 37,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 1.576,
+          "tier2": 0.97,
+          "week": 38,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 10.0,
+          "tier1": 8.406,
+          "tier2": 9.511,
+          "week": 39,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 9.0,
+          "tier1": 4.605,
+          "tier2": 6.179,
+          "week": 40,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 26.0,
+          "tier1": 15.145,
+          "tier2": 24.472,
+          "week": 41,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 20.0,
+          "tier1": 15.523,
+          "tier2": 14.845,
+          "week": 42,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 4.922,
+          "tier2": 1.53,
+          "week": 43,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 17.0,
+          "tier1": 30.219,
+          "tier2": 22.256,
+          "week": 44,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 4.0,
+          "tier1": 4.58,
+          "tier2": 3.821,
+          "week": 45,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 12.0,
+          "tier1": 13.993,
+          "tier2": 10.575,
+          "week": 46,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 1.018,
+          "tier2": 0.774,
+          "week": 47,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 48,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 1.909,
+          "tier2": 3.404,
+          "week": 49,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 8.0,
+          "tier1": 2.727,
+          "tier2": 2.412,
+          "week": 50,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 1.364,
+          "tier2": 1.086,
+          "week": 51,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2016,
+          "kind": "harmonized",
+          "observed": 10.889,
+          "tier1": 12.939,
+          "tier2": 12.195,
+          "week": 52,
+          "year": 2016
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 2.527,
+          "tier2": 3.018,
+          "week": 1,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 6.0,
+          "tier1": 9.162,
+          "tier2": 7.399,
+          "week": 2,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 24.0,
+          "tier1": 25.906,
+          "tier2": 27.863,
+          "week": 3,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 17.0,
+          "tier1": 25.59,
+          "tier2": 26.327,
+          "week": 4,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.353,
+          "tier2": 0.318,
+          "week": 5,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 0.353,
+          "tier2": 0.28,
+          "week": 6,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.705,
+          "tier2": 0.366,
+          "week": 7,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 31.0,
+          "tier1": 22.216,
+          "tier2": 19.81,
+          "week": 8,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 3.385,
+          "tier2": 1.777,
+          "week": 9,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 5.0,
+          "tier1": 10.156,
+          "tier2": 7.413,
+          "week": 10,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 92.0,
+          "tier1": 55.86,
+          "tier2": 68.154,
+          "week": 11,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 20.0,
+          "tier1": 17.456,
+          "tier2": 12.433,
+          "week": 12,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 3.408,
+          "tier2": 2.018,
+          "week": 13,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 17.0,
+          "tier1": 28.978,
+          "tier2": 25.167,
+          "week": 14,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 27.0,
+          "tier1": 19.871,
+          "tier2": 23.206,
+          "week": 15,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 32.0,
+          "tier1": 19.043,
+          "tier2": 26.583,
+          "week": 16,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 20.0,
+          "tier1": 19.871,
+          "tier2": 24.397,
+          "week": 17,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 4.0,
+          "tier1": 2.79,
+          "tier2": 1.727,
+          "week": 18,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 0.754,
+          "tier2": 0.735,
+          "week": 19,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 3.017,
+          "tier2": 3.441,
+          "week": 20,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 3.017,
+          "tier2": 4.19,
+          "week": 21,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 1.882,
+          "tier2": 2.348,
+          "week": 22,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 4.0,
+          "tier1": 4.885,
+          "tier2": 3.703,
+          "week": 23,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 5.637,
+          "tier2": 9.993,
+          "week": 24,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 40.0,
+          "tier1": 27.807,
+          "tier2": 57.169,
+          "week": 25,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 2.108,
+          "tier2": 2.342,
+          "week": 26,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 6.0,
+          "tier1": 4.069,
+          "tier2": 4.745,
+          "week": 27,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 4.0,
+          "tier1": 4.521,
+          "tier2": 4.098,
+          "week": 28,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 23.0,
+          "tier1": 18.989,
+          "tier2": 38.495,
+          "week": 29,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 34.0,
+          "tier1": 29.387,
+          "tier2": 48.543,
+          "week": 30,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 6.0,
+          "tier1": 9.374,
+          "tier2": 5.581,
+          "week": 31,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 28.0,
+          "tier1": 35.052,
+          "tier2": 36.594,
+          "week": 32,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 54.0,
+          "tier1": 57.995,
+          "tier2": 64.109,
+          "week": 33,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 54.0,
+          "tier1": 49.072,
+          "tier2": 57.866,
+          "week": 34,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 15.0,
+          "tier1": 10.532,
+          "tier2": 6.607,
+          "week": 35,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 10.0,
+          "tier1": 13.415,
+          "tier2": 16.136,
+          "week": 36,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 15.0,
+          "tier1": 11.805,
+          "tier2": 11.352,
+          "week": 37,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 5.0,
+          "tier1": 9.659,
+          "tier2": 6.878,
+          "week": 38,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 5.0,
+          "tier1": 10.195,
+          "tier2": 4.619,
+          "week": 39,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 46.0,
+          "tier1": 22.813,
+          "tier2": 48.15,
+          "week": 40,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 103.0,
+          "tier1": 46.26,
+          "tier2": 87.193,
+          "week": 41,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 52.0,
+          "tier1": 34.219,
+          "tier2": 96.754,
+          "week": 42,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 3.168,
+          "tier2": 2.858,
+          "week": 43,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 0.634,
+          "tier2": 0.296,
+          "week": 44,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 0.762,
+          "tier2": 0.419,
+          "week": 45,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 14.0,
+          "tier1": 15.246,
+          "tier2": 18.435,
+          "week": 46,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 2.795,
+          "tier2": 2.303,
+          "week": 47,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 6.995,
+          "tier2": 4.27,
+          "week": 48,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 16.0,
+          "tier1": 14.932,
+          "tier2": 11.436,
+          "week": 49,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 0.277,
+          "tier2": 0.18,
+          "week": 50,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 10.0,
+          "tier1": 10.508,
+          "tier2": 7.3,
+          "week": 51,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2017,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.726,
+          "tier2": 0.218,
+          "week": 52,
+          "year": 2017
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 1.491,
+          "tier2": 0.703,
+          "week": 1,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.298,
+          "tier2": 0.311,
+          "week": 2,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 1.491,
+          "tier2": 0.733,
+          "week": 3,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 1.789,
+          "tier2": 0.532,
+          "week": 4,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 11.0,
+          "tier1": 10.413,
+          "tier2": 7.908,
+          "week": 5,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 9.0,
+          "tier1": 14.239,
+          "tier2": 6.183,
+          "week": 6,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 4.381,
+          "tier2": 2.834,
+          "week": 7,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 52.0,
+          "tier1": 48.925,
+          "tier2": 27.82,
+          "week": 8,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 10.0,
+          "tier1": 5.477,
+          "tier2": 6.84,
+          "week": 9,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 10,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 11,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 2.039,
+          "tier2": 0.847,
+          "week": 12,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 8.0,
+          "tier1": 9.855,
+          "tier2": 4.908,
+          "week": 13,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 1.159,
+          "tier2": 0.462,
+          "week": 14,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.29,
+          "tier2": 0.091,
+          "week": 15,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 14.0,
+          "tier1": 15.934,
+          "tier2": 13.158,
+          "week": 16,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 17.0,
+          "tier1": 20.28,
+          "tier2": 18.902,
+          "week": 17,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 14.0,
+          "tier1": 10.429,
+          "tier2": 7.283,
+          "week": 18,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 7.0,
+          "tier1": 9.339,
+          "tier2": 10.581,
+          "week": 19,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 12.274,
+          "tier2": 9.291,
+          "week": 20,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 2.668,
+          "tier2": 1.813,
+          "week": 21,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 22,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 23,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 2.855,
+          "tier2": 1.923,
+          "week": 24,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 2.855,
+          "tier2": 2.052,
+          "week": 25,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 2.039,
+          "tier2": 1.119,
+          "week": 26,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 27,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 2.357,
+          "tier2": 1.75,
+          "week": 28,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 3.771,
+          "tier2": 1.338,
+          "week": 29,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 0.943,
+          "tier2": 0.904,
+          "week": 30,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 9.0,
+          "tier1": 5.386,
+          "tier2": 8.291,
+          "week": 31,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 21.0,
+          "tier1": 20.947,
+          "tier2": 24.264,
+          "week": 32,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 4.0,
+          "tier1": 7.617,
+          "tier2": 6.275,
+          "week": 33,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 5.0,
+          "tier1": 5.713,
+          "tier2": 2.985,
+          "week": 34,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 4.0,
+          "tier1": 9.136,
+          "tier2": 7.041,
+          "week": 35,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 1.065,
+          "tier2": 0.513,
+          "week": 36,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 5.0,
+          "tier1": 5.86,
+          "tier2": 3.561,
+          "week": 37,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 4.794,
+          "tier2": 3.015,
+          "week": 38,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 13.0,
+          "tier1": 10.122,
+          "tier2": 11.311,
+          "week": 39,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 24.0,
+          "tier1": 18.079,
+          "tier2": 21.144,
+          "week": 40,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 2.751,
+          "tier2": 2.254,
+          "week": 41,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 6.681,
+          "tier2": 3.241,
+          "week": 42,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 16.0,
+          "tier1": 23.582,
+          "tier2": 14.632,
+          "week": 43,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 2.705,
+          "tier2": 1.642,
+          "week": 44,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.74,
+          "tier2": 0.338,
+          "week": 45,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 0.986,
+          "tier2": 0.803,
+          "week": 46,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.493,
+          "tier2": 0.143,
+          "week": 47,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 48,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 1.967,
+          "tier2": 0.995,
+          "week": 49,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.281,
+          "tier2": 0.155,
+          "week": 50,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 0.562,
+          "tier2": 0.419,
+          "week": 51,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2018,
+          "kind": "harmonized",
+          "observed": 1.75,
+          "tier1": 1.721,
+          "tier2": 0.913,
+          "week": 52,
+          "year": 2018
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 21.0,
+          "tier1": 14.811,
+          "tier2": 14.465,
+          "week": 1,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 16.0,
+          "tier1": 19.949,
+          "tier2": 19.317,
+          "week": 2,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 4.534,
+          "tier2": 3.314,
+          "week": 3,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 3.929,
+          "tier2": 3.108,
+          "week": 4,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 5,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 6.386,
+          "tier2": 3.649,
+          "week": 6,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 7.0,
+          "tier1": 15.401,
+          "tier2": 9.993,
+          "week": 7,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 14.0,
+          "tier1": 13.147,
+          "tier2": 8.941,
+          "week": 8,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 13.0,
+          "tier1": 19.036,
+          "tier2": 14.996,
+          "week": 9,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 3.421,
+          "tier2": 2.283,
+          "week": 10,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 11.0,
+          "tier1": 16.077,
+          "tier2": 10.243,
+          "week": 11,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 23.0,
+          "tier1": 23.945,
+          "tier2": 21.778,
+          "week": 12,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 25.0,
+          "tier1": 16.202,
+          "tier2": 19.285,
+          "week": 13,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 5.0,
+          "tier1": 2.876,
+          "tier2": 1.981,
+          "week": 14,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 4.027,
+          "tier2": 2.026,
+          "week": 15,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 1.438,
+          "tier2": 1.006,
+          "week": 16,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 2.876,
+          "tier2": 3.786,
+          "week": 17,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 6.0,
+          "tier1": 5.218,
+          "tier2": 5.9,
+          "week": 18,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 1.008,
+          "tier2": 1.032,
+          "week": 19,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 1.512,
+          "tier2": 1.157,
+          "week": 20,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 4.787,
+          "tier2": 6.585,
+          "week": 21,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 8.0,
+          "tier1": 4.175,
+          "tier2": 4.915,
+          "week": 22,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 1.583,
+          "tier2": 2.026,
+          "week": 23,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 3.562,
+          "tier2": 3.467,
+          "week": 24,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 0.792,
+          "tier2": 2.203,
+          "week": 25,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 2.507,
+          "tier2": 2.745,
+          "week": 26,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 0.923,
+          "tier2": 1.558,
+          "week": 27,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 1.847,
+          "tier2": 1.09,
+          "week": 28,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 10.0,
+          "tier1": 7.848,
+          "tier2": 7.199,
+          "week": 29,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 7.0,
+          "tier1": 3.693,
+          "tier2": 2.443,
+          "week": 30,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 6.0,
+          "tier1": 6.453,
+          "tier2": 5.147,
+          "week": 31,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 1.267,
+          "tier2": 0.186,
+          "week": 32,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 5.0,
+          "tier1": 3.167,
+          "tier2": 1.977,
+          "week": 33,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 4.0,
+          "tier1": 6.335,
+          "tier2": 3.806,
+          "week": 34,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 6.55,
+          "tier2": 6.55,
+          "week": 35,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 28.0,
+          "tier1": 22.742,
+          "tier2": 26.125,
+          "week": 36,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 18.0,
+          "tier1": 19.568,
+          "tier2": 18.182,
+          "week": 37,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 38,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 1.058,
+          "tier2": 0.594,
+          "week": 39,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 4.0,
+          "tier1": 3.087,
+          "tier2": 2.995,
+          "week": 40,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 1.929,
+          "tier2": 3.133,
+          "week": 41,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 9.0,
+          "tier1": 5.402,
+          "tier2": 6.376,
+          "week": 42,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 16.0,
+          "tier1": 21.607,
+          "tier2": 11.757,
+          "week": 43,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.243,
+          "tier2": 0.252,
+          "week": 44,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 2.428,
+          "tier2": 2.211,
+          "week": 45,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 7.0,
+          "tier1": 2.428,
+          "tier2": 2.682,
+          "week": 46,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.971,
+          "tier2": 0.723,
+          "week": 47,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.243,
+          "tier2": 0.209,
+          "week": 48,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 7.0,
+          "tier1": 5.496,
+          "tier2": 6.118,
+          "week": 49,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 1.099,
+          "tier2": 0.703,
+          "week": 50,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 51,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2019,
+          "kind": "harmonized",
+          "observed": 1.75,
+          "tier1": 1.924,
+          "tier2": 2.361,
+          "week": 52,
+          "year": 2019
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 3.283,
+          "tier2": 4.496,
+          "week": 1,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 5.0,
+          "tier1": 2.984,
+          "tier2": 3.198,
+          "week": 2,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 2.089,
+          "tier2": 2.416,
+          "week": 3,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.298,
+          "tier2": 0.118,
+          "week": 4,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 5.0,
+          "tier1": 3.131,
+          "tier2": 2.92,
+          "week": 5,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 1.81,
+          "tier2": 1.739,
+          "week": 6,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 1.086,
+          "tier2": 0.77,
+          "week": 7,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 16.0,
+          "tier1": 16.651,
+          "tier2": 10.687,
+          "week": 8,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 4.0,
+          "tier1": 7.602,
+          "tier2": 5.858,
+          "week": 9,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 3.093,
+          "tier2": 1.577,
+          "week": 10,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 6.0,
+          "tier1": 9.967,
+          "tier2": 6.511,
+          "week": 11,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 1.375,
+          "tier2": 0.548,
+          "week": 12,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 8.0,
+          "tier1": 9.623,
+          "tier2": 7.776,
+          "week": 13,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 1.989,
+          "tier2": 1.708,
+          "week": 14,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.284,
+          "tier2": 0.27,
+          "week": 15,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.284,
+          "tier2": 0.072,
+          "week": 16,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.568,
+          "tier2": 0.141,
+          "week": 17,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 1.308,
+          "tier2": 0.874,
+          "week": 18,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 1.831,
+          "tier2": 2.288,
+          "week": 19,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 2.093,
+          "tier2": 2.106,
+          "week": 20,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 1.831,
+          "tier2": 1.341,
+          "week": 21,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 1.308,
+          "tier2": 1.067,
+          "week": 22,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 1.587,
+          "tier2": 0.819,
+          "week": 23,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.794,
+          "tier2": 1.18,
+          "week": 24,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 7.0,
+          "tier1": 4.761,
+          "tier2": 5.684,
+          "week": 25,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 2.381,
+          "tier2": 2.034,
+          "week": 26,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 2.288,
+          "tier2": 1.793,
+          "week": 27,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 4.0,
+          "tier1": 3.66,
+          "tier2": 3.539,
+          "week": 28,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 16.0,
+          "tier1": 11.895,
+          "tier2": 12.684,
+          "week": 29,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 18.0,
+          "tier1": 17.843,
+          "tier2": 22.448,
+          "week": 30,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 10.0,
+          "tier1": 10.362,
+          "tier2": 14.453,
+          "week": 31,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 31.0,
+          "tier1": 24.594,
+          "tier2": 22.951,
+          "week": 32,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 26.833,
+          "tier1": 16.964,
+          "tier2": 25.643,
+          "week": 36,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 19.0,
+          "tier1": 15.579,
+          "tier2": 22.63,
+          "week": 37,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 1.558,
+          "tier2": 1.191,
+          "week": 38,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.519,
+          "tier2": 0.098,
+          "week": 39,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 4.0,
+          "tier1": 1.559,
+          "tier2": 0.666,
+          "week": 40,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 7.0,
+          "tier1": 12.864,
+          "tier2": 8.573,
+          "week": 41,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 10.0,
+          "tier1": 13.254,
+          "tier2": 6.636,
+          "week": 42,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 4.0,
+          "tier1": 2.339,
+          "tier2": 2.025,
+          "week": 43,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 6.0,
+          "tier1": 6.587,
+          "tier2": 5.562,
+          "week": 44,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.74,
+          "tier2": 0.388,
+          "week": 45,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 1.48,
+          "tier2": 1.085,
+          "week": 46,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 7.0,
+          "tier1": 6.413,
+          "tier2": 6.04,
+          "week": 47,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 48,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 1.118,
+          "tier2": 0.862,
+          "week": 49,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 50,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 51,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2020,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.217,
+          "tier2": 0.2,
+          "week": 52,
+          "year": 2020
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 0.587,
+          "tier2": 0.735,
+          "week": 1,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 10.0,
+          "tier1": 9.982,
+          "tier2": 8.411,
+          "week": 2,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 13.0,
+          "tier1": 11.45,
+          "tier2": 14.311,
+          "week": 3,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 4,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 5,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 6,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 7.0,
+          "tier1": 1.066,
+          "tier2": 0.514,
+          "week": 7,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 0.711,
+          "tier2": 0.486,
+          "week": 8,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 4.541,
+          "tier2": 4.2,
+          "week": 9,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 6.0,
+          "tier1": 7.905,
+          "tier2": 7.641,
+          "week": 10,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 26.0,
+          "tier1": 21.079,
+          "tier2": 20.535,
+          "week": 11,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 35.0,
+          "tier1": 25.361,
+          "tier2": 35.122,
+          "week": 12,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 14.0,
+          "tier1": 10.869,
+          "tier2": 10.239,
+          "week": 13,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 5.0,
+          "tier1": 7.818,
+          "tier2": 5.802,
+          "week": 14,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 2.316,
+          "tier2": 0.998,
+          "week": 15,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 4.054,
+          "tier2": 2.714,
+          "week": 16,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.579,
+          "tier2": 0.262,
+          "week": 17,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 5.0,
+          "tier1": 4.474,
+          "tier2": 4.108,
+          "week": 18,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 2.04,
+          "tier2": 1.285,
+          "week": 19,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 1.53,
+          "tier2": 0.766,
+          "week": 20,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.765,
+          "tier2": 0.817,
+          "week": 21,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 1.059,
+          "tier2": 0.482,
+          "week": 22,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 4.0,
+          "tier1": 2.411,
+          "tier2": 1.909,
+          "week": 23,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 2.009,
+          "tier2": 2.704,
+          "week": 24,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 1.206,
+          "tier2": 0.46,
+          "week": 25,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 2.481,
+          "tier2": 2.593,
+          "week": 26,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 4.0,
+          "tier1": 2.828,
+          "tier2": 3.103,
+          "week": 27,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 2.357,
+          "tier2": 2.657,
+          "week": 28,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 4.714,
+          "tier2": 5.418,
+          "week": 29,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 2.357,
+          "tier2": 2.323,
+          "week": 30,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 3.003,
+          "tier2": 1.299,
+          "week": 31,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 7.0,
+          "tier1": 4.43,
+          "tier2": 2.063,
+          "week": 32,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 12.0,
+          "tier1": 10.758,
+          "tier2": 9.435,
+          "week": 33,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 4.43,
+          "tier2": 1.084,
+          "week": 34,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 1.898,
+          "tier2": 1.117,
+          "week": 35,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 4.0,
+          "tier1": 6.494,
+          "tier2": 6.256,
+          "week": 36,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.541,
+          "tier2": 0.757,
+          "week": 37,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 7.035,
+          "tier2": 2.207,
+          "week": 38,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 1.623,
+          "tier2": 0.302,
+          "week": 39,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 4.0,
+          "tier1": 4.267,
+          "tier2": 3.425,
+          "week": 40,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 5.0,
+          "tier1": 7.371,
+          "tier2": 4.957,
+          "week": 41,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 5.0,
+          "tier1": 6.595,
+          "tier2": 3.743,
+          "week": 42,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 13.0,
+          "tier1": 12.414,
+          "tier2": 10.169,
+          "week": 43,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 1.313,
+          "tier2": 0.714,
+          "week": 44,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 12.0,
+          "tier1": 7.861,
+          "tier2": 7.151,
+          "week": 45,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 16.0,
+          "tier1": 11.329,
+          "tier2": 14.815,
+          "week": 46,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 8.0,
+          "tier1": 4.393,
+          "tier2": 3.666,
+          "week": 47,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 1.946,
+          "tier2": 1.962,
+          "week": 48,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 2.516,
+          "tier2": 1.335,
+          "week": 49,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 7.0,
+          "tier1": 3.355,
+          "tier2": 2.679,
+          "week": 50,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 2.796,
+          "tier2": 1.322,
+          "week": 51,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2021,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 52,
+          "year": 2021
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.811,
+          "tier2": 0.361,
+          "week": 1,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 2.163,
+          "tier2": 2.474,
+          "week": 2,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 17.0,
+          "tier1": 10.543,
+          "tier2": 16.111,
+          "week": 3,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 21.0,
+          "tier1": 19.735,
+          "tier2": 21.873,
+          "week": 4,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 40.0,
+          "tier1": 25.949,
+          "tier2": 36.063,
+          "week": 5,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 30.0,
+          "tier1": 12.506,
+          "tier2": 8.866,
+          "week": 6,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 3.474,
+          "tier2": 2.493,
+          "week": 7,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 7.0,
+          "tier1": 9.379,
+          "tier2": 8.418,
+          "week": 8,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 3.797,
+          "tier2": 2.139,
+          "week": 9,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 1.358,
+          "tier2": 1.384,
+          "week": 10,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 11,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 12,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.396,
+          "tier2": 0.293,
+          "week": 13,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 3.5,
+          "tier1": 5.728,
+          "tier2": 4.324,
+          "week": 16,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 4.043,
+          "tier2": 1.96,
+          "week": 17,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 5.258,
+          "tier2": 5.329,
+          "week": 18,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 5.0,
+          "tier1": 4.576,
+          "tier2": 4.755,
+          "week": 19,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.763,
+          "tier2": 0.456,
+          "week": 20,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 1.525,
+          "tier2": 3.102,
+          "week": 21,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 22,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 2.03,
+          "tier2": 1.996,
+          "week": 23,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 0.406,
+          "tier2": 0.094,
+          "week": 24,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.812,
+          "tier2": 1.013,
+          "week": 25,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 1.653,
+          "tier2": 2.118,
+          "week": 26,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 14.0,
+          "tier1": 3.911,
+          "tier2": 7.418,
+          "week": 27,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 30.0,
+          "tier1": 26.945,
+          "tier2": 43.835,
+          "week": 28,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 24.0,
+          "tier1": 15.645,
+          "tier2": 24.455,
+          "week": 29,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 21.0,
+          "tier1": 11.352,
+          "tier2": 14.151,
+          "week": 33,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 33.0,
+          "tier1": 35.316,
+          "tier2": 39.751,
+          "week": 34,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 7.0,
+          "tier1": 9.806,
+          "tier2": 7.203,
+          "week": 35,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 3.751,
+          "tier2": 2.228,
+          "week": 36,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 0.536,
+          "tier2": 0.178,
+          "week": 37,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 3.215,
+          "tier2": 2.757,
+          "week": 38,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 2.68,
+          "tier2": 1.242,
+          "week": 39,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 2.0,
+          "tier1": 6.656,
+          "tier2": 3.252,
+          "week": 40,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 5.481,
+          "tier2": 3.257,
+          "week": 41,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 3.0,
+          "tier1": 3.132,
+          "tier2": 1.792,
+          "week": 42,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 3.132,
+          "tier2": 2.149,
+          "week": 43,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 0.981,
+          "tier2": 0.897,
+          "week": 44,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 4.0,
+          "tier1": 2.207,
+          "tier2": 1.119,
+          "week": 45,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 1.0,
+          "tier1": 0.736,
+          "tier2": 0.233,
+          "week": 46,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 47,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.768,
+          "tier2": 0.263,
+          "week": 48,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 49,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 50,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 51,
+          "year": 2022
+        },
+        {
+          "excluded_year": 2022,
+          "kind": "harmonized",
+          "observed": 0.0,
+          "tier1": 0.0,
+          "tier2": 0.0,
+          "week": 52,
+          "year": 2022
+        }
+      ],
+      "k_compare": [
+        {
+          "k_tier1": 0.297,
+          "k_tier2": 0.308,
+          "month": 1
+        },
+        {
+          "k_tier1": 0.361,
+          "k_tier2": 0.247,
+          "month": 2
+        },
+        {
+          "k_tier1": 0.339,
+          "k_tier2": 0.293,
+          "month": 3
+        },
+        {
+          "k_tier1": 0.283,
+          "k_tier2": 0.274,
+          "month": 4
+        },
+        {
+          "k_tier1": 0.253,
+          "k_tier2": 0.277,
+          "month": 5
+        },
+        {
+          "k_tier1": 0.4,
+          "k_tier2": 0.438,
+          "month": 6
+        },
+        {
+          "k_tier1": 0.466,
+          "k_tier2": 0.561,
+          "month": 7
+        },
+        {
+          "k_tier1": 0.633,
+          "k_tier2": 0.654,
+          "month": 8
+        },
+        {
+          "k_tier1": 0.53,
+          "k_tier2": 0.555,
+          "month": 9
+        },
+        {
+          "k_tier1": 0.385,
+          "k_tier2": 0.388,
+          "month": 10
+        },
+        {
+          "k_tier1": 0.246,
+          "k_tier2": 0.232,
+          "month": 11
+        },
+        {
+          "k_tier1": 0.277,
+          "k_tier2": 0.238,
+          "month": 12
+        }
+      ],
+      "n_celldays": 10962,
+      "params": {
+        "a": -3.645,
+        "a_hi": -3.492,
+        "a_lo": -3.832,
+        "b": 2.469,
+        "b_hi": 2.622,
+        "b_lo": 2.269,
+        "c": 0.868,
+        "c_hi": 0.954,
+        "c_lo": 0.809
+      },
+      "region": "portugal",
+      "status": "validated"
     }
   ],
   "filters": [
@@ -10463,9 +15450,177 @@
       "rows_in": 263811,
       "sensor": "noaa20",
       "step": "static_mask"
+    },
+    {
+      "region": "portugal",
+      "rows_dropped": 0,
+      "rows_in": 38200,
+      "sensor": "aqua",
+      "step": "valid_coordinates_date"
+    },
+    {
+      "region": "portugal",
+      "rows_dropped": 0,
+      "rows_in": 38200,
+      "sensor": "aqua",
+      "step": "duplicates"
+    },
+    {
+      "region": "portugal",
+      "rows_dropped": 0,
+      "rows_in": 38200,
+      "sensor": "aqua",
+      "step": "bbox"
+    },
+    {
+      "region": "portugal",
+      "rows_dropped": 101,
+      "rows_in": 38200,
+      "sensor": "aqua",
+      "step": "type"
+    },
+    {
+      "region": "portugal",
+      "rows_dropped": 1406,
+      "rows_in": 38099,
+      "sensor": "aqua",
+      "step": "confidence"
+    },
+    {
+      "region": "portugal",
+      "rows_dropped": 0,
+      "rows_in": 34642,
+      "sensor": "terra",
+      "step": "valid_coordinates_date"
+    },
+    {
+      "region": "portugal",
+      "rows_dropped": 0,
+      "rows_in": 34642,
+      "sensor": "terra",
+      "step": "duplicates"
+    },
+    {
+      "region": "portugal",
+      "rows_dropped": 0,
+      "rows_in": 34642,
+      "sensor": "terra",
+      "step": "bbox"
+    },
+    {
+      "region": "portugal",
+      "rows_dropped": 105,
+      "rows_in": 34642,
+      "sensor": "terra",
+      "step": "type"
+    },
+    {
+      "region": "portugal",
+      "rows_dropped": 1553,
+      "rows_in": 34537,
+      "sensor": "terra",
+      "step": "confidence"
+    },
+    {
+      "region": "portugal",
+      "rows_dropped": 0,
+      "rows_in": 110596,
+      "sensor": "snpp",
+      "step": "valid_coordinates_date"
+    },
+    {
+      "region": "portugal",
+      "rows_dropped": 0,
+      "rows_in": 110596,
+      "sensor": "snpp",
+      "step": "duplicates"
+    },
+    {
+      "region": "portugal",
+      "rows_dropped": 0,
+      "rows_in": 110596,
+      "sensor": "snpp",
+      "step": "bbox"
+    },
+    {
+      "region": "portugal",
+      "rows_dropped": 4986,
+      "rows_in": 110596,
+      "sensor": "snpp",
+      "step": "type"
+    },
+    {
+      "region": "portugal",
+      "rows_dropped": 4998,
+      "rows_in": 105610,
+      "sensor": "snpp",
+      "step": "confidence"
+    },
+    {
+      "region": "portugal",
+      "rows_dropped": 0,
+      "rows_in": 48873,
+      "sensor": "noaa20",
+      "step": "valid_coordinates_date"
+    },
+    {
+      "region": "portugal",
+      "rows_dropped": 0,
+      "rows_in": 48873,
+      "sensor": "noaa20",
+      "step": "duplicates"
+    },
+    {
+      "region": "portugal",
+      "rows_dropped": 0,
+      "rows_in": 48873,
+      "sensor": "noaa20",
+      "step": "bbox"
+    },
+    {
+      "region": "portugal",
+      "rows_dropped": 2293,
+      "rows_in": 48873,
+      "sensor": "noaa20",
+      "step": "type"
+    },
+    {
+      "region": "portugal",
+      "rows_dropped": 2182,
+      "rows_in": 46580,
+      "sensor": "noaa20",
+      "step": "confidence"
+    },
+    {
+      "region": "portugal",
+      "rows_dropped": 0,
+      "rows_in": 36693,
+      "sensor": "aqua",
+      "step": "static_mask"
+    },
+    {
+      "region": "portugal",
+      "rows_dropped": 0,
+      "rows_in": 32984,
+      "sensor": "terra",
+      "step": "static_mask"
+    },
+    {
+      "region": "portugal",
+      "rows_dropped": 0,
+      "rows_in": 100612,
+      "sensor": "snpp",
+      "step": "static_mask"
+    },
+    {
+      "region": "portugal",
+      "rows_dropped": 0,
+      "rows_in": 44398,
+      "sensor": "noaa20",
+      "step": "static_mask"
     }
   ],
-  "generated_at": "2026-11-15T18:00:00Z",
+  "generated_at": "2026-11-15T22:17:45Z",
   "inputs": [
     {
       "downloaded": "2026-11-15T18:04:38Z",
@@ -10898,6 +16053,411 @@
       "rows": 310329,
       "source": "synth:noaa20",
       "via": "synth"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:09Z",
+      "first_date": "2003-01-10",
+      "last_date": "2003-12-24",
+      "region": "portugal",
+      "rows": 6246,
+      "source": "FIRMS_world/modis/2003/modis_2003_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:10Z",
+      "first_date": "2004-01-05",
+      "last_date": "2004-12-31",
+      "region": "portugal",
+      "rows": 3042,
+      "source": "FIRMS_world/modis/2004/modis_2004_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:11Z",
+      "first_date": "2005-01-04",
+      "last_date": "2005-12-24",
+      "region": "portugal",
+      "rows": 9264,
+      "source": "FIRMS_world/modis/2005/modis_2005_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:11Z",
+      "first_date": "2006-01-03",
+      "last_date": "2006-12-28",
+      "region": "portugal",
+      "rows": 2652,
+      "source": "FIRMS_world/modis/2006/modis_2006_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:13Z",
+      "first_date": "2007-01-04",
+      "last_date": "2007-12-30",
+      "region": "portugal",
+      "rows": 1585,
+      "source": "FIRMS_world/modis/2007/modis_2007_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:14Z",
+      "first_date": "2008-01-21",
+      "last_date": "2008-12-30",
+      "region": "portugal",
+      "rows": 999,
+      "source": "FIRMS_world/modis/2008/modis_2008_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:14Z",
+      "first_date": "2009-01-08",
+      "last_date": "2009-12-31",
+      "region": "portugal",
+      "rows": 3466,
+      "source": "FIRMS_world/modis/2009/modis_2009_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:15Z",
+      "first_date": "2010-01-27",
+      "last_date": "2010-12-25",
+      "region": "portugal",
+      "rows": 4216,
+      "source": "FIRMS_world/modis/2010/modis_2010_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:16Z",
+      "first_date": "2011-01-21",
+      "last_date": "2011-12-31",
+      "region": "portugal",
+      "rows": 3033,
+      "source": "FIRMS_world/modis/2011/modis_2011_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:16Z",
+      "first_date": "2012-01-02",
+      "last_date": "2012-12-30",
+      "region": "portugal",
+      "rows": 3552,
+      "source": "FIRMS_world/modis/2012/modis_2012_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:18Z",
+      "first_date": "2013-01-03",
+      "last_date": "2013-12-17",
+      "region": "portugal",
+      "rows": 4438,
+      "source": "FIRMS_world/modis/2013/modis_2013_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:19Z",
+      "first_date": "2014-01-25",
+      "last_date": "2014-12-31",
+      "region": "portugal",
+      "rows": 614,
+      "source": "FIRMS_world/modis/2014/modis_2014_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:21Z",
+      "first_date": "2015-01-01",
+      "last_date": "2015-12-28",
+      "region": "portugal",
+      "rows": 2058,
+      "source": "FIRMS_world/modis/2015/modis_2015_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:22Z",
+      "first_date": "2016-02-02",
+      "last_date": "2016-12-31",
+      "region": "portugal",
+      "rows": 4801,
+      "source": "FIRMS_world/modis/2016/modis_2016_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:24Z",
+      "first_date": "2017-01-01",
+      "last_date": "2017-12-23",
+      "region": "portugal",
+      "rows": 6645,
+      "source": "FIRMS_world/modis/2017/modis_2017_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:26Z",
+      "first_date": "2018-01-03",
+      "last_date": "2018-12-31",
+      "region": "portugal",
+      "rows": 1310,
+      "source": "FIRMS_world/modis/2018/modis_2018_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:28Z",
+      "first_date": "2019-01-03",
+      "last_date": "2019-12-30",
+      "region": "portugal",
+      "rows": 1269,
+      "source": "FIRMS_world/modis/2019/modis_2019_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:31Z",
+      "first_date": "2020-01-07",
+      "last_date": "2020-12-26",
+      "region": "portugal",
+      "rows": 1349,
+      "source": "FIRMS_world/modis/2020/modis_2020_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:33Z",
+      "first_date": "2021-01-02",
+      "last_date": "2021-12-18",
+      "region": "portugal",
+      "rows": 950,
+      "source": "FIRMS_world/modis/2021/modis_2021_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:34Z",
+      "first_date": "2022-01-03",
+      "last_date": "2022-12-02",
+      "region": "portugal",
+      "rows": 2273,
+      "source": "FIRMS_world/modis/2022/modis_2022_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:37Z",
+      "first_date": "2023-01-02",
+      "last_date": "2023-12-26",
+      "region": "portugal",
+      "rows": 1062,
+      "source": "FIRMS_world/modis/2023/modis_2023_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:39Z",
+      "first_date": "2024-01-16",
+      "last_date": "2024-12-23",
+      "region": "portugal",
+      "rows": 3151,
+      "source": "FIRMS_world/modis/2024/modis_2024_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:42Z",
+      "first_date": "2025-01-01",
+      "last_date": "2025-11-28",
+      "region": "portugal",
+      "rows": 4867,
+      "source": "FIRMS_world/modis/2025/modis_2025_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:27Z",
+      "first_date": "2018-04-02",
+      "last_date": "2018-12-31",
+      "region": "portugal",
+      "rows": 3672,
+      "source": "FIRMS_world/viirs-jpss1/2018/viirs-jpss1_2018_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:29Z",
+      "first_date": "2019-01-01",
+      "last_date": "2019-12-31",
+      "region": "portugal",
+      "rows": 3596,
+      "source": "FIRMS_world/viirs-jpss1/2019/viirs-jpss1_2019_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:32Z",
+      "first_date": "2020-01-01",
+      "last_date": "2020-12-31",
+      "region": "portugal",
+      "rows": 3988,
+      "source": "FIRMS_world/viirs-jpss1/2020/viirs-jpss1_2020_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:34Z",
+      "first_date": "2021-01-01",
+      "last_date": "2021-12-29",
+      "region": "portugal",
+      "rows": 2501,
+      "source": "FIRMS_world/viirs-jpss1/2021/viirs-jpss1_2021_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:36Z",
+      "first_date": "2022-01-01",
+      "last_date": "2022-12-31",
+      "region": "portugal",
+      "rows": 5860,
+      "source": "FIRMS_world/viirs-jpss1/2022/viirs-jpss1_2022_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:38Z",
+      "first_date": "2023-01-03",
+      "last_date": "2023-12-30",
+      "region": "portugal",
+      "rows": 3384,
+      "source": "FIRMS_world/viirs-jpss1/2023/viirs-jpss1_2023_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:41Z",
+      "first_date": "2024-01-01",
+      "last_date": "2024-12-31",
+      "region": "portugal",
+      "rows": 12010,
+      "source": "FIRMS_world/viirs-jpss1/2024/viirs-jpss1_2024_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:43Z",
+      "first_date": "2025-01-01",
+      "last_date": "2025-12-30",
+      "region": "portugal",
+      "rows": 13862,
+      "source": "FIRMS_world/viirs-jpss1/2025/viirs-jpss1_2025_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:17Z",
+      "first_date": "2012-01-20",
+      "last_date": "2012-12-31",
+      "region": "portugal",
+      "rows": 9473,
+      "source": "FIRMS_world/viirs-snpp/2012/viirs-snpp_2012_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:19Z",
+      "first_date": "2013-01-02",
+      "last_date": "2013-12-30",
+      "region": "portugal",
+      "rows": 12102,
+      "source": "FIRMS_world/viirs-snpp/2013/viirs-snpp_2013_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:20Z",
+      "first_date": "2014-01-01",
+      "last_date": "2014-12-31",
+      "region": "portugal",
+      "rows": 2341,
+      "source": "FIRMS_world/viirs-snpp/2014/viirs-snpp_2014_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:21Z",
+      "first_date": "2015-01-01",
+      "last_date": "2015-12-30",
+      "region": "portugal",
+      "rows": 5875,
+      "source": "FIRMS_world/viirs-snpp/2015/viirs-snpp_2015_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:23Z",
+      "first_date": "2016-01-02",
+      "last_date": "2016-12-31",
+      "region": "portugal",
+      "rows": 13930,
+      "source": "FIRMS_world/viirs-snpp/2016/viirs-snpp_2016_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:25Z",
+      "first_date": "2017-01-01",
+      "last_date": "2017-12-31",
+      "region": "portugal",
+      "rows": 19184,
+      "source": "FIRMS_world/viirs-snpp/2017/viirs-snpp_2017_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:26Z",
+      "first_date": "2018-01-02",
+      "last_date": "2018-12-31",
+      "region": "portugal",
+      "rows": 3827,
+      "source": "FIRMS_world/viirs-snpp/2018/viirs-snpp_2018_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:29Z",
+      "first_date": "2019-01-01",
+      "last_date": "2019-12-31",
+      "region": "portugal",
+      "rows": 3794,
+      "source": "FIRMS_world/viirs-snpp/2019/viirs-snpp_2019_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:31Z",
+      "first_date": "2020-01-02",
+      "last_date": "2020-12-31",
+      "region": "portugal",
+      "rows": 3769,
+      "source": "FIRMS_world/viirs-snpp/2020/viirs-snpp_2020_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:33Z",
+      "first_date": "2021-01-01",
+      "last_date": "2021-12-29",
+      "region": "portugal",
+      "rows": 2591,
+      "source": "FIRMS_world/viirs-snpp/2021/viirs-snpp_2021_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:35Z",
+      "first_date": "2022-01-02",
+      "last_date": "2022-12-31",
+      "region": "portugal",
+      "rows": 5079,
+      "source": "FIRMS_world/viirs-snpp/2022/viirs-snpp_2022_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:38Z",
+      "first_date": "2023-01-02",
+      "last_date": "2023-12-28",
+      "region": "portugal",
+      "rows": 2953,
+      "source": "FIRMS_world/viirs-snpp/2023/viirs-snpp_2023_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:40Z",
+      "first_date": "2024-01-01",
+      "last_date": "2024-12-31",
+      "region": "portugal",
+      "rows": 12078,
+      "source": "FIRMS_world/viirs-snpp/2024/viirs-snpp_2024_Portugal.parquet",
+      "via": "country"
+    },
+    {
+      "downloaded": "2026-11-15T22:13:43Z",
+      "first_date": "2025-01-01",
+      "last_date": "2025-12-31",
+      "region": "portugal",
+      "rows": 13600,
+      "source": "FIRMS_world/viirs-snpp/2025/viirs-snpp_2025_Portugal.parquet",
+      "via": "country"
     }
   ],
   "limitations": [
@@ -11453,6 +17013,228 @@
       "region": "synthland",
       "test": "t1_t2_wape",
       "value": 0.024,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "baselines": {
+        "annual_ratio": 0.455,
+        "raw_viirs": 1.516
+      },
+      "method": "tier1",
+      "n": 512,
+      "note": "Entire held-out calendar year excluded from monthly and annual-baseline fits, including shrinkage; jointly covered Aqua/S-NPP days, common coverage-scaled weeks; n=paired valid weeks. Zero observed totals or constant weekly counts make the corresponding metric null.",
+      "region": "portugal",
+      "test": "loyo_weekly_wape",
+      "value": 0.335,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "baselines": {
+        "annual_ratio": 0.918,
+        "raw_viirs": 0.923
+      },
+      "method": "tier1",
+      "n": 512,
+      "note": "Entire held-out calendar year excluded from monthly and annual-baseline fits, including shrinkage; jointly covered Aqua/S-NPP days, common coverage-scaled weeks; n=paired valid weeks. Zero observed totals or constant weekly counts make the corresponding metric null.",
+      "region": "portugal",
+      "test": "loyo_weekly_r",
+      "value": 0.958,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "baselines": {
+        "annual_ratio": -0.005,
+        "raw_viirs": 1.507
+      },
+      "method": "tier1",
+      "n": 512,
+      "note": "Entire held-out calendar year excluded from monthly and annual-baseline fits, including shrinkage; jointly covered Aqua/S-NPP days, common coverage-scaled weeks; n=paired valid weeks. Zero observed totals or constant weekly counts make the corresponding metric null.",
+      "region": "portugal",
+      "test": "loyo_bias",
+      "value": -0.008,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "method": "tier1",
+      "n": 10,
+      "note": "LOYO annual totals on jointly covered days, scaled by common.timebins; n=valid positive-observation years; 0 years with insufficient coverage/zero totals excluded. totals match partly by construction; see LOYO",
+      "region": "portugal",
+      "test": "handoff_annual_mape",
+      "value": 0.099,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "method": "none",
+      "n": 6,
+      "note": "Mean 2012–2014 / mean 2009–2011; baseline 2003–2011 adjacent 3-year/3-year ratio 5th–95th percentiles: 0.300025 to 1.83025 (4 consecutive windows); totals match partly by construction; see LOYO; naive splice: MODIS Terra+Aqua day+night hotspots through 2011, S-NPP thereafter",
+      "region": "portugal",
+      "test": "step_naive",
+      "value": 2.111,
+      "years": [
+        2009,
+        2014
+      ]
+    },
+    {
+      "method": "tier1",
+      "n": 6,
+      "note": "Mean 2012–2014 / mean 2009–2011; baseline 2003–2011 adjacent 3-year/3-year ratio 5th–95th percentiles: 0.447311 to 1.51992 (4 consecutive windows); totals match partly by construction; see LOYO; translated splice: aqua_raw through 2011, viirs_as_aqua thereafter",
+      "region": "portugal",
+      "test": "step_harmonized",
+      "value": 0.748,
+      "years": [
+        2009,
+        2014
+      ]
+    },
+    {
+      "method": "tier1",
+      "n": 0,
+      "note": "NOAA-20 has no qualifying first full year; no comparison.",
+      "region": "portugal",
+      "test": "sat_agreement_wape",
+      "value": null,
+      "years": []
+    },
+    {
+      "method": "tier1",
+      "n": 0,
+      "note": "100 × (direct annual k − chained annual k) / chained annual k; n=joint Aqua/NOAA-20 direct-fit days. Unavailable direct/chained fit or zero chained factor: {}.",
+      "region": "portugal",
+      "test": "k_direct_vs_chained_pct",
+      "value": null,
+      "years": []
+    },
+    {
+      "method": "none",
+      "n": 10,
+      "note": "sensor=aqua; peak Aqua week=32; n=valid fit years. 2319 region cells; equal-weight mean across years of covered-day mean active-cell fraction; uncovered days excluded, covered zero-count days retained.",
+      "region": "portugal",
+      "test": "saturation_r6",
+      "value": 0.003,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "method": "none",
+      "n": 10,
+      "note": "sensor=aqua; peak Aqua week=32; n=valid fit years. 393 region cells; equal-weight mean across years of covered-day mean active-cell fraction; uncovered days excluded, covered zero-count days retained.",
+      "region": "portugal",
+      "test": "saturation_r5",
+      "value": 0.011,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "method": "none",
+      "n": 9,
+      "note": "sensor=snpp; peak Aqua week=32; n=valid fit years. 2319 region cells; equal-weight mean across years of covered-day mean active-cell fraction; uncovered days excluded, covered zero-count days retained.",
+      "region": "portugal",
+      "test": "saturation_r6",
+      "value": 0.004,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "method": "none",
+      "n": 9,
+      "note": "sensor=snpp; peak Aqua week=32; n=valid fit years. 393 region cells; equal-weight mean across years of covered-day mean active-cell fraction; uncovered days excluded, covered zero-count days retained.",
+      "region": "portugal",
+      "test": "saturation_r5",
+      "value": 0.017,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "method": "tier1",
+      "n": 512,
+      "note": "Aqua divided by V1's year-held-out S-NPP factors; the entire test year is excluded from monthly fits and annual shrinkage targets. Joint coverage before common weekly aggregation; zero fitted factors give unavailable predictions; n=paired valid weeks.",
+      "region": "portugal",
+      "test": "backcast_weekly_wape",
+      "value": 0.372,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "method": "tier2",
+      "n": 10962,
+      "note": "Locked pooled |sum p - sum observed| / sum observed across held-out years. Neighbour-match sensitivity (reported, not used): c 0.868 -> 0.969 (change +0.101); mean monthly k_T2 0.372 -> 0.488 (change +0.116, largest monthly change +0.138); g kept same-cell (1.525).",
+      "region": "portugal",
+      "test": "reliability_err",
+      "value": 0.001,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "method": "tier2",
+      "n": 10962,
+      "note": "Diagnostic: sum of absolute yearly prediction errors / total observed; does not cancel across years.",
+      "region": "portugal",
+      "test": "reliability_year_absolute_err",
+      "value": 0.059,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "method": "tier2",
+      "n": 512,
+      "note": "NOAA-20 days of harmonized_t2 use the curve fitted on S-NPP (same VIIRS instrument design); no NOAA-20-specific curve was fitted. aqua_raw/snpp_raw from R3 daily.parquet.",
+      "region": "portugal",
+      "test": "loyo_weekly_wape",
+      "value": 0.275,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "method": "tier2",
+      "n": 512,
+      "note": "aqua_raw/snpp_raw from R3 daily.parquet.",
+      "region": "portugal",
+      "test": "backcast_weekly_wape",
+      "value": 0.384,
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "method": "tier2",
+      "n": 512,
+      "note": "Tier 1 vs Tier 2 predictions from matching excluded-year folds, weekly.",
+      "region": "portugal",
+      "test": "t1_t2_wape",
+      "value": 0.269,
       "years": [
         2013,
         2022

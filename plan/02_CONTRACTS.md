@@ -209,6 +209,14 @@ including day and night and all confidence levels. Calibrated analysis availabil
 from `regions.json`. The picker accepts optional `country` and `product` query parameters to restore
 the selected archive. Countries without an archive for a product/year have no record for that pair.
 
+The production build losslessly gzip-compresses per-region JSON payloads in `dist/data/` while keeping
+their contracted paths. `fetchJson` detects the gzip signature and decompresses before schema validation.
+Source publications stay UTF-8 JSON. The build updates deployed shard-index and manifest byte counts
+and SHA-256 hashes to match the compressed files. Index and top-level discovery documents remain JSON.
+The place picker searches and paginates published country cards. The Methods page accepts `region`
+to select one country's calibration, validation and input records, with the shared science decisions
+and planted-truth results available on the same page.
+
 ```json
 {"schema_version":"1.0","generated_at":"…","code_version":"…",
  "regions":[{"id":"us","name":"United States","country":"US",

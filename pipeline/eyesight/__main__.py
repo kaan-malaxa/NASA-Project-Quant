@@ -15,8 +15,6 @@ def main(argv: list[str] | None = None) -> int:
     args = compat.stage_parser(STAGE).parse_args(argv)
     log = compat.get_logger(STAGE)
     log.setLevel(str(getattr(args, "log_level", "INFO")).upper())
-    if not compat.HAVE_COMMON:
-        log.warning("pipeline.common not found; using pipeline/eyesight/compat.py fallbacks")
     compat.set_data_root(getattr(args, "data_root", None))
     pass_ = getattr(args, "pass_", None) or getattr(args, "pass", "D")
 

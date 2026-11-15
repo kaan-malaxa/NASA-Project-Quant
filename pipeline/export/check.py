@@ -72,6 +72,9 @@ def validator_for(name: str, registry: Registry, schema_dir: Path = SCHEMA_DIR) 
 
 
 def schema_errors(instance: Any, validator: Draft202012Validator) -> list[str]:
+    if validator.schema.get("title") == "spatial":
+        from pipeline.export.spatial_check import errors
+        return errors(instance, validator, MAX_ERRORS_SHOWN)
     errors = sorted(validator.iter_errors(instance), key=lambda e: list(e.absolute_path))
     out = []
     for err in errors[:MAX_ERRORS_SHOWN]:
@@ -104,7 +107,9 @@ def semantic_errors(doc):
                     errors.append("missing kind has a non-null value")
                 if node["value"] is None and node["kind"] not in ("missing", "sample"):
                     errors.append("null value must carry missing kind")
-            for value in node.values():
+            for key, value in node.items():
+                if node is doc and key in ("monthly", "weekly") and "monthly_bins" in node:
+                    continue  # numeric tuples are checked below; there are no nested kind objects
                 visit(value)
         elif isinstance(node, list):
             for value in node:

@@ -16,8 +16,8 @@ def _run_stage(stage, region, args):
         getattr(spec, "submodule_search_locations", None) is not None
         and importlib.util.find_spec(f"{module}.__main__") is None
     ):
-        print(f"SKIP {stage}: not implemented yet", flush=True)
-        return 0
+        print(f"FAIL {stage}: required pipeline module is missing", file=sys.stderr, flush=True)
+        return 2
     command = [
         sys.executable, "-m", module, "--data-root", str(args.data_root),
         "--pass", getattr(args, "pass"), "--log-level", args.log_level,

@@ -124,3 +124,17 @@ def test_reliability_per_year_does_not_cancel():
     # 2013 over-predicted by 1, 2014 under-predicted by 2: pooled = |1 - 2| / 4, per-year = (1 + 2) / 4
     pooled, per_year, _ = reliability_heldout(m, {2013: {"params": p_high}, 2014: {"params": p_low}})
     assert pooled == pytest.approx(1 / 4) and per_year == pytest.approx(3 / 4)
+
+
+def test_matching_predictions_reject_training_year_leak_and_duplicates():
+    from pipeline.eyesight.validate import matching_heldout_wape
+    t1 = pd.DataFrame({"year": [2013, 2014], "week": [1, 1], "excluded_year": [2013, 2014],
+                       "tier1": [10., 20.]})
+    t2 = pd.DataFrame({"year": [2013, 2014], "week": [1, 1], "excluded_year": [2013, 2014],
+                       "pred_aqua": [12., 18.]})
+    assert matching_heldout_wape(t1, t2) == (pytest.approx(4 / 30), 2)
+    t2.loc[0, "excluded_year"] = 2014
+    with pytest.raises(ValueError, match="excluded year"):
+        matching_heldout_wape(t1, t2)
+    with pytest.raises(ValueError, match="duplicate"):
+        matching_heldout_wape(pd.concat([t1, t1]), t1)

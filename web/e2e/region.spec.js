@@ -31,7 +31,7 @@ test.describe("region page", () => {
   test("range presets write from/to and update In this period", async ({ page }) => {
     await serveData(page);
     await open(page, "#/r/alpha");
-    const bar = page.getByRole("group", { name: "Date range" });
+    const bar = page.getByRole("group", { name: "Exact dates" });
     const panel = page.getByRole("region", { name: /In this period/ });
 
     await bar.getByRole("button", { name: "VIIRS era 2012+" }).click();

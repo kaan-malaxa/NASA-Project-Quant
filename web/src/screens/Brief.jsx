@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { QRCodeSVG } from "qrcode.react";
 import { Printer } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -34,6 +34,7 @@ function Block({ title, children }) {
 /** #/r/:region/brief — screen 8, one printable page. Every sentence comes from the JSON sentence fields. */
 export default function Brief() {
   const { region: id } = useParams();
+  const { search } = useLocation();
   const { status, region, files: originalFiles, regionsState } = useRegionData(id);
   const [url] = useUrlState(region?.last_data_day);
   const analysis = useAnalysisPeriod(region, originalFiles, url, regionsState.status === "ok" ? regionsState.data?.configuration : undefined);
@@ -105,7 +106,7 @@ export default function Brief() {
       </div>
       <div className="brief-page" ref={pageRef}>
         <div className="no-print mb-4 flex flex-wrap items-center justify-between gap-2">
-          <Link to={`/r/${region.id}`} className="text-sm underline">
+          <Link to={{pathname: `/r/${region.id}`, search}} className="text-sm underline">
             Back to {region.name}
           </Link>
           <Button onClick={() => window.print()} disabled={stillLoading}>
@@ -116,7 +117,7 @@ export default function Brief() {
         <header className="border-b border-black pb-2">
           <p className="text-[8pt] tracking-wider uppercase">FireRosetta · Season Brief</p>
           <h1 className="text-[18pt] leading-tight font-semibold">{region.name}</h1>
-          {analysis.index ? <p>Analysis years: {analysis.from}?{analysis.to}</p> : null}
+          {analysis.index ? <p>Analysis years: {analysis.from}–{analysis.to}</p> : null}
           <p className="text-[9pt]">
             {region.fire_type} · Data through {lastDay} · Brief generated {today}
           </p>
@@ -144,7 +145,7 @@ export default function Brief() {
                 climatology={climatology.data}
                 season={ok(season) ? season.data : undefined}
                 lens={url.lens}
-                mode="activity"
+                mode={url.mode}
                 range={{ from: url.from, to: url.to ?? lastDay }}
               />
             </figure>
@@ -179,13 +180,14 @@ export default function Brief() {
             <Block title="How to read this">
               {hasViz("Legend", viz) && showCalendar ? (
                 <div className="mb-1">
-                  <VizSlot name="Legend" scale="activity" unit={monthly.data.series_meta?.harmonized?.unit ?? ""} />
+                  <VizSlot name="Legend" scale={url.mode} unit={monthly.data.series_meta?.[url.lens]?.unit ?? "fire cell-days per month"} />
                 </div>
               ) : null}
               <p className="text-[9pt]">
                 Hatched cells: no data (the satellite was not working). Dashed, lighter cells: estimates. Counts are fire
                 cell-days: one map hexagon on one day with at least one satellite hotspot, not a number of fires.
               </p>
+              {url.mode === "anomaly" && ok(climatology) ? <p className="text-[8pt]">Comparison baseline: {climatology.data.baseline_years.join("–")}.</p> : null}
             </Block>
           </div>
 

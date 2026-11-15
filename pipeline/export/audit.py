@@ -143,6 +143,11 @@ def build_audit(read: Loader) -> str:
             for b in sorted(methods["validation"][i].get("baselines", {})):
                 L.value(f"LOYO weekly WAPE baseline {b}", methods, f, "validation", i, "baselines", b)
             L.value("LOYO years", methods, f, "validation", i, "years")
+        for i, row in enumerate(methods.get("validation", [])):
+            if row.get("region") == rid and row.get("test") in {
+                "t1_t2_wape", "reliability_err", "reliability_year_absolute_err"
+            }:
+                L.value(f"{row['test']} ({row['method']})", methods, f, "validation", i, "value")
         eyes = [i for i, e in enumerate(methods.get("eyesight", [])) if e.get("region") == rid]
         if not eyes:
             L.out.append(f"- MISSING eyesight: no eyesight entry for {rid}  {f}#/eyesight")

@@ -5,7 +5,7 @@ sources:
   checked: '2026-11-15'
 - claim_id: aqua_drift
   text: NASA describes Aqua moving away from its maintained orbit and observing later in the afternoon.
-  url: https://modis.gsfc.nasa.gov/news/individual.php?news_id=100389
+  url: https://science.nasa.gov/mission/aqua/
   checked: '2026-11-15'
 limitations:
 - Only daytime detections are used in this version. Night-time detections are kept in the data but not shown.

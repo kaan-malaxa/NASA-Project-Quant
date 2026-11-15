@@ -4,7 +4,7 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
 /**
- * Open Graph needs absolute URLs. CI sets VITE_SITE_URL (https://prometheus-torch.design/); locally the tags fall
+ * Open Graph needs absolute URLs. CI sets VITE_SITE_URL (https://kaan-malaxa.github.io/NASA-Project-Quant/); locally the tags fall
  * back to relative paths. The image is web/public/og-image.png (a static PNG from R6).
  */
 function openGraph() {
@@ -15,17 +15,27 @@ function openGraph() {
     transformIndexHtml() {
       return [
         { tag: "meta", attrs: { property: "og:image", content: abs("og-image.png") }, injectTo: "head" },
-        { tag: "meta", attrs: { property: "og:image:alt", content: "Prometheus Torch: satellite fire records on one scale" }, injectTo: "head" },
+        {
+          tag: "meta",
+          attrs: {
+            property: "og:image:alt",
+            content: "Prometheus Torch: satellite fire records on one scale",
+          },
+          injectTo: "head",
+        },
         { tag: "meta", attrs: { name: "twitter:card", content: "summary_large_image" }, injectTo: "head" },
-        ...(process.env.VITE_SITE_URL ? [{ tag: "meta", attrs: { property: "og:url", content: site }, injectTo: "head" }] : []),
+        ...(process.env.VITE_SITE_URL
+          ? [{ tag: "meta", attrs: { property: "og:url", content: site }, injectTo: "head" }]
+          : []),
       ];
     },
   };
 }
 
-// VITE_BASE is set by CI to "/" (the site is served from the root of prometheus-torch.design); "./" works for local preview and any static host.
+// VITE_BASE is set by CI to the GitHub Pages path, "/NASA-Project-Quant/" (the site is served from
+// https://kaan-malaxa.github.io/NASA-Project-Quant/). Unset (local dev, tests, preview) it is "/".
 export default defineConfig({
-  base: process.env.VITE_BASE || "./",
+  base: process.env.VITE_BASE || "/",
   // Local development only: VITE_PUBLIC_DIR points the dev server at another folder of data files. Unset in CI.
   publicDir: process.env.VITE_PUBLIC_DIR || "public",
   plugins: [react(), tailwindcss(), openGraph()],

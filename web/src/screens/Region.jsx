@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation, useParams } from "react-router-dom";
 import SectionState from "@/components/SectionState.jsx";
 import { useRegionData } from "@/data/useRegionData.js";
 import { useUrlState } from "@/data/useUrlState.js";
@@ -23,13 +23,19 @@ export default function Region() {
   const { region: id } = useParams();
   const { status, region, files: originalFiles, regionsState } = useRegionData(id);
   const lastDataDay = region?.last_data_day ?? null;
-  useDocumentMeta(region?.name ?? "Region", region ? `${region.fire_type} in ${region.name}: the fire calendar, the long-term trend with the sensor change corrected, and this week's burning.` : undefined);
+  useDocumentMeta(
+    region?.name ?? "Region",
+    region
+      ? `${region.fire_type} in ${region.name}: the fire calendar, the long-term trend with the sensor change corrected, and this week's burning.`
+      : undefined,
+  );
   const [url, setUrl] = useUrlState(lastDataDay);
   const analysis = useAnalysisPeriod(region, originalFiles, url, regionsState.status === "ok" ? regionsState.data?.configuration : undefined);
   const files = analysis.files;
   const [chartEl, setChartEl] = useState(null);
   const meta = files.weekly?.status === "ok" ? files.weekly.data.series_meta : {};
   const lensLabel = (id) => meta?.[id]?.label ?? id;
+  useJumpToSection(status === "ok");
 
   if (status !== "ok") {
     return (
@@ -73,14 +79,50 @@ export default function Region() {
         <SectionNav />
       </StickyBar>
       <VerdictSection state={files.trend} />
-      <CalendarSection files={files} url={url} setUrl={setUrl} lastDataDay={lastDataDay} chartRef={setChartEl} />
+      <CalendarSection
+        files={files}
+        url={url}
+        setUrl={setUrl}
+        lastDataDay={lastDataDay}
+        chartRef={setChartEl}
+      />
       <CriticalWeeksSection state={files.season} />
       <ThisWeekSection state={files.nowcast} />
       <WhereSection region={region} files={files} url={url} setUrl={setUrl} />
       <DownloadsSection>
-        <InThisPeriod daily={files.daily} nowcast={files.nowcast} url={url} lastDataDay={lastDataDay} lensLabel={lensLabel} />
+        <InThisPeriod
+          daily={files.daily}
+          nowcast={files.nowcast}
+          url={url}
+          lastDataDay={lastDataDay}
+          lensLabel={lensLabel}
+        />
         <DownloadsPanel region={region} files={files} url={url} lastDataDay={lastDataDay} chartEl={chartEl} />
       </DownloadsSection>
     </article>
   );
+}
+
+/**
+ * Links can ask for a section on arrival (e.g. the landing page's "Open data" card: state { section: "downloads" }).
+ * Sections above it grow as their data load, so the jump is repeated a few times, and stops when the visitor scrolls.
+ */
+function useJumpToSection(ready) {
+  const target = useLocation().state?.section;
+  useEffect(() => {
+    if (!ready || !target) return;
+    let stopped = false;
+    const stop = () => (stopped = true);
+    const jump = () => !stopped && document.getElementById(target)?.scrollIntoView({ block: "start" });
+    const timers = [0, 400, 1200, 2500].map((ms) => setTimeout(jump, ms));
+    window.addEventListener("wheel", stop, { passive: true, once: true });
+    window.addEventListener("touchstart", stop, { passive: true, once: true });
+    window.addEventListener("keydown", stop, { once: true });
+    return () => {
+      timers.forEach(clearTimeout);
+      window.removeEventListener("wheel", stop);
+      window.removeEventListener("touchstart", stop);
+      window.removeEventListener("keydown", stop);
+    };
+  }, [ready, target]);
 }

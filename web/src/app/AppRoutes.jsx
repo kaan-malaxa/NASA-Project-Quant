@@ -4,10 +4,11 @@ import { Skeleton } from "@/components/ui/skeleton";
 import ErrorBoundary from "@/components/ErrorBoundary.jsx";
 import AppShell from "./AppShell.jsx";
 import Landing from "@/screens/Landing.jsx";
-import Picker from "@/screens/Picker.jsx";
 import NotFound from "@/screens/NotFound.jsx";
 
 // Landing and picker load with the app; heavier screens load on first visit (own chunks).
+// The picker draws region outlines with R6's map helpers (h3-js, d3): its own chunk, so the landing page stays light.
+const Picker = lazy(() => import("@/screens/Picker.jsx"));
 const Region = lazy(() => import("@/screens/Region.jsx"));
 const Brief = lazy(() => import("@/screens/Brief.jsx"));
 const Methods = lazy(() => import("@/screens/Methods.jsx"));
@@ -34,14 +35,49 @@ export default function AppRoutes() {
       <Routes>
         <Route element={<AppShell resetKey={pathname} />}>
           <Route index element={<Landing />} />
-          <Route path="pick" element={<Picker />} />
-          <Route path="r/:region" element={<Lazy><Region /></Lazy>} />
-          <Route path="methods" element={<Lazy><Methods /></Lazy>} />
-          <Route path="gallery" element={<Lazy><GalleryScreen /></Lazy>} />
+          <Route
+            path="pick"
+            element={
+              <Lazy>
+                <Picker />
+              </Lazy>
+            }
+          />
+          <Route
+            path="r/:region"
+            element={
+              <Lazy>
+                <Region />
+              </Lazy>
+            }
+          />
+          <Route
+            path="methods"
+            element={
+              <Lazy>
+                <Methods />
+              </Lazy>
+            }
+          />
+          <Route
+            path="gallery"
+            element={
+              <Lazy>
+                <GalleryScreen />
+              </Lazy>
+            }
+          />
           <Route path="*" element={<NotFound />} />
         </Route>
         {/* The Season Brief is a print page: no header, no navigation. It carries its own credit footer. */}
-        <Route path="r/:region/brief" element={<Lazy><Brief /></Lazy>} />
+        <Route
+          path="r/:region/brief"
+          element={
+            <Lazy>
+              <Brief />
+            </Lazy>
+          }
+        />
       </Routes>
     </ErrorBoundary>
   );

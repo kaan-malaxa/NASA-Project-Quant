@@ -9,6 +9,9 @@ import CriticalWeeksSection from "./region/CriticalWeeksSection.jsx";
 import ThisWeekSection from "./region/ThisWeekSection.jsx";
 import WhereSection from "./region/WhereSection.jsx";
 import DownloadsSection from "./region/DownloadsSection.jsx";
+import DateRangeBar from "./region/DateRangeBar.jsx";
+import InThisPeriod from "./region/InThisPeriod.jsx";
+import StickyBar from "./region/StickyBar.jsx";
 
 /** #/r/:region — the region story (screens 3–7). */
 export default function Region() {
@@ -16,6 +19,8 @@ export default function Region() {
   const { status, region, files, regionsState } = useRegionData(id);
   const lastDataDay = region?.last_data_day ?? null;
   const [url, setUrl] = useUrlState(lastDataDay);
+  const meta = files.weekly?.status === "ok" ? files.weekly.data.series_meta : {};
+  const lensLabel = (id) => meta?.[id]?.label ?? id;
 
   if (status !== "ok") {
     return (
@@ -53,13 +58,18 @@ export default function Region() {
         <p className="max-w-3xl text-pretty">{region.story}</p>
         <p className="text-muted-foreground text-sm">Data through {region.last_data_day}.</p>
       </header>
-      <SectionNav />
+      <StickyBar>
+        <DateRangeBar url={url} setUrl={setUrl} lastDataDay={lastDataDay} />
+        <SectionNav />
+      </StickyBar>
       <VerdictSection state={files.trend} />
       <CalendarSection files={files} url={url} setUrl={setUrl} lastDataDay={lastDataDay} />
       <CriticalWeeksSection state={files.season} />
       <ThisWeekSection state={files.nowcast} />
       <WhereSection hex={files.hex} outline={files.outline} aoi={url.aoi} setUrl={setUrl} />
-      <DownloadsSection />
+      <DownloadsSection>
+        <InThisPeriod daily={files.daily} nowcast={files.nowcast} url={url} lastDataDay={lastDataDay} lensLabel={lensLabel} />
+      </DownloadsSection>
     </article>
   );
 }

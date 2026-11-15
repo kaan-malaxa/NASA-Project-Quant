@@ -1,0 +1,113 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "weekly (TEMPORARY, R5; replace with contracts/weekly.schema.json from R1)",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "code_version",
+    "region",
+    "series_meta",
+    "rows"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "code_version": {
+      "type": "string"
+    },
+    "region": {
+      "type": "string"
+    },
+    "series_meta": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "label",
+          "unit"
+        ],
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "unit": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "year",
+          "week",
+          "series",
+          "value",
+          "lo",
+          "hi",
+          "kind",
+          "source"
+        ],
+        "properties": {
+          "year": {
+            "type": "integer"
+          },
+          "week": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 52
+          },
+          "series": {
+            "enum": [
+              "aqua_raw",
+              "viirs_raw",
+              "viirs_as_aqua",
+              "harmonized",
+              "viirs_equiv"
+            ]
+          },
+          "value": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "lo": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "hi": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "kind": {
+            "enum": [
+              "observed",
+              "harmonized",
+              "estimated",
+              "missing",
+              "sample"
+            ]
+          },
+          "source": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

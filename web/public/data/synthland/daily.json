@@ -1,6 +1,32 @@
 {
-  "code_version": "a25fb442",
-  "generated_at": "2026-11-15T05:49:19Z",
+  "code_version": "1bb5e8f4",
+  "configuration": {
+    "anomaly": {
+      "above_pct": 75,
+      "below_pct": 25,
+      "extreme_pct": 95,
+      "low_activity_threshold": 5
+    },
+    "baseline_years": [
+      2003,
+      2025
+    ],
+    "eras": {
+      "aqua_trusted_through": "2022-12-31",
+      "record_start": "2003-01-01",
+      "snpp_first_day": "2012-01-20",
+      "snpp_through": "2025-12-31"
+    },
+    "timebins": {
+      "month_min_covered_frac": 0.8,
+      "solar_degrees_per_hour": 15,
+      "week_days": 7,
+      "week_min_covered_days": 5,
+      "weeks_per_year": 52,
+      "year_min_covered_frac": 0.9
+    }
+  },
+  "generated_at": "2026-11-15T18:00:00Z",
   "kind_runs": [
     {
       "from": "2003-01-01",

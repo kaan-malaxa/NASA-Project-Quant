@@ -63,10 +63,20 @@ const calibration = {
 const section = (name) => screen.getByRole("region", { name });
 
 describe("Methods page", () => {
+  it("does not request numbers_audit.md when the manifest does not list it", async () => {
+    const fetchSpy = mockFetch({ "methods.json": fullMethods(), "manifest.json": manifestJson(false), "regions.json": regionsJson({ files: [] }) });
+    renderMethods();
+    await screen.findByRole("region", { name: "Tested on a world where we know the answer" });
+    await waitFor(() => expect(fetchSpy.mock.calls.some(([u]) => String(u).endsWith("manifest.json"))).toBe(true));
+    await new Promise((r) => setTimeout(r, 50));
+    expect(fetchSpy.mock.calls.some(([u]) => String(u).includes("numbers_audit.md"))).toBe(false);
+    expect(screen.queryByRole("link", { name: "numbers audit" })).toBeNull();
+  });
+
   it("renders all seven parts from methods.json", async () => {
     mockFetch({
       "methods.json": fullMethods(),
-      "manifest.json": manifestJson(false),
+      "manifest.json": { ...manifestJson(false), files: [{ path: "numbers_audit.md", sha256: "x", bytes: 8, kinds: [] }] },
       "regions.json": regionsJson({ files: ["calibration"] }),
       "testland/calibration.json": calibration,
       "numbers_audit.md": "# audit",

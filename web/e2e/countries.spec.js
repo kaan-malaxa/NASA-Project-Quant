@@ -73,6 +73,8 @@ test("wordmark, launch styling and the path to country data work together", asyn
   const cta = page.locator(".landing-cta");
   await expect(cta).toHaveCSS("box-shadow", "none");
   await cta.click();
+  // The catalogue sits below a full page of place cards and loads when scrolled near.
+  await page.getByRole("navigation", { name: "Place pages" }).scrollIntoViewIfNeeded();
   await expect(page.getByRole("heading", { name: "World country data" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "United States", exact: true }).last()).toBeVisible();
   await page.getByRole("link", { name: "Open analysis" }).click();

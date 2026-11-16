@@ -8,6 +8,8 @@ import { fileURLToPath } from "node:url";
 const root = new URL("../dist/data/", import.meta.url);
 const manifest = JSON.parse(await readFile(new URL("manifest.json", root), "utf8"));
 const changed = new Map();
+// Never compress twice: fetchJson decompresses exactly once.
+const isGzip = (bytes) => bytes.length > 1 && bytes[0] === 0x1f && bytes[1] === 0x8b;
 const fingerprint = (bytes) => ({ bytes: bytes.length, sha256: createHash("sha256").update(bytes).digest("hex") });
 
 for (const entry of await readdir(root, { withFileTypes: true })) {
@@ -17,6 +19,7 @@ for (const entry of await readdir(root, { withFileTypes: true })) {
     if (!file.isFile() || !file.name.endsWith(".json") || file.name.endsWith("_index.json")) continue;
     const path = join(file.parentPath, file.name);
     const original = await readFile(path);
+    if (isGzip(original)) continue; // already stored compressed by pipeline.export (world countries)
     const compressed = gzipSync(original, { level: 9 });
     if (compressed.length >= original.length) continue;
     await writeFile(path, compressed);
@@ -42,6 +45,7 @@ for (const name of ["methods.json", "regions.json", "world.json"]) {
   let original;
   try { original = await readFile(url); }
   catch (error) { if (error.code === "ENOENT") continue; throw error; }
+  if (isGzip(original)) continue;
   const compressed = gzipSync(original, { level: 9 });
   if (compressed.length >= original.length) continue;
   await writeFile(url, compressed);

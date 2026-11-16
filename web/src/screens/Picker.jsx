@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import LoadingFrame from "@/components/LoadingFrame.jsx";
 import SectionState from "@/components/SectionState.jsx";
@@ -18,6 +18,9 @@ import { shouldAutoOpenTutorial } from "./picker/tutorialSteps.js";
 
 /** Screen 2 · Place picker: one card per region from regions.json. */
 export default function Picker() {
+  // A link straight to a country's source records (?country= / ?product=) shows the catalogue at once.
+  const [searchParams] = useSearchParams();
+  const deepLinked = searchParams.has("country") || searchParams.has("product");
   useDocumentMeta(
     "Pick a place",
     "Choose a place to see its fire calendar, its long-term trend and this week's burning.",
@@ -102,9 +105,13 @@ export default function Picker() {
       ) : null}
       {/* The world archive catalogue (world.json) loads only when it is scrolled near, so it never competes with the
           place cards above it. */}
-      <WhenNear minHeight="20rem">
+      {deepLinked ? (
         <CountryBrowser regions={regions} />
-      </WhenNear>
+      ) : (
+        <WhenNear minHeight="20rem">
+          <CountryBrowser regions={regions} />
+        </WhenNear>
+      )}
     </section>
   );
 }

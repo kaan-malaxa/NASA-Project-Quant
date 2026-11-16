@@ -123,7 +123,8 @@ export function LoadingShapes({ variant = "text", className = "" }) {
     if (variant === "cards")
         return (
             <div className="sk-cards">
-                {[0, 1, 2].map((i) => (
+                {/* One full picker page (24 places per page), so the loaded cards do not shift the layout. */}
+                {Array.from({ length: 24 }, (_, i) => (
                     <Card key={i} />
                 ))}
             </div>

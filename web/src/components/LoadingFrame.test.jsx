@@ -55,7 +55,7 @@ describe("loading frames", () => {
     });
     it("uses complete card silhouettes on picker routes", () => {
         const { container } = render(<PageLoading kind="pick" />);
-        expect(container.querySelectorAll(".sk-card")).toHaveLength(3);
-        expect(container.querySelectorAll('.sk-card [data-slot="skeleton"]')).toHaveLength(18);
+        expect(container.querySelectorAll(".sk-card")).toHaveLength(24); // one full picker page
+        expect(container.querySelectorAll('.sk-card [data-slot="skeleton"]')).toHaveLength(24 * 6);
     });
 });

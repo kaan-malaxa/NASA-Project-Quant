@@ -149,7 +149,7 @@ export default function DownloadsPanel({ region, files, url, lastDataDay, chartE
 
         <Item title="Season Brief (PDF)" description="A one-page summary for printing or saving as PDF.">
           <Button size="sm" variant="outline" asChild>
-            <Link to={{ pathname: `/r/${region.id}/brief`, search }}>
+            <Link data-tour="brief" to={{ pathname: `/r/${region.id}/brief`, search }}>
               <Printer aria-hidden="true" /> Season Brief
             </Link>
           </Button>

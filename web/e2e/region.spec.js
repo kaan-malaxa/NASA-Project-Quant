@@ -59,8 +59,14 @@ test.describe("region page", () => {
     const button = page.getByRole("button", { name: "Series CSV" });
     test.skip((await button.count()) === 0, "The Downloads panel (prompt C2) is not on this branch yet.");
     const [download] = await Promise.all([page.waitForEvent("download"), button.click()]);
-    expect(download.suggestedFilename()).toMatch(/^prometheus_torch_alpha_harmonized_2003-01-01_2026-11-13\.csv$/);
-    const text = await (await download.createReadStream()).toArray().then((c) => Buffer.concat(c).toString("utf8"));
+    expect(download.suggestedFilename()).toMatch(
+      /^prometheus_torch_alpha_harmonized_2003-01-01_2026-11-13\.csv$/,
+    );
+    const text = await (
+      await download.createReadStream()
+    )
+      .toArray()
+      .then((c) => Buffer.concat(c).toString("utf8"));
     expect(text.split("\n")[0]).toMatch(/^# Prometheus Torch /);
   });
 

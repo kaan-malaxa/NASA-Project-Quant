@@ -9,6 +9,7 @@ const ROUTES = [
   ["#/r/alpha", "region story"],
   ["#/r/alpha/brief", "season brief"],
   ["#/methods", "methods"],
+  ["#/simulation", "simulation test"],
   ["#/gallery", "gallery"],
   ["#/no/such/page", "catch-all"],
 ];

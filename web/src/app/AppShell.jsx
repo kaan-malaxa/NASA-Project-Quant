@@ -1,6 +1,9 @@
+import { lazy, Suspense, useEffect, useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import SampleBanner from "@/components/SampleBanner.jsx";
 import ErrorBoundary from "@/components/ErrorBoundary.jsx";
+
+const Tutorial = lazy(() => import("@/screens/picker/Tutorial.jsx"));
 
 export const FIRMS_URL = "https://firms.modaps.eosdis.nasa.gov/";
 
@@ -19,6 +22,12 @@ function navClass({ isActive }) {
 export default function AppShell({ banner = <SampleBanner />, resetKey }) {
   // The landing page lays out its own full-width sections (the globe hero); every other page sits in the column.
   const { pathname } = useLocation();
+  const [tour, setTour] = useState(false);
+  useEffect(() => {
+    const start = () => setTour(true);
+    window.addEventListener("start-tutorial", start);
+    return () => window.removeEventListener("start-tutorial", start);
+  }, []);
   const fullWidth = pathname === "/";
   const country = pathname.match(/^\/r\/([^/]+)/)?.[1];
   return (
@@ -28,14 +37,24 @@ export default function AppShell({ banner = <SampleBanner />, resetKey }) {
       </div>
       <header className="border-b">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-3">
-          <Link to="/" className="text-lg font-semibold tracking-tight focus-visible:outline-2 focus-visible:outline-offset-4">
+          <Link
+            to="/"
+            className="text-lg font-semibold tracking-tight focus-visible:outline-2 focus-visible:outline-offset-4"
+          >
             Prometheus Torch
           </Link>
           <nav aria-label="Main" className="flex gap-1">
             <NavLink to="/pick" className={navClass}>
               Pick a place
             </NavLink>
-            <NavLink to={country ? `/methods?region=${encodeURIComponent(country)}` : "/methods"} className={navClass}>
+            <NavLink to="/simulation" className={navClass}>
+              Simulation test
+            </NavLink>
+            <NavLink
+              data-tour="methods"
+              to={country ? `/methods?region=${encodeURIComponent(country)}` : "/methods"}
+              className={navClass}
+            >
               Methods
             </NavLink>
           </nav>
@@ -47,6 +66,7 @@ export default function AppShell({ banner = <SampleBanner />, resetKey }) {
           <Outlet />
         </ErrorBoundary>
       </main>
+      {tour ? <Suspense fallback={null}><Tutorial open onOpenChange={setTour} /></Suspense> : null}
       <footer className="border-t">
         <div className="mx-auto max-w-6xl px-4 py-4 text-sm">
           Fire data:{" "}

@@ -9,7 +9,9 @@
 
 import { readFileSync } from "node:fs";
 
-const WORLD = JSON.parse(readFileSync(new URL("../../contracts/examples/world.json", import.meta.url), "utf8"));
+const WORLD = JSON.parse(
+  readFileSync(new URL("../../contracts/examples/world.json", import.meta.url), "utf8"),
+);
 const LAST = "2026-11-13";
 const DAYS = 8718; // 2003-01-01 .. 2026-11-13
 const SERIES = ["aqua_raw", "viirs_raw", "viirs_as_aqua", "harmonized", "viirs_equiv"];
@@ -68,6 +70,21 @@ export function buildFiles({ sample }) {
         ],
       ],
     },
+    {
+      // A simulated region (as Synthland), for the Simulation test page.
+      id: "gamma",
+      name: "Gamma (planted-truth test)",
+      synthetic: true,
+      poly: [
+        [
+          [10, 10],
+          [12, 10],
+          [12, 12],
+          [10, 12],
+          [10, 10],
+        ],
+      ],
+    },
   ];
   const listed = [
     "weekly",
@@ -95,7 +112,7 @@ export function buildFiles({ sample }) {
       n_cells_r6: 10,
       membership: "polygon",
       last_data_day: LAST,
-      synthetic: false,
+      synthetic: r.synthetic === true,
       files: listed,
       optional_files: [],
     })),

@@ -452,3 +452,46 @@ test.describe("landing ready before the loader goes", () => {
     expect(problems).toEqual([]);
   });
 });
+
+test.describe("simulation test and picker", () => {
+  test("#/simulation tells the planted-truth story, labelled as simulated data", async ({ page }) => {
+    const problems = watch(page);
+    await serveData(page, { sample: false });
+    await open(page, "#/simulation");
+    await expect(page.getByRole("heading", { level: 1, name: "Simulation test" })).toBeVisible();
+    await expect(page.getByTestId("simulated-badge").first()).toBeVisible();
+    expect(await page.getByTestId("simulated-badge").count()).toBeGreaterThanOrEqual(4);
+    await expect(page.getByRole("heading", { name: "The verdict" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "The fire calendar" })).toBeVisible();
+    await expect(page.getByTestId("truth-check")).toBeVisible();
+    await expect(page.getByRole("link", { name: /See the full Gamma region page/ })).toHaveAttribute(
+      "href",
+      "#/r/gamma?debug=1",
+    );
+    await expect(
+      page.getByRole("navigation", { name: "Main" }).getByRole("link", { name: "Simulation test" }),
+    ).toBeVisible();
+    expect(problems).toEqual([]);
+  });
+
+  test("the picker shows its cards' maps quickly, and lists the simulated region last", async ({ page }) => {
+    await serveData(page, { sample: false });
+    const t0 = Date.now();
+    await page.goto("./#/pick");
+    await expect(page.getByRole("heading", { level: 1, name: "Pick a place" })).toBeVisible();
+    const cards = page.locator('a[href^="#/r/"]');
+    await expect(cards).toHaveCount(3);
+    await expect(page.locator('svg[aria-label^="Outline of"]')).toHaveCount(3, { timeout: 3000 });
+    expect(Date.now() - t0).toBeLessThan(3000);
+    await expect(cards.last()).toHaveAttribute("href", "#/r/gamma?debug=1");
+    await expect(cards.last().getByText("Simulated region")).toBeVisible();
+    // the tutorial never opens by itself under automation, but the button opens it
+    await expect(page.getByTestId("tutorial")).toHaveCount(0);
+    await page.getByRole("button", { name: "How to use this site" }).click();
+    await expect(page.getByTestId("tutorial")).toBeVisible();
+    await page.keyboard.press("ArrowRight");
+    await expect(page.getByTestId("tutorial")).toContainText("Step 2 of 12");
+    await page.keyboard.press("Escape");
+    await expect(page.getByTestId("tutorial")).toHaveCount(0);
+  });
+});

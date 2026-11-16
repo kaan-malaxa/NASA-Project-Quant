@@ -12,6 +12,7 @@ const Picker = lazy(() => import("@/screens/Picker.jsx"));
 const Region = lazy(() => import("@/screens/Region.jsx"));
 const Brief = lazy(() => import("@/screens/Brief.jsx"));
 const Methods = lazy(() => import("@/screens/Methods.jsx"));
+const Simulation = lazy(() => import("@/screens/Simulation.jsx"));
 const GalleryScreen = lazy(() => import("@/screens/GalleryScreen.jsx"));
 
 function ScreenLoading() {
@@ -56,6 +57,14 @@ export default function AppRoutes() {
             element={
               <Lazy>
                 <Methods />
+              </Lazy>
+            }
+          />
+          <Route
+            path="simulation"
+            element={
+              <Lazy>
+                <Simulation />
               </Lazy>
             }
           />

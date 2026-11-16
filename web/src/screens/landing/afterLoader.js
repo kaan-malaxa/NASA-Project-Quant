@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { fetchJson } from "@/data/fetchJson.js";
 import { regionFilePath } from "@/data/files.js";
+import { loadThumbFile } from "@/data/outlineThumbs.js";
 
 /**
  * While the landing loader is up, the page under it is hidden from screen readers and keyboard (inert, aria-hidden).
@@ -57,6 +58,7 @@ export function usePrefetchRegion(region, when) {
     /** @type {(() => Promise<unknown>)[]} */
     const jobs = [
       () => import("@/screens/Picker.jsx"),
+      () => loadThumbFile(), // the picker's outline thumbnails (a few kB)
       () => import("@/screens/Region.jsx"),
       ...PREFETCH_FILES.filter((n) => (region.files || []).includes(n)).map(
         (n) => () => fetchJson(regionFilePath(region.id, n)),

@@ -19,6 +19,7 @@ beforeEach(() => {
   clearFetchCache();
   mockFetch({}); // no data files: every screen must still render
   localStorage.setItem("firerosetta-loader-off", "1"); // the loader has its own tests (screens/landing)
+  localStorage.setItem("pt-tutorial-seen", "1"); // the tutorial has its own tests (screens/picker)
 });
 afterEach(() => {
   cleanup();

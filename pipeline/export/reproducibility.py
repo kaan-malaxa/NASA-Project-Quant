@@ -20,7 +20,9 @@ def snapshot(directory):
         if not file.is_file() or file.name in {"manifest.json", "numbers_audit.md"}:
             continue
         if file.suffix in {".json", ".geojson"}:
-            doc = json.loads(file.read_text(encoding="utf-8"))
+            from pipeline.common.io import read_json
+
+            doc = read_json(file)
             if file.name == "methods.json":
                 doc.pop("inputs", None)  # raw Parquet/file bytes and fetch clocks are platform metadata
             payload = json.dumps(normalise(doc), sort_keys=True, ensure_ascii=False, separators=(",", ":")).encode("utf-8")

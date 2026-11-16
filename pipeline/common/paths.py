@@ -1,5 +1,6 @@
 """All project and intermediate file locations."""
 import os
+from functools import lru_cache
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -9,9 +10,14 @@ def data_root() -> Path:
     return Path(os.environ.get("PROMETHEUS_TORCH_DATA_ROOT", PROJECT_ROOT / "data")).expanduser().resolve()
 
 
+@lru_cache(maxsize=8)
+def _resolved(path: Path) -> Path:
+    return path.resolve()  # slow on Windows; keyed by path, so a changed PROJECT_ROOT is honoured
+
+
 def source_data_root() -> Path:
     """The sole hotspot input directory; output overrides cannot change it."""
-    return (PROJECT_ROOT / "data").resolve()
+    return _resolved(PROJECT_ROOT / "data")
 
 
 def raw_dir(region) -> Path:

@@ -23,6 +23,8 @@ test("a world country opens the same analysis screens as the US", async ({ page 
     "href",
     /r\/portugal\/brief/,
   );
+  await page.getByRole("navigation", { name: "Main" }).getByRole("link", { name: "Methods", exact: true }).click();
+  await expect(page.getByLabel("Methods for a place")).toHaveValue("portugal");
   expect(problems).toEqual([]);
 });
 

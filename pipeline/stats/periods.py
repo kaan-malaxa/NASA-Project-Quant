@@ -17,7 +17,7 @@ def complete_years(daily):
                       last.year + (last == date(last.year, 12, 31))))
 
 
-def period_document(daily, annual_bootstrap, naive, calendars, region, name, science, header, years):
+def period_document(daily, annual_bootstrap, naive, calendars, region, name, science, header, years, cache=None):
     selected = deepcopy(science)
     selected["climatology"]["baseline_years"] = list(years)
     climatology = climatology_json(calendars["weekly"]["rows"], calendars["monthly"]["rows"], region,
@@ -28,7 +28,7 @@ def period_document(daily, annual_bootstrap, naive, calendars, region, name, sci
     subset = daily.loc[days.between(*years)]
     season = build_season(climatology, subset, region, selected, header)
     trends = build_trend_files(daily, annual_bootstrap, naive, region, name, science, header,
-                               analysis_years=years)
+                               analysis_years=years, cache=cache)
     return {**header, "schema_version": "2.0", "region": region, "analysis_years": list(years),
             "anomaly_baseline_years": science["climatology"]["baseline_years"],
             "climatology": climatology, "season": season, **trends}
@@ -37,12 +37,13 @@ def period_document(daily, annual_bootstrap, naive, calendars, region, name, sci
 def write_periods(out, daily, annual_bootstrap, naive, calendars, region, name, science, header):
     years = complete_years(daily)
     entries = []
+    cache = {}  # period-independent annual tables, computed once per region
     for first in years:
         for last in years:
             if last < first:
                 continue
             doc = period_document(daily, annual_bootstrap, naive, calendars, region, name, science, header,
-                                  (first, last))
+                                  (first, last), cache)
             relative = f"periods/{first}-{last}.json"
             file = out / relative
             io.write_json(doc, file, compact=True)

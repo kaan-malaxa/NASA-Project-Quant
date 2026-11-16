@@ -15,8 +15,8 @@ limitations:
   way.
 - Fire cell-days describe the spread of satellite-detected burning activity, not burned area, fire counts, severity
   or damage.
-- The analysis covers the approved whole-US polygon, including Alaska and Hawaii. A display wrap does not change
-  membership.
+- Each real region uses its published country outline. The United States includes Alaska and Hawaii.
+  Display wrapping preserves membership in the analysis polygon.
 - Calibration measured across the whole region is applied to smaller selected areas. Small areas can have different
   detection conditions.
 - Cloud, smoke, viewing geometry and overpass time can affect detections; coverage rules cannot measure every missed

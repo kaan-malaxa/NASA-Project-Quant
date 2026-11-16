@@ -20,7 +20,7 @@ import numpy as np
 import pandas as pd
 from scipy.stats import theilslopes
 
-from pipeline.common import timebins
+from pipeline.common import gpu, timebins
 from pipeline.common.sentences import (
     Estimate,
     ruler_sentence,
@@ -136,8 +136,13 @@ def estimate(series: dict[int, float | None], years: range, rng: np.random.Gener
     valid = np.any(dx != 0, axis=1) & (np.median(vals, axis=1) > 0)
     dx, xs, vals = dx[valid], xs[valid], vals[valid]
     with np.errstate(divide="ignore", invalid="ignore"):
-        slopes = np.where(dx != 0, (vals[:, right] - vals[:, left]) / dx, np.nan)
-        boot = 1000 * np.nanmedian(slopes, axis=1) / np.median(vals, axis=1)
+        # Median Theil-Sen slope per replicate: on the GPU when available (identical float64 arithmetic),
+        # else NumPy. "+ 0.0" makes a zero median +0.0 on both paths (-0.0/+0.0 ties sort in any order).
+        median_slope = gpu.theil_sen_nanmedian(xs, vals)
+        if median_slope is None:
+            slopes = np.where(dx != 0, (vals[:, right] - vals[:, left]) / dx, np.nan)
+            median_slope = np.nanmedian(slopes, axis=1)
+        boot = 1000 * (median_slope + 0.0) / np.median(vals, axis=1)
     boot = boot[np.isfinite(boot)]
     if not len(boot):
         return Estimate(None, None, None, "no valid bootstrap comparisons")
@@ -167,7 +172,10 @@ def _est(e: Estimate) -> dict[str, Any]:
 
 def build_trend_files(daily: pd.DataFrame, annual_bootstrap: pd.DataFrame, naive_annual: pd.DataFrame,
                       region: str, region_name: str, science: dict[str, Any],
-                      header: dict[str, Any], analysis_years=None) -> dict[str, dict[str, Any]]:
+                      header: dict[str, Any], analysis_years=None,
+                      cache: dict[str, Any] | None = None) -> dict[str, dict[str, Any]]:
+    """`cache` (one dict per region) reuses the annual tables and the replicate lookup, which depend only
+    on the full daily record and not on `analysis_years`, across the many selectable periods."""
     b = boundaries(science)
     n_boot = science["trend"]["bootstrap_b"]
     seed = science.get("seed", 7)
@@ -177,16 +185,21 @@ def build_trend_files(daily: pd.DataFrame, annual_bootstrap: pd.DataFrame, naive
     def rng(name: str) -> np.random.Generator:
         return np.random.default_rng([seed, SEED_OFFSETS[name]])
 
-    harm = annual_table(series_frame(daily, "harmonized"))
-    aqua = annual_table(series_frame(daily, "aqua_raw"))
-    spliced = annual_table(spliced_frame(daily, b["first_viirs"]))
-    naive = naive_annual_counts(naive_annual, science)
+    if cache is not None and "tables" in cache:
+        harm, aqua, spliced, naive, replacer = cache["tables"]
+    else:
+        harm = annual_table(series_frame(daily, "harmonized"))
+        aqua = annual_table(series_frame(daily, "aqua_raw"))
+        spliced = annual_table(spliced_frame(daily, b["first_viirs"]))
+        naive = naive_annual_counts(naive_annual, science)
+        replacer = bootstrap_replacer(annual_bootstrap)
+        if cache is not None:
+            cache["tables"] = (harm, aqua, spliced, naive, replacer)
 
     def values(table: dict[int, dict[str, Any]], key: str = "value") -> dict[int, float | None]:
         return {y: table[y][key] for y in table}
 
-    H = estimate(values(harm), years, rng("harmonized"), n_boot,
-                 bootstrap_replacer(annual_bootstrap))
+    H = estimate(values(harm), years, rng("harmonized"), n_boot, replacer)
     N = estimate(values(naive, "naive"), years, rng("naive"), n_boot)
     variants = {
         "aqua_only_2003_2022": estimate(values(aqua), range(y0, min(y1, b["aqua_last"]) + 1),

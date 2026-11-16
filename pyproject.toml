@@ -7,6 +7,10 @@ dependencies = [
   "requests", "jsonschema", "matplotlib", "python-dotenv", "tqdm",
 ]
 
+[project.optional-dependencies]
+# Optional OpenCL GPU acceleration (any vendor); results are identical with or without it.
+gpu = ["pyopencl>=2024.1"]
+
 [dependency-groups]
 dev = ["pytest", "ruff"]
 

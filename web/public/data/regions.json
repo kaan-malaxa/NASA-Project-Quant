@@ -1,5 +1,5 @@
 {
-  "code_version": "5c7271a5",
+  "code_version": "088f86c3",
   "configuration": {
     "anomaly": {
       "above_pct": 75,
@@ -26,7 +26,7 @@
       "year_min_covered_frac": 0.9
     }
   },
-  "generated_at": "2026-11-15T22:17:45Z",
+  "generated_at": "2026-11-16T00:35:59Z",
   "regions": [
     {
       "bbox": [
@@ -108,6 +108,3048 @@
     },
     {
       "bbox": [
+        60.487,
+        29.387,
+        74.892,
+        38.474
+      ],
+      "centroid": [
+        66.008,
+        33.836
+      ],
+      "country": "AF",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "afghanistan",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 16010,
+      "name": "Afghanistan",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Afghanistan, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        19.272,
+        39.637,
+        21.037,
+        42.655
+      ],
+      "centroid": [
+        20.054,
+        41.142
+      ],
+      "country": "AL",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "albania",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 702,
+      "name": "Albania",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Albania, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        -8.682,
+        18.976,
+        11.969,
+        37.094
+      ],
+      "centroid": [
+        2.653,
+        28.149
+      ],
+      "country": "DZ",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "algeria",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 61627,
+      "name": "Algeria",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Algeria, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        11.669,
+        -18.031,
+        24.062,
+        -4.391
+      ],
+      "centroid": [
+        17.537,
+        -12.292
+      ],
+      "country": "AO",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "angola",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 30655,
+      "name": "Angola",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Angola, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        43.436,
+        38.864,
+        46.603,
+        41.29
+      ],
+      "centroid": [
+        44.932,
+        40.288
+      ],
+      "country": "AM",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "armenia",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 819,
+      "name": "Armenia",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Armenia, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        9.521,
+        46.379,
+        17.148,
+        49.01
+      ],
+      "centroid": [
+        14.131,
+        47.586
+      ],
+      "country": "AT",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "austria",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 2346,
+      "name": "Austria",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Austria, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        44.775,
+        38.393,
+        50.626,
+        41.89
+      ],
+      "centroid": [
+        47.542,
+        40.289
+      ],
+      "country": "AZ",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "azerbaijan",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 2316,
+      "name": "Azerbaijan",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Azerbaijan, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        -79.594,
+        20.912,
+        -72.746,
+        26.928
+      ],
+      "centroid": [
+        -76.553,
+        24.225
+      ],
+      "country": "BS",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "bahamas",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 443,
+      "name": "The Bahamas",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across The Bahamas, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        50.381,
+        25.58,
+        50.82,
+        26.287
+      ],
+      "centroid": [
+        50.563,
+        26.035
+      ],
+      "country": "BH",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "bahrain",
+      "last_data_day": "2026-01-01",
+      "membership": "polygon",
+      "n_cells_r6": 18,
+      "name": "Bahrain",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Bahrain, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        88.022,
+        20.739,
+        92.643,
+        26.624
+      ],
+      "centroid": [
+        90.242,
+        23.846
+      ],
+      "country": "BD",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "bangladesh",
+      "last_data_day": "2026-01-01",
+      "membership": "polygon",
+      "n_cells_r6": 3510,
+      "name": "Bangladesh",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Bangladesh, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        23.166,
+        51.235,
+        32.72,
+        56.157
+      ],
+      "centroid": [
+        28.034,
+        53.532
+      ],
+      "country": "BY",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "belarus",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 6464,
+      "name": "Belarus",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Belarus, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        2.522,
+        49.495,
+        6.375,
+        51.496
+      ],
+      "centroid": [
+        4.64,
+        50.637
+      ],
+      "country": "BE",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "belgium",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 976,
+      "name": "Belgium",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Belgium, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        -89.237,
+        15.88,
+        -87.783,
+        18.491
+      ],
+      "centroid": [
+        -88.694,
+        17.208
+      ],
+      "country": "BZ",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "belize",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 615,
+      "name": "Belize",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Belize, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        0.76,
+        6.214,
+        3.837,
+        12.399
+      ],
+      "centroid": [
+        2.329,
+        9.641
+      ],
+      "country": "BJ",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "benin",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 3789,
+      "name": "Benin",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Benin, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        88.73,
+        26.696,
+        92.089,
+        28.358
+      ],
+      "centroid": [
+        90.407,
+        27.422
+      ],
+      "country": "BT",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "bhutan",
+      "last_data_day": "2026-01-01",
+      "membership": "polygon",
+      "n_cells_r6": 1085,
+      "name": "Bhutan",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Bhutan, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        15.716,
+        42.559,
+        19.619,
+        45.285
+      ],
+      "centroid": [
+        17.773,
+        44.172
+      ],
+      "country": "BA",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "bosnia-and-herzegovina",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 1349,
+      "name": "Bosnia and Herzegovina",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Bosnia and Herzegovina, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        19.978,
+        -26.892,
+        29.35,
+        -17.782
+      ],
+      "centroid": [
+        23.799,
+        -22.186
+      ],
+      "country": "BW",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "botswana",
+      "last_data_day": "2026-01-01",
+      "membership": "polygon",
+      "n_cells_r6": 14025,
+      "name": "Botswana",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Botswana, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        -74.018,
+        -33.742,
+        -28.877,
+        5.267
+      ],
+      "centroid": [
+        -53.092,
+        -10.781
+      ],
+      "country": "BR",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "brazil",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 219238,
+      "name": "Brazil",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Brazil, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        22.345,
+        41.238,
+        28.604,
+        44.228
+      ],
+      "centroid": [
+        25.217,
+        42.769
+      ],
+      "country": "BG",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "bulgaria",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 2852,
+      "name": "Bulgaria",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Bulgaria, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        -5.523,
+        9.392,
+        2.39,
+        15.08
+      ],
+      "centroid": [
+        -1.756,
+        12.27
+      ],
+      "country": "BF",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "burkina-faso",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 9148,
+      "name": "Burkina Faso",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Burkina Faso, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        28.987,
+        -4.463,
+        30.834,
+        -2.303
+      ],
+      "centroid": [
+        29.875,
+        -3.357
+      ],
+      "country": "BI",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "burundi",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 647,
+      "name": "Burundi",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Burundi, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        -109.454,
+        -55.919,
+        -66.421,
+        -17.507
+      ],
+      "centroid": [
+        -71.364,
+        -37.744
+      ],
+      "country": "CL",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "chile",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 21995,
+      "name": "Chile",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Chile, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        -87.118,
+        5.515,
+        -82.563,
+        11.21
+      ],
+      "centroid": [
+        -84.194,
+        9.973
+      ],
+      "country": "CR",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "costa-rica",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 1431,
+      "name": "Costa Rica",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Costa Rica, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        13.501,
+        42.416,
+        19.408,
+        46.547
+      ],
+      "centroid": [
+        16.396,
+        45.067
+      ],
+      "country": "HR",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "croatia",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 1457,
+      "name": "Croatia",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Croatia, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        -84.95,
+        19.828,
+        -74.133,
+        23.266
+      ],
+      "centroid": [
+        -79.035,
+        21.625
+      ],
+      "country": "CU",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "cuba",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 3600,
+      "name": "Cuba",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Cuba, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        124.211,
+        37.676,
+        130.7,
+        43.01
+      ],
+      "centroid": [
+        127.181,
+        40.168
+      ],
+      "country": "KP",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "dem-rep-korea",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 4823,
+      "name": "North Korea",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across North Korea, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        8.094,
+        54.569,
+        15.151,
+        57.751
+      ],
+      "centroid": [
+        10.052,
+        55.965
+      ],
+      "country": "DK",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "denmark",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 1479,
+      "name": "Denmark",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Denmark, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        -72.01,
+        17.546,
+        -68.329,
+        19.938
+      ],
+      "centroid": [
+        -70.497,
+        18.896
+      ],
+      "country": "DO",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "dominican-republic",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 1802,
+      "name": "Dominican Republic",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Dominican Republic, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        -92.012,
+        -5.011,
+        -75.227,
+        1.664
+      ],
+      "centroid": [
+        -78.772,
+        -1.426
+      ],
+      "country": "EC",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "ecuador",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 6161,
+      "name": "Ecuador",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Ecuador, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        24.688,
+        21.994,
+        36.899,
+        31.656
+      ],
+      "centroid": [
+        29.861,
+        26.493
+      ],
+      "country": "EG",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "egypt",
+      "last_data_day": "2026-01-01",
+      "membership": "polygon",
+      "n_cells_r6": 23578,
+      "name": "Egypt",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Egypt, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        -90.115,
+        13.159,
+        -87.693,
+        14.445
+      ],
+      "centroid": [
+        -88.871,
+        13.736
+      ],
+      "country": "SV",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "el-salvador",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 583,
+      "name": "El Salvador",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across El Salvador, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        5.612,
+        -1.476,
+        11.336,
+        3.772
+      ],
+      "centroid": [
+        10.333,
+        1.707
+      ],
+      "country": "GQ",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "equatorial-guinea",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 798,
+      "name": "Equatorial Guinea",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Equatorial Guinea, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        36.424,
+        12.36,
+        43.124,
+        18.005
+      ],
+      "centroid": [
+        38.853,
+        15.358
+      ],
+      "country": "ER",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "eritrea",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 3370,
+      "name": "Eritrea",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Eritrea, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        -180.0,
+        -21.711,
+        180.0,
+        -12.475
+      ],
+      "centroid": [
+        163.409,
+        -17.448
+      ],
+      "country": "FJ",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "fiji",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 587,
+      "name": "Fiji",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Fiji, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        -5.133,
+        41.366,
+        9.56,
+        51.088
+      ],
+      "centroid": [
+        2.546,
+        46.555
+      ],
+      "country": "FR",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "france",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 16156,
+      "name": "France",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across France, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        -54.615,
+        2.111,
+        -51.649,
+        5.745
+      ],
+      "centroid": [
+        -53.245,
+        3.923
+      ],
+      "country": "GF",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "french-guiana",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 2093,
+      "name": "French Guiana",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across French Guiana, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        8.696,
+        -3.937,
+        14.499,
+        2.322
+      ],
+      "centroid": [
+        11.79,
+        -0.592
+      ],
+      "country": "GA",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "gabon",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 7417,
+      "name": "Gabon",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Gabon, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        39.986,
+        41.044,
+        46.695,
+        43.576
+      ],
+      "centroid": [
+        43.507,
+        42.169
+      ],
+      "country": "GE",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "georgia",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 1926,
+      "name": "Georgia",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Georgia, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        5.852,
+        47.271,
+        15.022,
+        55.065
+      ],
+      "centroid": [
+        10.381,
+        51.106
+      ],
+      "country": "DE",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "germany",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 10959,
+      "name": "Germany",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Germany, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        19.626,
+        34.815,
+        28.24,
+        41.75
+      ],
+      "centroid": [
+        22.975,
+        39.051
+      ],
+      "country": "GR",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "greece",
+      "last_data_day": "2026-01-01",
+      "membership": "polygon",
+      "n_cells_r6": 3168,
+      "name": "Greece",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Greece, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        -92.246,
+        13.731,
+        -88.221,
+        17.816
+      ],
+      "centroid": [
+        -90.36,
+        15.696
+      ],
+      "country": "GT",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "guatemala",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 2963,
+      "name": "Guatemala",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Guatemala, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        -16.728,
+        10.928,
+        -13.661,
+        12.679
+      ],
+      "centroid": [
+        -14.977,
+        12.027
+      ],
+      "country": "GW",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "guinea-bissau",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 999,
+      "name": "Guinea-Bissau",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Guinea-Bissau, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        -61.397,
+        1.186,
+        -56.482,
+        8.558
+      ],
+      "centroid": [
+        -58.98,
+        4.794
+      ],
+      "country": "GY",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "guyana",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 5798,
+      "name": "Guyana",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Guyana, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        -74.489,
+        18.026,
+        -71.639,
+        20.09
+      ],
+      "centroid": [
+        -72.691,
+        18.938
+      ],
+      "country": "HT",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "haiti",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 982,
+      "name": "Haiti",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Haiti, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        -89.364,
+        12.98,
+        -83.13,
+        17.419
+      ],
+      "centroid": [
+        -86.625,
+        14.821
+      ],
+      "country": "HN",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "honduras",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 3280,
+      "name": "Honduras",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Honduras, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        16.094,
+        45.741,
+        22.878,
+        48.569
+      ],
+      "centroid": [
+        19.397,
+        47.163
+      ],
+      "country": "HU",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "hungary",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 2533,
+      "name": "Hungary",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Hungary, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        -24.54,
+        63.397,
+        -13.503,
+        66.564
+      ],
+      "centroid": [
+        -18.596,
+        64.998
+      ],
+      "country": "IS",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "iceland",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 3220,
+      "name": "Iceland",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Iceland, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        34.248,
+        29.49,
+        35.888,
+        33.407
+      ],
+      "centroid": [
+        34.997,
+        31.448
+      ],
+      "country": "IL",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "israel",
+      "last_data_day": "2026-01-01",
+      "membership": "polygon",
+      "n_cells_r6": 537,
+      "name": "Israel",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Israel, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        6.603,
+        35.489,
+        18.517,
+        47.085
+      ],
+      "centroid": [
+        12.072,
+        42.786
+      ],
+      "country": "IT",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "italy",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 7922,
+      "name": "Italy",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Italy, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        122.938,
+        24.212,
+        153.986,
+        45.52
+      ],
+      "centroid": [
+        137.978,
+        37.551
+      ],
+      "country": "JP",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "japan",
+      "last_data_day": "2026-01-01",
+      "membership": "polygon",
+      "n_cells_r6": 11676,
+      "name": "Japan",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Japan, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        33.89,
+        -4.678,
+        41.885,
+        5.03
+      ],
+      "centroid": [
+        37.822,
+        0.551
+      ],
+      "country": "KE",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "kenya",
+      "last_data_day": "2026-01-01",
+      "membership": "polygon",
+      "n_cells_r6": 15334,
+      "name": "Kenya",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Kenya, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        46.532,
+        28.534,
+        48.433,
+        30.098
+      ],
+      "centroid": [
+        47.595,
+        29.34
+      ],
+      "country": "KW",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "kuwait",
+      "last_data_day": "2026-01-01",
+      "membership": "polygon",
+      "n_cells_r6": 505,
+      "name": "Kuwait",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Kuwait, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        69.226,
+        39.189,
+        80.258,
+        43.262
+      ],
+      "centroid": [
+        74.542,
+        41.462
+      ],
+      "country": "KG",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "kyrgyzstan",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 4613,
+      "name": "Kyrgyzstan",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Kyrgyzstan, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        27.002,
+        -30.659,
+        29.436,
+        -28.571
+      ],
+      "centroid": [
+        28.229,
+        -29.58
+      ],
+      "country": "LS",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "lesotho",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 779,
+      "name": "Lesotho",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Lesotho, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        -11.476,
+        4.347,
+        -7.384,
+        8.565
+      ],
+      "centroid": [
+        -9.32,
+        6.452
+      ],
+      "country": "LR",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "liberia",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 3593,
+      "name": "Liberia",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Liberia, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        9.287,
+        19.496,
+        25.156,
+        33.181
+      ],
+      "centroid": [
+        18.01,
+        27.03
+      ],
+      "country": "LY",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "libya",
+      "last_data_day": "2026-01-01",
+      "membership": "polygon",
+      "n_cells_r6": 38105,
+      "name": "Libya",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Libya, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        20.444,
+        40.849,
+        23.01,
+        42.37
+      ],
+      "centroid": [
+        21.684,
+        41.595
+      ],
+      "country": "MK",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "macedonia-former-yugoslav-republic-of",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 628,
+      "name": "North Macedonia",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across North Macedonia, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        32.663,
+        -17.135,
+        35.904,
+        -9.381
+      ],
+      "centroid": [
+        34.29,
+        -13.217
+      ],
+      "country": "MW",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "malawi",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 2794,
+      "name": "Malawi",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Malawi, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        99.645,
+        0.851,
+        119.278,
+        7.356
+      ],
+      "centroid": [
+        109.699,
+        3.792
+      ],
+      "country": "MY",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "malaysia",
+      "last_data_day": "2026-01-01",
+      "membership": "polygon",
+      "n_cells_r6": 8527,
+      "name": "Malaysia",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Malaysia, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        -17.081,
+        14.734,
+        -4.822,
+        27.285
+      ],
+      "centroid": [
+        -10.343,
+        20.256
+      ],
+      "country": "MR",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "mauritania",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 28784,
+      "name": "Mauritania",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Mauritania, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        26.618,
+        45.462,
+        30.132,
+        48.486
+      ],
+      "centroid": [
+        28.461,
+        47.195
+      ],
+      "country": "MD",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "moldova",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 907,
+      "name": "Moldova",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Moldova, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        87.736,
+        41.586,
+        119.907,
+        52.13
+      ],
+      "centroid": [
+        103.056,
+        46.826
+      ],
+      "country": "MN",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "mongolia",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 45408,
+      "name": "Mongolia",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Mongolia, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        18.434,
+        41.852,
+        20.355,
+        43.548
+      ],
+      "centroid": [
+        19.239,
+        42.786
+      ],
+      "country": "ME",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "montenegro",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 344,
+      "name": "Montenegro",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Montenegro, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        -17.014,
+        21.42,
+        -1.032,
+        35.927
+      ],
+      "centroid": [
+        -8.396,
+        29.842
+      ],
+      "country": "MA",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "morocco",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 15331,
+      "name": "Morocco",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Morocco, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        11.718,
+        -28.959,
+        25.26,
+        -16.951
+      ],
+      "centroid": [
+        17.211,
+        -22.129
+      ],
+      "country": "NA",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "namibia",
+      "last_data_day": "2026-01-01",
+      "membership": "polygon",
+      "n_cells_r6": 20958,
+      "name": "Namibia",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Namibia, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        80.03,
+        26.344,
+        88.169,
+        30.417
+      ],
+      "centroid": [
+        83.916,
+        28.248
+      ],
+      "country": "NP",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "nepal",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 4042,
+      "name": "Nepal",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Nepal, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        3.349,
+        50.748,
+        7.199,
+        53.558
+      ],
+      "centroid": [
+        5.584,
+        52.268
+      ],
+      "country": "NL",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "netherlands",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 1205,
+      "name": "Netherlands",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Netherlands, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        163.616,
+        -22.671,
+        171.344,
+        -19.624
+      ],
+      "centroid": [
+        165.703,
+        -21.304
+      ],
+      "country": "NC",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "new-caledonia",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 492,
+      "name": "New Caledonia",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across New Caledonia, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        -177.958,
+        -52.6,
+        178.844,
+        -29.222
+      ],
+      "centroid": [
+        171.474,
+        -41.83
+      ],
+      "country": "NZ",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "new-zealand",
+      "last_data_day": "2026-01-01",
+      "membership": "polygon",
+      "n_cells_r6": 7020,
+      "name": "New Zealand",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across New Zealand, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        -87.686,
+        10.713,
+        -82.726,
+        15.031
+      ],
+      "centroid": [
+        -85.033,
+        12.845
+      ],
+      "country": "NI",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "nicaragua",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 3779,
+      "name": "Nicaragua",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Nicaragua, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        0.153,
+        11.696,
+        15.97,
+        23.517
+      ],
+      "centroid": [
+        9.386,
+        17.418
+      ],
+      "country": "NE",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "niger",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 31246,
+      "name": "Niger",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Niger, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        51.979,
+        16.642,
+        59.845,
+        26.386
+      ],
+      "centroid": [
+        56.093,
+        20.602
+      ],
+      "country": "OM",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "oman",
+      "last_data_day": "2026-01-01",
+      "membership": "polygon",
+      "n_cells_r6": 10440,
+      "name": "Oman",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Oman, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        60.844,
+        23.695,
+        77.049,
+        37.054
+      ],
+      "centroid": [
+        69.341,
+        29.949
+      ],
+      "country": "PK",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "pakistan",
+      "last_data_day": "2026-01-01",
+      "membership": "polygon",
+      "n_cells_r6": 22907,
+      "name": "Pakistan",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Pakistan, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        -83.053,
+        7.206,
+        -77.163,
+        9.629
+      ],
+      "centroid": [
+        -80.121,
+        8.515
+      ],
+      "country": "PA",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "panama",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 2031,
+      "name": "Panama",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Panama, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        140.849,
+        -11.636,
+        155.968,
+        -1.346
+      ],
+      "centroid": [
+        145.232,
+        -6.47
+      ],
+      "country": "PG",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "papua-new-guinea",
+      "last_data_day": "2026-01-01",
+      "membership": "polygon",
+      "n_cells_r6": 11686,
+      "name": "Papua New Guinea",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Papua New Guinea, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        -81.338,
+        -18.338,
+        -68.684,
+        -0.029
+      ],
+      "centroid": [
+        -74.378,
+        -9.154
+      ],
+      "country": "PE",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "peru",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 31327,
+      "name": "Peru",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Peru, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        116.955,
+        4.656,
+        126.618,
+        21.122
+      ],
+      "centroid": [
+        122.875,
+        11.763
+      ],
+      "country": "PH",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "philippines",
+      "last_data_day": "2026-01-01",
+      "membership": "polygon",
+      "n_cells_r6": 7757,
+      "name": "Philippines",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Philippines, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        14.124,
+        48.994,
+        24.143,
+        54.838
+      ],
+      "centroid": [
+        19.394,
+        52.125
+      ],
+      "country": "PL",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "poland",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 9434,
+      "name": "Poland",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Poland, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
         -31.285,
         30.029,
         -6.206,
@@ -143,6 +3185,1293 @@
         "cells_monthly"
       ],
       "story": "Satellite detections across Portugal, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        50.751,
+        24.56,
+        51.617,
+        26.16
+      ],
+      "centroid": [
+        51.187,
+        25.313
+      ],
+      "country": "QA",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "qatar",
+      "last_data_day": "2026-01-01",
+      "membership": "polygon",
+      "n_cells_r6": 344,
+      "name": "Qatar",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Qatar, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        11.114,
+        -5.02,
+        18.642,
+        3.708
+      ],
+      "centroid": [
+        15.218,
+        -0.839
+      ],
+      "country": "CG",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "republic-of-congo",
+      "last_data_day": "2026-01-01",
+      "membership": "polygon",
+      "n_cells_r6": 9347,
+      "name": "Republic of the Congo",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Republic of the Congo, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        124.614,
+        33.198,
+        131.863,
+        38.578
+      ],
+      "centroid": [
+        127.823,
+        36.352
+      ],
+      "country": "KR",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "republic-of-korea",
+      "last_data_day": "2026-01-01",
+      "membership": "polygon",
+      "n_cells_r6": 3781,
+      "name": "South Korea",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across South Korea, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        55.225,
+        -21.371,
+        55.855,
+        -20.861
+      ],
+      "centroid": [
+        55.542,
+        -21.119
+      ],
+      "country": "RE",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "reunion",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 66,
+      "name": "Reunion",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Reunion, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        20.243,
+        43.65,
+        29.7,
+        48.275
+      ],
+      "centroid": [
+        24.973,
+        45.853
+      ],
+      "country": "RO",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "romania",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 6282,
+      "name": "Romania",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Romania, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        28.857,
+        -2.827,
+        30.888,
+        -1.059
+      ],
+      "centroid": [
+        29.919,
+        -1.993
+      ],
+      "country": "RW",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "rwanda",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 623,
+      "name": "Rwanda",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Rwanda, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        34.573,
+        16.371,
+        55.638,
+        32.121
+      ],
+      "centroid": [
+        44.537,
+        24.122
+      ],
+      "country": "SA",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "saudi-arabia",
+      "last_data_day": "2026-01-01",
+      "membership": "polygon",
+      "n_cells_r6": 54022,
+      "name": "Saudi Arabia",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Saudi Arabia, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        -17.536,
+        12.306,
+        -11.378,
+        16.691
+      ],
+      "centroid": [
+        -14.471,
+        14.368
+      ],
+      "country": "SN",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "senegal",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 5739,
+      "name": "Senegal",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Senegal, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        18.845,
+        42.235,
+        22.985,
+        46.174
+      ],
+      "centroid": [
+        20.789,
+        44.222
+      ],
+      "country": "RS",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "serbia",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 2006,
+      "name": "Serbia",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Serbia, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        -13.301,
+        6.919,
+        -10.282,
+        9.996
+      ],
+      "centroid": [
+        -11.795,
+        8.563
+      ],
+      "country": "SL",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "sierra-leone",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 2456,
+      "name": "Sierra Leone",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Sierra Leone, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        16.844,
+        47.75,
+        22.54,
+        49.602
+      ],
+      "centroid": [
+        19.48,
+        48.705
+      ],
+      "country": "SK",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "slovakia",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 1356,
+      "name": "Slovakia",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Slovakia, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        40.965,
+        -1.696,
+        51.417,
+        11.989
+      ],
+      "centroid": [
+        45.851,
+        6.063
+      ],
+      "country": "SO",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "somalia",
+      "last_data_day": "2026-01-01",
+      "membership": "polygon",
+      "n_cells_r6": 20205,
+      "name": "Somalia",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Somalia, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        -18.167,
+        27.642,
+        4.337,
+        43.793
+      ],
+      "centroid": [
+        -3.653,
+        40.227
+      ],
+      "country": "ES",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "spain",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 13657,
+      "name": "Spain",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Spain, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        79.656,
+        5.924,
+        81.89,
+        9.83
+      ],
+      "centroid": [
+        80.703,
+        7.616
+      ],
+      "country": "LK",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "sri-lanka",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 1707,
+      "name": "Sri Lanka",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Sri Lanka, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        -58.068,
+        1.834,
+        -53.986,
+        6.012
+      ],
+      "centroid": [
+        -55.911,
+        4.131
+      ],
+      "country": "SR",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "suriname",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 3797,
+      "name": "Suriname",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Suriname, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        30.783,
+        -27.316,
+        32.117,
+        -25.736
+      ],
+      "centroid": [
+        31.48,
+        -26.562
+      ],
+      "country": "SZ",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "swaziland",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 428,
+      "name": "eSwatini",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across eSwatini, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        11.108,
+        55.343,
+        24.163,
+        69.036
+      ],
+      "centroid": [
+        16.754,
+        62.777
+      ],
+      "country": "SE",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "sweden",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 17245,
+      "name": "Sweden",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Sweden, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        35.723,
+        32.313,
+        42.377,
+        37.325
+      ],
+      "centroid": [
+        38.508,
+        35.026
+      ],
+      "country": "SY",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "syria",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 4714,
+      "name": "Syria",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Syria, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        118.28,
+        21.905,
+        122.005,
+        25.287
+      ],
+      "centroid": [
+        120.95,
+        23.753
+      ],
+      "country": "TW",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "taiwan",
+      "last_data_day": "2026-01-01",
+      "membership": "polygon",
+      "n_cells_r6": 1117,
+      "name": "Taiwan",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Taiwan, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        67.343,
+        36.679,
+        75.164,
+        41.04
+      ],
+      "centroid": [
+        71.016,
+        38.53
+      ],
+      "country": "TJ",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "tajikistan",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 3349,
+      "name": "Tajikistan",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Tajikistan, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        -16.83,
+        13.065,
+        -13.819,
+        13.82
+      ],
+      "centroid": [
+        -15.398,
+        13.45
+      ],
+      "country": "GM",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "the-gambia",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 313,
+      "name": "Gambia",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Gambia, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        124.03,
+        -9.501,
+        127.313,
+        -8.135
+      ],
+      "centroid": [
+        125.851,
+        -8.824
+      ],
+      "country": "TL",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "timor-leste",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 403,
+      "name": "East Timor",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across East Timor, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        -0.166,
+        6.1,
+        1.782,
+        11.135
+      ],
+      "centroid": [
+        0.962,
+        8.527
+      ],
+      "country": "TG",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "togo",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 1931,
+      "name": "Togo",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Togo, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        7.48,
+        30.229,
+        11.564,
+        37.345
+      ],
+      "centroid": [
+        9.555,
+        34.119
+      ],
+      "country": "TN",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "tunisia",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 3887,
+      "name": "Tunisia",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Tunisia, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        25.663,
+        35.82,
+        44.807,
+        42.099
+      ],
+      "centroid": [
+        35.167,
+        39.061
+      ],
+      "country": "TR",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "turkey",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 19988,
+      "name": "Turkey",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Turkey, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        52.438,
+        35.141,
+        66.646,
+        42.791
+      ],
+      "centroid": [
+        59.376,
+        39.116
+      ],
+      "country": "TM",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "turkmenistan",
+      "last_data_day": "2026-01-01",
+      "membership": "polygon",
+      "n_cells_r6": 11499,
+      "name": "Turkmenistan",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Turkmenistan, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        51.569,
+        22.621,
+        56.384,
+        26.075
+      ],
+      "centroid": [
+        54.301,
+        23.906
+      ],
+      "country": "AE",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "united-arab-emirates",
+      "last_data_day": "2026-01-01",
+      "membership": "polygon",
+      "n_cells_r6": 2266,
+      "name": "United Arab Emirates",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across United Arab Emirates, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        -13.691,
+        49.91,
+        1.771,
+        60.848
+      ],
+      "centroid": [
+        -2.887,
+        54.147
+      ],
+      "country": "GB",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "united-kingdom",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 7577,
+      "name": "United Kingdom",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across United Kingdom, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        -58.439,
+        -34.973,
+        -53.111,
+        -30.097
+      ],
+      "centroid": [
+        -56.017,
+        -32.798
+      ],
+      "country": "UY",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "uruguay",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 6511,
+      "name": "Uruguay",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Uruguay, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        55.976,
+        37.185,
+        73.149,
+        45.559
+      ],
+      "centroid": [
+        63.14,
+        41.756
+      ],
+      "country": "UZ",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "uzbekistan",
+      "last_data_day": "2026-01-01",
+      "membership": "polygon",
+      "n_cells_r6": 10570,
+      "name": "Uzbekistan",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Uzbekistan, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        166.521,
+        -20.253,
+        169.899,
+        -13.065
+      ],
+      "centroid": [
+        167.701,
+        -16.201
+      ],
+      "country": "VU",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "vanuatu",
+      "last_data_day": "2025-12-31",
+      "membership": "polygon",
+      "n_cells_r6": 351,
+      "name": "Vanuatu",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Vanuatu, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        102.119,
+        8.566,
+        109.472,
+        23.366
+      ],
+      "centroid": [
+        106.301,
+        16.642
+      ],
+      "country": "VN",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "vietnam",
+      "last_data_day": "2026-01-01",
+      "membership": "polygon",
+      "n_cells_r6": 8166,
+      "name": "Vietnam",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Vietnam, compared across sensors.",
+      "synthetic": false
+    },
+    {
+      "bbox": [
+        42.546,
+        12.111,
+        54.54,
+        18.996
+      ],
+      "centroid": [
+        47.591,
+        15.905
+      ],
+      "country": "YE",
+      "files": [
+        "weekly",
+        "monthly",
+        "daily",
+        "climatology",
+        "season",
+        "trend",
+        "ruler",
+        "nowcast",
+        "hex",
+        "calibration",
+        "outline",
+        "period_index",
+        "spatial_index"
+      ],
+      "fire_type": "Satellite-detected burning activity",
+      "id": "yemen",
+      "last_data_day": "2026-01-01",
+      "membership": "polygon",
+      "n_cells_r6": 14376,
+      "name": "Yemen",
+      "optional_files": [
+        "cells_monthly"
+      ],
+      "story": "Satellite detections across Yemen, compared across sensors.",
       "synthetic": false
     }
   ],

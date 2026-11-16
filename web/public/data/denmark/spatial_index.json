@@ -1,0 +1,150 @@
+{
+  "calibration_scope": "whole region",
+  "code_version": "088f86c3",
+  "coverage_note": "Daily source selection and regional coverage scaling; missing bins remain null.",
+  "generated_at": "2026-11-16T00:14:59Z",
+  "membership": "polygon",
+  "region": "denmark",
+  "schema_version": "2.0",
+  "science_yaml_sha256": "2de1e54083be78406618a5a86ec3591e0c0dc36c4db1159e514da1784058a132",
+  "years": [
+    {
+      "bytes": 4727,
+      "path": "spatial/2003.json",
+      "sha256": "f577e70cecd3aaa90087dc898319890a45a836c3d6b3bf8365e0d9a9b9caa8c4",
+      "year": 2003
+    },
+    {
+      "bytes": 4174,
+      "path": "spatial/2004.json",
+      "sha256": "2fda91edd99c8e39ae31e87487d42b2958fd0c1710fcb5a335d842b19966276f",
+      "year": 2004
+    },
+    {
+      "bytes": 3976,
+      "path": "spatial/2005.json",
+      "sha256": "9733885bffb77685e92f3ea5ad005b8fd0bb89483c08ce40fb87ba874846419d",
+      "year": 2005
+    },
+    {
+      "bytes": 3512,
+      "path": "spatial/2006.json",
+      "sha256": "fd82c8d83d517a948479203c7f577d4219e11b8351eb1d638533964ee491b94f",
+      "year": 2006
+    },
+    {
+      "bytes": 3282,
+      "path": "spatial/2007.json",
+      "sha256": "b2779482ea249b4f94f63a750f810a5d6ed84afeb91e6d255d20d1a77bdd6306",
+      "year": 2007
+    },
+    {
+      "bytes": 2882,
+      "path": "spatial/2008.json",
+      "sha256": "081609e177441a4ea001341a769bf2d8b6af16f1e975eb7d4d16f49b26e8db78",
+      "year": 2008
+    },
+    {
+      "bytes": 2945,
+      "path": "spatial/2009.json",
+      "sha256": "f2bcc584a1761f6f0a1c292555c03d2b8080b8b72fb2e77df4d4b60b7ce36dd0",
+      "year": 2009
+    },
+    {
+      "bytes": 2293,
+      "path": "spatial/2010.json",
+      "sha256": "4f387e3643b6cd2e5128097cc0cfcbc8b73682b2400d14ba79706c751e8374e3",
+      "year": 2010
+    },
+    {
+      "bytes": 2316,
+      "path": "spatial/2011.json",
+      "sha256": "11df557c22e66c1359ac236c5b458e9c46f23f177d67bc04dbe9bc485cf284ae",
+      "year": 2011
+    },
+    {
+      "bytes": 4610,
+      "path": "spatial/2012.json",
+      "sha256": "cbc746540738f7050ea83118b5214b1e91d819db3cb255a50063461b03c6ec59",
+      "year": 2012
+    },
+    {
+      "bytes": 5342,
+      "path": "spatial/2013.json",
+      "sha256": "e84107679e7160ec8fdeebd1c753a3969e7c7f6e56e46ddac37c6eecf451b6dc",
+      "year": 2013
+    },
+    {
+      "bytes": 5551,
+      "path": "spatial/2014.json",
+      "sha256": "5ab32994dd81dddb83fce9357f89caf80c62120bde3431d6031e62a4f79028ef",
+      "year": 2014
+    },
+    {
+      "bytes": 5327,
+      "path": "spatial/2015.json",
+      "sha256": "9fd770e85bd7577c442c74bbf442fce05b03ef995fa7684d135b2820b941c567",
+      "year": 2015
+    },
+    {
+      "bytes": 4607,
+      "path": "spatial/2016.json",
+      "sha256": "94907e923f2835d7b63ead1a2f1ce0de380ed2605ae7d206ee74310ded5bd204",
+      "year": 2016
+    },
+    {
+      "bytes": 3943,
+      "path": "spatial/2017.json",
+      "sha256": "e011995628eae597b434187ee87fc0b3641fd811ed93c9852cacef2942ee6e65",
+      "year": 2017
+    },
+    {
+      "bytes": 4880,
+      "path": "spatial/2018.json",
+      "sha256": "199132a56e29b7ddb9d2d29953b4513cd0664639b24eb29352e46c8dc905ae6e",
+      "year": 2018
+    },
+    {
+      "bytes": 4102,
+      "path": "spatial/2019.json",
+      "sha256": "4240999a8de28fd8fae3a4b43ce1e04bd0580c392199fa08eaf720878a0bc995",
+      "year": 2019
+    },
+    {
+      "bytes": 4836,
+      "path": "spatial/2020.json",
+      "sha256": "ac2607317404bc1661aa13fcfe0f94878529b2fe9ff23f1a663c1e66df120798",
+      "year": 2020
+    },
+    {
+      "bytes": 4318,
+      "path": "spatial/2021.json",
+      "sha256": "8574bcbdc4ae5dcf914bdc5ab1fa5a1958fcc93f1171d12f71309863e4aff50b",
+      "year": 2021
+    },
+    {
+      "bytes": 5045,
+      "path": "spatial/2022.json",
+      "sha256": "b90d494dfa0b583a403115dd578619a555bfd61ed7591aff1a5265238c82c3fc",
+      "year": 2022
+    },
+    {
+      "bytes": 4535,
+      "path": "spatial/2023.json",
+      "sha256": "ab442c82829225b3e78f86cef74182eac219c5d4cc16f897cbff2f68fbac097a",
+      "year": 2023
+    },
+    {
+      "bytes": 3993,
+      "path": "spatial/2024.json",
+      "sha256": "78ff1e679355d3a0e839204577c71a00c64470e92663328e0133528f6e8968e7",
+      "year": 2024
+    },
+    {
+      "bytes": 5428,
+      "path": "spatial/2025.json",
+      "sha256": "289d31a02dc2cad4f05bdf60d8a3352c74a58c32dee52f4ff9201d245660572e",
+      "year": 2025
+    }
+  ]
+}

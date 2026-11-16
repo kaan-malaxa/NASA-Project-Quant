@@ -1,4 +1,5 @@
 """Contract section 5 schemas and deterministic file IO."""
+import gzip
 import hashlib
 import json
 import math
@@ -170,8 +171,14 @@ def read_json(path):
             raise ValueError(f"non-finite number {text} is not allowed")
         return value
 
-    with Path(path).open(encoding="utf-8") as handle:
-        return json.load(handle, object_pairs_hook=unique_object, parse_float=finite, parse_constant=finite)
+    data = Path(path).read_bytes()
+    if data[:2] == GZIP_MAGIC:
+        data = gzip.decompress(data)  # losslessly compressed publication (fetchJson reads both)
+    text = data.decode("utf-8")
+    return json.loads(text, object_pairs_hook=unique_object, parse_float=finite, parse_constant=finite)
+
+
+GZIP_MAGIC = bytes((0x1F, 0x8B))
 
 
 def write_figure(figure, path) -> None:

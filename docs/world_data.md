@@ -95,3 +95,33 @@ definition says so.
 Known limits: the existing area-weighted centroid lands mid-ocean for outlines that cross ±180° (Fiji, Russia,
 New Zealand; the `us` Aleutians too). It is unchanged so that `us` output does not move. Publishing every country
 would take many hours and several GB of web data.
+
+## Publication on the website (2026-11-15)
+
+Every world country that completes the pipeline is published like `us`: it appears in **Pick a place**
+(searchable, 24 per page) and opens the same region screens (calendar, trend, map, area summaries, season
+brief, methods). The country browser's **Open analysis** link appears for every published country.
+
+- World-country payloads are stored gzipped in `web/public/data/{id}/` (`pipeline/export/compress.py`). That
+  makes them about 6× smaller with no loss. `us` and `synthland` stay plain JSON.
+- `pipeline.export --check` validates files in parallel (`PROMETHEUS_TORCH_CHECK_WORKERS`, default up to 16)
+  and keeps only the documents its cross-file checks need, so a ~200-country publication fits in memory.
+  Publication installs only files whose bytes changed.
+- Batch: run `uv run python -m pipeline.run --region <id> --to stats` for each country (in parallel where CPU
+  and memory allow), then run one `uv run python -m pipeline.export --region <id> ...` over the finished ones.
+  Countries not yet run keep the "Calibrated analysis is unavailable" note in the country browser.
+
+## Performance and GPU acceleration
+
+Profiling the stats stage (Libya: 480 s) showed 397 s spent on the 276 selectable periods, mostly recomputing
+the same annual tables per period on Arrow-backed pandas columns. Results, from measured runs:
+
+- The period-independent annual tables and bootstrap-replicate lookup are computed once per region
+  (`build_trend_files(cache=...)`). Stats: 477 s → 133 s with all 313 output files identical.
+- Ingest caches the parsed world catalog per file version and the resolved data root (slow on Windows).
+- **GPU (optional):** `pipeline/common/gpu.py` runs the Theil–Sen bootstrap median, the largest remaining numeric
+  kernel, as an OpenCL float64 kernel on any vendor's GPU (tested on an AMD Radeon RX 6900 XT). It is 4.4× faster
+  per call than NumPy and bit-identical, with zero signs canonicalised on both paths. A Libya rerun on the GPU
+  matched all 311 CPU-computed JSON outputs. Install it with `uv sync --extra gpu`; without it, or with
+  `PROMETHEUS_TORCH_GPU=0`, NumPy is used. Most of the remaining time is pandas/Python overhead (H3 indexing,
+  per-bin summaries, JSON writing), which a GPU cannot accelerate.

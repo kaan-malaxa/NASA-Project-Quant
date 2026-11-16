@@ -1,9 +1,94 @@
-.tour-layer { position:fixed; inset:0; z-index:10000; color:var(--foreground); }
-.tour-shield { position:absolute; inset:0; }
-.tour-highlight { position:fixed; pointer-events:none; outline:2px solid var(--primary); outline-offset:2px; border-radius:8px; box-shadow:0 0 0 9999px color-mix(in srgb,var(--background) 83%,transparent); }
-.tour-card { position:fixed; left:12px; bottom:12px; width:min(360px,calc(100vw - 24px)); height:fit-content; max-height:calc(100dvh - 24px); overflow:auto; background:var(--popover); color:var(--popover-foreground); border:1px solid var(--border); border-radius:12px; padding:18px; display:grid; gap:12px; box-shadow:0 8px 32px color-mix(in srgb,var(--background) 80%,transparent); outline:none; }
-.tour-card[style] { bottom:auto; max-height:calc(100dvh - var(--tour-top,12px) - 12px); }
-.tour-card button:focus-visible { outline:2px solid var(--primary); outline-offset:2px; }
-@media(max-width:767px) { .tour-card { font-size:14px; padding:12px; gap:8px; } }
+/*
+ * Guided tour. The box and its highlight are invisible (opacity 0, no pointer events) until the tour has placed them;
+ * only then do they fade and slide in. Without a placement the box sits in the middle of the screen, never a corner.
+ * Positions never animate: a new step fades out, moves while invisible, then fades in.
+ */
+.tour-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  color: var(--foreground);
+}
+.tour-shield {
+  position: absolute;
+  inset: 0;
+  transition: background-color 150ms ease;
+}
+.tour-dim {
+  background: color-mix(in srgb, var(--background) 83%, transparent);
+}
 
-.tour-waiting { background:color-mix(in srgb,var(--background) 83%,transparent); }
+.tour-highlight {
+  position: fixed;
+  pointer-events: none;
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 8px;
+  box-shadow: 0 0 0 9999px color-mix(in srgb, var(--background) 83%, transparent);
+  opacity: 0;
+  transition: opacity 150ms ease;
+}
+.tour-highlight.is-shown {
+  opacity: 1;
+}
+
+.tour-card {
+  position: fixed;
+  /* Unplaced: centered and hidden (it is measured there, never shown there). */
+  left: 50%;
+  top: 50%;
+  width: min(360px, calc(100vw - 24px));
+  height: fit-content;
+  max-height: calc(100dvh - 24px);
+  overflow: auto;
+  background: var(--popover);
+  color: var(--popover-foreground);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px;
+  display: grid;
+  gap: 12px;
+  box-shadow: 0 8px 32px color-mix(in srgb, var(--background) 80%, transparent);
+  outline: none;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(6px);
+  transition:
+    opacity 150ms ease,
+    transform 150ms ease,
+    visibility 0s linear 150ms;
+}
+.tour-card:not([style]) {
+  translate: -50% -50%;
+}
+.tour-card.is-shown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: none;
+  transition:
+    opacity 150ms ease,
+    transform 150ms ease,
+    visibility 0s;
+}
+.tour-card button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+@media (max-width: 767px) {
+  .tour-card {
+    font-size: 14px;
+    padding: 12px;
+    gap: 8px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tour-card,
+  .tour-card.is-shown,
+  .tour-highlight,
+  .tour-shield {
+    transition: none;
+    transform: none;
+  }
+}

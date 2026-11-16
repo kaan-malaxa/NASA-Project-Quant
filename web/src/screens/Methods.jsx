@@ -69,14 +69,14 @@ export default function Methods() {
       {regions.length > 1 ? (
         <label className="block max-w-md space-y-2 text-sm font-medium">
           <span>Methods for a place</span>
-          <select value={selectedRegion?.id || ""} className="bg-background w-full rounded-md border px-3 py-2"
+          <select value={selectedRegion?.id || ""} className="bg-background w-full rounded-(--radius-control) border px-3 py-2"
             onChange={(event) => { const next = new URLSearchParams(params); next.set("region", event.target.value); setParams(next); }}>
             {regions.map((region) => <option key={region.id} value={region.id}>{region.name}</option>)}
           </select>
         </label>
       ) : null}
 
-      {m ? null : <SectionState state={methods} title="Methods data" />}
+
 
       <div className="lg:grid lg:grid-cols-[13rem_minmax(0,1fr)] lg:gap-8">
         {/* Contents: a sticky list beside the sections on wide screens, a scrolling row of chips above them on phones. */}
@@ -93,6 +93,7 @@ export default function Methods() {
         </aside>
 
         <div className="min-w-0 space-y-6">
+          {m ? null : <SectionState state={methods.status === "ok" ? regionsState : methods} title="Methods data" />}
           {m?.decisions ? <FiveSteps d={m.decisions} /> : null}
           {m && (has(m.drift) || visibleRegions.some((r) => r.files?.includes("calibration"))) ? (
             <Drift drift={m.drift || []} regions={visibleRegions} nameOf={nameOf} trustedThrough={m.decisions?.aqua_trusted_through} />

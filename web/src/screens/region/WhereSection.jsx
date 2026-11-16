@@ -31,10 +31,10 @@ export default function WhereSection({ region, files, url, setUrl }) {
   const canDraw = files.spatial_index?.status === "ok";
   return (
     <StorySection id="where" title="Where it burns">
-      <span ref={marker} />
+      <span ref={marker} className="pointer-events-none absolute size-px" aria-hidden="true" />
       <SectionState state={hex} title="Map" skeletonClassName="h-80">
         {(h) => (
-          <div className="space-y-3">
+          <div className="map-content">
             <ToggleGroup
               type="single"
               variant="outline"
@@ -56,6 +56,7 @@ export default function WhereSection({ region, files, url, setUrl }) {
               onAoiChange={(cells) => setUrl({ aoi: cells })}
               placeholderClassName="h-80"
             />
+            <div className="map-notes space-y-3">
             <p className="flex flex-wrap items-center gap-2 text-sm">
               <span>
                 {h.unit}, mean of {h.years[0]}–{h.years[1]}, from {sensorLabel(h.source)}.
@@ -68,6 +69,7 @@ export default function WhereSection({ region, files, url, setUrl }) {
                 Draw a rectangle or click hexagons on the map to see the record for your own area.
               </p>
             ) : null}
+            </div>
           </div>
         )}
       </SectionState>

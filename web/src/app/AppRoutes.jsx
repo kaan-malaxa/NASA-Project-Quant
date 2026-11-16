@@ -1,6 +1,6 @@
 import { Suspense, lazy } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
-import { Skeleton } from "@/components/ui/skeleton";
+import { PageLoading } from "@/components/LoadingFrame.jsx";
 import ErrorBoundary from "@/components/ErrorBoundary.jsx";
 import AppShell from "./AppShell.jsx";
 import Landing from "@/screens/Landing.jsx";
@@ -16,12 +16,9 @@ const Simulation = lazy(() => import("@/screens/Simulation.jsx"));
 const GalleryScreen = lazy(() => import("@/screens/GalleryScreen.jsx"));
 
 function ScreenLoading() {
-  return (
-    <div role="status" aria-label="Loading page" className="space-y-3">
-      <Skeleton className="h-8 w-2/3" />
-      <Skeleton className="h-48 w-full" />
-    </div>
-  );
+  const { pathname } = useLocation();
+  const kind = pathname === "/pick" ? "pick" : pathname === "/methods" ? "methods" : pathname.endsWith("/brief") ? "brief" : "region";
+  return <PageLoading kind={kind} heading={kind === "pick" ? "places" : kind} />;
 }
 
 function Lazy({ children }) {

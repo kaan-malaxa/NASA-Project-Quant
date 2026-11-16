@@ -23,7 +23,7 @@ export default function CountryBrowser({ regions }) {
           Each source file includes its detection count, observation dates and original CSV download.
         </p>
       </div>
-      <SectionState state={state} title="World country data">
+      <SectionState state={state} title="World country data" variant="stats">
         {(data) => <Catalog data={data} regions={regions} />}
       </SectionState>
     </section>

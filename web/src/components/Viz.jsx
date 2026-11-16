@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Suspense, useEffect, useState } from "react";
+import LoadingFrame from "./LoadingFrame.jsx";
 
 /*
  * Bridge to R6's chart components (contracts section 8, exported from src/viz/index).
@@ -40,15 +40,12 @@ export function hasViz(name, mod) {
  */
 export function VizSlot({ name, placeholderClassName = "h-48", ...props }) {
   const mod = useViz();
-  if (mod === null) {
-    return (
-      <div role="status" aria-label={`Loading ${name} chart`}>
-        <Skeleton className={`w-full ${placeholderClassName}`} />
-      </div>
-    );
-  }
-  const Component = mod[name];
-  if (Component) return <Component {...props} />;
+  const shape = { FireYearClock: "clock", BrokenRuler: "ruler", TrendBars: "trend", HexMap: "map" }[name] ?? "other";
+  const fallback = <LoadingFrame title={`${name} chart`} variant="chart" className={shape === "other" ? placeholderClassName : ""} />;
+  const Component = mod?.[name];
+  if (mod === null || Component) return <div data-chart-shell={name} className="chart-shell">
+    <div className={`chart-frame chart-shell-${shape}`}>{mod === null ? fallback : <Suspense fallback={fallback}><Component {...props} /></Suspense>}</div>
+  </div>;
   return (
     <div
       role="img"

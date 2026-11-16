@@ -16,8 +16,7 @@ def test_known_answer_and_fallback_contract():
     xs = np.array([[2003.0, 2004.0, 2005.0], [2003.0, 2003.0, 2003.0]])
     vals = np.array([[1.0, 3.0, 4.0], [1.0, 2.0, 3.0]])
     result = gpu.theil_sen_nanmedian(xs, vals)
-    if result is None:  # no OpenCL GPU here: callers use NumPy
-        assert not gpu.available()
+    if result is None:  # no OpenCL GPU, or another process holds it: callers use NumPy (same result)
         return
     assert result[0] == 1.5 and np.isnan(result[1])
 
@@ -30,12 +29,19 @@ def test_gpu_equals_numpy_bit_for_bit_up_to_zero_sign():
         xs = years[rng.integers(0, n, (300, n))]
         for vals in (rng.integers(0, 3, (300, n)).astype(float), np.round(rng.gamma(2, 50, (300, n)), 2)):
             expected, actual = numpy_reference(xs, vals), gpu.theil_sen_nanmedian(xs, vals)
+            if actual is None:  # GPU busy in another process: the caller computes this on the CPU
+                continue
             assert np.array_equal(expected + 0.0, actual + 0.0, equal_nan=True)
 
 
 def test_too_many_years_falls_back(monkeypatch):
     xs = np.tile(np.arange(30, dtype=float), (2, 1))
     assert gpu.theil_sen_nanmedian(xs, xs) is None  # 435 pairs exceed the GPU buffer: NumPy path
+
+
+def test_busy_gpu_falls_back_to_the_cpu(monkeypatch):
+    monkeypatch.setattr(gpu, "_try_gpu_lock", lambda: None)
+    assert gpu.theil_sen_nanmedian(np.zeros((1, 3)), np.zeros((1, 3))) is None
 
 
 def test_disabled_by_environment(monkeypatch):

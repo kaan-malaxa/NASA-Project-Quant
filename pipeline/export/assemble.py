@@ -212,6 +212,16 @@ def planted_truth(inp: Inputs) -> list[dict[str, Any]]:
 
 
 # ------------------------------------------------------------------ methods.json
+def validation_row(row: dict[str, Any]) -> dict[str, Any]:
+    """Optional baseline comparisons that could not be computed are omitted, never published as null."""
+    if isinstance(row.get("baselines"), dict):
+        kept = {key: value for key, value in row["baselines"].items() if value is not None}
+        row = {key: value for key, value in row.items() if key != "baselines"}
+        if kept:
+            row["baselines"] = kept
+    return row
+
+
 def eyesight_entry(curve: dict[str, Any], rid: str) -> dict[str, Any]:
     """An absent Tier-2 fit (too little activity) publishes its status, not null parameters; months
     without a Tier-2 factor are left out of the comparison rather than shown as zero."""
@@ -230,13 +240,13 @@ def methods_doc(inp: Inputs, region_ids: list[str]) -> dict[str, Any]:
         t1 = inp.harmonized_dir(rid) / "validation_t1.json"
         if t1.is_file():
             doc = _read_json(t1)
-            validation += doc.get("validation", [])
+            validation += [validation_row(row) for row in doc.get("validation", [])]
             # A sensor-year without a drift estimate is left out (never shown as zero).
             drift += [{"region": rid, **row} for row in doc.get("drift", [])
                       if None not in (row.get("k_annual"), row.get("lo"), row.get("hi"))]
         t2 = inp.eyesight_dir(rid) / "validation_t2.json"
         if t2.is_file():
-            validation += _read_json(t2).get("validation", [])
+            validation += [validation_row(row) for row in _read_json(t2).get("validation", [])]
         curve = inp.eyesight_dir(rid) / "curve.json"
         eyesight.append(eyesight_entry(_read_json(curve), rid) if curve.is_file() else {"region": rid, "status": "absent"})
         manifest = inp.raw_dir(rid) / "MANIFEST.json"

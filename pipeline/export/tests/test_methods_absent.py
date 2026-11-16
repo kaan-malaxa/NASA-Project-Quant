@@ -23,3 +23,12 @@ def test_absent_entry_validates_inside_methods_eyesight():
 
     validator = Draft202012Validator(schema, registry=registry)
     assert schema_errors(eyesight_entry({"status": "absent", "g": None}, "x"), validator) == []
+
+
+def test_uncomputable_baselines_are_omitted_not_null():
+    from pipeline.export.assemble import validation_row
+
+    row = {"region": "x", "test": "loyo_weekly_wape", "baselines": {"raw_viirs": None, "annual_ratio": 0.4}}
+    assert validation_row(row)["baselines"] == {"annual_ratio": 0.4}
+    assert "baselines" not in validation_row({"region": "x", "baselines": {"raw_viirs": None, "annual_ratio": None}})
+    assert validation_row({"region": "x"}) == {"region": "x"}

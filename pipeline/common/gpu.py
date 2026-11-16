@@ -71,6 +71,43 @@ def _runtime():
     return _STATE["runtime"]
 
 
+def _try_gpu_lock():
+    """Non-blocking cross-process lock: one process uses the GPU at a time and the others compute the
+    same result on their own CPU core instead of queueing (hybrid CPU + GPU parallelism)."""
+    import tempfile
+
+    handle = open(os.path.join(tempfile.gettempdir(), "prometheus_torch_gpu.lock"), "a+b")  # noqa: SIM115
+    try:
+        if os.name == "nt":
+            import msvcrt
+
+            handle.seek(0)
+            msvcrt.locking(handle.fileno(), msvcrt.LK_NBLCK, 1)
+        else:
+            import fcntl
+
+            fcntl.flock(handle, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        return handle
+    except OSError:
+        handle.close()
+        return None
+
+
+def _release_gpu_lock(handle) -> None:
+    try:
+        if os.name == "nt":
+            import msvcrt
+
+            handle.seek(0)
+            msvcrt.locking(handle.fileno(), msvcrt.LK_UNLCK, 1)
+        else:
+            import fcntl
+
+            fcntl.flock(handle, fcntl.LOCK_UN)
+    finally:
+        handle.close()
+
+
 def available() -> bool:
     return _runtime() is not None
 
@@ -82,9 +119,21 @@ def theil_sen_nanmedian(xs: np.ndarray, vals: np.ndarray) -> np.ndarray | None:
     except that the sign of a zero median may differ (sorting leaves -0.0/+0.0 ties in any order);
     callers canonicalise with `+ 0.0` on both paths.
     """
-    runtime = _runtime()
     rows, n = xs.shape
-    if runtime is None or rows == 0 or n * (n - 1) // 2 > MAX_PAIRS:
+    if rows == 0 or n * (n - 1) // 2 > MAX_PAIRS or os.environ.get("PROMETHEUS_TORCH_GPU", "1") == "0":
+        return None
+    lock = _try_gpu_lock()
+    if lock is None:
+        return None  # GPU busy in another process: this one uses its CPU core (identical result)
+    try:
+        return _run_kernel(xs, vals, rows, n)
+    finally:
+        _release_gpu_lock(lock)
+
+
+def _run_kernel(xs, vals, rows, n):
+    runtime = _runtime()
+    if runtime is None:
         return None
     import pyopencl as cl
 

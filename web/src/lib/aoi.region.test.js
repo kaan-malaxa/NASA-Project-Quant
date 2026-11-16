@@ -13,16 +13,15 @@ const json = (path) => {
   return JSON.parse((bytes[0] === 0x1f && bytes[1] === 0x8b ? gunzipSync(bytes) : bytes).toString("utf8"));
 };
 const regions = json("regions.json").regions;
-// Each per-cell contribution is published at 3 decimals, so a sum over hundreds of cells carries up to a few
-// hundredths of a fire cell-day of rounding. Values are compared within 0.5%, or within this absolute floor,
-// whichever is larger; the floor only matters for near-zero months in low-activity countries.
-const ABSOLUTE_FLOOR = 0.05;
-const withinTolerance = (actual, reference) =>
-  Math.abs(actual - reference) <= Math.max(0.005 * Math.abs(reference), ABSOLUTE_FLOOR);
+// Each per-cell contribution is published at 3 decimals (up to ±0.0005 each), so a sum over a region's cells can
+// differ from the regional series by up to 0.0005 × cells of rounding. Values are compared within 0.5%, or within
+// that worst-case rounding bound, whichever is larger; the bound only matters for low-activity months.
+const withinTolerance = (actual, reference, nCells) =>
+  Math.abs(actual - reference) <= Math.max(0.005 * Math.abs(reference), 0.0005 * nCells);
 
 it("has required real region fixtures", () => expect(regions.length).toBeGreaterThan(0));
 for (const region of regions) {
-  it(`${region.id}: whole-region contributions match EVERY nonmissing month within 0.5% (or 0.05 cell-days)`, { timeout: 120000 }, () => {
+  it(`${region.id}: whole-region contributions match EVERY nonmissing month within 0.5% (or the 3-decimal rounding bound)`, { timeout: 120000 }, () => {
     expect(region.files).toContain("spatial_index");
     const index = json(`${region.id}/spatial_index.json`);
     const shards = index.years.map((entry) => json(`${region.id}/${entry.path}`));
@@ -34,10 +33,10 @@ for (const region of regions) {
     for (const reference of monthly.rows.filter((row) => row.series === "harmonized" && row.value !== null && row.kind !== "missing")) {
       const actual = byMonth.get(`${reference.year}-${reference.month}`);
       expect(actual, `missing ${reference.year}-${reference.month}`).toBeDefined();
-      expect(withinTolerance(actual.value, reference.value), `${reference.year}-${reference.month}: ${actual.value} vs ${reference.value}`).toBe(true);
+      expect(withinTolerance(actual.value, reference.value, cells.length), `${reference.year}-${reference.month}: ${actual.value} vs ${reference.value}`).toBe(true);
       for (const bound of ["lo", "hi"]) {
         if (reference[bound] === null) continue;
-        expect(withinTolerance(actual[bound], reference[bound]), `${reference.year}-${reference.month} ${bound}: ${actual[bound]} vs ${reference[bound]}`).toBe(true);
+        expect(withinTolerance(actual[bound], reference[bound], cells.length), `${reference.year}-${reference.month} ${bound}: ${actual[bound]} vs ${reference[bound]}`).toBe(true);
       }
       expect(actual.kind).toBe(reference.kind);
       expect(actual.source).toBe(reference.source);

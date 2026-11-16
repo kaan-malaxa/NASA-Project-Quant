@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
+import { PageLoading } from "@/components/LoadingFrame.jsx";
 import SectionState from "@/components/SectionState.jsx";
 import { useRegionData } from "@/data/useRegionData.js";
 import { useUrlState } from "@/data/useUrlState.js";
@@ -36,6 +37,8 @@ export default function Region() {
   const meta = files.weekly?.status === "ok" ? files.weekly.data.series_meta : {};
   const lensLabel = (id) => meta?.[id]?.label ?? id;
   useJumpToSection(status === "ok");
+
+  if (status === "loading") return <PageLoading kind="region" heading="region" />;
 
   if (status !== "ok") {
     return (

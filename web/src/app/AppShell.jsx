@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
+import LoadingFrame from "@/components/LoadingFrame.jsx";
 import SampleBanner from "@/components/SampleBanner.jsx";
 import ErrorBoundary from "@/components/ErrorBoundary.jsx";
 

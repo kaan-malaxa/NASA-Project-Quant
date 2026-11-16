@@ -1,6 +1,6 @@
 /**
  * The site's public address, for links people take away (QR code, Season Brief footer): VITE_SITE_URL from the
- * build (https://kaan-malaxa.github.io/NASA-Project-Quant/ in CI), else the address this page was opened at
+ * build (https://prometheus-torch.design/ in CI), else the address this page was opened at
  * (local development). Always ends with "/".
  */
 export function siteUrl() {

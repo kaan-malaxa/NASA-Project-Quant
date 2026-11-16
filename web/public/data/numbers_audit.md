@@ -2,7 +2,7 @@
 
 Every headline number on the site, with the file and JSON Pointer it comes from. No number may appear in the pitch, slides, README or video unless it is on this list. Values are copied exactly from the files; sentences are quoted exactly.
 
-Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
+Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d, c841c3b0.
 
 ## United States (`us`)
 
@@ -409,6 +409,45 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - eyesight param c_lo: 0.797  methods.json#/eyesight/5/params/c_lo
 - eyesight g: 1.403  methods.json#/eyesight/5/g
 
+## Antigua and Barbuda (`antigua-and-barbuda`)
+
+- jump multiple (value): 10.189  antigua-and-barbuda/ruler.json#/jump_multiple/value
+- jump multiple (lo): 7.5  antigua-and-barbuda/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 22.5  antigua-and-barbuda/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  antigua-and-barbuda/ruler.json#/jump_multiple/years
+- ruler sentence: "In Antigua and Barbuda, VIIRS reports about 10.2 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  antigua-and-barbuda/ruler.json#/sentence
+- harmonized trend pct_per_decade: 0.0  antigua-and-barbuda/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -59.74  antigua-and-barbuda/trend.json#/harmonized/lo
+- harmonized trend hi: 0.0  antigua-and-barbuda/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  antigua-and-barbuda/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 69.93  antigua-and-barbuda/trend.json#/naive/pct_per_decade
+- naive trend lo: 45.432  antigua-and-barbuda/trend.json#/naive/lo
+- naive trend hi: 333.333  antigua-and-barbuda/trend.json#/naive/hi
+- naive trend direction: "rising"  antigua-and-barbuda/trend.json#/naive/direction
+- trend years: [2003, 2025]  antigua-and-barbuda/trend.json#/years
+- verdict sentence_id: "artifact_flat"  antigua-and-barbuda/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 70% per decade. After correcting for the sensor change, there is no clear change (-60 to 0% per decade)."  antigua-and-barbuda/trend.json#/sentence
+- critical weeks: []  antigua-and-barbuda/season.json#/critical_weeks
+- this week value: null  antigua-and-barbuda/nowcast.json#/value
+- this week lo: null  antigua-and-barbuda/nowcast.json#/lo
+- this week hi: null  antigua-and-barbuda/nowcast.json#/hi
+- this week percentile: null  antigua-and-barbuda/nowcast.json#/percentile
+- this week status: "unavailable"  antigua-and-barbuda/nowcast.json#/status
+- this week as_of: null  antigua-and-barbuda/nowcast.json#/as_of
+- this week window start: null  antigua-and-barbuda/nowcast.json#/window/start
+- this week window end: null  antigua-and-barbuda/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  antigua-and-barbuda/nowcast.json#/baseline_years
+- month to date value: null  antigua-and-barbuda/nowcast.json#/month_to_date/value
+- month to date median: null  antigua-and-barbuda/nowcast.json#/month_to_date/median
+- month to date ratio: null  antigua-and-barbuda/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  antigua-and-barbuda/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  antigua-and-barbuda/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 2.017  methods.json#/validation/108/value
+- LOYO weekly WAPE baseline annual_ratio: 1.949  methods.json#/validation/108/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 14.782  methods.json#/validation/108/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/108/years
+- eyesight status: "absent"  methods.json#/eyesight/6/status
+
 ## Armenia (`armenia`)
 
 - jump multiple (value): 4.372  armenia/ruler.json#/jump_multiple/value
@@ -451,26 +490,89 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  armenia/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  armenia/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  armenia/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.527  methods.json#/validation/108/value
-- LOYO weekly WAPE baseline annual_ratio: 0.573  methods.json#/validation/108/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 3.591  methods.json#/validation/108/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/108/years
-- LOYO weekly WAPE (tier2): 0.517  methods.json#/validation/123/value
-- LOYO years: [2013, 2022]  methods.json#/validation/123/years
-- reliability_err (tier2): 0.005  methods.json#/validation/121/value
-- reliability_year_absolute_err (tier2): 0.165  methods.json#/validation/122/value
-- t1_t2_wape (tier2): 0.34  methods.json#/validation/125/value
-- eyesight status: "validated"  methods.json#/eyesight/6/status
-- eyesight param a: -4.336  methods.json#/eyesight/6/params/a
-- eyesight param a_hi: -4.122  methods.json#/eyesight/6/params/a_hi
-- eyesight param a_lo: -4.58  methods.json#/eyesight/6/params/a_lo
-- eyesight param b: 2.33  methods.json#/eyesight/6/params/b
-- eyesight param b_hi: 2.515  methods.json#/eyesight/6/params/b_hi
-- eyesight param b_lo: 2.145  methods.json#/eyesight/6/params/b_lo
-- eyesight param c: 1.0  methods.json#/eyesight/6/params/c
-- eyesight param c_hi: 1.0  methods.json#/eyesight/6/params/c_hi
-- eyesight param c_lo: 0.989  methods.json#/eyesight/6/params/c_lo
-- eyesight g: 1.724  methods.json#/eyesight/6/g
+- LOYO weekly WAPE (tier1): 0.527  methods.json#/validation/121/value
+- LOYO weekly WAPE baseline annual_ratio: 0.573  methods.json#/validation/121/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.591  methods.json#/validation/121/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/121/years
+- LOYO weekly WAPE (tier2): 0.517  methods.json#/validation/136/value
+- LOYO years: [2013, 2022]  methods.json#/validation/136/years
+- reliability_err (tier2): 0.005  methods.json#/validation/134/value
+- reliability_year_absolute_err (tier2): 0.165  methods.json#/validation/135/value
+- t1_t2_wape (tier2): 0.34  methods.json#/validation/138/value
+- eyesight status: "validated"  methods.json#/eyesight/7/status
+- eyesight param a: -4.336  methods.json#/eyesight/7/params/a
+- eyesight param a_hi: -4.122  methods.json#/eyesight/7/params/a_hi
+- eyesight param a_lo: -4.58  methods.json#/eyesight/7/params/a_lo
+- eyesight param b: 2.33  methods.json#/eyesight/7/params/b
+- eyesight param b_hi: 2.515  methods.json#/eyesight/7/params/b_hi
+- eyesight param b_lo: 2.145  methods.json#/eyesight/7/params/b_lo
+- eyesight param c: 1.0  methods.json#/eyesight/7/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/7/params/c_hi
+- eyesight param c_lo: 0.989  methods.json#/eyesight/7/params/c_lo
+- eyesight g: 1.724  methods.json#/eyesight/7/g
+
+## Australia (`australia`)
+
+- jump multiple (value): 4.612  australia/ruler.json#/jump_multiple/value
+- jump multiple (lo): 4.216  australia/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 5.328  australia/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  australia/ruler.json#/jump_multiple/years
+- ruler sentence: "In Australia, VIIRS reports about 4.6 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  australia/ruler.json#/sentence
+- harmonized trend pct_per_decade: 1.341  australia/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -13.671  australia/trend.json#/harmonized/lo
+- harmonized trend hi: 13.393  australia/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  australia/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 63.976  australia/trend.json#/naive/pct_per_decade
+- naive trend lo: 44.324  australia/trend.json#/naive/lo
+- naive trend hi: 146.025  australia/trend.json#/naive/hi
+- naive trend direction: "rising"  australia/trend.json#/naive/direction
+- trend years: [2003, 2025]  australia/trend.json#/years
+- verdict sentence_id: "artifact_flat"  australia/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 64% per decade. After correcting for the sensor change, there is no clear change (-14 to 13% per decade)."  australia/trend.json#/sentence
+- critical weeks: [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47]  australia/season.json#/critical_weeks
+- window w1 label: "early-April to late-November"  australia/season.json#/windows/0/label
+- window w1 start_week: 15  australia/season.json#/windows/0/start_week
+- window w1 peak_week: 19  australia/season.json#/windows/0/peak_week
+- window w1 end_week: 47  australia/season.json#/windows/0/end_week
+- window w1 share: 0.838  australia/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -4.667  australia/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -10.0  australia/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 0.0  australia/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-April to late-November season."  australia/season.json#/windows/0/sentence
+- this week value: null  australia/nowcast.json#/value
+- this week lo: null  australia/nowcast.json#/lo
+- this week hi: null  australia/nowcast.json#/hi
+- this week percentile: null  australia/nowcast.json#/percentile
+- this week status: "unavailable"  australia/nowcast.json#/status
+- this week as_of: null  australia/nowcast.json#/as_of
+- this week window start: null  australia/nowcast.json#/window/start
+- this week window end: null  australia/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  australia/nowcast.json#/baseline_years
+- month to date value: null  australia/nowcast.json#/month_to_date/value
+- month to date median: null  australia/nowcast.json#/month_to_date/median
+- month to date ratio: null  australia/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  australia/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  australia/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.079  methods.json#/validation/139/value
+- LOYO weekly WAPE baseline annual_ratio: 0.08  methods.json#/validation/139/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.375  methods.json#/validation/139/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/139/years
+- LOYO weekly WAPE (tier2): 0.136  methods.json#/validation/154/value
+- LOYO years: [2013, 2022]  methods.json#/validation/154/years
+- reliability_err (tier2): 0.0  methods.json#/validation/152/value
+- reliability_year_absolute_err (tier2): 0.014  methods.json#/validation/153/value
+- t1_t2_wape (tier2): 0.135  methods.json#/validation/156/value
+- eyesight status: "exploratory"  methods.json#/eyesight/8/status
+- eyesight param a: -2.898  methods.json#/eyesight/8/params/a
+- eyesight param a_hi: -2.854  methods.json#/eyesight/8/params/a_hi
+- eyesight param a_lo: -2.946  methods.json#/eyesight/8/params/a_lo
+- eyesight param b: 1.724  methods.json#/eyesight/8/params/b
+- eyesight param b_hi: 1.754  methods.json#/eyesight/8/params/b_hi
+- eyesight param b_lo: 1.697  methods.json#/eyesight/8/params/b_lo
+- eyesight param c: 0.871  methods.json#/eyesight/8/params/c
+- eyesight param c_hi: 0.894  methods.json#/eyesight/8/params/c_hi
+- eyesight param c_lo: 0.848  methods.json#/eyesight/8/params/c_lo
+- eyesight g: 1.278  methods.json#/eyesight/8/g
 
 ## Austria (`austria`)
 
@@ -523,11 +625,11 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  austria/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  austria/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  austria/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 1.31  methods.json#/validation/126/value
-- LOYO weekly WAPE baseline annual_ratio: 1.323  methods.json#/validation/126/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 3.376  methods.json#/validation/126/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/126/years
-- eyesight status: "absent"  methods.json#/eyesight/7/status
+- LOYO weekly WAPE (tier1): 1.31  methods.json#/validation/157/value
+- LOYO weekly WAPE baseline annual_ratio: 1.323  methods.json#/validation/157/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.376  methods.json#/validation/157/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/157/years
+- eyesight status: "absent"  methods.json#/eyesight/9/status
 
 ## Azerbaijan (`azerbaijan`)
 
@@ -580,26 +682,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  azerbaijan/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  azerbaijan/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  azerbaijan/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.343  methods.json#/validation/139/value
-- LOYO weekly WAPE baseline annual_ratio: 0.35  methods.json#/validation/139/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 2.985  methods.json#/validation/139/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/139/years
-- LOYO weekly WAPE (tier2): 0.377  methods.json#/validation/154/value
-- LOYO years: [2013, 2022]  methods.json#/validation/154/years
-- reliability_err (tier2): 0.002  methods.json#/validation/152/value
-- reliability_year_absolute_err (tier2): 0.047  methods.json#/validation/153/value
-- t1_t2_wape (tier2): 0.348  methods.json#/validation/156/value
-- eyesight status: "validated"  methods.json#/eyesight/8/status
-- eyesight param a: -4.15  methods.json#/eyesight/8/params/a
-- eyesight param a_hi: -3.986  methods.json#/eyesight/8/params/a_hi
-- eyesight param a_lo: -4.277  methods.json#/eyesight/8/params/a_lo
-- eyesight param b: 2.168  methods.json#/eyesight/8/params/b
-- eyesight param b_hi: 2.339  methods.json#/eyesight/8/params/b_hi
-- eyesight param b_lo: 2.06  methods.json#/eyesight/8/params/b_lo
-- eyesight param c: 0.994  methods.json#/eyesight/8/params/c
-- eyesight param c_hi: 1.0  methods.json#/eyesight/8/params/c_hi
-- eyesight param c_lo: 0.848  methods.json#/eyesight/8/params/c_lo
-- eyesight g: 1.786  methods.json#/eyesight/8/g
+- LOYO weekly WAPE (tier1): 0.343  methods.json#/validation/170/value
+- LOYO weekly WAPE baseline annual_ratio: 0.35  methods.json#/validation/170/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.985  methods.json#/validation/170/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/170/years
+- LOYO weekly WAPE (tier2): 0.377  methods.json#/validation/185/value
+- LOYO years: [2013, 2022]  methods.json#/validation/185/years
+- reliability_err (tier2): 0.002  methods.json#/validation/183/value
+- reliability_year_absolute_err (tier2): 0.047  methods.json#/validation/184/value
+- t1_t2_wape (tier2): 0.348  methods.json#/validation/187/value
+- eyesight status: "validated"  methods.json#/eyesight/10/status
+- eyesight param a: -4.15  methods.json#/eyesight/10/params/a
+- eyesight param a_hi: -3.986  methods.json#/eyesight/10/params/a_hi
+- eyesight param a_lo: -4.277  methods.json#/eyesight/10/params/a_lo
+- eyesight param b: 2.168  methods.json#/eyesight/10/params/b
+- eyesight param b_hi: 2.339  methods.json#/eyesight/10/params/b_hi
+- eyesight param b_lo: 2.06  methods.json#/eyesight/10/params/b_lo
+- eyesight param c: 0.994  methods.json#/eyesight/10/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/10/params/c_hi
+- eyesight param c_lo: 0.848  methods.json#/eyesight/10/params/c_lo
+- eyesight g: 1.786  methods.json#/eyesight/10/g
 
 ## The Bahamas (`bahamas`)
 
@@ -643,26 +745,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  bahamas/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  bahamas/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  bahamas/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.502  methods.json#/validation/157/value
-- LOYO weekly WAPE baseline annual_ratio: 0.517  methods.json#/validation/157/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 2.465  methods.json#/validation/157/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/157/years
-- LOYO weekly WAPE (tier2): 0.451  methods.json#/validation/172/value
-- LOYO years: [2013, 2022]  methods.json#/validation/172/years
-- reliability_err (tier2): 0.0  methods.json#/validation/170/value
-- reliability_year_absolute_err (tier2): 0.045  methods.json#/validation/171/value
-- t1_t2_wape (tier2): 0.225  methods.json#/validation/174/value
-- eyesight status: "validated"  methods.json#/eyesight/9/status
-- eyesight param a: -3.225  methods.json#/eyesight/9/params/a
-- eyesight param a_hi: -3.057  methods.json#/eyesight/9/params/a_hi
-- eyesight param a_lo: -3.496  methods.json#/eyesight/9/params/a_lo
-- eyesight param b: 2.21  methods.json#/eyesight/9/params/b
-- eyesight param b_hi: 2.714  methods.json#/eyesight/9/params/b_hi
-- eyesight param b_lo: 1.751  methods.json#/eyesight/9/params/b_lo
-- eyesight param c: 0.598  methods.json#/eyesight/9/params/c
-- eyesight param c_hi: 0.762  methods.json#/eyesight/9/params/c_hi
-- eyesight param c_lo: 0.496  methods.json#/eyesight/9/params/c_lo
-- eyesight g: 1.355  methods.json#/eyesight/9/g
+- LOYO weekly WAPE (tier1): 0.502  methods.json#/validation/188/value
+- LOYO weekly WAPE baseline annual_ratio: 0.517  methods.json#/validation/188/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.465  methods.json#/validation/188/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/188/years
+- LOYO weekly WAPE (tier2): 0.451  methods.json#/validation/203/value
+- LOYO years: [2013, 2022]  methods.json#/validation/203/years
+- reliability_err (tier2): 0.0  methods.json#/validation/201/value
+- reliability_year_absolute_err (tier2): 0.045  methods.json#/validation/202/value
+- t1_t2_wape (tier2): 0.225  methods.json#/validation/205/value
+- eyesight status: "validated"  methods.json#/eyesight/11/status
+- eyesight param a: -3.225  methods.json#/eyesight/11/params/a
+- eyesight param a_hi: -3.057  methods.json#/eyesight/11/params/a_hi
+- eyesight param a_lo: -3.496  methods.json#/eyesight/11/params/a_lo
+- eyesight param b: 2.21  methods.json#/eyesight/11/params/b
+- eyesight param b_hi: 2.714  methods.json#/eyesight/11/params/b_hi
+- eyesight param b_lo: 1.751  methods.json#/eyesight/11/params/b_lo
+- eyesight param c: 0.598  methods.json#/eyesight/11/params/c
+- eyesight param c_hi: 0.762  methods.json#/eyesight/11/params/c_hi
+- eyesight param c_lo: 0.496  methods.json#/eyesight/11/params/c_lo
+- eyesight g: 1.355  methods.json#/eyesight/11/g
 
 ## Bahrain (`bahrain`)
 
@@ -697,11 +799,11 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  bahrain/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  bahrain/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  bahrain/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 2.011  methods.json#/validation/175/value
-- LOYO weekly WAPE baseline annual_ratio: 2.076  methods.json#/validation/175/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 188.622  methods.json#/validation/175/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/175/years
-- eyesight status: "absent"  methods.json#/eyesight/10/status
+- LOYO weekly WAPE (tier1): 2.011  methods.json#/validation/206/value
+- LOYO weekly WAPE baseline annual_ratio: 2.076  methods.json#/validation/206/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 188.622  methods.json#/validation/206/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/206/years
+- eyesight status: "absent"  methods.json#/eyesight/12/status
 
 ## Bangladesh (`bangladesh`)
 
@@ -745,26 +847,65 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  bangladesh/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  bangladesh/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  bangladesh/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.298  methods.json#/validation/188/value
-- LOYO weekly WAPE baseline annual_ratio: 0.434  methods.json#/validation/188/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 2.28  methods.json#/validation/188/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/188/years
-- LOYO weekly WAPE (tier2): 0.178  methods.json#/validation/203/value
-- LOYO years: [2013, 2022]  methods.json#/validation/203/years
-- reliability_err (tier2): 0.0  methods.json#/validation/201/value
-- reliability_year_absolute_err (tier2): 0.053  methods.json#/validation/202/value
-- t1_t2_wape (tier2): 0.212  methods.json#/validation/205/value
-- eyesight status: "validated"  methods.json#/eyesight/11/status
-- eyesight param a: -3.721  methods.json#/eyesight/11/params/a
-- eyesight param a_hi: -3.596  methods.json#/eyesight/11/params/a_hi
-- eyesight param a_lo: -3.894  methods.json#/eyesight/11/params/a_lo
-- eyesight param b: 2.536  methods.json#/eyesight/11/params/b
-- eyesight param b_hi: 2.714  methods.json#/eyesight/11/params/b_hi
-- eyesight param b_lo: 2.397  methods.json#/eyesight/11/params/b_lo
-- eyesight param c: 0.681  methods.json#/eyesight/11/params/c
-- eyesight param c_hi: 0.733  methods.json#/eyesight/11/params/c_hi
-- eyesight param c_lo: 0.626  methods.json#/eyesight/11/params/c_lo
-- eyesight g: 1.683  methods.json#/eyesight/11/g
+- LOYO weekly WAPE (tier1): 0.298  methods.json#/validation/219/value
+- LOYO weekly WAPE baseline annual_ratio: 0.434  methods.json#/validation/219/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.28  methods.json#/validation/219/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/219/years
+- LOYO weekly WAPE (tier2): 0.178  methods.json#/validation/234/value
+- LOYO years: [2013, 2022]  methods.json#/validation/234/years
+- reliability_err (tier2): 0.0  methods.json#/validation/232/value
+- reliability_year_absolute_err (tier2): 0.053  methods.json#/validation/233/value
+- t1_t2_wape (tier2): 0.212  methods.json#/validation/236/value
+- eyesight status: "validated"  methods.json#/eyesight/13/status
+- eyesight param a: -3.721  methods.json#/eyesight/13/params/a
+- eyesight param a_hi: -3.596  methods.json#/eyesight/13/params/a_hi
+- eyesight param a_lo: -3.894  methods.json#/eyesight/13/params/a_lo
+- eyesight param b: 2.536  methods.json#/eyesight/13/params/b
+- eyesight param b_hi: 2.714  methods.json#/eyesight/13/params/b_hi
+- eyesight param b_lo: 2.397  methods.json#/eyesight/13/params/b_lo
+- eyesight param c: 0.681  methods.json#/eyesight/13/params/c
+- eyesight param c_hi: 0.733  methods.json#/eyesight/13/params/c_hi
+- eyesight param c_lo: 0.626  methods.json#/eyesight/13/params/c_lo
+- eyesight g: 1.683  methods.json#/eyesight/13/g
+
+## Barbados (`barbados`)
+
+- jump multiple (value): 4.979  barbados/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.778  barbados/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 6.833  barbados/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  barbados/ruler.json#/jump_multiple/years
+- ruler sentence: "In Barbados, VIIRS reports about 5.0 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  barbados/ruler.json#/sentence
+- harmonized trend pct_per_decade: 0.0  barbados/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -45.314  barbados/trend.json#/harmonized/lo
+- harmonized trend hi: 28.38  barbados/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  barbados/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 58.41  barbados/trend.json#/naive/pct_per_decade
+- naive trend lo: 38.769  barbados/trend.json#/naive/lo
+- naive trend hi: 122.874  barbados/trend.json#/naive/hi
+- naive trend direction: "rising"  barbados/trend.json#/naive/direction
+- trend years: [2003, 2025]  barbados/trend.json#/years
+- verdict sentence_id: "artifact_flat"  barbados/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 58% per decade. After correcting for the sensor change, there is no clear change (-45 to 28% per decade)."  barbados/trend.json#/sentence
+- critical weeks: []  barbados/season.json#/critical_weeks
+- this week value: null  barbados/nowcast.json#/value
+- this week lo: null  barbados/nowcast.json#/lo
+- this week hi: null  barbados/nowcast.json#/hi
+- this week percentile: null  barbados/nowcast.json#/percentile
+- this week status: "unavailable"  barbados/nowcast.json#/status
+- this week as_of: null  barbados/nowcast.json#/as_of
+- this week window start: null  barbados/nowcast.json#/window/start
+- this week window end: null  barbados/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  barbados/nowcast.json#/baseline_years
+- month to date value: null  barbados/nowcast.json#/month_to_date/value
+- month to date median: null  barbados/nowcast.json#/month_to_date/median
+- month to date ratio: null  barbados/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  barbados/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  barbados/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.269  methods.json#/validation/237/value
+- LOYO weekly WAPE baseline annual_ratio: 1.269  methods.json#/validation/237/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.766  methods.json#/validation/237/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/237/years
+- eyesight status: "absent"  methods.json#/eyesight/14/status
 
 ## Belarus (`belarus`)
 
@@ -817,26 +958,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  belarus/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  belarus/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  belarus/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.264  methods.json#/validation/206/value
-- LOYO weekly WAPE baseline annual_ratio: 0.268  methods.json#/validation/206/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 2.271  methods.json#/validation/206/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/206/years
-- LOYO weekly WAPE (tier2): 0.206  methods.json#/validation/221/value
-- LOYO years: [2013, 2022]  methods.json#/validation/221/years
-- reliability_err (tier2): 0.002  methods.json#/validation/219/value
-- reliability_year_absolute_err (tier2): 0.049  methods.json#/validation/220/value
-- t1_t2_wape (tier2): 0.221  methods.json#/validation/223/value
-- eyesight status: "validated"  methods.json#/eyesight/12/status
-- eyesight param a: -3.606  methods.json#/eyesight/12/params/a
-- eyesight param a_hi: -3.51  methods.json#/eyesight/12/params/a_hi
-- eyesight param a_lo: -3.732  methods.json#/eyesight/12/params/a_lo
-- eyesight param b: 2.515  methods.json#/eyesight/12/params/b
-- eyesight param b_hi: 2.612  methods.json#/eyesight/12/params/b_hi
-- eyesight param b_lo: 2.405  methods.json#/eyesight/12/params/b_lo
-- eyesight param c: 0.89  methods.json#/eyesight/12/params/c
-- eyesight param c_hi: 0.955  methods.json#/eyesight/12/params/c_hi
-- eyesight param c_lo: 0.849  methods.json#/eyesight/12/params/c_lo
-- eyesight g: 1.514  methods.json#/eyesight/12/g
+- LOYO weekly WAPE (tier1): 0.264  methods.json#/validation/250/value
+- LOYO weekly WAPE baseline annual_ratio: 0.268  methods.json#/validation/250/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.271  methods.json#/validation/250/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/250/years
+- LOYO weekly WAPE (tier2): 0.206  methods.json#/validation/265/value
+- LOYO years: [2013, 2022]  methods.json#/validation/265/years
+- reliability_err (tier2): 0.002  methods.json#/validation/263/value
+- reliability_year_absolute_err (tier2): 0.049  methods.json#/validation/264/value
+- t1_t2_wape (tier2): 0.221  methods.json#/validation/267/value
+- eyesight status: "validated"  methods.json#/eyesight/15/status
+- eyesight param a: -3.606  methods.json#/eyesight/15/params/a
+- eyesight param a_hi: -3.51  methods.json#/eyesight/15/params/a_hi
+- eyesight param a_lo: -3.732  methods.json#/eyesight/15/params/a_lo
+- eyesight param b: 2.515  methods.json#/eyesight/15/params/b
+- eyesight param b_hi: 2.612  methods.json#/eyesight/15/params/b_hi
+- eyesight param b_lo: 2.405  methods.json#/eyesight/15/params/b_lo
+- eyesight param c: 0.89  methods.json#/eyesight/15/params/c
+- eyesight param c_hi: 0.955  methods.json#/eyesight/15/params/c_hi
+- eyesight param c_lo: 0.849  methods.json#/eyesight/15/params/c_lo
+- eyesight g: 1.514  methods.json#/eyesight/15/g
 
 ## Belgium (`belgium`)
 
@@ -889,11 +1030,11 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  belgium/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  belgium/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  belgium/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.925  methods.json#/validation/224/value
-- LOYO weekly WAPE baseline annual_ratio: 0.984  methods.json#/validation/224/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 2.731  methods.json#/validation/224/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/224/years
-- eyesight status: "absent"  methods.json#/eyesight/13/status
+- LOYO weekly WAPE (tier1): 0.925  methods.json#/validation/268/value
+- LOYO weekly WAPE baseline annual_ratio: 0.984  methods.json#/validation/268/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.731  methods.json#/validation/268/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/268/years
+- eyesight status: "absent"  methods.json#/eyesight/16/status
 
 ## Belize (`belize`)
 
@@ -937,26 +1078,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  belize/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  belize/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  belize/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.269  methods.json#/validation/237/value
-- LOYO weekly WAPE baseline annual_ratio: 0.29  methods.json#/validation/237/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 2.739  methods.json#/validation/237/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/237/years
-- LOYO weekly WAPE (tier2): 0.243  methods.json#/validation/252/value
-- LOYO years: [2013, 2022]  methods.json#/validation/252/years
-- reliability_err (tier2): 0.002  methods.json#/validation/250/value
-- reliability_year_absolute_err (tier2): 0.08  methods.json#/validation/251/value
-- t1_t2_wape (tier2): 0.119  methods.json#/validation/254/value
-- eyesight status: "validated"  methods.json#/eyesight/14/status
-- eyesight param a: -3.841  methods.json#/eyesight/14/params/a
-- eyesight param a_hi: -3.772  methods.json#/eyesight/14/params/a_hi
-- eyesight param a_lo: -3.962  methods.json#/eyesight/14/params/a_lo
-- eyesight param b: 2.296  methods.json#/eyesight/14/params/b
-- eyesight param b_hi: 2.575  methods.json#/eyesight/14/params/b_hi
-- eyesight param b_lo: 2.08  methods.json#/eyesight/14/params/b_lo
-- eyesight param c: 0.662  methods.json#/eyesight/14/params/c
-- eyesight param c_hi: 0.755  methods.json#/eyesight/14/params/c_hi
-- eyesight param c_lo: 0.581  methods.json#/eyesight/14/params/c_lo
-- eyesight g: 1.778  methods.json#/eyesight/14/g
+- LOYO weekly WAPE (tier1): 0.269  methods.json#/validation/281/value
+- LOYO weekly WAPE baseline annual_ratio: 0.29  methods.json#/validation/281/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.739  methods.json#/validation/281/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/281/years
+- LOYO weekly WAPE (tier2): 0.243  methods.json#/validation/296/value
+- LOYO years: [2013, 2022]  methods.json#/validation/296/years
+- reliability_err (tier2): 0.002  methods.json#/validation/294/value
+- reliability_year_absolute_err (tier2): 0.08  methods.json#/validation/295/value
+- t1_t2_wape (tier2): 0.119  methods.json#/validation/298/value
+- eyesight status: "validated"  methods.json#/eyesight/17/status
+- eyesight param a: -3.841  methods.json#/eyesight/17/params/a
+- eyesight param a_hi: -3.772  methods.json#/eyesight/17/params/a_hi
+- eyesight param a_lo: -3.962  methods.json#/eyesight/17/params/a_lo
+- eyesight param b: 2.296  methods.json#/eyesight/17/params/b
+- eyesight param b_hi: 2.575  methods.json#/eyesight/17/params/b_hi
+- eyesight param b_lo: 2.08  methods.json#/eyesight/17/params/b_lo
+- eyesight param c: 0.662  methods.json#/eyesight/17/params/c
+- eyesight param c_hi: 0.755  methods.json#/eyesight/17/params/c_hi
+- eyesight param c_lo: 0.581  methods.json#/eyesight/17/params/c_lo
+- eyesight g: 1.778  methods.json#/eyesight/17/g
 
 ## Benin (`benin`)
 
@@ -1000,26 +1141,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  benin/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  benin/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  benin/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.167  methods.json#/validation/255/value
-- LOYO weekly WAPE baseline annual_ratio: 0.268  methods.json#/validation/255/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 3.817  methods.json#/validation/255/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/255/years
-- LOYO weekly WAPE (tier2): 0.193  methods.json#/validation/270/value
-- LOYO years: [2013, 2022]  methods.json#/validation/270/years
-- reliability_err (tier2): 0.001  methods.json#/validation/268/value
-- reliability_year_absolute_err (tier2): 0.057  methods.json#/validation/269/value
-- t1_t2_wape (tier2): 0.157  methods.json#/validation/272/value
-- eyesight status: "exploratory"  methods.json#/eyesight/15/status
-- eyesight param a: -4.032  methods.json#/eyesight/15/params/a
-- eyesight param a_hi: -3.94  methods.json#/eyesight/15/params/a_hi
-- eyesight param a_lo: -4.16  methods.json#/eyesight/15/params/a_lo
-- eyesight param b: 2.266  methods.json#/eyesight/15/params/b
-- eyesight param b_hi: 2.377  methods.json#/eyesight/15/params/b_hi
-- eyesight param b_lo: 2.181  methods.json#/eyesight/15/params/b_lo
-- eyesight param c: 0.824  methods.json#/eyesight/15/params/c
-- eyesight param c_hi: 0.857  methods.json#/eyesight/15/params/c_hi
-- eyesight param c_lo: 0.786  methods.json#/eyesight/15/params/c_lo
-- eyesight g: 1.707  methods.json#/eyesight/15/g
+- LOYO weekly WAPE (tier1): 0.167  methods.json#/validation/299/value
+- LOYO weekly WAPE baseline annual_ratio: 0.268  methods.json#/validation/299/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.817  methods.json#/validation/299/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/299/years
+- LOYO weekly WAPE (tier2): 0.193  methods.json#/validation/314/value
+- LOYO years: [2013, 2022]  methods.json#/validation/314/years
+- reliability_err (tier2): 0.001  methods.json#/validation/312/value
+- reliability_year_absolute_err (tier2): 0.057  methods.json#/validation/313/value
+- t1_t2_wape (tier2): 0.157  methods.json#/validation/316/value
+- eyesight status: "exploratory"  methods.json#/eyesight/18/status
+- eyesight param a: -4.032  methods.json#/eyesight/18/params/a
+- eyesight param a_hi: -3.94  methods.json#/eyesight/18/params/a_hi
+- eyesight param a_lo: -4.16  methods.json#/eyesight/18/params/a_lo
+- eyesight param b: 2.266  methods.json#/eyesight/18/params/b
+- eyesight param b_hi: 2.377  methods.json#/eyesight/18/params/b_hi
+- eyesight param b_lo: 2.181  methods.json#/eyesight/18/params/b_lo
+- eyesight param c: 0.824  methods.json#/eyesight/18/params/c
+- eyesight param c_hi: 0.857  methods.json#/eyesight/18/params/c_hi
+- eyesight param c_lo: 0.786  methods.json#/eyesight/18/params/c_lo
+- eyesight g: 1.707  methods.json#/eyesight/18/g
 
 ## Bhutan (`bhutan`)
 
@@ -1063,26 +1204,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  bhutan/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  bhutan/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  bhutan/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.52  methods.json#/validation/273/value
-- LOYO weekly WAPE baseline annual_ratio: 0.51  methods.json#/validation/273/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 2.337  methods.json#/validation/273/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/273/years
-- LOYO weekly WAPE (tier2): 0.459  methods.json#/validation/288/value
-- LOYO years: [2013, 2022]  methods.json#/validation/288/years
-- reliability_err (tier2): 0.001  methods.json#/validation/286/value
-- reliability_year_absolute_err (tier2): 0.136  methods.json#/validation/287/value
-- t1_t2_wape (tier2): 0.297  methods.json#/validation/290/value
-- eyesight status: "validated"  methods.json#/eyesight/16/status
-- eyesight param a: -4.047  methods.json#/eyesight/16/params/a
-- eyesight param a_hi: -3.749  methods.json#/eyesight/16/params/a_hi
-- eyesight param a_lo: -4.438  methods.json#/eyesight/16/params/a_lo
-- eyesight param b: 2.502  methods.json#/eyesight/16/params/b
-- eyesight param b_hi: 2.968  methods.json#/eyesight/16/params/b_hi
-- eyesight param b_lo: 2.137  methods.json#/eyesight/16/params/b_lo
-- eyesight param c: 0.817  methods.json#/eyesight/16/params/c
-- eyesight param c_hi: 1.0  methods.json#/eyesight/16/params/c_hi
-- eyesight param c_lo: 0.71  methods.json#/eyesight/16/params/c_lo
-- eyesight g: 1.661  methods.json#/eyesight/16/g
+- LOYO weekly WAPE (tier1): 0.52  methods.json#/validation/317/value
+- LOYO weekly WAPE baseline annual_ratio: 0.51  methods.json#/validation/317/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.337  methods.json#/validation/317/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/317/years
+- LOYO weekly WAPE (tier2): 0.459  methods.json#/validation/332/value
+- LOYO years: [2013, 2022]  methods.json#/validation/332/years
+- reliability_err (tier2): 0.001  methods.json#/validation/330/value
+- reliability_year_absolute_err (tier2): 0.136  methods.json#/validation/331/value
+- t1_t2_wape (tier2): 0.297  methods.json#/validation/334/value
+- eyesight status: "validated"  methods.json#/eyesight/19/status
+- eyesight param a: -4.047  methods.json#/eyesight/19/params/a
+- eyesight param a_hi: -3.749  methods.json#/eyesight/19/params/a_hi
+- eyesight param a_lo: -4.438  methods.json#/eyesight/19/params/a_lo
+- eyesight param b: 2.502  methods.json#/eyesight/19/params/b
+- eyesight param b_hi: 2.968  methods.json#/eyesight/19/params/b_hi
+- eyesight param b_lo: 2.137  methods.json#/eyesight/19/params/b_lo
+- eyesight param c: 0.817  methods.json#/eyesight/19/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/19/params/c_hi
+- eyesight param c_lo: 0.71  methods.json#/eyesight/19/params/c_lo
+- eyesight g: 1.661  methods.json#/eyesight/19/g
 
 ## Bosnia and Herzegovina (`bosnia-and-herzegovina`)
 
@@ -1135,26 +1276,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  bosnia-and-herzegovina/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  bosnia-and-herzegovina/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  bosnia-and-herzegovina/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.371  methods.json#/validation/291/value
-- LOYO weekly WAPE baseline annual_ratio: 0.368  methods.json#/validation/291/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 2.645  methods.json#/validation/291/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/291/years
-- LOYO weekly WAPE (tier2): 0.285  methods.json#/validation/306/value
-- LOYO years: [2013, 2022]  methods.json#/validation/306/years
-- reliability_err (tier2): 0.007  methods.json#/validation/304/value
-- reliability_year_absolute_err (tier2): 0.16  methods.json#/validation/305/value
-- t1_t2_wape (tier2): 0.315  methods.json#/validation/308/value
-- eyesight status: "validated"  methods.json#/eyesight/17/status
-- eyesight param a: -3.781  methods.json#/eyesight/17/params/a
-- eyesight param a_hi: -3.588  methods.json#/eyesight/17/params/a_hi
-- eyesight param a_lo: -4.001  methods.json#/eyesight/17/params/a_lo
-- eyesight param b: 2.728  methods.json#/eyesight/17/params/b
-- eyesight param b_hi: 2.992  methods.json#/eyesight/17/params/b_hi
-- eyesight param b_lo: 2.498  methods.json#/eyesight/17/params/b_lo
-- eyesight param c: 0.853  methods.json#/eyesight/17/params/c
-- eyesight param c_hi: 0.937  methods.json#/eyesight/17/params/c_hi
-- eyesight param c_lo: 0.736  methods.json#/eyesight/17/params/c_lo
-- eyesight g: 1.442  methods.json#/eyesight/17/g
+- LOYO weekly WAPE (tier1): 0.371  methods.json#/validation/335/value
+- LOYO weekly WAPE baseline annual_ratio: 0.368  methods.json#/validation/335/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.645  methods.json#/validation/335/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/335/years
+- LOYO weekly WAPE (tier2): 0.285  methods.json#/validation/350/value
+- LOYO years: [2013, 2022]  methods.json#/validation/350/years
+- reliability_err (tier2): 0.007  methods.json#/validation/348/value
+- reliability_year_absolute_err (tier2): 0.16  methods.json#/validation/349/value
+- t1_t2_wape (tier2): 0.315  methods.json#/validation/352/value
+- eyesight status: "validated"  methods.json#/eyesight/20/status
+- eyesight param a: -3.781  methods.json#/eyesight/20/params/a
+- eyesight param a_hi: -3.588  methods.json#/eyesight/20/params/a_hi
+- eyesight param a_lo: -4.001  methods.json#/eyesight/20/params/a_lo
+- eyesight param b: 2.728  methods.json#/eyesight/20/params/b
+- eyesight param b_hi: 2.992  methods.json#/eyesight/20/params/b_hi
+- eyesight param b_lo: 2.498  methods.json#/eyesight/20/params/b_lo
+- eyesight param c: 0.853  methods.json#/eyesight/20/params/c
+- eyesight param c_hi: 0.937  methods.json#/eyesight/20/params/c_hi
+- eyesight param c_lo: 0.736  methods.json#/eyesight/20/params/c_lo
+- eyesight g: 1.442  methods.json#/eyesight/20/g
 
 ## Botswana (`botswana`)
 
@@ -1198,26 +1339,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  botswana/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  botswana/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  botswana/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.148  methods.json#/validation/309/value
-- LOYO weekly WAPE baseline annual_ratio: 0.188  methods.json#/validation/309/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 1.155  methods.json#/validation/309/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/309/years
-- LOYO weekly WAPE (tier2): 0.173  methods.json#/validation/324/value
-- LOYO years: [2013, 2022]  methods.json#/validation/324/years
-- reliability_err (tier2): 0.003  methods.json#/validation/322/value
-- reliability_year_absolute_err (tier2): 0.047  methods.json#/validation/323/value
-- t1_t2_wape (tier2): 0.15  methods.json#/validation/326/value
-- eyesight status: "exploratory"  methods.json#/eyesight/18/status
-- eyesight param a: -3.203  methods.json#/eyesight/18/params/a
-- eyesight param a_hi: -3.112  methods.json#/eyesight/18/params/a_hi
-- eyesight param a_lo: -3.297  methods.json#/eyesight/18/params/a_lo
-- eyesight param b: 1.738  methods.json#/eyesight/18/params/b
-- eyesight param b_hi: 1.799  methods.json#/eyesight/18/params/b_hi
-- eyesight param b_lo: 1.672  methods.json#/eyesight/18/params/b_lo
-- eyesight param c: 0.948  methods.json#/eyesight/18/params/c
-- eyesight param c_hi: 0.972  methods.json#/eyesight/18/params/c_hi
-- eyesight param c_lo: 0.922  methods.json#/eyesight/18/params/c_lo
-- eyesight g: 1.21  methods.json#/eyesight/18/g
+- LOYO weekly WAPE (tier1): 0.148  methods.json#/validation/353/value
+- LOYO weekly WAPE baseline annual_ratio: 0.188  methods.json#/validation/353/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.155  methods.json#/validation/353/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/353/years
+- LOYO weekly WAPE (tier2): 0.173  methods.json#/validation/368/value
+- LOYO years: [2013, 2022]  methods.json#/validation/368/years
+- reliability_err (tier2): 0.003  methods.json#/validation/366/value
+- reliability_year_absolute_err (tier2): 0.047  methods.json#/validation/367/value
+- t1_t2_wape (tier2): 0.15  methods.json#/validation/370/value
+- eyesight status: "exploratory"  methods.json#/eyesight/21/status
+- eyesight param a: -3.203  methods.json#/eyesight/21/params/a
+- eyesight param a_hi: -3.112  methods.json#/eyesight/21/params/a_hi
+- eyesight param a_lo: -3.297  methods.json#/eyesight/21/params/a_lo
+- eyesight param b: 1.738  methods.json#/eyesight/21/params/b
+- eyesight param b_hi: 1.799  methods.json#/eyesight/21/params/b_hi
+- eyesight param b_lo: 1.672  methods.json#/eyesight/21/params/b_lo
+- eyesight param c: 0.948  methods.json#/eyesight/21/params/c
+- eyesight param c_hi: 0.972  methods.json#/eyesight/21/params/c_hi
+- eyesight param c_lo: 0.922  methods.json#/eyesight/21/params/c_lo
+- eyesight g: 1.21  methods.json#/eyesight/21/g
 
 ## Brazil (`brazil`)
 
@@ -1261,26 +1402,102 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  brazil/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  brazil/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  brazil/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.103  methods.json#/validation/327/value
-- LOYO weekly WAPE baseline annual_ratio: 0.162  methods.json#/validation/327/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 2.185  methods.json#/validation/327/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/327/years
-- LOYO weekly WAPE (tier2): 0.128  methods.json#/validation/342/value
-- LOYO years: [2013, 2022]  methods.json#/validation/342/years
-- reliability_err (tier2): 0.0  methods.json#/validation/340/value
-- reliability_year_absolute_err (tier2): 0.032  methods.json#/validation/341/value
-- t1_t2_wape (tier2): 0.129  methods.json#/validation/344/value
-- eyesight status: "exploratory"  methods.json#/eyesight/19/status
-- eyesight param a: -3.646  methods.json#/eyesight/19/params/a
-- eyesight param a_hi: -3.616  methods.json#/eyesight/19/params/a_hi
-- eyesight param a_lo: -3.676  methods.json#/eyesight/19/params/a_lo
-- eyesight param b: 2.027  methods.json#/eyesight/19/params/b
-- eyesight param b_hi: 2.042  methods.json#/eyesight/19/params/b_hi
-- eyesight param b_lo: 2.012  methods.json#/eyesight/19/params/b_lo
-- eyesight param c: 0.768  methods.json#/eyesight/19/params/c
-- eyesight param c_hi: 0.785  methods.json#/eyesight/19/params/c_hi
-- eyesight param c_lo: 0.748  methods.json#/eyesight/19/params/c_lo
-- eyesight g: 1.683  methods.json#/eyesight/19/g
+- LOYO weekly WAPE (tier1): 0.103  methods.json#/validation/371/value
+- LOYO weekly WAPE baseline annual_ratio: 0.162  methods.json#/validation/371/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.185  methods.json#/validation/371/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/371/years
+- LOYO weekly WAPE (tier2): 0.128  methods.json#/validation/386/value
+- LOYO years: [2013, 2022]  methods.json#/validation/386/years
+- reliability_err (tier2): 0.0  methods.json#/validation/384/value
+- reliability_year_absolute_err (tier2): 0.032  methods.json#/validation/385/value
+- t1_t2_wape (tier2): 0.129  methods.json#/validation/388/value
+- eyesight status: "exploratory"  methods.json#/eyesight/22/status
+- eyesight param a: -3.646  methods.json#/eyesight/22/params/a
+- eyesight param a_hi: -3.616  methods.json#/eyesight/22/params/a_hi
+- eyesight param a_lo: -3.676  methods.json#/eyesight/22/params/a_lo
+- eyesight param b: 2.027  methods.json#/eyesight/22/params/b
+- eyesight param b_hi: 2.042  methods.json#/eyesight/22/params/b_hi
+- eyesight param b_lo: 2.012  methods.json#/eyesight/22/params/b_lo
+- eyesight param c: 0.768  methods.json#/eyesight/22/params/c
+- eyesight param c_hi: 0.785  methods.json#/eyesight/22/params/c_hi
+- eyesight param c_lo: 0.748  methods.json#/eyesight/22/params/c_lo
+- eyesight g: 1.683  methods.json#/eyesight/22/g
+
+## British Virgin Islands (`british-virgin-islands`)
+
+- jump multiple (value): null  british-virgin-islands/ruler.json#/jump_multiple/value
+- jump multiple (lo): null  british-virgin-islands/ruler.json#/jump_multiple/lo
+- jump multiple (hi): null  british-virgin-islands/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  british-virgin-islands/ruler.json#/jump_multiple/years
+- ruler sentence: "The sensor comparison is unavailable: no valid paired annual observations."  british-virgin-islands/ruler.json#/sentence
+- harmonized trend pct_per_decade: null  british-virgin-islands/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: null  british-virgin-islands/trend.json#/harmonized/lo
+- harmonized trend hi: null  british-virgin-islands/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  british-virgin-islands/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 444.444  british-virgin-islands/trend.json#/naive/pct_per_decade
+- naive trend lo: 52.77  british-virgin-islands/trend.json#/naive/lo
+- naive trend hi: 748.102  british-virgin-islands/trend.json#/naive/hi
+- naive trend direction: "rising"  british-virgin-islands/trend.json#/naive/direction
+- trend years: [2003, 2025]  british-virgin-islands/trend.json#/years
+- verdict sentence_id: "unclear"  british-virgin-islands/trend.json#/sentence_id
+- verdict sentence: "Trend unavailable: the median annual activity is zero."  british-virgin-islands/trend.json#/sentence
+- critical weeks: []  british-virgin-islands/season.json#/critical_weeks
+- this week value: null  british-virgin-islands/nowcast.json#/value
+- this week lo: null  british-virgin-islands/nowcast.json#/lo
+- this week hi: null  british-virgin-islands/nowcast.json#/hi
+- this week percentile: null  british-virgin-islands/nowcast.json#/percentile
+- this week status: "unavailable"  british-virgin-islands/nowcast.json#/status
+- this week as_of: null  british-virgin-islands/nowcast.json#/as_of
+- this week window start: null  british-virgin-islands/nowcast.json#/window/start
+- this week window end: null  british-virgin-islands/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  british-virgin-islands/nowcast.json#/baseline_years
+- month to date value: null  british-virgin-islands/nowcast.json#/month_to_date/value
+- month to date median: null  british-virgin-islands/nowcast.json#/month_to_date/median
+- month to date ratio: null  british-virgin-islands/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  british-virgin-islands/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  british-virgin-islands/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): null  methods.json#/validation/389/value
+- LOYO years: [2013, 2022]  methods.json#/validation/389/years
+- eyesight status: "absent"  methods.json#/eyesight/23/status
+
+## Brunei (`brunei-darussalam`)
+
+- jump multiple (value): 3.907  brunei-darussalam/ruler.json#/jump_multiple/value
+- jump multiple (lo): 1.2  brunei-darussalam/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 9.4  brunei-darussalam/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  brunei-darussalam/ruler.json#/jump_multiple/years
+- ruler sentence: "In Brunei, VIIRS reports about 3.9 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  brunei-darussalam/ruler.json#/sentence
+- harmonized trend pct_per_decade: -59.829  brunei-darussalam/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -129.568  brunei-darussalam/trend.json#/harmonized/lo
+- harmonized trend hi: -31.746  brunei-darussalam/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  brunei-darussalam/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 0.0  brunei-darussalam/trend.json#/naive/pct_per_decade
+- naive trend lo: -39.908  brunei-darussalam/trend.json#/naive/lo
+- naive trend hi: 78.446  brunei-darussalam/trend.json#/naive/hi
+- naive trend direction: "no_clear_change"  brunei-darussalam/trend.json#/naive/direction
+- trend years: [2003, 2025]  brunei-darussalam/trend.json#/years
+- verdict sentence_id: "artifact_falling"  brunei-darussalam/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 60% per decade (-130 to -32)."  brunei-darussalam/trend.json#/sentence
+- critical weeks: []  brunei-darussalam/season.json#/critical_weeks
+- this week value: null  brunei-darussalam/nowcast.json#/value
+- this week lo: null  brunei-darussalam/nowcast.json#/lo
+- this week hi: null  brunei-darussalam/nowcast.json#/hi
+- this week percentile: null  brunei-darussalam/nowcast.json#/percentile
+- this week status: "unavailable"  brunei-darussalam/nowcast.json#/status
+- this week as_of: null  brunei-darussalam/nowcast.json#/as_of
+- this week window start: null  brunei-darussalam/nowcast.json#/window/start
+- this week window end: null  brunei-darussalam/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  brunei-darussalam/nowcast.json#/baseline_years
+- month to date value: null  brunei-darussalam/nowcast.json#/month_to_date/value
+- month to date median: null  brunei-darussalam/nowcast.json#/month_to_date/median
+- month to date ratio: null  brunei-darussalam/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  brunei-darussalam/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  brunei-darussalam/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.048  methods.json#/validation/402/value
+- LOYO weekly WAPE baseline annual_ratio: 1.061  methods.json#/validation/402/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.791  methods.json#/validation/402/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/402/years
+- eyesight status: "absent"  methods.json#/eyesight/24/status
 
 ## Bulgaria (`bulgaria`)
 
@@ -1324,26 +1541,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  bulgaria/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  bulgaria/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  bulgaria/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.222  methods.json#/validation/345/value
-- LOYO weekly WAPE baseline annual_ratio: 0.258  methods.json#/validation/345/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 2.107  methods.json#/validation/345/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/345/years
-- LOYO weekly WAPE (tier2): 0.246  methods.json#/validation/360/value
-- LOYO years: [2013, 2022]  methods.json#/validation/360/years
-- reliability_err (tier2): 0.001  methods.json#/validation/358/value
-- reliability_year_absolute_err (tier2): 0.052  methods.json#/validation/359/value
-- t1_t2_wape (tier2): 0.191  methods.json#/validation/362/value
-- eyesight status: "exploratory"  methods.json#/eyesight/20/status
-- eyesight param a: -3.249  methods.json#/eyesight/20/params/a
-- eyesight param a_hi: -3.157  methods.json#/eyesight/20/params/a_hi
-- eyesight param a_lo: -3.339  methods.json#/eyesight/20/params/a_lo
-- eyesight param b: 2.354  methods.json#/eyesight/20/params/b
-- eyesight param b_hi: 2.502  methods.json#/eyesight/20/params/b_hi
-- eyesight param b_lo: 2.205  methods.json#/eyesight/20/params/b_lo
-- eyesight param c: 0.702  methods.json#/eyesight/20/params/c
-- eyesight param c_hi: 0.75  methods.json#/eyesight/20/params/c_hi
-- eyesight param c_lo: 0.662  methods.json#/eyesight/20/params/c_lo
-- eyesight g: 1.643  methods.json#/eyesight/20/g
+- LOYO weekly WAPE (tier1): 0.222  methods.json#/validation/415/value
+- LOYO weekly WAPE baseline annual_ratio: 0.258  methods.json#/validation/415/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.107  methods.json#/validation/415/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/415/years
+- LOYO weekly WAPE (tier2): 0.246  methods.json#/validation/430/value
+- LOYO years: [2013, 2022]  methods.json#/validation/430/years
+- reliability_err (tier2): 0.001  methods.json#/validation/428/value
+- reliability_year_absolute_err (tier2): 0.052  methods.json#/validation/429/value
+- t1_t2_wape (tier2): 0.191  methods.json#/validation/432/value
+- eyesight status: "exploratory"  methods.json#/eyesight/25/status
+- eyesight param a: -3.249  methods.json#/eyesight/25/params/a
+- eyesight param a_hi: -3.157  methods.json#/eyesight/25/params/a_hi
+- eyesight param a_lo: -3.339  methods.json#/eyesight/25/params/a_lo
+- eyesight param b: 2.354  methods.json#/eyesight/25/params/b
+- eyesight param b_hi: 2.502  methods.json#/eyesight/25/params/b_hi
+- eyesight param b_lo: 2.205  methods.json#/eyesight/25/params/b_lo
+- eyesight param c: 0.702  methods.json#/eyesight/25/params/c
+- eyesight param c_hi: 0.75  methods.json#/eyesight/25/params/c_hi
+- eyesight param c_lo: 0.662  methods.json#/eyesight/25/params/c_lo
+- eyesight g: 1.643  methods.json#/eyesight/25/g
 
 ## Burkina Faso (`burkina-faso`)
 
@@ -1387,26 +1604,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  burkina-faso/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  burkina-faso/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  burkina-faso/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.144  methods.json#/validation/363/value
-- LOYO weekly WAPE baseline annual_ratio: 0.247  methods.json#/validation/363/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 3.188  methods.json#/validation/363/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/363/years
-- LOYO weekly WAPE (tier2): 0.164  methods.json#/validation/378/value
-- LOYO years: [2013, 2022]  methods.json#/validation/378/years
-- reliability_err (tier2): 0.0  methods.json#/validation/376/value
-- reliability_year_absolute_err (tier2): 0.014  methods.json#/validation/377/value
-- t1_t2_wape (tier2): 0.139  methods.json#/validation/380/value
-- eyesight status: "exploratory"  methods.json#/eyesight/21/status
-- eyesight param a: -3.911  methods.json#/eyesight/21/params/a
-- eyesight param a_hi: -3.891  methods.json#/eyesight/21/params/a_hi
-- eyesight param a_lo: -3.938  methods.json#/eyesight/21/params/a_lo
-- eyesight param b: 2.323  methods.json#/eyesight/21/params/b
-- eyesight param b_hi: 2.366  methods.json#/eyesight/21/params/b_hi
-- eyesight param b_lo: 2.282  methods.json#/eyesight/21/params/b_lo
-- eyesight param c: 0.772  methods.json#/eyesight/21/params/c
-- eyesight param c_hi: 0.801  methods.json#/eyesight/21/params/c_hi
-- eyesight param c_lo: 0.749  methods.json#/eyesight/21/params/c_lo
-- eyesight g: 1.61  methods.json#/eyesight/21/g
+- LOYO weekly WAPE (tier1): 0.144  methods.json#/validation/433/value
+- LOYO weekly WAPE baseline annual_ratio: 0.247  methods.json#/validation/433/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.188  methods.json#/validation/433/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/433/years
+- LOYO weekly WAPE (tier2): 0.164  methods.json#/validation/448/value
+- LOYO years: [2013, 2022]  methods.json#/validation/448/years
+- reliability_err (tier2): 0.0  methods.json#/validation/446/value
+- reliability_year_absolute_err (tier2): 0.014  methods.json#/validation/447/value
+- t1_t2_wape (tier2): 0.139  methods.json#/validation/450/value
+- eyesight status: "exploratory"  methods.json#/eyesight/26/status
+- eyesight param a: -3.911  methods.json#/eyesight/26/params/a
+- eyesight param a_hi: -3.891  methods.json#/eyesight/26/params/a_hi
+- eyesight param a_lo: -3.938  methods.json#/eyesight/26/params/a_lo
+- eyesight param b: 2.323  methods.json#/eyesight/26/params/b
+- eyesight param b_hi: 2.366  methods.json#/eyesight/26/params/b_hi
+- eyesight param b_lo: 2.282  methods.json#/eyesight/26/params/b_lo
+- eyesight param c: 0.772  methods.json#/eyesight/26/params/c
+- eyesight param c_hi: 0.801  methods.json#/eyesight/26/params/c_hi
+- eyesight param c_lo: 0.749  methods.json#/eyesight/26/params/c_lo
+- eyesight g: 1.61  methods.json#/eyesight/26/g
 
 ## Burundi (`burundi`)
 
@@ -1450,26 +1667,155 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  burundi/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  burundi/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  burundi/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.384  methods.json#/validation/381/value
-- LOYO weekly WAPE baseline annual_ratio: 0.434  methods.json#/validation/381/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 3.723  methods.json#/validation/381/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/381/years
-- LOYO weekly WAPE (tier2): 0.37  methods.json#/validation/396/value
-- LOYO years: [2013, 2022]  methods.json#/validation/396/years
-- reliability_err (tier2): 0.004  methods.json#/validation/394/value
-- reliability_year_absolute_err (tier2): 0.136  methods.json#/validation/395/value
-- t1_t2_wape (tier2): 0.196  methods.json#/validation/398/value
-- eyesight status: "validated"  methods.json#/eyesight/22/status
-- eyesight param a: -4.176  methods.json#/eyesight/22/params/a
-- eyesight param a_hi: -4.041  methods.json#/eyesight/22/params/a_hi
-- eyesight param a_lo: -4.385  methods.json#/eyesight/22/params/a_lo
-- eyesight param b: 2.301  methods.json#/eyesight/22/params/b
-- eyesight param b_hi: 2.616  methods.json#/eyesight/22/params/b_hi
-- eyesight param b_lo: 2.032  methods.json#/eyesight/22/params/b_lo
-- eyesight param c: 0.766  methods.json#/eyesight/22/params/c
-- eyesight param c_hi: 0.967  methods.json#/eyesight/22/params/c_hi
-- eyesight param c_lo: 0.643  methods.json#/eyesight/22/params/c_lo
-- eyesight g: 1.661  methods.json#/eyesight/22/g
+- LOYO weekly WAPE (tier1): 0.384  methods.json#/validation/451/value
+- LOYO weekly WAPE baseline annual_ratio: 0.434  methods.json#/validation/451/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.723  methods.json#/validation/451/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/451/years
+- LOYO weekly WAPE (tier2): 0.37  methods.json#/validation/466/value
+- LOYO years: [2013, 2022]  methods.json#/validation/466/years
+- reliability_err (tier2): 0.004  methods.json#/validation/464/value
+- reliability_year_absolute_err (tier2): 0.136  methods.json#/validation/465/value
+- t1_t2_wape (tier2): 0.196  methods.json#/validation/468/value
+- eyesight status: "validated"  methods.json#/eyesight/27/status
+- eyesight param a: -4.176  methods.json#/eyesight/27/params/a
+- eyesight param a_hi: -4.041  methods.json#/eyesight/27/params/a_hi
+- eyesight param a_lo: -4.385  methods.json#/eyesight/27/params/a_lo
+- eyesight param b: 2.301  methods.json#/eyesight/27/params/b
+- eyesight param b_hi: 2.616  methods.json#/eyesight/27/params/b_hi
+- eyesight param b_lo: 2.032  methods.json#/eyesight/27/params/b_lo
+- eyesight param c: 0.766  methods.json#/eyesight/27/params/c
+- eyesight param c_hi: 0.967  methods.json#/eyesight/27/params/c_hi
+- eyesight param c_lo: 0.643  methods.json#/eyesight/27/params/c_lo
+- eyesight g: 1.661  methods.json#/eyesight/27/g
+
+## Cambodia (`cambodia`)
+
+- jump multiple (value): 5.544  cambodia/ruler.json#/jump_multiple/value
+- jump multiple (lo): 5.11  cambodia/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 6.125  cambodia/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  cambodia/ruler.json#/jump_multiple/years
+- ruler sentence: "In Cambodia, VIIRS reports about 5.5 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  cambodia/ruler.json#/sentence
+- harmonized trend pct_per_decade: -4.207  cambodia/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -16.207  cambodia/trend.json#/harmonized/lo
+- harmonized trend hi: 6.339  cambodia/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  cambodia/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 47.565  cambodia/trend.json#/naive/pct_per_decade
+- naive trend lo: 27.413  cambodia/trend.json#/naive/lo
+- naive trend hi: 182.994  cambodia/trend.json#/naive/hi
+- naive trend direction: "rising"  cambodia/trend.json#/naive/direction
+- trend years: [2003, 2025]  cambodia/trend.json#/years
+- verdict sentence_id: "artifact_flat"  cambodia/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 48% per decade. After correcting for the sensor change, there is no clear change (-16 to 6% per decade)."  cambodia/trend.json#/sentence
+- critical weeks: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]  cambodia/season.json#/critical_weeks
+- window w1 label: "early-January to late-March"  cambodia/season.json#/windows/0/label
+- window w1 start_week: 1  cambodia/season.json#/windows/0/start_week
+- window w1 peak_week: 5  cambodia/season.json#/windows/0/peak_week
+- window w1 end_week: 12  cambodia/season.json#/windows/0/end_week
+- window w1 share: 0.827  cambodia/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 0.526  cambodia/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -4.0  cambodia/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 4.706  cambodia/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-January to late-March season."  cambodia/season.json#/windows/0/sentence
+- this week value: null  cambodia/nowcast.json#/value
+- this week lo: null  cambodia/nowcast.json#/lo
+- this week hi: null  cambodia/nowcast.json#/hi
+- this week percentile: null  cambodia/nowcast.json#/percentile
+- this week status: "unavailable"  cambodia/nowcast.json#/status
+- this week as_of: null  cambodia/nowcast.json#/as_of
+- this week window start: null  cambodia/nowcast.json#/window/start
+- this week window end: null  cambodia/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  cambodia/nowcast.json#/baseline_years
+- month to date value: null  cambodia/nowcast.json#/month_to_date/value
+- month to date median: null  cambodia/nowcast.json#/month_to_date/median
+- month to date ratio: null  cambodia/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  cambodia/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  cambodia/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.148  methods.json#/validation/469/value
+- LOYO weekly WAPE baseline annual_ratio: 0.207  methods.json#/validation/469/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.482  methods.json#/validation/469/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/469/years
+- LOYO weekly WAPE (tier2): 0.192  methods.json#/validation/484/value
+- LOYO years: [2013, 2022]  methods.json#/validation/484/years
+- reliability_err (tier2): 0.001  methods.json#/validation/482/value
+- reliability_year_absolute_err (tier2): 0.058  methods.json#/validation/483/value
+- t1_t2_wape (tier2): 0.156  methods.json#/validation/486/value
+- eyesight status: "absent"  methods.json#/eyesight/28/status
+
+## Cabo Verde (`cape-verde`)
+
+- jump multiple (value): 41.837  cape-verde/ruler.json#/jump_multiple/value
+- jump multiple (lo): 2.333  cape-verde/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 98.13  cape-verde/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  cape-verde/ruler.json#/jump_multiple/years
+- ruler sentence: "In Cabo Verde, VIIRS reports about 41.8 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  cape-verde/ruler.json#/sentence
+- harmonized trend pct_per_decade: 5.858  cape-verde/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: 0.0  cape-verde/trend.json#/harmonized/lo
+- harmonized trend hi: 111.111  cape-verde/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  cape-verde/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 95.238  cape-verde/trend.json#/naive/pct_per_decade
+- naive trend lo: 63.425  cape-verde/trend.json#/naive/lo
+- naive trend hi: 500.0  cape-verde/trend.json#/naive/hi
+- naive trend direction: "rising"  cape-verde/trend.json#/naive/direction
+- trend years: [2003, 2025]  cape-verde/trend.json#/years
+- verdict sentence_id: "unclear"  cape-verde/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (0 to 111% per decade)."  cape-verde/trend.json#/sentence
+- critical weeks: []  cape-verde/season.json#/critical_weeks
+- this week value: null  cape-verde/nowcast.json#/value
+- this week lo: null  cape-verde/nowcast.json#/lo
+- this week hi: null  cape-verde/nowcast.json#/hi
+- this week percentile: null  cape-verde/nowcast.json#/percentile
+- this week status: "unavailable"  cape-verde/nowcast.json#/status
+- this week as_of: null  cape-verde/nowcast.json#/as_of
+- this week window start: null  cape-verde/nowcast.json#/window/start
+- this week window end: null  cape-verde/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  cape-verde/nowcast.json#/baseline_years
+- month to date value: null  cape-verde/nowcast.json#/month_to_date/value
+- month to date median: null  cape-verde/nowcast.json#/month_to_date/median
+- month to date ratio: null  cape-verde/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  cape-verde/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  cape-verde/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.518  methods.json#/validation/487/value
+- LOYO weekly WAPE baseline annual_ratio: 1.52  methods.json#/validation/487/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 6.736  methods.json#/validation/487/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/487/years
+- eyesight status: "absent"  methods.json#/eyesight/29/status
+
+## Cayman Islands (`cayman-islands`)
+
+- jump multiple (value): 3.333  cayman-islands/ruler.json#/jump_multiple/value
+- jump multiple (lo): 1.0  cayman-islands/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 5.0  cayman-islands/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  cayman-islands/ruler.json#/jump_multiple/years
+- ruler sentence: "In Cayman Islands, VIIRS reports about 3.3 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  cayman-islands/ruler.json#/sentence
+- harmonized trend pct_per_decade: null  cayman-islands/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: null  cayman-islands/trend.json#/harmonized/lo
+- harmonized trend hi: null  cayman-islands/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  cayman-islands/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 35.714  cayman-islands/trend.json#/naive/pct_per_decade
+- naive trend lo: 0.0  cayman-islands/trend.json#/naive/lo
+- naive trend hi: 111.712  cayman-islands/trend.json#/naive/hi
+- naive trend direction: "no_clear_change"  cayman-islands/trend.json#/naive/direction
+- trend years: [2003, 2025]  cayman-islands/trend.json#/years
+- verdict sentence_id: "unclear"  cayman-islands/trend.json#/sentence_id
+- verdict sentence: "Trend unavailable: the median annual activity is zero."  cayman-islands/trend.json#/sentence
+- critical weeks: []  cayman-islands/season.json#/critical_weeks
+- this week value: null  cayman-islands/nowcast.json#/value
+- this week lo: null  cayman-islands/nowcast.json#/lo
+- this week hi: null  cayman-islands/nowcast.json#/hi
+- this week percentile: null  cayman-islands/nowcast.json#/percentile
+- this week status: "unavailable"  cayman-islands/nowcast.json#/status
+- this week as_of: null  cayman-islands/nowcast.json#/as_of
+- this week window start: null  cayman-islands/nowcast.json#/window/start
+- this week window end: null  cayman-islands/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  cayman-islands/nowcast.json#/baseline_years
+- month to date value: null  cayman-islands/nowcast.json#/month_to_date/value
+- month to date median: null  cayman-islands/nowcast.json#/month_to_date/median
+- month to date ratio: null  cayman-islands/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  cayman-islands/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  cayman-islands/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): null  methods.json#/validation/500/value
+- LOYO years: [2013, 2022]  methods.json#/validation/500/years
+- eyesight status: "absent"  methods.json#/eyesight/30/status
 
 ## Chile (`chile`)
 
@@ -1513,26 +1859,137 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  chile/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  chile/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  chile/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.223  methods.json#/validation/399/value
-- LOYO weekly WAPE baseline annual_ratio: 0.292  methods.json#/validation/399/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 1.606  methods.json#/validation/399/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/399/years
-- LOYO weekly WAPE (tier2): 0.204  methods.json#/validation/414/value
-- LOYO years: [2013, 2022]  methods.json#/validation/414/years
-- reliability_err (tier2): 0.002  methods.json#/validation/412/value
-- reliability_year_absolute_err (tier2): 0.063  methods.json#/validation/413/value
-- t1_t2_wape (tier2): 0.175  methods.json#/validation/416/value
-- eyesight status: "validated"  methods.json#/eyesight/23/status
-- eyesight param a: -3.483  methods.json#/eyesight/23/params/a
-- eyesight param a_hi: -3.382  methods.json#/eyesight/23/params/a_hi
-- eyesight param a_lo: -3.576  methods.json#/eyesight/23/params/a_lo
-- eyesight param b: 2.19  methods.json#/eyesight/23/params/b
-- eyesight param b_hi: 2.315  methods.json#/eyesight/23/params/b_hi
-- eyesight param b_lo: 2.069  methods.json#/eyesight/23/params/b_lo
-- eyesight param c: 0.882  methods.json#/eyesight/23/params/c
-- eyesight param c_hi: 0.942  methods.json#/eyesight/23/params/c_hi
-- eyesight param c_lo: 0.82  methods.json#/eyesight/23/params/c_lo
-- eyesight g: 1.58  methods.json#/eyesight/23/g
+- LOYO weekly WAPE (tier1): 0.223  methods.json#/validation/513/value
+- LOYO weekly WAPE baseline annual_ratio: 0.292  methods.json#/validation/513/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.606  methods.json#/validation/513/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/513/years
+- LOYO weekly WAPE (tier2): 0.204  methods.json#/validation/528/value
+- LOYO years: [2013, 2022]  methods.json#/validation/528/years
+- reliability_err (tier2): 0.002  methods.json#/validation/526/value
+- reliability_year_absolute_err (tier2): 0.063  methods.json#/validation/527/value
+- t1_t2_wape (tier2): 0.175  methods.json#/validation/530/value
+- eyesight status: "validated"  methods.json#/eyesight/31/status
+- eyesight param a: -3.483  methods.json#/eyesight/31/params/a
+- eyesight param a_hi: -3.382  methods.json#/eyesight/31/params/a_hi
+- eyesight param a_lo: -3.576  methods.json#/eyesight/31/params/a_lo
+- eyesight param b: 2.19  methods.json#/eyesight/31/params/b
+- eyesight param b_hi: 2.315  methods.json#/eyesight/31/params/b_hi
+- eyesight param b_lo: 2.069  methods.json#/eyesight/31/params/b_lo
+- eyesight param c: 0.882  methods.json#/eyesight/31/params/c
+- eyesight param c_hi: 0.942  methods.json#/eyesight/31/params/c_hi
+- eyesight param c_lo: 0.82  methods.json#/eyesight/31/params/c_lo
+- eyesight g: 1.58  methods.json#/eyesight/31/g
+
+## Colombia (`colombia`)
+
+- jump multiple (value): 4.154  colombia/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.974  colombia/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 4.349  colombia/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  colombia/ruler.json#/jump_multiple/years
+- ruler sentence: "In Colombia, VIIRS reports about 4.2 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  colombia/ruler.json#/sentence
+- harmonized trend pct_per_decade: -12.384  colombia/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -24.388  colombia/trend.json#/harmonized/lo
+- harmonized trend hi: -1.031  colombia/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  colombia/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 48.543  colombia/trend.json#/naive/pct_per_decade
+- naive trend lo: 29.479  colombia/trend.json#/naive/lo
+- naive trend hi: 103.224  colombia/trend.json#/naive/hi
+- naive trend direction: "rising"  colombia/trend.json#/naive/direction
+- trend years: [2003, 2025]  colombia/trend.json#/years
+- verdict sentence_id: "unclear"  colombia/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (-24 to -1% per decade)."  colombia/trend.json#/sentence
+- critical weeks: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 31, 33, 34, 35, 48, 49, 50, 51, 52]  colombia/season.json#/critical_weeks
+- window w1 label: "late-November to mid-April"  colombia/season.json#/windows/0/label
+- window w1 start_week: 48  colombia/season.json#/windows/0/start_week
+- window w1 peak_week: 8  colombia/season.json#/windows/0/peak_week
+- window w1 end_week: 15  colombia/season.json#/windows/0/end_week
+- window w1 share: 0.764  colombia/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 0.0  colombia/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -8.333  colombia/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 10.0  colombia/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the late-November to mid-April season."  colombia/season.json#/windows/0/sentence
+- this week value: null  colombia/nowcast.json#/value
+- this week lo: null  colombia/nowcast.json#/lo
+- this week hi: null  colombia/nowcast.json#/hi
+- this week percentile: null  colombia/nowcast.json#/percentile
+- this week status: "unavailable"  colombia/nowcast.json#/status
+- this week as_of: null  colombia/nowcast.json#/as_of
+- this week window start: null  colombia/nowcast.json#/window/start
+- this week window end: null  colombia/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  colombia/nowcast.json#/baseline_years
+- month to date value: null  colombia/nowcast.json#/month_to_date/value
+- month to date median: null  colombia/nowcast.json#/month_to_date/median
+- month to date ratio: null  colombia/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  colombia/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  colombia/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.175  methods.json#/validation/531/value
+- LOYO weekly WAPE baseline annual_ratio: 0.208  methods.json#/validation/531/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.252  methods.json#/validation/531/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/531/years
+- LOYO weekly WAPE (tier2): 0.151  methods.json#/validation/546/value
+- LOYO years: [2013, 2022]  methods.json#/validation/546/years
+- reliability_err (tier2): 0.0  methods.json#/validation/544/value
+- reliability_year_absolute_err (tier2): 0.049  methods.json#/validation/545/value
+- t1_t2_wape (tier2): 0.12  methods.json#/validation/548/value
+- eyesight status: "validated"  methods.json#/eyesight/32/status
+- eyesight param a: -3.934  methods.json#/eyesight/32/params/a
+- eyesight param a_hi: -3.89  methods.json#/eyesight/32/params/a_hi
+- eyesight param a_lo: -3.973  methods.json#/eyesight/32/params/a_lo
+- eyesight param b: 2.188  methods.json#/eyesight/32/params/b
+- eyesight param b_hi: 2.22  methods.json#/eyesight/32/params/b_hi
+- eyesight param b_lo: 2.159  methods.json#/eyesight/32/params/b_lo
+- eyesight param c: 0.675  methods.json#/eyesight/32/params/c
+- eyesight param c_hi: 0.704  methods.json#/eyesight/32/params/c_hi
+- eyesight param c_lo: 0.64  methods.json#/eyesight/32/params/c_lo
+- eyesight g: 1.856  methods.json#/eyesight/32/g
+
+## Comoros (`comoros`)
+
+- jump multiple (value): 7.934  comoros/ruler.json#/jump_multiple/value
+- jump multiple (lo): 5.485  comoros/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 11.833  comoros/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  comoros/ruler.json#/jump_multiple/years
+- ruler sentence: "In Comoros, VIIRS reports about 7.9 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  comoros/ruler.json#/sentence
+- harmonized trend pct_per_decade: -29.8  comoros/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -65.903  comoros/trend.json#/harmonized/lo
+- harmonized trend hi: -4.119  comoros/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  comoros/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 68.449  comoros/trend.json#/naive/pct_per_decade
+- naive trend lo: 30.594  comoros/trend.json#/naive/lo
+- naive trend hi: 153.191  comoros/trend.json#/naive/hi
+- naive trend direction: "rising"  comoros/trend.json#/naive/direction
+- trend years: [2003, 2025]  comoros/trend.json#/years
+- verdict sentence_id: "artifact_falling"  comoros/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 30% per decade (-66 to -4)."  comoros/trend.json#/sentence
+- critical weeks: [34, 35, 36]  comoros/season.json#/critical_weeks
+- window w1 label: "mid-August to early-September"  comoros/season.json#/windows/0/label
+- window w1 start_week: 34  comoros/season.json#/windows/0/start_week
+- window w1 peak_week: 34  comoros/season.json#/windows/0/peak_week
+- window w1 end_week: 36  comoros/season.json#/windows/0/end_week
+- window w1 share: 0.963  comoros/season.json#/windows/0/share
+- window w1 start shift days per decade (value): null  comoros/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): null  comoros/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): null  comoros/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "Timing shift unavailable: fewer than three valid annual observations."  comoros/season.json#/windows/0/sentence
+- this week value: null  comoros/nowcast.json#/value
+- this week lo: null  comoros/nowcast.json#/lo
+- this week hi: null  comoros/nowcast.json#/hi
+- this week percentile: null  comoros/nowcast.json#/percentile
+- this week status: "unavailable"  comoros/nowcast.json#/status
+- this week as_of: null  comoros/nowcast.json#/as_of
+- this week window start: null  comoros/nowcast.json#/window/start
+- this week window end: null  comoros/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  comoros/nowcast.json#/baseline_years
+- month to date value: null  comoros/nowcast.json#/month_to_date/value
+- month to date median: null  comoros/nowcast.json#/month_to_date/median
+- month to date ratio: null  comoros/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  comoros/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  comoros/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.202  methods.json#/validation/549/value
+- LOYO weekly WAPE baseline annual_ratio: 1.202  methods.json#/validation/549/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 7.371  methods.json#/validation/549/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/549/years
+- eyesight status: "absent"  methods.json#/eyesight/33/status
 
 ## Costa Rica (`costa-rica`)
 
@@ -1576,26 +2033,89 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  costa-rica/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  costa-rica/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  costa-rica/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.301  methods.json#/validation/417/value
-- LOYO weekly WAPE baseline annual_ratio: 0.3  methods.json#/validation/417/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 3.664  methods.json#/validation/417/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/417/years
-- LOYO weekly WAPE (tier2): 0.273  methods.json#/validation/432/value
-- LOYO years: [2013, 2022]  methods.json#/validation/432/years
-- reliability_err (tier2): 0.001  methods.json#/validation/430/value
-- reliability_year_absolute_err (tier2): 0.094  methods.json#/validation/431/value
-- t1_t2_wape (tier2): 0.174  methods.json#/validation/434/value
-- eyesight status: "validated"  methods.json#/eyesight/24/status
-- eyesight param a: -4.146  methods.json#/eyesight/24/params/a
-- eyesight param a_hi: -4.052  methods.json#/eyesight/24/params/a_hi
-- eyesight param a_lo: -4.323  methods.json#/eyesight/24/params/a_lo
-- eyesight param b: 2.312  methods.json#/eyesight/24/params/b
-- eyesight param b_hi: 2.559  methods.json#/eyesight/24/params/b_hi
-- eyesight param b_lo: 2.126  methods.json#/eyesight/24/params/b_lo
-- eyesight param c: 0.813  methods.json#/eyesight/24/params/c
-- eyesight param c_hi: 1.0  methods.json#/eyesight/24/params/c_hi
-- eyesight param c_lo: 0.659  methods.json#/eyesight/24/params/c_lo
-- eyesight g: 1.717  methods.json#/eyesight/24/g
+- LOYO weekly WAPE (tier1): 0.301  methods.json#/validation/562/value
+- LOYO weekly WAPE baseline annual_ratio: 0.3  methods.json#/validation/562/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.664  methods.json#/validation/562/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/562/years
+- LOYO weekly WAPE (tier2): 0.273  methods.json#/validation/577/value
+- LOYO years: [2013, 2022]  methods.json#/validation/577/years
+- reliability_err (tier2): 0.001  methods.json#/validation/575/value
+- reliability_year_absolute_err (tier2): 0.094  methods.json#/validation/576/value
+- t1_t2_wape (tier2): 0.174  methods.json#/validation/579/value
+- eyesight status: "validated"  methods.json#/eyesight/34/status
+- eyesight param a: -4.146  methods.json#/eyesight/34/params/a
+- eyesight param a_hi: -4.052  methods.json#/eyesight/34/params/a_hi
+- eyesight param a_lo: -4.323  methods.json#/eyesight/34/params/a_lo
+- eyesight param b: 2.312  methods.json#/eyesight/34/params/b
+- eyesight param b_hi: 2.559  methods.json#/eyesight/34/params/b_hi
+- eyesight param b_lo: 2.126  methods.json#/eyesight/34/params/b_lo
+- eyesight param c: 0.813  methods.json#/eyesight/34/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/34/params/c_hi
+- eyesight param c_lo: 0.659  methods.json#/eyesight/34/params/c_lo
+- eyesight g: 1.717  methods.json#/eyesight/34/g
+
+## Ivory Coast (`cote-d-ivoire`)
+
+- jump multiple (value): 4.08  cote-d-ivoire/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.894  cote-d-ivoire/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 4.675  cote-d-ivoire/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  cote-d-ivoire/ruler.json#/jump_multiple/years
+- ruler sentence: "In Ivory Coast, VIIRS reports about 4.1 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  cote-d-ivoire/ruler.json#/sentence
+- harmonized trend pct_per_decade: -60.406  cote-d-ivoire/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -79.966  cote-d-ivoire/trend.json#/harmonized/lo
+- harmonized trend hi: -39.577  cote-d-ivoire/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  cote-d-ivoire/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 23.807  cote-d-ivoire/trend.json#/naive/pct_per_decade
+- naive trend lo: -6.588  cote-d-ivoire/trend.json#/naive/lo
+- naive trend hi: 45.085  cote-d-ivoire/trend.json#/naive/hi
+- naive trend direction: "no_clear_change"  cote-d-ivoire/trend.json#/naive/direction
+- trend years: [2003, 2025]  cote-d-ivoire/trend.json#/years
+- verdict sentence_id: "artifact_falling"  cote-d-ivoire/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 60% per decade (-80 to -40)."  cote-d-ivoire/trend.json#/sentence
+- critical weeks: [1, 2, 3, 4, 5, 6, 7, 8, 9, 49, 50, 51, 52]  cote-d-ivoire/season.json#/critical_weeks
+- window w1 label: "early-December to early-March"  cote-d-ivoire/season.json#/windows/0/label
+- window w1 start_week: 49  cote-d-ivoire/season.json#/windows/0/start_week
+- window w1 peak_week: 1  cote-d-ivoire/season.json#/windows/0/peak_week
+- window w1 end_week: 9  cote-d-ivoire/season.json#/windows/0/end_week
+- window w1 share: 0.81  cote-d-ivoire/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 0.0  cote-d-ivoire/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -4.458  cote-d-ivoire/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 5.0  cote-d-ivoire/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-December to early-March season."  cote-d-ivoire/season.json#/windows/0/sentence
+- this week value: null  cote-d-ivoire/nowcast.json#/value
+- this week lo: null  cote-d-ivoire/nowcast.json#/lo
+- this week hi: null  cote-d-ivoire/nowcast.json#/hi
+- this week percentile: null  cote-d-ivoire/nowcast.json#/percentile
+- this week status: "unavailable"  cote-d-ivoire/nowcast.json#/status
+- this week as_of: null  cote-d-ivoire/nowcast.json#/as_of
+- this week window start: null  cote-d-ivoire/nowcast.json#/window/start
+- this week window end: null  cote-d-ivoire/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  cote-d-ivoire/nowcast.json#/baseline_years
+- month to date value: null  cote-d-ivoire/nowcast.json#/month_to_date/value
+- month to date median: null  cote-d-ivoire/nowcast.json#/month_to_date/median
+- month to date ratio: null  cote-d-ivoire/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  cote-d-ivoire/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  cote-d-ivoire/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.178  methods.json#/validation/580/value
+- LOYO weekly WAPE baseline annual_ratio: 0.324  methods.json#/validation/580/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.912  methods.json#/validation/580/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/580/years
+- LOYO weekly WAPE (tier2): 0.219  methods.json#/validation/595/value
+- LOYO years: [2013, 2022]  methods.json#/validation/595/years
+- reliability_err (tier2): 0.0  methods.json#/validation/593/value
+- reliability_year_absolute_err (tier2): 0.025  methods.json#/validation/594/value
+- t1_t2_wape (tier2): 0.169  methods.json#/validation/597/value
+- eyesight status: "exploratory"  methods.json#/eyesight/35/status
+- eyesight param a: -3.663  methods.json#/eyesight/35/params/a
+- eyesight param a_hi: -3.607  methods.json#/eyesight/35/params/a_hi
+- eyesight param a_lo: -3.728  methods.json#/eyesight/35/params/a_lo
+- eyesight param b: 2.067  methods.json#/eyesight/35/params/b
+- eyesight param b_hi: 2.144  methods.json#/eyesight/35/params/b_hi
+- eyesight param b_lo: 2.015  methods.json#/eyesight/35/params/b_lo
+- eyesight param c: 0.843  methods.json#/eyesight/35/params/c
+- eyesight param c_hi: 0.869  methods.json#/eyesight/35/params/c_hi
+- eyesight param c_lo: 0.817  methods.json#/eyesight/35/params/c_lo
+- eyesight g: 1.754  methods.json#/eyesight/35/g
 
 ## Croatia (`croatia`)
 
@@ -1648,26 +2168,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  croatia/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  croatia/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  croatia/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.471  methods.json#/validation/435/value
-- LOYO weekly WAPE baseline annual_ratio: 0.523  methods.json#/validation/435/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 3.249  methods.json#/validation/435/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/435/years
-- LOYO weekly WAPE (tier2): 0.405  methods.json#/validation/450/value
-- LOYO years: [2013, 2022]  methods.json#/validation/450/years
-- reliability_err (tier2): 0.012  methods.json#/validation/448/value
-- reliability_year_absolute_err (tier2): 0.195  methods.json#/validation/449/value
-- t1_t2_wape (tier2): 0.329  methods.json#/validation/452/value
-- eyesight status: "validated"  methods.json#/eyesight/25/status
-- eyesight param a: -4.16  methods.json#/eyesight/25/params/a
-- eyesight param a_hi: -3.997  methods.json#/eyesight/25/params/a_hi
-- eyesight param a_lo: -4.342  methods.json#/eyesight/25/params/a_lo
-- eyesight param b: 2.733  methods.json#/eyesight/25/params/b
-- eyesight param b_hi: 3.253  methods.json#/eyesight/25/params/b_hi
-- eyesight param b_lo: 2.588  methods.json#/eyesight/25/params/b_lo
-- eyesight param c: 0.886  methods.json#/eyesight/25/params/c
-- eyesight param c_hi: 0.945  methods.json#/eyesight/25/params/c_hi
-- eyesight param c_lo: 0.648  methods.json#/eyesight/25/params/c_lo
-- eyesight g: 1.727  methods.json#/eyesight/25/g
+- LOYO weekly WAPE (tier1): 0.471  methods.json#/validation/598/value
+- LOYO weekly WAPE baseline annual_ratio: 0.523  methods.json#/validation/598/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.249  methods.json#/validation/598/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/598/years
+- LOYO weekly WAPE (tier2): 0.405  methods.json#/validation/613/value
+- LOYO years: [2013, 2022]  methods.json#/validation/613/years
+- reliability_err (tier2): 0.012  methods.json#/validation/611/value
+- reliability_year_absolute_err (tier2): 0.195  methods.json#/validation/612/value
+- t1_t2_wape (tier2): 0.329  methods.json#/validation/615/value
+- eyesight status: "validated"  methods.json#/eyesight/36/status
+- eyesight param a: -4.16  methods.json#/eyesight/36/params/a
+- eyesight param a_hi: -3.997  methods.json#/eyesight/36/params/a_hi
+- eyesight param a_lo: -4.342  methods.json#/eyesight/36/params/a_lo
+- eyesight param b: 2.733  methods.json#/eyesight/36/params/b
+- eyesight param b_hi: 3.253  methods.json#/eyesight/36/params/b_hi
+- eyesight param b_lo: 2.588  methods.json#/eyesight/36/params/b_lo
+- eyesight param c: 0.886  methods.json#/eyesight/36/params/c
+- eyesight param c_hi: 0.945  methods.json#/eyesight/36/params/c_hi
+- eyesight param c_lo: 0.648  methods.json#/eyesight/36/params/c_lo
+- eyesight g: 1.727  methods.json#/eyesight/36/g
 
 ## Cuba (`cuba`)
 
@@ -1711,26 +2231,170 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  cuba/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  cuba/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  cuba/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.16  methods.json#/validation/453/value
-- LOYO weekly WAPE baseline annual_ratio: 0.178  methods.json#/validation/453/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 3.171  methods.json#/validation/453/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/453/years
-- LOYO weekly WAPE (tier2): 0.179  methods.json#/validation/468/value
-- LOYO years: [2013, 2022]  methods.json#/validation/468/years
-- reliability_err (tier2): 0.0  methods.json#/validation/466/value
-- reliability_year_absolute_err (tier2): 0.036  methods.json#/validation/467/value
-- t1_t2_wape (tier2): 0.14  methods.json#/validation/470/value
-- eyesight status: "exploratory"  methods.json#/eyesight/26/status
-- eyesight param a: -4.045  methods.json#/eyesight/26/params/a
-- eyesight param a_hi: -3.956  methods.json#/eyesight/26/params/a_hi
-- eyesight param a_lo: -4.132  methods.json#/eyesight/26/params/a_lo
-- eyesight param b: 2.614  methods.json#/eyesight/26/params/b
-- eyesight param b_hi: 2.745  methods.json#/eyesight/26/params/b_hi
-- eyesight param b_lo: 2.527  methods.json#/eyesight/26/params/b_lo
-- eyesight param c: 0.671  methods.json#/eyesight/26/params/c
-- eyesight param c_hi: 0.716  methods.json#/eyesight/26/params/c_hi
-- eyesight param c_lo: 0.625  methods.json#/eyesight/26/params/c_lo
-- eyesight g: 1.638  methods.json#/eyesight/26/g
+- LOYO weekly WAPE (tier1): 0.16  methods.json#/validation/616/value
+- LOYO weekly WAPE baseline annual_ratio: 0.178  methods.json#/validation/616/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.171  methods.json#/validation/616/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/616/years
+- LOYO weekly WAPE (tier2): 0.179  methods.json#/validation/631/value
+- LOYO years: [2013, 2022]  methods.json#/validation/631/years
+- reliability_err (tier2): 0.0  methods.json#/validation/629/value
+- reliability_year_absolute_err (tier2): 0.036  methods.json#/validation/630/value
+- t1_t2_wape (tier2): 0.14  methods.json#/validation/633/value
+- eyesight status: "exploratory"  methods.json#/eyesight/37/status
+- eyesight param a: -4.045  methods.json#/eyesight/37/params/a
+- eyesight param a_hi: -3.956  methods.json#/eyesight/37/params/a_hi
+- eyesight param a_lo: -4.132  methods.json#/eyesight/37/params/a_lo
+- eyesight param b: 2.614  methods.json#/eyesight/37/params/b
+- eyesight param b_hi: 2.745  methods.json#/eyesight/37/params/b_hi
+- eyesight param b_lo: 2.527  methods.json#/eyesight/37/params/b_lo
+- eyesight param c: 0.671  methods.json#/eyesight/37/params/c
+- eyesight param c_hi: 0.716  methods.json#/eyesight/37/params/c_hi
+- eyesight param c_lo: 0.625  methods.json#/eyesight/37/params/c_lo
+- eyesight g: 1.638  methods.json#/eyesight/37/g
+
+## Curaçao (`curacao`)
+
+- jump multiple (value): 7.0  curacao/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.5  curacao/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 15.5  curacao/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  curacao/ruler.json#/jump_multiple/years
+- ruler sentence: "In Curaçao, VIIRS reports about 7.0 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  curacao/ruler.json#/sentence
+- harmonized trend pct_per_decade: null  curacao/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: null  curacao/trend.json#/harmonized/lo
+- harmonized trend hi: null  curacao/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  curacao/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 34.441  curacao/trend.json#/naive/pct_per_decade
+- naive trend lo: -17.415  curacao/trend.json#/naive/lo
+- naive trend hi: 75.637  curacao/trend.json#/naive/hi
+- naive trend direction: "no_clear_change"  curacao/trend.json#/naive/direction
+- trend years: [2003, 2025]  curacao/trend.json#/years
+- verdict sentence_id: "unclear"  curacao/trend.json#/sentence_id
+- verdict sentence: "Trend unavailable: the median annual activity is zero."  curacao/trend.json#/sentence
+- critical weeks: []  curacao/season.json#/critical_weeks
+- this week value: null  curacao/nowcast.json#/value
+- this week lo: null  curacao/nowcast.json#/lo
+- this week hi: null  curacao/nowcast.json#/hi
+- this week percentile: null  curacao/nowcast.json#/percentile
+- this week status: "unavailable"  curacao/nowcast.json#/status
+- this week as_of: null  curacao/nowcast.json#/as_of
+- this week window start: null  curacao/nowcast.json#/window/start
+- this week window end: null  curacao/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  curacao/nowcast.json#/baseline_years
+- month to date value: null  curacao/nowcast.json#/month_to_date/value
+- month to date median: null  curacao/nowcast.json#/month_to_date/median
+- month to date ratio: null  curacao/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  curacao/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  curacao/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.991  methods.json#/validation/634/value
+- LOYO weekly WAPE baseline annual_ratio: 2.036  methods.json#/validation/634/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 22.5  methods.json#/validation/634/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/634/years
+- eyesight status: "absent"  methods.json#/eyesight/38/status
+
+## Cyprus (`cyprus`)
+
+- jump multiple (value): 4.121  cyprus/ruler.json#/jump_multiple/value
+- jump multiple (lo): 2.18  cyprus/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 9.471  cyprus/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  cyprus/ruler.json#/jump_multiple/years
+- ruler sentence: "In Cyprus, VIIRS reports about 4.1 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  cyprus/ruler.json#/sentence
+- harmonized trend pct_per_decade: -31.25  cyprus/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -46.667  cyprus/trend.json#/harmonized/lo
+- harmonized trend hi: -15.873  cyprus/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  cyprus/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 62.289  cyprus/trend.json#/naive/pct_per_decade
+- naive trend lo: 36.184  cyprus/trend.json#/naive/lo
+- naive trend hi: 124.909  cyprus/trend.json#/naive/hi
+- naive trend direction: "rising"  cyprus/trend.json#/naive/direction
+- trend years: [2003, 2025]  cyprus/trend.json#/years
+- verdict sentence_id: "unclear"  cyprus/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (-47 to -16% per decade)."  cyprus/trend.json#/sentence
+- critical weeks: [45, 46, 47]  cyprus/season.json#/critical_weeks
+- window w1 label: "early to late November"  cyprus/season.json#/windows/0/label
+- window w1 start_week: 45  cyprus/season.json#/windows/0/start_week
+- window w1 peak_week: 45  cyprus/season.json#/windows/0/peak_week
+- window w1 end_week: 47  cyprus/season.json#/windows/0/end_week
+- window w1 share: 1.0  cyprus/season.json#/windows/0/share
+- window w1 start shift days per decade (value): null  cyprus/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): null  cyprus/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): null  cyprus/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "Timing shift unavailable: fewer than three valid annual observations."  cyprus/season.json#/windows/0/sentence
+- this week value: null  cyprus/nowcast.json#/value
+- this week lo: null  cyprus/nowcast.json#/lo
+- this week hi: null  cyprus/nowcast.json#/hi
+- this week percentile: null  cyprus/nowcast.json#/percentile
+- this week status: "unavailable"  cyprus/nowcast.json#/status
+- this week as_of: null  cyprus/nowcast.json#/as_of
+- this week window start: null  cyprus/nowcast.json#/window/start
+- this week window end: null  cyprus/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  cyprus/nowcast.json#/baseline_years
+- month to date value: null  cyprus/nowcast.json#/month_to_date/value
+- month to date median: null  cyprus/nowcast.json#/month_to_date/median
+- month to date ratio: null  cyprus/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  cyprus/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  cyprus/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.186  methods.json#/validation/647/value
+- LOYO weekly WAPE baseline annual_ratio: 1.192  methods.json#/validation/647/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.861  methods.json#/validation/647/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/647/years
+- eyesight status: "absent"  methods.json#/eyesight/39/status
+
+## Czechia (`czech-republic`)
+
+- jump multiple (value): 3.022  czech-republic/ruler.json#/jump_multiple/value
+- jump multiple (lo): 1.917  czech-republic/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 5.171  czech-republic/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  czech-republic/ruler.json#/jump_multiple/years
+- ruler sentence: "In Czechia, VIIRS reports about 3.0 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  czech-republic/ruler.json#/sentence
+- harmonized trend pct_per_decade: -10.176  czech-republic/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -26.208  czech-republic/trend.json#/harmonized/lo
+- harmonized trend hi: 0.0  czech-republic/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  czech-republic/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 44.828  czech-republic/trend.json#/naive/pct_per_decade
+- naive trend lo: 30.153  czech-republic/trend.json#/naive/lo
+- naive trend hi: 93.073  czech-republic/trend.json#/naive/hi
+- naive trend direction: "rising"  czech-republic/trend.json#/naive/direction
+- trend years: [2003, 2025]  czech-republic/trend.json#/years
+- verdict sentence_id: "artifact_flat"  czech-republic/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 45% per decade. After correcting for the sensor change, there is no clear change (-26 to 0% per decade)."  czech-republic/trend.json#/sentence
+- critical weeks: [12, 13, 14, 15, 16, 17, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 35, 39, 40]  czech-republic/season.json#/critical_weeks
+- window w1 label: "late-May to early-September"  czech-republic/season.json#/windows/0/label
+- window w1 start_week: 22  czech-republic/season.json#/windows/0/start_week
+- window w1 peak_week: 25  czech-republic/season.json#/windows/0/peak_week
+- window w1 end_week: 35  czech-republic/season.json#/windows/0/end_week
+- window w1 share: 0.517  czech-republic/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -4.444  czech-republic/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -12.5  czech-republic/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 9.0  czech-republic/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the late-May to early-September season."  czech-republic/season.json#/windows/0/sentence
+- window w2 label: "mid-March to late-April"  czech-republic/season.json#/windows/1/label
+- window w2 start_week: 12  czech-republic/season.json#/windows/1/start_week
+- window w2 peak_week: 15  czech-republic/season.json#/windows/1/peak_week
+- window w2 end_week: 17  czech-republic/season.json#/windows/1/end_week
+- window w2 share: 0.25  czech-republic/season.json#/windows/1/share
+- window w2 start shift days per decade (value): 6.364  czech-republic/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -37.286  czech-republic/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): 40.0  czech-republic/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "No clear shift in the timing of the mid-March to late-April season."  czech-republic/season.json#/windows/1/sentence
+- this week value: null  czech-republic/nowcast.json#/value
+- this week lo: null  czech-republic/nowcast.json#/lo
+- this week hi: null  czech-republic/nowcast.json#/hi
+- this week percentile: null  czech-republic/nowcast.json#/percentile
+- this week status: "unavailable"  czech-republic/nowcast.json#/status
+- this week as_of: null  czech-republic/nowcast.json#/as_of
+- this week window start: null  czech-republic/nowcast.json#/window/start
+- this week window end: null  czech-republic/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  czech-republic/nowcast.json#/baseline_years
+- month to date value: null  czech-republic/nowcast.json#/month_to_date/value
+- month to date median: null  czech-republic/nowcast.json#/month_to_date/median
+- month to date ratio: null  czech-republic/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  czech-republic/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  czech-republic/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.054  methods.json#/validation/660/value
+- LOYO weekly WAPE baseline annual_ratio: 1.098  methods.json#/validation/660/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.274  methods.json#/validation/660/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/660/years
+- eyesight status: "absent"  methods.json#/eyesight/40/status
 
 ## North Korea (`dem-rep-korea`)
 
@@ -1774,26 +2438,89 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  dem-rep-korea/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  dem-rep-korea/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  dem-rep-korea/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.325  methods.json#/validation/471/value
-- LOYO weekly WAPE baseline annual_ratio: 0.376  methods.json#/validation/471/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 2.107  methods.json#/validation/471/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/471/years
-- LOYO weekly WAPE (tier2): 0.24  methods.json#/validation/486/value
-- LOYO years: [2013, 2022]  methods.json#/validation/486/years
-- reliability_err (tier2): 0.015  methods.json#/validation/484/value
-- reliability_year_absolute_err (tier2): 0.086  methods.json#/validation/485/value
-- t1_t2_wape (tier2): 0.237  methods.json#/validation/488/value
-- eyesight status: "validated"  methods.json#/eyesight/27/status
-- eyesight param a: -3.892  methods.json#/eyesight/27/params/a
-- eyesight param a_hi: -3.778  methods.json#/eyesight/27/params/a_hi
-- eyesight param a_lo: -4.102  methods.json#/eyesight/27/params/a_lo
-- eyesight param b: 2.7  methods.json#/eyesight/27/params/b
-- eyesight param b_hi: 2.87  methods.json#/eyesight/27/params/b_hi
-- eyesight param b_lo: 2.603  methods.json#/eyesight/27/params/b_lo
-- eyesight param c: 0.836  methods.json#/eyesight/27/params/c
-- eyesight param c_hi: 0.909  methods.json#/eyesight/27/params/c_hi
-- eyesight param c_lo: 0.769  methods.json#/eyesight/27/params/c_lo
-- eyesight g: 1.5  methods.json#/eyesight/27/g
+- LOYO weekly WAPE (tier1): 0.325  methods.json#/validation/673/value
+- LOYO weekly WAPE baseline annual_ratio: 0.376  methods.json#/validation/673/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.107  methods.json#/validation/673/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/673/years
+- LOYO weekly WAPE (tier2): 0.24  methods.json#/validation/688/value
+- LOYO years: [2013, 2022]  methods.json#/validation/688/years
+- reliability_err (tier2): 0.015  methods.json#/validation/686/value
+- reliability_year_absolute_err (tier2): 0.086  methods.json#/validation/687/value
+- t1_t2_wape (tier2): 0.237  methods.json#/validation/690/value
+- eyesight status: "validated"  methods.json#/eyesight/41/status
+- eyesight param a: -3.892  methods.json#/eyesight/41/params/a
+- eyesight param a_hi: -3.778  methods.json#/eyesight/41/params/a_hi
+- eyesight param a_lo: -4.102  methods.json#/eyesight/41/params/a_lo
+- eyesight param b: 2.7  methods.json#/eyesight/41/params/b
+- eyesight param b_hi: 2.87  methods.json#/eyesight/41/params/b_hi
+- eyesight param b_lo: 2.603  methods.json#/eyesight/41/params/b_lo
+- eyesight param c: 0.836  methods.json#/eyesight/41/params/c
+- eyesight param c_hi: 0.909  methods.json#/eyesight/41/params/c_hi
+- eyesight param c_lo: 0.769  methods.json#/eyesight/41/params/c_lo
+- eyesight g: 1.5  methods.json#/eyesight/41/g
+
+## Democratic Republic of the Congo (`democratic-republic-of-the-congo`)
+
+- jump multiple (value): 3.774  democratic-republic-of-the-congo/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.668  democratic-republic-of-the-congo/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 3.887  democratic-republic-of-the-congo/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  democratic-republic-of-the-congo/ruler.json#/jump_multiple/years
+- ruler sentence: "In Democratic Republic of the Congo, VIIRS reports about 3.8 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  democratic-republic-of-the-congo/ruler.json#/sentence
+- harmonized trend pct_per_decade: 11.349  democratic-republic-of-the-congo/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: 7.606  democratic-republic-of-the-congo/trend.json#/harmonized/lo
+- harmonized trend hi: 13.542  democratic-republic-of-the-congo/trend.json#/harmonized/hi
+- harmonized trend direction: "rising"  democratic-republic-of-the-congo/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 43.301  democratic-republic-of-the-congo/trend.json#/naive/pct_per_decade
+- naive trend lo: 23.286  democratic-republic-of-the-congo/trend.json#/naive/lo
+- naive trend hi: 182.868  democratic-republic-of-the-congo/trend.json#/naive/hi
+- naive trend direction: "rising"  democratic-republic-of-the-congo/trend.json#/naive/direction
+- trend years: [2003, 2025]  democratic-republic-of-the-congo/trend.json#/years
+- verdict sentence_id: "artifact_rising"  democratic-republic-of-the-congo/trend.json#/sentence_id
+- verdict sentence: "Burning activity did rise, by about 11% per decade (8 to 14). The raw record overstates it at 43%."  democratic-republic-of-the-congo/trend.json#/sentence
+- critical weeks: [7, 8, 9, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38]  democratic-republic-of-the-congo/season.json#/critical_weeks
+- window w1 label: "early-May to late-September"  democratic-republic-of-the-congo/season.json#/windows/0/label
+- window w1 start_week: 19  democratic-republic-of-the-congo/season.json#/windows/0/start_week
+- window w1 peak_week: 28  democratic-republic-of-the-congo/season.json#/windows/0/peak_week
+- window w1 end_week: 38  democratic-republic-of-the-congo/season.json#/windows/0/end_week
+- window w1 share: 0.76  democratic-republic-of-the-congo/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 6.25  democratic-republic-of-the-congo/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): 3.333  democratic-republic-of-the-congo/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 8.0  democratic-republic-of-the-congo/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "The early-May to late-September season now starts about 6 days later per decade (3 to 8)."  democratic-republic-of-the-congo/season.json#/windows/0/sentence
+- this week value: null  democratic-republic-of-the-congo/nowcast.json#/value
+- this week lo: null  democratic-republic-of-the-congo/nowcast.json#/lo
+- this week hi: null  democratic-republic-of-the-congo/nowcast.json#/hi
+- this week percentile: null  democratic-republic-of-the-congo/nowcast.json#/percentile
+- this week status: "unavailable"  democratic-republic-of-the-congo/nowcast.json#/status
+- this week as_of: null  democratic-republic-of-the-congo/nowcast.json#/as_of
+- this week window start: null  democratic-republic-of-the-congo/nowcast.json#/window/start
+- this week window end: null  democratic-republic-of-the-congo/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  democratic-republic-of-the-congo/nowcast.json#/baseline_years
+- month to date value: null  democratic-republic-of-the-congo/nowcast.json#/month_to_date/value
+- month to date median: null  democratic-republic-of-the-congo/nowcast.json#/month_to_date/median
+- month to date ratio: null  democratic-republic-of-the-congo/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  democratic-republic-of-the-congo/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  democratic-republic-of-the-congo/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.077  methods.json#/validation/691/value
+- LOYO weekly WAPE baseline annual_ratio: 0.136  methods.json#/validation/691/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.022  methods.json#/validation/691/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/691/years
+- LOYO weekly WAPE (tier2): 0.098  methods.json#/validation/706/value
+- LOYO years: [2013, 2022]  methods.json#/validation/706/years
+- reliability_err (tier2): 0.0  methods.json#/validation/704/value
+- reliability_year_absolute_err (tier2): 0.017  methods.json#/validation/705/value
+- t1_t2_wape (tier2): 0.079  methods.json#/validation/708/value
+- eyesight status: "exploratory"  methods.json#/eyesight/42/status
+- eyesight param a: -3.064  methods.json#/eyesight/42/params/a
+- eyesight param a_hi: -3.054  methods.json#/eyesight/42/params/a_hi
+- eyesight param a_lo: -3.075  methods.json#/eyesight/42/params/a_lo
+- eyesight param b: 1.876  methods.json#/eyesight/42/params/b
+- eyesight param b_hi: 1.887  methods.json#/eyesight/42/params/b_hi
+- eyesight param b_lo: 1.866  methods.json#/eyesight/42/params/b_lo
+- eyesight param c: 0.772  methods.json#/eyesight/42/params/c
+- eyesight param c_hi: 0.779  methods.json#/eyesight/42/params/c_hi
+- eyesight param c_lo: 0.765  methods.json#/eyesight/42/params/c_lo
+- eyesight g: 1.534  methods.json#/eyesight/42/g
 
 ## Denmark (`denmark`)
 
@@ -1846,11 +2573,89 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  denmark/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  denmark/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  denmark/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.909  methods.json#/validation/489/value
-- LOYO weekly WAPE baseline annual_ratio: 0.92  methods.json#/validation/489/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 3.101  methods.json#/validation/489/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/489/years
-- eyesight status: "absent"  methods.json#/eyesight/28/status
+- LOYO weekly WAPE (tier1): 0.909  methods.json#/validation/709/value
+- LOYO weekly WAPE baseline annual_ratio: 0.92  methods.json#/validation/709/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.101  methods.json#/validation/709/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/709/years
+- eyesight status: "absent"  methods.json#/eyesight/43/status
+
+## Djibouti (`djibouti`)
+
+- jump multiple (value): 0.594  djibouti/ruler.json#/jump_multiple/value
+- jump multiple (lo): 0.093  djibouti/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 3.828  djibouti/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  djibouti/ruler.json#/jump_multiple/years
+- ruler sentence: "In Djibouti, VIIRS reports about 0.6 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  djibouti/ruler.json#/sentence
+- harmonized trend pct_per_decade: 45.614  djibouti/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -13.031  djibouti/trend.json#/harmonized/lo
+- harmonized trend hi: 125.0  djibouti/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  djibouti/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 65.789  djibouti/trend.json#/naive/pct_per_decade
+- naive trend lo: 20.157  djibouti/trend.json#/naive/lo
+- naive trend hi: 114.214  djibouti/trend.json#/naive/hi
+- naive trend direction: "rising"  djibouti/trend.json#/naive/direction
+- trend years: [2003, 2025]  djibouti/trend.json#/years
+- verdict sentence_id: "unclear"  djibouti/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (-13 to 125% per decade)."  djibouti/trend.json#/sentence
+- critical weeks: []  djibouti/season.json#/critical_weeks
+- this week value: null  djibouti/nowcast.json#/value
+- this week lo: null  djibouti/nowcast.json#/lo
+- this week hi: null  djibouti/nowcast.json#/hi
+- this week percentile: null  djibouti/nowcast.json#/percentile
+- this week status: "unavailable"  djibouti/nowcast.json#/status
+- this week as_of: null  djibouti/nowcast.json#/as_of
+- this week window start: null  djibouti/nowcast.json#/window/start
+- this week window end: null  djibouti/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  djibouti/nowcast.json#/baseline_years
+- month to date value: null  djibouti/nowcast.json#/month_to_date/value
+- month to date median: null  djibouti/nowcast.json#/month_to_date/median
+- month to date ratio: null  djibouti/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  djibouti/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  djibouti/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.902  methods.json#/validation/722/value
+- LOYO weekly WAPE baseline annual_ratio: 1.914  methods.json#/validation/722/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.681  methods.json#/validation/722/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/722/years
+- eyesight status: "absent"  methods.json#/eyesight/44/status
+
+## Dominica (`dominica`)
+
+- jump multiple (value): 11.5  dominica/ruler.json#/jump_multiple/value
+- jump multiple (lo): 4.0  dominica/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 27.0  dominica/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  dominica/ruler.json#/jump_multiple/years
+- ruler sentence: "In Dominica, VIIRS reports about 11.5 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  dominica/ruler.json#/sentence
+- harmonized trend pct_per_decade: null  dominica/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: null  dominica/trend.json#/harmonized/lo
+- harmonized trend hi: null  dominica/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  dominica/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 87.503  dominica/trend.json#/naive/pct_per_decade
+- naive trend lo: 61.004  dominica/trend.json#/naive/lo
+- naive trend hi: 171.01  dominica/trend.json#/naive/hi
+- naive trend direction: "rising"  dominica/trend.json#/naive/direction
+- trend years: [2003, 2025]  dominica/trend.json#/years
+- verdict sentence_id: "unclear"  dominica/trend.json#/sentence_id
+- verdict sentence: "Trend unavailable: the median annual activity is zero."  dominica/trend.json#/sentence
+- critical weeks: []  dominica/season.json#/critical_weeks
+- this week value: null  dominica/nowcast.json#/value
+- this week lo: null  dominica/nowcast.json#/lo
+- this week hi: null  dominica/nowcast.json#/hi
+- this week percentile: null  dominica/nowcast.json#/percentile
+- this week status: "unavailable"  dominica/nowcast.json#/status
+- this week as_of: null  dominica/nowcast.json#/as_of
+- this week window start: null  dominica/nowcast.json#/window/start
+- this week window end: null  dominica/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  dominica/nowcast.json#/baseline_years
+- month to date value: null  dominica/nowcast.json#/month_to_date/value
+- month to date median: null  dominica/nowcast.json#/month_to_date/median
+- month to date ratio: null  dominica/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  dominica/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  dominica/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.63  methods.json#/validation/735/value
+- LOYO weekly WAPE baseline annual_ratio: 1.657  methods.json#/validation/735/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 16.292  methods.json#/validation/735/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/735/years
+- eyesight status: "absent"  methods.json#/eyesight/45/status
 
 ## Dominican Republic (`dominican-republic`)
 
@@ -1894,26 +2699,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  dominican-republic/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  dominican-republic/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  dominican-republic/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.303  methods.json#/validation/502/value
-- LOYO weekly WAPE baseline annual_ratio: 0.306  methods.json#/validation/502/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 6.2  methods.json#/validation/502/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/502/years
-- LOYO weekly WAPE (tier2): 0.301  methods.json#/validation/517/value
-- LOYO years: [2013, 2022]  methods.json#/validation/517/years
-- reliability_err (tier2): 0.002  methods.json#/validation/515/value
-- reliability_year_absolute_err (tier2): 0.064  methods.json#/validation/516/value
-- t1_t2_wape (tier2): 0.173  methods.json#/validation/519/value
-- eyesight status: "validated"  methods.json#/eyesight/29/status
-- eyesight param a: -4.245  methods.json#/eyesight/29/params/a
-- eyesight param a_hi: -4.188  methods.json#/eyesight/29/params/a_hi
-- eyesight param a_lo: -4.299  methods.json#/eyesight/29/params/a_lo
-- eyesight param b: 2.48  methods.json#/eyesight/29/params/b
-- eyesight param b_hi: 2.62  methods.json#/eyesight/29/params/b_hi
-- eyesight param b_lo: 2.314  methods.json#/eyesight/29/params/b_lo
-- eyesight param c: 0.554  methods.json#/eyesight/29/params/c
-- eyesight param c_hi: 0.637  methods.json#/eyesight/29/params/c_hi
-- eyesight param c_lo: 0.503  methods.json#/eyesight/29/params/c_lo
-- eyesight g: 2.011  methods.json#/eyesight/29/g
+- LOYO weekly WAPE (tier1): 0.303  methods.json#/validation/748/value
+- LOYO weekly WAPE baseline annual_ratio: 0.306  methods.json#/validation/748/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 6.2  methods.json#/validation/748/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/748/years
+- LOYO weekly WAPE (tier2): 0.301  methods.json#/validation/763/value
+- LOYO years: [2013, 2022]  methods.json#/validation/763/years
+- reliability_err (tier2): 0.002  methods.json#/validation/761/value
+- reliability_year_absolute_err (tier2): 0.064  methods.json#/validation/762/value
+- t1_t2_wape (tier2): 0.173  methods.json#/validation/765/value
+- eyesight status: "validated"  methods.json#/eyesight/46/status
+- eyesight param a: -4.245  methods.json#/eyesight/46/params/a
+- eyesight param a_hi: -4.188  methods.json#/eyesight/46/params/a_hi
+- eyesight param a_lo: -4.299  methods.json#/eyesight/46/params/a_lo
+- eyesight param b: 2.48  methods.json#/eyesight/46/params/b
+- eyesight param b_hi: 2.62  methods.json#/eyesight/46/params/b_hi
+- eyesight param b_lo: 2.314  methods.json#/eyesight/46/params/b_lo
+- eyesight param c: 0.554  methods.json#/eyesight/46/params/c
+- eyesight param c_hi: 0.637  methods.json#/eyesight/46/params/c_hi
+- eyesight param c_lo: 0.503  methods.json#/eyesight/46/params/c_lo
+- eyesight g: 2.011  methods.json#/eyesight/46/g
 
 ## Ecuador (`ecuador`)
 
@@ -1957,26 +2762,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  ecuador/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  ecuador/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  ecuador/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.363  methods.json#/validation/520/value
-- LOYO weekly WAPE baseline annual_ratio: 0.369  methods.json#/validation/520/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 4.082  methods.json#/validation/520/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/520/years
-- LOYO weekly WAPE (tier2): 0.349  methods.json#/validation/535/value
-- LOYO years: [2013, 2022]  methods.json#/validation/535/years
-- reliability_err (tier2): 0.003  methods.json#/validation/533/value
-- reliability_year_absolute_err (tier2): 0.126  methods.json#/validation/534/value
-- t1_t2_wape (tier2): 0.127  methods.json#/validation/537/value
-- eyesight status: "validated"  methods.json#/eyesight/30/status
-- eyesight param a: -3.664  methods.json#/eyesight/30/params/a
-- eyesight param a_hi: -3.515  methods.json#/eyesight/30/params/a_hi
-- eyesight param a_lo: -3.797  methods.json#/eyesight/30/params/a_lo
-- eyesight param b: 2.402  methods.json#/eyesight/30/params/b
-- eyesight param b_hi: 2.542  methods.json#/eyesight/30/params/b_hi
-- eyesight param b_lo: 2.213  methods.json#/eyesight/30/params/b_lo
-- eyesight param c: 0.492  methods.json#/eyesight/30/params/c
-- eyesight param c_hi: 0.581  methods.json#/eyesight/30/params/c_hi
-- eyesight param c_lo: 0.422  methods.json#/eyesight/30/params/c_lo
-- eyesight g: 1.739  methods.json#/eyesight/30/g
+- LOYO weekly WAPE (tier1): 0.363  methods.json#/validation/766/value
+- LOYO weekly WAPE baseline annual_ratio: 0.369  methods.json#/validation/766/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 4.082  methods.json#/validation/766/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/766/years
+- LOYO weekly WAPE (tier2): 0.349  methods.json#/validation/781/value
+- LOYO years: [2013, 2022]  methods.json#/validation/781/years
+- reliability_err (tier2): 0.003  methods.json#/validation/779/value
+- reliability_year_absolute_err (tier2): 0.126  methods.json#/validation/780/value
+- t1_t2_wape (tier2): 0.127  methods.json#/validation/783/value
+- eyesight status: "validated"  methods.json#/eyesight/47/status
+- eyesight param a: -3.664  methods.json#/eyesight/47/params/a
+- eyesight param a_hi: -3.515  methods.json#/eyesight/47/params/a_hi
+- eyesight param a_lo: -3.797  methods.json#/eyesight/47/params/a_lo
+- eyesight param b: 2.402  methods.json#/eyesight/47/params/b
+- eyesight param b_hi: 2.542  methods.json#/eyesight/47/params/b_hi
+- eyesight param b_lo: 2.213  methods.json#/eyesight/47/params/b_lo
+- eyesight param c: 0.492  methods.json#/eyesight/47/params/c
+- eyesight param c_hi: 0.581  methods.json#/eyesight/47/params/c_hi
+- eyesight param c_lo: 0.422  methods.json#/eyesight/47/params/c_lo
+- eyesight g: 1.739  methods.json#/eyesight/47/g
 
 ## Egypt (`egypt`)
 
@@ -2020,26 +2825,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  egypt/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  egypt/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  egypt/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.449  methods.json#/validation/538/value
-- LOYO weekly WAPE baseline annual_ratio: 0.48  methods.json#/validation/538/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 11.51  methods.json#/validation/538/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/538/years
-- LOYO weekly WAPE (tier2): 0.501  methods.json#/validation/553/value
-- LOYO years: [2013, 2022]  methods.json#/validation/553/years
-- reliability_err (tier2): 0.011  methods.json#/validation/551/value
-- reliability_year_absolute_err (tier2): 0.365  methods.json#/validation/552/value
-- t1_t2_wape (tier2): 0.269  methods.json#/validation/555/value
-- eyesight status: "exploratory"  methods.json#/eyesight/31/status
-- eyesight param a: -3.448  methods.json#/eyesight/31/params/a
-- eyesight param a_hi: -3.17  methods.json#/eyesight/31/params/a_hi
-- eyesight param a_lo: -3.911  methods.json#/eyesight/31/params/a_lo
-- eyesight param b: 2.328  methods.json#/eyesight/31/params/b
-- eyesight param b_hi: 2.715  methods.json#/eyesight/31/params/b_hi
-- eyesight param b_lo: 2.0  methods.json#/eyesight/31/params/b_lo
-- eyesight param c: 0.21  methods.json#/eyesight/31/params/c
-- eyesight param c_hi: 0.301  methods.json#/eyesight/31/params/c_hi
-- eyesight param c_lo: 0.16  methods.json#/eyesight/31/params/c_lo
-- eyesight g: 2.181  methods.json#/eyesight/31/g
+- LOYO weekly WAPE (tier1): 0.449  methods.json#/validation/784/value
+- LOYO weekly WAPE baseline annual_ratio: 0.48  methods.json#/validation/784/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 11.51  methods.json#/validation/784/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/784/years
+- LOYO weekly WAPE (tier2): 0.501  methods.json#/validation/799/value
+- LOYO years: [2013, 2022]  methods.json#/validation/799/years
+- reliability_err (tier2): 0.011  methods.json#/validation/797/value
+- reliability_year_absolute_err (tier2): 0.365  methods.json#/validation/798/value
+- t1_t2_wape (tier2): 0.269  methods.json#/validation/801/value
+- eyesight status: "exploratory"  methods.json#/eyesight/48/status
+- eyesight param a: -3.448  methods.json#/eyesight/48/params/a
+- eyesight param a_hi: -3.17  methods.json#/eyesight/48/params/a_hi
+- eyesight param a_lo: -3.911  methods.json#/eyesight/48/params/a_lo
+- eyesight param b: 2.328  methods.json#/eyesight/48/params/b
+- eyesight param b_hi: 2.715  methods.json#/eyesight/48/params/b_hi
+- eyesight param b_lo: 2.0  methods.json#/eyesight/48/params/b_lo
+- eyesight param c: 0.21  methods.json#/eyesight/48/params/c
+- eyesight param c_hi: 0.301  methods.json#/eyesight/48/params/c_hi
+- eyesight param c_lo: 0.16  methods.json#/eyesight/48/params/c_lo
+- eyesight g: 2.181  methods.json#/eyesight/48/g
 
 ## El Salvador (`el-salvador`)
 
@@ -2083,26 +2888,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  el-salvador/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  el-salvador/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  el-salvador/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.359  methods.json#/validation/556/value
-- LOYO weekly WAPE baseline annual_ratio: 0.414  methods.json#/validation/556/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 4.68  methods.json#/validation/556/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/556/years
-- LOYO weekly WAPE (tier2): 0.369  methods.json#/validation/571/value
-- LOYO years: [2013, 2022]  methods.json#/validation/571/years
-- reliability_err (tier2): 0.002  methods.json#/validation/569/value
-- reliability_year_absolute_err (tier2): 0.116  methods.json#/validation/570/value
-- t1_t2_wape (tier2): 0.28  methods.json#/validation/573/value
-- eyesight status: "validated"  methods.json#/eyesight/32/status
-- eyesight param a: -4.663  methods.json#/eyesight/32/params/a
-- eyesight param a_hi: -4.503  methods.json#/eyesight/32/params/a_hi
-- eyesight param a_lo: -4.794  methods.json#/eyesight/32/params/a_lo
-- eyesight param b: 2.84  methods.json#/eyesight/32/params/b
-- eyesight param b_hi: 3.048  methods.json#/eyesight/32/params/b_hi
-- eyesight param b_lo: 2.554  methods.json#/eyesight/32/params/b_lo
-- eyesight param c: 0.641  methods.json#/eyesight/32/params/c
-- eyesight param c_hi: 0.728  methods.json#/eyesight/32/params/c_hi
-- eyesight param c_lo: 0.583  methods.json#/eyesight/32/params/c_lo
-- eyesight g: 1.874  methods.json#/eyesight/32/g
+- LOYO weekly WAPE (tier1): 0.359  methods.json#/validation/802/value
+- LOYO weekly WAPE baseline annual_ratio: 0.414  methods.json#/validation/802/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 4.68  methods.json#/validation/802/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/802/years
+- LOYO weekly WAPE (tier2): 0.369  methods.json#/validation/817/value
+- LOYO years: [2013, 2022]  methods.json#/validation/817/years
+- reliability_err (tier2): 0.002  methods.json#/validation/815/value
+- reliability_year_absolute_err (tier2): 0.116  methods.json#/validation/816/value
+- t1_t2_wape (tier2): 0.28  methods.json#/validation/819/value
+- eyesight status: "validated"  methods.json#/eyesight/49/status
+- eyesight param a: -4.663  methods.json#/eyesight/49/params/a
+- eyesight param a_hi: -4.503  methods.json#/eyesight/49/params/a_hi
+- eyesight param a_lo: -4.794  methods.json#/eyesight/49/params/a_lo
+- eyesight param b: 2.84  methods.json#/eyesight/49/params/b
+- eyesight param b_hi: 3.048  methods.json#/eyesight/49/params/b_hi
+- eyesight param b_lo: 2.554  methods.json#/eyesight/49/params/b_lo
+- eyesight param c: 0.641  methods.json#/eyesight/49/params/c
+- eyesight param c_hi: 0.728  methods.json#/eyesight/49/params/c_hi
+- eyesight param c_lo: 0.583  methods.json#/eyesight/49/params/c_lo
+- eyesight g: 1.874  methods.json#/eyesight/49/g
 
 ## Equatorial Guinea (`equatorial-guinea`)
 
@@ -2146,26 +2951,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  equatorial-guinea/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  equatorial-guinea/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  equatorial-guinea/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.463  methods.json#/validation/574/value
-- LOYO weekly WAPE baseline annual_ratio: 0.47  methods.json#/validation/574/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 2.877  methods.json#/validation/574/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/574/years
-- LOYO weekly WAPE (tier2): 0.45  methods.json#/validation/589/value
-- LOYO years: [2013, 2022]  methods.json#/validation/589/years
-- reliability_err (tier2): 0.001  methods.json#/validation/587/value
-- reliability_year_absolute_err (tier2): 0.182  methods.json#/validation/588/value
-- t1_t2_wape (tier2): 0.159  methods.json#/validation/591/value
-- eyesight status: "validated"  methods.json#/eyesight/33/status
-- eyesight param a: -3.902  methods.json#/eyesight/33/params/a
-- eyesight param a_hi: -3.077  methods.json#/eyesight/33/params/a_hi
-- eyesight param a_lo: -4.05  methods.json#/eyesight/33/params/a_lo
-- eyesight param b: 1.932  methods.json#/eyesight/33/params/b
-- eyesight param b_hi: 2.705  methods.json#/eyesight/33/params/b_hi
-- eyesight param b_lo: 1.713  methods.json#/eyesight/33/params/b_lo
-- eyesight param c: 1.0  methods.json#/eyesight/33/params/c
-- eyesight param c_hi: 1.0  methods.json#/eyesight/33/params/c_hi
-- eyesight param c_lo: 0.359  methods.json#/eyesight/33/params/c_lo
-- eyesight g: 2.632  methods.json#/eyesight/33/g
+- LOYO weekly WAPE (tier1): 0.463  methods.json#/validation/820/value
+- LOYO weekly WAPE baseline annual_ratio: 0.47  methods.json#/validation/820/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.877  methods.json#/validation/820/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/820/years
+- LOYO weekly WAPE (tier2): 0.45  methods.json#/validation/835/value
+- LOYO years: [2013, 2022]  methods.json#/validation/835/years
+- reliability_err (tier2): 0.001  methods.json#/validation/833/value
+- reliability_year_absolute_err (tier2): 0.182  methods.json#/validation/834/value
+- t1_t2_wape (tier2): 0.159  methods.json#/validation/837/value
+- eyesight status: "validated"  methods.json#/eyesight/50/status
+- eyesight param a: -3.902  methods.json#/eyesight/50/params/a
+- eyesight param a_hi: -3.077  methods.json#/eyesight/50/params/a_hi
+- eyesight param a_lo: -4.05  methods.json#/eyesight/50/params/a_lo
+- eyesight param b: 1.932  methods.json#/eyesight/50/params/b
+- eyesight param b_hi: 2.705  methods.json#/eyesight/50/params/b_hi
+- eyesight param b_lo: 1.713  methods.json#/eyesight/50/params/b_lo
+- eyesight param c: 1.0  methods.json#/eyesight/50/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/50/params/c_hi
+- eyesight param c_lo: 0.359  methods.json#/eyesight/50/params/c_lo
+- eyesight g: 2.632  methods.json#/eyesight/50/g
 
 ## Eritrea (`eritrea`)
 
@@ -2209,11 +3014,135 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  eritrea/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  eritrea/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  eritrea/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.736  methods.json#/validation/592/value
-- LOYO weekly WAPE baseline annual_ratio: 0.739  methods.json#/validation/592/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 2.286  methods.json#/validation/592/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/592/years
-- eyesight status: "absent"  methods.json#/eyesight/34/status
+- LOYO weekly WAPE (tier1): 0.736  methods.json#/validation/838/value
+- LOYO weekly WAPE baseline annual_ratio: 0.739  methods.json#/validation/838/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.286  methods.json#/validation/838/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/838/years
+- eyesight status: "absent"  methods.json#/eyesight/51/status
+
+## Estonia (`estonia`)
+
+- jump multiple (value): 2.883  estonia/ruler.json#/jump_multiple/value
+- jump multiple (lo): 1.536  estonia/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 13.0  estonia/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  estonia/ruler.json#/jump_multiple/years
+- ruler sentence: "In Estonia, VIIRS reports about 2.9 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  estonia/ruler.json#/sentence
+- harmonized trend pct_per_decade: -79.365  estonia/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -181.818  estonia/trend.json#/harmonized/lo
+- harmonized trend hi: -33.277  estonia/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  estonia/trend.json#/harmonized/direction
+- naive trend pct_per_decade: -19.231  estonia/trend.json#/naive/pct_per_decade
+- naive trend lo: -83.333  estonia/trend.json#/naive/lo
+- naive trend hi: 18.117  estonia/trend.json#/naive/hi
+- naive trend direction: "no_clear_change"  estonia/trend.json#/naive/direction
+- trend years: [2003, 2025]  estonia/trend.json#/years
+- verdict sentence_id: "artifact_falling"  estonia/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 79% per decade (-182 to -33)."  estonia/trend.json#/sentence
+- critical weeks: [15, 16, 17]  estonia/season.json#/critical_weeks
+- window w1 label: "early to late April"  estonia/season.json#/windows/0/label
+- window w1 start_week: 15  estonia/season.json#/windows/0/start_week
+- window w1 peak_week: 16  estonia/season.json#/windows/0/peak_week
+- window w1 end_week: 17  estonia/season.json#/windows/0/end_week
+- window w1 share: 0.833  estonia/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -13.333  estonia/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -140.0  estonia/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 50.0  estonia/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early to late April season."  estonia/season.json#/windows/0/sentence
+- this week value: null  estonia/nowcast.json#/value
+- this week lo: null  estonia/nowcast.json#/lo
+- this week hi: null  estonia/nowcast.json#/hi
+- this week percentile: null  estonia/nowcast.json#/percentile
+- this week status: "unavailable"  estonia/nowcast.json#/status
+- this week as_of: null  estonia/nowcast.json#/as_of
+- this week window start: null  estonia/nowcast.json#/window/start
+- this week window end: null  estonia/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  estonia/nowcast.json#/baseline_years
+- month to date value: null  estonia/nowcast.json#/month_to_date/value
+- month to date median: null  estonia/nowcast.json#/month_to_date/median
+- month to date ratio: null  estonia/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  estonia/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  estonia/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.09  methods.json#/validation/851/value
+- LOYO weekly WAPE baseline annual_ratio: 1.111  methods.json#/validation/851/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.892  methods.json#/validation/851/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/851/years
+- eyesight status: "absent"  methods.json#/eyesight/52/status
+
+## Falkland Islands (`falkland-islands`)
+
+- jump multiple (value): 7.022  falkland-islands/ruler.json#/jump_multiple/value
+- jump multiple (lo): 1.333  falkland-islands/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 13.612  falkland-islands/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  falkland-islands/ruler.json#/jump_multiple/years
+- ruler sentence: "In Falkland Islands, VIIRS reports about 7.0 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  falkland-islands/ruler.json#/sentence
+- harmonized trend pct_per_decade: -75.939  falkland-islands/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -310.216  falkland-islands/trend.json#/harmonized/lo
+- harmonized trend hi: -38.462  falkland-islands/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  falkland-islands/trend.json#/harmonized/direction
+- naive trend pct_per_decade: -20.833  falkland-islands/trend.json#/naive/pct_per_decade
+- naive trend lo: -72.744  falkland-islands/trend.json#/naive/lo
+- naive trend hi: 81.25  falkland-islands/trend.json#/naive/hi
+- naive trend direction: "no_clear_change"  falkland-islands/trend.json#/naive/direction
+- trend years: [2003, 2025]  falkland-islands/trend.json#/years
+- verdict sentence_id: "unclear"  falkland-islands/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (-310 to -38% per decade)."  falkland-islands/trend.json#/sentence
+- critical weeks: []  falkland-islands/season.json#/critical_weeks
+- this week value: null  falkland-islands/nowcast.json#/value
+- this week lo: null  falkland-islands/nowcast.json#/lo
+- this week hi: null  falkland-islands/nowcast.json#/hi
+- this week percentile: null  falkland-islands/nowcast.json#/percentile
+- this week status: "unavailable"  falkland-islands/nowcast.json#/status
+- this week as_of: null  falkland-islands/nowcast.json#/as_of
+- this week window start: null  falkland-islands/nowcast.json#/window/start
+- this week window end: null  falkland-islands/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  falkland-islands/nowcast.json#/baseline_years
+- month to date value: null  falkland-islands/nowcast.json#/month_to_date/value
+- month to date median: null  falkland-islands/nowcast.json#/month_to_date/median
+- month to date ratio: null  falkland-islands/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  falkland-islands/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  falkland-islands/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.807  methods.json#/validation/864/value
+- LOYO weekly WAPE baseline annual_ratio: 0.872  methods.json#/validation/864/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.488  methods.json#/validation/864/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/864/years
+- eyesight status: "absent"  methods.json#/eyesight/53/status
+
+## Federated States of Micronesia (`federated-states-of-micronesia`)
+
+- jump multiple (value): null  federated-states-of-micronesia/ruler.json#/jump_multiple/value
+- jump multiple (lo): null  federated-states-of-micronesia/ruler.json#/jump_multiple/lo
+- jump multiple (hi): null  federated-states-of-micronesia/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  federated-states-of-micronesia/ruler.json#/jump_multiple/years
+- ruler sentence: "The sensor comparison is unavailable: no valid paired annual observations."  federated-states-of-micronesia/ruler.json#/sentence
+- harmonized trend pct_per_decade: null  federated-states-of-micronesia/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: null  federated-states-of-micronesia/trend.json#/harmonized/lo
+- harmonized trend hi: null  federated-states-of-micronesia/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  federated-states-of-micronesia/trend.json#/harmonized/direction
+- naive trend pct_per_decade: null  federated-states-of-micronesia/trend.json#/naive/pct_per_decade
+- naive trend lo: null  federated-states-of-micronesia/trend.json#/naive/lo
+- naive trend hi: null  federated-states-of-micronesia/trend.json#/naive/hi
+- naive trend direction: "no_clear_change"  federated-states-of-micronesia/trend.json#/naive/direction
+- trend years: [2003, 2025]  federated-states-of-micronesia/trend.json#/years
+- verdict sentence_id: "unclear"  federated-states-of-micronesia/trend.json#/sentence_id
+- verdict sentence: "Trend unavailable: the median annual activity is zero."  federated-states-of-micronesia/trend.json#/sentence
+- critical weeks: []  federated-states-of-micronesia/season.json#/critical_weeks
+- this week value: null  federated-states-of-micronesia/nowcast.json#/value
+- this week lo: null  federated-states-of-micronesia/nowcast.json#/lo
+- this week hi: null  federated-states-of-micronesia/nowcast.json#/hi
+- this week percentile: null  federated-states-of-micronesia/nowcast.json#/percentile
+- this week status: "unavailable"  federated-states-of-micronesia/nowcast.json#/status
+- this week as_of: null  federated-states-of-micronesia/nowcast.json#/as_of
+- this week window start: null  federated-states-of-micronesia/nowcast.json#/window/start
+- this week window end: null  federated-states-of-micronesia/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  federated-states-of-micronesia/nowcast.json#/baseline_years
+- month to date value: null  federated-states-of-micronesia/nowcast.json#/month_to_date/value
+- month to date median: null  federated-states-of-micronesia/nowcast.json#/month_to_date/median
+- month to date ratio: null  federated-states-of-micronesia/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  federated-states-of-micronesia/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  federated-states-of-micronesia/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): null  methods.json#/validation/877/value
+- LOYO years: [2013, 2022]  methods.json#/validation/877/years
+- eyesight status: "absent"  methods.json#/eyesight/54/status
 
 ## Fiji (`fiji`)
 
@@ -2257,26 +3186,74 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  fiji/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  fiji/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  fiji/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.418  methods.json#/validation/605/value
-- LOYO weekly WAPE baseline annual_ratio: 0.425  methods.json#/validation/605/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 4.716  methods.json#/validation/605/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/605/years
-- LOYO weekly WAPE (tier2): 0.403  methods.json#/validation/620/value
-- LOYO years: [2013, 2022]  methods.json#/validation/620/years
-- reliability_err (tier2): 0.004  methods.json#/validation/618/value
-- reliability_year_absolute_err (tier2): 0.083  methods.json#/validation/619/value
-- t1_t2_wape (tier2): 0.213  methods.json#/validation/622/value
-- eyesight status: "validated"  methods.json#/eyesight/35/status
-- eyesight param a: -3.779  methods.json#/eyesight/35/params/a
-- eyesight param a_hi: -3.626  methods.json#/eyesight/35/params/a_hi
-- eyesight param a_lo: -4.026  methods.json#/eyesight/35/params/a_lo
-- eyesight param b: 2.536  methods.json#/eyesight/35/params/b
-- eyesight param b_hi: 2.969  methods.json#/eyesight/35/params/b_hi
-- eyesight param b_lo: 2.211  methods.json#/eyesight/35/params/b_lo
-- eyesight param c: 0.563  methods.json#/eyesight/35/params/c
-- eyesight param c_hi: 0.708  methods.json#/eyesight/35/params/c_hi
-- eyesight param c_lo: 0.446  methods.json#/eyesight/35/params/c_lo
-- eyesight g: 1.633  methods.json#/eyesight/35/g
+- LOYO weekly WAPE (tier1): 0.418  methods.json#/validation/890/value
+- LOYO weekly WAPE baseline annual_ratio: 0.425  methods.json#/validation/890/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 4.716  methods.json#/validation/890/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/890/years
+- LOYO weekly WAPE (tier2): 0.403  methods.json#/validation/905/value
+- LOYO years: [2013, 2022]  methods.json#/validation/905/years
+- reliability_err (tier2): 0.004  methods.json#/validation/903/value
+- reliability_year_absolute_err (tier2): 0.083  methods.json#/validation/904/value
+- t1_t2_wape (tier2): 0.213  methods.json#/validation/907/value
+- eyesight status: "validated"  methods.json#/eyesight/55/status
+- eyesight param a: -3.779  methods.json#/eyesight/55/params/a
+- eyesight param a_hi: -3.626  methods.json#/eyesight/55/params/a_hi
+- eyesight param a_lo: -4.026  methods.json#/eyesight/55/params/a_lo
+- eyesight param b: 2.536  methods.json#/eyesight/55/params/b
+- eyesight param b_hi: 2.969  methods.json#/eyesight/55/params/b_hi
+- eyesight param b_lo: 2.211  methods.json#/eyesight/55/params/b_lo
+- eyesight param c: 0.563  methods.json#/eyesight/55/params/c
+- eyesight param c_hi: 0.708  methods.json#/eyesight/55/params/c_hi
+- eyesight param c_lo: 0.446  methods.json#/eyesight/55/params/c_lo
+- eyesight g: 1.633  methods.json#/eyesight/55/g
+
+## Finland (`finland`)
+
+- jump multiple (value): 2.912  finland/ruler.json#/jump_multiple/value
+- jump multiple (lo): 2.081  finland/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 4.619  finland/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  finland/ruler.json#/jump_multiple/years
+- ruler sentence: "In Finland, VIIRS reports about 2.9 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  finland/ruler.json#/sentence
+- harmonized trend pct_per_decade: -37.488  finland/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -84.107  finland/trend.json#/harmonized/lo
+- harmonized trend hi: -7.552  finland/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  finland/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 36.673  finland/trend.json#/naive/pct_per_decade
+- naive trend lo: 9.161  finland/trend.json#/naive/lo
+- naive trend hi: 65.702  finland/trend.json#/naive/hi
+- naive trend direction: "rising"  finland/trend.json#/naive/direction
+- trend years: [2003, 2025]  finland/trend.json#/years
+- verdict sentence_id: "unclear"  finland/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (-84 to -8% per decade)."  finland/trend.json#/sentence
+- critical weeks: [16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]  finland/season.json#/critical_weeks
+- window w1 label: "mid-April to early-July"  finland/season.json#/windows/0/label
+- window w1 start_week: 16  finland/season.json#/windows/0/start_week
+- window w1 peak_week: 18  finland/season.json#/windows/0/peak_week
+- window w1 end_week: 26  finland/season.json#/windows/0/end_week
+- window w1 share: 0.814  finland/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 0.86  finland/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -4.615  finland/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 10.0  finland/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the mid-April to early-July season."  finland/season.json#/windows/0/sentence
+- this week value: null  finland/nowcast.json#/value
+- this week lo: null  finland/nowcast.json#/lo
+- this week hi: null  finland/nowcast.json#/hi
+- this week percentile: null  finland/nowcast.json#/percentile
+- this week status: "unavailable"  finland/nowcast.json#/status
+- this week as_of: null  finland/nowcast.json#/as_of
+- this week window start: null  finland/nowcast.json#/window/start
+- this week window end: null  finland/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  finland/nowcast.json#/baseline_years
+- month to date value: null  finland/nowcast.json#/month_to_date/value
+- month to date median: null  finland/nowcast.json#/month_to_date/median
+- month to date ratio: null  finland/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  finland/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  finland/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.696  methods.json#/validation/908/value
+- LOYO weekly WAPE baseline annual_ratio: 0.711  methods.json#/validation/908/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.316  methods.json#/validation/908/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/908/years
+- eyesight status: "absent"  methods.json#/eyesight/56/status
 
 ## France (`france`)
 
@@ -2329,26 +3306,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  france/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  france/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  france/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.323  methods.json#/validation/623/value
-- LOYO weekly WAPE baseline annual_ratio: 0.388  methods.json#/validation/623/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 2.322  methods.json#/validation/623/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/623/years
-- LOYO weekly WAPE (tier2): 0.356  methods.json#/validation/638/value
-- LOYO years: [2013, 2022]  methods.json#/validation/638/years
-- reliability_err (tier2): 0.006  methods.json#/validation/636/value
-- reliability_year_absolute_err (tier2): 0.146  methods.json#/validation/637/value
-- t1_t2_wape (tier2): 0.267  methods.json#/validation/640/value
-- eyesight status: "exploratory"  methods.json#/eyesight/36/status
-- eyesight param a: -3.916  methods.json#/eyesight/36/params/a
-- eyesight param a_hi: -3.786  methods.json#/eyesight/36/params/a_hi
-- eyesight param a_lo: -4.158  methods.json#/eyesight/36/params/a_lo
-- eyesight param b: 2.829  methods.json#/eyesight/36/params/b
-- eyesight param b_hi: 3.37  methods.json#/eyesight/36/params/b_hi
-- eyesight param b_lo: 2.406  methods.json#/eyesight/36/params/b_lo
-- eyesight param c: 0.634  methods.json#/eyesight/36/params/c
-- eyesight param c_hi: 0.799  methods.json#/eyesight/36/params/c_hi
-- eyesight param c_lo: 0.486  methods.json#/eyesight/36/params/c_lo
-- eyesight g: 2.116  methods.json#/eyesight/36/g
+- LOYO weekly WAPE (tier1): 0.323  methods.json#/validation/921/value
+- LOYO weekly WAPE baseline annual_ratio: 0.388  methods.json#/validation/921/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.322  methods.json#/validation/921/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/921/years
+- LOYO weekly WAPE (tier2): 0.356  methods.json#/validation/936/value
+- LOYO years: [2013, 2022]  methods.json#/validation/936/years
+- reliability_err (tier2): 0.006  methods.json#/validation/934/value
+- reliability_year_absolute_err (tier2): 0.146  methods.json#/validation/935/value
+- t1_t2_wape (tier2): 0.267  methods.json#/validation/938/value
+- eyesight status: "exploratory"  methods.json#/eyesight/57/status
+- eyesight param a: -3.916  methods.json#/eyesight/57/params/a
+- eyesight param a_hi: -3.786  methods.json#/eyesight/57/params/a_hi
+- eyesight param a_lo: -4.158  methods.json#/eyesight/57/params/a_lo
+- eyesight param b: 2.829  methods.json#/eyesight/57/params/b
+- eyesight param b_hi: 3.37  methods.json#/eyesight/57/params/b_hi
+- eyesight param b_lo: 2.406  methods.json#/eyesight/57/params/b_lo
+- eyesight param c: 0.634  methods.json#/eyesight/57/params/c
+- eyesight param c_hi: 0.799  methods.json#/eyesight/57/params/c_hi
+- eyesight param c_lo: 0.486  methods.json#/eyesight/57/params/c_lo
+- eyesight g: 2.116  methods.json#/eyesight/57/g
 
 ## French Guiana (`french-guiana`)
 
@@ -2392,26 +3369,65 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  french-guiana/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  french-guiana/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  french-guiana/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.375  methods.json#/validation/641/value
-- LOYO weekly WAPE baseline annual_ratio: 0.368  methods.json#/validation/641/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 2.971  methods.json#/validation/641/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/641/years
-- LOYO weekly WAPE (tier2): 0.385  methods.json#/validation/656/value
-- LOYO years: [2013, 2022]  methods.json#/validation/656/years
-- reliability_err (tier2): 0.002  methods.json#/validation/654/value
-- reliability_year_absolute_err (tier2): 0.118  methods.json#/validation/655/value
-- t1_t2_wape (tier2): 0.189  methods.json#/validation/658/value
-- eyesight status: "validated"  methods.json#/eyesight/37/status
-- eyesight param a: -3.512  methods.json#/eyesight/37/params/a
-- eyesight param a_hi: -3.261  methods.json#/eyesight/37/params/a_hi
-- eyesight param a_lo: -3.849  methods.json#/eyesight/37/params/a_lo
-- eyesight param b: 2.117  methods.json#/eyesight/37/params/b
-- eyesight param b_hi: 2.42  methods.json#/eyesight/37/params/b_hi
-- eyesight param b_lo: 1.805  methods.json#/eyesight/37/params/b_lo
-- eyesight param c: 0.602  methods.json#/eyesight/37/params/c
-- eyesight param c_hi: 0.823  methods.json#/eyesight/37/params/c_hi
-- eyesight param c_lo: 0.48  methods.json#/eyesight/37/params/c_lo
-- eyesight g: 1.843  methods.json#/eyesight/37/g
+- LOYO weekly WAPE (tier1): 0.375  methods.json#/validation/939/value
+- LOYO weekly WAPE baseline annual_ratio: 0.368  methods.json#/validation/939/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.971  methods.json#/validation/939/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/939/years
+- LOYO weekly WAPE (tier2): 0.385  methods.json#/validation/954/value
+- LOYO years: [2013, 2022]  methods.json#/validation/954/years
+- reliability_err (tier2): 0.002  methods.json#/validation/952/value
+- reliability_year_absolute_err (tier2): 0.118  methods.json#/validation/953/value
+- t1_t2_wape (tier2): 0.189  methods.json#/validation/956/value
+- eyesight status: "validated"  methods.json#/eyesight/58/status
+- eyesight param a: -3.512  methods.json#/eyesight/58/params/a
+- eyesight param a_hi: -3.261  methods.json#/eyesight/58/params/a_hi
+- eyesight param a_lo: -3.849  methods.json#/eyesight/58/params/a_lo
+- eyesight param b: 2.117  methods.json#/eyesight/58/params/b
+- eyesight param b_hi: 2.42  methods.json#/eyesight/58/params/b_hi
+- eyesight param b_lo: 1.805  methods.json#/eyesight/58/params/b_lo
+- eyesight param c: 0.602  methods.json#/eyesight/58/params/c
+- eyesight param c_hi: 0.823  methods.json#/eyesight/58/params/c_hi
+- eyesight param c_lo: 0.48  methods.json#/eyesight/58/params/c_lo
+- eyesight g: 1.843  methods.json#/eyesight/58/g
+
+## French Polynesia (`french-polynesia`)
+
+- jump multiple (value): 6.667  french-polynesia/ruler.json#/jump_multiple/value
+- jump multiple (lo): 1.0  french-polynesia/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 16.0  french-polynesia/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  french-polynesia/ruler.json#/jump_multiple/years
+- ruler sentence: "In French Polynesia, VIIRS reports about 6.7 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  french-polynesia/ruler.json#/sentence
+- harmonized trend pct_per_decade: null  french-polynesia/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: null  french-polynesia/trend.json#/harmonized/lo
+- harmonized trend hi: null  french-polynesia/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  french-polynesia/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 92.105  french-polynesia/trend.json#/naive/pct_per_decade
+- naive trend lo: 20.512  french-polynesia/trend.json#/naive/lo
+- naive trend hi: 187.5  french-polynesia/trend.json#/naive/hi
+- naive trend direction: "rising"  french-polynesia/trend.json#/naive/direction
+- trend years: [2003, 2025]  french-polynesia/trend.json#/years
+- verdict sentence_id: "unclear"  french-polynesia/trend.json#/sentence_id
+- verdict sentence: "Trend unavailable: the median annual activity is zero."  french-polynesia/trend.json#/sentence
+- critical weeks: []  french-polynesia/season.json#/critical_weeks
+- this week value: null  french-polynesia/nowcast.json#/value
+- this week lo: null  french-polynesia/nowcast.json#/lo
+- this week hi: null  french-polynesia/nowcast.json#/hi
+- this week percentile: null  french-polynesia/nowcast.json#/percentile
+- this week status: "unavailable"  french-polynesia/nowcast.json#/status
+- this week as_of: null  french-polynesia/nowcast.json#/as_of
+- this week window start: null  french-polynesia/nowcast.json#/window/start
+- this week window end: null  french-polynesia/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  french-polynesia/nowcast.json#/baseline_years
+- month to date value: null  french-polynesia/nowcast.json#/month_to_date/value
+- month to date median: null  french-polynesia/nowcast.json#/month_to_date/median
+- month to date ratio: null  french-polynesia/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  french-polynesia/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  french-polynesia/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 2.067  methods.json#/validation/957/value
+- LOYO weekly WAPE baseline annual_ratio: 2.08  methods.json#/validation/957/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 11.333  methods.json#/validation/957/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/957/years
+- eyesight status: "absent"  methods.json#/eyesight/59/status
 
 ## Gabon (`gabon`)
 
@@ -2464,26 +3480,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  gabon/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  gabon/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  gabon/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.302  methods.json#/validation/659/value
-- LOYO weekly WAPE baseline annual_ratio: 0.317  methods.json#/validation/659/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 2.737  methods.json#/validation/659/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/659/years
-- LOYO weekly WAPE (tier2): 0.318  methods.json#/validation/674/value
-- LOYO years: [2013, 2022]  methods.json#/validation/674/years
-- reliability_err (tier2): 0.0  methods.json#/validation/672/value
-- reliability_year_absolute_err (tier2): 0.074  methods.json#/validation/673/value
-- t1_t2_wape (tier2): 0.139  methods.json#/validation/676/value
-- eyesight status: "validated"  methods.json#/eyesight/38/status
-- eyesight param a: -3.48  methods.json#/eyesight/38/params/a
-- eyesight param a_hi: -3.378  methods.json#/eyesight/38/params/a_hi
-- eyesight param a_lo: -3.609  methods.json#/eyesight/38/params/a_lo
-- eyesight param b: 2.081  methods.json#/eyesight/38/params/b
-- eyesight param b_hi: 2.203  methods.json#/eyesight/38/params/b_hi
-- eyesight param b_lo: 1.947  methods.json#/eyesight/38/params/b_lo
-- eyesight param c: 0.633  methods.json#/eyesight/38/params/c
-- eyesight param c_hi: 0.735  methods.json#/eyesight/38/params/c_hi
-- eyesight param c_lo: 0.572  methods.json#/eyesight/38/params/c_lo
-- eyesight g: 2.023  methods.json#/eyesight/38/g
+- LOYO weekly WAPE (tier1): 0.302  methods.json#/validation/970/value
+- LOYO weekly WAPE baseline annual_ratio: 0.317  methods.json#/validation/970/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.737  methods.json#/validation/970/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/970/years
+- LOYO weekly WAPE (tier2): 0.318  methods.json#/validation/985/value
+- LOYO years: [2013, 2022]  methods.json#/validation/985/years
+- reliability_err (tier2): 0.0  methods.json#/validation/983/value
+- reliability_year_absolute_err (tier2): 0.074  methods.json#/validation/984/value
+- t1_t2_wape (tier2): 0.139  methods.json#/validation/987/value
+- eyesight status: "validated"  methods.json#/eyesight/60/status
+- eyesight param a: -3.48  methods.json#/eyesight/60/params/a
+- eyesight param a_hi: -3.378  methods.json#/eyesight/60/params/a_hi
+- eyesight param a_lo: -3.609  methods.json#/eyesight/60/params/a_lo
+- eyesight param b: 2.081  methods.json#/eyesight/60/params/b
+- eyesight param b_hi: 2.203  methods.json#/eyesight/60/params/b_hi
+- eyesight param b_lo: 1.947  methods.json#/eyesight/60/params/b_lo
+- eyesight param c: 0.633  methods.json#/eyesight/60/params/c
+- eyesight param c_hi: 0.735  methods.json#/eyesight/60/params/c_hi
+- eyesight param c_lo: 0.572  methods.json#/eyesight/60/params/c_lo
+- eyesight g: 2.023  methods.json#/eyesight/60/g
 
 ## Georgia (`georgia`)
 
@@ -2536,26 +3552,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  georgia/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  georgia/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  georgia/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.395  methods.json#/validation/677/value
-- LOYO weekly WAPE baseline annual_ratio: 0.419  methods.json#/validation/677/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 2.982  methods.json#/validation/677/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/677/years
-- LOYO weekly WAPE (tier2): 0.403  methods.json#/validation/692/value
-- LOYO years: [2013, 2022]  methods.json#/validation/692/years
-- reliability_err (tier2): 0.002  methods.json#/validation/690/value
-- reliability_year_absolute_err (tier2): 0.074  methods.json#/validation/691/value
-- t1_t2_wape (tier2): 0.265  methods.json#/validation/694/value
-- eyesight status: "validated"  methods.json#/eyesight/39/status
-- eyesight param a: -3.607  methods.json#/eyesight/39/params/a
-- eyesight param a_hi: -3.451  methods.json#/eyesight/39/params/a_hi
-- eyesight param a_lo: -3.778  methods.json#/eyesight/39/params/a_lo
-- eyesight param b: 2.318  methods.json#/eyesight/39/params/b
-- eyesight param b_hi: 2.665  methods.json#/eyesight/39/params/b_hi
-- eyesight param b_lo: 2.099  methods.json#/eyesight/39/params/b_lo
-- eyesight param c: 0.723  methods.json#/eyesight/39/params/c
-- eyesight param c_hi: 0.867  methods.json#/eyesight/39/params/c_hi
-- eyesight param c_lo: 0.588  methods.json#/eyesight/39/params/c_lo
-- eyesight g: 1.664  methods.json#/eyesight/39/g
+- LOYO weekly WAPE (tier1): 0.395  methods.json#/validation/988/value
+- LOYO weekly WAPE baseline annual_ratio: 0.419  methods.json#/validation/988/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.982  methods.json#/validation/988/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/988/years
+- LOYO weekly WAPE (tier2): 0.403  methods.json#/validation/1003/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1003/years
+- reliability_err (tier2): 0.002  methods.json#/validation/1001/value
+- reliability_year_absolute_err (tier2): 0.074  methods.json#/validation/1002/value
+- t1_t2_wape (tier2): 0.265  methods.json#/validation/1005/value
+- eyesight status: "validated"  methods.json#/eyesight/61/status
+- eyesight param a: -3.607  methods.json#/eyesight/61/params/a
+- eyesight param a_hi: -3.451  methods.json#/eyesight/61/params/a_hi
+- eyesight param a_lo: -3.778  methods.json#/eyesight/61/params/a_lo
+- eyesight param b: 2.318  methods.json#/eyesight/61/params/b
+- eyesight param b_hi: 2.665  methods.json#/eyesight/61/params/b_hi
+- eyesight param b_lo: 2.099  methods.json#/eyesight/61/params/b_lo
+- eyesight param c: 0.723  methods.json#/eyesight/61/params/c
+- eyesight param c_hi: 0.867  methods.json#/eyesight/61/params/c_hi
+- eyesight param c_lo: 0.588  methods.json#/eyesight/61/params/c_lo
+- eyesight g: 1.664  methods.json#/eyesight/61/g
 
 ## Germany (`germany`)
 
@@ -2608,26 +3624,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  germany/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  germany/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  germany/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.703  methods.json#/validation/695/value
-- LOYO weekly WAPE baseline annual_ratio: 0.811  methods.json#/validation/695/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 2.242  methods.json#/validation/695/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/695/years
-- LOYO weekly WAPE (tier2): 0.887  methods.json#/validation/710/value
-- LOYO years: [2013, 2022]  methods.json#/validation/710/years
-- reliability_err (tier2): 0.003  methods.json#/validation/708/value
-- reliability_year_absolute_err (tier2): 0.264  methods.json#/validation/709/value
-- t1_t2_wape (tier2): 0.598  methods.json#/validation/712/value
-- eyesight status: "exploratory"  methods.json#/eyesight/40/status
-- eyesight param a: -5.514  methods.json#/eyesight/40/params/a
-- eyesight param a_hi: -4.953  methods.json#/eyesight/40/params/a_hi
-- eyesight param a_lo: -6.009  methods.json#/eyesight/40/params/a_lo
-- eyesight param b: 3.407  methods.json#/eyesight/40/params/b
-- eyesight param b_hi: 4.069  methods.json#/eyesight/40/params/b_hi
-- eyesight param b_lo: 2.974  methods.json#/eyesight/40/params/b_lo
-- eyesight param c: 0.408  methods.json#/eyesight/40/params/c
-- eyesight param c_hi: 0.607  methods.json#/eyesight/40/params/c_hi
-- eyesight param c_lo: 0.267  methods.json#/eyesight/40/params/c_lo
-- eyesight g: 12.943  methods.json#/eyesight/40/g
+- LOYO weekly WAPE (tier1): 0.703  methods.json#/validation/1006/value
+- LOYO weekly WAPE baseline annual_ratio: 0.811  methods.json#/validation/1006/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.242  methods.json#/validation/1006/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1006/years
+- LOYO weekly WAPE (tier2): 0.887  methods.json#/validation/1021/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1021/years
+- reliability_err (tier2): 0.003  methods.json#/validation/1019/value
+- reliability_year_absolute_err (tier2): 0.264  methods.json#/validation/1020/value
+- t1_t2_wape (tier2): 0.598  methods.json#/validation/1023/value
+- eyesight status: "exploratory"  methods.json#/eyesight/62/status
+- eyesight param a: -5.514  methods.json#/eyesight/62/params/a
+- eyesight param a_hi: -4.953  methods.json#/eyesight/62/params/a_hi
+- eyesight param a_lo: -6.009  methods.json#/eyesight/62/params/a_lo
+- eyesight param b: 3.407  methods.json#/eyesight/62/params/b
+- eyesight param b_hi: 4.069  methods.json#/eyesight/62/params/b_hi
+- eyesight param b_lo: 2.974  methods.json#/eyesight/62/params/b_lo
+- eyesight param c: 0.408  methods.json#/eyesight/62/params/c
+- eyesight param c_hi: 0.607  methods.json#/eyesight/62/params/c_hi
+- eyesight param c_lo: 0.267  methods.json#/eyesight/62/params/c_lo
+- eyesight g: 12.943  methods.json#/eyesight/62/g
 
 ## Greece (`greece`)
 
@@ -2671,26 +3687,182 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  greece/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  greece/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  greece/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.338  methods.json#/validation/713/value
-- LOYO weekly WAPE baseline annual_ratio: 0.392  methods.json#/validation/713/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 3.173  methods.json#/validation/713/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/713/years
-- LOYO weekly WAPE (tier2): 0.353  methods.json#/validation/728/value
-- LOYO years: [2013, 2022]  methods.json#/validation/728/years
-- reliability_err (tier2): 0.002  methods.json#/validation/726/value
-- reliability_year_absolute_err (tier2): 0.065  methods.json#/validation/727/value
-- t1_t2_wape (tier2): 0.261  methods.json#/validation/730/value
-- eyesight status: "validated"  methods.json#/eyesight/41/status
-- eyesight param a: -3.906  methods.json#/eyesight/41/params/a
-- eyesight param a_hi: -3.784  methods.json#/eyesight/41/params/a_hi
-- eyesight param a_lo: -4.071  methods.json#/eyesight/41/params/a_lo
-- eyesight param b: 2.08  methods.json#/eyesight/41/params/b
-- eyesight param b_hi: 2.265  methods.json#/eyesight/41/params/b_hi
-- eyesight param b_lo: 2.0  methods.json#/eyesight/41/params/b_lo
-- eyesight param c: 0.985  methods.json#/eyesight/41/params/c
-- eyesight param c_hi: 1.0  methods.json#/eyesight/41/params/c_hi
-- eyesight param c_lo: 0.838  methods.json#/eyesight/41/params/c_lo
-- eyesight g: 1.963  methods.json#/eyesight/41/g
+- LOYO weekly WAPE (tier1): 0.338  methods.json#/validation/1024/value
+- LOYO weekly WAPE baseline annual_ratio: 0.392  methods.json#/validation/1024/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.173  methods.json#/validation/1024/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1024/years
+- LOYO weekly WAPE (tier2): 0.353  methods.json#/validation/1039/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1039/years
+- reliability_err (tier2): 0.002  methods.json#/validation/1037/value
+- reliability_year_absolute_err (tier2): 0.065  methods.json#/validation/1038/value
+- t1_t2_wape (tier2): 0.261  methods.json#/validation/1041/value
+- eyesight status: "validated"  methods.json#/eyesight/63/status
+- eyesight param a: -3.906  methods.json#/eyesight/63/params/a
+- eyesight param a_hi: -3.784  methods.json#/eyesight/63/params/a_hi
+- eyesight param a_lo: -4.071  methods.json#/eyesight/63/params/a_lo
+- eyesight param b: 2.08  methods.json#/eyesight/63/params/b
+- eyesight param b_hi: 2.265  methods.json#/eyesight/63/params/b_hi
+- eyesight param b_lo: 2.0  methods.json#/eyesight/63/params/b_lo
+- eyesight param c: 0.985  methods.json#/eyesight/63/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/63/params/c_hi
+- eyesight param c_lo: 0.838  methods.json#/eyesight/63/params/c_lo
+- eyesight g: 1.963  methods.json#/eyesight/63/g
+
+## Greenland (`greenland`)
+
+- jump multiple (value): 6.764  greenland/ruler.json#/jump_multiple/value
+- jump multiple (lo): 0.75  greenland/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 13.549  greenland/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  greenland/ruler.json#/jump_multiple/years
+- ruler sentence: "In Greenland, VIIRS reports about 6.8 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  greenland/ruler.json#/sentence
+- harmonized trend pct_per_decade: null  greenland/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: null  greenland/trend.json#/harmonized/lo
+- harmonized trend hi: null  greenland/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  greenland/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 41.667  greenland/trend.json#/naive/pct_per_decade
+- naive trend lo: 3.75  greenland/trend.json#/naive/lo
+- naive trend hi: 128.613  greenland/trend.json#/naive/hi
+- naive trend direction: "rising"  greenland/trend.json#/naive/direction
+- trend years: [2003, 2025]  greenland/trend.json#/years
+- verdict sentence_id: "unclear"  greenland/trend.json#/sentence_id
+- verdict sentence: "Trend unavailable: the median annual activity is zero."  greenland/trend.json#/sentence
+- critical weeks: []  greenland/season.json#/critical_weeks
+- this week value: null  greenland/nowcast.json#/value
+- this week lo: null  greenland/nowcast.json#/lo
+- this week hi: null  greenland/nowcast.json#/hi
+- this week percentile: null  greenland/nowcast.json#/percentile
+- this week status: "unavailable"  greenland/nowcast.json#/status
+- this week as_of: null  greenland/nowcast.json#/as_of
+- this week window start: null  greenland/nowcast.json#/window/start
+- this week window end: null  greenland/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  greenland/nowcast.json#/baseline_years
+- month to date value: null  greenland/nowcast.json#/month_to_date/value
+- month to date median: null  greenland/nowcast.json#/month_to_date/median
+- month to date ratio: null  greenland/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  greenland/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  greenland/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.824  methods.json#/validation/1042/value
+- LOYO weekly WAPE baseline annual_ratio: 0.803  methods.json#/validation/1042/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.75  methods.json#/validation/1042/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1042/years
+- eyesight status: "absent"  methods.json#/eyesight/64/status
+
+## Grenada (`grenada`)
+
+- jump multiple (value): 5.0  grenada/ruler.json#/jump_multiple/value
+- jump multiple (lo): 5.0  grenada/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 5.0  grenada/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  grenada/ruler.json#/jump_multiple/years
+- ruler sentence: "In Grenada, VIIRS reports about 5.0 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  grenada/ruler.json#/sentence
+- harmonized trend pct_per_decade: null  grenada/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: null  grenada/trend.json#/harmonized/lo
+- harmonized trend hi: null  grenada/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  grenada/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 115.385  grenada/trend.json#/naive/pct_per_decade
+- naive trend lo: 62.5  grenada/trend.json#/naive/lo
+- naive trend hi: 347.625  grenada/trend.json#/naive/hi
+- naive trend direction: "rising"  grenada/trend.json#/naive/direction
+- trend years: [2003, 2025]  grenada/trend.json#/years
+- verdict sentence_id: "unclear"  grenada/trend.json#/sentence_id
+- verdict sentence: "Trend unavailable: the median annual activity is zero."  grenada/trend.json#/sentence
+- critical weeks: []  grenada/season.json#/critical_weeks
+- this week value: null  grenada/nowcast.json#/value
+- this week lo: null  grenada/nowcast.json#/lo
+- this week hi: null  grenada/nowcast.json#/hi
+- this week percentile: null  grenada/nowcast.json#/percentile
+- this week status: "unavailable"  grenada/nowcast.json#/status
+- this week as_of: null  grenada/nowcast.json#/as_of
+- this week window start: null  grenada/nowcast.json#/window/start
+- this week window end: null  grenada/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  grenada/nowcast.json#/baseline_years
+- month to date value: null  grenada/nowcast.json#/month_to_date/value
+- month to date median: null  grenada/nowcast.json#/month_to_date/median
+- month to date ratio: null  grenada/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  grenada/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  grenada/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.975  methods.json#/validation/1055/value
+- LOYO weekly WAPE baseline annual_ratio: 1.967  methods.json#/validation/1055/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 25.0  methods.json#/validation/1055/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1055/years
+- eyesight status: "absent"  methods.json#/eyesight/65/status
+
+## Guadeloupe (`guadeloupe`)
+
+- jump multiple (value): 4.69  guadeloupe/ruler.json#/jump_multiple/value
+- jump multiple (lo): 1.312  guadeloupe/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 28.0  guadeloupe/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  guadeloupe/ruler.json#/jump_multiple/years
+- ruler sentence: "In Guadeloupe, VIIRS reports about 4.7 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  guadeloupe/ruler.json#/sentence
+- harmonized trend pct_per_decade: -2.597  guadeloupe/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -125.0  guadeloupe/trend.json#/harmonized/lo
+- harmonized trend hi: 14.571  guadeloupe/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  guadeloupe/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 70.4  guadeloupe/trend.json#/naive/pct_per_decade
+- naive trend lo: 27.269  guadeloupe/trend.json#/naive/lo
+- naive trend hi: 142.857  guadeloupe/trend.json#/naive/hi
+- naive trend direction: "rising"  guadeloupe/trend.json#/naive/direction
+- trend years: [2003, 2025]  guadeloupe/trend.json#/years
+- verdict sentence_id: "artifact_flat"  guadeloupe/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 70% per decade. After correcting for the sensor change, there is no clear change (-125 to 15% per decade)."  guadeloupe/trend.json#/sentence
+- critical weeks: []  guadeloupe/season.json#/critical_weeks
+- this week value: null  guadeloupe/nowcast.json#/value
+- this week lo: null  guadeloupe/nowcast.json#/lo
+- this week hi: null  guadeloupe/nowcast.json#/hi
+- this week percentile: null  guadeloupe/nowcast.json#/percentile
+- this week status: "unavailable"  guadeloupe/nowcast.json#/status
+- this week as_of: null  guadeloupe/nowcast.json#/as_of
+- this week window start: null  guadeloupe/nowcast.json#/window/start
+- this week window end: null  guadeloupe/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  guadeloupe/nowcast.json#/baseline_years
+- month to date value: null  guadeloupe/nowcast.json#/month_to_date/value
+- month to date median: null  guadeloupe/nowcast.json#/month_to_date/median
+- month to date ratio: null  guadeloupe/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  guadeloupe/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  guadeloupe/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.869  methods.json#/validation/1068/value
+- LOYO weekly WAPE baseline annual_ratio: 1.84  methods.json#/validation/1068/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 9.237  methods.json#/validation/1068/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1068/years
+- eyesight status: "absent"  methods.json#/eyesight/66/status
+
+## Guam (`guam`)
+
+- jump multiple (value): 5.04  guam/ruler.json#/jump_multiple/value
+- jump multiple (lo): 1.615  guam/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 12.5  guam/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  guam/ruler.json#/jump_multiple/years
+- ruler sentence: "In Guam, VIIRS reports about 5.0 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  guam/ruler.json#/sentence
+- harmonized trend pct_per_decade: 0.0  guam/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -50.02  guam/trend.json#/harmonized/lo
+- harmonized trend hi: 46.887  guam/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  guam/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 57.082  guam/trend.json#/naive/pct_per_decade
+- naive trend lo: 37.324  guam/trend.json#/naive/lo
+- naive trend hi: 196.512  guam/trend.json#/naive/hi
+- naive trend direction: "rising"  guam/trend.json#/naive/direction
+- trend years: [2003, 2025]  guam/trend.json#/years
+- verdict sentence_id: "unclear"  guam/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (-50 to 47% per decade)."  guam/trend.json#/sentence
+- critical weeks: []  guam/season.json#/critical_weeks
+- this week value: null  guam/nowcast.json#/value
+- this week lo: null  guam/nowcast.json#/lo
+- this week hi: null  guam/nowcast.json#/hi
+- this week percentile: null  guam/nowcast.json#/percentile
+- this week status: "unavailable"  guam/nowcast.json#/status
+- this week as_of: null  guam/nowcast.json#/as_of
+- this week window start: null  guam/nowcast.json#/window/start
+- this week window end: null  guam/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  guam/nowcast.json#/baseline_years
+- month to date value: null  guam/nowcast.json#/month_to_date/value
+- month to date median: null  guam/nowcast.json#/month_to_date/median
+- month to date ratio: null  guam/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  guam/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  guam/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.516  methods.json#/validation/1081/value
+- LOYO weekly WAPE baseline annual_ratio: 1.499  methods.json#/validation/1081/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 4.968  methods.json#/validation/1081/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1081/years
+- eyesight status: "absent"  methods.json#/eyesight/67/status
 
 ## Guatemala (`guatemala`)
 
@@ -2734,26 +3906,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  guatemala/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  guatemala/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  guatemala/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.173  methods.json#/validation/731/value
-- LOYO weekly WAPE baseline annual_ratio: 0.21  methods.json#/validation/731/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 3.453  methods.json#/validation/731/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/731/years
-- LOYO weekly WAPE (tier2): 0.157  methods.json#/validation/746/value
-- LOYO years: [2013, 2022]  methods.json#/validation/746/years
-- reliability_err (tier2): 0.002  methods.json#/validation/744/value
-- reliability_year_absolute_err (tier2): 0.069  methods.json#/validation/745/value
-- t1_t2_wape (tier2): 0.091  methods.json#/validation/748/value
-- eyesight status: "validated"  methods.json#/eyesight/42/status
-- eyesight param a: -4.128  methods.json#/eyesight/42/params/a
-- eyesight param a_hi: -4.082  methods.json#/eyesight/42/params/a_hi
-- eyesight param a_lo: -4.186  methods.json#/eyesight/42/params/a_lo
-- eyesight param b: 2.475  methods.json#/eyesight/42/params/b
-- eyesight param b_hi: 2.562  methods.json#/eyesight/42/params/b_hi
-- eyesight param b_lo: 2.369  methods.json#/eyesight/42/params/b_lo
-- eyesight param c: 0.649  methods.json#/eyesight/42/params/c
-- eyesight param c_hi: 0.699  methods.json#/eyesight/42/params/c_hi
-- eyesight param c_lo: 0.617  methods.json#/eyesight/42/params/c_lo
-- eyesight g: 1.787  methods.json#/eyesight/42/g
+- LOYO weekly WAPE (tier1): 0.173  methods.json#/validation/1094/value
+- LOYO weekly WAPE baseline annual_ratio: 0.21  methods.json#/validation/1094/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.453  methods.json#/validation/1094/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1094/years
+- LOYO weekly WAPE (tier2): 0.157  methods.json#/validation/1109/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1109/years
+- reliability_err (tier2): 0.002  methods.json#/validation/1107/value
+- reliability_year_absolute_err (tier2): 0.069  methods.json#/validation/1108/value
+- t1_t2_wape (tier2): 0.091  methods.json#/validation/1111/value
+- eyesight status: "validated"  methods.json#/eyesight/68/status
+- eyesight param a: -4.128  methods.json#/eyesight/68/params/a
+- eyesight param a_hi: -4.082  methods.json#/eyesight/68/params/a_hi
+- eyesight param a_lo: -4.186  methods.json#/eyesight/68/params/a_lo
+- eyesight param b: 2.475  methods.json#/eyesight/68/params/b
+- eyesight param b_hi: 2.562  methods.json#/eyesight/68/params/b_hi
+- eyesight param b_lo: 2.369  methods.json#/eyesight/68/params/b_lo
+- eyesight param c: 0.649  methods.json#/eyesight/68/params/c
+- eyesight param c_hi: 0.699  methods.json#/eyesight/68/params/c_hi
+- eyesight param c_lo: 0.617  methods.json#/eyesight/68/params/c_lo
+- eyesight g: 1.787  methods.json#/eyesight/68/g
 
 ## Guinea-Bissau (`guinea-bissau`)
 
@@ -2806,26 +3978,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  guinea-bissau/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  guinea-bissau/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  guinea-bissau/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.191  methods.json#/validation/749/value
-- LOYO weekly WAPE baseline annual_ratio: 0.2  methods.json#/validation/749/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 1.987  methods.json#/validation/749/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/749/years
-- LOYO weekly WAPE (tier2): 0.181  methods.json#/validation/764/value
-- LOYO years: [2013, 2022]  methods.json#/validation/764/years
-- reliability_err (tier2): 0.0  methods.json#/validation/762/value
-- reliability_year_absolute_err (tier2): 0.043  methods.json#/validation/763/value
-- t1_t2_wape (tier2): 0.098  methods.json#/validation/766/value
-- eyesight status: "validated"  methods.json#/eyesight/43/status
-- eyesight param a: -3.254  methods.json#/eyesight/43/params/a
-- eyesight param a_hi: -3.109  methods.json#/eyesight/43/params/a_hi
-- eyesight param a_lo: -3.417  methods.json#/eyesight/43/params/a_lo
-- eyesight param b: 2.307  methods.json#/eyesight/43/params/b
-- eyesight param b_hi: 2.523  methods.json#/eyesight/43/params/b_hi
-- eyesight param b_lo: 2.131  methods.json#/eyesight/43/params/b_lo
-- eyesight param c: 0.609  methods.json#/eyesight/43/params/c
-- eyesight param c_hi: 0.667  methods.json#/eyesight/43/params/c_hi
-- eyesight param c_lo: 0.555  methods.json#/eyesight/43/params/c_lo
-- eyesight g: 1.604  methods.json#/eyesight/43/g
+- LOYO weekly WAPE (tier1): 0.191  methods.json#/validation/1112/value
+- LOYO weekly WAPE baseline annual_ratio: 0.2  methods.json#/validation/1112/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.987  methods.json#/validation/1112/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1112/years
+- LOYO weekly WAPE (tier2): 0.181  methods.json#/validation/1127/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1127/years
+- reliability_err (tier2): 0.0  methods.json#/validation/1125/value
+- reliability_year_absolute_err (tier2): 0.043  methods.json#/validation/1126/value
+- t1_t2_wape (tier2): 0.098  methods.json#/validation/1129/value
+- eyesight status: "validated"  methods.json#/eyesight/69/status
+- eyesight param a: -3.254  methods.json#/eyesight/69/params/a
+- eyesight param a_hi: -3.109  methods.json#/eyesight/69/params/a_hi
+- eyesight param a_lo: -3.417  methods.json#/eyesight/69/params/a_lo
+- eyesight param b: 2.307  methods.json#/eyesight/69/params/b
+- eyesight param b_hi: 2.523  methods.json#/eyesight/69/params/b_hi
+- eyesight param b_lo: 2.131  methods.json#/eyesight/69/params/b_lo
+- eyesight param c: 0.609  methods.json#/eyesight/69/params/c
+- eyesight param c_hi: 0.667  methods.json#/eyesight/69/params/c_hi
+- eyesight param c_lo: 0.555  methods.json#/eyesight/69/params/c_lo
+- eyesight g: 1.604  methods.json#/eyesight/69/g
 
 ## Guyana (`guyana`)
 
@@ -2878,26 +4050,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  guyana/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  guyana/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  guyana/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.269  methods.json#/validation/767/value
-- LOYO weekly WAPE baseline annual_ratio: 0.261  methods.json#/validation/767/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 4.001  methods.json#/validation/767/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/767/years
-- LOYO weekly WAPE (tier2): 0.269  methods.json#/validation/782/value
-- LOYO years: [2013, 2022]  methods.json#/validation/782/years
-- reliability_err (tier2): 0.001  methods.json#/validation/780/value
-- reliability_year_absolute_err (tier2): 0.091  methods.json#/validation/781/value
-- t1_t2_wape (tier2): 0.147  methods.json#/validation/784/value
-- eyesight status: "validated"  methods.json#/eyesight/44/status
-- eyesight param a: -4.054  methods.json#/eyesight/44/params/a
-- eyesight param a_hi: -3.92  methods.json#/eyesight/44/params/a_hi
-- eyesight param a_lo: -4.18  methods.json#/eyesight/44/params/a_lo
-- eyesight param b: 2.023  methods.json#/eyesight/44/params/b
-- eyesight param b_hi: 2.178  methods.json#/eyesight/44/params/b_hi
-- eyesight param b_lo: 1.891  methods.json#/eyesight/44/params/b_lo
-- eyesight param c: 0.791  methods.json#/eyesight/44/params/c
-- eyesight param c_hi: 0.943  methods.json#/eyesight/44/params/c_hi
-- eyesight param c_lo: 0.658  methods.json#/eyesight/44/params/c_lo
-- eyesight g: 2.12  methods.json#/eyesight/44/g
+- LOYO weekly WAPE (tier1): 0.269  methods.json#/validation/1130/value
+- LOYO weekly WAPE baseline annual_ratio: 0.261  methods.json#/validation/1130/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 4.001  methods.json#/validation/1130/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1130/years
+- LOYO weekly WAPE (tier2): 0.269  methods.json#/validation/1145/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1145/years
+- reliability_err (tier2): 0.001  methods.json#/validation/1143/value
+- reliability_year_absolute_err (tier2): 0.091  methods.json#/validation/1144/value
+- t1_t2_wape (tier2): 0.147  methods.json#/validation/1147/value
+- eyesight status: "validated"  methods.json#/eyesight/70/status
+- eyesight param a: -4.054  methods.json#/eyesight/70/params/a
+- eyesight param a_hi: -3.92  methods.json#/eyesight/70/params/a_hi
+- eyesight param a_lo: -4.18  methods.json#/eyesight/70/params/a_lo
+- eyesight param b: 2.023  methods.json#/eyesight/70/params/b
+- eyesight param b_hi: 2.178  methods.json#/eyesight/70/params/b_hi
+- eyesight param b_lo: 1.891  methods.json#/eyesight/70/params/b_lo
+- eyesight param c: 0.791  methods.json#/eyesight/70/params/c
+- eyesight param c_hi: 0.943  methods.json#/eyesight/70/params/c_hi
+- eyesight param c_lo: 0.658  methods.json#/eyesight/70/params/c_lo
+- eyesight g: 2.12  methods.json#/eyesight/70/g
 
 ## Haiti (`haiti`)
 
@@ -2941,26 +4113,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  haiti/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  haiti/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  haiti/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.544  methods.json#/validation/785/value
-- LOYO weekly WAPE baseline annual_ratio: 0.655  methods.json#/validation/785/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 8.506  methods.json#/validation/785/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/785/years
-- LOYO weekly WAPE (tier2): 0.575  methods.json#/validation/800/value
-- LOYO years: [2013, 2022]  methods.json#/validation/800/years
-- reliability_err (tier2): 0.0  methods.json#/validation/798/value
-- reliability_year_absolute_err (tier2): 0.113  methods.json#/validation/799/value
-- t1_t2_wape (tier2): 0.288  methods.json#/validation/802/value
-- eyesight status: "validated"  methods.json#/eyesight/45/status
-- eyesight param a: -4.47  methods.json#/eyesight/45/params/a
-- eyesight param a_hi: -4.248  methods.json#/eyesight/45/params/a_hi
-- eyesight param a_lo: -4.752  methods.json#/eyesight/45/params/a_lo
-- eyesight param b: 2.696  methods.json#/eyesight/45/params/b
-- eyesight param b_hi: 3.159  methods.json#/eyesight/45/params/b_hi
-- eyesight param b_lo: 2.359  methods.json#/eyesight/45/params/b_lo
-- eyesight param c: 0.511  methods.json#/eyesight/45/params/c
-- eyesight param c_hi: 0.792  methods.json#/eyesight/45/params/c_hi
-- eyesight param c_lo: 0.352  methods.json#/eyesight/45/params/c_lo
-- eyesight g: 1.969  methods.json#/eyesight/45/g
+- LOYO weekly WAPE (tier1): 0.544  methods.json#/validation/1148/value
+- LOYO weekly WAPE baseline annual_ratio: 0.655  methods.json#/validation/1148/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 8.506  methods.json#/validation/1148/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1148/years
+- LOYO weekly WAPE (tier2): 0.575  methods.json#/validation/1163/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1163/years
+- reliability_err (tier2): 0.0  methods.json#/validation/1161/value
+- reliability_year_absolute_err (tier2): 0.113  methods.json#/validation/1162/value
+- t1_t2_wape (tier2): 0.288  methods.json#/validation/1165/value
+- eyesight status: "validated"  methods.json#/eyesight/71/status
+- eyesight param a: -4.47  methods.json#/eyesight/71/params/a
+- eyesight param a_hi: -4.248  methods.json#/eyesight/71/params/a_hi
+- eyesight param a_lo: -4.752  methods.json#/eyesight/71/params/a_lo
+- eyesight param b: 2.696  methods.json#/eyesight/71/params/b
+- eyesight param b_hi: 3.159  methods.json#/eyesight/71/params/b_hi
+- eyesight param b_lo: 2.359  methods.json#/eyesight/71/params/b_lo
+- eyesight param c: 0.511  methods.json#/eyesight/71/params/c
+- eyesight param c_hi: 0.792  methods.json#/eyesight/71/params/c_hi
+- eyesight param c_lo: 0.352  methods.json#/eyesight/71/params/c_lo
+- eyesight g: 1.969  methods.json#/eyesight/71/g
 
 ## Honduras (`honduras`)
 
@@ -3004,26 +4176,65 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  honduras/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  honduras/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  honduras/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.201  methods.json#/validation/803/value
-- LOYO weekly WAPE baseline annual_ratio: 0.235  methods.json#/validation/803/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 3.818  methods.json#/validation/803/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/803/years
-- LOYO weekly WAPE (tier2): 0.171  methods.json#/validation/818/value
-- LOYO years: [2013, 2022]  methods.json#/validation/818/years
-- reliability_err (tier2): 0.005  methods.json#/validation/816/value
-- reliability_year_absolute_err (tier2): 0.099  methods.json#/validation/817/value
-- t1_t2_wape (tier2): 0.11  methods.json#/validation/820/value
-- eyesight status: "validated"  methods.json#/eyesight/46/status
-- eyesight param a: -3.803  methods.json#/eyesight/46/params/a
-- eyesight param a_hi: -3.653  methods.json#/eyesight/46/params/a_hi
-- eyesight param a_lo: -3.911  methods.json#/eyesight/46/params/a_lo
-- eyesight param b: 2.133  methods.json#/eyesight/46/params/b
-- eyesight param b_hi: 2.247  methods.json#/eyesight/46/params/b_hi
-- eyesight param b_lo: 2.051  methods.json#/eyesight/46/params/b_lo
-- eyesight param c: 0.603  methods.json#/eyesight/46/params/c
-- eyesight param c_hi: 0.663  methods.json#/eyesight/46/params/c_hi
-- eyesight param c_lo: 0.503  methods.json#/eyesight/46/params/c_lo
-- eyesight g: 1.816  methods.json#/eyesight/46/g
+- LOYO weekly WAPE (tier1): 0.201  methods.json#/validation/1166/value
+- LOYO weekly WAPE baseline annual_ratio: 0.235  methods.json#/validation/1166/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.818  methods.json#/validation/1166/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1166/years
+- LOYO weekly WAPE (tier2): 0.171  methods.json#/validation/1181/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1181/years
+- reliability_err (tier2): 0.005  methods.json#/validation/1179/value
+- reliability_year_absolute_err (tier2): 0.099  methods.json#/validation/1180/value
+- t1_t2_wape (tier2): 0.11  methods.json#/validation/1183/value
+- eyesight status: "validated"  methods.json#/eyesight/72/status
+- eyesight param a: -3.803  methods.json#/eyesight/72/params/a
+- eyesight param a_hi: -3.653  methods.json#/eyesight/72/params/a_hi
+- eyesight param a_lo: -3.911  methods.json#/eyesight/72/params/a_lo
+- eyesight param b: 2.133  methods.json#/eyesight/72/params/b
+- eyesight param b_hi: 2.247  methods.json#/eyesight/72/params/b_hi
+- eyesight param b_lo: 2.051  methods.json#/eyesight/72/params/b_lo
+- eyesight param c: 0.603  methods.json#/eyesight/72/params/c
+- eyesight param c_hi: 0.663  methods.json#/eyesight/72/params/c_hi
+- eyesight param c_lo: 0.503  methods.json#/eyesight/72/params/c_lo
+- eyesight g: 1.816  methods.json#/eyesight/72/g
+
+## Hong Kong S.A.R. (`hong-kong`)
+
+- jump multiple (value): 5.34  hong-kong/ruler.json#/jump_multiple/value
+- jump multiple (lo): 2.611  hong-kong/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 12.8  hong-kong/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  hong-kong/ruler.json#/jump_multiple/years
+- ruler sentence: "In Hong Kong S.A.R., VIIRS reports about 5.3 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  hong-kong/ruler.json#/sentence
+- harmonized trend pct_per_decade: -116.603  hong-kong/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -255.175  hong-kong/trend.json#/harmonized/lo
+- harmonized trend hi: -82.001  hong-kong/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  hong-kong/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 34.286  hong-kong/trend.json#/naive/pct_per_decade
+- naive trend lo: -6.703  hong-kong/trend.json#/naive/lo
+- naive trend hi: 71.429  hong-kong/trend.json#/naive/hi
+- naive trend direction: "no_clear_change"  hong-kong/trend.json#/naive/direction
+- trend years: [2003, 2025]  hong-kong/trend.json#/years
+- verdict sentence_id: "artifact_falling"  hong-kong/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 117% per decade (-255 to -82)."  hong-kong/trend.json#/sentence
+- critical weeks: []  hong-kong/season.json#/critical_weeks
+- this week value: null  hong-kong/nowcast.json#/value
+- this week lo: null  hong-kong/nowcast.json#/lo
+- this week hi: null  hong-kong/nowcast.json#/hi
+- this week percentile: null  hong-kong/nowcast.json#/percentile
+- this week status: "unavailable"  hong-kong/nowcast.json#/status
+- this week as_of: null  hong-kong/nowcast.json#/as_of
+- this week window start: null  hong-kong/nowcast.json#/window/start
+- this week window end: null  hong-kong/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  hong-kong/nowcast.json#/baseline_years
+- month to date value: null  hong-kong/nowcast.json#/month_to_date/value
+- month to date median: null  hong-kong/nowcast.json#/month_to_date/median
+- month to date ratio: null  hong-kong/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  hong-kong/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  hong-kong/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.654  methods.json#/validation/1184/value
+- LOYO weekly WAPE baseline annual_ratio: 1.599  methods.json#/validation/1184/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 4.154  methods.json#/validation/1184/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1184/years
+- eyesight status: "absent"  methods.json#/eyesight/73/status
 
 ## Hungary (`hungary`)
 
@@ -3076,26 +4287,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  hungary/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  hungary/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  hungary/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.455  methods.json#/validation/821/value
-- LOYO weekly WAPE baseline annual_ratio: 0.531  methods.json#/validation/821/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 3.453  methods.json#/validation/821/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/821/years
-- LOYO weekly WAPE (tier2): 0.518  methods.json#/validation/836/value
-- LOYO years: [2013, 2022]  methods.json#/validation/836/years
-- reliability_err (tier2): 0.006  methods.json#/validation/834/value
-- reliability_year_absolute_err (tier2): 0.163  methods.json#/validation/835/value
-- t1_t2_wape (tier2): 0.279  methods.json#/validation/838/value
-- eyesight status: "exploratory"  methods.json#/eyesight/47/status
-- eyesight param a: -3.989  methods.json#/eyesight/47/params/a
-- eyesight param a_hi: -3.565  methods.json#/eyesight/47/params/a_hi
-- eyesight param a_lo: -4.228  methods.json#/eyesight/47/params/a_lo
-- eyesight param b: 2.217  methods.json#/eyesight/47/params/b
-- eyesight param b_hi: 2.936  methods.json#/eyesight/47/params/b_hi
-- eyesight param b_lo: 2.066  methods.json#/eyesight/47/params/b_lo
-- eyesight param c: 0.963  methods.json#/eyesight/47/params/c
-- eyesight param c_hi: 1.0  methods.json#/eyesight/47/params/c_hi
-- eyesight param c_lo: 0.5  methods.json#/eyesight/47/params/c_lo
-- eyesight g: 2.15  methods.json#/eyesight/47/g
+- LOYO weekly WAPE (tier1): 0.455  methods.json#/validation/1197/value
+- LOYO weekly WAPE baseline annual_ratio: 0.531  methods.json#/validation/1197/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.453  methods.json#/validation/1197/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1197/years
+- LOYO weekly WAPE (tier2): 0.518  methods.json#/validation/1212/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1212/years
+- reliability_err (tier2): 0.006  methods.json#/validation/1210/value
+- reliability_year_absolute_err (tier2): 0.163  methods.json#/validation/1211/value
+- t1_t2_wape (tier2): 0.279  methods.json#/validation/1214/value
+- eyesight status: "exploratory"  methods.json#/eyesight/74/status
+- eyesight param a: -3.989  methods.json#/eyesight/74/params/a
+- eyesight param a_hi: -3.565  methods.json#/eyesight/74/params/a_hi
+- eyesight param a_lo: -4.228  methods.json#/eyesight/74/params/a_lo
+- eyesight param b: 2.217  methods.json#/eyesight/74/params/b
+- eyesight param b_hi: 2.936  methods.json#/eyesight/74/params/b_hi
+- eyesight param b_lo: 2.066  methods.json#/eyesight/74/params/b_lo
+- eyesight param c: 0.963  methods.json#/eyesight/74/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/74/params/c_hi
+- eyesight param c_lo: 0.5  methods.json#/eyesight/74/params/c_lo
+- eyesight g: 2.15  methods.json#/eyesight/74/g
 
 ## Iceland (`iceland`)
 
@@ -3130,11 +4341,170 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  iceland/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  iceland/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  iceland/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 2.059  methods.json#/validation/839/value
-- LOYO weekly WAPE baseline annual_ratio: 2.019  methods.json#/validation/839/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 3.661  methods.json#/validation/839/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/839/years
-- eyesight status: "absent"  methods.json#/eyesight/48/status
+- LOYO weekly WAPE (tier1): 2.059  methods.json#/validation/1215/value
+- LOYO weekly WAPE baseline annual_ratio: 2.019  methods.json#/validation/1215/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.661  methods.json#/validation/1215/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1215/years
+- eyesight status: "absent"  methods.json#/eyesight/75/status
+
+## Iraq (`iraq`)
+
+- jump multiple (value): 5.335  iraq/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.882  iraq/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 8.268  iraq/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  iraq/ruler.json#/jump_multiple/years
+- ruler sentence: "In Iraq, VIIRS reports about 5.3 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  iraq/ruler.json#/sentence
+- harmonized trend pct_per_decade: 46.897  iraq/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: 29.237  iraq/trend.json#/harmonized/lo
+- harmonized trend hi: 78.396  iraq/trend.json#/harmonized/hi
+- harmonized trend direction: "rising"  iraq/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 70.527  iraq/trend.json#/naive/pct_per_decade
+- naive trend lo: 55.407  iraq/trend.json#/naive/lo
+- naive trend hi: 412.841  iraq/trend.json#/naive/hi
+- naive trend direction: "rising"  iraq/trend.json#/naive/direction
+- trend years: [2003, 2025]  iraq/trend.json#/years
+- verdict sentence_id: "artifact_rising"  iraq/trend.json#/sentence_id
+- verdict sentence: "Burning activity did rise, by about 47% per decade (29 to 78). The raw record overstates it at 71%."  iraq/trend.json#/sentence
+- critical weeks: [2, 3, 4, 5, 6, 7, 8, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 45, 46, 47, 48, 49]  iraq/season.json#/critical_weeks
+- window w1 label: "mid-May to early-December"  iraq/season.json#/windows/0/label
+- window w1 start_week: 20  iraq/season.json#/windows/0/start_week
+- window w1 peak_week: 36  iraq/season.json#/windows/0/peak_week
+- window w1 end_week: 49  iraq/season.json#/windows/0/end_week
+- window w1 share: 0.687  iraq/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -1.0  iraq/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -8.342  iraq/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 3.763  iraq/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the mid-May to early-December season."  iraq/season.json#/windows/0/sentence
+- this week value: null  iraq/nowcast.json#/value
+- this week lo: null  iraq/nowcast.json#/lo
+- this week hi: null  iraq/nowcast.json#/hi
+- this week percentile: null  iraq/nowcast.json#/percentile
+- this week status: "unavailable"  iraq/nowcast.json#/status
+- this week as_of: null  iraq/nowcast.json#/as_of
+- this week window start: null  iraq/nowcast.json#/window/start
+- this week window end: null  iraq/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  iraq/nowcast.json#/baseline_years
+- month to date value: null  iraq/nowcast.json#/month_to_date/value
+- month to date median: null  iraq/nowcast.json#/month_to_date/median
+- month to date ratio: null  iraq/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  iraq/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  iraq/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.287  methods.json#/validation/1228/value
+- LOYO weekly WAPE baseline annual_ratio: 0.326  methods.json#/validation/1228/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.367  methods.json#/validation/1228/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1228/years
+- LOYO weekly WAPE (tier2): 0.31  methods.json#/validation/1243/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1243/years
+- reliability_err (tier2): 0.005  methods.json#/validation/1241/value
+- reliability_year_absolute_err (tier2): 0.182  methods.json#/validation/1242/value
+- t1_t2_wape (tier2): 0.241  methods.json#/validation/1245/value
+- eyesight status: "validated"  methods.json#/eyesight/76/status
+- eyesight param a: -4.269  methods.json#/eyesight/76/params/a
+- eyesight param a_hi: -4.107  methods.json#/eyesight/76/params/a_hi
+- eyesight param a_lo: -4.448  methods.json#/eyesight/76/params/a_lo
+- eyesight param b: 1.859  methods.json#/eyesight/76/params/b
+- eyesight param b_hi: 2.092  methods.json#/eyesight/76/params/b_hi
+- eyesight param b_lo: 1.64  methods.json#/eyesight/76/params/b_lo
+- eyesight param c: 0.931  methods.json#/eyesight/76/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/76/params/c_hi
+- eyesight param c_lo: 0.79  methods.json#/eyesight/76/params/c_lo
+- eyesight g: 2.038  methods.json#/eyesight/76/g
+
+## Ireland (`ireland`)
+
+- jump multiple (value): 5.64  ireland/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.952  ireland/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 11.348  ireland/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  ireland/ruler.json#/jump_multiple/years
+- ruler sentence: "In Ireland, VIIRS reports about 5.6 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  ireland/ruler.json#/sentence
+- harmonized trend pct_per_decade: -45.113  ireland/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -151.345  ireland/trend.json#/harmonized/lo
+- harmonized trend hi: 0.0  ireland/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  ireland/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 51.55  ireland/trend.json#/naive/pct_per_decade
+- naive trend lo: 13.953  ireland/trend.json#/naive/lo
+- naive trend hi: 99.439  ireland/trend.json#/naive/hi
+- naive trend direction: "rising"  ireland/trend.json#/naive/direction
+- trend years: [2003, 2025]  ireland/trend.json#/years
+- verdict sentence_id: "artifact_flat"  ireland/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 52% per decade. After correcting for the sensor change, there is no clear change (-151 to 0% per decade)."  ireland/trend.json#/sentence
+- critical weeks: [15, 16, 17, 20, 21, 22]  ireland/season.json#/critical_weeks
+- window w1 label: "early to late April"  ireland/season.json#/windows/0/label
+- window w1 start_week: 15  ireland/season.json#/windows/0/start_week
+- window w1 peak_week: 15  ireland/season.json#/windows/0/peak_week
+- window w1 end_week: 17  ireland/season.json#/windows/0/end_week
+- window w1 share: 0.53  ireland/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 1.667  ireland/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -21.429  ireland/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 20.0  ireland/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early to late April season."  ireland/season.json#/windows/0/sentence
+- window w2 label: "mid-May to early-June"  ireland/season.json#/windows/1/label
+- window w2 start_week: 20  ireland/season.json#/windows/1/start_week
+- window w2 peak_week: 20  ireland/season.json#/windows/1/peak_week
+- window w2 end_week: 22  ireland/season.json#/windows/1/end_week
+- window w2 share: 0.363  ireland/season.json#/windows/1/share
+- window w2 start shift days per decade (value): 7.5  ireland/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): 0.0  ireland/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): 25.714  ireland/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "No clear shift in the timing of the mid-May to early-June season."  ireland/season.json#/windows/1/sentence
+- this week value: null  ireland/nowcast.json#/value
+- this week lo: null  ireland/nowcast.json#/lo
+- this week hi: null  ireland/nowcast.json#/hi
+- this week percentile: null  ireland/nowcast.json#/percentile
+- this week status: "unavailable"  ireland/nowcast.json#/status
+- this week as_of: null  ireland/nowcast.json#/as_of
+- this week window start: null  ireland/nowcast.json#/window/start
+- this week window end: null  ireland/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  ireland/nowcast.json#/baseline_years
+- month to date value: null  ireland/nowcast.json#/month_to_date/value
+- month to date median: null  ireland/nowcast.json#/month_to_date/median
+- month to date ratio: null  ireland/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  ireland/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  ireland/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.771  methods.json#/validation/1246/value
+- LOYO weekly WAPE baseline annual_ratio: 0.814  methods.json#/validation/1246/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 4.63  methods.json#/validation/1246/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1246/years
+- eyesight status: "absent"  methods.json#/eyesight/77/status
+
+## Isle of Man (`isle-of-man`)
+
+- jump multiple (value): 4.0  isle-of-man/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.0  isle-of-man/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 5.0  isle-of-man/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  isle-of-man/ruler.json#/jump_multiple/years
+- ruler sentence: "In Isle of Man, VIIRS reports about 4.0 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  isle-of-man/ruler.json#/sentence
+- harmonized trend pct_per_decade: null  isle-of-man/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: null  isle-of-man/trend.json#/harmonized/lo
+- harmonized trend hi: null  isle-of-man/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  isle-of-man/trend.json#/harmonized/direction
+- naive trend pct_per_decade: null  isle-of-man/trend.json#/naive/pct_per_decade
+- naive trend lo: null  isle-of-man/trend.json#/naive/lo
+- naive trend hi: null  isle-of-man/trend.json#/naive/hi
+- naive trend direction: "no_clear_change"  isle-of-man/trend.json#/naive/direction
+- trend years: [2003, 2025]  isle-of-man/trend.json#/years
+- verdict sentence_id: "unclear"  isle-of-man/trend.json#/sentence_id
+- verdict sentence: "Trend unavailable: the median annual activity is zero."  isle-of-man/trend.json#/sentence
+- critical weeks: []  isle-of-man/season.json#/critical_weeks
+- this week value: null  isle-of-man/nowcast.json#/value
+- this week lo: null  isle-of-man/nowcast.json#/lo
+- this week hi: null  isle-of-man/nowcast.json#/hi
+- this week percentile: null  isle-of-man/nowcast.json#/percentile
+- this week status: "unavailable"  isle-of-man/nowcast.json#/status
+- this week as_of: null  isle-of-man/nowcast.json#/as_of
+- this week window start: null  isle-of-man/nowcast.json#/window/start
+- this week window end: null  isle-of-man/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  isle-of-man/nowcast.json#/baseline_years
+- month to date value: null  isle-of-man/nowcast.json#/month_to_date/value
+- month to date median: null  isle-of-man/nowcast.json#/month_to_date/median
+- month to date ratio: null  isle-of-man/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  isle-of-man/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  isle-of-man/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 2.142  methods.json#/validation/1259/value
+- LOYO weekly WAPE baseline annual_ratio: 2.118  methods.json#/validation/1259/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 14.0  methods.json#/validation/1259/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1259/years
+- eyesight status: "absent"  methods.json#/eyesight/78/status
 
 ## Israel (`israel`)
 
@@ -3178,11 +4548,11 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  israel/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  israel/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  israel/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.93  methods.json#/validation/852/value
-- LOYO weekly WAPE baseline annual_ratio: 0.951  methods.json#/validation/852/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 4.04  methods.json#/validation/852/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/852/years
-- eyesight status: "absent"  methods.json#/eyesight/49/status
+- LOYO weekly WAPE (tier1): 0.93  methods.json#/validation/1272/value
+- LOYO weekly WAPE baseline annual_ratio: 0.951  methods.json#/validation/1272/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 4.04  methods.json#/validation/1272/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1272/years
+- eyesight status: "absent"  methods.json#/eyesight/79/status
 
 ## Italy (`italy`)
 
@@ -3226,26 +4596,79 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  italy/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  italy/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  italy/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.311  methods.json#/validation/865/value
-- LOYO weekly WAPE baseline annual_ratio: 0.33  methods.json#/validation/865/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 3.19  methods.json#/validation/865/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/865/years
-- LOYO weekly WAPE (tier2): 0.361  methods.json#/validation/880/value
-- LOYO years: [2013, 2022]  methods.json#/validation/880/years
-- reliability_err (tier2): 0.005  methods.json#/validation/878/value
-- reliability_year_absolute_err (tier2): 0.098  methods.json#/validation/879/value
-- t1_t2_wape (tier2): 0.331  methods.json#/validation/882/value
-- eyesight status: "exploratory"  methods.json#/eyesight/50/status
-- eyesight param a: -4.494  methods.json#/eyesight/50/params/a
-- eyesight param a_hi: -4.327  methods.json#/eyesight/50/params/a_hi
-- eyesight param a_lo: -4.622  methods.json#/eyesight/50/params/a_lo
-- eyesight param b: 2.664  methods.json#/eyesight/50/params/b
-- eyesight param b_hi: 2.796  methods.json#/eyesight/50/params/b_hi
-- eyesight param b_lo: 2.583  methods.json#/eyesight/50/params/b_lo
-- eyesight param c: 0.772  methods.json#/eyesight/50/params/c
-- eyesight param c_hi: 0.825  methods.json#/eyesight/50/params/c_hi
-- eyesight param c_lo: 0.65  methods.json#/eyesight/50/params/c_lo
-- eyesight g: 2.398  methods.json#/eyesight/50/g
+- LOYO weekly WAPE (tier1): 0.311  methods.json#/validation/1285/value
+- LOYO weekly WAPE baseline annual_ratio: 0.33  methods.json#/validation/1285/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.19  methods.json#/validation/1285/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1285/years
+- LOYO weekly WAPE (tier2): 0.361  methods.json#/validation/1300/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1300/years
+- reliability_err (tier2): 0.005  methods.json#/validation/1298/value
+- reliability_year_absolute_err (tier2): 0.098  methods.json#/validation/1299/value
+- t1_t2_wape (tier2): 0.331  methods.json#/validation/1302/value
+- eyesight status: "exploratory"  methods.json#/eyesight/80/status
+- eyesight param a: -4.494  methods.json#/eyesight/80/params/a
+- eyesight param a_hi: -4.327  methods.json#/eyesight/80/params/a_hi
+- eyesight param a_lo: -4.622  methods.json#/eyesight/80/params/a_lo
+- eyesight param b: 2.664  methods.json#/eyesight/80/params/b
+- eyesight param b_hi: 2.796  methods.json#/eyesight/80/params/b_hi
+- eyesight param b_lo: 2.583  methods.json#/eyesight/80/params/b_lo
+- eyesight param c: 0.772  methods.json#/eyesight/80/params/c
+- eyesight param c_hi: 0.825  methods.json#/eyesight/80/params/c_hi
+- eyesight param c_lo: 0.65  methods.json#/eyesight/80/params/c_lo
+- eyesight g: 2.398  methods.json#/eyesight/80/g
+
+## Jamaica (`jamaica`)
+
+- jump multiple (value): 5.816  jamaica/ruler.json#/jump_multiple/value
+- jump multiple (lo): 4.94  jamaica/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 7.012  jamaica/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  jamaica/ruler.json#/jump_multiple/years
+- ruler sentence: "In Jamaica, VIIRS reports about 5.8 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  jamaica/ruler.json#/sentence
+- harmonized trend pct_per_decade: -24.666  jamaica/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -48.144  jamaica/trend.json#/harmonized/lo
+- harmonized trend hi: 0.0  jamaica/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  jamaica/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 51.173  jamaica/trend.json#/naive/pct_per_decade
+- naive trend lo: 30.156  jamaica/trend.json#/naive/lo
+- naive trend hi: 129.824  jamaica/trend.json#/naive/hi
+- naive trend direction: "rising"  jamaica/trend.json#/naive/direction
+- trend years: [2003, 2025]  jamaica/trend.json#/years
+- verdict sentence_id: "unclear"  jamaica/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (-48 to 0% per decade)."  jamaica/trend.json#/sentence
+- critical weeks: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]  jamaica/season.json#/critical_weeks
+- window w1 label: "early-January to late-April"  jamaica/season.json#/windows/0/label
+- window w1 start_week: 2  jamaica/season.json#/windows/0/start_week
+- window w1 peak_week: 9  jamaica/season.json#/windows/0/peak_week
+- window w1 end_week: 17  jamaica/season.json#/windows/0/end_week
+- window w1 share: 0.82  jamaica/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -6.0  jamaica/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -11.25  jamaica/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 0.0  jamaica/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-January to late-April season."  jamaica/season.json#/windows/0/sentence
+- this week value: null  jamaica/nowcast.json#/value
+- this week lo: null  jamaica/nowcast.json#/lo
+- this week hi: null  jamaica/nowcast.json#/hi
+- this week percentile: null  jamaica/nowcast.json#/percentile
+- this week status: "unavailable"  jamaica/nowcast.json#/status
+- this week as_of: null  jamaica/nowcast.json#/as_of
+- this week window start: null  jamaica/nowcast.json#/window/start
+- this week window end: null  jamaica/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  jamaica/nowcast.json#/baseline_years
+- month to date value: null  jamaica/nowcast.json#/month_to_date/value
+- month to date median: null  jamaica/nowcast.json#/month_to_date/median
+- month to date ratio: null  jamaica/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  jamaica/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  jamaica/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.564  methods.json#/validation/1303/value
+- LOYO weekly WAPE baseline annual_ratio: 0.575  methods.json#/validation/1303/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 5.375  methods.json#/validation/1303/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1303/years
+- LOYO weekly WAPE (tier2): 0.545  methods.json#/validation/1318/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1318/years
+- reliability_err (tier2): 0.003  methods.json#/validation/1316/value
+- reliability_year_absolute_err (tier2): 0.155  methods.json#/validation/1317/value
+- t1_t2_wape (tier2): 0.285  methods.json#/validation/1320/value
+- eyesight status: "absent"  methods.json#/eyesight/81/status
 
 ## Japan (`japan`)
 
@@ -3298,26 +4721,137 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  japan/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  japan/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  japan/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.655  methods.json#/validation/883/value
-- LOYO weekly WAPE baseline annual_ratio: 0.782  methods.json#/validation/883/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 1.779  methods.json#/validation/883/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/883/years
-- LOYO weekly WAPE (tier2): 0.901  methods.json#/validation/898/value
-- LOYO years: [2013, 2022]  methods.json#/validation/898/years
-- reliability_err (tier2): 0.0  methods.json#/validation/896/value
-- reliability_year_absolute_err (tier2): 0.181  methods.json#/validation/897/value
-- t1_t2_wape (tier2): 0.651  methods.json#/validation/900/value
-- eyesight status: "exploratory"  methods.json#/eyesight/51/status
-- eyesight param a: -5.267  methods.json#/eyesight/51/params/a
-- eyesight param a_hi: -4.906  methods.json#/eyesight/51/params/a_hi
-- eyesight param a_lo: -5.729  methods.json#/eyesight/51/params/a_lo
-- eyesight param b: 3.333  methods.json#/eyesight/51/params/b
-- eyesight param b_hi: 3.856  methods.json#/eyesight/51/params/b_hi
-- eyesight param b_lo: 2.843  methods.json#/eyesight/51/params/b_lo
-- eyesight param c: 0.587  methods.json#/eyesight/51/params/c
-- eyesight param c_hi: 0.707  methods.json#/eyesight/51/params/c_hi
-- eyesight param c_lo: 0.477  methods.json#/eyesight/51/params/c_lo
-- eyesight g: 7.833  methods.json#/eyesight/51/g
+- LOYO weekly WAPE (tier1): 0.655  methods.json#/validation/1321/value
+- LOYO weekly WAPE baseline annual_ratio: 0.782  methods.json#/validation/1321/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.779  methods.json#/validation/1321/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1321/years
+- LOYO weekly WAPE (tier2): 0.901  methods.json#/validation/1336/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1336/years
+- reliability_err (tier2): 0.0  methods.json#/validation/1334/value
+- reliability_year_absolute_err (tier2): 0.181  methods.json#/validation/1335/value
+- t1_t2_wape (tier2): 0.651  methods.json#/validation/1338/value
+- eyesight status: "exploratory"  methods.json#/eyesight/82/status
+- eyesight param a: -5.267  methods.json#/eyesight/82/params/a
+- eyesight param a_hi: -4.906  methods.json#/eyesight/82/params/a_hi
+- eyesight param a_lo: -5.729  methods.json#/eyesight/82/params/a_lo
+- eyesight param b: 3.333  methods.json#/eyesight/82/params/b
+- eyesight param b_hi: 3.856  methods.json#/eyesight/82/params/b_hi
+- eyesight param b_lo: 2.843  methods.json#/eyesight/82/params/b_lo
+- eyesight param c: 0.587  methods.json#/eyesight/82/params/c
+- eyesight param c_hi: 0.707  methods.json#/eyesight/82/params/c_hi
+- eyesight param c_lo: 0.477  methods.json#/eyesight/82/params/c_lo
+- eyesight g: 7.833  methods.json#/eyesight/82/g
+
+## Jordan (`jordan`)
+
+- jump multiple (value): 9.033  jordan/ruler.json#/jump_multiple/value
+- jump multiple (lo): 5.368  jordan/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 18.157  jordan/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  jordan/ruler.json#/jump_multiple/years
+- ruler sentence: "In Jordan, VIIRS reports about 9.0 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  jordan/ruler.json#/sentence
+- harmonized trend pct_per_decade: 83.333  jordan/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: 47.619  jordan/trend.json#/harmonized/lo
+- harmonized trend hi: 143.832  jordan/trend.json#/harmonized/hi
+- harmonized trend direction: "rising"  jordan/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 87.139  jordan/trend.json#/naive/pct_per_decade
+- naive trend lo: 62.414  jordan/trend.json#/naive/lo
+- naive trend hi: 802.724  jordan/trend.json#/naive/hi
+- naive trend direction: "rising"  jordan/trend.json#/naive/direction
+- trend years: [2003, 2025]  jordan/trend.json#/years
+- verdict sentence_id: "agree"  jordan/trend.json#/sentence_id
+- verdict sentence: "Raw and corrected records agree: satellite-detected burning activity rose, about 83% per decade (48 to 144)."  jordan/trend.json#/sentence
+- critical weeks: []  jordan/season.json#/critical_weeks
+- this week value: null  jordan/nowcast.json#/value
+- this week lo: null  jordan/nowcast.json#/lo
+- this week hi: null  jordan/nowcast.json#/hi
+- this week percentile: null  jordan/nowcast.json#/percentile
+- this week status: "unavailable"  jordan/nowcast.json#/status
+- this week as_of: null  jordan/nowcast.json#/as_of
+- this week window start: null  jordan/nowcast.json#/window/start
+- this week window end: null  jordan/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  jordan/nowcast.json#/baseline_years
+- month to date value: null  jordan/nowcast.json#/month_to_date/value
+- month to date median: null  jordan/nowcast.json#/month_to_date/median
+- month to date ratio: null  jordan/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  jordan/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  jordan/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.449  methods.json#/validation/1339/value
+- LOYO weekly WAPE baseline annual_ratio: 1.518  methods.json#/validation/1339/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 7.436  methods.json#/validation/1339/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1339/years
+- eyesight status: "absent"  methods.json#/eyesight/83/status
+
+## Kazakhstan (`kazakhstan`)
+
+- jump multiple (value): 3.385  kazakhstan/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.168  kazakhstan/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 4.386  kazakhstan/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  kazakhstan/ruler.json#/jump_multiple/years
+- ruler sentence: "In Kazakhstan, VIIRS reports about 3.4 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  kazakhstan/ruler.json#/sentence
+- harmonized trend pct_per_decade: -76.169  kazakhstan/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -105.111  kazakhstan/trend.json#/harmonized/lo
+- harmonized trend hi: -47.404  kazakhstan/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  kazakhstan/trend.json#/harmonized/direction
+- naive trend pct_per_decade: -8.319  kazakhstan/trend.json#/naive/pct_per_decade
+- naive trend lo: -32.907  kazakhstan/trend.json#/naive/lo
+- naive trend hi: 30.68  kazakhstan/trend.json#/naive/hi
+- naive trend direction: "no_clear_change"  kazakhstan/trend.json#/naive/direction
+- trend years: [2003, 2025]  kazakhstan/trend.json#/years
+- verdict sentence_id: "artifact_falling"  kazakhstan/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 76% per decade (-105 to -47)."  kazakhstan/trend.json#/sentence
+- critical weeks: [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43]  kazakhstan/season.json#/critical_weeks
+- window w1 label: "mid-March to mid-May"  kazakhstan/season.json#/windows/0/label
+- window w1 start_week: 11  kazakhstan/season.json#/windows/0/start_week
+- window w1 peak_week: 15  kazakhstan/season.json#/windows/0/peak_week
+- window w1 end_week: 20  kazakhstan/season.json#/windows/0/end_week
+- window w1 share: 0.467  kazakhstan/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -2.5  kazakhstan/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -7.5  kazakhstan/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 2.31  kazakhstan/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the mid-March to mid-May season."  kazakhstan/season.json#/windows/0/sentence
+- window w2 label: "late-July to late-October"  kazakhstan/season.json#/windows/1/label
+- window w2 start_week: 31  kazakhstan/season.json#/windows/1/start_week
+- window w2 peak_week: 41  kazakhstan/season.json#/windows/1/peak_week
+- window w2 end_week: 43  kazakhstan/season.json#/windows/1/end_week
+- window w2 share: 0.345  kazakhstan/season.json#/windows/1/share
+- window w2 start shift days per decade (value): -5.0  kazakhstan/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -13.75  kazakhstan/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): 1.677  kazakhstan/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "No clear shift in the timing of the late-July to late-October season."  kazakhstan/season.json#/windows/1/sentence
+- this week value: null  kazakhstan/nowcast.json#/value
+- this week lo: null  kazakhstan/nowcast.json#/lo
+- this week hi: null  kazakhstan/nowcast.json#/hi
+- this week percentile: null  kazakhstan/nowcast.json#/percentile
+- this week status: "unavailable"  kazakhstan/nowcast.json#/status
+- this week as_of: null  kazakhstan/nowcast.json#/as_of
+- this week window start: null  kazakhstan/nowcast.json#/window/start
+- this week window end: null  kazakhstan/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  kazakhstan/nowcast.json#/baseline_years
+- month to date value: null  kazakhstan/nowcast.json#/month_to_date/value
+- month to date median: null  kazakhstan/nowcast.json#/month_to_date/median
+- month to date ratio: null  kazakhstan/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  kazakhstan/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  kazakhstan/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.134  methods.json#/validation/1352/value
+- LOYO weekly WAPE baseline annual_ratio: 0.186  methods.json#/validation/1352/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.451  methods.json#/validation/1352/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1352/years
+- LOYO weekly WAPE (tier2): 0.173  methods.json#/validation/1367/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1367/years
+- reliability_err (tier2): 0.001  methods.json#/validation/1365/value
+- reliability_year_absolute_err (tier2): 0.045  methods.json#/validation/1366/value
+- t1_t2_wape (tier2): 0.159  methods.json#/validation/1369/value
+- eyesight status: "exploratory"  methods.json#/eyesight/84/status
+- eyesight param a: -3.059  methods.json#/eyesight/84/params/a
+- eyesight param a_hi: -3.012  methods.json#/eyesight/84/params/a_hi
+- eyesight param a_lo: -3.119  methods.json#/eyesight/84/params/a_lo
+- eyesight param b: 1.903  methods.json#/eyesight/84/params/b
+- eyesight param b_hi: 1.96  methods.json#/eyesight/84/params/b_hi
+- eyesight param b_lo: 1.862  methods.json#/eyesight/84/params/b_lo
+- eyesight param c: 0.891  methods.json#/eyesight/84/params/c
+- eyesight param c_hi: 0.912  methods.json#/eyesight/84/params/c_hi
+- eyesight param c_lo: 0.866  methods.json#/eyesight/84/params/c_lo
+- eyesight g: 1.339  methods.json#/eyesight/84/g
 
 ## Kenya (`kenya`)
 
@@ -3370,26 +4904,89 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  kenya/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  kenya/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  kenya/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.257  methods.json#/validation/901/value
-- LOYO weekly WAPE baseline annual_ratio: 0.258  methods.json#/validation/901/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 5.815  methods.json#/validation/901/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/901/years
-- LOYO weekly WAPE (tier2): 0.217  methods.json#/validation/916/value
-- LOYO years: [2013, 2022]  methods.json#/validation/916/years
-- reliability_err (tier2): 0.002  methods.json#/validation/914/value
-- reliability_year_absolute_err (tier2): 0.11  methods.json#/validation/915/value
-- t1_t2_wape (tier2): 0.173  methods.json#/validation/918/value
-- eyesight status: "validated"  methods.json#/eyesight/52/status
-- eyesight param a: -4.837  methods.json#/eyesight/52/params/a
-- eyesight param a_hi: -4.744  methods.json#/eyesight/52/params/a_hi
-- eyesight param a_lo: -4.949  methods.json#/eyesight/52/params/a_lo
-- eyesight param b: 2.611  methods.json#/eyesight/52/params/b
-- eyesight param b_hi: 2.68  methods.json#/eyesight/52/params/b_hi
-- eyesight param b_lo: 2.539  methods.json#/eyesight/52/params/b_lo
-- eyesight param c: 0.653  methods.json#/eyesight/52/params/c
-- eyesight param c_hi: 0.71  methods.json#/eyesight/52/params/c_hi
-- eyesight param c_lo: 0.606  methods.json#/eyesight/52/params/c_lo
-- eyesight g: 1.752  methods.json#/eyesight/52/g
+- LOYO weekly WAPE (tier1): 0.257  methods.json#/validation/1370/value
+- LOYO weekly WAPE baseline annual_ratio: 0.258  methods.json#/validation/1370/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 5.815  methods.json#/validation/1370/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1370/years
+- LOYO weekly WAPE (tier2): 0.217  methods.json#/validation/1385/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1385/years
+- reliability_err (tier2): 0.002  methods.json#/validation/1383/value
+- reliability_year_absolute_err (tier2): 0.11  methods.json#/validation/1384/value
+- t1_t2_wape (tier2): 0.173  methods.json#/validation/1387/value
+- eyesight status: "validated"  methods.json#/eyesight/85/status
+- eyesight param a: -4.837  methods.json#/eyesight/85/params/a
+- eyesight param a_hi: -4.744  methods.json#/eyesight/85/params/a_hi
+- eyesight param a_lo: -4.949  methods.json#/eyesight/85/params/a_lo
+- eyesight param b: 2.611  methods.json#/eyesight/85/params/b
+- eyesight param b_hi: 2.68  methods.json#/eyesight/85/params/b_hi
+- eyesight param b_lo: 2.539  methods.json#/eyesight/85/params/b_lo
+- eyesight param c: 0.653  methods.json#/eyesight/85/params/c
+- eyesight param c_hi: 0.71  methods.json#/eyesight/85/params/c_hi
+- eyesight param c_lo: 0.606  methods.json#/eyesight/85/params/c_lo
+- eyesight g: 1.752  methods.json#/eyesight/85/g
+
+## Kosovo (`kosovo`)
+
+- jump multiple (value): 4.316  kosovo/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.588  kosovo/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 5.5  kosovo/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  kosovo/ruler.json#/jump_multiple/years
+- ruler sentence: "In Kosovo, VIIRS reports about 4.3 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  kosovo/ruler.json#/sentence
+- harmonized trend pct_per_decade: 18.137  kosovo/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -2.489  kosovo/trend.json#/harmonized/lo
+- harmonized trend hi: 32.763  kosovo/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  kosovo/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 77.049  kosovo/trend.json#/naive/pct_per_decade
+- naive trend lo: 37.555  kosovo/trend.json#/naive/lo
+- naive trend hi: 111.927  kosovo/trend.json#/naive/hi
+- naive trend direction: "rising"  kosovo/trend.json#/naive/direction
+- trend years: [2003, 2025]  kosovo/trend.json#/years
+- verdict sentence_id: "artifact_flat"  kosovo/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 77% per decade. After correcting for the sensor change, there is no clear change (-2 to 33% per decade)."  kosovo/trend.json#/sentence
+- critical weeks: [27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37]  kosovo/season.json#/critical_weeks
+- window w1 label: "early-July to mid-September"  kosovo/season.json#/windows/0/label
+- window w1 start_week: 27  kosovo/season.json#/windows/0/start_week
+- window w1 peak_week: 30  kosovo/season.json#/windows/0/peak_week
+- window w1 end_week: 37  kosovo/season.json#/windows/0/end_week
+- window w1 share: 0.808  kosovo/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 6.0  kosovo/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -2.0  kosovo/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 11.667  kosovo/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-July to mid-September season."  kosovo/season.json#/windows/0/sentence
+- this week value: null  kosovo/nowcast.json#/value
+- this week lo: null  kosovo/nowcast.json#/lo
+- this week hi: null  kosovo/nowcast.json#/hi
+- this week percentile: null  kosovo/nowcast.json#/percentile
+- this week status: "unavailable"  kosovo/nowcast.json#/status
+- this week as_of: null  kosovo/nowcast.json#/as_of
+- this week window start: null  kosovo/nowcast.json#/window/start
+- this week window end: null  kosovo/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  kosovo/nowcast.json#/baseline_years
+- month to date value: null  kosovo/nowcast.json#/month_to_date/value
+- month to date median: null  kosovo/nowcast.json#/month_to_date/median
+- month to date ratio: null  kosovo/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  kosovo/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  kosovo/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.536  methods.json#/validation/1388/value
+- LOYO weekly WAPE baseline annual_ratio: 0.573  methods.json#/validation/1388/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.245  methods.json#/validation/1388/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1388/years
+- LOYO weekly WAPE (tier2): 0.514  methods.json#/validation/1403/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1403/years
+- reliability_err (tier2): 0.007  methods.json#/validation/1401/value
+- reliability_year_absolute_err (tier2): 0.284  methods.json#/validation/1402/value
+- t1_t2_wape (tier2): 0.374  methods.json#/validation/1405/value
+- eyesight status: "validated"  methods.json#/eyesight/86/status
+- eyesight param a: -4.175  methods.json#/eyesight/86/params/a
+- eyesight param a_hi: -3.904  methods.json#/eyesight/86/params/a_hi
+- eyesight param a_lo: -4.538  methods.json#/eyesight/86/params/a_lo
+- eyesight param b: 2.643  methods.json#/eyesight/86/params/b
+- eyesight param b_hi: 3.064  methods.json#/eyesight/86/params/b_hi
+- eyesight param b_lo: 2.316  methods.json#/eyesight/86/params/b_lo
+- eyesight param c: 0.962  methods.json#/eyesight/86/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/86/params/c_hi
+- eyesight param c_lo: 0.773  methods.json#/eyesight/86/params/c_lo
+- eyesight g: 1.66  methods.json#/eyesight/86/g
 
 ## Kuwait (`kuwait`)
 
@@ -3433,26 +5030,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  kuwait/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  kuwait/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  kuwait/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.926  methods.json#/validation/919/value
-- LOYO weekly WAPE baseline annual_ratio: 1.029  methods.json#/validation/919/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 3.955  methods.json#/validation/919/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/919/years
-- LOYO weekly WAPE (tier2): 1.026  methods.json#/validation/934/value
-- LOYO years: [2013, 2022]  methods.json#/validation/934/years
-- reliability_err (tier2): 0.003  methods.json#/validation/932/value
-- reliability_year_absolute_err (tier2): 0.318  methods.json#/validation/933/value
-- t1_t2_wape (tier2): 0.464  methods.json#/validation/936/value
-- eyesight status: "exploratory"  methods.json#/eyesight/53/status
-- eyesight param a: -4.521  methods.json#/eyesight/53/params/a
-- eyesight param a_hi: -3.153  methods.json#/eyesight/53/params/a_hi
-- eyesight param a_lo: -5.197  methods.json#/eyesight/53/params/a_lo
-- eyesight param b: 1.79  methods.json#/eyesight/53/params/b
-- eyesight param b_hi: 2.577  methods.json#/eyesight/53/params/b_hi
-- eyesight param b_lo: 1.428  methods.json#/eyesight/53/params/b_lo
-- eyesight param c: 1.0  methods.json#/eyesight/53/params/c
-- eyesight param c_hi: 1.0  methods.json#/eyesight/53/params/c_hi
-- eyesight param c_lo: 0.211  methods.json#/eyesight/53/params/c_lo
-- eyesight g: 3.136  methods.json#/eyesight/53/g
+- LOYO weekly WAPE (tier1): 0.926  methods.json#/validation/1406/value
+- LOYO weekly WAPE baseline annual_ratio: 1.029  methods.json#/validation/1406/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.955  methods.json#/validation/1406/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1406/years
+- LOYO weekly WAPE (tier2): 1.026  methods.json#/validation/1421/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1421/years
+- reliability_err (tier2): 0.003  methods.json#/validation/1419/value
+- reliability_year_absolute_err (tier2): 0.318  methods.json#/validation/1420/value
+- t1_t2_wape (tier2): 0.464  methods.json#/validation/1423/value
+- eyesight status: "exploratory"  methods.json#/eyesight/87/status
+- eyesight param a: -4.521  methods.json#/eyesight/87/params/a
+- eyesight param a_hi: -3.153  methods.json#/eyesight/87/params/a_hi
+- eyesight param a_lo: -5.197  methods.json#/eyesight/87/params/a_lo
+- eyesight param b: 1.79  methods.json#/eyesight/87/params/b
+- eyesight param b_hi: 2.577  methods.json#/eyesight/87/params/b_hi
+- eyesight param b_lo: 1.428  methods.json#/eyesight/87/params/b_lo
+- eyesight param c: 1.0  methods.json#/eyesight/87/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/87/params/c_hi
+- eyesight param c_lo: 0.211  methods.json#/eyesight/87/params/c_lo
+- eyesight g: 3.136  methods.json#/eyesight/87/g
 
 ## Kyrgyzstan (`kyrgyzstan`)
 
@@ -3505,26 +5102,122 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  kyrgyzstan/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  kyrgyzstan/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  kyrgyzstan/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.396  methods.json#/validation/937/value
-- LOYO weekly WAPE baseline annual_ratio: 0.39  methods.json#/validation/937/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 3.029  methods.json#/validation/937/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/937/years
-- LOYO weekly WAPE (tier2): 0.431  methods.json#/validation/952/value
-- LOYO years: [2013, 2022]  methods.json#/validation/952/years
-- reliability_err (tier2): 0.0  methods.json#/validation/950/value
-- reliability_year_absolute_err (tier2): 0.109  methods.json#/validation/951/value
-- t1_t2_wape (tier2): 0.293  methods.json#/validation/954/value
-- eyesight status: "validated"  methods.json#/eyesight/54/status
-- eyesight param a: -3.952  methods.json#/eyesight/54/params/a
-- eyesight param a_hi: -3.734  methods.json#/eyesight/54/params/a_hi
-- eyesight param a_lo: -4.143  methods.json#/eyesight/54/params/a_lo
-- eyesight param b: 2.049  methods.json#/eyesight/54/params/b
-- eyesight param b_hi: 2.287  methods.json#/eyesight/54/params/b_hi
-- eyesight param b_lo: 1.891  methods.json#/eyesight/54/params/b_lo
-- eyesight param c: 1.0  methods.json#/eyesight/54/params/c
-- eyesight param c_hi: 1.0  methods.json#/eyesight/54/params/c_hi
-- eyesight param c_lo: 0.814  methods.json#/eyesight/54/params/c_lo
-- eyesight g: 2.234  methods.json#/eyesight/54/g
+- LOYO weekly WAPE (tier1): 0.396  methods.json#/validation/1424/value
+- LOYO weekly WAPE baseline annual_ratio: 0.39  methods.json#/validation/1424/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.029  methods.json#/validation/1424/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1424/years
+- LOYO weekly WAPE (tier2): 0.431  methods.json#/validation/1439/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1439/years
+- reliability_err (tier2): 0.0  methods.json#/validation/1437/value
+- reliability_year_absolute_err (tier2): 0.109  methods.json#/validation/1438/value
+- t1_t2_wape (tier2): 0.293  methods.json#/validation/1441/value
+- eyesight status: "validated"  methods.json#/eyesight/88/status
+- eyesight param a: -3.952  methods.json#/eyesight/88/params/a
+- eyesight param a_hi: -3.734  methods.json#/eyesight/88/params/a_hi
+- eyesight param a_lo: -4.143  methods.json#/eyesight/88/params/a_lo
+- eyesight param b: 2.049  methods.json#/eyesight/88/params/b
+- eyesight param b_hi: 2.287  methods.json#/eyesight/88/params/b_hi
+- eyesight param b_lo: 1.891  methods.json#/eyesight/88/params/b_lo
+- eyesight param c: 1.0  methods.json#/eyesight/88/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/88/params/c_hi
+- eyesight param c_lo: 0.814  methods.json#/eyesight/88/params/c_lo
+- eyesight g: 2.234  methods.json#/eyesight/88/g
+
+## Latvia (`latvia`)
+
+- jump multiple (value): 3.663  latvia/ruler.json#/jump_multiple/value
+- jump multiple (lo): 2.395  latvia/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 6.0  latvia/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  latvia/ruler.json#/jump_multiple/years
+- ruler sentence: "In Latvia, VIIRS reports about 3.7 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  latvia/ruler.json#/sentence
+- harmonized trend pct_per_decade: -83.184  latvia/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -222.943  latvia/trend.json#/harmonized/lo
+- harmonized trend hi: -44.238  latvia/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  latvia/trend.json#/harmonized/direction
+- naive trend pct_per_decade: -53.03  latvia/trend.json#/naive/pct_per_decade
+- naive trend lo: -139.396  latvia/trend.json#/naive/lo
+- naive trend hi: 27.525  latvia/trend.json#/naive/hi
+- naive trend direction: "no_clear_change"  latvia/trend.json#/naive/direction
+- trend years: [2003, 2025]  latvia/trend.json#/years
+- verdict sentence_id: "artifact_falling"  latvia/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 83% per decade (-223 to -44)."  latvia/trend.json#/sentence
+- critical weeks: [14, 15, 16, 17, 18, 19]  latvia/season.json#/critical_weeks
+- window w1 label: "early-April to mid-May"  latvia/season.json#/windows/0/label
+- window w1 start_week: 14  latvia/season.json#/windows/0/start_week
+- window w1 peak_week: 15  latvia/season.json#/windows/0/peak_week
+- window w1 end_week: 19  latvia/season.json#/windows/0/end_week
+- window w1 share: 0.83  latvia/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -6.167  latvia/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -38.333  latvia/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 6.0  latvia/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-April to mid-May season."  latvia/season.json#/windows/0/sentence
+- this week value: null  latvia/nowcast.json#/value
+- this week lo: null  latvia/nowcast.json#/lo
+- this week hi: null  latvia/nowcast.json#/hi
+- this week percentile: null  latvia/nowcast.json#/percentile
+- this week status: "unavailable"  latvia/nowcast.json#/status
+- this week as_of: null  latvia/nowcast.json#/as_of
+- this week window start: null  latvia/nowcast.json#/window/start
+- this week window end: null  latvia/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  latvia/nowcast.json#/baseline_years
+- month to date value: null  latvia/nowcast.json#/month_to_date/value
+- month to date median: null  latvia/nowcast.json#/month_to_date/median
+- month to date ratio: null  latvia/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  latvia/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  latvia/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.752  methods.json#/validation/1442/value
+- LOYO weekly WAPE baseline annual_ratio: 0.734  methods.json#/validation/1442/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.152  methods.json#/validation/1442/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1442/years
+- eyesight status: "absent"  methods.json#/eyesight/89/status
+
+## Lebanon (`lebanon`)
+
+- jump multiple (value): 6.928  lebanon/ruler.json#/jump_multiple/value
+- jump multiple (lo): 4.739  lebanon/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 18.843  lebanon/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  lebanon/ruler.json#/jump_multiple/years
+- ruler sentence: "In Lebanon, VIIRS reports about 6.9 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  lebanon/ruler.json#/sentence
+- harmonized trend pct_per_decade: 7.022  lebanon/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -27.159  lebanon/trend.json#/harmonized/lo
+- harmonized trend hi: 45.455  lebanon/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  lebanon/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 79.353  lebanon/trend.json#/naive/pct_per_decade
+- naive trend lo: 54.517  lebanon/trend.json#/naive/lo
+- naive trend hi: 170.55  lebanon/trend.json#/naive/hi
+- naive trend direction: "rising"  lebanon/trend.json#/naive/direction
+- trend years: [2003, 2025]  lebanon/trend.json#/years
+- verdict sentence_id: "artifact_flat"  lebanon/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 79% per decade. After correcting for the sensor change, there is no clear change (-27 to 45% per decade)."  lebanon/trend.json#/sentence
+- critical weeks: [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42]  lebanon/season.json#/critical_weeks
+- window w1 label: "late-July to late-October"  lebanon/season.json#/windows/0/label
+- window w1 start_week: 30  lebanon/season.json#/windows/0/start_week
+- window w1 peak_week: 40  lebanon/season.json#/windows/0/peak_week
+- window w1 end_week: 42  lebanon/season.json#/windows/0/end_week
+- window w1 share: 0.818  lebanon/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 7.5  lebanon/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -0.588  lebanon/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 21.538  lebanon/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the late-July to late-October season."  lebanon/season.json#/windows/0/sentence
+- this week value: null  lebanon/nowcast.json#/value
+- this week lo: null  lebanon/nowcast.json#/lo
+- this week hi: null  lebanon/nowcast.json#/hi
+- this week percentile: null  lebanon/nowcast.json#/percentile
+- this week status: "unavailable"  lebanon/nowcast.json#/status
+- this week as_of: null  lebanon/nowcast.json#/as_of
+- this week window start: null  lebanon/nowcast.json#/window/start
+- this week window end: null  lebanon/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  lebanon/nowcast.json#/baseline_years
+- month to date value: null  lebanon/nowcast.json#/month_to_date/value
+- month to date median: null  lebanon/nowcast.json#/month_to_date/median
+- month to date ratio: null  lebanon/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  lebanon/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  lebanon/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.834  methods.json#/validation/1455/value
+- LOYO weekly WAPE baseline annual_ratio: 0.88  methods.json#/validation/1455/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 5.5  methods.json#/validation/1455/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1455/years
+- eyesight status: "absent"  methods.json#/eyesight/90/status
 
 ## Lesotho (`lesotho`)
 
@@ -3568,26 +5261,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  lesotho/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  lesotho/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  lesotho/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.404  methods.json#/validation/955/value
-- LOYO weekly WAPE baseline annual_ratio: 0.392  methods.json#/validation/955/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 2.083  methods.json#/validation/955/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/955/years
-- LOYO weekly WAPE (tier2): 0.371  methods.json#/validation/970/value
-- LOYO years: [2013, 2022]  methods.json#/validation/970/years
-- reliability_err (tier2): 0.004  methods.json#/validation/968/value
-- reliability_year_absolute_err (tier2): 0.189  methods.json#/validation/969/value
-- t1_t2_wape (tier2): 0.25  methods.json#/validation/972/value
-- eyesight status: "validated"  methods.json#/eyesight/55/status
-- eyesight param a: -3.505  methods.json#/eyesight/55/params/a
-- eyesight param a_hi: -3.261  methods.json#/eyesight/55/params/a_hi
-- eyesight param a_lo: -3.889  methods.json#/eyesight/55/params/a_lo
-- eyesight param b: 2.055  methods.json#/eyesight/55/params/b
-- eyesight param b_hi: 2.422  methods.json#/eyesight/55/params/b_hi
-- eyesight param b_lo: 1.755  methods.json#/eyesight/55/params/b_lo
-- eyesight param c: 0.777  methods.json#/eyesight/55/params/c
-- eyesight param c_hi: 0.998  methods.json#/eyesight/55/params/c_hi
-- eyesight param c_lo: 0.61  methods.json#/eyesight/55/params/c_lo
-- eyesight g: 1.752  methods.json#/eyesight/55/g
+- LOYO weekly WAPE (tier1): 0.404  methods.json#/validation/1468/value
+- LOYO weekly WAPE baseline annual_ratio: 0.392  methods.json#/validation/1468/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.083  methods.json#/validation/1468/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1468/years
+- LOYO weekly WAPE (tier2): 0.371  methods.json#/validation/1483/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1483/years
+- reliability_err (tier2): 0.004  methods.json#/validation/1481/value
+- reliability_year_absolute_err (tier2): 0.189  methods.json#/validation/1482/value
+- t1_t2_wape (tier2): 0.25  methods.json#/validation/1485/value
+- eyesight status: "validated"  methods.json#/eyesight/91/status
+- eyesight param a: -3.505  methods.json#/eyesight/91/params/a
+- eyesight param a_hi: -3.261  methods.json#/eyesight/91/params/a_hi
+- eyesight param a_lo: -3.889  methods.json#/eyesight/91/params/a_lo
+- eyesight param b: 2.055  methods.json#/eyesight/91/params/b
+- eyesight param b_hi: 2.422  methods.json#/eyesight/91/params/b_hi
+- eyesight param b_lo: 1.755  methods.json#/eyesight/91/params/b_lo
+- eyesight param c: 0.777  methods.json#/eyesight/91/params/c
+- eyesight param c_hi: 0.998  methods.json#/eyesight/91/params/c_hi
+- eyesight param c_lo: 0.61  methods.json#/eyesight/91/params/c_lo
+- eyesight g: 1.752  methods.json#/eyesight/91/g
 
 ## Liberia (`liberia`)
 
@@ -3631,26 +5324,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  liberia/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  liberia/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  liberia/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.278  methods.json#/validation/973/value
-- LOYO weekly WAPE baseline annual_ratio: 0.362  methods.json#/validation/973/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 1.832  methods.json#/validation/973/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/973/years
-- LOYO weekly WAPE (tier2): 0.333  methods.json#/validation/988/value
-- LOYO years: [2013, 2022]  methods.json#/validation/988/years
-- reliability_err (tier2): 0.005  methods.json#/validation/986/value
-- reliability_year_absolute_err (tier2): 0.163  methods.json#/validation/987/value
-- t1_t2_wape (tier2): 0.213  methods.json#/validation/990/value
-- eyesight status: "exploratory"  methods.json#/eyesight/56/status
-- eyesight param a: -3.323  methods.json#/eyesight/56/params/a
-- eyesight param a_hi: -3.172  methods.json#/eyesight/56/params/a_hi
-- eyesight param a_lo: -3.45  methods.json#/eyesight/56/params/a_lo
-- eyesight param b: 1.422  methods.json#/eyesight/56/params/b
-- eyesight param b_hi: 1.47  methods.json#/eyesight/56/params/b_hi
-- eyesight param b_lo: 1.373  methods.json#/eyesight/56/params/b_lo
-- eyesight param c: 0.879  methods.json#/eyesight/56/params/c
-- eyesight param c_hi: 0.947  methods.json#/eyesight/56/params/c_hi
-- eyesight param c_lo: 0.794  methods.json#/eyesight/56/params/c_lo
-- eyesight g: 2.291  methods.json#/eyesight/56/g
+- LOYO weekly WAPE (tier1): 0.278  methods.json#/validation/1486/value
+- LOYO weekly WAPE baseline annual_ratio: 0.362  methods.json#/validation/1486/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.832  methods.json#/validation/1486/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1486/years
+- LOYO weekly WAPE (tier2): 0.333  methods.json#/validation/1501/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1501/years
+- reliability_err (tier2): 0.005  methods.json#/validation/1499/value
+- reliability_year_absolute_err (tier2): 0.163  methods.json#/validation/1500/value
+- t1_t2_wape (tier2): 0.213  methods.json#/validation/1503/value
+- eyesight status: "exploratory"  methods.json#/eyesight/92/status
+- eyesight param a: -3.323  methods.json#/eyesight/92/params/a
+- eyesight param a_hi: -3.172  methods.json#/eyesight/92/params/a_hi
+- eyesight param a_lo: -3.45  methods.json#/eyesight/92/params/a_lo
+- eyesight param b: 1.422  methods.json#/eyesight/92/params/b
+- eyesight param b_hi: 1.47  methods.json#/eyesight/92/params/b_hi
+- eyesight param b_lo: 1.373  methods.json#/eyesight/92/params/b_lo
+- eyesight param c: 0.879  methods.json#/eyesight/92/params/c
+- eyesight param c_hi: 0.947  methods.json#/eyesight/92/params/c_hi
+- eyesight param c_lo: 0.794  methods.json#/eyesight/92/params/c_lo
+- eyesight g: 2.291  methods.json#/eyesight/92/g
 
 ## Libya (`libya`)
 
@@ -3703,26 +5396,113 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  libya/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  libya/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  libya/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 1.409  methods.json#/validation/991/value
-- LOYO weekly WAPE baseline annual_ratio: 1.425  methods.json#/validation/991/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 36.855  methods.json#/validation/991/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/991/years
-- LOYO weekly WAPE (tier2): 1.249  methods.json#/validation/1006/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1006/years
-- reliability_err (tier2): 0.015  methods.json#/validation/1004/value
-- reliability_year_absolute_err (tier2): 0.464  methods.json#/validation/1005/value
-- t1_t2_wape (tier2): 0.579  methods.json#/validation/1008/value
-- eyesight status: "validated"  methods.json#/eyesight/57/status
-- eyesight param a: -6.892  methods.json#/eyesight/57/params/a
-- eyesight param a_hi: -6.349  methods.json#/eyesight/57/params/a_hi
-- eyesight param a_lo: -7.726  methods.json#/eyesight/57/params/a_lo
-- eyesight param b: 3.164  methods.json#/eyesight/57/params/b
-- eyesight param b_hi: 3.604  methods.json#/eyesight/57/params/b_hi
-- eyesight param b_lo: 2.832  methods.json#/eyesight/57/params/b_lo
-- eyesight param c: 0.468  methods.json#/eyesight/57/params/c
-- eyesight param c_hi: 0.968  methods.json#/eyesight/57/params/c_hi
-- eyesight param c_lo: 0.234  methods.json#/eyesight/57/params/c_lo
-- eyesight g: 2.21  methods.json#/eyesight/57/g
+- LOYO weekly WAPE (tier1): 1.409  methods.json#/validation/1504/value
+- LOYO weekly WAPE baseline annual_ratio: 1.425  methods.json#/validation/1504/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 36.855  methods.json#/validation/1504/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1504/years
+- LOYO weekly WAPE (tier2): 1.249  methods.json#/validation/1519/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1519/years
+- reliability_err (tier2): 0.015  methods.json#/validation/1517/value
+- reliability_year_absolute_err (tier2): 0.464  methods.json#/validation/1518/value
+- t1_t2_wape (tier2): 0.579  methods.json#/validation/1521/value
+- eyesight status: "validated"  methods.json#/eyesight/93/status
+- eyesight param a: -6.892  methods.json#/eyesight/93/params/a
+- eyesight param a_hi: -6.349  methods.json#/eyesight/93/params/a_hi
+- eyesight param a_lo: -7.726  methods.json#/eyesight/93/params/a_lo
+- eyesight param b: 3.164  methods.json#/eyesight/93/params/b
+- eyesight param b_hi: 3.604  methods.json#/eyesight/93/params/b_hi
+- eyesight param b_lo: 2.832  methods.json#/eyesight/93/params/b_lo
+- eyesight param c: 0.468  methods.json#/eyesight/93/params/c
+- eyesight param c_hi: 0.968  methods.json#/eyesight/93/params/c_hi
+- eyesight param c_lo: 0.234  methods.json#/eyesight/93/params/c_lo
+- eyesight g: 2.21  methods.json#/eyesight/93/g
+
+## Lithuania (`lithuania`)
+
+- jump multiple (value): 3.895  lithuania/ruler.json#/jump_multiple/value
+- jump multiple (lo): 2.667  lithuania/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 6.08  lithuania/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  lithuania/ruler.json#/jump_multiple/years
+- ruler sentence: "In Lithuania, VIIRS reports about 3.9 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  lithuania/ruler.json#/sentence
+- harmonized trend pct_per_decade: -111.379  lithuania/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -240.204  lithuania/trend.json#/harmonized/lo
+- harmonized trend hi: -65.512  lithuania/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  lithuania/trend.json#/harmonized/direction
+- naive trend pct_per_decade: -54.276  lithuania/trend.json#/naive/pct_per_decade
+- naive trend lo: -111.459  lithuania/trend.json#/naive/lo
+- naive trend hi: 3.682  lithuania/trend.json#/naive/hi
+- naive trend direction: "no_clear_change"  lithuania/trend.json#/naive/direction
+- trend years: [2003, 2025]  lithuania/trend.json#/years
+- verdict sentence_id: "artifact_falling"  lithuania/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 111% per decade (-240 to -66)."  lithuania/trend.json#/sentence
+- critical weeks: [12, 13, 14, 15, 16, 17, 18]  lithuania/season.json#/critical_weeks
+- window w1 label: "mid-March to early-May"  lithuania/season.json#/windows/0/label
+- window w1 start_week: 12  lithuania/season.json#/windows/0/start_week
+- window w1 peak_week: 14  lithuania/season.json#/windows/0/peak_week
+- window w1 end_week: 18  lithuania/season.json#/windows/0/end_week
+- window w1 share: 0.833  lithuania/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -10.0  lithuania/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -30.0  lithuania/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 3.333  lithuania/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the mid-March to early-May season."  lithuania/season.json#/windows/0/sentence
+- this week value: null  lithuania/nowcast.json#/value
+- this week lo: null  lithuania/nowcast.json#/lo
+- this week hi: null  lithuania/nowcast.json#/hi
+- this week percentile: null  lithuania/nowcast.json#/percentile
+- this week status: "unavailable"  lithuania/nowcast.json#/status
+- this week as_of: null  lithuania/nowcast.json#/as_of
+- this week window start: null  lithuania/nowcast.json#/window/start
+- this week window end: null  lithuania/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  lithuania/nowcast.json#/baseline_years
+- month to date value: null  lithuania/nowcast.json#/month_to_date/value
+- month to date median: null  lithuania/nowcast.json#/month_to_date/median
+- month to date ratio: null  lithuania/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  lithuania/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  lithuania/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.826  methods.json#/validation/1522/value
+- LOYO weekly WAPE baseline annual_ratio: 0.815  methods.json#/validation/1522/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.992  methods.json#/validation/1522/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1522/years
+- eyesight status: "absent"  methods.json#/eyesight/94/status
+
+## Luxembourg (`luxembourg`)
+
+- jump multiple (value): 0.839  luxembourg/ruler.json#/jump_multiple/value
+- jump multiple (lo): 0.711  luxembourg/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 1.071  luxembourg/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  luxembourg/ruler.json#/jump_multiple/years
+- ruler sentence: "In Luxembourg, VIIRS reports about 0.8 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  luxembourg/ruler.json#/sentence
+- harmonized trend pct_per_decade: -32.84  luxembourg/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -76.983  luxembourg/trend.json#/harmonized/lo
+- harmonized trend hi: 6.367  luxembourg/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  luxembourg/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 20.528  luxembourg/trend.json#/naive/pct_per_decade
+- naive trend lo: -4.862  luxembourg/trend.json#/naive/lo
+- naive trend hi: 31.38  luxembourg/trend.json#/naive/hi
+- naive trend direction: "no_clear_change"  luxembourg/trend.json#/naive/direction
+- trend years: [2003, 2025]  luxembourg/trend.json#/years
+- verdict sentence_id: "unclear"  luxembourg/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (-77 to 6% per decade)."  luxembourg/trend.json#/sentence
+- critical weeks: []  luxembourg/season.json#/critical_weeks
+- this week value: null  luxembourg/nowcast.json#/value
+- this week lo: null  luxembourg/nowcast.json#/lo
+- this week hi: null  luxembourg/nowcast.json#/hi
+- this week percentile: null  luxembourg/nowcast.json#/percentile
+- this week status: "unavailable"  luxembourg/nowcast.json#/status
+- this week as_of: null  luxembourg/nowcast.json#/as_of
+- this week window start: null  luxembourg/nowcast.json#/window/start
+- this week window end: null  luxembourg/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  luxembourg/nowcast.json#/baseline_years
+- month to date value: null  luxembourg/nowcast.json#/month_to_date/value
+- month to date median: null  luxembourg/nowcast.json#/month_to_date/median
+- month to date ratio: null  luxembourg/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  luxembourg/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  luxembourg/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.675  methods.json#/validation/1535/value
+- LOYO weekly WAPE baseline annual_ratio: 1.685  methods.json#/validation/1535/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.467  methods.json#/validation/1535/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1535/years
+- eyesight status: "absent"  methods.json#/eyesight/95/status
 
 ## North Macedonia (`macedonia-former-yugoslav-republic-of`)
 
@@ -3775,26 +5555,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  macedonia-former-yugoslav-republic-of/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  macedonia-former-yugoslav-republic-of/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  macedonia-former-yugoslav-republic-of/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.504  methods.json#/validation/1009/value
-- LOYO weekly WAPE baseline annual_ratio: 0.514  methods.json#/validation/1009/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 2.972  methods.json#/validation/1009/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1009/years
-- LOYO weekly WAPE (tier2): 0.479  methods.json#/validation/1024/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1024/years
-- reliability_err (tier2): 0.008  methods.json#/validation/1022/value
-- reliability_year_absolute_err (tier2): 0.125  methods.json#/validation/1023/value
-- t1_t2_wape (tier2): 0.387  methods.json#/validation/1026/value
-- eyesight status: "validated"  methods.json#/eyesight/58/status
-- eyesight param a: -4.201  methods.json#/eyesight/58/params/a
-- eyesight param a_hi: -3.915  methods.json#/eyesight/58/params/a_hi
-- eyesight param a_lo: -4.533  methods.json#/eyesight/58/params/a_lo
-- eyesight param b: 2.735  methods.json#/eyesight/58/params/b
-- eyesight param b_hi: 3.078  methods.json#/eyesight/58/params/b_hi
-- eyesight param b_lo: 2.524  methods.json#/eyesight/58/params/b_lo
-- eyesight param c: 0.84  methods.json#/eyesight/58/params/c
-- eyesight param c_hi: 0.937  methods.json#/eyesight/58/params/c_hi
-- eyesight param c_lo: 0.669  methods.json#/eyesight/58/params/c_lo
-- eyesight g: 1.706  methods.json#/eyesight/58/g
+- LOYO weekly WAPE (tier1): 0.504  methods.json#/validation/1548/value
+- LOYO weekly WAPE baseline annual_ratio: 0.514  methods.json#/validation/1548/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.972  methods.json#/validation/1548/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1548/years
+- LOYO weekly WAPE (tier2): 0.479  methods.json#/validation/1563/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1563/years
+- reliability_err (tier2): 0.008  methods.json#/validation/1561/value
+- reliability_year_absolute_err (tier2): 0.125  methods.json#/validation/1562/value
+- t1_t2_wape (tier2): 0.387  methods.json#/validation/1565/value
+- eyesight status: "validated"  methods.json#/eyesight/96/status
+- eyesight param a: -4.201  methods.json#/eyesight/96/params/a
+- eyesight param a_hi: -3.915  methods.json#/eyesight/96/params/a_hi
+- eyesight param a_lo: -4.533  methods.json#/eyesight/96/params/a_lo
+- eyesight param b: 2.735  methods.json#/eyesight/96/params/b
+- eyesight param b_hi: 3.078  methods.json#/eyesight/96/params/b_hi
+- eyesight param b_lo: 2.524  methods.json#/eyesight/96/params/b_lo
+- eyesight param c: 0.84  methods.json#/eyesight/96/params/c
+- eyesight param c_hi: 0.937  methods.json#/eyesight/96/params/c_hi
+- eyesight param c_lo: 0.669  methods.json#/eyesight/96/params/c_lo
+- eyesight g: 1.706  methods.json#/eyesight/96/g
 
 ## Malawi (`malawi`)
 
@@ -3838,26 +5618,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  malawi/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  malawi/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  malawi/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.177  methods.json#/validation/1027/value
-- LOYO weekly WAPE baseline annual_ratio: 0.191  methods.json#/validation/1027/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 4.726  methods.json#/validation/1027/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1027/years
-- LOYO weekly WAPE (tier2): 0.239  methods.json#/validation/1042/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1042/years
-- reliability_err (tier2): 0.0  methods.json#/validation/1040/value
-- reliability_year_absolute_err (tier2): 0.027  methods.json#/validation/1041/value
-- t1_t2_wape (tier2): 0.213  methods.json#/validation/1044/value
-- eyesight status: "exploratory"  methods.json#/eyesight/59/status
-- eyesight param a: -4.206  methods.json#/eyesight/59/params/a
-- eyesight param a_hi: -4.149  methods.json#/eyesight/59/params/a_hi
-- eyesight param a_lo: -4.27  methods.json#/eyesight/59/params/a_lo
-- eyesight param b: 2.187  methods.json#/eyesight/59/params/b
-- eyesight param b_hi: 2.242  methods.json#/eyesight/59/params/b_hi
-- eyesight param b_lo: 2.144  methods.json#/eyesight/59/params/b_lo
-- eyesight param c: 0.868  methods.json#/eyesight/59/params/c
-- eyesight param c_hi: 0.905  methods.json#/eyesight/59/params/c_hi
-- eyesight param c_lo: 0.825  methods.json#/eyesight/59/params/c_lo
-- eyesight g: 1.521  methods.json#/eyesight/59/g
+- LOYO weekly WAPE (tier1): 0.177  methods.json#/validation/1566/value
+- LOYO weekly WAPE baseline annual_ratio: 0.191  methods.json#/validation/1566/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 4.726  methods.json#/validation/1566/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1566/years
+- LOYO weekly WAPE (tier2): 0.239  methods.json#/validation/1581/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1581/years
+- reliability_err (tier2): 0.0  methods.json#/validation/1579/value
+- reliability_year_absolute_err (tier2): 0.027  methods.json#/validation/1580/value
+- t1_t2_wape (tier2): 0.213  methods.json#/validation/1583/value
+- eyesight status: "exploratory"  methods.json#/eyesight/97/status
+- eyesight param a: -4.206  methods.json#/eyesight/97/params/a
+- eyesight param a_hi: -4.149  methods.json#/eyesight/97/params/a_hi
+- eyesight param a_lo: -4.27  methods.json#/eyesight/97/params/a_lo
+- eyesight param b: 2.187  methods.json#/eyesight/97/params/b
+- eyesight param b_hi: 2.242  methods.json#/eyesight/97/params/b_hi
+- eyesight param b_lo: 2.144  methods.json#/eyesight/97/params/b_lo
+- eyesight param c: 0.868  methods.json#/eyesight/97/params/c
+- eyesight param c_hi: 0.905  methods.json#/eyesight/97/params/c_hi
+- eyesight param c_lo: 0.825  methods.json#/eyesight/97/params/c_lo
+- eyesight g: 1.521  methods.json#/eyesight/97/g
 
 ## Malaysia (`malaysia`)
 
@@ -3901,26 +5681,104 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  malaysia/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  malaysia/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  malaysia/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.231  methods.json#/validation/1045/value
-- LOYO weekly WAPE baseline annual_ratio: 0.252  methods.json#/validation/1045/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 3.262  methods.json#/validation/1045/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1045/years
-- LOYO weekly WAPE (tier2): 0.227  methods.json#/validation/1060/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1060/years
-- reliability_err (tier2): 0.006  methods.json#/validation/1058/value
-- reliability_year_absolute_err (tier2): 0.072  methods.json#/validation/1059/value
-- t1_t2_wape (tier2): 0.169  methods.json#/validation/1062/value
-- eyesight status: "validated"  methods.json#/eyesight/60/status
-- eyesight param a: -4.1  methods.json#/eyesight/60/params/a
-- eyesight param a_hi: -3.98  methods.json#/eyesight/60/params/a_hi
-- eyesight param a_lo: -4.221  methods.json#/eyesight/60/params/a_lo
-- eyesight param b: 2.498  methods.json#/eyesight/60/params/b
-- eyesight param b_hi: 2.656  methods.json#/eyesight/60/params/b_hi
-- eyesight param b_lo: 2.404  methods.json#/eyesight/60/params/b_lo
-- eyesight param c: 0.61  methods.json#/eyesight/60/params/c
-- eyesight param c_hi: 0.679  methods.json#/eyesight/60/params/c_hi
-- eyesight param c_lo: 0.513  methods.json#/eyesight/60/params/c_lo
-- eyesight g: 2.186  methods.json#/eyesight/60/g
+- LOYO weekly WAPE (tier1): 0.231  methods.json#/validation/1584/value
+- LOYO weekly WAPE baseline annual_ratio: 0.252  methods.json#/validation/1584/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.262  methods.json#/validation/1584/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1584/years
+- LOYO weekly WAPE (tier2): 0.227  methods.json#/validation/1599/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1599/years
+- reliability_err (tier2): 0.006  methods.json#/validation/1597/value
+- reliability_year_absolute_err (tier2): 0.072  methods.json#/validation/1598/value
+- t1_t2_wape (tier2): 0.169  methods.json#/validation/1601/value
+- eyesight status: "validated"  methods.json#/eyesight/98/status
+- eyesight param a: -4.1  methods.json#/eyesight/98/params/a
+- eyesight param a_hi: -3.98  methods.json#/eyesight/98/params/a_hi
+- eyesight param a_lo: -4.221  methods.json#/eyesight/98/params/a_lo
+- eyesight param b: 2.498  methods.json#/eyesight/98/params/b
+- eyesight param b_hi: 2.656  methods.json#/eyesight/98/params/b_hi
+- eyesight param b_lo: 2.404  methods.json#/eyesight/98/params/b_lo
+- eyesight param c: 0.61  methods.json#/eyesight/98/params/c
+- eyesight param c_hi: 0.679  methods.json#/eyesight/98/params/c_hi
+- eyesight param c_lo: 0.513  methods.json#/eyesight/98/params/c_lo
+- eyesight g: 2.186  methods.json#/eyesight/98/g
+
+## Malta (`malta`)
+
+- jump multiple (value): 11.484  malta/ruler.json#/jump_multiple/value
+- jump multiple (lo): 9.0  malta/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 17.0  malta/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  malta/ruler.json#/jump_multiple/years
+- ruler sentence: "In Malta, VIIRS reports about 11.5 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  malta/ruler.json#/sentence
+- harmonized trend pct_per_decade: null  malta/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: null  malta/trend.json#/harmonized/lo
+- harmonized trend hi: null  malta/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  malta/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 74.475  malta/trend.json#/naive/pct_per_decade
+- naive trend lo: 49.318  malta/trend.json#/naive/lo
+- naive trend hi: 500.0  malta/trend.json#/naive/hi
+- naive trend direction: "rising"  malta/trend.json#/naive/direction
+- trend years: [2003, 2025]  malta/trend.json#/years
+- verdict sentence_id: "unclear"  malta/trend.json#/sentence_id
+- verdict sentence: "Trend unavailable: the median annual activity is zero."  malta/trend.json#/sentence
+- critical weeks: []  malta/season.json#/critical_weeks
+- this week value: null  malta/nowcast.json#/value
+- this week lo: null  malta/nowcast.json#/lo
+- this week hi: null  malta/nowcast.json#/hi
+- this week percentile: null  malta/nowcast.json#/percentile
+- this week status: "unavailable"  malta/nowcast.json#/status
+- this week as_of: null  malta/nowcast.json#/as_of
+- this week window start: null  malta/nowcast.json#/window/start
+- this week window end: null  malta/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  malta/nowcast.json#/baseline_years
+- month to date value: null  malta/nowcast.json#/month_to_date/value
+- month to date median: null  malta/nowcast.json#/month_to_date/median
+- month to date ratio: null  malta/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  malta/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  malta/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 2.059  methods.json#/validation/1602/value
+- LOYO weekly WAPE baseline annual_ratio: 2.017  methods.json#/validation/1602/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 19.0  methods.json#/validation/1602/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1602/years
+- eyesight status: "absent"  methods.json#/eyesight/99/status
+
+## Martinique (`martinique`)
+
+- jump multiple (value): 4.0  martinique/ruler.json#/jump_multiple/value
+- jump multiple (lo): 2.0  martinique/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 5.5  martinique/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  martinique/ruler.json#/jump_multiple/years
+- ruler sentence: "In Martinique, VIIRS reports about 4.0 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  martinique/ruler.json#/sentence
+- harmonized trend pct_per_decade: null  martinique/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: null  martinique/trend.json#/harmonized/lo
+- harmonized trend hi: null  martinique/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  martinique/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 121.532  martinique/trend.json#/naive/pct_per_decade
+- naive trend lo: 44.444  martinique/trend.json#/naive/lo
+- naive trend hi: 250.0  martinique/trend.json#/naive/hi
+- naive trend direction: "rising"  martinique/trend.json#/naive/direction
+- trend years: [2003, 2025]  martinique/trend.json#/years
+- verdict sentence_id: "unclear"  martinique/trend.json#/sentence_id
+- verdict sentence: "Trend unavailable: the median annual activity is zero."  martinique/trend.json#/sentence
+- critical weeks: []  martinique/season.json#/critical_weeks
+- this week value: null  martinique/nowcast.json#/value
+- this week lo: null  martinique/nowcast.json#/lo
+- this week hi: null  martinique/nowcast.json#/hi
+- this week percentile: null  martinique/nowcast.json#/percentile
+- this week status: "unavailable"  martinique/nowcast.json#/status
+- this week as_of: null  martinique/nowcast.json#/as_of
+- this week window start: null  martinique/nowcast.json#/window/start
+- this week window end: null  martinique/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  martinique/nowcast.json#/baseline_years
+- month to date value: null  martinique/nowcast.json#/month_to_date/value
+- month to date median: null  martinique/nowcast.json#/month_to_date/median
+- month to date ratio: null  martinique/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  martinique/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  martinique/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.853  methods.json#/validation/1615/value
+- LOYO weekly WAPE baseline annual_ratio: 1.822  methods.json#/validation/1615/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 36.0  methods.json#/validation/1615/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1615/years
+- eyesight status: "absent"  methods.json#/eyesight/100/status
 
 ## Mauritania (`mauritania`)
 
@@ -3964,26 +5822,113 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  mauritania/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  mauritania/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  mauritania/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.625  methods.json#/validation/1063/value
-- LOYO weekly WAPE baseline annual_ratio: 0.651  methods.json#/validation/1063/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 3.589  methods.json#/validation/1063/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1063/years
-- LOYO weekly WAPE (tier2): 0.558  methods.json#/validation/1078/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1078/years
-- reliability_err (tier2): 0.002  methods.json#/validation/1076/value
-- reliability_year_absolute_err (tier2): 0.173  methods.json#/validation/1077/value
-- t1_t2_wape (tier2): 0.361  methods.json#/validation/1080/value
-- eyesight status: "validated"  methods.json#/eyesight/61/status
-- eyesight param a: -4.619  methods.json#/eyesight/61/params/a
-- eyesight param a_hi: -4.457  methods.json#/eyesight/61/params/a_hi
-- eyesight param a_lo: -4.791  methods.json#/eyesight/61/params/a_lo
-- eyesight param b: 2.568  methods.json#/eyesight/61/params/b
-- eyesight param b_hi: 2.905  methods.json#/eyesight/61/params/b_hi
-- eyesight param b_lo: 2.148  methods.json#/eyesight/61/params/b_lo
-- eyesight param c: 0.668  methods.json#/eyesight/61/params/c
-- eyesight param c_hi: 0.924  methods.json#/eyesight/61/params/c_hi
-- eyesight param c_lo: 0.577  methods.json#/eyesight/61/params/c_lo
-- eyesight g: 1.404  methods.json#/eyesight/61/g
+- LOYO weekly WAPE (tier1): 0.625  methods.json#/validation/1628/value
+- LOYO weekly WAPE baseline annual_ratio: 0.651  methods.json#/validation/1628/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.589  methods.json#/validation/1628/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1628/years
+- LOYO weekly WAPE (tier2): 0.558  methods.json#/validation/1643/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1643/years
+- reliability_err (tier2): 0.002  methods.json#/validation/1641/value
+- reliability_year_absolute_err (tier2): 0.173  methods.json#/validation/1642/value
+- t1_t2_wape (tier2): 0.361  methods.json#/validation/1645/value
+- eyesight status: "validated"  methods.json#/eyesight/101/status
+- eyesight param a: -4.619  methods.json#/eyesight/101/params/a
+- eyesight param a_hi: -4.457  methods.json#/eyesight/101/params/a_hi
+- eyesight param a_lo: -4.791  methods.json#/eyesight/101/params/a_lo
+- eyesight param b: 2.568  methods.json#/eyesight/101/params/b
+- eyesight param b_hi: 2.905  methods.json#/eyesight/101/params/b_hi
+- eyesight param b_lo: 2.148  methods.json#/eyesight/101/params/b_lo
+- eyesight param c: 0.668  methods.json#/eyesight/101/params/c
+- eyesight param c_hi: 0.924  methods.json#/eyesight/101/params/c_hi
+- eyesight param c_lo: 0.577  methods.json#/eyesight/101/params/c_lo
+- eyesight g: 1.404  methods.json#/eyesight/101/g
+
+## Mauritius (`mauritius`)
+
+- jump multiple (value): 5.801  mauritius/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.724  mauritius/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 15.143  mauritius/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  mauritius/ruler.json#/jump_multiple/years
+- ruler sentence: "In Mauritius, VIIRS reports about 5.8 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  mauritius/ruler.json#/sentence
+- harmonized trend pct_per_decade: -14.986  mauritius/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -45.918  mauritius/trend.json#/harmonized/lo
+- harmonized trend hi: 13.603  mauritius/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  mauritius/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 67.753  mauritius/trend.json#/naive/pct_per_decade
+- naive trend lo: 26.195  mauritius/trend.json#/naive/lo
+- naive trend hi: 168.103  mauritius/trend.json#/naive/hi
+- naive trend direction: "rising"  mauritius/trend.json#/naive/direction
+- trend years: [2003, 2025]  mauritius/trend.json#/years
+- verdict sentence_id: "artifact_flat"  mauritius/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 68% per decade. After correcting for the sensor change, there is no clear change (-46 to 14% per decade)."  mauritius/trend.json#/sentence
+- critical weeks: [35, 36, 37, 38, 39, 40, 41]  mauritius/season.json#/critical_weeks
+- window w1 label: "late-August to mid-October"  mauritius/season.json#/windows/0/label
+- window w1 start_week: 35  mauritius/season.json#/windows/0/start_week
+- window w1 peak_week: 37  mauritius/season.json#/windows/0/peak_week
+- window w1 end_week: 41  mauritius/season.json#/windows/0/end_week
+- window w1 share: 0.872  mauritius/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 0.0  mauritius/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -80.0  mauritius/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 11.429  mauritius/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the late-August to mid-October season."  mauritius/season.json#/windows/0/sentence
+- this week value: null  mauritius/nowcast.json#/value
+- this week lo: null  mauritius/nowcast.json#/lo
+- this week hi: null  mauritius/nowcast.json#/hi
+- this week percentile: null  mauritius/nowcast.json#/percentile
+- this week status: "unavailable"  mauritius/nowcast.json#/status
+- this week as_of: null  mauritius/nowcast.json#/as_of
+- this week window start: null  mauritius/nowcast.json#/window/start
+- this week window end: null  mauritius/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  mauritius/nowcast.json#/baseline_years
+- month to date value: null  mauritius/nowcast.json#/month_to_date/value
+- month to date median: null  mauritius/nowcast.json#/month_to_date/median
+- month to date ratio: null  mauritius/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  mauritius/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  mauritius/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.025  methods.json#/validation/1646/value
+- LOYO weekly WAPE baseline annual_ratio: 1.043  methods.json#/validation/1646/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 5.034  methods.json#/validation/1646/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1646/years
+- eyesight status: "absent"  methods.json#/eyesight/102/status
+
+## Mayotte (`mayotte`)
+
+- jump multiple (value): 6.4  mayotte/ruler.json#/jump_multiple/value
+- jump multiple (lo): 5.0  mayotte/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 7.5  mayotte/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  mayotte/ruler.json#/jump_multiple/years
+- ruler sentence: "In Mayotte, VIIRS reports about 6.4 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  mayotte/ruler.json#/sentence
+- harmonized trend pct_per_decade: null  mayotte/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: null  mayotte/trend.json#/harmonized/lo
+- harmonized trend hi: null  mayotte/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  mayotte/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 100.0  mayotte/trend.json#/naive/pct_per_decade
+- naive trend lo: 71.429  mayotte/trend.json#/naive/lo
+- naive trend hi: 390.64  mayotte/trend.json#/naive/hi
+- naive trend direction: "rising"  mayotte/trend.json#/naive/direction
+- trend years: [2003, 2025]  mayotte/trend.json#/years
+- verdict sentence_id: "unclear"  mayotte/trend.json#/sentence_id
+- verdict sentence: "Trend unavailable: the median annual activity is zero."  mayotte/trend.json#/sentence
+- critical weeks: []  mayotte/season.json#/critical_weeks
+- this week value: null  mayotte/nowcast.json#/value
+- this week lo: null  mayotte/nowcast.json#/lo
+- this week hi: null  mayotte/nowcast.json#/hi
+- this week percentile: null  mayotte/nowcast.json#/percentile
+- this week status: "unavailable"  mayotte/nowcast.json#/status
+- this week as_of: null  mayotte/nowcast.json#/as_of
+- this week window start: null  mayotte/nowcast.json#/window/start
+- this week window end: null  mayotte/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  mayotte/nowcast.json#/baseline_years
+- month to date value: null  mayotte/nowcast.json#/month_to_date/value
+- month to date median: null  mayotte/nowcast.json#/month_to_date/median
+- month to date ratio: null  mayotte/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  mayotte/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  mayotte/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.878  methods.json#/validation/1659/value
+- LOYO weekly WAPE baseline annual_ratio: 1.858  methods.json#/validation/1659/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 14.667  methods.json#/validation/1659/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1659/years
+- eyesight status: "absent"  methods.json#/eyesight/103/status
 
 ## Moldova (`moldova`)
 
@@ -4036,26 +5981,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  moldova/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  moldova/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  moldova/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.337  methods.json#/validation/1081/value
-- LOYO weekly WAPE baseline annual_ratio: 0.382  methods.json#/validation/1081/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 2.738  methods.json#/validation/1081/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1081/years
-- LOYO weekly WAPE (tier2): 0.393  methods.json#/validation/1096/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1096/years
-- reliability_err (tier2): 0.005  methods.json#/validation/1094/value
-- reliability_year_absolute_err (tier2): 0.127  methods.json#/validation/1095/value
-- t1_t2_wape (tier2): 0.267  methods.json#/validation/1098/value
-- eyesight status: "exploratory"  methods.json#/eyesight/62/status
-- eyesight param a: -3.264  methods.json#/eyesight/62/params/a
-- eyesight param a_hi: -3.104  methods.json#/eyesight/62/params/a_hi
-- eyesight param a_lo: -3.452  methods.json#/eyesight/62/params/a_lo
-- eyesight param b: 2.417  methods.json#/eyesight/62/params/b
-- eyesight param b_hi: 2.668  methods.json#/eyesight/62/params/b_hi
-- eyesight param b_lo: 2.217  methods.json#/eyesight/62/params/b_lo
-- eyesight param c: 0.595  methods.json#/eyesight/62/params/c
-- eyesight param c_hi: 0.689  methods.json#/eyesight/62/params/c_hi
-- eyesight param c_lo: 0.529  methods.json#/eyesight/62/params/c_lo
-- eyesight g: 1.705  methods.json#/eyesight/62/g
+- LOYO weekly WAPE (tier1): 0.337  methods.json#/validation/1672/value
+- LOYO weekly WAPE baseline annual_ratio: 0.382  methods.json#/validation/1672/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.738  methods.json#/validation/1672/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1672/years
+- LOYO weekly WAPE (tier2): 0.393  methods.json#/validation/1687/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1687/years
+- reliability_err (tier2): 0.005  methods.json#/validation/1685/value
+- reliability_year_absolute_err (tier2): 0.127  methods.json#/validation/1686/value
+- t1_t2_wape (tier2): 0.267  methods.json#/validation/1689/value
+- eyesight status: "exploratory"  methods.json#/eyesight/104/status
+- eyesight param a: -3.264  methods.json#/eyesight/104/params/a
+- eyesight param a_hi: -3.104  methods.json#/eyesight/104/params/a_hi
+- eyesight param a_lo: -3.452  methods.json#/eyesight/104/params/a_lo
+- eyesight param b: 2.417  methods.json#/eyesight/104/params/b
+- eyesight param b_hi: 2.668  methods.json#/eyesight/104/params/b_hi
+- eyesight param b_lo: 2.217  methods.json#/eyesight/104/params/b_lo
+- eyesight param c: 0.595  methods.json#/eyesight/104/params/c
+- eyesight param c_hi: 0.689  methods.json#/eyesight/104/params/c_hi
+- eyesight param c_lo: 0.529  methods.json#/eyesight/104/params/c_lo
+- eyesight g: 1.705  methods.json#/eyesight/104/g
 
 ## Mongolia (`mongolia`)
 
@@ -4099,26 +6044,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  mongolia/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  mongolia/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  mongolia/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.342  methods.json#/validation/1099/value
-- LOYO weekly WAPE baseline annual_ratio: 0.329  methods.json#/validation/1099/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 1.087  methods.json#/validation/1099/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1099/years
-- LOYO weekly WAPE (tier2): 0.254  methods.json#/validation/1114/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1114/years
-- reliability_err (tier2): 0.001  methods.json#/validation/1112/value
-- reliability_year_absolute_err (tier2): 0.07  methods.json#/validation/1113/value
-- t1_t2_wape (tier2): 0.248  methods.json#/validation/1116/value
-- eyesight status: "validated"  methods.json#/eyesight/63/status
-- eyesight param a: -3.488  methods.json#/eyesight/63/params/a
-- eyesight param a_hi: -3.235  methods.json#/eyesight/63/params/a_hi
-- eyesight param a_lo: -3.947  methods.json#/eyesight/63/params/a_lo
-- eyesight param b: 2.211  methods.json#/eyesight/63/params/b
-- eyesight param b_hi: 2.615  methods.json#/eyesight/63/params/b_hi
-- eyesight param b_lo: 1.977  methods.json#/eyesight/63/params/b_lo
-- eyesight param c: 0.792  methods.json#/eyesight/63/params/c
-- eyesight param c_hi: 0.87  methods.json#/eyesight/63/params/c_hi
-- eyesight param c_lo: 0.705  methods.json#/eyesight/63/params/c_lo
-- eyesight g: 1.256  methods.json#/eyesight/63/g
+- LOYO weekly WAPE (tier1): 0.342  methods.json#/validation/1690/value
+- LOYO weekly WAPE baseline annual_ratio: 0.329  methods.json#/validation/1690/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.087  methods.json#/validation/1690/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1690/years
+- LOYO weekly WAPE (tier2): 0.254  methods.json#/validation/1705/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1705/years
+- reliability_err (tier2): 0.001  methods.json#/validation/1703/value
+- reliability_year_absolute_err (tier2): 0.07  methods.json#/validation/1704/value
+- t1_t2_wape (tier2): 0.248  methods.json#/validation/1707/value
+- eyesight status: "validated"  methods.json#/eyesight/105/status
+- eyesight param a: -3.488  methods.json#/eyesight/105/params/a
+- eyesight param a_hi: -3.235  methods.json#/eyesight/105/params/a_hi
+- eyesight param a_lo: -3.947  methods.json#/eyesight/105/params/a_lo
+- eyesight param b: 2.211  methods.json#/eyesight/105/params/b
+- eyesight param b_hi: 2.615  methods.json#/eyesight/105/params/b_hi
+- eyesight param b_lo: 1.977  methods.json#/eyesight/105/params/b_lo
+- eyesight param c: 0.792  methods.json#/eyesight/105/params/c
+- eyesight param c_hi: 0.87  methods.json#/eyesight/105/params/c_hi
+- eyesight param c_lo: 0.705  methods.json#/eyesight/105/params/c_lo
+- eyesight g: 1.256  methods.json#/eyesight/105/g
 
 ## Montenegro (`montenegro`)
 
@@ -4171,26 +6116,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  montenegro/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  montenegro/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  montenegro/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.389  methods.json#/validation/1117/value
-- LOYO weekly WAPE baseline annual_ratio: 0.434  methods.json#/validation/1117/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 2.045  methods.json#/validation/1117/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1117/years
-- LOYO weekly WAPE (tier2): 0.346  methods.json#/validation/1132/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1132/years
-- reliability_err (tier2): 0.002  methods.json#/validation/1130/value
-- reliability_year_absolute_err (tier2): 0.131  methods.json#/validation/1131/value
-- t1_t2_wape (tier2): 0.279  methods.json#/validation/1134/value
-- eyesight status: "validated"  methods.json#/eyesight/64/status
-- eyesight param a: -3.709  methods.json#/eyesight/64/params/a
-- eyesight param a_hi: -3.443  methods.json#/eyesight/64/params/a_hi
-- eyesight param a_lo: -4.038  methods.json#/eyesight/64/params/a_lo
-- eyesight param b: 2.572  methods.json#/eyesight/64/params/b
-- eyesight param b_hi: 2.862  methods.json#/eyesight/64/params/b_hi
-- eyesight param b_lo: 2.333  methods.json#/eyesight/64/params/b_lo
-- eyesight param c: 0.918  methods.json#/eyesight/64/params/c
-- eyesight param c_hi: 0.997  methods.json#/eyesight/64/params/c_hi
-- eyesight param c_lo: 0.839  methods.json#/eyesight/64/params/c_lo
-- eyesight g: 1.309  methods.json#/eyesight/64/g
+- LOYO weekly WAPE (tier1): 0.389  methods.json#/validation/1708/value
+- LOYO weekly WAPE baseline annual_ratio: 0.434  methods.json#/validation/1708/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.045  methods.json#/validation/1708/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1708/years
+- LOYO weekly WAPE (tier2): 0.346  methods.json#/validation/1723/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1723/years
+- reliability_err (tier2): 0.002  methods.json#/validation/1721/value
+- reliability_year_absolute_err (tier2): 0.131  methods.json#/validation/1722/value
+- t1_t2_wape (tier2): 0.279  methods.json#/validation/1725/value
+- eyesight status: "validated"  methods.json#/eyesight/106/status
+- eyesight param a: -3.709  methods.json#/eyesight/106/params/a
+- eyesight param a_hi: -3.443  methods.json#/eyesight/106/params/a_hi
+- eyesight param a_lo: -4.038  methods.json#/eyesight/106/params/a_lo
+- eyesight param b: 2.572  methods.json#/eyesight/106/params/b
+- eyesight param b_hi: 2.862  methods.json#/eyesight/106/params/b_hi
+- eyesight param b_lo: 2.333  methods.json#/eyesight/106/params/b_lo
+- eyesight param c: 0.918  methods.json#/eyesight/106/params/c
+- eyesight param c_hi: 0.997  methods.json#/eyesight/106/params/c_hi
+- eyesight param c_lo: 0.839  methods.json#/eyesight/106/params/c_lo
+- eyesight g: 1.309  methods.json#/eyesight/106/g
 
 ## Morocco (`morocco`)
 
@@ -4234,26 +6179,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  morocco/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  morocco/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  morocco/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.753  methods.json#/validation/1135/value
-- LOYO weekly WAPE baseline annual_ratio: 0.729  methods.json#/validation/1135/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 5.226  methods.json#/validation/1135/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1135/years
-- LOYO weekly WAPE (tier2): 0.648  methods.json#/validation/1150/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1150/years
-- reliability_err (tier2): 0.004  methods.json#/validation/1148/value
-- reliability_year_absolute_err (tier2): 0.153  methods.json#/validation/1149/value
-- t1_t2_wape (tier2): 0.513  methods.json#/validation/1152/value
-- eyesight status: "validated"  methods.json#/eyesight/65/status
-- eyesight param a: -5.323  methods.json#/eyesight/65/params/a
-- eyesight param a_hi: -5.102  methods.json#/eyesight/65/params/a_hi
-- eyesight param a_lo: -5.54  methods.json#/eyesight/65/params/a_lo
-- eyesight param b: 3.08  methods.json#/eyesight/65/params/b
-- eyesight param b_hi: 3.437  methods.json#/eyesight/65/params/b_hi
-- eyesight param b_lo: 2.826  methods.json#/eyesight/65/params/b_lo
-- eyesight param c: 0.833  methods.json#/eyesight/65/params/c
-- eyesight param c_hi: 0.988  methods.json#/eyesight/65/params/c_hi
-- eyesight param c_lo: 0.645  methods.json#/eyesight/65/params/c_lo
-- eyesight g: 2.024  methods.json#/eyesight/65/g
+- LOYO weekly WAPE (tier1): 0.753  methods.json#/validation/1726/value
+- LOYO weekly WAPE baseline annual_ratio: 0.729  methods.json#/validation/1726/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 5.226  methods.json#/validation/1726/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1726/years
+- LOYO weekly WAPE (tier2): 0.648  methods.json#/validation/1741/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1741/years
+- reliability_err (tier2): 0.004  methods.json#/validation/1739/value
+- reliability_year_absolute_err (tier2): 0.153  methods.json#/validation/1740/value
+- t1_t2_wape (tier2): 0.513  methods.json#/validation/1743/value
+- eyesight status: "validated"  methods.json#/eyesight/107/status
+- eyesight param a: -5.323  methods.json#/eyesight/107/params/a
+- eyesight param a_hi: -5.102  methods.json#/eyesight/107/params/a_hi
+- eyesight param a_lo: -5.54  methods.json#/eyesight/107/params/a_lo
+- eyesight param b: 3.08  methods.json#/eyesight/107/params/b
+- eyesight param b_hi: 3.437  methods.json#/eyesight/107/params/b_hi
+- eyesight param b_lo: 2.826  methods.json#/eyesight/107/params/b_lo
+- eyesight param c: 0.833  methods.json#/eyesight/107/params/c
+- eyesight param c_hi: 0.988  methods.json#/eyesight/107/params/c_hi
+- eyesight param c_lo: 0.645  methods.json#/eyesight/107/params/c_lo
+- eyesight g: 2.024  methods.json#/eyesight/107/g
 
 ## Namibia (`namibia`)
 
@@ -4297,26 +6242,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  namibia/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  namibia/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  namibia/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.134  methods.json#/validation/1153/value
-- LOYO weekly WAPE baseline annual_ratio: 0.17  methods.json#/validation/1153/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 1.208  methods.json#/validation/1153/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1153/years
-- LOYO weekly WAPE (tier2): 0.173  methods.json#/validation/1168/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1168/years
-- reliability_err (tier2): 0.0  methods.json#/validation/1166/value
-- reliability_year_absolute_err (tier2): 0.025  methods.json#/validation/1167/value
-- t1_t2_wape (tier2): 0.154  methods.json#/validation/1170/value
-- eyesight status: "exploratory"  methods.json#/eyesight/66/status
-- eyesight param a: -3.129  methods.json#/eyesight/66/params/a
-- eyesight param a_hi: -3.073  methods.json#/eyesight/66/params/a_hi
-- eyesight param a_lo: -3.196  methods.json#/eyesight/66/params/a_lo
-- eyesight param b: 1.954  methods.json#/eyesight/66/params/b
-- eyesight param b_hi: 2.005  methods.json#/eyesight/66/params/b_hi
-- eyesight param b_lo: 1.896  methods.json#/eyesight/66/params/b_lo
-- eyesight param c: 0.863  methods.json#/eyesight/66/params/c
-- eyesight param c_hi: 0.894  methods.json#/eyesight/66/params/c_hi
-- eyesight param c_lo: 0.843  methods.json#/eyesight/66/params/c_lo
-- eyesight g: 1.291  methods.json#/eyesight/66/g
+- LOYO weekly WAPE (tier1): 0.134  methods.json#/validation/1744/value
+- LOYO weekly WAPE baseline annual_ratio: 0.17  methods.json#/validation/1744/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.208  methods.json#/validation/1744/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1744/years
+- LOYO weekly WAPE (tier2): 0.173  methods.json#/validation/1759/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1759/years
+- reliability_err (tier2): 0.0  methods.json#/validation/1757/value
+- reliability_year_absolute_err (tier2): 0.025  methods.json#/validation/1758/value
+- t1_t2_wape (tier2): 0.154  methods.json#/validation/1761/value
+- eyesight status: "exploratory"  methods.json#/eyesight/108/status
+- eyesight param a: -3.129  methods.json#/eyesight/108/params/a
+- eyesight param a_hi: -3.073  methods.json#/eyesight/108/params/a_hi
+- eyesight param a_lo: -3.196  methods.json#/eyesight/108/params/a_lo
+- eyesight param b: 1.954  methods.json#/eyesight/108/params/b
+- eyesight param b_hi: 2.005  methods.json#/eyesight/108/params/b_hi
+- eyesight param b_lo: 1.896  methods.json#/eyesight/108/params/b_lo
+- eyesight param c: 0.863  methods.json#/eyesight/108/params/c
+- eyesight param c_hi: 0.894  methods.json#/eyesight/108/params/c_hi
+- eyesight param c_lo: 0.843  methods.json#/eyesight/108/params/c_lo
+- eyesight g: 1.291  methods.json#/eyesight/108/g
 
 ## Nepal (`nepal`)
 
@@ -4360,26 +6305,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  nepal/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  nepal/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  nepal/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.221  methods.json#/validation/1171/value
-- LOYO weekly WAPE baseline annual_ratio: 0.229  methods.json#/validation/1171/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 3.326  methods.json#/validation/1171/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1171/years
-- LOYO weekly WAPE (tier2): 0.194  methods.json#/validation/1186/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1186/years
-- reliability_err (tier2): 0.004  methods.json#/validation/1184/value
-- reliability_year_absolute_err (tier2): 0.081  methods.json#/validation/1185/value
-- t1_t2_wape (tier2): 0.146  methods.json#/validation/1188/value
-- eyesight status: "validated"  methods.json#/eyesight/67/status
-- eyesight param a: -3.821  methods.json#/eyesight/67/params/a
-- eyesight param a_hi: -3.744  methods.json#/eyesight/67/params/a_hi
-- eyesight param a_lo: -3.924  methods.json#/eyesight/67/params/a_lo
-- eyesight param b: 2.572  methods.json#/eyesight/67/params/b
-- eyesight param b_hi: 2.639  methods.json#/eyesight/67/params/b_hi
-- eyesight param b_lo: 2.49  methods.json#/eyesight/67/params/b_lo
-- eyesight param c: 0.706  methods.json#/eyesight/67/params/c
-- eyesight param c_hi: 0.764  methods.json#/eyesight/67/params/c_hi
-- eyesight param c_lo: 0.672  methods.json#/eyesight/67/params/c_lo
-- eyesight g: 1.542  methods.json#/eyesight/67/g
+- LOYO weekly WAPE (tier1): 0.221  methods.json#/validation/1762/value
+- LOYO weekly WAPE baseline annual_ratio: 0.229  methods.json#/validation/1762/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.326  methods.json#/validation/1762/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1762/years
+- LOYO weekly WAPE (tier2): 0.194  methods.json#/validation/1777/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1777/years
+- reliability_err (tier2): 0.004  methods.json#/validation/1775/value
+- reliability_year_absolute_err (tier2): 0.081  methods.json#/validation/1776/value
+- t1_t2_wape (tier2): 0.146  methods.json#/validation/1779/value
+- eyesight status: "validated"  methods.json#/eyesight/109/status
+- eyesight param a: -3.821  methods.json#/eyesight/109/params/a
+- eyesight param a_hi: -3.744  methods.json#/eyesight/109/params/a_hi
+- eyesight param a_lo: -3.924  methods.json#/eyesight/109/params/a_lo
+- eyesight param b: 2.572  methods.json#/eyesight/109/params/b
+- eyesight param b_hi: 2.639  methods.json#/eyesight/109/params/b_hi
+- eyesight param b_lo: 2.49  methods.json#/eyesight/109/params/b_lo
+- eyesight param c: 0.706  methods.json#/eyesight/109/params/c
+- eyesight param c_hi: 0.764  methods.json#/eyesight/109/params/c_hi
+- eyesight param c_lo: 0.672  methods.json#/eyesight/109/params/c_lo
+- eyesight g: 1.542  methods.json#/eyesight/109/g
 
 ## Netherlands (`netherlands`)
 
@@ -4432,11 +6377,11 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  netherlands/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  netherlands/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  netherlands/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.934  methods.json#/validation/1189/value
-- LOYO weekly WAPE baseline annual_ratio: 0.991  methods.json#/validation/1189/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 2.511  methods.json#/validation/1189/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1189/years
-- eyesight status: "absent"  methods.json#/eyesight/68/status
+- LOYO weekly WAPE (tier1): 0.934  methods.json#/validation/1780/value
+- LOYO weekly WAPE baseline annual_ratio: 0.991  methods.json#/validation/1780/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.511  methods.json#/validation/1780/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1780/years
+- eyesight status: "absent"  methods.json#/eyesight/110/status
 
 ## New Caledonia (`new-caledonia`)
 
@@ -4480,26 +6425,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  new-caledonia/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  new-caledonia/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  new-caledonia/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.526  methods.json#/validation/1202/value
-- LOYO weekly WAPE baseline annual_ratio: 0.588  methods.json#/validation/1202/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 3.596  methods.json#/validation/1202/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1202/years
-- LOYO weekly WAPE (tier2): 0.479  methods.json#/validation/1217/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1217/years
-- reliability_err (tier2): 0.004  methods.json#/validation/1215/value
-- reliability_year_absolute_err (tier2): 0.123  methods.json#/validation/1216/value
-- t1_t2_wape (tier2): 0.293  methods.json#/validation/1219/value
-- eyesight status: "validated"  methods.json#/eyesight/69/status
-- eyesight param a: -3.974  methods.json#/eyesight/69/params/a
-- eyesight param a_hi: -3.731  methods.json#/eyesight/69/params/a_hi
-- eyesight param a_lo: -4.482  methods.json#/eyesight/69/params/a_lo
-- eyesight param b: 2.604  methods.json#/eyesight/69/params/b
-- eyesight param b_hi: 3.414  methods.json#/eyesight/69/params/b_hi
-- eyesight param b_lo: 2.194  methods.json#/eyesight/69/params/b_lo
-- eyesight param c: 0.671  methods.json#/eyesight/69/params/c
-- eyesight param c_hi: 0.819  methods.json#/eyesight/69/params/c_hi
-- eyesight param c_lo: 0.487  methods.json#/eyesight/69/params/c_lo
-- eyesight g: 1.476  methods.json#/eyesight/69/g
+- LOYO weekly WAPE (tier1): 0.526  methods.json#/validation/1793/value
+- LOYO weekly WAPE baseline annual_ratio: 0.588  methods.json#/validation/1793/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.596  methods.json#/validation/1793/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1793/years
+- LOYO weekly WAPE (tier2): 0.479  methods.json#/validation/1808/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1808/years
+- reliability_err (tier2): 0.004  methods.json#/validation/1806/value
+- reliability_year_absolute_err (tier2): 0.123  methods.json#/validation/1807/value
+- t1_t2_wape (tier2): 0.293  methods.json#/validation/1810/value
+- eyesight status: "validated"  methods.json#/eyesight/111/status
+- eyesight param a: -3.974  methods.json#/eyesight/111/params/a
+- eyesight param a_hi: -3.731  methods.json#/eyesight/111/params/a_hi
+- eyesight param a_lo: -4.482  methods.json#/eyesight/111/params/a_lo
+- eyesight param b: 2.604  methods.json#/eyesight/111/params/b
+- eyesight param b_hi: 3.414  methods.json#/eyesight/111/params/b_hi
+- eyesight param b_lo: 2.194  methods.json#/eyesight/111/params/b_lo
+- eyesight param c: 0.671  methods.json#/eyesight/111/params/c
+- eyesight param c_hi: 0.819  methods.json#/eyesight/111/params/c_hi
+- eyesight param c_lo: 0.487  methods.json#/eyesight/111/params/c_lo
+- eyesight g: 1.476  methods.json#/eyesight/111/g
 
 ## New Zealand (`new-zealand`)
 
@@ -4552,26 +6497,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  new-zealand/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  new-zealand/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  new-zealand/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.428  methods.json#/validation/1220/value
-- LOYO weekly WAPE baseline annual_ratio: 0.543  methods.json#/validation/1220/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 4.725  methods.json#/validation/1220/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1220/years
-- LOYO weekly WAPE (tier2): 0.438  methods.json#/validation/1235/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1235/years
-- reliability_err (tier2): 0.001  methods.json#/validation/1233/value
-- reliability_year_absolute_err (tier2): 0.081  methods.json#/validation/1234/value
-- t1_t2_wape (tier2): 0.235  methods.json#/validation/1237/value
-- eyesight status: "validated"  methods.json#/eyesight/70/status
-- eyesight param a: -3.836  methods.json#/eyesight/70/params/a
-- eyesight param a_hi: -3.753  methods.json#/eyesight/70/params/a_hi
-- eyesight param a_lo: -3.968  methods.json#/eyesight/70/params/a_lo
-- eyesight param b: 3.269  methods.json#/eyesight/70/params/b
-- eyesight param b_hi: 3.541  methods.json#/eyesight/70/params/b_hi
-- eyesight param b_lo: 2.975  methods.json#/eyesight/70/params/b_lo
-- eyesight param c: 0.343  methods.json#/eyesight/70/params/c
-- eyesight param c_hi: 0.39  methods.json#/eyesight/70/params/c_hi
-- eyesight param c_lo: 0.314  methods.json#/eyesight/70/params/c_lo
-- eyesight g: 1.711  methods.json#/eyesight/70/g
+- LOYO weekly WAPE (tier1): 0.428  methods.json#/validation/1811/value
+- LOYO weekly WAPE baseline annual_ratio: 0.543  methods.json#/validation/1811/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 4.725  methods.json#/validation/1811/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1811/years
+- LOYO weekly WAPE (tier2): 0.438  methods.json#/validation/1826/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1826/years
+- reliability_err (tier2): 0.001  methods.json#/validation/1824/value
+- reliability_year_absolute_err (tier2): 0.081  methods.json#/validation/1825/value
+- t1_t2_wape (tier2): 0.235  methods.json#/validation/1828/value
+- eyesight status: "validated"  methods.json#/eyesight/112/status
+- eyesight param a: -3.836  methods.json#/eyesight/112/params/a
+- eyesight param a_hi: -3.753  methods.json#/eyesight/112/params/a_hi
+- eyesight param a_lo: -3.968  methods.json#/eyesight/112/params/a_lo
+- eyesight param b: 3.269  methods.json#/eyesight/112/params/b
+- eyesight param b_hi: 3.541  methods.json#/eyesight/112/params/b_hi
+- eyesight param b_lo: 2.975  methods.json#/eyesight/112/params/b_lo
+- eyesight param c: 0.343  methods.json#/eyesight/112/params/c
+- eyesight param c_hi: 0.39  methods.json#/eyesight/112/params/c_hi
+- eyesight param c_lo: 0.314  methods.json#/eyesight/112/params/c_lo
+- eyesight g: 1.711  methods.json#/eyesight/112/g
 
 ## Nicaragua (`nicaragua`)
 
@@ -4615,26 +6560,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  nicaragua/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  nicaragua/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  nicaragua/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.215  methods.json#/validation/1238/value
-- LOYO weekly WAPE baseline annual_ratio: 0.25  methods.json#/validation/1238/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 4.956  methods.json#/validation/1238/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1238/years
-- LOYO weekly WAPE (tier2): 0.223  methods.json#/validation/1253/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1253/years
-- reliability_err (tier2): 0.0  methods.json#/validation/1251/value
-- reliability_year_absolute_err (tier2): 0.061  methods.json#/validation/1252/value
-- t1_t2_wape (tier2): 0.142  methods.json#/validation/1255/value
-- eyesight status: "validated"  methods.json#/eyesight/71/status
-- eyesight param a: -4.072  methods.json#/eyesight/71/params/a
-- eyesight param a_hi: -3.968  methods.json#/eyesight/71/params/a_hi
-- eyesight param a_lo: -4.192  methods.json#/eyesight/71/params/a_lo
-- eyesight param b: 1.9  methods.json#/eyesight/71/params/b
-- eyesight param b_hi: 1.991  methods.json#/eyesight/71/params/b_hi
-- eyesight param b_lo: 1.832  methods.json#/eyesight/71/params/b_lo
-- eyesight param c: 0.742  methods.json#/eyesight/71/params/c
-- eyesight param c_hi: 0.806  methods.json#/eyesight/71/params/c_hi
-- eyesight param c_lo: 0.666  methods.json#/eyesight/71/params/c_lo
-- eyesight g: 1.923  methods.json#/eyesight/71/g
+- LOYO weekly WAPE (tier1): 0.215  methods.json#/validation/1829/value
+- LOYO weekly WAPE baseline annual_ratio: 0.25  methods.json#/validation/1829/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 4.956  methods.json#/validation/1829/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1829/years
+- LOYO weekly WAPE (tier2): 0.223  methods.json#/validation/1844/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1844/years
+- reliability_err (tier2): 0.0  methods.json#/validation/1842/value
+- reliability_year_absolute_err (tier2): 0.061  methods.json#/validation/1843/value
+- t1_t2_wape (tier2): 0.142  methods.json#/validation/1846/value
+- eyesight status: "validated"  methods.json#/eyesight/113/status
+- eyesight param a: -4.072  methods.json#/eyesight/113/params/a
+- eyesight param a_hi: -3.968  methods.json#/eyesight/113/params/a_hi
+- eyesight param a_lo: -4.192  methods.json#/eyesight/113/params/a_lo
+- eyesight param b: 1.9  methods.json#/eyesight/113/params/b
+- eyesight param b_hi: 1.991  methods.json#/eyesight/113/params/b_hi
+- eyesight param b_lo: 1.832  methods.json#/eyesight/113/params/b_lo
+- eyesight param c: 0.742  methods.json#/eyesight/113/params/c
+- eyesight param c_hi: 0.806  methods.json#/eyesight/113/params/c_hi
+- eyesight param c_lo: 0.666  methods.json#/eyesight/113/params/c_lo
+- eyesight g: 1.923  methods.json#/eyesight/113/g
 
 ## Niger (`niger`)
 
@@ -4678,26 +6623,152 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  niger/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  niger/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  niger/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.34  methods.json#/validation/1256/value
-- LOYO weekly WAPE baseline annual_ratio: 0.501  methods.json#/validation/1256/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 4.167  methods.json#/validation/1256/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1256/years
-- LOYO weekly WAPE (tier2): 0.338  methods.json#/validation/1271/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1271/years
-- reliability_err (tier2): 0.0  methods.json#/validation/1269/value
-- reliability_year_absolute_err (tier2): 0.132  methods.json#/validation/1270/value
-- t1_t2_wape (tier2): 0.232  methods.json#/validation/1273/value
-- eyesight status: "validated"  methods.json#/eyesight/72/status
-- eyesight param a: -4.62  methods.json#/eyesight/72/params/a
-- eyesight param a_hi: -4.471  methods.json#/eyesight/72/params/a_hi
-- eyesight param a_lo: -4.808  methods.json#/eyesight/72/params/a_lo
-- eyesight param b: 2.437  methods.json#/eyesight/72/params/b
-- eyesight param b_hi: 2.605  methods.json#/eyesight/72/params/b_hi
-- eyesight param b_lo: 2.324  methods.json#/eyesight/72/params/b_lo
-- eyesight param c: 0.757  methods.json#/eyesight/72/params/c
-- eyesight param c_hi: 0.806  methods.json#/eyesight/72/params/c_hi
-- eyesight param c_lo: 0.709  methods.json#/eyesight/72/params/c_lo
-- eyesight g: 1.422  methods.json#/eyesight/72/g
+- LOYO weekly WAPE (tier1): 0.34  methods.json#/validation/1847/value
+- LOYO weekly WAPE baseline annual_ratio: 0.501  methods.json#/validation/1847/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 4.167  methods.json#/validation/1847/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1847/years
+- LOYO weekly WAPE (tier2): 0.338  methods.json#/validation/1862/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1862/years
+- reliability_err (tier2): 0.0  methods.json#/validation/1860/value
+- reliability_year_absolute_err (tier2): 0.132  methods.json#/validation/1861/value
+- t1_t2_wape (tier2): 0.232  methods.json#/validation/1864/value
+- eyesight status: "validated"  methods.json#/eyesight/114/status
+- eyesight param a: -4.62  methods.json#/eyesight/114/params/a
+- eyesight param a_hi: -4.471  methods.json#/eyesight/114/params/a_hi
+- eyesight param a_lo: -4.808  methods.json#/eyesight/114/params/a_lo
+- eyesight param b: 2.437  methods.json#/eyesight/114/params/b
+- eyesight param b_hi: 2.605  methods.json#/eyesight/114/params/b_hi
+- eyesight param b_lo: 2.324  methods.json#/eyesight/114/params/b_lo
+- eyesight param c: 0.757  methods.json#/eyesight/114/params/c
+- eyesight param c_hi: 0.806  methods.json#/eyesight/114/params/c_hi
+- eyesight param c_lo: 0.709  methods.json#/eyesight/114/params/c_lo
+- eyesight g: 1.422  methods.json#/eyesight/114/g
+
+## Niue (`niue`)
+
+- jump multiple (value): 4.0  niue/ruler.json#/jump_multiple/value
+- jump multiple (lo): 0.0  niue/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 8.0  niue/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  niue/ruler.json#/jump_multiple/years
+- ruler sentence: "In Niue, VIIRS reports about 4.0 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  niue/ruler.json#/sentence
+- harmonized trend pct_per_decade: null  niue/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: null  niue/trend.json#/harmonized/lo
+- harmonized trend hi: null  niue/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  niue/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 90.909  niue/trend.json#/naive/pct_per_decade
+- naive trend lo: 0.0  niue/trend.json#/naive/lo
+- naive trend hi: 142.857  niue/trend.json#/naive/hi
+- naive trend direction: "no_clear_change"  niue/trend.json#/naive/direction
+- trend years: [2003, 2025]  niue/trend.json#/years
+- verdict sentence_id: "unclear"  niue/trend.json#/sentence_id
+- verdict sentence: "Trend unavailable: the median annual activity is zero."  niue/trend.json#/sentence
+- critical weeks: []  niue/season.json#/critical_weeks
+- this week value: null  niue/nowcast.json#/value
+- this week lo: null  niue/nowcast.json#/lo
+- this week hi: null  niue/nowcast.json#/hi
+- this week percentile: null  niue/nowcast.json#/percentile
+- this week status: "unavailable"  niue/nowcast.json#/status
+- this week as_of: null  niue/nowcast.json#/as_of
+- this week window start: null  niue/nowcast.json#/window/start
+- this week window end: null  niue/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  niue/nowcast.json#/baseline_years
+- month to date value: null  niue/nowcast.json#/month_to_date/value
+- month to date median: null  niue/nowcast.json#/month_to_date/median
+- month to date ratio: null  niue/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  niue/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  niue/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.878  methods.json#/validation/1865/value
+- LOYO weekly WAPE baseline annual_ratio: 1.867  methods.json#/validation/1865/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 15.0  methods.json#/validation/1865/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1865/years
+- eyesight status: "absent"  methods.json#/eyesight/115/status
+
+## Northern Mariana Islands (`northern-mariana-islands`)
+
+- jump multiple (value): 5.742  northern-mariana-islands/ruler.json#/jump_multiple/value
+- jump multiple (lo): 0.0  northern-mariana-islands/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 14.0  northern-mariana-islands/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  northern-mariana-islands/ruler.json#/jump_multiple/years
+- ruler sentence: "In Northern Mariana Islands, VIIRS reports about 5.7 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  northern-mariana-islands/ruler.json#/sentence
+- harmonized trend pct_per_decade: -25.827  northern-mariana-islands/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -105.351  northern-mariana-islands/trend.json#/harmonized/lo
+- harmonized trend hi: 0.0  northern-mariana-islands/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  northern-mariana-islands/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 0.0  northern-mariana-islands/trend.json#/naive/pct_per_decade
+- naive trend lo: -55.556  northern-mariana-islands/trend.json#/naive/lo
+- naive trend hi: 78.571  northern-mariana-islands/trend.json#/naive/hi
+- naive trend direction: "no_clear_change"  northern-mariana-islands/trend.json#/naive/direction
+- trend years: [2003, 2025]  northern-mariana-islands/trend.json#/years
+- verdict sentence_id: "unclear"  northern-mariana-islands/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (-105 to 0% per decade)."  northern-mariana-islands/trend.json#/sentence
+- critical weeks: []  northern-mariana-islands/season.json#/critical_weeks
+- this week value: null  northern-mariana-islands/nowcast.json#/value
+- this week lo: null  northern-mariana-islands/nowcast.json#/lo
+- this week hi: null  northern-mariana-islands/nowcast.json#/hi
+- this week percentile: null  northern-mariana-islands/nowcast.json#/percentile
+- this week status: "unavailable"  northern-mariana-islands/nowcast.json#/status
+- this week as_of: null  northern-mariana-islands/nowcast.json#/as_of
+- this week window start: null  northern-mariana-islands/nowcast.json#/window/start
+- this week window end: null  northern-mariana-islands/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  northern-mariana-islands/nowcast.json#/baseline_years
+- month to date value: null  northern-mariana-islands/nowcast.json#/month_to_date/value
+- month to date median: null  northern-mariana-islands/nowcast.json#/month_to_date/median
+- month to date ratio: null  northern-mariana-islands/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  northern-mariana-islands/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  northern-mariana-islands/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.849  methods.json#/validation/1878/value
+- LOYO weekly WAPE baseline annual_ratio: 1.845  methods.json#/validation/1878/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 8.979  methods.json#/validation/1878/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1878/years
+- eyesight status: "absent"  methods.json#/eyesight/116/status
+
+## Norway (`norway`)
+
+- jump multiple (value): 5.261  norway/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.516  norway/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 8.969  norway/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  norway/ruler.json#/jump_multiple/years
+- ruler sentence: "In Norway, VIIRS reports about 5.3 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  norway/ruler.json#/sentence
+- harmonized trend pct_per_decade: -43.186  norway/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -62.668  norway/trend.json#/harmonized/lo
+- harmonized trend hi: -29.409  norway/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  norway/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 41.613  norway/trend.json#/naive/pct_per_decade
+- naive trend lo: 16.801  norway/trend.json#/naive/lo
+- naive trend hi: 79.219  norway/trend.json#/naive/hi
+- naive trend direction: "rising"  norway/trend.json#/naive/direction
+- trend years: [2003, 2025]  norway/trend.json#/years
+- verdict sentence_id: "artifact_falling"  norway/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 43% per decade (-63 to -29)."  norway/trend.json#/sentence
+- critical weeks: [14, 15, 16, 17, 18, 19]  norway/season.json#/critical_weeks
+- window w1 label: "early-April to mid-May"  norway/season.json#/windows/0/label
+- window w1 start_week: 14  norway/season.json#/windows/0/start_week
+- window w1 peak_week: 17  norway/season.json#/windows/0/peak_week
+- window w1 end_week: 19  norway/season.json#/windows/0/end_week
+- window w1 share: 0.854  norway/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -5.714  norway/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -18.906  norway/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 4.304  norway/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-April to mid-May season."  norway/season.json#/windows/0/sentence
+- this week value: null  norway/nowcast.json#/value
+- this week lo: null  norway/nowcast.json#/lo
+- this week hi: null  norway/nowcast.json#/hi
+- this week percentile: null  norway/nowcast.json#/percentile
+- this week status: "unavailable"  norway/nowcast.json#/status
+- this week as_of: null  norway/nowcast.json#/as_of
+- this week window start: null  norway/nowcast.json#/window/start
+- this week window end: null  norway/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  norway/nowcast.json#/baseline_years
+- month to date value: null  norway/nowcast.json#/month_to_date/value
+- month to date median: null  norway/nowcast.json#/month_to_date/median
+- month to date ratio: null  norway/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  norway/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  norway/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.817  methods.json#/validation/1891/value
+- LOYO weekly WAPE baseline annual_ratio: 0.834  methods.json#/validation/1891/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 4.186  methods.json#/validation/1891/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1891/years
+- eyesight status: "absent"  methods.json#/eyesight/117/status
 
 ## Oman (`oman`)
 
@@ -4741,26 +6812,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  oman/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  oman/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  oman/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 1.528  methods.json#/validation/1274/value
-- LOYO weekly WAPE baseline annual_ratio: 1.531  methods.json#/validation/1274/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 34.608  methods.json#/validation/1274/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1274/years
-- LOYO weekly WAPE (tier2): 1.537  methods.json#/validation/1289/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1289/years
-- reliability_err (tier2): 0.008  methods.json#/validation/1287/value
-- reliability_year_absolute_err (tier2): 0.484  methods.json#/validation/1288/value
-- t1_t2_wape (tier2): 0.511  methods.json#/validation/1291/value
-- eyesight status: "validated"  methods.json#/eyesight/73/status
-- eyesight param a: -5.197  methods.json#/eyesight/73/params/a
-- eyesight param a_hi: -4.243  methods.json#/eyesight/73/params/a_hi
-- eyesight param a_lo: -6.81  methods.json#/eyesight/73/params/a_lo
-- eyesight param b: 3.061  methods.json#/eyesight/73/params/b
-- eyesight param b_hi: 4.131  methods.json#/eyesight/73/params/b_hi
-- eyesight param b_lo: 2.36  methods.json#/eyesight/73/params/b_lo
-- eyesight param c: 0.11  methods.json#/eyesight/73/params/c
-- eyesight param c_hi: 0.834  methods.json#/eyesight/73/params/c_hi
-- eyesight param c_lo: 0.05  methods.json#/eyesight/73/params/c_lo
-- eyesight g: 3.229  methods.json#/eyesight/73/g
+- LOYO weekly WAPE (tier1): 1.528  methods.json#/validation/1904/value
+- LOYO weekly WAPE baseline annual_ratio: 1.531  methods.json#/validation/1904/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 34.608  methods.json#/validation/1904/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1904/years
+- LOYO weekly WAPE (tier2): 1.537  methods.json#/validation/1919/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1919/years
+- reliability_err (tier2): 0.008  methods.json#/validation/1917/value
+- reliability_year_absolute_err (tier2): 0.484  methods.json#/validation/1918/value
+- t1_t2_wape (tier2): 0.511  methods.json#/validation/1921/value
+- eyesight status: "validated"  methods.json#/eyesight/118/status
+- eyesight param a: -5.197  methods.json#/eyesight/118/params/a
+- eyesight param a_hi: -4.243  methods.json#/eyesight/118/params/a_hi
+- eyesight param a_lo: -6.81  methods.json#/eyesight/118/params/a_lo
+- eyesight param b: 3.061  methods.json#/eyesight/118/params/b
+- eyesight param b_hi: 4.131  methods.json#/eyesight/118/params/b_hi
+- eyesight param b_lo: 2.36  methods.json#/eyesight/118/params/b_lo
+- eyesight param c: 0.11  methods.json#/eyesight/118/params/c
+- eyesight param c_hi: 0.834  methods.json#/eyesight/118/params/c_hi
+- eyesight param c_lo: 0.05  methods.json#/eyesight/118/params/c_lo
+- eyesight g: 3.229  methods.json#/eyesight/118/g
 
 ## Pakistan (`pakistan`)
 
@@ -4813,26 +6884,113 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  pakistan/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  pakistan/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  pakistan/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.216  methods.json#/validation/1292/value
-- LOYO weekly WAPE baseline annual_ratio: 0.247  methods.json#/validation/1292/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 5.286  methods.json#/validation/1292/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1292/years
-- LOYO weekly WAPE (tier2): 0.288  methods.json#/validation/1307/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1307/years
-- reliability_err (tier2): 0.001  methods.json#/validation/1305/value
-- reliability_year_absolute_err (tier2): 0.084  methods.json#/validation/1306/value
-- t1_t2_wape (tier2): 0.242  methods.json#/validation/1309/value
-- eyesight status: "exploratory"  methods.json#/eyesight/74/status
-- eyesight param a: -4.189  methods.json#/eyesight/74/params/a
-- eyesight param a_hi: -4.083  methods.json#/eyesight/74/params/a_hi
-- eyesight param a_lo: -4.241  methods.json#/eyesight/74/params/a_lo
-- eyesight param b: 1.842  methods.json#/eyesight/74/params/b
-- eyesight param b_hi: 1.89  methods.json#/eyesight/74/params/b_hi
-- eyesight param b_lo: 1.803  methods.json#/eyesight/74/params/b_lo
-- eyesight param c: 1.0  methods.json#/eyesight/74/params/c
-- eyesight param c_hi: 1.0  methods.json#/eyesight/74/params/c_hi
-- eyesight param c_lo: 0.905  methods.json#/eyesight/74/params/c_lo
-- eyesight g: 2.376  methods.json#/eyesight/74/g
+- LOYO weekly WAPE (tier1): 0.216  methods.json#/validation/1922/value
+- LOYO weekly WAPE baseline annual_ratio: 0.247  methods.json#/validation/1922/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 5.286  methods.json#/validation/1922/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1922/years
+- LOYO weekly WAPE (tier2): 0.288  methods.json#/validation/1937/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1937/years
+- reliability_err (tier2): 0.001  methods.json#/validation/1935/value
+- reliability_year_absolute_err (tier2): 0.084  methods.json#/validation/1936/value
+- t1_t2_wape (tier2): 0.242  methods.json#/validation/1939/value
+- eyesight status: "exploratory"  methods.json#/eyesight/119/status
+- eyesight param a: -4.189  methods.json#/eyesight/119/params/a
+- eyesight param a_hi: -4.083  methods.json#/eyesight/119/params/a_hi
+- eyesight param a_lo: -4.241  methods.json#/eyesight/119/params/a_lo
+- eyesight param b: 1.842  methods.json#/eyesight/119/params/b
+- eyesight param b_hi: 1.89  methods.json#/eyesight/119/params/b_hi
+- eyesight param b_lo: 1.803  methods.json#/eyesight/119/params/b_lo
+- eyesight param c: 1.0  methods.json#/eyesight/119/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/119/params/c_hi
+- eyesight param c_lo: 0.905  methods.json#/eyesight/119/params/c_lo
+- eyesight g: 2.376  methods.json#/eyesight/119/g
+
+## Palau (`palau`)
+
+- jump multiple (value): 6.0  palau/ruler.json#/jump_multiple/value
+- jump multiple (lo): 4.667  palau/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 10.0  palau/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  palau/ruler.json#/jump_multiple/years
+- ruler sentence: "In Palau, VIIRS reports about 6.0 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  palau/ruler.json#/sentence
+- harmonized trend pct_per_decade: null  palau/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: null  palau/trend.json#/harmonized/lo
+- harmonized trend hi: null  palau/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  palau/trend.json#/harmonized/direction
+- naive trend pct_per_decade: null  palau/trend.json#/naive/pct_per_decade
+- naive trend lo: null  palau/trend.json#/naive/lo
+- naive trend hi: null  palau/trend.json#/naive/hi
+- naive trend direction: "no_clear_change"  palau/trend.json#/naive/direction
+- trend years: [2003, 2025]  palau/trend.json#/years
+- verdict sentence_id: "unclear"  palau/trend.json#/sentence_id
+- verdict sentence: "Trend unavailable: the median annual activity is zero."  palau/trend.json#/sentence
+- critical weeks: []  palau/season.json#/critical_weeks
+- this week value: null  palau/nowcast.json#/value
+- this week lo: null  palau/nowcast.json#/lo
+- this week hi: null  palau/nowcast.json#/hi
+- this week percentile: null  palau/nowcast.json#/percentile
+- this week status: "unavailable"  palau/nowcast.json#/status
+- this week as_of: null  palau/nowcast.json#/as_of
+- this week window start: null  palau/nowcast.json#/window/start
+- this week window end: null  palau/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  palau/nowcast.json#/baseline_years
+- month to date value: null  palau/nowcast.json#/month_to_date/value
+- month to date median: null  palau/nowcast.json#/month_to_date/median
+- month to date ratio: null  palau/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  palau/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  palau/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.665  methods.json#/validation/1940/value
+- LOYO weekly WAPE baseline annual_ratio: 1.732  methods.json#/validation/1940/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 8.0  methods.json#/validation/1940/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1940/years
+- eyesight status: "absent"  methods.json#/eyesight/120/status
+
+## Palestine (`palestine`)
+
+- jump multiple (value): 7.585  palestine/ruler.json#/jump_multiple/value
+- jump multiple (lo): 5.606  palestine/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 15.0  palestine/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  palestine/ruler.json#/jump_multiple/years
+- ruler sentence: "In Palestine, VIIRS reports about 7.6 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  palestine/ruler.json#/sentence
+- harmonized trend pct_per_decade: 55.556  palestine/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: 24.35  palestine/trend.json#/harmonized/lo
+- harmonized trend hi: 111.111  palestine/trend.json#/harmonized/hi
+- harmonized trend direction: "rising"  palestine/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 111.283  palestine/trend.json#/naive/pct_per_decade
+- naive trend lo: 65.399  palestine/trend.json#/naive/lo
+- naive trend hi: 752.157  palestine/trend.json#/naive/hi
+- naive trend direction: "rising"  palestine/trend.json#/naive/direction
+- trend years: [2003, 2025]  palestine/trend.json#/years
+- verdict sentence_id: "unclear"  palestine/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (24 to 111% per decade)."  palestine/trend.json#/sentence
+- critical weeks: [22, 23, 24]  palestine/season.json#/critical_weeks
+- window w1 label: "late-May to mid-June"  palestine/season.json#/windows/0/label
+- window w1 start_week: 22  palestine/season.json#/windows/0/start_week
+- window w1 peak_week: 22  palestine/season.json#/windows/0/peak_week
+- window w1 end_week: 24  palestine/season.json#/windows/0/end_week
+- window w1 share: 1.0  palestine/season.json#/windows/0/share
+- window w1 start shift days per decade (value): null  palestine/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): null  palestine/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): null  palestine/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "Timing shift unavailable: fewer than three valid annual observations."  palestine/season.json#/windows/0/sentence
+- this week value: null  palestine/nowcast.json#/value
+- this week lo: null  palestine/nowcast.json#/lo
+- this week hi: null  palestine/nowcast.json#/hi
+- this week percentile: null  palestine/nowcast.json#/percentile
+- this week status: "unavailable"  palestine/nowcast.json#/status
+- this week as_of: null  palestine/nowcast.json#/as_of
+- this week window start: null  palestine/nowcast.json#/window/start
+- this week window end: null  palestine/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  palestine/nowcast.json#/baseline_years
+- month to date value: null  palestine/nowcast.json#/month_to_date/value
+- month to date median: null  palestine/nowcast.json#/month_to_date/median
+- month to date ratio: null  palestine/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  palestine/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  palestine/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.091  methods.json#/validation/1953/value
+- LOYO weekly WAPE baseline annual_ratio: 1.097  methods.json#/validation/1953/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 6.357  methods.json#/validation/1953/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1953/years
+- eyesight status: "absent"  methods.json#/eyesight/121/status
 
 ## Panama (`panama`)
 
@@ -4876,26 +7034,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  panama/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  panama/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  panama/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.26  methods.json#/validation/1310/value
-- LOYO weekly WAPE baseline annual_ratio: 0.262  methods.json#/validation/1310/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 4.155  methods.json#/validation/1310/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1310/years
-- LOYO weekly WAPE (tier2): 0.237  methods.json#/validation/1325/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1325/years
-- reliability_err (tier2): 0.003  methods.json#/validation/1323/value
-- reliability_year_absolute_err (tier2): 0.157  methods.json#/validation/1324/value
-- t1_t2_wape (tier2): 0.091  methods.json#/validation/1327/value
-- eyesight status: "validated"  methods.json#/eyesight/75/status
-- eyesight param a: -3.456  methods.json#/eyesight/75/params/a
-- eyesight param a_hi: -3.265  methods.json#/eyesight/75/params/a_hi
-- eyesight param a_lo: -3.619  methods.json#/eyesight/75/params/a_lo
-- eyesight param b: 1.975  methods.json#/eyesight/75/params/b
-- eyesight param b_hi: 2.121  methods.json#/eyesight/75/params/b_hi
-- eyesight param b_lo: 1.819  methods.json#/eyesight/75/params/b_lo
-- eyesight param c: 0.534  methods.json#/eyesight/75/params/c
-- eyesight param c_hi: 0.646  methods.json#/eyesight/75/params/c_hi
-- eyesight param c_lo: 0.457  methods.json#/eyesight/75/params/c_lo
-- eyesight g: 1.847  methods.json#/eyesight/75/g
+- LOYO weekly WAPE (tier1): 0.26  methods.json#/validation/1966/value
+- LOYO weekly WAPE baseline annual_ratio: 0.262  methods.json#/validation/1966/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 4.155  methods.json#/validation/1966/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1966/years
+- LOYO weekly WAPE (tier2): 0.237  methods.json#/validation/1981/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1981/years
+- reliability_err (tier2): 0.003  methods.json#/validation/1979/value
+- reliability_year_absolute_err (tier2): 0.157  methods.json#/validation/1980/value
+- t1_t2_wape (tier2): 0.091  methods.json#/validation/1983/value
+- eyesight status: "validated"  methods.json#/eyesight/122/status
+- eyesight param a: -3.456  methods.json#/eyesight/122/params/a
+- eyesight param a_hi: -3.265  methods.json#/eyesight/122/params/a_hi
+- eyesight param a_lo: -3.619  methods.json#/eyesight/122/params/a_lo
+- eyesight param b: 1.975  methods.json#/eyesight/122/params/b
+- eyesight param b_hi: 2.121  methods.json#/eyesight/122/params/b_hi
+- eyesight param b_lo: 1.819  methods.json#/eyesight/122/params/b_lo
+- eyesight param c: 0.534  methods.json#/eyesight/122/params/c
+- eyesight param c_hi: 0.646  methods.json#/eyesight/122/params/c_hi
+- eyesight param c_lo: 0.457  methods.json#/eyesight/122/params/c_lo
+- eyesight g: 1.847  methods.json#/eyesight/122/g
 
 ## Papua New Guinea (`papua-new-guinea`)
 
@@ -4939,26 +7097,79 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  papua-new-guinea/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  papua-new-guinea/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  papua-new-guinea/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.207  methods.json#/validation/1328/value
-- LOYO weekly WAPE baseline annual_ratio: 0.21  methods.json#/validation/1328/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 3.812  methods.json#/validation/1328/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1328/years
-- LOYO weekly WAPE (tier2): 0.207  methods.json#/validation/1343/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1343/years
-- reliability_err (tier2): 0.003  methods.json#/validation/1341/value
-- reliability_year_absolute_err (tier2): 0.062  methods.json#/validation/1342/value
-- t1_t2_wape (tier2): 0.167  methods.json#/validation/1345/value
-- eyesight status: "validated"  methods.json#/eyesight/76/status
-- eyesight param a: -3.988  methods.json#/eyesight/76/params/a
-- eyesight param a_hi: -3.92  methods.json#/eyesight/76/params/a_hi
-- eyesight param a_lo: -4.084  methods.json#/eyesight/76/params/a_lo
-- eyesight param b: 2.374  methods.json#/eyesight/76/params/b
-- eyesight param b_hi: 2.454  methods.json#/eyesight/76/params/b_hi
-- eyesight param b_lo: 2.306  methods.json#/eyesight/76/params/b_lo
-- eyesight param c: 0.673  methods.json#/eyesight/76/params/c
-- eyesight param c_hi: 0.716  methods.json#/eyesight/76/params/c_hi
-- eyesight param c_lo: 0.638  methods.json#/eyesight/76/params/c_lo
-- eyesight g: 1.812  methods.json#/eyesight/76/g
+- LOYO weekly WAPE (tier1): 0.207  methods.json#/validation/1984/value
+- LOYO weekly WAPE baseline annual_ratio: 0.21  methods.json#/validation/1984/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.812  methods.json#/validation/1984/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1984/years
+- LOYO weekly WAPE (tier2): 0.207  methods.json#/validation/1999/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1999/years
+- reliability_err (tier2): 0.003  methods.json#/validation/1997/value
+- reliability_year_absolute_err (tier2): 0.062  methods.json#/validation/1998/value
+- t1_t2_wape (tier2): 0.167  methods.json#/validation/2001/value
+- eyesight status: "validated"  methods.json#/eyesight/123/status
+- eyesight param a: -3.988  methods.json#/eyesight/123/params/a
+- eyesight param a_hi: -3.92  methods.json#/eyesight/123/params/a_hi
+- eyesight param a_lo: -4.084  methods.json#/eyesight/123/params/a_lo
+- eyesight param b: 2.374  methods.json#/eyesight/123/params/b
+- eyesight param b_hi: 2.454  methods.json#/eyesight/123/params/b_hi
+- eyesight param b_lo: 2.306  methods.json#/eyesight/123/params/b_lo
+- eyesight param c: 0.673  methods.json#/eyesight/123/params/c
+- eyesight param c_hi: 0.716  methods.json#/eyesight/123/params/c_hi
+- eyesight param c_lo: 0.638  methods.json#/eyesight/123/params/c_lo
+- eyesight g: 1.812  methods.json#/eyesight/123/g
+
+## Paraguay (`paraguay`)
+
+- jump multiple (value): 3.266  paraguay/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.043  paraguay/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 3.719  paraguay/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  paraguay/ruler.json#/jump_multiple/years
+- ruler sentence: "In Paraguay, VIIRS reports about 3.3 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  paraguay/ruler.json#/sentence
+- harmonized trend pct_per_decade: -29.807  paraguay/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -44.069  paraguay/trend.json#/harmonized/lo
+- harmonized trend hi: -17.732  paraguay/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  paraguay/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 48.212  paraguay/trend.json#/naive/pct_per_decade
+- naive trend lo: 26.929  paraguay/trend.json#/naive/lo
+- naive trend hi: 89.142  paraguay/trend.json#/naive/hi
+- naive trend direction: "rising"  paraguay/trend.json#/naive/direction
+- trend years: [2003, 2025]  paraguay/trend.json#/years
+- verdict sentence_id: "artifact_falling"  paraguay/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 30% per decade (-44 to -18)."  paraguay/trend.json#/sentence
+- critical weeks: [4, 5, 6, 11, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47]  paraguay/season.json#/critical_weeks
+- window w1 label: "mid-June to late-November"  paraguay/season.json#/windows/0/label
+- window w1 start_week: 24  paraguay/season.json#/windows/0/start_week
+- window w1 peak_week: 34  paraguay/season.json#/windows/0/peak_week
+- window w1 end_week: 47  paraguay/season.json#/windows/0/end_week
+- window w1 share: 0.755  paraguay/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -2.857  paraguay/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -13.333  paraguay/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 5.0  paraguay/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the mid-June to late-November season."  paraguay/season.json#/windows/0/sentence
+- this week value: null  paraguay/nowcast.json#/value
+- this week lo: null  paraguay/nowcast.json#/lo
+- this week hi: null  paraguay/nowcast.json#/hi
+- this week percentile: null  paraguay/nowcast.json#/percentile
+- this week status: "unavailable"  paraguay/nowcast.json#/status
+- this week as_of: null  paraguay/nowcast.json#/as_of
+- this week window start: null  paraguay/nowcast.json#/window/start
+- this week window end: null  paraguay/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  paraguay/nowcast.json#/baseline_years
+- month to date value: null  paraguay/nowcast.json#/month_to_date/value
+- month to date median: null  paraguay/nowcast.json#/month_to_date/median
+- month to date ratio: null  paraguay/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  paraguay/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  paraguay/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.15  methods.json#/validation/2002/value
+- LOYO weekly WAPE baseline annual_ratio: 0.181  methods.json#/validation/2002/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.917  methods.json#/validation/2002/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2002/years
+- LOYO weekly WAPE (tier2): 0.201  methods.json#/validation/2017/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2017/years
+- reliability_err (tier2): 0.001  methods.json#/validation/2015/value
+- reliability_year_absolute_err (tier2): 0.067  methods.json#/validation/2016/value
+- t1_t2_wape (tier2): 0.2  methods.json#/validation/2019/value
+- eyesight status: "absent"  methods.json#/eyesight/124/status
 
 ## Peru (`peru`)
 
@@ -5002,26 +7213,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  peru/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  peru/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  peru/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.194  methods.json#/validation/1346/value
-- LOYO weekly WAPE baseline annual_ratio: 0.272  methods.json#/validation/1346/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 3.56  methods.json#/validation/1346/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1346/years
-- LOYO weekly WAPE (tier2): 0.193  methods.json#/validation/1361/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1361/years
-- reliability_err (tier2): 0.0  methods.json#/validation/1359/value
-- reliability_year_absolute_err (tier2): 0.057  methods.json#/validation/1360/value
-- t1_t2_wape (tier2): 0.122  methods.json#/validation/1363/value
-- eyesight status: "validated"  methods.json#/eyesight/77/status
-- eyesight param a: -3.671  methods.json#/eyesight/77/params/a
-- eyesight param a_hi: -3.623  methods.json#/eyesight/77/params/a_hi
-- eyesight param a_lo: -3.721  methods.json#/eyesight/77/params/a_lo
-- eyesight param b: 2.189  methods.json#/eyesight/77/params/b
-- eyesight param b_hi: 2.258  methods.json#/eyesight/77/params/b_hi
-- eyesight param b_lo: 2.117  methods.json#/eyesight/77/params/b_lo
-- eyesight param c: 0.615  methods.json#/eyesight/77/params/c
-- eyesight param c_hi: 0.644  methods.json#/eyesight/77/params/c_hi
-- eyesight param c_lo: 0.593  methods.json#/eyesight/77/params/c_lo
-- eyesight g: 1.738  methods.json#/eyesight/77/g
+- LOYO weekly WAPE (tier1): 0.194  methods.json#/validation/2020/value
+- LOYO weekly WAPE baseline annual_ratio: 0.272  methods.json#/validation/2020/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.56  methods.json#/validation/2020/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2020/years
+- LOYO weekly WAPE (tier2): 0.193  methods.json#/validation/2035/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2035/years
+- reliability_err (tier2): 0.0  methods.json#/validation/2033/value
+- reliability_year_absolute_err (tier2): 0.057  methods.json#/validation/2034/value
+- t1_t2_wape (tier2): 0.122  methods.json#/validation/2037/value
+- eyesight status: "validated"  methods.json#/eyesight/125/status
+- eyesight param a: -3.671  methods.json#/eyesight/125/params/a
+- eyesight param a_hi: -3.623  methods.json#/eyesight/125/params/a_hi
+- eyesight param a_lo: -3.721  methods.json#/eyesight/125/params/a_lo
+- eyesight param b: 2.189  methods.json#/eyesight/125/params/b
+- eyesight param b_hi: 2.258  methods.json#/eyesight/125/params/b_hi
+- eyesight param b_lo: 2.117  methods.json#/eyesight/125/params/b_lo
+- eyesight param c: 0.615  methods.json#/eyesight/125/params/c
+- eyesight param c_hi: 0.644  methods.json#/eyesight/125/params/c_hi
+- eyesight param c_lo: 0.593  methods.json#/eyesight/125/params/c_lo
+- eyesight g: 1.738  methods.json#/eyesight/125/g
 
 ## Philippines (`philippines`)
 
@@ -5065,26 +7276,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  philippines/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  philippines/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  philippines/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.191  methods.json#/validation/1364/value
-- LOYO weekly WAPE baseline annual_ratio: 0.213  methods.json#/validation/1364/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 6.477  methods.json#/validation/1364/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1364/years
-- LOYO weekly WAPE (tier2): 0.19  methods.json#/validation/1379/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1379/years
-- reliability_err (tier2): 0.003  methods.json#/validation/1377/value
-- reliability_year_absolute_err (tier2): 0.084  methods.json#/validation/1378/value
-- t1_t2_wape (tier2): 0.115  methods.json#/validation/1381/value
-- eyesight status: "validated"  methods.json#/eyesight/78/status
-- eyesight param a: -3.82  methods.json#/eyesight/78/params/a
-- eyesight param a_hi: -3.753  methods.json#/eyesight/78/params/a_hi
-- eyesight param a_lo: -3.911  methods.json#/eyesight/78/params/a_lo
-- eyesight param b: 2.308  methods.json#/eyesight/78/params/b
-- eyesight param b_hi: 2.392  methods.json#/eyesight/78/params/b_hi
-- eyesight param b_lo: 2.206  methods.json#/eyesight/78/params/b_lo
-- eyesight param c: 0.382  methods.json#/eyesight/78/params/c
-- eyesight param c_hi: 0.418  methods.json#/eyesight/78/params/c_hi
-- eyesight param c_lo: 0.352  methods.json#/eyesight/78/params/c_lo
-- eyesight g: 2.206  methods.json#/eyesight/78/g
+- LOYO weekly WAPE (tier1): 0.191  methods.json#/validation/2038/value
+- LOYO weekly WAPE baseline annual_ratio: 0.213  methods.json#/validation/2038/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 6.477  methods.json#/validation/2038/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2038/years
+- LOYO weekly WAPE (tier2): 0.19  methods.json#/validation/2053/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2053/years
+- reliability_err (tier2): 0.003  methods.json#/validation/2051/value
+- reliability_year_absolute_err (tier2): 0.084  methods.json#/validation/2052/value
+- t1_t2_wape (tier2): 0.115  methods.json#/validation/2055/value
+- eyesight status: "validated"  methods.json#/eyesight/126/status
+- eyesight param a: -3.82  methods.json#/eyesight/126/params/a
+- eyesight param a_hi: -3.753  methods.json#/eyesight/126/params/a_hi
+- eyesight param a_lo: -3.911  methods.json#/eyesight/126/params/a_lo
+- eyesight param b: 2.308  methods.json#/eyesight/126/params/b
+- eyesight param b_hi: 2.392  methods.json#/eyesight/126/params/b_hi
+- eyesight param b_lo: 2.206  methods.json#/eyesight/126/params/b_lo
+- eyesight param c: 0.382  methods.json#/eyesight/126/params/c
+- eyesight param c_hi: 0.418  methods.json#/eyesight/126/params/c_hi
+- eyesight param c_lo: 0.352  methods.json#/eyesight/126/params/c_lo
+- eyesight g: 2.206  methods.json#/eyesight/126/g
 
 ## Poland (`poland`)
 
@@ -5137,26 +7348,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  poland/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  poland/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  poland/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.424  methods.json#/validation/1382/value
-- LOYO weekly WAPE baseline annual_ratio: 0.434  methods.json#/validation/1382/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 2.869  methods.json#/validation/1382/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1382/years
-- LOYO weekly WAPE (tier2): 0.414  methods.json#/validation/1397/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1397/years
-- reliability_err (tier2): 0.007  methods.json#/validation/1395/value
-- reliability_year_absolute_err (tier2): 0.148  methods.json#/validation/1396/value
-- t1_t2_wape (tier2): 0.253  methods.json#/validation/1399/value
-- eyesight status: "validated"  methods.json#/eyesight/79/status
-- eyesight param a: -3.785  methods.json#/eyesight/79/params/a
-- eyesight param a_hi: -3.579  methods.json#/eyesight/79/params/a_hi
-- eyesight param a_lo: -4.203  methods.json#/eyesight/79/params/a_lo
-- eyesight param b: 2.9  methods.json#/eyesight/79/params/b
-- eyesight param b_hi: 3.483  methods.json#/eyesight/79/params/b_hi
-- eyesight param b_lo: 2.373  methods.json#/eyesight/79/params/b_lo
-- eyesight param c: 0.484  methods.json#/eyesight/79/params/c
-- eyesight param c_hi: 0.88  methods.json#/eyesight/79/params/c_hi
-- eyesight param c_lo: 0.355  methods.json#/eyesight/79/params/c_lo
-- eyesight g: 2.839  methods.json#/eyesight/79/g
+- LOYO weekly WAPE (tier1): 0.424  methods.json#/validation/2056/value
+- LOYO weekly WAPE baseline annual_ratio: 0.434  methods.json#/validation/2056/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.869  methods.json#/validation/2056/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2056/years
+- LOYO weekly WAPE (tier2): 0.414  methods.json#/validation/2071/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2071/years
+- reliability_err (tier2): 0.007  methods.json#/validation/2069/value
+- reliability_year_absolute_err (tier2): 0.148  methods.json#/validation/2070/value
+- t1_t2_wape (tier2): 0.253  methods.json#/validation/2073/value
+- eyesight status: "validated"  methods.json#/eyesight/127/status
+- eyesight param a: -3.785  methods.json#/eyesight/127/params/a
+- eyesight param a_hi: -3.579  methods.json#/eyesight/127/params/a_hi
+- eyesight param a_lo: -4.203  methods.json#/eyesight/127/params/a_lo
+- eyesight param b: 2.9  methods.json#/eyesight/127/params/b
+- eyesight param b_hi: 3.483  methods.json#/eyesight/127/params/b_hi
+- eyesight param b_lo: 2.373  methods.json#/eyesight/127/params/b_lo
+- eyesight param c: 0.484  methods.json#/eyesight/127/params/c
+- eyesight param c_hi: 0.88  methods.json#/eyesight/127/params/c_hi
+- eyesight param c_lo: 0.355  methods.json#/eyesight/127/params/c_lo
+- eyesight g: 2.839  methods.json#/eyesight/127/g
 
 ## Portugal (`portugal`)
 
@@ -5209,26 +7420,74 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  portugal/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  portugal/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  portugal/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.335  methods.json#/validation/1400/value
-- LOYO weekly WAPE baseline annual_ratio: 0.455  methods.json#/validation/1400/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 1.516  methods.json#/validation/1400/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1400/years
-- LOYO weekly WAPE (tier2): 0.275  methods.json#/validation/1415/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1415/years
-- reliability_err (tier2): 0.001  methods.json#/validation/1413/value
-- reliability_year_absolute_err (tier2): 0.059  methods.json#/validation/1414/value
-- t1_t2_wape (tier2): 0.269  methods.json#/validation/1417/value
-- eyesight status: "validated"  methods.json#/eyesight/80/status
-- eyesight param a: -3.645  methods.json#/eyesight/80/params/a
-- eyesight param a_hi: -3.492  methods.json#/eyesight/80/params/a_hi
-- eyesight param a_lo: -3.832  methods.json#/eyesight/80/params/a_lo
-- eyesight param b: 2.469  methods.json#/eyesight/80/params/b
-- eyesight param b_hi: 2.622  methods.json#/eyesight/80/params/b_hi
-- eyesight param b_lo: 2.269  methods.json#/eyesight/80/params/b_lo
-- eyesight param c: 0.868  methods.json#/eyesight/80/params/c
-- eyesight param c_hi: 0.954  methods.json#/eyesight/80/params/c_hi
-- eyesight param c_lo: 0.809  methods.json#/eyesight/80/params/c_lo
-- eyesight g: 1.525  methods.json#/eyesight/80/g
+- LOYO weekly WAPE (tier1): 0.335  methods.json#/validation/2074/value
+- LOYO weekly WAPE baseline annual_ratio: 0.455  methods.json#/validation/2074/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.516  methods.json#/validation/2074/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2074/years
+- LOYO weekly WAPE (tier2): 0.275  methods.json#/validation/2089/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2089/years
+- reliability_err (tier2): 0.001  methods.json#/validation/2087/value
+- reliability_year_absolute_err (tier2): 0.059  methods.json#/validation/2088/value
+- t1_t2_wape (tier2): 0.269  methods.json#/validation/2091/value
+- eyesight status: "validated"  methods.json#/eyesight/128/status
+- eyesight param a: -3.645  methods.json#/eyesight/128/params/a
+- eyesight param a_hi: -3.492  methods.json#/eyesight/128/params/a_hi
+- eyesight param a_lo: -3.832  methods.json#/eyesight/128/params/a_lo
+- eyesight param b: 2.469  methods.json#/eyesight/128/params/b
+- eyesight param b_hi: 2.622  methods.json#/eyesight/128/params/b_hi
+- eyesight param b_lo: 2.269  methods.json#/eyesight/128/params/b_lo
+- eyesight param c: 0.868  methods.json#/eyesight/128/params/c
+- eyesight param c_hi: 0.954  methods.json#/eyesight/128/params/c_hi
+- eyesight param c_lo: 0.809  methods.json#/eyesight/128/params/c_lo
+- eyesight g: 1.525  methods.json#/eyesight/128/g
+
+## Puerto Rico (`puerto-rico`)
+
+- jump multiple (value): 5.523  puerto-rico/ruler.json#/jump_multiple/value
+- jump multiple (lo): 2.923  puerto-rico/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 12.123  puerto-rico/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  puerto-rico/ruler.json#/jump_multiple/years
+- ruler sentence: "In Puerto Rico, VIIRS reports about 5.5 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  puerto-rico/ruler.json#/sentence
+- harmonized trend pct_per_decade: -52.285  puerto-rico/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -109.925  puerto-rico/trend.json#/harmonized/lo
+- harmonized trend hi: -26.087  puerto-rico/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  puerto-rico/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 36.385  puerto-rico/trend.json#/naive/pct_per_decade
+- naive trend lo: 11.735  puerto-rico/trend.json#/naive/lo
+- naive trend hi: 68.954  puerto-rico/trend.json#/naive/hi
+- naive trend direction: "rising"  puerto-rico/trend.json#/naive/direction
+- trend years: [2003, 2025]  puerto-rico/trend.json#/years
+- verdict sentence_id: "artifact_falling"  puerto-rico/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 52% per decade (-110 to -26)."  puerto-rico/trend.json#/sentence
+- critical weeks: [7, 8, 9, 10, 11, 12, 13]  puerto-rico/season.json#/critical_weeks
+- window w1 label: "mid-February to early-April"  puerto-rico/season.json#/windows/0/label
+- window w1 start_week: 7  puerto-rico/season.json#/windows/0/start_week
+- window w1 peak_week: 8  puerto-rico/season.json#/windows/0/peak_week
+- window w1 end_week: 13  puerto-rico/season.json#/windows/0/end_week
+- window w1 share: 0.81  puerto-rico/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 9.722  puerto-rico/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -7.5  puerto-rico/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 23.333  puerto-rico/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the mid-February to early-April season."  puerto-rico/season.json#/windows/0/sentence
+- this week value: null  puerto-rico/nowcast.json#/value
+- this week lo: null  puerto-rico/nowcast.json#/lo
+- this week hi: null  puerto-rico/nowcast.json#/hi
+- this week percentile: null  puerto-rico/nowcast.json#/percentile
+- this week status: "unavailable"  puerto-rico/nowcast.json#/status
+- this week as_of: null  puerto-rico/nowcast.json#/as_of
+- this week window start: null  puerto-rico/nowcast.json#/window/start
+- this week window end: null  puerto-rico/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  puerto-rico/nowcast.json#/baseline_years
+- month to date value: null  puerto-rico/nowcast.json#/month_to_date/value
+- month to date median: null  puerto-rico/nowcast.json#/month_to_date/median
+- month to date ratio: null  puerto-rico/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  puerto-rico/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  puerto-rico/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.972  methods.json#/validation/2092/value
+- LOYO weekly WAPE baseline annual_ratio: 0.959  methods.json#/validation/2092/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 4.053  methods.json#/validation/2092/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2092/years
+- eyesight status: "absent"  methods.json#/eyesight/129/status
 
 ## Qatar (`qatar`)
 
@@ -5263,11 +7522,11 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  qatar/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  qatar/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  qatar/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 1.854  methods.json#/validation/1418/value
-- LOYO weekly WAPE baseline annual_ratio: 1.89  methods.json#/validation/1418/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 18.788  methods.json#/validation/1418/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1418/years
-- eyesight status: "absent"  methods.json#/eyesight/81/status
+- LOYO weekly WAPE (tier1): 1.854  methods.json#/validation/2105/value
+- LOYO weekly WAPE baseline annual_ratio: 1.89  methods.json#/validation/2105/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 18.788  methods.json#/validation/2105/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2105/years
+- eyesight status: "absent"  methods.json#/eyesight/130/status
 
 ## Republic of the Congo (`republic-of-congo`)
 
@@ -5311,26 +7570,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  republic-of-congo/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  republic-of-congo/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  republic-of-congo/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.181  methods.json#/validation/1431/value
-- LOYO weekly WAPE baseline annual_ratio: 0.196  methods.json#/validation/1431/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 2.363  methods.json#/validation/1431/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1431/years
-- LOYO weekly WAPE (tier2): 0.189  methods.json#/validation/1446/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1446/years
-- reliability_err (tier2): 0.0  methods.json#/validation/1444/value
-- reliability_year_absolute_err (tier2): 0.059  methods.json#/validation/1445/value
-- t1_t2_wape (tier2): 0.096  methods.json#/validation/1448/value
-- eyesight status: "validated"  methods.json#/eyesight/82/status
-- eyesight param a: -3.384  methods.json#/eyesight/82/params/a
-- eyesight param a_hi: -3.342  methods.json#/eyesight/82/params/a_hi
-- eyesight param a_lo: -3.431  methods.json#/eyesight/82/params/a_lo
-- eyesight param b: 1.989  methods.json#/eyesight/82/params/b
-- eyesight param b_hi: 2.055  methods.json#/eyesight/82/params/b_hi
-- eyesight param b_lo: 1.938  methods.json#/eyesight/82/params/b_lo
-- eyesight param c: 0.738  methods.json#/eyesight/82/params/c
-- eyesight param c_hi: 0.776  methods.json#/eyesight/82/params/c_hi
-- eyesight param c_lo: 0.708  methods.json#/eyesight/82/params/c_lo
-- eyesight g: 1.791  methods.json#/eyesight/82/g
+- LOYO weekly WAPE (tier1): 0.181  methods.json#/validation/2118/value
+- LOYO weekly WAPE baseline annual_ratio: 0.196  methods.json#/validation/2118/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.363  methods.json#/validation/2118/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2118/years
+- LOYO weekly WAPE (tier2): 0.189  methods.json#/validation/2133/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2133/years
+- reliability_err (tier2): 0.0  methods.json#/validation/2131/value
+- reliability_year_absolute_err (tier2): 0.059  methods.json#/validation/2132/value
+- t1_t2_wape (tier2): 0.096  methods.json#/validation/2135/value
+- eyesight status: "validated"  methods.json#/eyesight/131/status
+- eyesight param a: -3.384  methods.json#/eyesight/131/params/a
+- eyesight param a_hi: -3.342  methods.json#/eyesight/131/params/a_hi
+- eyesight param a_lo: -3.431  methods.json#/eyesight/131/params/a_lo
+- eyesight param b: 1.989  methods.json#/eyesight/131/params/b
+- eyesight param b_hi: 2.055  methods.json#/eyesight/131/params/b_hi
+- eyesight param b_lo: 1.938  methods.json#/eyesight/131/params/b_lo
+- eyesight param c: 0.738  methods.json#/eyesight/131/params/c
+- eyesight param c_hi: 0.776  methods.json#/eyesight/131/params/c_hi
+- eyesight param c_lo: 0.708  methods.json#/eyesight/131/params/c_lo
+- eyesight g: 1.791  methods.json#/eyesight/131/g
 
 ## South Korea (`republic-of-korea`)
 
@@ -5383,26 +7642,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  republic-of-korea/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  republic-of-korea/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  republic-of-korea/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.638  methods.json#/validation/1449/value
-- LOYO weekly WAPE baseline annual_ratio: 0.715  methods.json#/validation/1449/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 1.869  methods.json#/validation/1449/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1449/years
-- LOYO weekly WAPE (tier2): 0.768  methods.json#/validation/1464/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1464/years
-- reliability_err (tier2): 0.018  methods.json#/validation/1462/value
-- reliability_year_absolute_err (tier2): 0.353  methods.json#/validation/1463/value
-- t1_t2_wape (tier2): 0.506  methods.json#/validation/1466/value
-- eyesight status: "exploratory"  methods.json#/eyesight/83/status
-- eyesight param a: -5.037  methods.json#/eyesight/83/params/a
-- eyesight param a_hi: -4.753  methods.json#/eyesight/83/params/a_hi
-- eyesight param a_lo: -5.641  methods.json#/eyesight/83/params/a_lo
-- eyesight param b: 3.439  methods.json#/eyesight/83/params/b
-- eyesight param b_hi: 4.792  methods.json#/eyesight/83/params/b_hi
-- eyesight param b_lo: 2.561  methods.json#/eyesight/83/params/b_lo
-- eyesight param c: 0.595  methods.json#/eyesight/83/params/c
-- eyesight param c_hi: 0.994  methods.json#/eyesight/83/params/c_hi
-- eyesight param c_lo: 0.409  methods.json#/eyesight/83/params/c_lo
-- eyesight g: 6.833  methods.json#/eyesight/83/g
+- LOYO weekly WAPE (tier1): 0.638  methods.json#/validation/2136/value
+- LOYO weekly WAPE baseline annual_ratio: 0.715  methods.json#/validation/2136/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.869  methods.json#/validation/2136/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2136/years
+- LOYO weekly WAPE (tier2): 0.768  methods.json#/validation/2151/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2151/years
+- reliability_err (tier2): 0.018  methods.json#/validation/2149/value
+- reliability_year_absolute_err (tier2): 0.353  methods.json#/validation/2150/value
+- t1_t2_wape (tier2): 0.506  methods.json#/validation/2153/value
+- eyesight status: "exploratory"  methods.json#/eyesight/132/status
+- eyesight param a: -5.037  methods.json#/eyesight/132/params/a
+- eyesight param a_hi: -4.753  methods.json#/eyesight/132/params/a_hi
+- eyesight param a_lo: -5.641  methods.json#/eyesight/132/params/a_lo
+- eyesight param b: 3.439  methods.json#/eyesight/132/params/b
+- eyesight param b_hi: 4.792  methods.json#/eyesight/132/params/b_hi
+- eyesight param b_lo: 2.561  methods.json#/eyesight/132/params/b_lo
+- eyesight param c: 0.595  methods.json#/eyesight/132/params/c
+- eyesight param c_hi: 0.994  methods.json#/eyesight/132/params/c_hi
+- eyesight param c_lo: 0.409  methods.json#/eyesight/132/params/c_lo
+- eyesight g: 6.833  methods.json#/eyesight/132/g
 
 ## Reunion (`reunion`)
 
@@ -5437,11 +7696,11 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  reunion/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  reunion/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  reunion/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 1.795  methods.json#/validation/1467/value
-- LOYO weekly WAPE baseline annual_ratio: 1.954  methods.json#/validation/1467/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 9.097  methods.json#/validation/1467/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1467/years
-- eyesight status: "absent"  methods.json#/eyesight/84/status
+- LOYO weekly WAPE (tier1): 1.795  methods.json#/validation/2154/value
+- LOYO weekly WAPE baseline annual_ratio: 1.954  methods.json#/validation/2154/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 9.097  methods.json#/validation/2154/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2154/years
+- eyesight status: "absent"  methods.json#/eyesight/133/status
 
 ## Romania (`romania`)
 
@@ -5494,26 +7753,98 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  romania/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  romania/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  romania/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.203  methods.json#/validation/1480/value
-- LOYO weekly WAPE baseline annual_ratio: 0.23  methods.json#/validation/1480/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 2.967  methods.json#/validation/1480/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1480/years
-- LOYO weekly WAPE (tier2): 0.274  methods.json#/validation/1495/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1495/years
-- reliability_err (tier2): 0.0  methods.json#/validation/1493/value
-- reliability_year_absolute_err (tier2): 0.072  methods.json#/validation/1494/value
-- t1_t2_wape (tier2): 0.238  methods.json#/validation/1497/value
-- eyesight status: "exploratory"  methods.json#/eyesight/85/status
-- eyesight param a: -3.412  methods.json#/eyesight/85/params/a
-- eyesight param a_hi: -3.34  methods.json#/eyesight/85/params/a_hi
-- eyesight param a_lo: -3.506  methods.json#/eyesight/85/params/a_lo
-- eyesight param b: 2.459  methods.json#/eyesight/85/params/b
-- eyesight param b_hi: 2.549  methods.json#/eyesight/85/params/b_hi
-- eyesight param b_lo: 2.379  methods.json#/eyesight/85/params/b_lo
-- eyesight param c: 0.624  methods.json#/eyesight/85/params/c
-- eyesight param c_hi: 0.665  methods.json#/eyesight/85/params/c_hi
-- eyesight param c_lo: 0.587  methods.json#/eyesight/85/params/c_lo
-- eyesight g: 1.757  methods.json#/eyesight/85/g
+- LOYO weekly WAPE (tier1): 0.203  methods.json#/validation/2167/value
+- LOYO weekly WAPE baseline annual_ratio: 0.23  methods.json#/validation/2167/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.967  methods.json#/validation/2167/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2167/years
+- LOYO weekly WAPE (tier2): 0.274  methods.json#/validation/2182/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2182/years
+- reliability_err (tier2): 0.0  methods.json#/validation/2180/value
+- reliability_year_absolute_err (tier2): 0.072  methods.json#/validation/2181/value
+- t1_t2_wape (tier2): 0.238  methods.json#/validation/2184/value
+- eyesight status: "exploratory"  methods.json#/eyesight/134/status
+- eyesight param a: -3.412  methods.json#/eyesight/134/params/a
+- eyesight param a_hi: -3.34  methods.json#/eyesight/134/params/a_hi
+- eyesight param a_lo: -3.506  methods.json#/eyesight/134/params/a_lo
+- eyesight param b: 2.459  methods.json#/eyesight/134/params/b
+- eyesight param b_hi: 2.549  methods.json#/eyesight/134/params/b_hi
+- eyesight param b_lo: 2.379  methods.json#/eyesight/134/params/b_lo
+- eyesight param c: 0.624  methods.json#/eyesight/134/params/c
+- eyesight param c_hi: 0.665  methods.json#/eyesight/134/params/c_hi
+- eyesight param c_lo: 0.587  methods.json#/eyesight/134/params/c_lo
+- eyesight g: 1.757  methods.json#/eyesight/134/g
+
+## Russia (`russian-federation`)
+
+- jump multiple (value): 4.213  russian-federation/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.89  russian-federation/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 4.67  russian-federation/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  russian-federation/ruler.json#/jump_multiple/years
+- ruler sentence: "In Russia, VIIRS reports about 4.2 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  russian-federation/ruler.json#/sentence
+- harmonized trend pct_per_decade: -43.69  russian-federation/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -67.923  russian-federation/trend.json#/harmonized/lo
+- harmonized trend hi: -35.082  russian-federation/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  russian-federation/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 43.856  russian-federation/trend.json#/naive/pct_per_decade
+- naive trend lo: 16.295  russian-federation/trend.json#/naive/lo
+- naive trend hi: 110.389  russian-federation/trend.json#/naive/hi
+- naive trend direction: "rising"  russian-federation/trend.json#/naive/direction
+- trend years: [2003, 2025]  russian-federation/trend.json#/years
+- verdict sentence_id: "artifact_falling"  russian-federation/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 44% per decade (-68 to -35)."  russian-federation/trend.json#/sentence
+- critical weeks: [13, 14, 15, 16, 17, 18, 19, 20, 21, 26, 27, 28, 29, 30, 31, 32, 33, 34, 37, 38, 39, 40]  russian-federation/season.json#/critical_weeks
+- window w1 label: "late-March to late-May"  russian-federation/season.json#/windows/0/label
+- window w1 start_week: 13  russian-federation/season.json#/windows/0/start_week
+- window w1 peak_week: 16  russian-federation/season.json#/windows/0/peak_week
+- window w1 end_week: 21  russian-federation/season.json#/windows/0/end_week
+- window w1 share: 0.44  russian-federation/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -7.5  russian-federation/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -12.143  russian-federation/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): -3.865  russian-federation/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "The late-March to late-May season now starts about 8 days earlier per decade (-12 to -4)."  russian-federation/season.json#/windows/0/sentence
+- window w2 label: "late-June to late-August"  russian-federation/season.json#/windows/1/label
+- window w2 start_week: 26  russian-federation/season.json#/windows/1/start_week
+- window w2 peak_week: 31  russian-federation/season.json#/windows/1/peak_week
+- window w2 end_week: 34  russian-federation/season.json#/windows/1/end_week
+- window w2 share: 0.3  russian-federation/season.json#/windows/1/share
+- window w2 start shift days per decade (value): -2.0  russian-federation/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -8.333  russian-federation/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): 6.25  russian-federation/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "No clear shift in the timing of the late-June to late-August season."  russian-federation/season.json#/windows/1/sentence
+- this week value: null  russian-federation/nowcast.json#/value
+- this week lo: null  russian-federation/nowcast.json#/lo
+- this week hi: null  russian-federation/nowcast.json#/hi
+- this week percentile: null  russian-federation/nowcast.json#/percentile
+- this week status: "unavailable"  russian-federation/nowcast.json#/status
+- this week as_of: null  russian-federation/nowcast.json#/as_of
+- this week window start: null  russian-federation/nowcast.json#/window/start
+- this week window end: null  russian-federation/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  russian-federation/nowcast.json#/baseline_years
+- month to date value: null  russian-federation/nowcast.json#/month_to_date/value
+- month to date median: null  russian-federation/nowcast.json#/month_to_date/median
+- month to date ratio: null  russian-federation/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  russian-federation/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  russian-federation/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.122  methods.json#/validation/2185/value
+- LOYO weekly WAPE baseline annual_ratio: 0.151  methods.json#/validation/2185/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.33  methods.json#/validation/2185/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2185/years
+- LOYO weekly WAPE (tier2): 0.102  methods.json#/validation/2200/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2200/years
+- reliability_err (tier2): 0.0  methods.json#/validation/2198/value
+- reliability_year_absolute_err (tier2): 0.024  methods.json#/validation/2199/value
+- t1_t2_wape (tier2): 0.141  methods.json#/validation/2202/value
+- eyesight status: "validated"  methods.json#/eyesight/135/status
+- eyesight param a: -3.174  methods.json#/eyesight/135/params/a
+- eyesight param a_hi: -3.148  methods.json#/eyesight/135/params/a_hi
+- eyesight param a_lo: -3.206  methods.json#/eyesight/135/params/a_lo
+- eyesight param b: 2.037  methods.json#/eyesight/135/params/b
+- eyesight param b_hi: 2.06  methods.json#/eyesight/135/params/b_hi
+- eyesight param b_lo: 2.019  methods.json#/eyesight/135/params/b_lo
+- eyesight param c: 0.962  methods.json#/eyesight/135/params/c
+- eyesight param c_hi: 0.978  methods.json#/eyesight/135/params/c_hi
+- eyesight param c_lo: 0.946  methods.json#/eyesight/135/params/c_lo
+- eyesight g: 1.261  methods.json#/eyesight/135/g
 
 ## Rwanda (`rwanda`)
 
@@ -5557,26 +7888,221 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  rwanda/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  rwanda/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  rwanda/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.615  methods.json#/validation/1498/value
-- LOYO weekly WAPE baseline annual_ratio: 0.628  methods.json#/validation/1498/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 4.429  methods.json#/validation/1498/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1498/years
-- LOYO weekly WAPE (tier2): 0.573  methods.json#/validation/1513/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1513/years
-- reliability_err (tier2): 0.001  methods.json#/validation/1511/value
-- reliability_year_absolute_err (tier2): 0.149  methods.json#/validation/1512/value
-- t1_t2_wape (tier2): 0.272  methods.json#/validation/1515/value
-- eyesight status: "validated"  methods.json#/eyesight/86/status
-- eyesight param a: -4.301  methods.json#/eyesight/86/params/a
-- eyesight param a_hi: -4.032  methods.json#/eyesight/86/params/a_hi
-- eyesight param a_lo: -4.68  methods.json#/eyesight/86/params/a_lo
-- eyesight param b: 2.587  methods.json#/eyesight/86/params/b
-- eyesight param b_hi: 2.862  methods.json#/eyesight/86/params/b_hi
-- eyesight param b_lo: 2.292  methods.json#/eyesight/86/params/b_lo
-- eyesight param c: 0.563  methods.json#/eyesight/86/params/c
-- eyesight param c_hi: 0.665  methods.json#/eyesight/86/params/c_hi
-- eyesight param c_lo: 0.479  methods.json#/eyesight/86/params/c_lo
-- eyesight g: 1.583  methods.json#/eyesight/86/g
+- LOYO weekly WAPE (tier1): 0.615  methods.json#/validation/2203/value
+- LOYO weekly WAPE baseline annual_ratio: 0.628  methods.json#/validation/2203/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 4.429  methods.json#/validation/2203/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2203/years
+- LOYO weekly WAPE (tier2): 0.573  methods.json#/validation/2218/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2218/years
+- reliability_err (tier2): 0.001  methods.json#/validation/2216/value
+- reliability_year_absolute_err (tier2): 0.149  methods.json#/validation/2217/value
+- t1_t2_wape (tier2): 0.272  methods.json#/validation/2220/value
+- eyesight status: "validated"  methods.json#/eyesight/136/status
+- eyesight param a: -4.301  methods.json#/eyesight/136/params/a
+- eyesight param a_hi: -4.032  methods.json#/eyesight/136/params/a_hi
+- eyesight param a_lo: -4.68  methods.json#/eyesight/136/params/a_lo
+- eyesight param b: 2.587  methods.json#/eyesight/136/params/b
+- eyesight param b_hi: 2.862  methods.json#/eyesight/136/params/b_hi
+- eyesight param b_lo: 2.292  methods.json#/eyesight/136/params/b_lo
+- eyesight param c: 0.563  methods.json#/eyesight/136/params/c
+- eyesight param c_hi: 0.665  methods.json#/eyesight/136/params/c_hi
+- eyesight param c_lo: 0.479  methods.json#/eyesight/136/params/c_lo
+- eyesight g: 1.583  methods.json#/eyesight/136/g
+
+## Saint Kitts and Nevis (`saint-kitts-and-nevis`)
+
+- jump multiple (value): 9.875  saint-kitts-and-nevis/ruler.json#/jump_multiple/value
+- jump multiple (lo): 4.143  saint-kitts-and-nevis/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 21.667  saint-kitts-and-nevis/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  saint-kitts-and-nevis/ruler.json#/jump_multiple/years
+- ruler sentence: "In Saint Kitts and Nevis, VIIRS reports about 9.9 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  saint-kitts-and-nevis/ruler.json#/sentence
+- harmonized trend pct_per_decade: 0.0  saint-kitts-and-nevis/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -19.442  saint-kitts-and-nevis/trend.json#/harmonized/lo
+- harmonized trend hi: 59.178  saint-kitts-and-nevis/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  saint-kitts-and-nevis/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 88.889  saint-kitts-and-nevis/trend.json#/naive/pct_per_decade
+- naive trend lo: 19.113  saint-kitts-and-nevis/trend.json#/naive/lo
+- naive trend hi: 325.417  saint-kitts-and-nevis/trend.json#/naive/hi
+- naive trend direction: "rising"  saint-kitts-and-nevis/trend.json#/naive/direction
+- trend years: [2003, 2025]  saint-kitts-and-nevis/trend.json#/years
+- verdict sentence_id: "unclear"  saint-kitts-and-nevis/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (-19 to 59% per decade)."  saint-kitts-and-nevis/trend.json#/sentence
+- critical weeks: []  saint-kitts-and-nevis/season.json#/critical_weeks
+- this week value: null  saint-kitts-and-nevis/nowcast.json#/value
+- this week lo: null  saint-kitts-and-nevis/nowcast.json#/lo
+- this week hi: null  saint-kitts-and-nevis/nowcast.json#/hi
+- this week percentile: null  saint-kitts-and-nevis/nowcast.json#/percentile
+- this week status: "unavailable"  saint-kitts-and-nevis/nowcast.json#/status
+- this week as_of: null  saint-kitts-and-nevis/nowcast.json#/as_of
+- this week window start: null  saint-kitts-and-nevis/nowcast.json#/window/start
+- this week window end: null  saint-kitts-and-nevis/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  saint-kitts-and-nevis/nowcast.json#/baseline_years
+- month to date value: null  saint-kitts-and-nevis/nowcast.json#/month_to_date/value
+- month to date median: null  saint-kitts-and-nevis/nowcast.json#/month_to_date/median
+- month to date ratio: null  saint-kitts-and-nevis/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  saint-kitts-and-nevis/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  saint-kitts-and-nevis/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.687  methods.json#/validation/2221/value
+- LOYO weekly WAPE baseline annual_ratio: 1.679  methods.json#/validation/2221/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 9.533  methods.json#/validation/2221/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2221/years
+- eyesight status: "absent"  methods.json#/eyesight/137/status
+
+## Saint Lucia (`saint-lucia`)
+
+- jump multiple (value): 17.5  saint-lucia/ruler.json#/jump_multiple/value
+- jump multiple (lo): 15.0  saint-lucia/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 20.0  saint-lucia/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  saint-lucia/ruler.json#/jump_multiple/years
+- ruler sentence: "In Saint Lucia, VIIRS reports about 17.5 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  saint-lucia/ruler.json#/sentence
+- harmonized trend pct_per_decade: 0.0  saint-lucia/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -442.04  saint-lucia/trend.json#/harmonized/lo
+- harmonized trend hi: 0.0  saint-lucia/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  saint-lucia/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 100.0  saint-lucia/trend.json#/naive/pct_per_decade
+- naive trend lo: 44.444  saint-lucia/trend.json#/naive/lo
+- naive trend hi: 319.212  saint-lucia/trend.json#/naive/hi
+- naive trend direction: "rising"  saint-lucia/trend.json#/naive/direction
+- trend years: [2003, 2025]  saint-lucia/trend.json#/years
+- verdict sentence_id: "unclear"  saint-lucia/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (-442 to 0% per decade)."  saint-lucia/trend.json#/sentence
+- critical weeks: []  saint-lucia/season.json#/critical_weeks
+- this week value: null  saint-lucia/nowcast.json#/value
+- this week lo: null  saint-lucia/nowcast.json#/lo
+- this week hi: null  saint-lucia/nowcast.json#/hi
+- this week percentile: null  saint-lucia/nowcast.json#/percentile
+- this week status: "unavailable"  saint-lucia/nowcast.json#/status
+- this week as_of: null  saint-lucia/nowcast.json#/as_of
+- this week window start: null  saint-lucia/nowcast.json#/window/start
+- this week window end: null  saint-lucia/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  saint-lucia/nowcast.json#/baseline_years
+- month to date value: null  saint-lucia/nowcast.json#/month_to_date/value
+- month to date median: null  saint-lucia/nowcast.json#/month_to_date/median
+- month to date ratio: null  saint-lucia/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  saint-lucia/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  saint-lucia/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 2.016  methods.json#/validation/2234/value
+- LOYO weekly WAPE baseline annual_ratio: 1.982  methods.json#/validation/2234/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 43.083  methods.json#/validation/2234/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2234/years
+- eyesight status: "absent"  methods.json#/eyesight/138/status
+
+## Saint Vincent and the Grenadines (`saint-vincent-and-the-grenadines`)
+
+- jump multiple (value): 4.871  saint-vincent-and-the-grenadines/ruler.json#/jump_multiple/value
+- jump multiple (lo): 1.094  saint-vincent-and-the-grenadines/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 8.0  saint-vincent-and-the-grenadines/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  saint-vincent-and-the-grenadines/ruler.json#/jump_multiple/years
+- ruler sentence: "In Saint Vincent and the Grenadines, VIIRS reports about 4.9 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  saint-vincent-and-the-grenadines/ruler.json#/sentence
+- harmonized trend pct_per_decade: null  saint-vincent-and-the-grenadines/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: null  saint-vincent-and-the-grenadines/trend.json#/harmonized/lo
+- harmonized trend hi: null  saint-vincent-and-the-grenadines/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  saint-vincent-and-the-grenadines/trend.json#/harmonized/direction
+- naive trend pct_per_decade: null  saint-vincent-and-the-grenadines/trend.json#/naive/pct_per_decade
+- naive trend lo: null  saint-vincent-and-the-grenadines/trend.json#/naive/lo
+- naive trend hi: null  saint-vincent-and-the-grenadines/trend.json#/naive/hi
+- naive trend direction: "no_clear_change"  saint-vincent-and-the-grenadines/trend.json#/naive/direction
+- trend years: [2003, 2025]  saint-vincent-and-the-grenadines/trend.json#/years
+- verdict sentence_id: "unclear"  saint-vincent-and-the-grenadines/trend.json#/sentence_id
+- verdict sentence: "Trend unavailable: the median annual activity is zero."  saint-vincent-and-the-grenadines/trend.json#/sentence
+- critical weeks: []  saint-vincent-and-the-grenadines/season.json#/critical_weeks
+- this week value: null  saint-vincent-and-the-grenadines/nowcast.json#/value
+- this week lo: null  saint-vincent-and-the-grenadines/nowcast.json#/lo
+- this week hi: null  saint-vincent-and-the-grenadines/nowcast.json#/hi
+- this week percentile: null  saint-vincent-and-the-grenadines/nowcast.json#/percentile
+- this week status: "unavailable"  saint-vincent-and-the-grenadines/nowcast.json#/status
+- this week as_of: null  saint-vincent-and-the-grenadines/nowcast.json#/as_of
+- this week window start: null  saint-vincent-and-the-grenadines/nowcast.json#/window/start
+- this week window end: null  saint-vincent-and-the-grenadines/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  saint-vincent-and-the-grenadines/nowcast.json#/baseline_years
+- month to date value: null  saint-vincent-and-the-grenadines/nowcast.json#/month_to_date/value
+- month to date median: null  saint-vincent-and-the-grenadines/nowcast.json#/month_to_date/median
+- month to date ratio: null  saint-vincent-and-the-grenadines/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  saint-vincent-and-the-grenadines/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  saint-vincent-and-the-grenadines/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 2.155  methods.json#/validation/2247/value
+- LOYO weekly WAPE baseline annual_ratio: 2.142  methods.json#/validation/2247/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 6.0  methods.json#/validation/2247/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2247/years
+- eyesight status: "absent"  methods.json#/eyesight/139/status
+
+## Samoa (`samoa`)
+
+- jump multiple (value): 1.059  samoa/ruler.json#/jump_multiple/value
+- jump multiple (lo): 0.0  samoa/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 5.667  samoa/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  samoa/ruler.json#/jump_multiple/years
+- ruler sentence: "In Samoa, VIIRS reports about 1.1 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  samoa/ruler.json#/sentence
+- harmonized trend pct_per_decade: -54.631  samoa/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -93.75  samoa/trend.json#/harmonized/lo
+- harmonized trend hi: 0.0  samoa/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  samoa/trend.json#/harmonized/direction
+- naive trend pct_per_decade: -76.686  samoa/trend.json#/naive/pct_per_decade
+- naive trend lo: -127.319  samoa/trend.json#/naive/lo
+- naive trend hi: -40.999  samoa/trend.json#/naive/hi
+- naive trend direction: "falling"  samoa/trend.json#/naive/direction
+- trend years: [2003, 2025]  samoa/trend.json#/years
+- verdict sentence_id: "unclear"  samoa/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (-94 to 0% per decade)."  samoa/trend.json#/sentence
+- critical weeks: []  samoa/season.json#/critical_weeks
+- this week value: null  samoa/nowcast.json#/value
+- this week lo: null  samoa/nowcast.json#/lo
+- this week hi: null  samoa/nowcast.json#/hi
+- this week percentile: null  samoa/nowcast.json#/percentile
+- this week status: "unavailable"  samoa/nowcast.json#/status
+- this week as_of: null  samoa/nowcast.json#/as_of
+- this week window start: null  samoa/nowcast.json#/window/start
+- this week window end: null  samoa/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  samoa/nowcast.json#/baseline_years
+- month to date value: null  samoa/nowcast.json#/month_to_date/value
+- month to date median: null  samoa/nowcast.json#/month_to_date/median
+- month to date ratio: null  samoa/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  samoa/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  samoa/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 2.144  methods.json#/validation/2260/value
+- LOYO weekly WAPE baseline annual_ratio: 2.13  methods.json#/validation/2260/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.674  methods.json#/validation/2260/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2260/years
+- eyesight status: "absent"  methods.json#/eyesight/140/status
+
+## São Tomé and Principe (`sao-tome-and-principe`)
+
+- jump multiple (value): 2.803  sao-tome-and-principe/ruler.json#/jump_multiple/value
+- jump multiple (lo): 1.914  sao-tome-and-principe/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 7.0  sao-tome-and-principe/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  sao-tome-and-principe/ruler.json#/jump_multiple/years
+- ruler sentence: "In São Tomé and Principe, VIIRS reports about 2.8 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  sao-tome-and-principe/ruler.json#/sentence
+- harmonized trend pct_per_decade: 3.041  sao-tome-and-principe/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: 0.0  sao-tome-and-principe/trend.json#/harmonized/lo
+- harmonized trend hi: 100.0  sao-tome-and-principe/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  sao-tome-and-principe/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 80.0  sao-tome-and-principe/trend.json#/naive/pct_per_decade
+- naive trend lo: 44.44  sao-tome-and-principe/trend.json#/naive/lo
+- naive trend hi: 136.408  sao-tome-and-principe/trend.json#/naive/hi
+- naive trend direction: "rising"  sao-tome-and-principe/trend.json#/naive/direction
+- trend years: [2003, 2025]  sao-tome-and-principe/trend.json#/years
+- verdict sentence_id: "unclear"  sao-tome-and-principe/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (0 to 100% per decade)."  sao-tome-and-principe/trend.json#/sentence
+- critical weeks: []  sao-tome-and-principe/season.json#/critical_weeks
+- this week value: null  sao-tome-and-principe/nowcast.json#/value
+- this week lo: null  sao-tome-and-principe/nowcast.json#/lo
+- this week hi: null  sao-tome-and-principe/nowcast.json#/hi
+- this week percentile: null  sao-tome-and-principe/nowcast.json#/percentile
+- this week status: "unavailable"  sao-tome-and-principe/nowcast.json#/status
+- this week as_of: null  sao-tome-and-principe/nowcast.json#/as_of
+- this week window start: null  sao-tome-and-principe/nowcast.json#/window/start
+- this week window end: null  sao-tome-and-principe/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  sao-tome-and-principe/nowcast.json#/baseline_years
+- month to date value: null  sao-tome-and-principe/nowcast.json#/month_to_date/value
+- month to date median: null  sao-tome-and-principe/nowcast.json#/month_to_date/median
+- month to date ratio: null  sao-tome-and-principe/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  sao-tome-and-principe/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  sao-tome-and-principe/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.535  methods.json#/validation/2273/value
+- LOYO weekly WAPE baseline annual_ratio: 1.545  methods.json#/validation/2273/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.062  methods.json#/validation/2273/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2273/years
+- eyesight status: "absent"  methods.json#/eyesight/141/status
 
 ## Saudi Arabia (`saudi-arabia`)
 
@@ -5629,26 +8155,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  saudi-arabia/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  saudi-arabia/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  saudi-arabia/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.706  methods.json#/validation/1516/value
-- LOYO weekly WAPE baseline annual_ratio: 0.716  methods.json#/validation/1516/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 14.764  methods.json#/validation/1516/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1516/years
-- LOYO weekly WAPE (tier2): 0.686  methods.json#/validation/1531/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1531/years
-- reliability_err (tier2): 0.001  methods.json#/validation/1529/value
-- reliability_year_absolute_err (tier2): 0.217  methods.json#/validation/1530/value
-- t1_t2_wape (tier2): 0.33  methods.json#/validation/1533/value
-- eyesight status: "validated"  methods.json#/eyesight/87/status
-- eyesight param a: -5.43  methods.json#/eyesight/87/params/a
-- eyesight param a_hi: -5.074  methods.json#/eyesight/87/params/a_hi
-- eyesight param a_lo: -5.923  methods.json#/eyesight/87/params/a_lo
-- eyesight param b: 2.812  methods.json#/eyesight/87/params/b
-- eyesight param b_hi: 3.275  methods.json#/eyesight/87/params/b_hi
-- eyesight param b_lo: 2.407  methods.json#/eyesight/87/params/b_lo
-- eyesight param c: 0.295  methods.json#/eyesight/87/params/c
-- eyesight param c_hi: 0.389  methods.json#/eyesight/87/params/c_hi
-- eyesight param c_lo: 0.265  methods.json#/eyesight/87/params/c_lo
-- eyesight g: 2.723  methods.json#/eyesight/87/g
+- LOYO weekly WAPE (tier1): 0.706  methods.json#/validation/2286/value
+- LOYO weekly WAPE baseline annual_ratio: 0.716  methods.json#/validation/2286/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 14.764  methods.json#/validation/2286/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2286/years
+- LOYO weekly WAPE (tier2): 0.686  methods.json#/validation/2301/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2301/years
+- reliability_err (tier2): 0.001  methods.json#/validation/2299/value
+- reliability_year_absolute_err (tier2): 0.217  methods.json#/validation/2300/value
+- t1_t2_wape (tier2): 0.33  methods.json#/validation/2303/value
+- eyesight status: "validated"  methods.json#/eyesight/142/status
+- eyesight param a: -5.43  methods.json#/eyesight/142/params/a
+- eyesight param a_hi: -5.074  methods.json#/eyesight/142/params/a_hi
+- eyesight param a_lo: -5.923  methods.json#/eyesight/142/params/a_lo
+- eyesight param b: 2.812  methods.json#/eyesight/142/params/b
+- eyesight param b_hi: 3.275  methods.json#/eyesight/142/params/b_hi
+- eyesight param b_lo: 2.407  methods.json#/eyesight/142/params/b_lo
+- eyesight param c: 0.295  methods.json#/eyesight/142/params/c
+- eyesight param c_hi: 0.389  methods.json#/eyesight/142/params/c_hi
+- eyesight param c_lo: 0.265  methods.json#/eyesight/142/params/c_lo
+- eyesight g: 2.723  methods.json#/eyesight/142/g
 
 ## Senegal (`senegal`)
 
@@ -5692,26 +8218,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  senegal/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  senegal/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  senegal/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.14  methods.json#/validation/1534/value
-- LOYO weekly WAPE baseline annual_ratio: 0.19  methods.json#/validation/1534/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 1.889  methods.json#/validation/1534/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1534/years
-- LOYO weekly WAPE (tier2): 0.143  methods.json#/validation/1549/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1549/years
-- reliability_err (tier2): 0.0  methods.json#/validation/1547/value
-- reliability_year_absolute_err (tier2): 0.037  methods.json#/validation/1548/value
-- t1_t2_wape (tier2): 0.118  methods.json#/validation/1551/value
-- eyesight status: "validated"  methods.json#/eyesight/88/status
-- eyesight param a: -3.329  methods.json#/eyesight/88/params/a
-- eyesight param a_hi: -3.274  methods.json#/eyesight/88/params/a_hi
-- eyesight param a_lo: -3.391  methods.json#/eyesight/88/params/a_lo
-- eyesight param b: 2.06  methods.json#/eyesight/88/params/b
-- eyesight param b_hi: 2.107  methods.json#/eyesight/88/params/b_hi
-- eyesight param b_lo: 2.016  methods.json#/eyesight/88/params/b_lo
-- eyesight param c: 0.817  methods.json#/eyesight/88/params/c
-- eyesight param c_hi: 0.837  methods.json#/eyesight/88/params/c_hi
-- eyesight param c_lo: 0.794  methods.json#/eyesight/88/params/c_lo
-- eyesight g: 1.443  methods.json#/eyesight/88/g
+- LOYO weekly WAPE (tier1): 0.14  methods.json#/validation/2304/value
+- LOYO weekly WAPE baseline annual_ratio: 0.19  methods.json#/validation/2304/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.889  methods.json#/validation/2304/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2304/years
+- LOYO weekly WAPE (tier2): 0.143  methods.json#/validation/2319/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2319/years
+- reliability_err (tier2): 0.0  methods.json#/validation/2317/value
+- reliability_year_absolute_err (tier2): 0.037  methods.json#/validation/2318/value
+- t1_t2_wape (tier2): 0.118  methods.json#/validation/2321/value
+- eyesight status: "validated"  methods.json#/eyesight/143/status
+- eyesight param a: -3.329  methods.json#/eyesight/143/params/a
+- eyesight param a_hi: -3.274  methods.json#/eyesight/143/params/a_hi
+- eyesight param a_lo: -3.391  methods.json#/eyesight/143/params/a_lo
+- eyesight param b: 2.06  methods.json#/eyesight/143/params/b
+- eyesight param b_hi: 2.107  methods.json#/eyesight/143/params/b_hi
+- eyesight param b_lo: 2.016  methods.json#/eyesight/143/params/b_lo
+- eyesight param c: 0.817  methods.json#/eyesight/143/params/c
+- eyesight param c_hi: 0.837  methods.json#/eyesight/143/params/c_hi
+- eyesight param c_lo: 0.794  methods.json#/eyesight/143/params/c_lo
+- eyesight g: 1.443  methods.json#/eyesight/143/g
 
 ## Serbia (`serbia`)
 
@@ -5755,26 +8281,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  serbia/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  serbia/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  serbia/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.294  methods.json#/validation/1552/value
-- LOYO weekly WAPE baseline annual_ratio: 0.328  methods.json#/validation/1552/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 2.941  methods.json#/validation/1552/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1552/years
-- LOYO weekly WAPE (tier2): 0.245  methods.json#/validation/1567/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1567/years
-- reliability_err (tier2): 0.01  methods.json#/validation/1565/value
-- reliability_year_absolute_err (tier2): 0.125  methods.json#/validation/1566/value
-- t1_t2_wape (tier2): 0.2  methods.json#/validation/1569/value
-- eyesight status: "validated"  methods.json#/eyesight/89/status
-- eyesight param a: -3.542  methods.json#/eyesight/89/params/a
-- eyesight param a_hi: -3.409  methods.json#/eyesight/89/params/a_hi
-- eyesight param a_lo: -3.717  methods.json#/eyesight/89/params/a_lo
-- eyesight param b: 2.38  methods.json#/eyesight/89/params/b
-- eyesight param b_hi: 2.622  methods.json#/eyesight/89/params/b_hi
-- eyesight param b_lo: 2.205  methods.json#/eyesight/89/params/b_lo
-- eyesight param c: 0.825  methods.json#/eyesight/89/params/c
-- eyesight param c_hi: 0.965  methods.json#/eyesight/89/params/c_hi
-- eyesight param c_lo: 0.689  methods.json#/eyesight/89/params/c_lo
-- eyesight g: 1.642  methods.json#/eyesight/89/g
+- LOYO weekly WAPE (tier1): 0.294  methods.json#/validation/2322/value
+- LOYO weekly WAPE baseline annual_ratio: 0.328  methods.json#/validation/2322/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.941  methods.json#/validation/2322/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2322/years
+- LOYO weekly WAPE (tier2): 0.245  methods.json#/validation/2337/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2337/years
+- reliability_err (tier2): 0.01  methods.json#/validation/2335/value
+- reliability_year_absolute_err (tier2): 0.125  methods.json#/validation/2336/value
+- t1_t2_wape (tier2): 0.2  methods.json#/validation/2339/value
+- eyesight status: "validated"  methods.json#/eyesight/144/status
+- eyesight param a: -3.542  methods.json#/eyesight/144/params/a
+- eyesight param a_hi: -3.409  methods.json#/eyesight/144/params/a_hi
+- eyesight param a_lo: -3.717  methods.json#/eyesight/144/params/a_lo
+- eyesight param b: 2.38  methods.json#/eyesight/144/params/b
+- eyesight param b_hi: 2.622  methods.json#/eyesight/144/params/b_hi
+- eyesight param b_lo: 2.205  methods.json#/eyesight/144/params/b_lo
+- eyesight param c: 0.825  methods.json#/eyesight/144/params/c
+- eyesight param c_hi: 0.965  methods.json#/eyesight/144/params/c_hi
+- eyesight param c_lo: 0.689  methods.json#/eyesight/144/params/c_lo
+- eyesight g: 1.642  methods.json#/eyesight/144/g
 
 ## Sierra Leone (`sierra-leone`)
 
@@ -5818,26 +8344,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  sierra-leone/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  sierra-leone/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  sierra-leone/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.202  methods.json#/validation/1570/value
-- LOYO weekly WAPE baseline annual_ratio: 0.267  methods.json#/validation/1570/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 1.415  methods.json#/validation/1570/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1570/years
-- LOYO weekly WAPE (tier2): 0.176  methods.json#/validation/1585/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1585/years
-- reliability_err (tier2): 0.001  methods.json#/validation/1583/value
-- reliability_year_absolute_err (tier2): 0.077  methods.json#/validation/1584/value
-- t1_t2_wape (tier2): 0.103  methods.json#/validation/1587/value
-- eyesight status: "validated"  methods.json#/eyesight/90/status
-- eyesight param a: -2.775  methods.json#/eyesight/90/params/a
-- eyesight param a_hi: -2.709  methods.json#/eyesight/90/params/a_hi
-- eyesight param a_lo: -2.85  methods.json#/eyesight/90/params/a_lo
-- eyesight param b: 2.046  methods.json#/eyesight/90/params/b
-- eyesight param b_hi: 2.194  methods.json#/eyesight/90/params/b_hi
-- eyesight param b_lo: 1.928  methods.json#/eyesight/90/params/b_lo
-- eyesight param c: 0.552  methods.json#/eyesight/90/params/c
-- eyesight param c_hi: 0.591  methods.json#/eyesight/90/params/c_hi
-- eyesight param c_lo: 0.501  methods.json#/eyesight/90/params/c_lo
-- eyesight g: 1.844  methods.json#/eyesight/90/g
+- LOYO weekly WAPE (tier1): 0.202  methods.json#/validation/2340/value
+- LOYO weekly WAPE baseline annual_ratio: 0.267  methods.json#/validation/2340/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.415  methods.json#/validation/2340/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2340/years
+- LOYO weekly WAPE (tier2): 0.176  methods.json#/validation/2355/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2355/years
+- reliability_err (tier2): 0.001  methods.json#/validation/2353/value
+- reliability_year_absolute_err (tier2): 0.077  methods.json#/validation/2354/value
+- t1_t2_wape (tier2): 0.103  methods.json#/validation/2357/value
+- eyesight status: "validated"  methods.json#/eyesight/145/status
+- eyesight param a: -2.775  methods.json#/eyesight/145/params/a
+- eyesight param a_hi: -2.709  methods.json#/eyesight/145/params/a_hi
+- eyesight param a_lo: -2.85  methods.json#/eyesight/145/params/a_lo
+- eyesight param b: 2.046  methods.json#/eyesight/145/params/b
+- eyesight param b_hi: 2.194  methods.json#/eyesight/145/params/b_hi
+- eyesight param b_lo: 1.928  methods.json#/eyesight/145/params/b_lo
+- eyesight param c: 0.552  methods.json#/eyesight/145/params/c
+- eyesight param c_hi: 0.591  methods.json#/eyesight/145/params/c_hi
+- eyesight param c_lo: 0.501  methods.json#/eyesight/145/params/c_lo
+- eyesight g: 1.844  methods.json#/eyesight/145/g
 
 ## Slovakia (`slovakia`)
 
@@ -5890,11 +8416,98 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  slovakia/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  slovakia/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  slovakia/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.923  methods.json#/validation/1588/value
-- LOYO weekly WAPE baseline annual_ratio: 0.968  methods.json#/validation/1588/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 3.355  methods.json#/validation/1588/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1588/years
-- eyesight status: "absent"  methods.json#/eyesight/91/status
+- LOYO weekly WAPE (tier1): 0.923  methods.json#/validation/2358/value
+- LOYO weekly WAPE baseline annual_ratio: 0.968  methods.json#/validation/2358/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.355  methods.json#/validation/2358/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2358/years
+- eyesight status: "absent"  methods.json#/eyesight/146/status
+
+## Slovenia (`slovenia`)
+
+- jump multiple (value): 3.605  slovenia/ruler.json#/jump_multiple/value
+- jump multiple (lo): 1.957  slovenia/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 15.5  slovenia/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  slovenia/ruler.json#/jump_multiple/years
+- ruler sentence: "In Slovenia, VIIRS reports about 3.6 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  slovenia/ruler.json#/sentence
+- harmonized trend pct_per_decade: -38.106  slovenia/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -66.667  slovenia/trend.json#/harmonized/lo
+- harmonized trend hi: -20.833  slovenia/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  slovenia/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 44.444  slovenia/trend.json#/naive/pct_per_decade
+- naive trend lo: 20.428  slovenia/trend.json#/naive/lo
+- naive trend hi: 89.697  slovenia/trend.json#/naive/hi
+- naive trend direction: "rising"  slovenia/trend.json#/naive/direction
+- trend years: [2003, 2025]  slovenia/trend.json#/years
+- verdict sentence_id: "artifact_falling"  slovenia/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 38% per decade (-67 to -21)."  slovenia/trend.json#/sentence
+- critical weeks: []  slovenia/season.json#/critical_weeks
+- this week value: null  slovenia/nowcast.json#/value
+- this week lo: null  slovenia/nowcast.json#/lo
+- this week hi: null  slovenia/nowcast.json#/hi
+- this week percentile: null  slovenia/nowcast.json#/percentile
+- this week status: "unavailable"  slovenia/nowcast.json#/status
+- this week as_of: null  slovenia/nowcast.json#/as_of
+- this week window start: null  slovenia/nowcast.json#/window/start
+- this week window end: null  slovenia/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  slovenia/nowcast.json#/baseline_years
+- month to date value: null  slovenia/nowcast.json#/month_to_date/value
+- month to date median: null  slovenia/nowcast.json#/month_to_date/median
+- month to date ratio: null  slovenia/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  slovenia/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  slovenia/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.392  methods.json#/validation/2371/value
+- LOYO weekly WAPE baseline annual_ratio: 1.387  methods.json#/validation/2371/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.035  methods.json#/validation/2371/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2371/years
+- eyesight status: "absent"  methods.json#/eyesight/147/status
+
+## Solomon Islands (`solomon-islands`)
+
+- jump multiple (value): 9.467  solomon-islands/ruler.json#/jump_multiple/value
+- jump multiple (lo): 5.773  solomon-islands/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 32.8  solomon-islands/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  solomon-islands/ruler.json#/jump_multiple/years
+- ruler sentence: "In Solomon Islands, VIIRS reports about 9.5 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  solomon-islands/ruler.json#/sentence
+- harmonized trend pct_per_decade: 9.03  solomon-islands/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -25.411  solomon-islands/trend.json#/harmonized/lo
+- harmonized trend hi: 36.323  solomon-islands/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  solomon-islands/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 72.933  solomon-islands/trend.json#/naive/pct_per_decade
+- naive trend lo: 53.903  solomon-islands/trend.json#/naive/lo
+- naive trend hi: 470.779  solomon-islands/trend.json#/naive/hi
+- naive trend direction: "rising"  solomon-islands/trend.json#/naive/direction
+- trend years: [2003, 2025]  solomon-islands/trend.json#/years
+- verdict sentence_id: "artifact_flat"  solomon-islands/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 73% per decade. After correcting for the sensor change, there is no clear change (-25 to 36% per decade)."  solomon-islands/trend.json#/sentence
+- critical weeks: [36, 37, 38]  solomon-islands/season.json#/critical_weeks
+- window w1 label: "early to late September"  solomon-islands/season.json#/windows/0/label
+- window w1 start_week: 36  solomon-islands/season.json#/windows/0/start_week
+- window w1 peak_week: 36  solomon-islands/season.json#/windows/0/peak_week
+- window w1 end_week: 38  solomon-islands/season.json#/windows/0/end_week
+- window w1 share: 1.0  solomon-islands/season.json#/windows/0/share
+- window w1 start shift days per decade (value): null  solomon-islands/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): null  solomon-islands/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): null  solomon-islands/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "Timing shift unavailable: fewer than three valid annual observations."  solomon-islands/season.json#/windows/0/sentence
+- this week value: null  solomon-islands/nowcast.json#/value
+- this week lo: null  solomon-islands/nowcast.json#/lo
+- this week hi: null  solomon-islands/nowcast.json#/hi
+- this week percentile: null  solomon-islands/nowcast.json#/percentile
+- this week status: "unavailable"  solomon-islands/nowcast.json#/status
+- this week as_of: null  solomon-islands/nowcast.json#/as_of
+- this week window start: null  solomon-islands/nowcast.json#/window/start
+- this week window end: null  solomon-islands/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  solomon-islands/nowcast.json#/baseline_years
+- month to date value: null  solomon-islands/nowcast.json#/month_to_date/value
+- month to date median: null  solomon-islands/nowcast.json#/month_to_date/median
+- month to date ratio: null  solomon-islands/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  solomon-islands/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  solomon-islands/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.27  methods.json#/validation/2384/value
+- LOYO weekly WAPE baseline annual_ratio: 1.258  methods.json#/validation/2384/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 9.141  methods.json#/validation/2384/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2384/years
+- eyesight status: "absent"  methods.json#/eyesight/148/status
 
 ## Somalia (`somalia`)
 
@@ -5938,26 +8551,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  somalia/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  somalia/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  somalia/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.505  methods.json#/validation/1601/value
-- LOYO weekly WAPE baseline annual_ratio: 0.545  methods.json#/validation/1601/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 7.174  methods.json#/validation/1601/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1601/years
-- LOYO weekly WAPE (tier2): 0.46  methods.json#/validation/1616/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1616/years
-- reliability_err (tier2): 0.01  methods.json#/validation/1614/value
-- reliability_year_absolute_err (tier2): 0.151  methods.json#/validation/1615/value
-- t1_t2_wape (tier2): 0.361  methods.json#/validation/1618/value
-- eyesight status: "validated"  methods.json#/eyesight/92/status
-- eyesight param a: -5.613  methods.json#/eyesight/92/params/a
-- eyesight param a_hi: -5.281  methods.json#/eyesight/92/params/a_hi
-- eyesight param a_lo: -5.976  methods.json#/eyesight/92/params/a_lo
-- eyesight param b: 3.136  methods.json#/eyesight/92/params/b
-- eyesight param b_hi: 3.521  methods.json#/eyesight/92/params/b_hi
-- eyesight param b_lo: 2.862  methods.json#/eyesight/92/params/b_lo
-- eyesight param c: 0.715  methods.json#/eyesight/92/params/c
-- eyesight param c_hi: 0.819  methods.json#/eyesight/92/params/c_hi
-- eyesight param c_lo: 0.543  methods.json#/eyesight/92/params/c_lo
-- eyesight g: 1.982  methods.json#/eyesight/92/g
+- LOYO weekly WAPE (tier1): 0.505  methods.json#/validation/2397/value
+- LOYO weekly WAPE baseline annual_ratio: 0.545  methods.json#/validation/2397/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 7.174  methods.json#/validation/2397/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2397/years
+- LOYO weekly WAPE (tier2): 0.46  methods.json#/validation/2412/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2412/years
+- reliability_err (tier2): 0.01  methods.json#/validation/2410/value
+- reliability_year_absolute_err (tier2): 0.151  methods.json#/validation/2411/value
+- t1_t2_wape (tier2): 0.361  methods.json#/validation/2414/value
+- eyesight status: "validated"  methods.json#/eyesight/149/status
+- eyesight param a: -5.613  methods.json#/eyesight/149/params/a
+- eyesight param a_hi: -5.281  methods.json#/eyesight/149/params/a_hi
+- eyesight param a_lo: -5.976  methods.json#/eyesight/149/params/a_lo
+- eyesight param b: 3.136  methods.json#/eyesight/149/params/b
+- eyesight param b_hi: 3.521  methods.json#/eyesight/149/params/b_hi
+- eyesight param b_lo: 2.862  methods.json#/eyesight/149/params/b_lo
+- eyesight param c: 0.715  methods.json#/eyesight/149/params/c
+- eyesight param c_hi: 0.819  methods.json#/eyesight/149/params/c_hi
+- eyesight param c_lo: 0.543  methods.json#/eyesight/149/params/c_lo
+- eyesight g: 1.982  methods.json#/eyesight/149/g
 
 ## Spain (`spain`)
 
@@ -6010,26 +8623,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  spain/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  spain/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  spain/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.321  methods.json#/validation/1619/value
-- LOYO weekly WAPE baseline annual_ratio: 0.347  methods.json#/validation/1619/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 2.581  methods.json#/validation/1619/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1619/years
-- LOYO weekly WAPE (tier2): 0.314  methods.json#/validation/1634/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1634/years
-- reliability_err (tier2): 0.002  methods.json#/validation/1632/value
-- reliability_year_absolute_err (tier2): 0.076  methods.json#/validation/1633/value
-- t1_t2_wape (tier2): 0.312  methods.json#/validation/1636/value
-- eyesight status: "validated"  methods.json#/eyesight/93/status
-- eyesight param a: -4.205  methods.json#/eyesight/93/params/a
-- eyesight param a_hi: -4.094  methods.json#/eyesight/93/params/a_hi
-- eyesight param a_lo: -4.324  methods.json#/eyesight/93/params/a_lo
-- eyesight param b: 2.789  methods.json#/eyesight/93/params/b
-- eyesight param b_hi: 2.999  methods.json#/eyesight/93/params/b_hi
-- eyesight param b_lo: 2.606  methods.json#/eyesight/93/params/b_lo
-- eyesight param c: 0.75  methods.json#/eyesight/93/params/c
-- eyesight param c_hi: 0.826  methods.json#/eyesight/93/params/c_hi
-- eyesight param c_lo: 0.689  methods.json#/eyesight/93/params/c_lo
-- eyesight g: 1.953  methods.json#/eyesight/93/g
+- LOYO weekly WAPE (tier1): 0.321  methods.json#/validation/2415/value
+- LOYO weekly WAPE baseline annual_ratio: 0.347  methods.json#/validation/2415/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.581  methods.json#/validation/2415/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2415/years
+- LOYO weekly WAPE (tier2): 0.314  methods.json#/validation/2430/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2430/years
+- reliability_err (tier2): 0.002  methods.json#/validation/2428/value
+- reliability_year_absolute_err (tier2): 0.076  methods.json#/validation/2429/value
+- t1_t2_wape (tier2): 0.312  methods.json#/validation/2432/value
+- eyesight status: "validated"  methods.json#/eyesight/150/status
+- eyesight param a: -4.205  methods.json#/eyesight/150/params/a
+- eyesight param a_hi: -4.094  methods.json#/eyesight/150/params/a_hi
+- eyesight param a_lo: -4.324  methods.json#/eyesight/150/params/a_lo
+- eyesight param b: 2.789  methods.json#/eyesight/150/params/b
+- eyesight param b_hi: 2.999  methods.json#/eyesight/150/params/b_hi
+- eyesight param b_lo: 2.606  methods.json#/eyesight/150/params/b_lo
+- eyesight param c: 0.75  methods.json#/eyesight/150/params/c
+- eyesight param c_hi: 0.826  methods.json#/eyesight/150/params/c_hi
+- eyesight param c_lo: 0.689  methods.json#/eyesight/150/params/c_lo
+- eyesight g: 1.953  methods.json#/eyesight/150/g
 
 ## Sri Lanka (`sri-lanka`)
 
@@ -6073,26 +8686,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  sri-lanka/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  sri-lanka/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  sri-lanka/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.373  methods.json#/validation/1637/value
-- LOYO weekly WAPE baseline annual_ratio: 0.423  methods.json#/validation/1637/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 6.869  methods.json#/validation/1637/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1637/years
-- LOYO weekly WAPE (tier2): 0.394  methods.json#/validation/1652/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1652/years
-- reliability_err (tier2): 0.001  methods.json#/validation/1650/value
-- reliability_year_absolute_err (tier2): 0.116  methods.json#/validation/1651/value
-- t1_t2_wape (tier2): 0.209  methods.json#/validation/1654/value
-- eyesight status: "validated"  methods.json#/eyesight/94/status
-- eyesight param a: -4.199  methods.json#/eyesight/94/params/a
-- eyesight param a_hi: -4.01  methods.json#/eyesight/94/params/a_hi
-- eyesight param a_lo: -4.365  methods.json#/eyesight/94/params/a_lo
-- eyesight param b: 2.608  methods.json#/eyesight/94/params/b
-- eyesight param b_hi: 2.81  methods.json#/eyesight/94/params/b_hi
-- eyesight param b_lo: 2.45  methods.json#/eyesight/94/params/b_lo
-- eyesight param c: 0.373  methods.json#/eyesight/94/params/c
-- eyesight param c_hi: 0.427  methods.json#/eyesight/94/params/c_hi
-- eyesight param c_lo: 0.301  methods.json#/eyesight/94/params/c_lo
-- eyesight g: 2.431  methods.json#/eyesight/94/g
+- LOYO weekly WAPE (tier1): 0.373  methods.json#/validation/2433/value
+- LOYO weekly WAPE baseline annual_ratio: 0.423  methods.json#/validation/2433/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 6.869  methods.json#/validation/2433/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2433/years
+- LOYO weekly WAPE (tier2): 0.394  methods.json#/validation/2448/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2448/years
+- reliability_err (tier2): 0.001  methods.json#/validation/2446/value
+- reliability_year_absolute_err (tier2): 0.116  methods.json#/validation/2447/value
+- t1_t2_wape (tier2): 0.209  methods.json#/validation/2450/value
+- eyesight status: "validated"  methods.json#/eyesight/151/status
+- eyesight param a: -4.199  methods.json#/eyesight/151/params/a
+- eyesight param a_hi: -4.01  methods.json#/eyesight/151/params/a_hi
+- eyesight param a_lo: -4.365  methods.json#/eyesight/151/params/a_lo
+- eyesight param b: 2.608  methods.json#/eyesight/151/params/b
+- eyesight param b_hi: 2.81  methods.json#/eyesight/151/params/b_hi
+- eyesight param b_lo: 2.45  methods.json#/eyesight/151/params/b_lo
+- eyesight param c: 0.373  methods.json#/eyesight/151/params/c
+- eyesight param c_hi: 0.427  methods.json#/eyesight/151/params/c_hi
+- eyesight param c_lo: 0.301  methods.json#/eyesight/151/params/c_lo
+- eyesight g: 2.431  methods.json#/eyesight/151/g
 
 ## Suriname (`suriname`)
 
@@ -6136,26 +8749,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  suriname/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  suriname/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  suriname/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.306  methods.json#/validation/1655/value
-- LOYO weekly WAPE baseline annual_ratio: 0.313  methods.json#/validation/1655/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 3.21  methods.json#/validation/1655/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1655/years
-- LOYO weekly WAPE (tier2): 0.318  methods.json#/validation/1670/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1670/years
-- reliability_err (tier2): 0.001  methods.json#/validation/1668/value
-- reliability_year_absolute_err (tier2): 0.077  methods.json#/validation/1669/value
-- t1_t2_wape (tier2): 0.133  methods.json#/validation/1672/value
-- eyesight status: "validated"  methods.json#/eyesight/95/status
-- eyesight param a: -3.237  methods.json#/eyesight/95/params/a
-- eyesight param a_hi: -3.094  methods.json#/eyesight/95/params/a_hi
-- eyesight param a_lo: -3.434  methods.json#/eyesight/95/params/a_lo
-- eyesight param b: 2.298  methods.json#/eyesight/95/params/b
-- eyesight param b_hi: 2.685  methods.json#/eyesight/95/params/b_hi
-- eyesight param b_lo: 2.008  methods.json#/eyesight/95/params/b_lo
-- eyesight param c: 0.459  methods.json#/eyesight/95/params/c
-- eyesight param c_hi: 0.602  methods.json#/eyesight/95/params/c_hi
-- eyesight param c_lo: 0.371  methods.json#/eyesight/95/params/c_lo
-- eyesight g: 1.92  methods.json#/eyesight/95/g
+- LOYO weekly WAPE (tier1): 0.306  methods.json#/validation/2451/value
+- LOYO weekly WAPE baseline annual_ratio: 0.313  methods.json#/validation/2451/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.21  methods.json#/validation/2451/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2451/years
+- LOYO weekly WAPE (tier2): 0.318  methods.json#/validation/2466/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2466/years
+- reliability_err (tier2): 0.001  methods.json#/validation/2464/value
+- reliability_year_absolute_err (tier2): 0.077  methods.json#/validation/2465/value
+- t1_t2_wape (tier2): 0.133  methods.json#/validation/2468/value
+- eyesight status: "validated"  methods.json#/eyesight/152/status
+- eyesight param a: -3.237  methods.json#/eyesight/152/params/a
+- eyesight param a_hi: -3.094  methods.json#/eyesight/152/params/a_hi
+- eyesight param a_lo: -3.434  methods.json#/eyesight/152/params/a_lo
+- eyesight param b: 2.298  methods.json#/eyesight/152/params/b
+- eyesight param b_hi: 2.685  methods.json#/eyesight/152/params/b_hi
+- eyesight param b_lo: 2.008  methods.json#/eyesight/152/params/b_lo
+- eyesight param c: 0.459  methods.json#/eyesight/152/params/c
+- eyesight param c_hi: 0.602  methods.json#/eyesight/152/params/c_hi
+- eyesight param c_lo: 0.371  methods.json#/eyesight/152/params/c_lo
+- eyesight g: 1.92  methods.json#/eyesight/152/g
 
 ## eSwatini (`swaziland`)
 
@@ -6199,26 +8812,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  swaziland/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  swaziland/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  swaziland/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.317  methods.json#/validation/1673/value
-- LOYO weekly WAPE baseline annual_ratio: 0.327  methods.json#/validation/1673/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 2.013  methods.json#/validation/1673/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1673/years
-- LOYO weekly WAPE (tier2): 0.269  methods.json#/validation/1688/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1688/years
-- reliability_err (tier2): 0.003  methods.json#/validation/1686/value
-- reliability_year_absolute_err (tier2): 0.088  methods.json#/validation/1687/value
-- t1_t2_wape (tier2): 0.184  methods.json#/validation/1690/value
-- eyesight status: "validated"  methods.json#/eyesight/96/status
-- eyesight param a: -3.627  methods.json#/eyesight/96/params/a
-- eyesight param a_hi: -3.508  methods.json#/eyesight/96/params/a_hi
-- eyesight param a_lo: -3.761  methods.json#/eyesight/96/params/a_lo
-- eyesight param b: 2.456  methods.json#/eyesight/96/params/b
-- eyesight param b_hi: 2.603  methods.json#/eyesight/96/params/b_hi
-- eyesight param b_lo: 2.337  methods.json#/eyesight/96/params/b_lo
-- eyesight param c: 0.799  methods.json#/eyesight/96/params/c
-- eyesight param c_hi: 0.832  methods.json#/eyesight/96/params/c_hi
-- eyesight param c_lo: 0.751  methods.json#/eyesight/96/params/c_lo
-- eyesight g: 1.449  methods.json#/eyesight/96/g
+- LOYO weekly WAPE (tier1): 0.317  methods.json#/validation/2469/value
+- LOYO weekly WAPE baseline annual_ratio: 0.327  methods.json#/validation/2469/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.013  methods.json#/validation/2469/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2469/years
+- LOYO weekly WAPE (tier2): 0.269  methods.json#/validation/2484/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2484/years
+- reliability_err (tier2): 0.003  methods.json#/validation/2482/value
+- reliability_year_absolute_err (tier2): 0.088  methods.json#/validation/2483/value
+- t1_t2_wape (tier2): 0.184  methods.json#/validation/2486/value
+- eyesight status: "validated"  methods.json#/eyesight/153/status
+- eyesight param a: -3.627  methods.json#/eyesight/153/params/a
+- eyesight param a_hi: -3.508  methods.json#/eyesight/153/params/a_hi
+- eyesight param a_lo: -3.761  methods.json#/eyesight/153/params/a_lo
+- eyesight param b: 2.456  methods.json#/eyesight/153/params/b
+- eyesight param b_hi: 2.603  methods.json#/eyesight/153/params/b_hi
+- eyesight param b_lo: 2.337  methods.json#/eyesight/153/params/b_lo
+- eyesight param c: 0.799  methods.json#/eyesight/153/params/c
+- eyesight param c_hi: 0.832  methods.json#/eyesight/153/params/c_hi
+- eyesight param c_lo: 0.751  methods.json#/eyesight/153/params/c_lo
+- eyesight g: 1.449  methods.json#/eyesight/153/g
 
 ## Sweden (`sweden`)
 
@@ -6262,11 +8875,68 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  sweden/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  sweden/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  sweden/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.579  methods.json#/validation/1691/value
-- LOYO weekly WAPE baseline annual_ratio: 0.636  methods.json#/validation/1691/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 2.051  methods.json#/validation/1691/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1691/years
-- eyesight status: "absent"  methods.json#/eyesight/97/status
+- LOYO weekly WAPE (tier1): 0.579  methods.json#/validation/2487/value
+- LOYO weekly WAPE baseline annual_ratio: 0.636  methods.json#/validation/2487/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.051  methods.json#/validation/2487/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2487/years
+- eyesight status: "absent"  methods.json#/eyesight/154/status
+
+## Switzerland (`switzerland`)
+
+- jump multiple (value): 2.806  switzerland/ruler.json#/jump_multiple/value
+- jump multiple (lo): 1.507  switzerland/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 7.412  switzerland/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  switzerland/ruler.json#/jump_multiple/years
+- ruler sentence: "In Switzerland, VIIRS reports about 2.8 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  switzerland/ruler.json#/sentence
+- harmonized trend pct_per_decade: -19.66  switzerland/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -48.321  switzerland/trend.json#/harmonized/lo
+- harmonized trend hi: -1.569  switzerland/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  switzerland/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 41.215  switzerland/trend.json#/naive/pct_per_decade
+- naive trend lo: 25.453  switzerland/trend.json#/naive/lo
+- naive trend hi: 73.534  switzerland/trend.json#/naive/hi
+- naive trend direction: "rising"  switzerland/trend.json#/naive/direction
+- trend years: [2003, 2025]  switzerland/trend.json#/years
+- verdict sentence_id: "unclear"  switzerland/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (-48 to -2% per decade)."  switzerland/trend.json#/sentence
+- critical weeks: [11, 12, 13, 24, 25, 26, 35, 37, 38, 39]  switzerland/season.json#/critical_weeks
+- window w1 label: "late-August to late-September"  switzerland/season.json#/windows/0/label
+- window w1 start_week: 35  switzerland/season.json#/windows/0/start_week
+- window w1 peak_week: 37  switzerland/season.json#/windows/0/peak_week
+- window w1 end_week: 39  switzerland/season.json#/windows/0/end_week
+- window w1 share: 0.49  switzerland/season.json#/windows/0/share
+- window w1 start shift days per decade (value): null  switzerland/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): null  switzerland/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): null  switzerland/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "Timing shift unavailable: fewer than three valid annual observations."  switzerland/season.json#/windows/0/sentence
+- window w2 label: "mid-March to early-April"  switzerland/season.json#/windows/1/label
+- window w2 start_week: 11  switzerland/season.json#/windows/1/start_week
+- window w2 peak_week: 13  switzerland/season.json#/windows/1/peak_week
+- window w2 end_week: 13  switzerland/season.json#/windows/1/end_week
+- window w2 share: 0.222  switzerland/season.json#/windows/1/share
+- window w2 start shift days per decade (value): null  switzerland/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): null  switzerland/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): null  switzerland/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "Timing shift unavailable: fewer than three valid annual observations."  switzerland/season.json#/windows/1/sentence
+- this week value: null  switzerland/nowcast.json#/value
+- this week lo: null  switzerland/nowcast.json#/lo
+- this week hi: null  switzerland/nowcast.json#/hi
+- this week percentile: null  switzerland/nowcast.json#/percentile
+- this week status: "unavailable"  switzerland/nowcast.json#/status
+- this week as_of: null  switzerland/nowcast.json#/as_of
+- this week window start: null  switzerland/nowcast.json#/window/start
+- this week window end: null  switzerland/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  switzerland/nowcast.json#/baseline_years
+- month to date value: null  switzerland/nowcast.json#/month_to_date/value
+- month to date median: null  switzerland/nowcast.json#/month_to_date/median
+- month to date ratio: null  switzerland/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  switzerland/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  switzerland/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.335  methods.json#/validation/2500/value
+- LOYO weekly WAPE baseline annual_ratio: 1.402  methods.json#/validation/2500/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.632  methods.json#/validation/2500/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2500/years
+- eyesight status: "absent"  methods.json#/eyesight/155/status
 
 ## Syria (`syria`)
 
@@ -6310,26 +8980,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  syria/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  syria/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  syria/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.347  methods.json#/validation/1704/value
-- LOYO weekly WAPE baseline annual_ratio: 0.379  methods.json#/validation/1704/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 3.577  methods.json#/validation/1704/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1704/years
-- LOYO weekly WAPE (tier2): 0.311  methods.json#/validation/1719/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1719/years
-- reliability_err (tier2): 0.002  methods.json#/validation/1717/value
-- reliability_year_absolute_err (tier2): 0.084  methods.json#/validation/1718/value
-- t1_t2_wape (tier2): 0.276  methods.json#/validation/1721/value
-- eyesight status: "validated"  methods.json#/eyesight/98/status
-- eyesight param a: -4.349  methods.json#/eyesight/98/params/a
-- eyesight param a_hi: -4.24  methods.json#/eyesight/98/params/a_hi
-- eyesight param a_lo: -4.578  methods.json#/eyesight/98/params/a_lo
-- eyesight param b: 2.095  methods.json#/eyesight/98/params/b
-- eyesight param b_hi: 2.385  methods.json#/eyesight/98/params/b_hi
-- eyesight param b_lo: 1.94  methods.json#/eyesight/98/params/b_lo
-- eyesight param c: 0.854  methods.json#/eyesight/98/params/c
-- eyesight param c_hi: 1.0  methods.json#/eyesight/98/params/c_hi
-- eyesight param c_lo: 0.698  methods.json#/eyesight/98/params/c_lo
-- eyesight g: 1.884  methods.json#/eyesight/98/g
+- LOYO weekly WAPE (tier1): 0.347  methods.json#/validation/2513/value
+- LOYO weekly WAPE baseline annual_ratio: 0.379  methods.json#/validation/2513/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.577  methods.json#/validation/2513/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2513/years
+- LOYO weekly WAPE (tier2): 0.311  methods.json#/validation/2528/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2528/years
+- reliability_err (tier2): 0.002  methods.json#/validation/2526/value
+- reliability_year_absolute_err (tier2): 0.084  methods.json#/validation/2527/value
+- t1_t2_wape (tier2): 0.276  methods.json#/validation/2530/value
+- eyesight status: "validated"  methods.json#/eyesight/156/status
+- eyesight param a: -4.349  methods.json#/eyesight/156/params/a
+- eyesight param a_hi: -4.24  methods.json#/eyesight/156/params/a_hi
+- eyesight param a_lo: -4.578  methods.json#/eyesight/156/params/a_lo
+- eyesight param b: 2.095  methods.json#/eyesight/156/params/b
+- eyesight param b_hi: 2.385  methods.json#/eyesight/156/params/b_hi
+- eyesight param b_lo: 1.94  methods.json#/eyesight/156/params/b_lo
+- eyesight param c: 0.854  methods.json#/eyesight/156/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/156/params/c_hi
+- eyesight param c_lo: 0.698  methods.json#/eyesight/156/params/c_lo
+- eyesight g: 1.884  methods.json#/eyesight/156/g
 
 ## Taiwan (`taiwan`)
 
@@ -6382,26 +9052,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  taiwan/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  taiwan/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  taiwan/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.832  methods.json#/validation/1722/value
-- LOYO weekly WAPE baseline annual_ratio: 0.866  methods.json#/validation/1722/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 5.016  methods.json#/validation/1722/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1722/years
-- LOYO weekly WAPE (tier2): 0.874  methods.json#/validation/1737/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1737/years
-- reliability_err (tier2): 0.003  methods.json#/validation/1735/value
-- reliability_year_absolute_err (tier2): 0.252  methods.json#/validation/1736/value
-- t1_t2_wape (tier2): 0.499  methods.json#/validation/1739/value
-- eyesight status: "validated"  methods.json#/eyesight/99/status
-- eyesight param a: -4.937  methods.json#/eyesight/99/params/a
-- eyesight param a_hi: -4.523  methods.json#/eyesight/99/params/a_hi
-- eyesight param a_lo: -5.417  methods.json#/eyesight/99/params/a_lo
-- eyesight param b: 2.763  methods.json#/eyesight/99/params/b
-- eyesight param b_hi: 3.243  methods.json#/eyesight/99/params/b_hi
-- eyesight param b_lo: 2.368  methods.json#/eyesight/99/params/b_lo
-- eyesight param c: 0.756  methods.json#/eyesight/99/params/c
-- eyesight param c_hi: 1.0  methods.json#/eyesight/99/params/c_hi
-- eyesight param c_lo: 0.548  methods.json#/eyesight/99/params/c_lo
-- eyesight g: 3.743  methods.json#/eyesight/99/g
+- LOYO weekly WAPE (tier1): 0.832  methods.json#/validation/2531/value
+- LOYO weekly WAPE baseline annual_ratio: 0.866  methods.json#/validation/2531/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 5.016  methods.json#/validation/2531/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2531/years
+- LOYO weekly WAPE (tier2): 0.874  methods.json#/validation/2546/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2546/years
+- reliability_err (tier2): 0.003  methods.json#/validation/2544/value
+- reliability_year_absolute_err (tier2): 0.252  methods.json#/validation/2545/value
+- t1_t2_wape (tier2): 0.499  methods.json#/validation/2548/value
+- eyesight status: "validated"  methods.json#/eyesight/157/status
+- eyesight param a: -4.937  methods.json#/eyesight/157/params/a
+- eyesight param a_hi: -4.523  methods.json#/eyesight/157/params/a_hi
+- eyesight param a_lo: -5.417  methods.json#/eyesight/157/params/a_lo
+- eyesight param b: 2.763  methods.json#/eyesight/157/params/b
+- eyesight param b_hi: 3.243  methods.json#/eyesight/157/params/b_hi
+- eyesight param b_lo: 2.368  methods.json#/eyesight/157/params/b_lo
+- eyesight param c: 0.756  methods.json#/eyesight/157/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/157/params/c_hi
+- eyesight param c_lo: 0.548  methods.json#/eyesight/157/params/c_lo
+- eyesight g: 3.743  methods.json#/eyesight/157/g
 
 ## Tajikistan (`tajikistan`)
 
@@ -6454,11 +9124,64 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  tajikistan/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  tajikistan/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  tajikistan/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.877  methods.json#/validation/1740/value
-- LOYO weekly WAPE baseline annual_ratio: 0.876  methods.json#/validation/1740/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 3.946  methods.json#/validation/1740/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1740/years
-- eyesight status: "absent"  methods.json#/eyesight/100/status
+- LOYO weekly WAPE (tier1): 0.877  methods.json#/validation/2549/value
+- LOYO weekly WAPE baseline annual_ratio: 0.876  methods.json#/validation/2549/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.946  methods.json#/validation/2549/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2549/years
+- eyesight status: "absent"  methods.json#/eyesight/158/status
+
+## Thailand (`thailand`)
+
+- jump multiple (value): 6.361  thailand/ruler.json#/jump_multiple/value
+- jump multiple (lo): 5.562  thailand/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 7.276  thailand/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  thailand/ruler.json#/jump_multiple/years
+- ruler sentence: "In Thailand, VIIRS reports about 6.4 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  thailand/ruler.json#/sentence
+- harmonized trend pct_per_decade: -44.11  thailand/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -64.937  thailand/trend.json#/harmonized/lo
+- harmonized trend hi: -33.181  thailand/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  thailand/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 49.109  thailand/trend.json#/naive/pct_per_decade
+- naive trend lo: 26.15  thailand/trend.json#/naive/lo
+- naive trend hi: 128.14  thailand/trend.json#/naive/hi
+- naive trend direction: "rising"  thailand/trend.json#/naive/direction
+- trend years: [2003, 2025]  thailand/trend.json#/years
+- verdict sentence_id: "artifact_falling"  thailand/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 44% per decade (-65 to -33)."  thailand/trend.json#/sentence
+- critical weeks: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]  thailand/season.json#/critical_weeks
+- window w1 label: "early-January to mid-April"  thailand/season.json#/windows/0/label
+- window w1 start_week: 2  thailand/season.json#/windows/0/start_week
+- window w1 peak_week: 10  thailand/season.json#/windows/0/peak_week
+- window w1 end_week: 15  thailand/season.json#/windows/0/end_week
+- window w1 share: 0.806  thailand/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -0.769  thailand/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -5.714  thailand/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 5.227  thailand/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-January to mid-April season."  thailand/season.json#/windows/0/sentence
+- this week value: null  thailand/nowcast.json#/value
+- this week lo: null  thailand/nowcast.json#/lo
+- this week hi: null  thailand/nowcast.json#/hi
+- this week percentile: null  thailand/nowcast.json#/percentile
+- this week status: "unavailable"  thailand/nowcast.json#/status
+- this week as_of: null  thailand/nowcast.json#/as_of
+- this week window start: null  thailand/nowcast.json#/window/start
+- this week window end: null  thailand/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  thailand/nowcast.json#/baseline_years
+- month to date value: null  thailand/nowcast.json#/month_to_date/value
+- month to date median: null  thailand/nowcast.json#/month_to_date/median
+- month to date ratio: null  thailand/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  thailand/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  thailand/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.184  methods.json#/validation/2562/value
+- LOYO weekly WAPE baseline annual_ratio: 0.229  methods.json#/validation/2562/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 4.653  methods.json#/validation/2562/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2562/years
+- LOYO weekly WAPE (tier2): 0.207  methods.json#/validation/2577/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2577/years
+- reliability_err (tier2): 0.001  methods.json#/validation/2575/value
+- reliability_year_absolute_err (tier2): 0.047  methods.json#/validation/2576/value
+- t1_t2_wape (tier2): 0.206  methods.json#/validation/2579/value
+- eyesight status: "absent"  methods.json#/eyesight/159/status
 
 ## Gambia (`the-gambia`)
 
@@ -6502,26 +9225,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  the-gambia/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  the-gambia/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  the-gambia/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.331  methods.json#/validation/1753/value
-- LOYO weekly WAPE baseline annual_ratio: 0.422  methods.json#/validation/1753/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 2.678  methods.json#/validation/1753/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1753/years
-- LOYO weekly WAPE (tier2): 0.34  methods.json#/validation/1768/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1768/years
-- reliability_err (tier2): 0.0  methods.json#/validation/1766/value
-- reliability_year_absolute_err (tier2): 0.096  methods.json#/validation/1767/value
-- t1_t2_wape (tier2): 0.235  methods.json#/validation/1770/value
-- eyesight status: "validated"  methods.json#/eyesight/101/status
-- eyesight param a: -4.3  methods.json#/eyesight/101/params/a
-- eyesight param a_hi: -4.165  methods.json#/eyesight/101/params/a_hi
-- eyesight param a_lo: -4.489  methods.json#/eyesight/101/params/a_lo
-- eyesight param b: 2.282  methods.json#/eyesight/101/params/b
-- eyesight param b_hi: 2.497  methods.json#/eyesight/101/params/b_hi
-- eyesight param b_lo: 2.164  methods.json#/eyesight/101/params/b_lo
-- eyesight param c: 0.93  methods.json#/eyesight/101/params/c
-- eyesight param c_hi: 1.0  methods.json#/eyesight/101/params/c_hi
-- eyesight param c_lo: 0.838  methods.json#/eyesight/101/params/c_lo
-- eyesight g: 1.476  methods.json#/eyesight/101/g
+- LOYO weekly WAPE (tier1): 0.331  methods.json#/validation/2580/value
+- LOYO weekly WAPE baseline annual_ratio: 0.422  methods.json#/validation/2580/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.678  methods.json#/validation/2580/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2580/years
+- LOYO weekly WAPE (tier2): 0.34  methods.json#/validation/2595/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2595/years
+- reliability_err (tier2): 0.0  methods.json#/validation/2593/value
+- reliability_year_absolute_err (tier2): 0.096  methods.json#/validation/2594/value
+- t1_t2_wape (tier2): 0.235  methods.json#/validation/2597/value
+- eyesight status: "validated"  methods.json#/eyesight/160/status
+- eyesight param a: -4.3  methods.json#/eyesight/160/params/a
+- eyesight param a_hi: -4.165  methods.json#/eyesight/160/params/a_hi
+- eyesight param a_lo: -4.489  methods.json#/eyesight/160/params/a_lo
+- eyesight param b: 2.282  methods.json#/eyesight/160/params/b
+- eyesight param b_hi: 2.497  methods.json#/eyesight/160/params/b_hi
+- eyesight param b_lo: 2.164  methods.json#/eyesight/160/params/b_lo
+- eyesight param c: 0.93  methods.json#/eyesight/160/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/160/params/c_hi
+- eyesight param c_lo: 0.838  methods.json#/eyesight/160/params/c_lo
+- eyesight g: 1.476  methods.json#/eyesight/160/g
 
 ## East Timor (`timor-leste`)
 
@@ -6565,26 +9288,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  timor-leste/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  timor-leste/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  timor-leste/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.358  methods.json#/validation/1771/value
-- LOYO weekly WAPE baseline annual_ratio: 0.355  methods.json#/validation/1771/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 6.796  methods.json#/validation/1771/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1771/years
-- LOYO weekly WAPE (tier2): 0.326  methods.json#/validation/1786/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1786/years
-- reliability_err (tier2): 0.007  methods.json#/validation/1784/value
-- reliability_year_absolute_err (tier2): 0.141  methods.json#/validation/1785/value
-- t1_t2_wape (tier2): 0.167  methods.json#/validation/1788/value
-- eyesight status: "validated"  methods.json#/eyesight/102/status
-- eyesight param a: -4.57  methods.json#/eyesight/102/params/a
-- eyesight param a_hi: -4.243  methods.json#/eyesight/102/params/a_hi
-- eyesight param a_lo: -4.708  methods.json#/eyesight/102/params/a_lo
-- eyesight param b: 2.213  methods.json#/eyesight/102/params/b
-- eyesight param b_hi: 2.545  methods.json#/eyesight/102/params/b_hi
-- eyesight param b_lo: 2.078  methods.json#/eyesight/102/params/b_lo
-- eyesight param c: 1.0  methods.json#/eyesight/102/params/c
-- eyesight param c_hi: 1.0  methods.json#/eyesight/102/params/c_hi
-- eyesight param c_lo: 0.63  methods.json#/eyesight/102/params/c_lo
-- eyesight g: 1.712  methods.json#/eyesight/102/g
+- LOYO weekly WAPE (tier1): 0.358  methods.json#/validation/2598/value
+- LOYO weekly WAPE baseline annual_ratio: 0.355  methods.json#/validation/2598/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 6.796  methods.json#/validation/2598/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2598/years
+- LOYO weekly WAPE (tier2): 0.326  methods.json#/validation/2613/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2613/years
+- reliability_err (tier2): 0.007  methods.json#/validation/2611/value
+- reliability_year_absolute_err (tier2): 0.141  methods.json#/validation/2612/value
+- t1_t2_wape (tier2): 0.167  methods.json#/validation/2615/value
+- eyesight status: "validated"  methods.json#/eyesight/161/status
+- eyesight param a: -4.57  methods.json#/eyesight/161/params/a
+- eyesight param a_hi: -4.243  methods.json#/eyesight/161/params/a_hi
+- eyesight param a_lo: -4.708  methods.json#/eyesight/161/params/a_lo
+- eyesight param b: 2.213  methods.json#/eyesight/161/params/b
+- eyesight param b_hi: 2.545  methods.json#/eyesight/161/params/b_hi
+- eyesight param b_lo: 2.078  methods.json#/eyesight/161/params/b_lo
+- eyesight param c: 1.0  methods.json#/eyesight/161/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/161/params/c_hi
+- eyesight param c_lo: 0.63  methods.json#/eyesight/161/params/c_lo
+- eyesight g: 1.712  methods.json#/eyesight/161/g
 
 ## Togo (`togo`)
 
@@ -6628,26 +9351,128 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  togo/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  togo/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  togo/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.174  methods.json#/validation/1789/value
-- LOYO weekly WAPE baseline annual_ratio: 0.261  methods.json#/validation/1789/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 3.446  methods.json#/validation/1789/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1789/years
-- LOYO weekly WAPE (tier2): 0.205  methods.json#/validation/1804/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1804/years
-- reliability_err (tier2): 0.001  methods.json#/validation/1802/value
-- reliability_year_absolute_err (tier2): 0.054  methods.json#/validation/1803/value
-- t1_t2_wape (tier2): 0.151  methods.json#/validation/1806/value
-- eyesight status: "exploratory"  methods.json#/eyesight/103/status
-- eyesight param a: -3.869  methods.json#/eyesight/103/params/a
-- eyesight param a_hi: -3.77  methods.json#/eyesight/103/params/a_hi
-- eyesight param a_lo: -4.018  methods.json#/eyesight/103/params/a_lo
-- eyesight param b: 2.326  methods.json#/eyesight/103/params/b
-- eyesight param b_hi: 2.412  methods.json#/eyesight/103/params/b_hi
-- eyesight param b_lo: 2.25  methods.json#/eyesight/103/params/b_lo
-- eyesight param c: 0.754  methods.json#/eyesight/103/params/c
-- eyesight param c_hi: 0.807  methods.json#/eyesight/103/params/c_hi
-- eyesight param c_lo: 0.716  methods.json#/eyesight/103/params/c_lo
-- eyesight g: 1.722  methods.json#/eyesight/103/g
+- LOYO weekly WAPE (tier1): 0.174  methods.json#/validation/2616/value
+- LOYO weekly WAPE baseline annual_ratio: 0.261  methods.json#/validation/2616/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.446  methods.json#/validation/2616/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2616/years
+- LOYO weekly WAPE (tier2): 0.205  methods.json#/validation/2631/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2631/years
+- reliability_err (tier2): 0.001  methods.json#/validation/2629/value
+- reliability_year_absolute_err (tier2): 0.054  methods.json#/validation/2630/value
+- t1_t2_wape (tier2): 0.151  methods.json#/validation/2633/value
+- eyesight status: "exploratory"  methods.json#/eyesight/162/status
+- eyesight param a: -3.869  methods.json#/eyesight/162/params/a
+- eyesight param a_hi: -3.77  methods.json#/eyesight/162/params/a_hi
+- eyesight param a_lo: -4.018  methods.json#/eyesight/162/params/a_lo
+- eyesight param b: 2.326  methods.json#/eyesight/162/params/b
+- eyesight param b_hi: 2.412  methods.json#/eyesight/162/params/b_hi
+- eyesight param b_lo: 2.25  methods.json#/eyesight/162/params/b_lo
+- eyesight param c: 0.754  methods.json#/eyesight/162/params/c
+- eyesight param c_hi: 0.807  methods.json#/eyesight/162/params/c_hi
+- eyesight param c_lo: 0.716  methods.json#/eyesight/162/params/c_lo
+- eyesight g: 1.722  methods.json#/eyesight/162/g
+
+## Tonga (`tonga`)
+
+- jump multiple (value): 10.047  tonga/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.833  tonga/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 79.0  tonga/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  tonga/ruler.json#/jump_multiple/years
+- ruler sentence: "In Tonga, VIIRS reports about 10.0 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  tonga/ruler.json#/sentence
+- harmonized trend pct_per_decade: 0.0  tonga/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -148.661  tonga/trend.json#/harmonized/lo
+- harmonized trend hi: 0.0  tonga/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  tonga/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 60.201  tonga/trend.json#/naive/pct_per_decade
+- naive trend lo: 21.739  tonga/trend.json#/naive/lo
+- naive trend hi: 182.355  tonga/trend.json#/naive/hi
+- naive trend direction: "rising"  tonga/trend.json#/naive/direction
+- trend years: [2003, 2025]  tonga/trend.json#/years
+- verdict sentence_id: "artifact_flat"  tonga/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 60% per decade. After correcting for the sensor change, there is no clear change (-149 to 0% per decade)."  tonga/trend.json#/sentence
+- critical weeks: []  tonga/season.json#/critical_weeks
+- this week value: null  tonga/nowcast.json#/value
+- this week lo: null  tonga/nowcast.json#/lo
+- this week hi: null  tonga/nowcast.json#/hi
+- this week percentile: null  tonga/nowcast.json#/percentile
+- this week status: "unavailable"  tonga/nowcast.json#/status
+- this week as_of: null  tonga/nowcast.json#/as_of
+- this week window start: null  tonga/nowcast.json#/window/start
+- this week window end: null  tonga/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  tonga/nowcast.json#/baseline_years
+- month to date value: null  tonga/nowcast.json#/month_to_date/value
+- month to date median: null  tonga/nowcast.json#/month_to_date/median
+- month to date ratio: null  tonga/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  tonga/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  tonga/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.927  methods.json#/validation/2634/value
+- LOYO weekly WAPE baseline annual_ratio: 1.937  methods.json#/validation/2634/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 25.046  methods.json#/validation/2634/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2634/years
+- eyesight status: "absent"  methods.json#/eyesight/163/status
+
+## Trinidad and Tobago (`trinidad-and-tobago`)
+
+- jump multiple (value): 9.901  trinidad-and-tobago/ruler.json#/jump_multiple/value
+- jump multiple (lo): 7.289  trinidad-and-tobago/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 31.447  trinidad-and-tobago/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  trinidad-and-tobago/ruler.json#/jump_multiple/years
+- ruler sentence: "In Trinidad and Tobago, VIIRS reports about 9.9 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  trinidad-and-tobago/ruler.json#/sentence
+- harmonized trend pct_per_decade: -22.827  trinidad-and-tobago/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -62.378  trinidad-and-tobago/trend.json#/harmonized/lo
+- harmonized trend hi: 14.621  trinidad-and-tobago/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  trinidad-and-tobago/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 83.286  trinidad-and-tobago/trend.json#/naive/pct_per_decade
+- naive trend lo: 38.178  trinidad-and-tobago/trend.json#/naive/lo
+- naive trend hi: 189.02  trinidad-and-tobago/trend.json#/naive/hi
+- naive trend direction: "rising"  trinidad-and-tobago/trend.json#/naive/direction
+- trend years: [2003, 2025]  trinidad-and-tobago/trend.json#/years
+- verdict sentence_id: "artifact_flat"  trinidad-and-tobago/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 83% per decade. After correcting for the sensor change, there is no clear change (-62 to 15% per decade)."  trinidad-and-tobago/trend.json#/sentence
+- critical weeks: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]  trinidad-and-tobago/season.json#/critical_weeks
+- window w1 label: "late-January to late-April"  trinidad-and-tobago/season.json#/windows/0/label
+- window w1 start_week: 5  trinidad-and-tobago/season.json#/windows/0/start_week
+- window w1 peak_week: 14  trinidad-and-tobago/season.json#/windows/0/peak_week
+- window w1 end_week: 17  trinidad-and-tobago/season.json#/windows/0/end_week
+- window w1 share: 0.826  trinidad-and-tobago/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 0.556  trinidad-and-tobago/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -5.0  trinidad-and-tobago/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 6.364  trinidad-and-tobago/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the late-January to late-April season."  trinidad-and-tobago/season.json#/windows/0/sentence
+- this week value: null  trinidad-and-tobago/nowcast.json#/value
+- this week lo: null  trinidad-and-tobago/nowcast.json#/lo
+- this week hi: null  trinidad-and-tobago/nowcast.json#/hi
+- this week percentile: null  trinidad-and-tobago/nowcast.json#/percentile
+- this week status: "unavailable"  trinidad-and-tobago/nowcast.json#/status
+- this week as_of: null  trinidad-and-tobago/nowcast.json#/as_of
+- this week window start: null  trinidad-and-tobago/nowcast.json#/window/start
+- this week window end: null  trinidad-and-tobago/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  trinidad-and-tobago/nowcast.json#/baseline_years
+- month to date value: null  trinidad-and-tobago/nowcast.json#/month_to_date/value
+- month to date median: null  trinidad-and-tobago/nowcast.json#/month_to_date/median
+- month to date ratio: null  trinidad-and-tobago/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  trinidad-and-tobago/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  trinidad-and-tobago/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.67  methods.json#/validation/2647/value
+- LOYO weekly WAPE baseline annual_ratio: 0.664  methods.json#/validation/2647/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 7.901  methods.json#/validation/2647/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2647/years
+- LOYO weekly WAPE (tier2): 0.637  methods.json#/validation/2662/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2662/years
+- reliability_err (tier2): 0.001  methods.json#/validation/2660/value
+- reliability_year_absolute_err (tier2): 0.231  methods.json#/validation/2661/value
+- t1_t2_wape (tier2): 0.219  methods.json#/validation/2664/value
+- eyesight status: "validated"  methods.json#/eyesight/164/status
+- eyesight param a: -4.818  methods.json#/eyesight/164/params/a
+- eyesight param a_hi: -4.288  methods.json#/eyesight/164/params/a_hi
+- eyesight param a_lo: -5.428  methods.json#/eyesight/164/params/a_lo
+- eyesight param b: 2.536  methods.json#/eyesight/164/params/b
+- eyesight param b_hi: 3.153  methods.json#/eyesight/164/params/b_hi
+- eyesight param b_lo: 2.109  methods.json#/eyesight/164/params/b_lo
+- eyesight param c: 0.561  methods.json#/eyesight/164/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/164/params/c_hi
+- eyesight param c_lo: 0.344  methods.json#/eyesight/164/params/c_lo
+- eyesight g: 2.722  methods.json#/eyesight/164/g
 
 ## Tunisia (`tunisia`)
 
@@ -6691,26 +9516,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  tunisia/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  tunisia/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  tunisia/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.635  methods.json#/validation/1807/value
-- LOYO weekly WAPE baseline annual_ratio: 0.787  methods.json#/validation/1807/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 3.407  methods.json#/validation/1807/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1807/years
-- LOYO weekly WAPE (tier2): 0.427  methods.json#/validation/1822/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1822/years
-- reliability_err (tier2): 0.006  methods.json#/validation/1820/value
-- reliability_year_absolute_err (tier2): 0.176  methods.json#/validation/1821/value
-- t1_t2_wape (tier2): 0.443  methods.json#/validation/1824/value
-- eyesight status: "validated"  methods.json#/eyesight/104/status
-- eyesight param a: -5.015  methods.json#/eyesight/104/params/a
-- eyesight param a_hi: -4.736  methods.json#/eyesight/104/params/a_hi
-- eyesight param a_lo: -5.484  methods.json#/eyesight/104/params/a_lo
-- eyesight param b: 2.736  methods.json#/eyesight/104/params/b
-- eyesight param b_hi: 3.149  methods.json#/eyesight/104/params/b_hi
-- eyesight param b_lo: 2.543  methods.json#/eyesight/104/params/b_lo
-- eyesight param c: 0.959  methods.json#/eyesight/104/params/c
-- eyesight param c_hi: 1.0  methods.json#/eyesight/104/params/c_hi
-- eyesight param c_lo: 0.831  methods.json#/eyesight/104/params/c_lo
-- eyesight g: 1.643  methods.json#/eyesight/104/g
+- LOYO weekly WAPE (tier1): 0.635  methods.json#/validation/2665/value
+- LOYO weekly WAPE baseline annual_ratio: 0.787  methods.json#/validation/2665/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.407  methods.json#/validation/2665/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2665/years
+- LOYO weekly WAPE (tier2): 0.427  methods.json#/validation/2680/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2680/years
+- reliability_err (tier2): 0.006  methods.json#/validation/2678/value
+- reliability_year_absolute_err (tier2): 0.176  methods.json#/validation/2679/value
+- t1_t2_wape (tier2): 0.443  methods.json#/validation/2682/value
+- eyesight status: "validated"  methods.json#/eyesight/165/status
+- eyesight param a: -5.015  methods.json#/eyesight/165/params/a
+- eyesight param a_hi: -4.736  methods.json#/eyesight/165/params/a_hi
+- eyesight param a_lo: -5.484  methods.json#/eyesight/165/params/a_lo
+- eyesight param b: 2.736  methods.json#/eyesight/165/params/b
+- eyesight param b_hi: 3.149  methods.json#/eyesight/165/params/b_hi
+- eyesight param b_lo: 2.543  methods.json#/eyesight/165/params/b_lo
+- eyesight param c: 0.959  methods.json#/eyesight/165/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/165/params/c_hi
+- eyesight param c_lo: 0.831  methods.json#/eyesight/165/params/c_lo
+- eyesight g: 1.643  methods.json#/eyesight/165/g
 
 ## Turkey (`turkey`)
 
@@ -6754,26 +9579,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  turkey/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  turkey/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  turkey/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.193  methods.json#/validation/1825/value
-- LOYO weekly WAPE baseline annual_ratio: 0.26  methods.json#/validation/1825/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 2.788  methods.json#/validation/1825/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1825/years
-- LOYO weekly WAPE (tier2): 0.278  methods.json#/validation/1840/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1840/years
-- reliability_err (tier2): 0.001  methods.json#/validation/1838/value
-- reliability_year_absolute_err (tier2): 0.045  methods.json#/validation/1839/value
-- t1_t2_wape (tier2): 0.238  methods.json#/validation/1842/value
-- eyesight status: "exploratory"  methods.json#/eyesight/105/status
-- eyesight param a: -3.675  methods.json#/eyesight/105/params/a
-- eyesight param a_hi: -3.592  methods.json#/eyesight/105/params/a_hi
-- eyesight param a_lo: -3.764  methods.json#/eyesight/105/params/a_lo
-- eyesight param b: 1.93  methods.json#/eyesight/105/params/b
-- eyesight param b_hi: 2.044  methods.json#/eyesight/105/params/b_hi
-- eyesight param b_lo: 1.829  methods.json#/eyesight/105/params/b_lo
-- eyesight param c: 0.876  methods.json#/eyesight/105/params/c
-- eyesight param c_hi: 1.0  methods.json#/eyesight/105/params/c_hi
-- eyesight param c_lo: 0.757  methods.json#/eyesight/105/params/c_lo
-- eyesight g: 1.964  methods.json#/eyesight/105/g
+- LOYO weekly WAPE (tier1): 0.193  methods.json#/validation/2683/value
+- LOYO weekly WAPE baseline annual_ratio: 0.26  methods.json#/validation/2683/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.788  methods.json#/validation/2683/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2683/years
+- LOYO weekly WAPE (tier2): 0.278  methods.json#/validation/2698/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2698/years
+- reliability_err (tier2): 0.001  methods.json#/validation/2696/value
+- reliability_year_absolute_err (tier2): 0.045  methods.json#/validation/2697/value
+- t1_t2_wape (tier2): 0.238  methods.json#/validation/2700/value
+- eyesight status: "exploratory"  methods.json#/eyesight/166/status
+- eyesight param a: -3.675  methods.json#/eyesight/166/params/a
+- eyesight param a_hi: -3.592  methods.json#/eyesight/166/params/a_hi
+- eyesight param a_lo: -3.764  methods.json#/eyesight/166/params/a_lo
+- eyesight param b: 1.93  methods.json#/eyesight/166/params/b
+- eyesight param b_hi: 2.044  methods.json#/eyesight/166/params/b_hi
+- eyesight param b_lo: 1.829  methods.json#/eyesight/166/params/b_lo
+- eyesight param c: 0.876  methods.json#/eyesight/166/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/166/params/c_hi
+- eyesight param c_lo: 0.757  methods.json#/eyesight/166/params/c_lo
+- eyesight g: 1.964  methods.json#/eyesight/166/g
 
 ## Turkmenistan (`turkmenistan`)
 
@@ -6817,26 +9642,200 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  turkmenistan/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  turkmenistan/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  turkmenistan/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.29  methods.json#/validation/1843/value
-- LOYO weekly WAPE baseline annual_ratio: 0.38  methods.json#/validation/1843/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 2.933  methods.json#/validation/1843/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1843/years
-- LOYO weekly WAPE (tier2): 0.425  methods.json#/validation/1858/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1858/years
-- reliability_err (tier2): 0.001  methods.json#/validation/1856/value
-- reliability_year_absolute_err (tier2): 0.089  methods.json#/validation/1857/value
-- t1_t2_wape (tier2): 0.344  methods.json#/validation/1860/value
-- eyesight status: "exploratory"  methods.json#/eyesight/106/status
-- eyesight param a: -3.6  methods.json#/eyesight/106/params/a
-- eyesight param a_hi: -3.386  methods.json#/eyesight/106/params/a_hi
-- eyesight param a_lo: -3.889  methods.json#/eyesight/106/params/a_lo
-- eyesight param b: 1.86  methods.json#/eyesight/106/params/b
-- eyesight param b_hi: 2.02  methods.json#/eyesight/106/params/b_hi
-- eyesight param b_lo: 1.701  methods.json#/eyesight/106/params/b_lo
-- eyesight param c: 0.762  methods.json#/eyesight/106/params/c
-- eyesight param c_hi: 1.0  methods.json#/eyesight/106/params/c_hi
-- eyesight param c_lo: 0.615  methods.json#/eyesight/106/params/c_lo
-- eyesight g: 2.355  methods.json#/eyesight/106/g
+- LOYO weekly WAPE (tier1): 0.29  methods.json#/validation/2701/value
+- LOYO weekly WAPE baseline annual_ratio: 0.38  methods.json#/validation/2701/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.933  methods.json#/validation/2701/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2701/years
+- LOYO weekly WAPE (tier2): 0.425  methods.json#/validation/2716/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2716/years
+- reliability_err (tier2): 0.001  methods.json#/validation/2714/value
+- reliability_year_absolute_err (tier2): 0.089  methods.json#/validation/2715/value
+- t1_t2_wape (tier2): 0.344  methods.json#/validation/2718/value
+- eyesight status: "exploratory"  methods.json#/eyesight/167/status
+- eyesight param a: -3.6  methods.json#/eyesight/167/params/a
+- eyesight param a_hi: -3.386  methods.json#/eyesight/167/params/a_hi
+- eyesight param a_lo: -3.889  methods.json#/eyesight/167/params/a_lo
+- eyesight param b: 1.86  methods.json#/eyesight/167/params/b
+- eyesight param b_hi: 2.02  methods.json#/eyesight/167/params/b_hi
+- eyesight param b_lo: 1.701  methods.json#/eyesight/167/params/b_lo
+- eyesight param c: 0.762  methods.json#/eyesight/167/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/167/params/c_hi
+- eyesight param c_lo: 0.615  methods.json#/eyesight/167/params/c_lo
+- eyesight g: 2.355  methods.json#/eyesight/167/g
+
+## Turks and Caicos Islands (`turks-and-caicos-islands`)
+
+- jump multiple (value): 4.784  turks-and-caicos-islands/ruler.json#/jump_multiple/value
+- jump multiple (lo): 2.0  turks-and-caicos-islands/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 6.2  turks-and-caicos-islands/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  turks-and-caicos-islands/ruler.json#/jump_multiple/years
+- ruler sentence: "In Turks and Caicos Islands, VIIRS reports about 4.8 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  turks-and-caicos-islands/ruler.json#/sentence
+- harmonized trend pct_per_decade: null  turks-and-caicos-islands/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: null  turks-and-caicos-islands/trend.json#/harmonized/lo
+- harmonized trend hi: null  turks-and-caicos-islands/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  turks-and-caicos-islands/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 76.923  turks-and-caicos-islands/trend.json#/naive/pct_per_decade
+- naive trend lo: 13.181  turks-and-caicos-islands/trend.json#/naive/lo
+- naive trend hi: 157.541  turks-and-caicos-islands/trend.json#/naive/hi
+- naive trend direction: "rising"  turks-and-caicos-islands/trend.json#/naive/direction
+- trend years: [2003, 2025]  turks-and-caicos-islands/trend.json#/years
+- verdict sentence_id: "unclear"  turks-and-caicos-islands/trend.json#/sentence_id
+- verdict sentence: "Trend unavailable: the median annual activity is zero."  turks-and-caicos-islands/trend.json#/sentence
+- critical weeks: []  turks-and-caicos-islands/season.json#/critical_weeks
+- this week value: null  turks-and-caicos-islands/nowcast.json#/value
+- this week lo: null  turks-and-caicos-islands/nowcast.json#/lo
+- this week hi: null  turks-and-caicos-islands/nowcast.json#/hi
+- this week percentile: null  turks-and-caicos-islands/nowcast.json#/percentile
+- this week status: "unavailable"  turks-and-caicos-islands/nowcast.json#/status
+- this week as_of: null  turks-and-caicos-islands/nowcast.json#/as_of
+- this week window start: null  turks-and-caicos-islands/nowcast.json#/window/start
+- this week window end: null  turks-and-caicos-islands/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  turks-and-caicos-islands/nowcast.json#/baseline_years
+- month to date value: null  turks-and-caicos-islands/nowcast.json#/month_to_date/value
+- month to date median: null  turks-and-caicos-islands/nowcast.json#/month_to_date/median
+- month to date ratio: null  turks-and-caicos-islands/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  turks-and-caicos-islands/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  turks-and-caicos-islands/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.719  methods.json#/validation/2719/value
+- LOYO weekly WAPE baseline annual_ratio: 1.722  methods.json#/validation/2719/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 17.875  methods.json#/validation/2719/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2719/years
+- eyesight status: "absent"  methods.json#/eyesight/168/status
+
+## Uganda (`uganda`)
+
+- jump multiple (value): 4.964  uganda/ruler.json#/jump_multiple/value
+- jump multiple (lo): 4.626  uganda/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 5.948  uganda/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  uganda/ruler.json#/jump_multiple/years
+- ruler sentence: "In Uganda, VIIRS reports about 5.0 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  uganda/ruler.json#/sentence
+- harmonized trend pct_per_decade: -17.843  uganda/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -34.195  uganda/trend.json#/harmonized/lo
+- harmonized trend hi: -4.27  uganda/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  uganda/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 44.337  uganda/trend.json#/naive/pct_per_decade
+- naive trend lo: 25.14  uganda/trend.json#/naive/lo
+- naive trend hi: 122.941  uganda/trend.json#/naive/hi
+- naive trend direction: "rising"  uganda/trend.json#/naive/direction
+- trend years: [2003, 2025]  uganda/trend.json#/years
+- verdict sentence_id: "unclear"  uganda/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (-34 to -4% per decade)."  uganda/trend.json#/sentence
+- critical weeks: [1, 2, 3, 4, 5, 6, 7, 8, 48, 49, 50, 51, 52]  uganda/season.json#/critical_weeks
+- window w1 label: "late-November to late-February"  uganda/season.json#/windows/0/label
+- window w1 start_week: 48  uganda/season.json#/windows/0/start_week
+- window w1 peak_week: 2  uganda/season.json#/windows/0/peak_week
+- window w1 end_week: 8  uganda/season.json#/windows/0/end_week
+- window w1 share: 0.821  uganda/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 1.111  uganda/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -4.444  uganda/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 11.941  uganda/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the late-November to late-February season."  uganda/season.json#/windows/0/sentence
+- this week value: null  uganda/nowcast.json#/value
+- this week lo: null  uganda/nowcast.json#/lo
+- this week hi: null  uganda/nowcast.json#/hi
+- this week percentile: null  uganda/nowcast.json#/percentile
+- this week status: "unavailable"  uganda/nowcast.json#/status
+- this week as_of: null  uganda/nowcast.json#/as_of
+- this week window start: null  uganda/nowcast.json#/window/start
+- this week window end: null  uganda/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  uganda/nowcast.json#/baseline_years
+- month to date value: null  uganda/nowcast.json#/month_to_date/value
+- month to date median: null  uganda/nowcast.json#/month_to_date/median
+- month to date ratio: null  uganda/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  uganda/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  uganda/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.211  methods.json#/validation/2732/value
+- LOYO weekly WAPE baseline annual_ratio: 0.326  methods.json#/validation/2732/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 4.219  methods.json#/validation/2732/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2732/years
+- LOYO weekly WAPE (tier2): 0.232  methods.json#/validation/2747/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2747/years
+- reliability_err (tier2): 0.001  methods.json#/validation/2745/value
+- reliability_year_absolute_err (tier2): 0.071  methods.json#/validation/2746/value
+- t1_t2_wape (tier2): 0.162  methods.json#/validation/2749/value
+- eyesight status: "exploratory"  methods.json#/eyesight/169/status
+- eyesight param a: -3.88  methods.json#/eyesight/169/params/a
+- eyesight param a_hi: -3.831  methods.json#/eyesight/169/params/a_hi
+- eyesight param a_lo: -3.948  methods.json#/eyesight/169/params/a_lo
+- eyesight param b: 2.056  methods.json#/eyesight/169/params/b
+- eyesight param b_hi: 2.116  methods.json#/eyesight/169/params/b_hi
+- eyesight param b_lo: 2.001  methods.json#/eyesight/169/params/b_lo
+- eyesight param c: 0.732  methods.json#/eyesight/169/params/c
+- eyesight param c_hi: 0.758  methods.json#/eyesight/169/params/c_hi
+- eyesight param c_lo: 0.707  methods.json#/eyesight/169/params/c_lo
+- eyesight g: 1.515  methods.json#/eyesight/169/g
+
+## Ukraine (`ukraine`)
+
+- jump multiple (value): 3.097  ukraine/ruler.json#/jump_multiple/value
+- jump multiple (lo): 2.893  ukraine/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 3.542  ukraine/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  ukraine/ruler.json#/jump_multiple/years
+- ruler sentence: "In Ukraine, VIIRS reports about 3.1 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  ukraine/ruler.json#/sentence
+- harmonized trend pct_per_decade: -30.665  ukraine/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -59.726  ukraine/trend.json#/harmonized/lo
+- harmonized trend hi: -1.817  ukraine/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  ukraine/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 43.139  ukraine/trend.json#/naive/pct_per_decade
+- naive trend lo: 17.503  ukraine/trend.json#/naive/lo
+- naive trend hi: 85.981  ukraine/trend.json#/naive/hi
+- naive trend direction: "rising"  ukraine/trend.json#/naive/direction
+- trend years: [2003, 2025]  ukraine/trend.json#/years
+- verdict sentence_id: "unclear"  ukraine/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (-60 to -2% per decade)."  ukraine/trend.json#/sentence
+- critical weeks: [11, 12, 13, 14, 15, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41]  ukraine/season.json#/critical_weeks
+- window w1 label: "mid-July to mid-October"  ukraine/season.json#/windows/0/label
+- window w1 start_week: 29  ukraine/season.json#/windows/0/start_week
+- window w1 peak_week: 31  ukraine/season.json#/windows/0/peak_week
+- window w1 end_week: 41  ukraine/season.json#/windows/0/end_week
+- window w1 share: 0.518  ukraine/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -6.667  ukraine/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -11.429  ukraine/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 0.667  ukraine/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the mid-July to mid-October season."  ukraine/season.json#/windows/0/sentence
+- window w2 label: "mid-March to mid-April"  ukraine/season.json#/windows/1/label
+- window w2 start_week: 11  ukraine/season.json#/windows/1/start_week
+- window w2 peak_week: 13  ukraine/season.json#/windows/1/peak_week
+- window w2 end_week: 15  ukraine/season.json#/windows/1/end_week
+- window w2 share: 0.295  ukraine/season.json#/windows/1/share
+- window w2 start shift days per decade (value): -6.25  ukraine/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -12.508  ukraine/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): -0.264  ukraine/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "The mid-March to mid-April season now starts about 6 days earlier per decade (-13 to 0)."  ukraine/season.json#/windows/1/sentence
+- this week value: null  ukraine/nowcast.json#/value
+- this week lo: null  ukraine/nowcast.json#/lo
+- this week hi: null  ukraine/nowcast.json#/hi
+- this week percentile: null  ukraine/nowcast.json#/percentile
+- this week status: "unavailable"  ukraine/nowcast.json#/status
+- this week as_of: null  ukraine/nowcast.json#/as_of
+- this week window start: null  ukraine/nowcast.json#/window/start
+- this week window end: null  ukraine/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  ukraine/nowcast.json#/baseline_years
+- month to date value: null  ukraine/nowcast.json#/month_to_date/value
+- month to date median: null  ukraine/nowcast.json#/month_to_date/median
+- month to date ratio: null  ukraine/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  ukraine/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  ukraine/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.146  methods.json#/validation/2750/value
+- LOYO weekly WAPE baseline annual_ratio: 0.213  methods.json#/validation/2750/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.296  methods.json#/validation/2750/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2750/years
+- LOYO weekly WAPE (tier2): 0.251  methods.json#/validation/2765/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2765/years
+- reliability_err (tier2): 0.005  methods.json#/validation/2763/value
+- reliability_year_absolute_err (tier2): 0.092  methods.json#/validation/2764/value
+- t1_t2_wape (tier2): 0.223  methods.json#/validation/2767/value
+- eyesight status: "exploratory"  methods.json#/eyesight/170/status
+- eyesight param a: -3.201  methods.json#/eyesight/170/params/a
+- eyesight param a_hi: -3.109  methods.json#/eyesight/170/params/a_hi
+- eyesight param a_lo: -3.293  methods.json#/eyesight/170/params/a_lo
+- eyesight param b: 2.24  methods.json#/eyesight/170/params/b
+- eyesight param b_hi: 2.296  methods.json#/eyesight/170/params/b_hi
+- eyesight param b_lo: 2.18  methods.json#/eyesight/170/params/b_lo
+- eyesight param c: 0.712  methods.json#/eyesight/170/params/c
+- eyesight param c_hi: 0.742  methods.json#/eyesight/170/params/c_hi
+- eyesight param c_lo: 0.678  methods.json#/eyesight/170/params/c_lo
+- eyesight g: 1.568  methods.json#/eyesight/170/g
 
 ## United Arab Emirates (`united-arab-emirates`)
 
@@ -6871,11 +9870,11 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  united-arab-emirates/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  united-arab-emirates/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  united-arab-emirates/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 1.696  methods.json#/validation/1861/value
-- LOYO weekly WAPE baseline annual_ratio: 1.689  methods.json#/validation/1861/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 17.414  methods.json#/validation/1861/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1861/years
-- eyesight status: "absent"  methods.json#/eyesight/107/status
+- LOYO weekly WAPE (tier1): 1.696  methods.json#/validation/2768/value
+- LOYO weekly WAPE baseline annual_ratio: 1.689  methods.json#/validation/2768/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 17.414  methods.json#/validation/2768/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2768/years
+- eyesight status: "absent"  methods.json#/eyesight/171/status
 
 ## United Kingdom (`united-kingdom`)
 
@@ -6928,26 +9927,65 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  united-kingdom/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  united-kingdom/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  united-kingdom/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.566  methods.json#/validation/1874/value
-- LOYO weekly WAPE baseline annual_ratio: 0.626  methods.json#/validation/1874/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 4.378  methods.json#/validation/1874/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1874/years
-- LOYO weekly WAPE (tier2): 0.568  methods.json#/validation/1889/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1889/years
-- reliability_err (tier2): 0.0  methods.json#/validation/1887/value
-- reliability_year_absolute_err (tier2): 0.151  methods.json#/validation/1888/value
-- t1_t2_wape (tier2): 0.396  methods.json#/validation/1891/value
-- eyesight status: "validated"  methods.json#/eyesight/108/status
-- eyesight param a: -4.723  methods.json#/eyesight/108/params/a
-- eyesight param a_hi: -4.492  methods.json#/eyesight/108/params/a_hi
-- eyesight param a_lo: -5.012  methods.json#/eyesight/108/params/a_lo
-- eyesight param b: 2.722  methods.json#/eyesight/108/params/b
-- eyesight param b_hi: 3.014  methods.json#/eyesight/108/params/b_hi
-- eyesight param b_lo: 2.549  methods.json#/eyesight/108/params/b_lo
-- eyesight param c: 0.848  methods.json#/eyesight/108/params/c
-- eyesight param c_hi: 1.0  methods.json#/eyesight/108/params/c_hi
-- eyesight param c_lo: 0.674  methods.json#/eyesight/108/params/c_lo
-- eyesight g: 2.322  methods.json#/eyesight/108/g
+- LOYO weekly WAPE (tier1): 0.566  methods.json#/validation/2781/value
+- LOYO weekly WAPE baseline annual_ratio: 0.626  methods.json#/validation/2781/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 4.378  methods.json#/validation/2781/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2781/years
+- LOYO weekly WAPE (tier2): 0.568  methods.json#/validation/2796/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2796/years
+- reliability_err (tier2): 0.0  methods.json#/validation/2794/value
+- reliability_year_absolute_err (tier2): 0.151  methods.json#/validation/2795/value
+- t1_t2_wape (tier2): 0.396  methods.json#/validation/2798/value
+- eyesight status: "validated"  methods.json#/eyesight/172/status
+- eyesight param a: -4.723  methods.json#/eyesight/172/params/a
+- eyesight param a_hi: -4.492  methods.json#/eyesight/172/params/a_hi
+- eyesight param a_lo: -5.012  methods.json#/eyesight/172/params/a_lo
+- eyesight param b: 2.722  methods.json#/eyesight/172/params/b
+- eyesight param b_hi: 3.014  methods.json#/eyesight/172/params/b_hi
+- eyesight param b_lo: 2.549  methods.json#/eyesight/172/params/b_lo
+- eyesight param c: 0.848  methods.json#/eyesight/172/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/172/params/c_hi
+- eyesight param c_lo: 0.674  methods.json#/eyesight/172/params/c_lo
+- eyesight g: 2.322  methods.json#/eyesight/172/g
+
+## United States Virgin Islands (`united-states-virgin-islands`)
+
+- jump multiple (value): 1.857  united-states-virgin-islands/ruler.json#/jump_multiple/value
+- jump multiple (lo): 0.0  united-states-virgin-islands/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 7.0  united-states-virgin-islands/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  united-states-virgin-islands/ruler.json#/jump_multiple/years
+- ruler sentence: "In United States Virgin Islands, VIIRS reports about 1.9 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  united-states-virgin-islands/ruler.json#/sentence
+- harmonized trend pct_per_decade: null  united-states-virgin-islands/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: null  united-states-virgin-islands/trend.json#/harmonized/lo
+- harmonized trend hi: null  united-states-virgin-islands/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  united-states-virgin-islands/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 91.149  united-states-virgin-islands/trend.json#/naive/pct_per_decade
+- naive trend lo: 52.632  united-states-virgin-islands/trend.json#/naive/lo
+- naive trend hi: 187.5  united-states-virgin-islands/trend.json#/naive/hi
+- naive trend direction: "rising"  united-states-virgin-islands/trend.json#/naive/direction
+- trend years: [2003, 2025]  united-states-virgin-islands/trend.json#/years
+- verdict sentence_id: "unclear"  united-states-virgin-islands/trend.json#/sentence_id
+- verdict sentence: "Trend unavailable: the median annual activity is zero."  united-states-virgin-islands/trend.json#/sentence
+- critical weeks: []  united-states-virgin-islands/season.json#/critical_weeks
+- this week value: null  united-states-virgin-islands/nowcast.json#/value
+- this week lo: null  united-states-virgin-islands/nowcast.json#/lo
+- this week hi: null  united-states-virgin-islands/nowcast.json#/hi
+- this week percentile: null  united-states-virgin-islands/nowcast.json#/percentile
+- this week status: "unavailable"  united-states-virgin-islands/nowcast.json#/status
+- this week as_of: null  united-states-virgin-islands/nowcast.json#/as_of
+- this week window start: null  united-states-virgin-islands/nowcast.json#/window/start
+- this week window end: null  united-states-virgin-islands/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  united-states-virgin-islands/nowcast.json#/baseline_years
+- month to date value: null  united-states-virgin-islands/nowcast.json#/month_to_date/value
+- month to date median: null  united-states-virgin-islands/nowcast.json#/month_to_date/median
+- month to date ratio: null  united-states-virgin-islands/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  united-states-virgin-islands/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  united-states-virgin-islands/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.68  methods.json#/validation/2799/value
+- LOYO weekly WAPE baseline annual_ratio: 1.697  methods.json#/validation/2799/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 11.0  methods.json#/validation/2799/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2799/years
+- eyesight status: "absent"  methods.json#/eyesight/173/status
 
 ## Uruguay (`uruguay`)
 
@@ -6991,26 +10029,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  uruguay/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  uruguay/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  uruguay/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.355  methods.json#/validation/1892/value
-- LOYO weekly WAPE baseline annual_ratio: 0.361  methods.json#/validation/1892/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 2.472  methods.json#/validation/1892/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1892/years
-- LOYO weekly WAPE (tier2): 0.369  methods.json#/validation/1907/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1907/years
-- reliability_err (tier2): 0.004  methods.json#/validation/1905/value
-- reliability_year_absolute_err (tier2): 0.098  methods.json#/validation/1906/value
-- t1_t2_wape (tier2): 0.197  methods.json#/validation/1909/value
-- eyesight status: "validated"  methods.json#/eyesight/109/status
-- eyesight param a: -3.58  methods.json#/eyesight/109/params/a
-- eyesight param a_hi: -3.465  methods.json#/eyesight/109/params/a_hi
-- eyesight param a_lo: -3.707  methods.json#/eyesight/109/params/a_lo
-- eyesight param b: 2.258  methods.json#/eyesight/109/params/b
-- eyesight param b_hi: 2.349  methods.json#/eyesight/109/params/b_hi
-- eyesight param b_lo: 2.165  methods.json#/eyesight/109/params/b_lo
-- eyesight param c: 0.764  methods.json#/eyesight/109/params/c
-- eyesight param c_hi: 0.817  methods.json#/eyesight/109/params/c_hi
-- eyesight param c_lo: 0.712  methods.json#/eyesight/109/params/c_lo
-- eyesight g: 2.141  methods.json#/eyesight/109/g
+- LOYO weekly WAPE (tier1): 0.355  methods.json#/validation/2812/value
+- LOYO weekly WAPE baseline annual_ratio: 0.361  methods.json#/validation/2812/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.472  methods.json#/validation/2812/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2812/years
+- LOYO weekly WAPE (tier2): 0.369  methods.json#/validation/2827/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2827/years
+- reliability_err (tier2): 0.004  methods.json#/validation/2825/value
+- reliability_year_absolute_err (tier2): 0.098  methods.json#/validation/2826/value
+- t1_t2_wape (tier2): 0.197  methods.json#/validation/2829/value
+- eyesight status: "validated"  methods.json#/eyesight/174/status
+- eyesight param a: -3.58  methods.json#/eyesight/174/params/a
+- eyesight param a_hi: -3.465  methods.json#/eyesight/174/params/a_hi
+- eyesight param a_lo: -3.707  methods.json#/eyesight/174/params/a_lo
+- eyesight param b: 2.258  methods.json#/eyesight/174/params/b
+- eyesight param b_hi: 2.349  methods.json#/eyesight/174/params/b_hi
+- eyesight param b_lo: 2.165  methods.json#/eyesight/174/params/b_lo
+- eyesight param c: 0.764  methods.json#/eyesight/174/params/c
+- eyesight param c_hi: 0.817  methods.json#/eyesight/174/params/c_hi
+- eyesight param c_lo: 0.712  methods.json#/eyesight/174/params/c_lo
+- eyesight g: 2.141  methods.json#/eyesight/174/g
 
 ## Uzbekistan (`uzbekistan`)
 
@@ -7063,26 +10101,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  uzbekistan/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  uzbekistan/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  uzbekistan/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.292  methods.json#/validation/1910/value
-- LOYO weekly WAPE baseline annual_ratio: 0.326  methods.json#/validation/1910/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 3.525  methods.json#/validation/1910/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1910/years
-- LOYO weekly WAPE (tier2): 0.332  methods.json#/validation/1925/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1925/years
-- reliability_err (tier2): 0.001  methods.json#/validation/1923/value
-- reliability_year_absolute_err (tier2): 0.092  methods.json#/validation/1924/value
-- t1_t2_wape (tier2): 0.297  methods.json#/validation/1927/value
-- eyesight status: "exploratory"  methods.json#/eyesight/110/status
-- eyesight param a: -4.109  methods.json#/eyesight/110/params/a
-- eyesight param a_hi: -3.993  methods.json#/eyesight/110/params/a_hi
-- eyesight param a_lo: -4.224  methods.json#/eyesight/110/params/a_lo
-- eyesight param b: 1.999  methods.json#/eyesight/110/params/b
-- eyesight param b_hi: 2.082  methods.json#/eyesight/110/params/b_hi
-- eyesight param b_lo: 1.933  methods.json#/eyesight/110/params/b_lo
-- eyesight param c: 0.984  methods.json#/eyesight/110/params/c
-- eyesight param c_hi: 1.0  methods.json#/eyesight/110/params/c_hi
-- eyesight param c_lo: 0.919  methods.json#/eyesight/110/params/c_lo
-- eyesight g: 1.86  methods.json#/eyesight/110/g
+- LOYO weekly WAPE (tier1): 0.292  methods.json#/validation/2830/value
+- LOYO weekly WAPE baseline annual_ratio: 0.326  methods.json#/validation/2830/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.525  methods.json#/validation/2830/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2830/years
+- LOYO weekly WAPE (tier2): 0.332  methods.json#/validation/2845/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2845/years
+- reliability_err (tier2): 0.001  methods.json#/validation/2843/value
+- reliability_year_absolute_err (tier2): 0.092  methods.json#/validation/2844/value
+- t1_t2_wape (tier2): 0.297  methods.json#/validation/2847/value
+- eyesight status: "exploratory"  methods.json#/eyesight/175/status
+- eyesight param a: -4.109  methods.json#/eyesight/175/params/a
+- eyesight param a_hi: -3.993  methods.json#/eyesight/175/params/a_hi
+- eyesight param a_lo: -4.224  methods.json#/eyesight/175/params/a_lo
+- eyesight param b: 1.999  methods.json#/eyesight/175/params/b
+- eyesight param b_hi: 2.082  methods.json#/eyesight/175/params/b_hi
+- eyesight param b_lo: 1.933  methods.json#/eyesight/175/params/b_lo
+- eyesight param c: 0.984  methods.json#/eyesight/175/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/175/params/c_hi
+- eyesight param c_lo: 0.919  methods.json#/eyesight/175/params/c_lo
+- eyesight g: 1.86  methods.json#/eyesight/175/g
 
 ## Vanuatu (`vanuatu`)
 
@@ -7126,11 +10164,11 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  vanuatu/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  vanuatu/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  vanuatu/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 1.178  methods.json#/validation/1928/value
-- LOYO weekly WAPE baseline annual_ratio: 1.185  methods.json#/validation/1928/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 4.265  methods.json#/validation/1928/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1928/years
-- eyesight status: "absent"  methods.json#/eyesight/111/status
+- LOYO weekly WAPE (tier1): 1.178  methods.json#/validation/2848/value
+- LOYO weekly WAPE baseline annual_ratio: 1.185  methods.json#/validation/2848/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 4.265  methods.json#/validation/2848/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2848/years
+- eyesight status: "absent"  methods.json#/eyesight/176/status
 
 ## Vietnam (`vietnam`)
 
@@ -7174,26 +10212,26 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  vietnam/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  vietnam/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  vietnam/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.165  methods.json#/validation/1941/value
-- LOYO weekly WAPE baseline annual_ratio: 0.169  methods.json#/validation/1941/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 3.415  methods.json#/validation/1941/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1941/years
-- LOYO weekly WAPE (tier2): 0.155  methods.json#/validation/1956/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1956/years
-- reliability_err (tier2): 0.002  methods.json#/validation/1954/value
-- reliability_year_absolute_err (tier2): 0.062  methods.json#/validation/1955/value
-- t1_t2_wape (tier2): 0.102  methods.json#/validation/1958/value
-- eyesight status: "validated"  methods.json#/eyesight/112/status
-- eyesight param a: -3.534  methods.json#/eyesight/112/params/a
-- eyesight param a_hi: -3.449  methods.json#/eyesight/112/params/a_hi
-- eyesight param a_lo: -3.613  methods.json#/eyesight/112/params/a_lo
-- eyesight param b: 1.863  methods.json#/eyesight/112/params/b
-- eyesight param b_hi: 1.91  methods.json#/eyesight/112/params/b_hi
-- eyesight param b_lo: 1.822  methods.json#/eyesight/112/params/b_lo
-- eyesight param c: 0.687  methods.json#/eyesight/112/params/c
-- eyesight param c_hi: 0.728  methods.json#/eyesight/112/params/c_hi
-- eyesight param c_lo: 0.652  methods.json#/eyesight/112/params/c_lo
-- eyesight g: 2.029  methods.json#/eyesight/112/g
+- LOYO weekly WAPE (tier1): 0.165  methods.json#/validation/2861/value
+- LOYO weekly WAPE baseline annual_ratio: 0.169  methods.json#/validation/2861/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.415  methods.json#/validation/2861/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2861/years
+- LOYO weekly WAPE (tier2): 0.155  methods.json#/validation/2876/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2876/years
+- reliability_err (tier2): 0.002  methods.json#/validation/2874/value
+- reliability_year_absolute_err (tier2): 0.062  methods.json#/validation/2875/value
+- t1_t2_wape (tier2): 0.102  methods.json#/validation/2878/value
+- eyesight status: "validated"  methods.json#/eyesight/177/status
+- eyesight param a: -3.534  methods.json#/eyesight/177/params/a
+- eyesight param a_hi: -3.449  methods.json#/eyesight/177/params/a_hi
+- eyesight param a_lo: -3.613  methods.json#/eyesight/177/params/a_lo
+- eyesight param b: 1.863  methods.json#/eyesight/177/params/b
+- eyesight param b_hi: 1.91  methods.json#/eyesight/177/params/b_hi
+- eyesight param b_lo: 1.822  methods.json#/eyesight/177/params/b_lo
+- eyesight param c: 0.687  methods.json#/eyesight/177/params/c
+- eyesight param c_hi: 0.728  methods.json#/eyesight/177/params/c_hi
+- eyesight param c_lo: 0.652  methods.json#/eyesight/177/params/c_lo
+- eyesight g: 2.029  methods.json#/eyesight/177/g
 
 ## Yemen (`yemen`)
 
@@ -7237,26 +10275,89 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 - month to date ratio: null  yemen/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  yemen/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  yemen/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 1.676  methods.json#/validation/1959/value
-- LOYO weekly WAPE baseline annual_ratio: 1.662  methods.json#/validation/1959/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 23.894  methods.json#/validation/1959/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/1959/years
-- LOYO weekly WAPE (tier2): 1.523  methods.json#/validation/1974/value
-- LOYO years: [2013, 2022]  methods.json#/validation/1974/years
-- reliability_err (tier2): 0.012  methods.json#/validation/1972/value
-- reliability_year_absolute_err (tier2): 0.552  methods.json#/validation/1973/value
-- t1_t2_wape (tier2): 0.671  methods.json#/validation/1976/value
-- eyesight status: "validated"  methods.json#/eyesight/113/status
-- eyesight param a: -7.357  methods.json#/eyesight/113/params/a
-- eyesight param a_hi: -5.346  methods.json#/eyesight/113/params/a_hi
-- eyesight param a_lo: -9.713  methods.json#/eyesight/113/params/a_lo
-- eyesight param b: 3.895  methods.json#/eyesight/113/params/b
-- eyesight param b_hi: 6.17  methods.json#/eyesight/113/params/b_hi
-- eyesight param b_lo: 3.078  methods.json#/eyesight/113/params/b_lo
-- eyesight param c: 0.578  methods.json#/eyesight/113/params/c
-- eyesight param c_hi: 1.0  methods.json#/eyesight/113/params/c_hi
-- eyesight param c_lo: 0.071  methods.json#/eyesight/113/params/c_lo
-- eyesight g: 2.594  methods.json#/eyesight/113/g
+- LOYO weekly WAPE (tier1): 1.676  methods.json#/validation/2879/value
+- LOYO weekly WAPE baseline annual_ratio: 1.662  methods.json#/validation/2879/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 23.894  methods.json#/validation/2879/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2879/years
+- LOYO weekly WAPE (tier2): 1.523  methods.json#/validation/2894/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2894/years
+- reliability_err (tier2): 0.012  methods.json#/validation/2892/value
+- reliability_year_absolute_err (tier2): 0.552  methods.json#/validation/2893/value
+- t1_t2_wape (tier2): 0.671  methods.json#/validation/2896/value
+- eyesight status: "validated"  methods.json#/eyesight/178/status
+- eyesight param a: -7.357  methods.json#/eyesight/178/params/a
+- eyesight param a_hi: -5.346  methods.json#/eyesight/178/params/a_hi
+- eyesight param a_lo: -9.713  methods.json#/eyesight/178/params/a_lo
+- eyesight param b: 3.895  methods.json#/eyesight/178/params/b
+- eyesight param b_hi: 6.17  methods.json#/eyesight/178/params/b_hi
+- eyesight param b_lo: 3.078  methods.json#/eyesight/178/params/b_lo
+- eyesight param c: 0.578  methods.json#/eyesight/178/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/178/params/c_hi
+- eyesight param c_lo: 0.071  methods.json#/eyesight/178/params/c_lo
+- eyesight g: 2.594  methods.json#/eyesight/178/g
+
+## Zimbabwe (`zimbabwe`)
+
+- jump multiple (value): 4.33  zimbabwe/ruler.json#/jump_multiple/value
+- jump multiple (lo): 4.101  zimbabwe/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 4.871  zimbabwe/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  zimbabwe/ruler.json#/jump_multiple/years
+- ruler sentence: "In Zimbabwe, VIIRS reports about 4.3 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  zimbabwe/ruler.json#/sentence
+- harmonized trend pct_per_decade: -15.867  zimbabwe/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -30.671  zimbabwe/trend.json#/harmonized/lo
+- harmonized trend hi: -4.203  zimbabwe/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  zimbabwe/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 44.868  zimbabwe/trend.json#/naive/pct_per_decade
+- naive trend lo: 26.275  zimbabwe/trend.json#/naive/lo
+- naive trend hi: 122.236  zimbabwe/trend.json#/naive/hi
+- naive trend direction: "rising"  zimbabwe/trend.json#/naive/direction
+- trend years: [2003, 2025]  zimbabwe/trend.json#/years
+- verdict sentence_id: "artifact_falling"  zimbabwe/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 16% per decade (-31 to -4)."  zimbabwe/trend.json#/sentence
+- critical weeks: [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42]  zimbabwe/season.json#/critical_weeks
+- window w1 label: "late-July to late-October"  zimbabwe/season.json#/windows/0/label
+- window w1 start_week: 30  zimbabwe/season.json#/windows/0/start_week
+- window w1 peak_week: 37  zimbabwe/season.json#/windows/0/peak_week
+- window w1 end_week: 42  zimbabwe/season.json#/windows/0/end_week
+- window w1 share: 0.8  zimbabwe/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -1.429  zimbabwe/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -7.059  zimbabwe/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 4.444  zimbabwe/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the late-July to late-October season."  zimbabwe/season.json#/windows/0/sentence
+- this week value: null  zimbabwe/nowcast.json#/value
+- this week lo: null  zimbabwe/nowcast.json#/lo
+- this week hi: null  zimbabwe/nowcast.json#/hi
+- this week percentile: null  zimbabwe/nowcast.json#/percentile
+- this week status: "unavailable"  zimbabwe/nowcast.json#/status
+- this week as_of: null  zimbabwe/nowcast.json#/as_of
+- this week window start: null  zimbabwe/nowcast.json#/window/start
+- this week window end: null  zimbabwe/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  zimbabwe/nowcast.json#/baseline_years
+- month to date value: null  zimbabwe/nowcast.json#/month_to_date/value
+- month to date median: null  zimbabwe/nowcast.json#/month_to_date/median
+- month to date ratio: null  zimbabwe/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  zimbabwe/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  zimbabwe/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.165  methods.json#/validation/2897/value
+- LOYO weekly WAPE baseline annual_ratio: 0.247  methods.json#/validation/2897/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.948  methods.json#/validation/2897/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/2897/years
+- LOYO weekly WAPE (tier2): 0.214  methods.json#/validation/2912/value
+- LOYO years: [2013, 2022]  methods.json#/validation/2912/years
+- reliability_err (tier2): 0.0  methods.json#/validation/2910/value
+- reliability_year_absolute_err (tier2): 0.048  methods.json#/validation/2911/value
+- t1_t2_wape (tier2): 0.181  methods.json#/validation/2914/value
+- eyesight status: "exploratory"  methods.json#/eyesight/179/status
+- eyesight param a: -3.61  methods.json#/eyesight/179/params/a
+- eyesight param a_hi: -3.54  methods.json#/eyesight/179/params/a_hi
+- eyesight param a_lo: -3.725  methods.json#/eyesight/179/params/a_lo
+- eyesight param b: 2.118  methods.json#/eyesight/179/params/b
+- eyesight param b_hi: 2.17  methods.json#/eyesight/179/params/b_hi
+- eyesight param b_lo: 2.081  methods.json#/eyesight/179/params/b_lo
+- eyesight param c: 0.897  methods.json#/eyesight/179/params/c
+- eyesight param c_hi: 0.913  methods.json#/eyesight/179/params/c_hi
+- eyesight param c_lo: 0.884  methods.json#/eyesight/179/params/c_lo
+- eyesight g: 1.389  methods.json#/eyesight/179/g
 
 ## Planted truth (synthland)
 

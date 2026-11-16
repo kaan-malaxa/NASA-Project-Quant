@@ -1,0 +1,2525 @@
+{
+  "anomaly_baseline_years": [
+    2003,
+    2025
+  ],
+  "available_years": [
+    2003,
+    2004,
+    2005,
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "code_version": "c841c3b0",
+  "default_years": [
+    2003,
+    2025
+  ],
+  "generated_at": "2026-11-16T01:52:25Z",
+  "periods": [
+    {
+      "bytes": 1471,
+      "path": "periods/2003-2003.json",
+      "sha256": "f67fd01aeeab4c7730412838e110a0844a36baf4a40d87909ffd5d3ec44eb28e",
+      "years": [
+        2003,
+        2003
+      ]
+    },
+    {
+      "bytes": 1494,
+      "path": "periods/2003-2004.json",
+      "sha256": "356f1d0ba20422b9c223a8508444884374cef1b7950326e3526ffa3526ceb4ca",
+      "years": [
+        2003,
+        2004
+      ]
+    },
+    {
+      "bytes": 1382,
+      "path": "periods/2003-2005.json",
+      "sha256": "5b18d60536f74da83fa79651ec5d8fa69fc9f09eb32d2446dabbe20fbdba1bd2",
+      "years": [
+        2003,
+        2005
+      ]
+    },
+    {
+      "bytes": 1397,
+      "path": "periods/2003-2006.json",
+      "sha256": "af6ad0af24236d11b9c2011c811d17d5a5d88db52a7270c570653f74badd303f",
+      "years": [
+        2003,
+        2006
+      ]
+    },
+    {
+      "bytes": 1403,
+      "path": "periods/2003-2007.json",
+      "sha256": "b7f8bc72eb0a67ce500c51a745524dc0ee29ec9b8729a62769ab616ac4434732",
+      "years": [
+        2003,
+        2007
+      ]
+    },
+    {
+      "bytes": 1417,
+      "path": "periods/2003-2008.json",
+      "sha256": "6626790dab09da49adeff0a66a9fa50f8790e31f5cf22cddbd004155519c3650",
+      "years": [
+        2003,
+        2008
+      ]
+    },
+    {
+      "bytes": 1425,
+      "path": "periods/2003-2009.json",
+      "sha256": "acdbcb283dc2ef2504aba686edcc0efca0f91dad767c63f50fd6a5fdeb6da65b",
+      "years": [
+        2003,
+        2009
+      ]
+    },
+    {
+      "bytes": 1430,
+      "path": "periods/2003-2010.json",
+      "sha256": "3a5ded42b4defdb267a67fb0dd52d3b85c5e29d3e9b77831fa85c85835b6191d",
+      "years": [
+        2003,
+        2010
+      ]
+    },
+    {
+      "bytes": 1442,
+      "path": "periods/2003-2011.json",
+      "sha256": "f9dee2b07ff096e646f0910e5e7c5a30bce491947917a453ca8f5970226a1bbf",
+      "years": [
+        2003,
+        2011
+      ]
+    },
+    {
+      "bytes": 1477,
+      "path": "periods/2003-2012.json",
+      "sha256": "953c437642c6e94ad309137c5f9407bcf7cb220a5d3d3c9f5494916eb9d22bcc",
+      "years": [
+        2003,
+        2012
+      ]
+    },
+    {
+      "bytes": 1479,
+      "path": "periods/2003-2013.json",
+      "sha256": "c27579265ea4228e0a1dfcb05f710947acfe1ab9fb5dc43368d8a9d75d97da2a",
+      "years": [
+        2003,
+        2013
+      ]
+    },
+    {
+      "bytes": 1504,
+      "path": "periods/2003-2014.json",
+      "sha256": "cdc065b79f8ac0840fd623b7390fa63a4e1de22c92bb8e1d93b2d9391933d169",
+      "years": [
+        2003,
+        2014
+      ]
+    },
+    {
+      "bytes": 1519,
+      "path": "periods/2003-2015.json",
+      "sha256": "59f5f6abd9b301e4bfdbfd920ab929007aadd4a27f0aafb974630bf61684f148",
+      "years": [
+        2003,
+        2015
+      ]
+    },
+    {
+      "bytes": 1528,
+      "path": "periods/2003-2016.json",
+      "sha256": "4b39c596f6c287f97544283a197aad25fea9feaa318751312229ddb1e93a89e6",
+      "years": [
+        2003,
+        2016
+      ]
+    },
+    {
+      "bytes": 1553,
+      "path": "periods/2003-2017.json",
+      "sha256": "d079a4a98a5c33e9d24efd761533e1b19fbeed005ea3b694dbc3bd27b0a100ef",
+      "years": [
+        2003,
+        2017
+      ]
+    },
+    {
+      "bytes": 1591,
+      "path": "periods/2003-2018.json",
+      "sha256": "b79cd8f162316091413f09ce61f6f3177776b33cc1073e6fec5ca74c3687ade2",
+      "years": [
+        2003,
+        2018
+      ]
+    },
+    {
+      "bytes": 1602,
+      "path": "periods/2003-2019.json",
+      "sha256": "a0e90b7a89e96109c4b5ba4dae4fe5fef717c7053e6ab44e89fd20efc6739718",
+      "years": [
+        2003,
+        2019
+      ]
+    },
+    {
+      "bytes": 1613,
+      "path": "periods/2003-2020.json",
+      "sha256": "8e1b8a77c79208d853ea0a050fe3a0168e9c92280ee81cede9070cbba0b89ebb",
+      "years": [
+        2003,
+        2020
+      ]
+    },
+    {
+      "bytes": 1626,
+      "path": "periods/2003-2021.json",
+      "sha256": "4852ef2e7c5fe8283a38020ca018e1ffca490e678353f626336a39ea0b971daa",
+      "years": [
+        2003,
+        2021
+      ]
+    },
+    {
+      "bytes": 1636,
+      "path": "periods/2003-2022.json",
+      "sha256": "a22e1b95ed4772f1577d4a50041fe689537e5cb6f0aef1de15eb3ea67e8c1910",
+      "years": [
+        2003,
+        2022
+      ]
+    },
+    {
+      "bytes": 1651,
+      "path": "periods/2003-2023.json",
+      "sha256": "ff6b5dd45de1cb31d17da0091dc106b57207209c68416f232a05218c4c66b713",
+      "years": [
+        2003,
+        2023
+      ]
+    },
+    {
+      "bytes": 1691,
+      "path": "periods/2003-2024.json",
+      "sha256": "b95c59fe0dec1851627cd95fd7391f6862cf7a56b219d36206352884fe24e000",
+      "years": [
+        2003,
+        2024
+      ]
+    },
+    {
+      "bytes": 1737,
+      "path": "periods/2003-2025.json",
+      "sha256": "642ef063199d50ebe6e554e76d8956ff175fd0f2f21088ab4b8335ecd09fd98b",
+      "years": [
+        2003,
+        2025
+      ]
+    },
+    {
+      "bytes": 1317,
+      "path": "periods/2004-2004.json",
+      "sha256": "db433abbcd9714f06ee5c81cd39a6fa455404645759192afa9d07c9a5790c482",
+      "years": [
+        2004,
+        2004
+      ]
+    },
+    {
+      "bytes": 1331,
+      "path": "periods/2004-2005.json",
+      "sha256": "653822eb70997afc7e0ec6381e294850133477205f2d016749c959fc1081b707",
+      "years": [
+        2004,
+        2005
+      ]
+    },
+    {
+      "bytes": 1386,
+      "path": "periods/2004-2006.json",
+      "sha256": "21e7746f1ac668cb3c0a9cca68f14c7b60cc69c4400011407dfa3bf55d40e5fb",
+      "years": [
+        2004,
+        2006
+      ]
+    },
+    {
+      "bytes": 1405,
+      "path": "periods/2004-2007.json",
+      "sha256": "3d4da0eca74971199bade90e0a75a3297189c275cbb4f795a45ed014fe9b7d9f",
+      "years": [
+        2004,
+        2007
+      ]
+    },
+    {
+      "bytes": 1403,
+      "path": "periods/2004-2008.json",
+      "sha256": "a945ac2949495cb18fdb2a10dd515d39cffb9e56029082ddb4ad1ee149a8c3e0",
+      "years": [
+        2004,
+        2008
+      ]
+    },
+    {
+      "bytes": 1410,
+      "path": "periods/2004-2009.json",
+      "sha256": "563d09aa593eee027abce72d38c9f013a666091133f1143c1df4a5ddc8380f37",
+      "years": [
+        2004,
+        2009
+      ]
+    },
+    {
+      "bytes": 1397,
+      "path": "periods/2004-2010.json",
+      "sha256": "c9103a34914c05c94d65fef86562eb9f6d4685e5e811a182e970a29f3956bdf1",
+      "years": [
+        2004,
+        2010
+      ]
+    },
+    {
+      "bytes": 1427,
+      "path": "periods/2004-2011.json",
+      "sha256": "31df65b4c8985a5b250b8cd8caca6269e36c5c2bddcdf99fd734f6aeabb76a3f",
+      "years": [
+        2004,
+        2011
+      ]
+    },
+    {
+      "bytes": 1463,
+      "path": "periods/2004-2012.json",
+      "sha256": "46f2ea77ec8273ae07144ece142fa9f8b4da041cdf5f6c0fc5bf640265d7c01d",
+      "years": [
+        2004,
+        2012
+      ]
+    },
+    {
+      "bytes": 1477,
+      "path": "periods/2004-2013.json",
+      "sha256": "374f14a4a871eca9eb77baa5c6bc639fc3d2c04e7be274be6674802c9c1ac8ec",
+      "years": [
+        2004,
+        2013
+      ]
+    },
+    {
+      "bytes": 1482,
+      "path": "periods/2004-2014.json",
+      "sha256": "1f30dc82ae5ed56f1d42a5adcadf3de160c92fd21bf2560709ea21df94cffd76",
+      "years": [
+        2004,
+        2014
+      ]
+    },
+    {
+      "bytes": 1507,
+      "path": "periods/2004-2015.json",
+      "sha256": "6a9a1c3945800852b42e72eec9039742f10d186d25481373db8adcc50d3e4de3",
+      "years": [
+        2004,
+        2015
+      ]
+    },
+    {
+      "bytes": 1527,
+      "path": "periods/2004-2016.json",
+      "sha256": "00fcbdc03118b9df5fc54da7898e9271e460a97b104030498e30ac047125cc50",
+      "years": [
+        2004,
+        2016
+      ]
+    },
+    {
+      "bytes": 1552,
+      "path": "periods/2004-2017.json",
+      "sha256": "f48b1a95398dfeb8c2fc7acf760447c8312a39e4c8bf992717f96b71a69e44d4",
+      "years": [
+        2004,
+        2017
+      ]
+    },
+    {
+      "bytes": 1571,
+      "path": "periods/2004-2018.json",
+      "sha256": "be6e066f43f923937ffaf48fdf913cccd2aa4096fecf79f566b977f863a8621e",
+      "years": [
+        2004,
+        2018
+      ]
+    },
+    {
+      "bytes": 1593,
+      "path": "periods/2004-2019.json",
+      "sha256": "e39b5f5870723c603efceb153f0e52a4fc89055ec450ee9630b8f0f272a51591",
+      "years": [
+        2004,
+        2019
+      ]
+    },
+    {
+      "bytes": 1611,
+      "path": "periods/2004-2020.json",
+      "sha256": "d1adab779001596aaf2a0b1fb111f86d9806a87eb59f2a7f785d8cd7322c5f24",
+      "years": [
+        2004,
+        2020
+      ]
+    },
+    {
+      "bytes": 1617,
+      "path": "periods/2004-2021.json",
+      "sha256": "fabb3b128a7b4c23b08ccf15fd9490dbb46acdbe114527550c2155024dd1a87f",
+      "years": [
+        2004,
+        2021
+      ]
+    },
+    {
+      "bytes": 1634,
+      "path": "periods/2004-2022.json",
+      "sha256": "425696989dc172088255279447b6d3eb8672f2d97130385e3649961cd6b75c29",
+      "years": [
+        2004,
+        2022
+      ]
+    },
+    {
+      "bytes": 1650,
+      "path": "periods/2004-2023.json",
+      "sha256": "d917496a14c105f3148a7cf6737b2e45369f86c323844988295bc753629542e8",
+      "years": [
+        2004,
+        2023
+      ]
+    },
+    {
+      "bytes": 1684,
+      "path": "periods/2004-2024.json",
+      "sha256": "36f354c4232fefb245fdfca26456fc4c010f93f953b93c06e3ca80cbf61b88d1",
+      "years": [
+        2004,
+        2024
+      ]
+    },
+    {
+      "bytes": 1727,
+      "path": "periods/2004-2025.json",
+      "sha256": "cf02a274764e58e7a077ebaf624f5968b9ca3d38db124eadf3425071380852fe",
+      "years": [
+        2004,
+        2025
+      ]
+    },
+    {
+      "bytes": 1317,
+      "path": "periods/2005-2005.json",
+      "sha256": "dc45465c7c976630e2ca4cec20045154ce27dbbf1e7bc654e162bb42b000ebc0",
+      "years": [
+        2005,
+        2005
+      ]
+    },
+    {
+      "bytes": 1494,
+      "path": "periods/2005-2006.json",
+      "sha256": "f44e2168bbdbca1d5897e2d6fddd1ee367c5ef6d2c5003f595a135caf283f3ec",
+      "years": [
+        2005,
+        2006
+      ]
+    },
+    {
+      "bytes": 1398,
+      "path": "periods/2005-2007.json",
+      "sha256": "e545f0c6eb0e560ea318013db0a186d5b9a16fcdf0c275ab1eebe8b20d495610",
+      "years": [
+        2005,
+        2007
+      ]
+    },
+    {
+      "bytes": 1409,
+      "path": "periods/2005-2008.json",
+      "sha256": "e4fa74471b81639513c708f4ff0c443cba9c702e22b7efe592d4e8d49e175eba",
+      "years": [
+        2005,
+        2008
+      ]
+    },
+    {
+      "bytes": 1383,
+      "path": "periods/2005-2009.json",
+      "sha256": "3870795789f46df56323dd17fc8de7e63fae6bf3044fff448f23aa4c293a95d9",
+      "years": [
+        2005,
+        2009
+      ]
+    },
+    {
+      "bytes": 1392,
+      "path": "periods/2005-2010.json",
+      "sha256": "43b20e0debd74b48067a84564f212d63ada04bf5afdbd86db77949e04830cb96",
+      "years": [
+        2005,
+        2010
+      ]
+    },
+    {
+      "bytes": 1408,
+      "path": "periods/2005-2011.json",
+      "sha256": "b57ebabe80cb750b7fc63b876e3bf2f969a1d8029f24f55210cba0ac8a556018",
+      "years": [
+        2005,
+        2011
+      ]
+    },
+    {
+      "bytes": 1457,
+      "path": "periods/2005-2012.json",
+      "sha256": "33a04ba49a7fc4a489528e97326d4f8e9acf837abec55211e7897553c80f5c7f",
+      "years": [
+        2005,
+        2012
+      ]
+    },
+    {
+      "bytes": 1477,
+      "path": "periods/2005-2013.json",
+      "sha256": "13aad78b473334d7c3e2093b94b5fa99c7ebca7275f5394668b322b6370c00ce",
+      "years": [
+        2005,
+        2013
+      ]
+    },
+    {
+      "bytes": 1507,
+      "path": "periods/2005-2014.json",
+      "sha256": "f60f7b9b001f09ccf5313b5ef184c82521d0cfdd23a99f4c07ad35bbbb07f28c",
+      "years": [
+        2005,
+        2014
+      ]
+    },
+    {
+      "bytes": 1507,
+      "path": "periods/2005-2015.json",
+      "sha256": "72ff95eb17e3c66ac288aeefe7e4de6f10a5962580c4648eb298bb596577bdfe",
+      "years": [
+        2005,
+        2015
+      ]
+    },
+    {
+      "bytes": 1536,
+      "path": "periods/2005-2016.json",
+      "sha256": "f3be2ed15c8776595c97aede5f217f57bfa5ab24845065883fbc349eb1df3cf1",
+      "years": [
+        2005,
+        2016
+      ]
+    },
+    {
+      "bytes": 1550,
+      "path": "periods/2005-2017.json",
+      "sha256": "ce3bae358e0215410b563db63fed34441cd1e8bed9f0560300c477f4d0d14f53",
+      "years": [
+        2005,
+        2017
+      ]
+    },
+    {
+      "bytes": 1573,
+      "path": "periods/2005-2018.json",
+      "sha256": "4d742bea69e281d47a86e69d0b76d6272f2c080a103244535624abc73daa2e46",
+      "years": [
+        2005,
+        2018
+      ]
+    },
+    {
+      "bytes": 1588,
+      "path": "periods/2005-2019.json",
+      "sha256": "240bb9ac1fbf2798a1dce8f9f2b676b059ea66f02fe24bbff17aaeeb3594c466",
+      "years": [
+        2005,
+        2019
+      ]
+    },
+    {
+      "bytes": 1605,
+      "path": "periods/2005-2020.json",
+      "sha256": "f6bddc70ef555cb69f404336b214eb0bed376a231642f00dc67e44fe57bb7cb0",
+      "years": [
+        2005,
+        2020
+      ]
+    },
+    {
+      "bytes": 1617,
+      "path": "periods/2005-2021.json",
+      "sha256": "96dc3e18be5e0c7ae0ef30bdb7135dc6ef3a861d220954251bdb4a2c9372fe6d",
+      "years": [
+        2005,
+        2021
+      ]
+    },
+    {
+      "bytes": 1629,
+      "path": "periods/2005-2022.json",
+      "sha256": "75b168b600d9c193dea0cb1d0ef1fb8498d02db13c6d441fbbb58f8eceddabb3",
+      "years": [
+        2005,
+        2022
+      ]
+    },
+    {
+      "bytes": 1649,
+      "path": "periods/2005-2023.json",
+      "sha256": "a9a01173c0f6b999f10ee1098e5fb6f68e2c91e5cbeae0b77e8dcdb8ff0f1b6a",
+      "years": [
+        2005,
+        2023
+      ]
+    },
+    {
+      "bytes": 1694,
+      "path": "periods/2005-2024.json",
+      "sha256": "c7ee9d62a875d7ab29dfd2aa5d1d434de814f8bc625c7750f445e5e8aae7586d",
+      "years": [
+        2005,
+        2024
+      ]
+    },
+    {
+      "bytes": 1726,
+      "path": "periods/2005-2025.json",
+      "sha256": "fdab267c0881db28e7f3e6859a036514f356aeac1691ec1676951ad9ccc60817",
+      "years": [
+        2005,
+        2025
+      ]
+    },
+    {
+      "bytes": 1473,
+      "path": "periods/2006-2006.json",
+      "sha256": "6b3a2775c7247465ef5ab71bde005505c336a9e105470d4f3efa6a49400ea5f6",
+      "years": [
+        2006,
+        2006
+      ]
+    },
+    {
+      "bytes": 1500,
+      "path": "periods/2006-2007.json",
+      "sha256": "fdcb4a3bce21062007074b522370e56666ba269722d7cc07fe7a8c8620a07869",
+      "years": [
+        2006,
+        2007
+      ]
+    },
+    {
+      "bytes": 1375,
+      "path": "periods/2006-2008.json",
+      "sha256": "7c6183e47a1171378fd6425ab1916a87fce3791d02ef2f70a2d0f4e2e317ce1b",
+      "years": [
+        2006,
+        2008
+      ]
+    },
+    {
+      "bytes": 1382,
+      "path": "periods/2006-2009.json",
+      "sha256": "92f2d1a40af467f88196564851bf17058354be055fa4cca2b4218ef93ebabf75",
+      "years": [
+        2006,
+        2009
+      ]
+    },
+    {
+      "bytes": 1380,
+      "path": "periods/2006-2010.json",
+      "sha256": "9fe2428134aa0954e2eb04668048324b2ab84dfd2774ea97c8842750861af8ed",
+      "years": [
+        2006,
+        2010
+      ]
+    },
+    {
+      "bytes": 1397,
+      "path": "periods/2006-2011.json",
+      "sha256": "354d1508f9868b006538418cbd96db603f245f647463edb138b1e778adbe83a4",
+      "years": [
+        2006,
+        2011
+      ]
+    },
+    {
+      "bytes": 1426,
+      "path": "periods/2006-2012.json",
+      "sha256": "3d510eb84cbd7a62e3f1e95160ddc04e8867a45ae6cef7a607af507119a88e2f",
+      "years": [
+        2006,
+        2012
+      ]
+    },
+    {
+      "bytes": 1483,
+      "path": "periods/2006-2013.json",
+      "sha256": "164cf54b218cd3f3ac0b464a71a3bc2033342abea9f951e37beeac1e0b53ccb9",
+      "years": [
+        2006,
+        2013
+      ]
+    },
+    {
+      "bytes": 1500,
+      "path": "periods/2006-2014.json",
+      "sha256": "1dc85e710c09b2e2e0713c74a9f2a81c5d2e9fb29f0901209ac7ff012d1b680c",
+      "years": [
+        2006,
+        2014
+      ]
+    },
+    {
+      "bytes": 1520,
+      "path": "periods/2006-2015.json",
+      "sha256": "fe4498bd82f4eadae0f0859ea28b72edaa69daec30612a67f1df535ed375c0db",
+      "years": [
+        2006,
+        2015
+      ]
+    },
+    {
+      "bytes": 1523,
+      "path": "periods/2006-2016.json",
+      "sha256": "f4309e972994a58e4eb8dadb574345dacda7f605b9bc7732343b37eabcb1d422",
+      "years": [
+        2006,
+        2016
+      ]
+    },
+    {
+      "bytes": 1540,
+      "path": "periods/2006-2017.json",
+      "sha256": "42fe11c7f08888c3aa648a2d2d7e46206d4d333e9db755e2f05967ed0df608e4",
+      "years": [
+        2006,
+        2017
+      ]
+    },
+    {
+      "bytes": 1566,
+      "path": "periods/2006-2018.json",
+      "sha256": "45c52e82ae9848eedbb5a6f8e06e3c90e9227525b296b6a61c343a62022c6aba",
+      "years": [
+        2006,
+        2018
+      ]
+    },
+    {
+      "bytes": 1579,
+      "path": "periods/2006-2019.json",
+      "sha256": "0e58b235ee78c33b1a87be5b66dd241d0781b922fa26862562391d72effbfcf1",
+      "years": [
+        2006,
+        2019
+      ]
+    },
+    {
+      "bytes": 1597,
+      "path": "periods/2006-2020.json",
+      "sha256": "8a31102899f7143195784a99879dae98a7d9bd79e0e97cb31508b01519683941",
+      "years": [
+        2006,
+        2020
+      ]
+    },
+    {
+      "bytes": 1606,
+      "path": "periods/2006-2021.json",
+      "sha256": "67819d7575454b1b8b15e4b4b850581eba6463fb8bfb659f87f454a6dce24287",
+      "years": [
+        2006,
+        2021
+      ]
+    },
+    {
+      "bytes": 1620,
+      "path": "periods/2006-2022.json",
+      "sha256": "83a085762316219679b0c8778baeec4beb14c64094e34f31e790f362ca489997",
+      "years": [
+        2006,
+        2022
+      ]
+    },
+    {
+      "bytes": 1638,
+      "path": "periods/2006-2023.json",
+      "sha256": "36246e9cafaaf1655a6a6db5fb74887f28bf33d390272167990d2a1183625f20",
+      "years": [
+        2006,
+        2023
+      ]
+    },
+    {
+      "bytes": 1687,
+      "path": "periods/2006-2024.json",
+      "sha256": "d104888f8967675c15b29a84b96fc81a685dfd3707742087b98d965ecbf534ff",
+      "years": [
+        2006,
+        2024
+      ]
+    },
+    {
+      "bytes": 1733,
+      "path": "periods/2006-2025.json",
+      "sha256": "219fcaf3b6402af58d4956e3438ef0e8892b522772a21084765a8ad4d8427761",
+      "years": [
+        2006,
+        2025
+      ]
+    },
+    {
+      "bytes": 1311,
+      "path": "periods/2007-2007.json",
+      "sha256": "cf4b10b05b0d2eee659af7f0b27016a0d4776aeaee4c94daede67e35257a3111",
+      "years": [
+        2007,
+        2007
+      ]
+    },
+    {
+      "bytes": 1324,
+      "path": "periods/2007-2008.json",
+      "sha256": "de7bc858c8291b3e019cde0d57928aeee6c96a1d8fa7c7154908495bcbc24ef7",
+      "years": [
+        2007,
+        2008
+      ]
+    },
+    {
+      "bytes": 1324,
+      "path": "periods/2007-2009.json",
+      "sha256": "8a57f91ff9a8d67e1c9352650fef639c3415d68a0c2dbb9813e1d033e4b9032e",
+      "years": [
+        2007,
+        2009
+      ]
+    },
+    {
+      "bytes": 1332,
+      "path": "periods/2007-2010.json",
+      "sha256": "1eba56602a57c959c70d11ab0c1a26fdbf55a1a784c800242b59224f82e4b39f",
+      "years": [
+        2007,
+        2010
+      ]
+    },
+    {
+      "bytes": 1376,
+      "path": "periods/2007-2011.json",
+      "sha256": "7b87c4bf783fa8eab4cfaf7b2497ed8c7fe926376e3627a94597056679074679",
+      "years": [
+        2007,
+        2011
+      ]
+    },
+    {
+      "bytes": 1404,
+      "path": "periods/2007-2012.json",
+      "sha256": "232e4be9a53f36fe90d3a258c95cd2bcc7f53f359f6baef7fd91adfa3a458cdc",
+      "years": [
+        2007,
+        2012
+      ]
+    },
+    {
+      "bytes": 1423,
+      "path": "periods/2007-2013.json",
+      "sha256": "a9dc0fd54cccd28a8c2f6754ab1630b6fa7995db4324318c3180f7d250a8cb0f",
+      "years": [
+        2007,
+        2013
+      ]
+    },
+    {
+      "bytes": 1491,
+      "path": "periods/2007-2014.json",
+      "sha256": "55167bd22dda1fdc09472ea50d3eb90cff011772e6cd8cbfae1af9fb1a2e8019",
+      "years": [
+        2007,
+        2014
+      ]
+    },
+    {
+      "bytes": 1503,
+      "path": "periods/2007-2015.json",
+      "sha256": "d0e3ba04e551f87d99bb439ff945e2119085e017ed5d27e0d52ad95ccb6a9d65",
+      "years": [
+        2007,
+        2015
+      ]
+    },
+    {
+      "bytes": 1515,
+      "path": "periods/2007-2016.json",
+      "sha256": "e229307cbd65c82a6381782509d0aaf403df9b15a723ecb37f6aa29320e0bbec",
+      "years": [
+        2007,
+        2016
+      ]
+    },
+    {
+      "bytes": 1526,
+      "path": "periods/2007-2017.json",
+      "sha256": "0e53186e3eb5574318e5add067cf0a81fdf63b3983b58810d0174392fd67af8b",
+      "years": [
+        2007,
+        2017
+      ]
+    },
+    {
+      "bytes": 1545,
+      "path": "periods/2007-2018.json",
+      "sha256": "11ab4796c29dd9f85ed7fa060beb3433780f7e9ac3fb744d7124efc94ac43748",
+      "years": [
+        2007,
+        2018
+      ]
+    },
+    {
+      "bytes": 1558,
+      "path": "periods/2007-2019.json",
+      "sha256": "f64a11ef7a99aead2abbf8e7a2ee4e79f0bd8d1c0df02faba7a2c0223b964f55",
+      "years": [
+        2007,
+        2019
+      ]
+    },
+    {
+      "bytes": 1565,
+      "path": "periods/2007-2020.json",
+      "sha256": "800b75429089c88ac89df8da06c3fc32f1139605abc92e747550083813a31a7e",
+      "years": [
+        2007,
+        2020
+      ]
+    },
+    {
+      "bytes": 1576,
+      "path": "periods/2007-2021.json",
+      "sha256": "81fff9e808989d9631da85301852f9ad6fd671bf74ff43d651705d70ec43bfed",
+      "years": [
+        2007,
+        2021
+      ]
+    },
+    {
+      "bytes": 1596,
+      "path": "periods/2007-2022.json",
+      "sha256": "51fab734e14b62d3fff150a1de521ab6998ced5bf91515cf92e7cad230991ab6",
+      "years": [
+        2007,
+        2022
+      ]
+    },
+    {
+      "bytes": 1614,
+      "path": "periods/2007-2023.json",
+      "sha256": "ef60976b524628ca62193e42db6d9d9af1ac70f91f6955168b6f8b460eebecfe",
+      "years": [
+        2007,
+        2023
+      ]
+    },
+    {
+      "bytes": 1646,
+      "path": "periods/2007-2024.json",
+      "sha256": "f82a7ef6e885d4b926e7bacbf4c7ed371a6f71fbe1b9b4556fc2c662d39a36d5",
+      "years": [
+        2007,
+        2024
+      ]
+    },
+    {
+      "bytes": 1700,
+      "path": "periods/2007-2025.json",
+      "sha256": "0500ff75c13eadcad49fa7eadf2df98c88d1cc9315d619888aaad7e6d227030f",
+      "years": [
+        2007,
+        2025
+      ]
+    },
+    {
+      "bytes": 1311,
+      "path": "periods/2008-2008.json",
+      "sha256": "5dc9f14ce325c6f402ba5f3ee4054be7bc00d1e069e06f07dcbcae669e655f8a",
+      "years": [
+        2008,
+        2008
+      ]
+    },
+    {
+      "bytes": 1324,
+      "path": "periods/2008-2009.json",
+      "sha256": "1167e32c15e6ef16e1909b221ed28ff959cc4df14de42056ee943c34529bee52",
+      "years": [
+        2008,
+        2009
+      ]
+    },
+    {
+      "bytes": 1323,
+      "path": "periods/2008-2010.json",
+      "sha256": "e7eb972df0f9a9160f3f9d9fd6dd6e813a8569fc8212c9579c1964378d879966",
+      "years": [
+        2008,
+        2010
+      ]
+    },
+    {
+      "bytes": 1378,
+      "path": "periods/2008-2011.json",
+      "sha256": "863921dd1a12eafc8fc0c505b82cf3f4067f1c891ee69b9a3361557247fb6c66",
+      "years": [
+        2008,
+        2011
+      ]
+    },
+    {
+      "bytes": 1395,
+      "path": "periods/2008-2012.json",
+      "sha256": "6ccc6f32f9011705ae6125e23a5aff599fb63aee20d4a94caefb8fc0a57ef452",
+      "years": [
+        2008,
+        2012
+      ]
+    },
+    {
+      "bytes": 1459,
+      "path": "periods/2008-2013.json",
+      "sha256": "743777994fd3ead8aa9ac50f338520861a05e6f0de38065cff19458fe1151890",
+      "years": [
+        2008,
+        2013
+      ]
+    },
+    {
+      "bytes": 1479,
+      "path": "periods/2008-2014.json",
+      "sha256": "1723697a3c8bfd204157903780b430ea038615a51b395059f9000bfbcb4a7cfb",
+      "years": [
+        2008,
+        2014
+      ]
+    },
+    {
+      "bytes": 1493,
+      "path": "periods/2008-2015.json",
+      "sha256": "e3c7640d828f62bec02bcc7c88cd2f3df7b462e169d4b5c475a3427414baa071",
+      "years": [
+        2008,
+        2015
+      ]
+    },
+    {
+      "bytes": 1505,
+      "path": "periods/2008-2016.json",
+      "sha256": "7491ca9120901beb70f3c0019d0f3d4b5746f0d5e19e4af8d862017d72d36bdf",
+      "years": [
+        2008,
+        2016
+      ]
+    },
+    {
+      "bytes": 1525,
+      "path": "periods/2008-2017.json",
+      "sha256": "b73ef71de6fc154282b4d7d6266bd819fe2b34b44119f85ebbd53013aba941d7",
+      "years": [
+        2008,
+        2017
+      ]
+    },
+    {
+      "bytes": 1540,
+      "path": "periods/2008-2018.json",
+      "sha256": "3f0f2ddf82530a360e874a19cfe2b7a60eb08c6de2e819761d0225285844a823",
+      "years": [
+        2008,
+        2018
+      ]
+    },
+    {
+      "bytes": 1551,
+      "path": "periods/2008-2019.json",
+      "sha256": "59ec50a2d74954366d91124467bf3e1d55fdf5773498f11f2c01d84663c255f1",
+      "years": [
+        2008,
+        2019
+      ]
+    },
+    {
+      "bytes": 1562,
+      "path": "periods/2008-2020.json",
+      "sha256": "d3982c0f31cee69c4c2fbf661f77588c54f629bcd3517e71e3d017377b52916a",
+      "years": [
+        2008,
+        2020
+      ]
+    },
+    {
+      "bytes": 1567,
+      "path": "periods/2008-2021.json",
+      "sha256": "28e3d232f62044f556b12d6b9d7958d16bd33c93587163cbe535cdc24c810892",
+      "years": [
+        2008,
+        2021
+      ]
+    },
+    {
+      "bytes": 1586,
+      "path": "periods/2008-2022.json",
+      "sha256": "b204ea3673be9b85141c77767f723eb40aa2be2897ae0da4a9b691b197b9dc83",
+      "years": [
+        2008,
+        2022
+      ]
+    },
+    {
+      "bytes": 1606,
+      "path": "periods/2008-2023.json",
+      "sha256": "73e9f1399f9674e47fd2dab253cede97704243dd084d6fcac6dbb1dc4d01db6f",
+      "years": [
+        2008,
+        2023
+      ]
+    },
+    {
+      "bytes": 1640,
+      "path": "periods/2008-2024.json",
+      "sha256": "745c78a81b132d31e2a88e689bf68f2f4fd699c61cde4fa3ea71016da72cdd42",
+      "years": [
+        2008,
+        2024
+      ]
+    },
+    {
+      "bytes": 1684,
+      "path": "periods/2008-2025.json",
+      "sha256": "24f0494e36e71676a05c88a4731b79ebead67b9887e9e95b0ea0197c663e2ebc",
+      "years": [
+        2008,
+        2025
+      ]
+    },
+    {
+      "bytes": 1311,
+      "path": "periods/2009-2009.json",
+      "sha256": "f7b3d98bbfd5d4bc5bd8548e8511d73ed2595bc54cdfd19538cbf29476f6ac1b",
+      "years": [
+        2009,
+        2009
+      ]
+    },
+    {
+      "bytes": 1324,
+      "path": "periods/2009-2010.json",
+      "sha256": "1cd3aba0795510624829a4b35d7267107309673c9721b26c91c528ab646ef2ef",
+      "years": [
+        2009,
+        2010
+      ]
+    },
+    {
+      "bytes": 1371,
+      "path": "periods/2009-2011.json",
+      "sha256": "47fe82985a43e10bbd35c943efc9a3f59217ee1ea8660804582c86a660eba8f9",
+      "years": [
+        2009,
+        2011
+      ]
+    },
+    {
+      "bytes": 1452,
+      "path": "periods/2009-2012.json",
+      "sha256": "57173ee611a61b68b50d4eac4035d9b024c4be68eb4b35b0ee60c31f2bad0ce6",
+      "years": [
+        2009,
+        2012
+      ]
+    },
+    {
+      "bytes": 1462,
+      "path": "periods/2009-2013.json",
+      "sha256": "be5fbccfe20a108e8b26e7d381f4cbcb1df708cd03eec9079a13695bdeb415ba",
+      "years": [
+        2009,
+        2013
+      ]
+    },
+    {
+      "bytes": 1480,
+      "path": "periods/2009-2014.json",
+      "sha256": "e24d07d225b0e586307783f326df182f0263443419567fe25e3f058ef1e86c01",
+      "years": [
+        2009,
+        2014
+      ]
+    },
+    {
+      "bytes": 1484,
+      "path": "periods/2009-2015.json",
+      "sha256": "e083125b73f0dd3d1e2432bd85271f21b716f499c0502aec4c857231a39ca254",
+      "years": [
+        2009,
+        2015
+      ]
+    },
+    {
+      "bytes": 1497,
+      "path": "periods/2009-2016.json",
+      "sha256": "88e51ea34b92921a600d48b5810b9e8949083322616582676f8601a741f87714",
+      "years": [
+        2009,
+        2016
+      ]
+    },
+    {
+      "bytes": 1515,
+      "path": "periods/2009-2017.json",
+      "sha256": "386212eb4a9d6502040fea8e7a3b48bb86516bd5238c802d567d2b4207c2c247",
+      "years": [
+        2009,
+        2017
+      ]
+    },
+    {
+      "bytes": 1542,
+      "path": "periods/2009-2018.json",
+      "sha256": "d1e9ba1da43f3ba28a3cd300ea8ebd9f09c4b65b2cefbf59740b672b2ffd0278",
+      "years": [
+        2009,
+        2018
+      ]
+    },
+    {
+      "bytes": 1542,
+      "path": "periods/2009-2019.json",
+      "sha256": "0acfeecc3a59d5a60e31a3040b9e12fca608d62c5e838095bdb90b9e25ac2dde",
+      "years": [
+        2009,
+        2019
+      ]
+    },
+    {
+      "bytes": 1548,
+      "path": "periods/2009-2020.json",
+      "sha256": "d293b7076c85f19e3d06646fd7180b7fb5814cd03f5953a9d7dac2cb451db24b",
+      "years": [
+        2009,
+        2020
+      ]
+    },
+    {
+      "bytes": 1551,
+      "path": "periods/2009-2021.json",
+      "sha256": "da13c25f3b4d9f8344ff4113fefc4f41f1088ed2c4c5c69cbf611aa6cd52ad23",
+      "years": [
+        2009,
+        2021
+      ]
+    },
+    {
+      "bytes": 1568,
+      "path": "periods/2009-2022.json",
+      "sha256": "7e8994179c0e548cb40afefc3ab2f708c32c769e8a21f6359ab464b136f11fe9",
+      "years": [
+        2009,
+        2022
+      ]
+    },
+    {
+      "bytes": 1585,
+      "path": "periods/2009-2023.json",
+      "sha256": "54748f5e6fc90555aa236a6e3f7d5aac98cc011a8f71a1a8e20391eb453a22d6",
+      "years": [
+        2009,
+        2023
+      ]
+    },
+    {
+      "bytes": 1641,
+      "path": "periods/2009-2024.json",
+      "sha256": "3170135b0bd491d0810341c88b1214d60c3f79085470f66bf8e0bc13eb015298",
+      "years": [
+        2009,
+        2024
+      ]
+    },
+    {
+      "bytes": 1682,
+      "path": "periods/2009-2025.json",
+      "sha256": "164da4f6f6d49f499119a542405fb831ada7fee181c2076653cd840a21bef207",
+      "years": [
+        2009,
+        2025
+      ]
+    },
+    {
+      "bytes": 1311,
+      "path": "periods/2010-2010.json",
+      "sha256": "4923aa1cd33a7ebff5d718c5c277ab851a21105789d51010cddb3733bc462b20",
+      "years": [
+        2010,
+        2010
+      ]
+    },
+    {
+      "bytes": 1494,
+      "path": "periods/2010-2011.json",
+      "sha256": "7e8231f841d47449afc40781de1352c936c624a8fb865e9d68a90b398ebb98bd",
+      "years": [
+        2010,
+        2011
+      ]
+    },
+    {
+      "bytes": 1445,
+      "path": "periods/2010-2012.json",
+      "sha256": "7efdccc0400090900989f78934bdd1e404b5edc3931e503376cfe1245084b3ef",
+      "years": [
+        2010,
+        2012
+      ]
+    },
+    {
+      "bytes": 1466,
+      "path": "periods/2010-2013.json",
+      "sha256": "a1a7dd7b0c6905246ba701ee1346e0afb9e5c0fe70bc05ff87097bf18d4427ed",
+      "years": [
+        2010,
+        2013
+      ]
+    },
+    {
+      "bytes": 1466,
+      "path": "periods/2010-2014.json",
+      "sha256": "5dbe4b770a4ffa2f21d35669600faa6d717d5902db5c86b8279c1ece997753cc",
+      "years": [
+        2010,
+        2014
+      ]
+    },
+    {
+      "bytes": 1469,
+      "path": "periods/2010-2015.json",
+      "sha256": "8b667dbd83a41aaeb887912cd6a05c72edb08a9fa4a088093211c6376ff1cb46",
+      "years": [
+        2010,
+        2015
+      ]
+    },
+    {
+      "bytes": 1486,
+      "path": "periods/2010-2016.json",
+      "sha256": "07fc147c8f9d8b7f9857c320f07df6171e4ff2350897673767b866596e6fd324",
+      "years": [
+        2010,
+        2016
+      ]
+    },
+    {
+      "bytes": 1507,
+      "path": "periods/2010-2017.json",
+      "sha256": "95ef751e933421468321477d48141daba3a0798bb580a5fbb3cf0cd750ca8dc4",
+      "years": [
+        2010,
+        2017
+      ]
+    },
+    {
+      "bytes": 1536,
+      "path": "periods/2010-2018.json",
+      "sha256": "36f4fe314917860fd0c24c5df7b916a5640be4b76f95a9d1ee17e7984cbb191a",
+      "years": [
+        2010,
+        2018
+      ]
+    },
+    {
+      "bytes": 1548,
+      "path": "periods/2010-2019.json",
+      "sha256": "2d10714c37ae0ffe7c7c15f97da01252fc3a27b79c8f40dffc69caa4f99b9f5c",
+      "years": [
+        2010,
+        2019
+      ]
+    },
+    {
+      "bytes": 1534,
+      "path": "periods/2010-2020.json",
+      "sha256": "efbaba99fa5a7c8d24c6bb62412f819f6107186ded54e669c98746070d007f87",
+      "years": [
+        2010,
+        2020
+      ]
+    },
+    {
+      "bytes": 1550,
+      "path": "periods/2010-2021.json",
+      "sha256": "f396bc171fe196eed40416b7e3805a9eb1180431edbd5695dd56f871f2d4f94c",
+      "years": [
+        2010,
+        2021
+      ]
+    },
+    {
+      "bytes": 1563,
+      "path": "periods/2010-2022.json",
+      "sha256": "cdd766c40ec603b1a31da47897b82f579f64befec648db1273df0d74d58d3a8b",
+      "years": [
+        2010,
+        2022
+      ]
+    },
+    {
+      "bytes": 1584,
+      "path": "periods/2010-2023.json",
+      "sha256": "4e7e32e06deda98ec24c5ef5a88a6f92bbbef460a7216365737dcac6ae1f2e7f",
+      "years": [
+        2010,
+        2023
+      ]
+    },
+    {
+      "bytes": 1636,
+      "path": "periods/2010-2024.json",
+      "sha256": "6e31dc652b6a53d08ed18bb3283aa1f62a1c285e69ce946d666696058a9b5b69",
+      "years": [
+        2010,
+        2024
+      ]
+    },
+    {
+      "bytes": 1677,
+      "path": "periods/2010-2025.json",
+      "sha256": "30e3c2469802cb8a6cc3859db54b39d3137a06af1d554d58d7424084cb13fc6c",
+      "years": [
+        2010,
+        2025
+      ]
+    },
+    {
+      "bytes": 1471,
+      "path": "periods/2011-2011.json",
+      "sha256": "2c49c827a8e758e7d7e23247a851a7128b905c4cf4225d6df77173b4052bdce6",
+      "years": [
+        2011,
+        2011
+      ]
+    },
+    {
+      "bytes": 1510,
+      "path": "periods/2011-2012.json",
+      "sha256": "bde2faf27bfc9b6693d09e1e14df98fef231fae093a8035d5d439f7adc6c9e25",
+      "years": [
+        2011,
+        2012
+      ]
+    },
+    {
+      "bytes": 1461,
+      "path": "periods/2011-2013.json",
+      "sha256": "ffc37afcc30c9fbabab4cb202f9cf7aabef695b2a4b26656d61e4a86564e2ea2",
+      "years": [
+        2011,
+        2013
+      ]
+    },
+    {
+      "bytes": 1469,
+      "path": "periods/2011-2014.json",
+      "sha256": "9edf50bf4e8904b2cf7b44f1396e385bf72ec3918fdfeee7a94389d0fcca2d81",
+      "years": [
+        2011,
+        2014
+      ]
+    },
+    {
+      "bytes": 1461,
+      "path": "periods/2011-2015.json",
+      "sha256": "ff2cbf5e0a25f2a939262aa61d9fda4f77c09afbe9b97fb62b070086da63d35e",
+      "years": [
+        2011,
+        2015
+      ]
+    },
+    {
+      "bytes": 1474,
+      "path": "periods/2011-2016.json",
+      "sha256": "cc177738a09d37faa464a0ffb31c325818864f5fa16627e4922137c4ea6cabf1",
+      "years": [
+        2011,
+        2016
+      ]
+    },
+    {
+      "bytes": 1485,
+      "path": "periods/2011-2017.json",
+      "sha256": "f1ee2e5a711e090f37eb1dbd513c43f5948ea8b0cb83ea3370f1f3350d520463",
+      "years": [
+        2011,
+        2017
+      ]
+    },
+    {
+      "bytes": 1515,
+      "path": "periods/2011-2018.json",
+      "sha256": "867285e45096a5a4c8f8f8133cea8c9e32edb0aeba893b15288fce55b6ba12e8",
+      "years": [
+        2011,
+        2018
+      ]
+    },
+    {
+      "bytes": 1531,
+      "path": "periods/2011-2019.json",
+      "sha256": "71f81b64787592037774a829b55fcc2a260065839b16dd166eef2d481a7ee575",
+      "years": [
+        2011,
+        2019
+      ]
+    },
+    {
+      "bytes": 1550,
+      "path": "periods/2011-2020.json",
+      "sha256": "233c9be9dca4256610a8123b49e66b9733b494dc8efb5adb23087cbb547881e2",
+      "years": [
+        2011,
+        2020
+      ]
+    },
+    {
+      "bytes": 1543,
+      "path": "periods/2011-2021.json",
+      "sha256": "1de5577bd0509ddfcc86d1938ceb6b0039d9e15a26e9e85eb899e56f45c95845",
+      "years": [
+        2011,
+        2021
+      ]
+    },
+    {
+      "bytes": 1568,
+      "path": "periods/2011-2022.json",
+      "sha256": "236497277563046564a6a41db25d5771cfc256365bc1826963f2b86d97a8eadc",
+      "years": [
+        2011,
+        2022
+      ]
+    },
+    {
+      "bytes": 1589,
+      "path": "periods/2011-2023.json",
+      "sha256": "ca2752ca3fd1e7ce285481069b809d258c78a60936376bce215e7a80b8186eda",
+      "years": [
+        2011,
+        2023
+      ]
+    },
+    {
+      "bytes": 1631,
+      "path": "periods/2011-2024.json",
+      "sha256": "697fdb5ba44597e367cae0b2fac0c011dc3d904b6379f1921a702572722d1636",
+      "years": [
+        2011,
+        2024
+      ]
+    },
+    {
+      "bytes": 1683,
+      "path": "periods/2011-2025.json",
+      "sha256": "5a4ce16cac039d77bd8855dda10678c34ba875df491cc55f41af7729af9fc10e",
+      "years": [
+        2011,
+        2025
+      ]
+    },
+    {
+      "bytes": 1322,
+      "path": "periods/2012-2012.json",
+      "sha256": "c0a5eddf98f8e65f184b2e4229ba34b0f7c0771ca3b2949d5b9485bfc0ec9201",
+      "years": [
+        2012,
+        2012
+      ]
+    },
+    {
+      "bytes": 1346,
+      "path": "periods/2012-2013.json",
+      "sha256": "2f61d0ff0ae43dda831de3f9dedd4c228f9fcebf19666da2d8985a5479fbe477",
+      "years": [
+        2012,
+        2013
+      ]
+    },
+    {
+      "bytes": 1410,
+      "path": "periods/2012-2014.json",
+      "sha256": "4920c65521e4de465b21ffdd19e7b7e1c43b939024014ace195e76177a3ac18e",
+      "years": [
+        2012,
+        2014
+      ]
+    },
+    {
+      "bytes": 1407,
+      "path": "periods/2012-2015.json",
+      "sha256": "1e5b82adfdc08e93f681905902b310f4cc3d5eae0b0e4e50e528bd7471f70131",
+      "years": [
+        2012,
+        2015
+      ]
+    },
+    {
+      "bytes": 1424,
+      "path": "periods/2012-2016.json",
+      "sha256": "5c6c4808d8f6aaf936d4ab322dc196dfed956e9e60764e1e911143c55853f344",
+      "years": [
+        2012,
+        2016
+      ]
+    },
+    {
+      "bytes": 1441,
+      "path": "periods/2012-2017.json",
+      "sha256": "644aad96fb8ac946dd9f03f9f1937dc72cb24319447ab692f550f921cc2a8449",
+      "years": [
+        2012,
+        2017
+      ]
+    },
+    {
+      "bytes": 1483,
+      "path": "periods/2012-2018.json",
+      "sha256": "ddf681460a58dae11ce3ac4e622169c4d24490fc7d8596889d5627fe159fb00e",
+      "years": [
+        2012,
+        2018
+      ]
+    },
+    {
+      "bytes": 1494,
+      "path": "periods/2012-2019.json",
+      "sha256": "ee79bbcc0e824bb28fdfdec51e1d4ac8508e58d0d3359f05eae3b3293cabf924",
+      "years": [
+        2012,
+        2019
+      ]
+    },
+    {
+      "bytes": 1515,
+      "path": "periods/2012-2020.json",
+      "sha256": "27ecf02f5ec65d9d1e099099d910e065ec8e3a059136ec851afe0b7c424567a8",
+      "years": [
+        2012,
+        2020
+      ]
+    },
+    {
+      "bytes": 1526,
+      "path": "periods/2012-2021.json",
+      "sha256": "b133b6ea94f11e771105dae019b6d0579dcf7a17c6512e37df9a5bed3054072f",
+      "years": [
+        2012,
+        2021
+      ]
+    },
+    {
+      "bytes": 1532,
+      "path": "periods/2012-2022.json",
+      "sha256": "0db9e273dc91209226c4dfa1cc3e3cdf38c11441a6501f81d752f23c31ef709b",
+      "years": [
+        2012,
+        2022
+      ]
+    },
+    {
+      "bytes": 1565,
+      "path": "periods/2012-2023.json",
+      "sha256": "c01a294e121afc3388fc23bbffa6680588074872ed8aae5bd84e74c17df41a7e",
+      "years": [
+        2012,
+        2023
+      ]
+    },
+    {
+      "bytes": 1606,
+      "path": "periods/2012-2024.json",
+      "sha256": "cb836ecaef2790d50a9bc0bfcae7589e068cda72455c64e6d3d45111c885fb83",
+      "years": [
+        2012,
+        2024
+      ]
+    },
+    {
+      "bytes": 1657,
+      "path": "periods/2012-2025.json",
+      "sha256": "64a4ecefb3ee6a0bad27c8345f40ab977b956cfbde1ec44f4955754fef4295f2",
+      "years": [
+        2012,
+        2025
+      ]
+    },
+    {
+      "bytes": 1315,
+      "path": "periods/2013-2013.json",
+      "sha256": "fc81a8ad5d0b4ab7cdad6b1221cb1a65e54fe5de1c0ef0470d14946be6880814",
+      "years": [
+        2013,
+        2013
+      ]
+    },
+    {
+      "bytes": 1337,
+      "path": "periods/2013-2014.json",
+      "sha256": "0853e8e933249d0b156c61f639bbb30406437bdb6c1b4318a62e96c82047c0fa",
+      "years": [
+        2013,
+        2014
+      ]
+    },
+    {
+      "bytes": 1385,
+      "path": "periods/2013-2015.json",
+      "sha256": "94a73acdc02aff36d62f9a30d658b70608f1ed314c0bc767e6ebc3806bd890cf",
+      "years": [
+        2013,
+        2015
+      ]
+    },
+    {
+      "bytes": 1408,
+      "path": "periods/2013-2016.json",
+      "sha256": "459b4cd979085a84af24d19a21431178481856e123942beca6139f1ee7ac3b7d",
+      "years": [
+        2013,
+        2016
+      ]
+    },
+    {
+      "bytes": 1423,
+      "path": "periods/2013-2017.json",
+      "sha256": "f6e960210dbc46fe7517bb01a3c58d1b60d4ef01cf63eecb6f122e95d9d1a81c",
+      "years": [
+        2013,
+        2017
+      ]
+    },
+    {
+      "bytes": 1463,
+      "path": "periods/2013-2018.json",
+      "sha256": "a8723a9ba937726d8faef085027662d5df85159c929c7dcb279b5dcfb16fc30f",
+      "years": [
+        2013,
+        2018
+      ]
+    },
+    {
+      "bytes": 1475,
+      "path": "periods/2013-2019.json",
+      "sha256": "432c86d1c1668535382be84f90872f87588dc56d5d889ea2ea8bda3ca49e8bde",
+      "years": [
+        2013,
+        2019
+      ]
+    },
+    {
+      "bytes": 1490,
+      "path": "periods/2013-2020.json",
+      "sha256": "716ba59eb658cd55a0cd38967ec7f72cfc6930fde42afc9f05d7e914208321ae",
+      "years": [
+        2013,
+        2020
+      ]
+    },
+    {
+      "bytes": 1508,
+      "path": "periods/2013-2021.json",
+      "sha256": "030fcf35de1503fb2d054e22caea4b4b155b2bd34a010773184c6cd527632f81",
+      "years": [
+        2013,
+        2021
+      ]
+    },
+    {
+      "bytes": 1521,
+      "path": "periods/2013-2022.json",
+      "sha256": "abb3d42ffef95992852565f204319943431136999ef9c6f24987c60b67e9b38d",
+      "years": [
+        2013,
+        2022
+      ]
+    },
+    {
+      "bytes": 1538,
+      "path": "periods/2013-2023.json",
+      "sha256": "be6e8e509a05a084862b7d5ca2e8e07178788a47fc25e0a4f246e5f38147884a",
+      "years": [
+        2013,
+        2023
+      ]
+    },
+    {
+      "bytes": 1591,
+      "path": "periods/2013-2024.json",
+      "sha256": "70668533907f640ea69ff1aab6b7607c6aee452caee480a1f290105750ab9201",
+      "years": [
+        2013,
+        2024
+      ]
+    },
+    {
+      "bytes": 1638,
+      "path": "periods/2013-2025.json",
+      "sha256": "32a44a980d56cc0079e2940d5c0a64d90ba2c849a6ed3a763562973bc8761751",
+      "years": [
+        2013,
+        2025
+      ]
+    },
+    {
+      "bytes": 1319,
+      "path": "periods/2014-2014.json",
+      "sha256": "9dc1e8a3d5939b2b6b7eac5a64a008605579339123b365d09fdc77863e9609b2",
+      "years": [
+        2014,
+        2014
+      ]
+    },
+    {
+      "bytes": 1340,
+      "path": "periods/2014-2015.json",
+      "sha256": "e753e1b051e5446dc88493cb40127bed4422147958b3194983c8eedd1f37c235",
+      "years": [
+        2014,
+        2015
+      ]
+    },
+    {
+      "bytes": 1395,
+      "path": "periods/2014-2016.json",
+      "sha256": "6f71b1572823bbe39b766796ba8d4ea60bed695d0741b80c735d7c29f80cc92b",
+      "years": [
+        2014,
+        2016
+      ]
+    },
+    {
+      "bytes": 1414,
+      "path": "periods/2014-2017.json",
+      "sha256": "a582b6bef43da994d3301aedeae8e45b181e85c7060a75821e4651141caaceba",
+      "years": [
+        2014,
+        2017
+      ]
+    },
+    {
+      "bytes": 1453,
+      "path": "periods/2014-2018.json",
+      "sha256": "b01f5a025cd8dbd26f4b7f950b2c602daa589539da19a1b37ae7a2102233b9a8",
+      "years": [
+        2014,
+        2018
+      ]
+    },
+    {
+      "bytes": 1471,
+      "path": "periods/2014-2019.json",
+      "sha256": "e8cff2af4678f93defb31b8422e903e16f38a33e89e0d33da135cd776453ec49",
+      "years": [
+        2014,
+        2019
+      ]
+    },
+    {
+      "bytes": 1489,
+      "path": "periods/2014-2020.json",
+      "sha256": "795ecd568f91f1c9eaa2a306032b9f6e0d95cef1bd9775f811f2cf8e78b2e814",
+      "years": [
+        2014,
+        2020
+      ]
+    },
+    {
+      "bytes": 1495,
+      "path": "periods/2014-2021.json",
+      "sha256": "23c02abbb1d7347bc5acba638ecf6396d87c000ea9d45991c920e90c3e983f48",
+      "years": [
+        2014,
+        2021
+      ]
+    },
+    {
+      "bytes": 1520,
+      "path": "periods/2014-2022.json",
+      "sha256": "f45bedaa13374ca6e49b59642179708918ce26caa96cfe6c15a8bab3eabed56b",
+      "years": [
+        2014,
+        2022
+      ]
+    },
+    {
+      "bytes": 1542,
+      "path": "periods/2014-2023.json",
+      "sha256": "b9c9a57912993637f4021a19c4dfa7b1280a989df7da4aaca6c80acd223cbc07",
+      "years": [
+        2014,
+        2023
+      ]
+    },
+    {
+      "bytes": 1588,
+      "path": "periods/2014-2024.json",
+      "sha256": "7c6f74c73eb8d3c20ea4627a87182b1717d4e2cd37f00211c1a8e37d33aacc7b",
+      "years": [
+        2014,
+        2024
+      ]
+    },
+    {
+      "bytes": 1630,
+      "path": "periods/2014-2025.json",
+      "sha256": "75280a46599946202be864e9f8d634ce3a19b384101deb85e5ce6d134795aca4",
+      "years": [
+        2014,
+        2025
+      ]
+    },
+    {
+      "bytes": 1318,
+      "path": "periods/2015-2015.json",
+      "sha256": "ae0ae0e172eb3b751d64fa80ff9c12ecc899937caa127a88f7982020e27e255d",
+      "years": [
+        2015,
+        2015
+      ]
+    },
+    {
+      "bytes": 1342,
+      "path": "periods/2015-2016.json",
+      "sha256": "cdc9b38cad043ce48a9db2ddf91fdb93fbce50533e3169322b45308db565aa22",
+      "years": [
+        2015,
+        2016
+      ]
+    },
+    {
+      "bytes": 1396,
+      "path": "periods/2015-2017.json",
+      "sha256": "25c2b75a4acda6d993244c5f466721fbd7716865361b0222161698c5e667411f",
+      "years": [
+        2015,
+        2017
+      ]
+    },
+    {
+      "bytes": 1452,
+      "path": "periods/2015-2018.json",
+      "sha256": "43a04a82fe8ce595999372d9d42fd1740d7187802e9589c7c88e02cdb0ed6524",
+      "years": [
+        2015,
+        2018
+      ]
+    },
+    {
+      "bytes": 1455,
+      "path": "periods/2015-2019.json",
+      "sha256": "006d0723b13a88a183375c4f06cc1b42105e20268da1fa2ae12fb0d75937827f",
+      "years": [
+        2015,
+        2019
+      ]
+    },
+    {
+      "bytes": 1475,
+      "path": "periods/2015-2020.json",
+      "sha256": "1da9b3ba598342c0c6838db2859494058f1c9e9e5aed028b748cea769706f069",
+      "years": [
+        2015,
+        2020
+      ]
+    },
+    {
+      "bytes": 1485,
+      "path": "periods/2015-2021.json",
+      "sha256": "1db1b2058c67f478b2f82830fd02045534f12b13851f72d2679ec0f3e6c61b37",
+      "years": [
+        2015,
+        2021
+      ]
+    },
+    {
+      "bytes": 1505,
+      "path": "periods/2015-2022.json",
+      "sha256": "31bf77eadf0c9311a06543e448d9c6ba125a1657f6aabf3a720d8092563fd585",
+      "years": [
+        2015,
+        2022
+      ]
+    },
+    {
+      "bytes": 1528,
+      "path": "periods/2015-2023.json",
+      "sha256": "e86c473322453a23c72876021033b4260053803f758e57dac13d4c0205aa8b3a",
+      "years": [
+        2015,
+        2023
+      ]
+    },
+    {
+      "bytes": 1599,
+      "path": "periods/2015-2024.json",
+      "sha256": "bc8989a37b7cf3d534da6052f7aa8b0a48b2b1c53447717cb5b79fb17f13e60d",
+      "years": [
+        2015,
+        2024
+      ]
+    },
+    {
+      "bytes": 1616,
+      "path": "periods/2015-2025.json",
+      "sha256": "402d90310e700731e19add05e26677ea92413d561794ffafa762ac2bcf891ac5",
+      "years": [
+        2015,
+        2025
+      ]
+    },
+    {
+      "bytes": 1319,
+      "path": "periods/2016-2016.json",
+      "sha256": "979025ec364a6de2ff9366b2490c6ee516d3605ec4deb04975cc5da0a58edfa8",
+      "years": [
+        2016,
+        2016
+      ]
+    },
+    {
+      "bytes": 1341,
+      "path": "periods/2016-2017.json",
+      "sha256": "42a92547da9e567edb621a77465db308a59d02e9d877cc660457406c01614ba3",
+      "years": [
+        2016,
+        2017
+      ]
+    },
+    {
+      "bytes": 1439,
+      "path": "periods/2016-2018.json",
+      "sha256": "7ea0acc64f490565ffb2f36cc0fe847e68cd847dccc41da78291a9540235556b",
+      "years": [
+        2016,
+        2018
+      ]
+    },
+    {
+      "bytes": 1446,
+      "path": "periods/2016-2019.json",
+      "sha256": "620913019330bea0e3ce403e8bdedeaf5778ac64e089903208b32ed355ccd620",
+      "years": [
+        2016,
+        2019
+      ]
+    },
+    {
+      "bytes": 1457,
+      "path": "periods/2016-2020.json",
+      "sha256": "57a667984519c5afd09c6180aa19c5c92f560765c1e9e03f6dafeedb762266c2",
+      "years": [
+        2016,
+        2020
+      ]
+    },
+    {
+      "bytes": 1468,
+      "path": "periods/2016-2021.json",
+      "sha256": "87393ca3cb46326d83edc710d49b72ae39216487f6bab14438081307700e23cf",
+      "years": [
+        2016,
+        2021
+      ]
+    },
+    {
+      "bytes": 1492,
+      "path": "periods/2016-2022.json",
+      "sha256": "46137fa1a417afbb5cf8aa5b837aedc90a04c2b30215db9211e3209bb77b8422",
+      "years": [
+        2016,
+        2022
+      ]
+    },
+    {
+      "bytes": 1508,
+      "path": "periods/2016-2023.json",
+      "sha256": "06c66165035435b737b298007672b31eb43f6c70d38923e8419d2d4edc76c976",
+      "years": [
+        2016,
+        2023
+      ]
+    },
+    {
+      "bytes": 1574,
+      "path": "periods/2016-2024.json",
+      "sha256": "43e285c5e5235829520622355376197222f27b9d98929057d207b39f660b68fd",
+      "years": [
+        2016,
+        2024
+      ]
+    },
+    {
+      "bytes": 1672,
+      "path": "periods/2016-2025.json",
+      "sha256": "d33d93b4fe2c6cc24f9e648e9633bbd2e775da5c2986b7f3dec38f8d9e7cd784",
+      "years": [
+        2016,
+        2025
+      ]
+    },
+    {
+      "bytes": 1318,
+      "path": "periods/2017-2017.json",
+      "sha256": "4f3e2b9e28be5d484f2dfab552185820ee1338349311740e960a9d3923ddf87a",
+      "years": [
+        2017,
+        2017
+      ]
+    },
+    {
+      "bytes": 1504,
+      "path": "periods/2017-2018.json",
+      "sha256": "fc21c700da835d2b4a1f51da5aa66a8dc5e054f36d18436127e6bc7eb23e458c",
+      "years": [
+        2017,
+        2018
+      ]
+    },
+    {
+      "bytes": 1442,
+      "path": "periods/2017-2019.json",
+      "sha256": "c01a6bb63e8089ad262e8c64beca1b2f78de2d223dd9a3f37258572918889112",
+      "years": [
+        2017,
+        2019
+      ]
+    },
+    {
+      "bytes": 1463,
+      "path": "periods/2017-2020.json",
+      "sha256": "74fab2ef80b6c1aa430197f143cba103916e8831a969f2a02729a8f22c689772",
+      "years": [
+        2017,
+        2020
+      ]
+    },
+    {
+      "bytes": 1458,
+      "path": "periods/2017-2021.json",
+      "sha256": "1aec7b51bb88feff3dccdd54a4cbabc37cea9120049ec8a3a89fafa6f8a61c16",
+      "years": [
+        2017,
+        2021
+      ]
+    },
+    {
+      "bytes": 1493,
+      "path": "periods/2017-2022.json",
+      "sha256": "8a43c6c7353e198ee37976199327fa886d26d4097de328ed71d93da1f0b5b5da",
+      "years": [
+        2017,
+        2022
+      ]
+    },
+    {
+      "bytes": 1503,
+      "path": "periods/2017-2023.json",
+      "sha256": "7192170fc2f10b48c62ce2f96d518beef265f3f8c0a0ae8135405c8cc0ba8be5",
+      "years": [
+        2017,
+        2023
+      ]
+    },
+    {
+      "bytes": 1579,
+      "path": "periods/2017-2024.json",
+      "sha256": "b7937a50882092130a50dd2b6b4683d8a546fe50c6528699dbd014086de763c2",
+      "years": [
+        2017,
+        2024
+      ]
+    },
+    {
+      "bytes": 1649,
+      "path": "periods/2017-2025.json",
+      "sha256": "6bbb9af5ee251bce348c08ffb764266f31694b0dd925701ab9c0a5d001dca1a8",
+      "years": [
+        2017,
+        2025
+      ]
+    },
+    {
+      "bytes": 1473,
+      "path": "periods/2018-2018.json",
+      "sha256": "f5c79505ba01a32737212d782a30b4356d7f97c785435b859f2914df646cde69",
+      "years": [
+        2018,
+        2018
+      ]
+    },
+    {
+      "bytes": 1498,
+      "path": "periods/2018-2019.json",
+      "sha256": "8d97d6760597e7150bf952f3e07ef52036684294ebe08058d469b517a7a31ec1",
+      "years": [
+        2018,
+        2019
+      ]
+    },
+    {
+      "bytes": 1423,
+      "path": "periods/2018-2020.json",
+      "sha256": "ec5d3945af016b1e2b554db6fa48d99287191f74b4af4269365bc15e2304e98e",
+      "years": [
+        2018,
+        2020
+      ]
+    },
+    {
+      "bytes": 1448,
+      "path": "periods/2018-2021.json",
+      "sha256": "c9ac9740cdfe8f0e2ed427fcf243ccd5772eaae211bc632daf8669306fab4dab",
+      "years": [
+        2018,
+        2021
+      ]
+    },
+    {
+      "bytes": 1484,
+      "path": "periods/2018-2022.json",
+      "sha256": "b526ccaab044de7b5dffbd5c86fcab182be9d2c316b5bed028e3f153b52ac8a7",
+      "years": [
+        2018,
+        2022
+      ]
+    },
+    {
+      "bytes": 1512,
+      "path": "periods/2018-2023.json",
+      "sha256": "e2a25183a3224d42bcad9987ec4e35d1a24832047e4886557b79600756efba94",
+      "years": [
+        2018,
+        2023
+      ]
+    },
+    {
+      "bytes": 1557,
+      "path": "periods/2018-2024.json",
+      "sha256": "13d918018b0f724e5867a3014b0f5f2aba9fe7d08b036079019ea3fc25d9d08a",
+      "years": [
+        2018,
+        2024
+      ]
+    },
+    {
+      "bytes": 1633,
+      "path": "periods/2018-2025.json",
+      "sha256": "ff834f9bc76ff225ed2762497abdfc3e96a519bf51421d128e086476062c5efb",
+      "years": [
+        2018,
+        2025
+      ]
+    },
+    {
+      "bytes": 1317,
+      "path": "periods/2019-2019.json",
+      "sha256": "1b75359eeb75d8df8dbbe35d0de8f6c9b6eb90ce90dd3c3f4a9c2af06a34f350",
+      "years": [
+        2019,
+        2019
+      ]
+    },
+    {
+      "bytes": 1494,
+      "path": "periods/2019-2020.json",
+      "sha256": "3da3546d44bdd851197abb05f9db3c2b002ce56381b591eb7a18d3be553ce5f3",
+      "years": [
+        2019,
+        2020
+      ]
+    },
+    {
+      "bytes": 1427,
+      "path": "periods/2019-2021.json",
+      "sha256": "884fa297bd7dbed74304db9923a58daafe2b4453829d8c38e0659e41516ad177",
+      "years": [
+        2019,
+        2021
+      ]
+    },
+    {
+      "bytes": 1444,
+      "path": "periods/2019-2022.json",
+      "sha256": "986b6acf03eab6f732d729a84aee777ddc29c44e7c0f4ed86b00f0754c26b330",
+      "years": [
+        2019,
+        2022
+      ]
+    },
+    {
+      "bytes": 1444,
+      "path": "periods/2019-2023.json",
+      "sha256": "031bfe7ff09ce2c3879f7245258651ba86d47b1ac8516ea3064e32a64c79da0f",
+      "years": [
+        2019,
+        2023
+      ]
+    },
+    {
+      "bytes": 1536,
+      "path": "periods/2019-2024.json",
+      "sha256": "cd4b73fc05ef29d40f55a262727a7aa8f47c2477b74c8475cb39ebc13def5b52",
+      "years": [
+        2019,
+        2024
+      ]
+    },
+    {
+      "bytes": 1608,
+      "path": "periods/2019-2025.json",
+      "sha256": "8d53181dfe9d07e23b30cb6d65c264b5a4c43607998f571af454f8be7b385cc8",
+      "years": [
+        2019,
+        2025
+      ]
+    },
+    {
+      "bytes": 1472,
+      "path": "periods/2020-2020.json",
+      "sha256": "213fb04ed6088e752c9571bfae5ecb669c3a30d07aa5628391ac27b4836bfa4e",
+      "years": [
+        2020,
+        2020
+      ]
+    },
+    {
+      "bytes": 1502,
+      "path": "periods/2020-2021.json",
+      "sha256": "4c61807efb1320d536f5f70fcd3e9fd46cb3fa30f0503a6622d96199d805f9d3",
+      "years": [
+        2020,
+        2021
+      ]
+    },
+    {
+      "bytes": 1434,
+      "path": "periods/2020-2022.json",
+      "sha256": "e31a1c54ab96ae47d9c9ed67925179e00624320906731ad1b0d443914bf5dd8a",
+      "years": [
+        2020,
+        2022
+      ]
+    },
+    {
+      "bytes": 1454,
+      "path": "periods/2020-2023.json",
+      "sha256": "73917784ddf0ed4ab8ed76fe694e000419fa273407b8e8d97a71f9dc666b8a1f",
+      "years": [
+        2020,
+        2023
+      ]
+    },
+    {
+      "bytes": 1528,
+      "path": "periods/2020-2024.json",
+      "sha256": "ea506cb2f134fd0e793b8a2e31ba80b5da5abbc93bcddf1d1b4e70ff4b972cde",
+      "years": [
+        2020,
+        2024
+      ]
+    },
+    {
+      "bytes": 1600,
+      "path": "periods/2020-2025.json",
+      "sha256": "b70a108a407d75ab7a8b1d4cee88d1a81ea899e06a35579c80b8b247f408ebb7",
+      "years": [
+        2020,
+        2025
+      ]
+    },
+    {
+      "bytes": 1318,
+      "path": "periods/2021-2021.json",
+      "sha256": "589a38b217286e822f5fda41bd5e931e9c75b126a80d0d5625f34aa26596f695",
+      "years": [
+        2021,
+        2021
+      ]
+    },
+    {
+      "bytes": 1508,
+      "path": "periods/2021-2022.json",
+      "sha256": "c48ebf7d5f2714af3d368cb36c255763c0052d0517d247bc12ed5a6f5277fe6a",
+      "years": [
+        2021,
+        2022
+      ]
+    },
+    {
+      "bytes": 1482,
+      "path": "periods/2021-2023.json",
+      "sha256": "c682f42f7317575af26b4c358ee6b10a2b954be127670ef458d86ea6dd0dc45b",
+      "years": [
+        2021,
+        2023
+      ]
+    },
+    {
+      "bytes": 1594,
+      "path": "periods/2021-2024.json",
+      "sha256": "ec85c48081761075f0a97258de84f60a9342accb7a4f181629a97a4fda9f2f67",
+      "years": [
+        2021,
+        2024
+      ]
+    },
+    {
+      "bytes": 1638,
+      "path": "periods/2021-2025.json",
+      "sha256": "4fbf1a3e00282aca9afcf8487062ad0bf09d5c384b960475508f4c66c95e7c93",
+      "years": [
+        2021,
+        2025
+      ]
+    },
+    {
+      "bytes": 1478,
+      "path": "periods/2022-2022.json",
+      "sha256": "c5113eb621b6a9e63f2b914c63e6c85750010100411280a4a415846775ab9ce4",
+      "years": [
+        2022,
+        2022
+      ]
+    },
+    {
+      "bytes": 1518,
+      "path": "periods/2022-2023.json",
+      "sha256": "37078cb8749be167f3b2ed4ef2989f78113040a67b0db27b8a4cf3f006d4d823",
+      "years": [
+        2022,
+        2023
+      ]
+    },
+    {
+      "bytes": 1559,
+      "path": "periods/2022-2024.json",
+      "sha256": "c9315ae136eaa98ed3dff5a059b317e2a5e0d3c6cee380dca0fee872e6d47081",
+      "years": [
+        2022,
+        2024
+      ]
+    },
+    {
+      "bytes": 1645,
+      "path": "periods/2022-2025.json",
+      "sha256": "e17b2adfc45b4389b9ad69e151d85f3d442fd358b73f15584c91c73c7bdad0aa",
+      "years": [
+        2022,
+        2025
+      ]
+    },
+    {
+      "bytes": 1314,
+      "path": "periods/2023-2023.json",
+      "sha256": "e9a57871372ce7ec16c8d26d917f6611ed7e07ae7d70d7d28909c035066d7df6",
+      "years": [
+        2023,
+        2023
+      ]
+    },
+    {
+      "bytes": 1516,
+      "path": "periods/2023-2024.json",
+      "sha256": "859d64197d858c5aa772711e9156e7ed3d224afc714a8ced3335cf04c54c9773",
+      "years": [
+        2023,
+        2024
+      ]
+    },
+    {
+      "bytes": 1707,
+      "path": "periods/2023-2025.json",
+      "sha256": "8f369aaf981fdede50b583cfeded9e65681eadae11274cc6ed54fe79819474df",
+      "years": [
+        2023,
+        2025
+      ]
+    },
+    {
+      "bytes": 1436,
+      "path": "periods/2024-2024.json",
+      "sha256": "f2daf07da3cefa28d028f6af7ccb517548e9b864d418642ea0b0f0a8031d313b",
+      "years": [
+        2024,
+        2024
+      ]
+    },
+    {
+      "bytes": 1683,
+      "path": "periods/2024-2025.json",
+      "sha256": "4b8e877e0c39903c9a1294c606e447b6dd4d0f8648f3af411b1c90a55dae0eeb",
+      "years": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "bytes": 1628,
+      "path": "periods/2025-2025.json",
+      "sha256": "e8990ba00101c73507c529717f3f273a34b946bd7dcd97240e7daf5b7613256d",
+      "years": [
+        2025,
+        2025
+      ]
+    }
+  ],
+  "region": "malta",
+  "schema_version": "2.0"
+}

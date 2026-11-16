@@ -37,9 +37,19 @@ for (const entry of await readdir(root, { withFileTypes: true })) {
     changed.set(`${entry.name}/${name}`, fingerprint(bytes));
   }
 }
+for (const name of ["methods.json", "regions.json", "world.json"]) {
+  const url = new URL(name, root);
+  let original;
+  try { original = await readFile(url); }
+  catch (error) { if (error.code === "ENOENT") continue; throw error; }
+  const compressed = gzipSync(original, { level: 9 });
+  if (compressed.length >= original.length) continue;
+  await writeFile(url, compressed);
+  changed.set(name, fingerprint(compressed));
+}
 for (const entry of manifest.files) {
   const hash = changed.get(entry.path);
   if (hash) Object.assign(entry, hash);
 }
-await writeFile(new URL("manifest.json", root), JSON.stringify(manifest) + "\n");
+await writeFile(new URL("manifest.json", root), gzipSync(JSON.stringify(manifest) + "\n", { level: 9 }));
 console.log(`Compressed ${changed.size} deployed data files.`);

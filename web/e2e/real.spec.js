@@ -1,11 +1,14 @@
 import { test, expect } from "@playwright/test";
 import { open, watch, seriousAxe, overflowsHorizontally } from "./helpers.js";
 import { readFileSync } from "node:fs";
+import { gunzipSync } from "node:zlib";
 import { fileURLToPath } from "node:url";
 import { fmtNumber } from "../src/lib/format.js";
 
-const readPublished = (path) =>
-  JSON.parse(readFileSync(fileURLToPath(new URL(`../public/data/${path}`, import.meta.url)), "utf8"));
+const readPublished = (path) => {
+  const bytes = readFileSync(fileURLToPath(new URL(`../public/data/${path}`, import.meta.url)));
+  return JSON.parse((bytes[0] === 0x1f && bytes[1] === 0x8b ? gunzipSync(bytes) : bytes).toString("utf8"));
+};
 
 test.describe("published real outputs", () => {
   test("analysis years restore through the URL and keep exact dates separate", async ({ page }) => {

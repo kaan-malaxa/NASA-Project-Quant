@@ -9,6 +9,8 @@ from __future__ import annotations
 import csv
 import hashlib
 import json
+import os
+from concurrent.futures import ProcessPoolExecutor
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -257,7 +259,7 @@ def _check_one(path: Path, rel: str, registry: Registry, schema_dir: Path) -> tu
 
     try:
         doc = load_json_strict(path)
-    except (ValueError, UnicodeDecodeError) as exc:
+    except (ValueError, UnicodeDecodeError, OSError, EOFError) as exc:
         result.errors.append(f"not valid JSON: {exc}")
         return result, None
 
@@ -274,19 +276,50 @@ def _check_one(path: Path, rel: str, registry: Registry, schema_dir: Path) -> tu
     return result, doc
 
 
+_WORKER: dict[str, Any] = {}
+
+
+def _cross_file_doc(rel: str) -> bool:
+    """Only these parsed documents are needed after the per-file pass; the rest are dropped to bound memory."""
+    return rel in ("regions.json", "manifest.json") or rel.endswith(("period_index.json", "spatial_index.json"))
+
+
+def _init_worker(schema_dir: Path) -> None:
+    _WORKER["registry"], _WORKER["schema_dir"] = load_registry(schema_dir), schema_dir
+
+
+def _check_task(item: tuple[str, str]) -> tuple[FileResult, Any]:
+    path, rel = item
+    result, doc = _check_one(Path(path), rel, _WORKER["registry"], _WORKER["schema_dir"])
+    return result, doc if _cross_file_doc(rel) else None
+
+
+def check_workers() -> int:
+    """Parallel per-file validation for large publications (PROMETHEUS_TORCH_CHECK_WORKERS overrides)."""
+    return max(1, int(os.environ.get("PROMETHEUS_TORCH_CHECK_WORKERS", min(16, os.cpu_count() or 1))))
+
+
 def run_check(data_dir: Path, schema_dir: Path = SCHEMA_DIR) -> list[FileResult]:
     """Check every file under data_dir. Returns one result per file, sorted by path."""
     if not data_dir.is_dir():
         return [FileResult(str(data_dir), [f"data folder {data_dir} does not exist"])]
 
-    registry = load_registry(schema_dir)
     results: dict[str, FileResult] = {}
     docs: dict[str, Any] = {}
-    for path in sorted(p for p in data_dir.rglob("*") if p.is_file()):
-        rel = path.relative_to(data_dir).as_posix()
-        if path.name.startswith("."):
-            continue  # .gitkeep and editor files
-        results[rel], docs[rel] = _check_one(path, rel, registry, schema_dir)
+    items = [(str(path), path.relative_to(data_dir).as_posix())
+             for path in sorted(p for p in data_dir.rglob("*") if p.is_file())
+             if not path.name.startswith(".")]  # .gitkeep and editor files
+    workers = check_workers()
+    if workers > 1 and len(items) > 400:
+        with ProcessPoolExecutor(max_workers=workers, initializer=_init_worker, initargs=(schema_dir,)) as pool:
+            checked = list(pool.map(_check_task, items, chunksize=16))
+    else:
+        _init_worker(schema_dir)
+        checked = [_check_task(item) for item in items]
+    for (_, rel), (result, doc) in zip(items, checked):
+        results[rel] = result
+        if doc is not None:
+            docs[rel] = doc
 
     # regions.json: every listed file exists for every region.
     if "regions.json" not in results:

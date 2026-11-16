@@ -177,6 +177,19 @@ def translate(region: str, entry: dict, diag: dict, celldays: pd.DataFrame, cove
     return daily
 
 
+def fast_world(region: str) -> bool:
+    """PROMETHEUS_TORCH_FAST_WORLD=1, or data/fast_world.flag, skips the Tier 2 fit for world countries."""
+    import os
+
+    from pipeline.common import config, paths
+
+    enabled = os.environ.get("PROMETHEUS_TORCH_FAST_WORLD") == "1" or (paths.data_root() / "fast_world.flag").is_file()
+    try:
+        return enabled and config.get_region(region).source == "firms_world"
+    except ValueError:
+        return False
+
+
 def run(region: str, pass_: str, log: logging.Logger) -> tuple[dict, dict]:
     from pipeline.common import provenance
 
@@ -191,7 +204,13 @@ def run(region: str, pass_: str, log: logging.Logger) -> tuple[dict, dict]:
     celldays = compat.read_parquet(cd_path, "celldays")
     coverage = compat.read_parquet(cov_path, "coverage")
 
-    entry, diag = fit_entry(region, celldays, coverage, science, pass_, log)
+    if fast_world(region):
+        # Reduced-quality fast mode (world countries only): the Tier 2 cross-check is not fitted and is
+        # published as absent; Tier 1 harmonization and every statistic are unaffected.
+        entry = absent_entry(region, len(celldays))
+        diag = {"reason": "fast mode: Tier 2 cross-check not run for this world country"}
+    else:
+        entry, diag = fit_entry(region, celldays, coverage, science, pass_, log)
     out = compat.eyesight_dir(region)
     if entry["status"] != "absent":
         diag["daily_t2"] = translate(region, entry, diag, celldays, coverage, science, pass_, log)

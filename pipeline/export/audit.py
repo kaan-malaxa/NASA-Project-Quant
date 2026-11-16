@@ -183,7 +183,9 @@ def build_audit(read: Loader) -> str:
 def dir_loader(data_dir: Path) -> Loader:
     def load(rel: str) -> Any:
         path = data_dir.joinpath(*rel.split("/"))
-        return json.loads(path.read_text(encoding="utf-8")) if path.is_file() else None
+        from pipeline.common.io import read_json
+
+        return read_json(path) if path.is_file() else None
     return load
 
 

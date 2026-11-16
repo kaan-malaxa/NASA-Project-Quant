@@ -21,7 +21,7 @@ describe("world country source browser", () => {
     expect(within(table).getByRole("rowheader", { name: "2025" })).toBeTruthy();
     expect(within(table).getByText("3")).toBeTruthy();
     expect(within(table).getByRole("link").getAttribute("href")).toBe(example.countries[0].records[0].url);
-    expect(screen.getByText("Calibrated analysis is pending for this country.")).toBeTruthy();
+    expect(screen.getByText("Calibrated analysis is unavailable for this country.")).toBeTruthy();
     expect(screen.queryByRole("link", { name: /Open analysis/ })).toBeNull();
   });
 

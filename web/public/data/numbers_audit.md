@@ -2,7 +2,7 @@
 
 Every headline number on the site, with the file and JSON Pointer it comes from. No number may appear in the pitch, slides, README or video unless it is on this list. Values are copied exactly from the files; sentences are quoted exactly.
 
-Built from code_version 1bb5e8f4, 4389fe3d, 5c7271a5.
+Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d.
 
 ## United States (`us`)
 
@@ -148,6 +148,5016 @@ Built from code_version 1bb5e8f4, 4389fe3d, 5c7271a5.
 - eyesight param c_lo: 0.799  methods.json#/eyesight/1/params/c_lo
 - eyesight g: 1.125  methods.json#/eyesight/1/g
 
+## Afghanistan (`afghanistan`)
+
+- jump multiple (value): 5.796  afghanistan/ruler.json#/jump_multiple/value
+- jump multiple (lo): 4.616  afghanistan/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 13.725  afghanistan/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  afghanistan/ruler.json#/jump_multiple/years
+- ruler sentence: "In Afghanistan, VIIRS reports about 5.8 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  afghanistan/ruler.json#/sentence
+- harmonized trend pct_per_decade: -59.608  afghanistan/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -83.788  afghanistan/trend.json#/harmonized/lo
+- harmonized trend hi: -35.662  afghanistan/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  afghanistan/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 46.058  afghanistan/trend.json#/naive/pct_per_decade
+- naive trend lo: 16.621  afghanistan/trend.json#/naive/lo
+- naive trend hi: 104.774  afghanistan/trend.json#/naive/hi
+- naive trend direction: "rising"  afghanistan/trend.json#/naive/direction
+- trend years: [2003, 2025]  afghanistan/trend.json#/years
+- verdict sentence_id: "artifact_falling"  afghanistan/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 60% per decade (-84 to -36)."  afghanistan/trend.json#/sentence
+- critical weeks: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 23, 24, 26, 27, 31, 35, 36, 37, 38, 39, 40, 41, 42, 43, 47, 48, 49, 50, 51, 52]  afghanistan/season.json#/critical_weeks
+- window w1 label: "mid-November to mid-March"  afghanistan/season.json#/windows/0/label
+- window w1 start_week: 47  afghanistan/season.json#/windows/0/start_week
+- window w1 peak_week: 9  afghanistan/season.json#/windows/0/peak_week
+- window w1 end_week: 11  afghanistan/season.json#/windows/0/end_week
+- window w1 share: 0.504  afghanistan/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 0.0  afghanistan/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -16.667  afghanistan/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 25.0  afghanistan/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the mid-November to mid-March season."  afghanistan/season.json#/windows/0/sentence
+- window w2 label: "late-August to late-October"  afghanistan/season.json#/windows/1/label
+- window w2 start_week: 35  afghanistan/season.json#/windows/1/start_week
+- window w2 peak_week: 36  afghanistan/season.json#/windows/1/peak_week
+- window w2 end_week: 43  afghanistan/season.json#/windows/1/end_week
+- window w2 share: 0.205  afghanistan/season.json#/windows/1/share
+- window w2 start shift days per decade (value): 0.909  afghanistan/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -11.667  afghanistan/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): 20.0  afghanistan/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "No clear shift in the timing of the late-August to late-October season."  afghanistan/season.json#/windows/1/sentence
+- this week value: null  afghanistan/nowcast.json#/value
+- this week lo: null  afghanistan/nowcast.json#/lo
+- this week hi: null  afghanistan/nowcast.json#/hi
+- this week percentile: null  afghanistan/nowcast.json#/percentile
+- this week status: "unavailable"  afghanistan/nowcast.json#/status
+- this week as_of: null  afghanistan/nowcast.json#/as_of
+- this week window start: null  afghanistan/nowcast.json#/window/start
+- this week window end: null  afghanistan/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  afghanistan/nowcast.json#/baseline_years
+- month to date value: null  afghanistan/nowcast.json#/month_to_date/value
+- month to date median: null  afghanistan/nowcast.json#/month_to_date/median
+- month to date ratio: null  afghanistan/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  afghanistan/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  afghanistan/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.835  methods.json#/validation/36/value
+- LOYO weekly WAPE baseline annual_ratio: 0.845  methods.json#/validation/36/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 4.233  methods.json#/validation/36/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/36/years
+- LOYO weekly WAPE (tier2): 0.828  methods.json#/validation/51/value
+- LOYO years: [2013, 2022]  methods.json#/validation/51/years
+- reliability_err (tier2): 0.023  methods.json#/validation/49/value
+- reliability_year_absolute_err (tier2): 0.293  methods.json#/validation/50/value
+- t1_t2_wape (tier2): 0.432  methods.json#/validation/53/value
+- eyesight status: "validated"  methods.json#/eyesight/2/status
+- eyesight param a: -4.506  methods.json#/eyesight/2/params/a
+- eyesight param a_hi: -4.032  methods.json#/eyesight/2/params/a_hi
+- eyesight param a_lo: -4.778  methods.json#/eyesight/2/params/a_lo
+- eyesight param b: 2.122  methods.json#/eyesight/2/params/b
+- eyesight param b_hi: 2.595  methods.json#/eyesight/2/params/b_hi
+- eyesight param b_lo: 1.854  methods.json#/eyesight/2/params/b_lo
+- eyesight param c: 0.854  methods.json#/eyesight/2/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/2/params/c_hi
+- eyesight param c_lo: 0.353  methods.json#/eyesight/2/params/c_lo
+- eyesight g: 2.296  methods.json#/eyesight/2/g
+
+## Albania (`albania`)
+
+- jump multiple (value): 4.106  albania/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.333  albania/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 5.103  albania/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  albania/ruler.json#/jump_multiple/years
+- ruler sentence: "In Albania, VIIRS reports about 4.1 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  albania/ruler.json#/sentence
+- harmonized trend pct_per_decade: -3.157  albania/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -47.894  albania/trend.json#/harmonized/lo
+- harmonized trend hi: 26.102  albania/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  albania/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 82.751  albania/trend.json#/naive/pct_per_decade
+- naive trend lo: 37.935  albania/trend.json#/naive/lo
+- naive trend hi: 155.088  albania/trend.json#/naive/hi
+- naive trend direction: "rising"  albania/trend.json#/naive/direction
+- trend years: [2003, 2025]  albania/trend.json#/years
+- verdict sentence_id: "artifact_flat"  albania/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 83% per decade. After correcting for the sensor change, there is no clear change (-48 to 26% per decade)."  albania/trend.json#/sentence
+- critical weeks: [28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38]  albania/season.json#/critical_weeks
+- window w1 label: "early-July to late-September"  albania/season.json#/windows/0/label
+- window w1 start_week: 28  albania/season.json#/windows/0/start_week
+- window w1 peak_week: 34  albania/season.json#/windows/0/peak_week
+- window w1 end_week: 38  albania/season.json#/windows/0/end_week
+- window w1 share: 0.811  albania/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 1.875  albania/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -4.286  albania/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 7.874  albania/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-July to late-September season."  albania/season.json#/windows/0/sentence
+- this week value: null  albania/nowcast.json#/value
+- this week lo: null  albania/nowcast.json#/lo
+- this week hi: null  albania/nowcast.json#/hi
+- this week percentile: null  albania/nowcast.json#/percentile
+- this week status: "unavailable"  albania/nowcast.json#/status
+- this week as_of: null  albania/nowcast.json#/as_of
+- this week window start: null  albania/nowcast.json#/window/start
+- this week window end: null  albania/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  albania/nowcast.json#/baseline_years
+- month to date value: null  albania/nowcast.json#/month_to_date/value
+- month to date median: null  albania/nowcast.json#/month_to_date/median
+- month to date ratio: null  albania/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  albania/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  albania/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.464  methods.json#/validation/54/value
+- LOYO weekly WAPE baseline annual_ratio: 0.498  methods.json#/validation/54/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.82  methods.json#/validation/54/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/54/years
+- LOYO weekly WAPE (tier2): 0.333  methods.json#/validation/69/value
+- LOYO years: [2013, 2022]  methods.json#/validation/69/years
+- reliability_err (tier2): 0.006  methods.json#/validation/67/value
+- reliability_year_absolute_err (tier2): 0.096  methods.json#/validation/68/value
+- t1_t2_wape (tier2): 0.354  methods.json#/validation/71/value
+- eyesight status: "validated"  methods.json#/eyesight/3/status
+- eyesight param a: -4.372  methods.json#/eyesight/3/params/a
+- eyesight param a_hi: -4.189  methods.json#/eyesight/3/params/a_hi
+- eyesight param a_lo: -4.635  methods.json#/eyesight/3/params/a_lo
+- eyesight param b: 2.871  methods.json#/eyesight/3/params/b
+- eyesight param b_hi: 3.188  methods.json#/eyesight/3/params/b_hi
+- eyesight param b_lo: 2.67  methods.json#/eyesight/3/params/b_lo
+- eyesight param c: 0.908  methods.json#/eyesight/3/params/c
+- eyesight param c_hi: 0.985  methods.json#/eyesight/3/params/c_hi
+- eyesight param c_lo: 0.796  methods.json#/eyesight/3/params/c_lo
+- eyesight g: 1.504  methods.json#/eyesight/3/g
+
+## Algeria (`algeria`)
+
+- jump multiple (value): 5.336  algeria/ruler.json#/jump_multiple/value
+- jump multiple (lo): 4.404  algeria/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 11.129  algeria/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  algeria/ruler.json#/jump_multiple/years
+- ruler sentence: "In Algeria, VIIRS reports about 5.3 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  algeria/ruler.json#/sentence
+- harmonized trend pct_per_decade: -33.329  algeria/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -53.26  algeria/trend.json#/harmonized/lo
+- harmonized trend hi: -7.939  algeria/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  algeria/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 45.621  algeria/trend.json#/naive/pct_per_decade
+- naive trend lo: 15.619  algeria/trend.json#/naive/lo
+- naive trend hi: 146.905  algeria/trend.json#/naive/hi
+- naive trend direction: "rising"  algeria/trend.json#/naive/direction
+- trend years: [2003, 2025]  algeria/trend.json#/years
+- verdict sentence_id: "unclear"  algeria/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (-53 to -8% per decade)."  algeria/trend.json#/sentence
+- critical weeks: [26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39]  algeria/season.json#/critical_weeks
+- window w1 label: "late-June to late-September"  algeria/season.json#/windows/0/label
+- window w1 start_week: 26  algeria/season.json#/windows/0/start_week
+- window w1 peak_week: 32  algeria/season.json#/windows/0/peak_week
+- window w1 end_week: 39  algeria/season.json#/windows/0/end_week
+- window w1 share: 0.8  algeria/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -10.0  algeria/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -12.222  algeria/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): -4.0  algeria/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "The late-June to late-September season now starts about 10 days earlier per decade (-12 to -4)."  algeria/season.json#/windows/0/sentence
+- this week value: null  algeria/nowcast.json#/value
+- this week lo: null  algeria/nowcast.json#/lo
+- this week hi: null  algeria/nowcast.json#/hi
+- this week percentile: null  algeria/nowcast.json#/percentile
+- this week status: "unavailable"  algeria/nowcast.json#/status
+- this week as_of: null  algeria/nowcast.json#/as_of
+- this week window start: null  algeria/nowcast.json#/window/start
+- this week window end: null  algeria/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  algeria/nowcast.json#/baseline_years
+- month to date value: null  algeria/nowcast.json#/month_to_date/value
+- month to date median: null  algeria/nowcast.json#/month_to_date/median
+- month to date ratio: null  algeria/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  algeria/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  algeria/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.406  methods.json#/validation/72/value
+- LOYO weekly WAPE baseline annual_ratio: 0.745  methods.json#/validation/72/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 4.586  methods.json#/validation/72/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/72/years
+- LOYO weekly WAPE (tier2): 0.366  methods.json#/validation/87/value
+- LOYO years: [2013, 2022]  methods.json#/validation/87/years
+- reliability_err (tier2): 0.004  methods.json#/validation/85/value
+- reliability_year_absolute_err (tier2): 0.174  methods.json#/validation/86/value
+- t1_t2_wape (tier2): 0.367  methods.json#/validation/89/value
+- eyesight status: "validated"  methods.json#/eyesight/4/status
+- eyesight param a: -5.303  methods.json#/eyesight/4/params/a
+- eyesight param a_hi: -4.944  methods.json#/eyesight/4/params/a_hi
+- eyesight param a_lo: -5.699  methods.json#/eyesight/4/params/a_lo
+- eyesight param b: 2.719  methods.json#/eyesight/4/params/b
+- eyesight param b_hi: 2.927  methods.json#/eyesight/4/params/b_hi
+- eyesight param b_lo: 2.524  methods.json#/eyesight/4/params/b_lo
+- eyesight param c: 0.956  methods.json#/eyesight/4/params/c
+- eyesight param c_hi: 0.989  methods.json#/eyesight/4/params/c_hi
+- eyesight param c_lo: 0.918  methods.json#/eyesight/4/params/c_lo
+- eyesight g: 1.597  methods.json#/eyesight/4/g
+
+## Angola (`angola`)
+
+- jump multiple (value): 3.466  angola/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.358  angola/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 3.703  angola/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  angola/ruler.json#/jump_multiple/years
+- ruler sentence: "In Angola, VIIRS reports about 3.5 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  angola/ruler.json#/sentence
+- harmonized trend pct_per_decade: 1.772  angola/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -1.777  angola/trend.json#/harmonized/lo
+- harmonized trend hi: 6.715  angola/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  angola/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 42.994  angola/trend.json#/naive/pct_per_decade
+- naive trend lo: 19.05  angola/trend.json#/naive/lo
+- naive trend hi: 139.589  angola/trend.json#/naive/hi
+- naive trend direction: "rising"  angola/trend.json#/naive/direction
+- trend years: [2003, 2025]  angola/trend.json#/years
+- verdict sentence_id: "artifact_flat"  angola/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 43% per decade. After correcting for the sensor change, there is no clear change (-2 to 7% per decade)."  angola/trend.json#/sentence
+- critical weeks: [23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37]  angola/season.json#/critical_weeks
+- window w1 label: "early-June to mid-September"  angola/season.json#/windows/0/label
+- window w1 start_week: 23  angola/season.json#/windows/0/start_week
+- window w1 peak_week: 29  angola/season.json#/windows/0/peak_week
+- window w1 end_week: 37  angola/season.json#/windows/0/end_week
+- window w1 share: 0.816  angola/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 4.0  angola/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): 0.833  angola/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 6.667  angola/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "The early-June to mid-September season now starts about 4 days later per decade (1 to 7)."  angola/season.json#/windows/0/sentence
+- this week value: null  angola/nowcast.json#/value
+- this week lo: null  angola/nowcast.json#/lo
+- this week hi: null  angola/nowcast.json#/hi
+- this week percentile: null  angola/nowcast.json#/percentile
+- this week status: "unavailable"  angola/nowcast.json#/status
+- this week as_of: null  angola/nowcast.json#/as_of
+- this week window start: null  angola/nowcast.json#/window/start
+- this week window end: null  angola/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  angola/nowcast.json#/baseline_years
+- month to date value: null  angola/nowcast.json#/month_to_date/value
+- month to date median: null  angola/nowcast.json#/month_to_date/median
+- month to date ratio: null  angola/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  angola/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  angola/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.068  methods.json#/validation/90/value
+- LOYO weekly WAPE baseline annual_ratio: 0.127  methods.json#/validation/90/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.616  methods.json#/validation/90/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/90/years
+- LOYO weekly WAPE (tier2): 0.103  methods.json#/validation/105/value
+- LOYO years: [2013, 2022]  methods.json#/validation/105/years
+- reliability_err (tier2): 0.0  methods.json#/validation/103/value
+- reliability_year_absolute_err (tier2): 0.024  methods.json#/validation/104/value
+- t1_t2_wape (tier2): 0.094  methods.json#/validation/107/value
+- eyesight status: "exploratory"  methods.json#/eyesight/5/status
+- eyesight param a: -3.055  methods.json#/eyesight/5/params/a
+- eyesight param a_hi: -3.037  methods.json#/eyesight/5/params/a_hi
+- eyesight param a_lo: -3.077  methods.json#/eyesight/5/params/a_lo
+- eyesight param b: 1.978  methods.json#/eyesight/5/params/b
+- eyesight param b_hi: 1.995  methods.json#/eyesight/5/params/b_hi
+- eyesight param b_lo: 1.962  methods.json#/eyesight/5/params/b_lo
+- eyesight param c: 0.803  methods.json#/eyesight/5/params/c
+- eyesight param c_hi: 0.809  methods.json#/eyesight/5/params/c_hi
+- eyesight param c_lo: 0.797  methods.json#/eyesight/5/params/c_lo
+- eyesight g: 1.403  methods.json#/eyesight/5/g
+
+## Armenia (`armenia`)
+
+- jump multiple (value): 4.372  armenia/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.627  armenia/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 7.3  armenia/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  armenia/ruler.json#/jump_multiple/years
+- ruler sentence: "In Armenia, VIIRS reports about 4.4 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  armenia/ruler.json#/sentence
+- harmonized trend pct_per_decade: 12.179  armenia/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -20.526  armenia/trend.json#/harmonized/lo
+- harmonized trend hi: 49.112  armenia/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  armenia/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 74.822  armenia/trend.json#/naive/pct_per_decade
+- naive trend lo: 40.12  armenia/trend.json#/naive/lo
+- naive trend hi: 142.497  armenia/trend.json#/naive/hi
+- naive trend direction: "rising"  armenia/trend.json#/naive/direction
+- trend years: [2003, 2025]  armenia/trend.json#/years
+- verdict sentence_id: "unclear"  armenia/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (-21 to 49% per decade)."  armenia/trend.json#/sentence
+- critical weeks: [8, 9, 10, 11, 12, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47]  armenia/season.json#/critical_weeks
+- window w1 label: "mid-August to late-November"  armenia/season.json#/windows/0/label
+- window w1 start_week: 33  armenia/season.json#/windows/0/start_week
+- window w1 peak_week: 45  armenia/season.json#/windows/0/peak_week
+- window w1 end_week: 47  armenia/season.json#/windows/0/end_week
+- window w1 share: 0.668  armenia/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 6.0  armenia/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): 1.994  armenia/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 17.143  armenia/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "The mid-August to late-November season now starts about 6 days later per decade (2 to 17)."  armenia/season.json#/windows/0/sentence
+- this week value: null  armenia/nowcast.json#/value
+- this week lo: null  armenia/nowcast.json#/lo
+- this week hi: null  armenia/nowcast.json#/hi
+- this week percentile: null  armenia/nowcast.json#/percentile
+- this week status: "unavailable"  armenia/nowcast.json#/status
+- this week as_of: null  armenia/nowcast.json#/as_of
+- this week window start: null  armenia/nowcast.json#/window/start
+- this week window end: null  armenia/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  armenia/nowcast.json#/baseline_years
+- month to date value: null  armenia/nowcast.json#/month_to_date/value
+- month to date median: null  armenia/nowcast.json#/month_to_date/median
+- month to date ratio: null  armenia/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  armenia/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  armenia/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.527  methods.json#/validation/108/value
+- LOYO weekly WAPE baseline annual_ratio: 0.573  methods.json#/validation/108/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.591  methods.json#/validation/108/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/108/years
+- LOYO weekly WAPE (tier2): 0.517  methods.json#/validation/123/value
+- LOYO years: [2013, 2022]  methods.json#/validation/123/years
+- reliability_err (tier2): 0.005  methods.json#/validation/121/value
+- reliability_year_absolute_err (tier2): 0.165  methods.json#/validation/122/value
+- t1_t2_wape (tier2): 0.34  methods.json#/validation/125/value
+- eyesight status: "validated"  methods.json#/eyesight/6/status
+- eyesight param a: -4.336  methods.json#/eyesight/6/params/a
+- eyesight param a_hi: -4.122  methods.json#/eyesight/6/params/a_hi
+- eyesight param a_lo: -4.58  methods.json#/eyesight/6/params/a_lo
+- eyesight param b: 2.33  methods.json#/eyesight/6/params/b
+- eyesight param b_hi: 2.515  methods.json#/eyesight/6/params/b_hi
+- eyesight param b_lo: 2.145  methods.json#/eyesight/6/params/b_lo
+- eyesight param c: 1.0  methods.json#/eyesight/6/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/6/params/c_hi
+- eyesight param c_lo: 0.989  methods.json#/eyesight/6/params/c_lo
+- eyesight g: 1.724  methods.json#/eyesight/6/g
+
+## Austria (`austria`)
+
+- jump multiple (value): 4.867  austria/ruler.json#/jump_multiple/value
+- jump multiple (lo): 2.612  austria/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 15.286  austria/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  austria/ruler.json#/jump_multiple/years
+- ruler sentence: "In Austria, VIIRS reports about 4.9 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  austria/ruler.json#/sentence
+- harmonized trend pct_per_decade: -61.23  austria/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -105.263  austria/trend.json#/harmonized/lo
+- harmonized trend hi: -40.989  austria/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  austria/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 57.692  austria/trend.json#/naive/pct_per_decade
+- naive trend lo: 34.782  austria/trend.json#/naive/lo
+- naive trend hi: 82.569  austria/trend.json#/naive/hi
+- naive trend direction: "rising"  austria/trend.json#/naive/direction
+- trend years: [2003, 2025]  austria/trend.json#/years
+- verdict sentence_id: "artifact_falling"  austria/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 61% per decade (-105 to -41)."  austria/trend.json#/sentence
+- critical weeks: [25, 26, 27, 31, 32, 33, 34, 35, 36]  austria/season.json#/critical_weeks
+- window w1 label: "late-July to early-September"  austria/season.json#/windows/0/label
+- window w1 start_week: 31  austria/season.json#/windows/0/start_week
+- window w1 peak_week: 35  austria/season.json#/windows/0/peak_week
+- window w1 end_week: 36  austria/season.json#/windows/0/end_week
+- window w1 share: 0.613  austria/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -37.083  austria/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -160.0  austria/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 30.0  austria/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the late-July to early-September season."  austria/season.json#/windows/0/sentence
+- window w2 label: "mid-June to early-July"  austria/season.json#/windows/1/label
+- window w2 start_week: 25  austria/season.json#/windows/1/start_week
+- window w2 peak_week: 27  austria/season.json#/windows/1/peak_week
+- window w2 end_week: 27  austria/season.json#/windows/1/end_week
+- window w2 share: 0.211  austria/season.json#/windows/1/share
+- window w2 start shift days per decade (value): null  austria/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): null  austria/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): null  austria/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "Timing shift unavailable: fewer than three valid annual observations."  austria/season.json#/windows/1/sentence
+- this week value: null  austria/nowcast.json#/value
+- this week lo: null  austria/nowcast.json#/lo
+- this week hi: null  austria/nowcast.json#/hi
+- this week percentile: null  austria/nowcast.json#/percentile
+- this week status: "unavailable"  austria/nowcast.json#/status
+- this week as_of: null  austria/nowcast.json#/as_of
+- this week window start: null  austria/nowcast.json#/window/start
+- this week window end: null  austria/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  austria/nowcast.json#/baseline_years
+- month to date value: null  austria/nowcast.json#/month_to_date/value
+- month to date median: null  austria/nowcast.json#/month_to_date/median
+- month to date ratio: null  austria/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  austria/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  austria/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.31  methods.json#/validation/126/value
+- LOYO weekly WAPE baseline annual_ratio: 1.323  methods.json#/validation/126/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.376  methods.json#/validation/126/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/126/years
+- eyesight status: "absent"  methods.json#/eyesight/7/status
+
+## Azerbaijan (`azerbaijan`)
+
+- jump multiple (value): 3.796  azerbaijan/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.327  azerbaijan/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 4.425  azerbaijan/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  azerbaijan/ruler.json#/jump_multiple/years
+- ruler sentence: "In Azerbaijan, VIIRS reports about 3.8 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  azerbaijan/ruler.json#/sentence
+- harmonized trend pct_per_decade: -12.891  azerbaijan/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -29.839  azerbaijan/trend.json#/harmonized/lo
+- harmonized trend hi: -0.487  azerbaijan/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  azerbaijan/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 44.178  azerbaijan/trend.json#/naive/pct_per_decade
+- naive trend lo: 13.686  azerbaijan/trend.json#/naive/lo
+- naive trend hi: 111.467  azerbaijan/trend.json#/naive/hi
+- naive trend direction: "rising"  azerbaijan/trend.json#/naive/direction
+- trend years: [2003, 2025]  azerbaijan/trend.json#/years
+- verdict sentence_id: "unclear"  azerbaijan/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (-30 to 0% per decade)."  azerbaijan/trend.json#/sentence
+- critical weeks: [7, 8, 9, 10, 11, 12, 13, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39]  azerbaijan/season.json#/critical_weeks
+- window w1 label: "mid-June to late-September"  azerbaijan/season.json#/windows/0/label
+- window w1 start_week: 25  azerbaijan/season.json#/windows/0/start_week
+- window w1 peak_week: 32  azerbaijan/season.json#/windows/0/peak_week
+- window w1 end_week: 39  azerbaijan/season.json#/windows/0/end_week
+- window w1 share: 0.637  azerbaijan/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -6.667  azerbaijan/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -13.158  azerbaijan/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): -2.946  azerbaijan/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "The mid-June to late-September season now starts about 7 days earlier per decade (-13 to -3)."  azerbaijan/season.json#/windows/0/sentence
+- window w2 label: "mid-February to early-April"  azerbaijan/season.json#/windows/1/label
+- window w2 start_week: 7  azerbaijan/season.json#/windows/1/start_week
+- window w2 peak_week: 10  azerbaijan/season.json#/windows/1/peak_week
+- window w2 end_week: 13  azerbaijan/season.json#/windows/1/end_week
+- window w2 share: 0.168  azerbaijan/season.json#/windows/1/share
+- window w2 start shift days per decade (value): -1.875  azerbaijan/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -10.0  azerbaijan/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): 5.0  azerbaijan/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "No clear shift in the timing of the mid-February to early-April season."  azerbaijan/season.json#/windows/1/sentence
+- this week value: null  azerbaijan/nowcast.json#/value
+- this week lo: null  azerbaijan/nowcast.json#/lo
+- this week hi: null  azerbaijan/nowcast.json#/hi
+- this week percentile: null  azerbaijan/nowcast.json#/percentile
+- this week status: "unavailable"  azerbaijan/nowcast.json#/status
+- this week as_of: null  azerbaijan/nowcast.json#/as_of
+- this week window start: null  azerbaijan/nowcast.json#/window/start
+- this week window end: null  azerbaijan/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  azerbaijan/nowcast.json#/baseline_years
+- month to date value: null  azerbaijan/nowcast.json#/month_to_date/value
+- month to date median: null  azerbaijan/nowcast.json#/month_to_date/median
+- month to date ratio: null  azerbaijan/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  azerbaijan/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  azerbaijan/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.343  methods.json#/validation/139/value
+- LOYO weekly WAPE baseline annual_ratio: 0.35  methods.json#/validation/139/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.985  methods.json#/validation/139/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/139/years
+- LOYO weekly WAPE (tier2): 0.377  methods.json#/validation/154/value
+- LOYO years: [2013, 2022]  methods.json#/validation/154/years
+- reliability_err (tier2): 0.002  methods.json#/validation/152/value
+- reliability_year_absolute_err (tier2): 0.047  methods.json#/validation/153/value
+- t1_t2_wape (tier2): 0.348  methods.json#/validation/156/value
+- eyesight status: "validated"  methods.json#/eyesight/8/status
+- eyesight param a: -4.15  methods.json#/eyesight/8/params/a
+- eyesight param a_hi: -3.986  methods.json#/eyesight/8/params/a_hi
+- eyesight param a_lo: -4.277  methods.json#/eyesight/8/params/a_lo
+- eyesight param b: 2.168  methods.json#/eyesight/8/params/b
+- eyesight param b_hi: 2.339  methods.json#/eyesight/8/params/b_hi
+- eyesight param b_lo: 2.06  methods.json#/eyesight/8/params/b_lo
+- eyesight param c: 0.994  methods.json#/eyesight/8/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/8/params/c_hi
+- eyesight param c_lo: 0.848  methods.json#/eyesight/8/params/c_lo
+- eyesight g: 1.786  methods.json#/eyesight/8/g
+
+## The Bahamas (`bahamas`)
+
+- jump multiple (value): 5.692  bahamas/ruler.json#/jump_multiple/value
+- jump multiple (lo): 4.383  bahamas/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 7.866  bahamas/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  bahamas/ruler.json#/jump_multiple/years
+- ruler sentence: "In The Bahamas, VIIRS reports about 5.7 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  bahamas/ruler.json#/sentence
+- harmonized trend pct_per_decade: -0.195  bahamas/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -31.746  bahamas/trend.json#/harmonized/lo
+- harmonized trend hi: 36.364  bahamas/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  bahamas/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 93.207  bahamas/trend.json#/naive/pct_per_decade
+- naive trend lo: 49.152  bahamas/trend.json#/naive/lo
+- naive trend hi: 156.203  bahamas/trend.json#/naive/hi
+- naive trend direction: "rising"  bahamas/trend.json#/naive/direction
+- trend years: [2003, 2025]  bahamas/trend.json#/years
+- verdict sentence_id: "artifact_flat"  bahamas/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 93% per decade. After correcting for the sensor change, there is no clear change (-32 to 36% per decade)."  bahamas/trend.json#/sentence
+- critical weeks: [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]  bahamas/season.json#/critical_weeks
+- window w1 label: "late-February to mid-May"  bahamas/season.json#/windows/0/label
+- window w1 start_week: 9  bahamas/season.json#/windows/0/start_week
+- window w1 peak_week: 14  bahamas/season.json#/windows/0/peak_week
+- window w1 end_week: 19  bahamas/season.json#/windows/0/end_week
+- window w1 share: 0.834  bahamas/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -2.308  bahamas/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -13.333  bahamas/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 5.556  bahamas/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the late-February to mid-May season."  bahamas/season.json#/windows/0/sentence
+- this week value: null  bahamas/nowcast.json#/value
+- this week lo: null  bahamas/nowcast.json#/lo
+- this week hi: null  bahamas/nowcast.json#/hi
+- this week percentile: null  bahamas/nowcast.json#/percentile
+- this week status: "unavailable"  bahamas/nowcast.json#/status
+- this week as_of: null  bahamas/nowcast.json#/as_of
+- this week window start: null  bahamas/nowcast.json#/window/start
+- this week window end: null  bahamas/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  bahamas/nowcast.json#/baseline_years
+- month to date value: null  bahamas/nowcast.json#/month_to_date/value
+- month to date median: null  bahamas/nowcast.json#/month_to_date/median
+- month to date ratio: null  bahamas/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  bahamas/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  bahamas/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.502  methods.json#/validation/157/value
+- LOYO weekly WAPE baseline annual_ratio: 0.517  methods.json#/validation/157/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.465  methods.json#/validation/157/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/157/years
+- LOYO weekly WAPE (tier2): 0.451  methods.json#/validation/172/value
+- LOYO years: [2013, 2022]  methods.json#/validation/172/years
+- reliability_err (tier2): 0.0  methods.json#/validation/170/value
+- reliability_year_absolute_err (tier2): 0.045  methods.json#/validation/171/value
+- t1_t2_wape (tier2): 0.225  methods.json#/validation/174/value
+- eyesight status: "validated"  methods.json#/eyesight/9/status
+- eyesight param a: -3.225  methods.json#/eyesight/9/params/a
+- eyesight param a_hi: -3.057  methods.json#/eyesight/9/params/a_hi
+- eyesight param a_lo: -3.496  methods.json#/eyesight/9/params/a_lo
+- eyesight param b: 2.21  methods.json#/eyesight/9/params/b
+- eyesight param b_hi: 2.714  methods.json#/eyesight/9/params/b_hi
+- eyesight param b_lo: 1.751  methods.json#/eyesight/9/params/b_lo
+- eyesight param c: 0.598  methods.json#/eyesight/9/params/c
+- eyesight param c_hi: 0.762  methods.json#/eyesight/9/params/c_hi
+- eyesight param c_lo: 0.496  methods.json#/eyesight/9/params/c_lo
+- eyesight g: 1.355  methods.json#/eyesight/9/g
+
+## Bahrain (`bahrain`)
+
+- jump multiple (value): 54.572  bahrain/ruler.json#/jump_multiple/value
+- jump multiple (lo): 15.417  bahrain/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 419.0  bahrain/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  bahrain/ruler.json#/jump_multiple/years
+- ruler sentence: "In Bahrain, VIIRS reports about 54.6 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  bahrain/ruler.json#/sentence
+- harmonized trend pct_per_decade: null  bahrain/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: null  bahrain/trend.json#/harmonized/lo
+- harmonized trend hi: null  bahrain/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  bahrain/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 97.838  bahrain/trend.json#/naive/pct_per_decade
+- naive trend lo: 57.525  bahrain/trend.json#/naive/lo
+- naive trend hi: 3233.333  bahrain/trend.json#/naive/hi
+- naive trend direction: "rising"  bahrain/trend.json#/naive/direction
+- trend years: [2003, 2025]  bahrain/trend.json#/years
+- verdict sentence_id: "unclear"  bahrain/trend.json#/sentence_id
+- verdict sentence: "Trend unavailable: the median annual activity is zero."  bahrain/trend.json#/sentence
+- critical weeks: []  bahrain/season.json#/critical_weeks
+- this week value: null  bahrain/nowcast.json#/value
+- this week lo: null  bahrain/nowcast.json#/lo
+- this week hi: null  bahrain/nowcast.json#/hi
+- this week percentile: null  bahrain/nowcast.json#/percentile
+- this week status: "unavailable"  bahrain/nowcast.json#/status
+- this week as_of: null  bahrain/nowcast.json#/as_of
+- this week window start: null  bahrain/nowcast.json#/window/start
+- this week window end: null  bahrain/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  bahrain/nowcast.json#/baseline_years
+- month to date value: null  bahrain/nowcast.json#/month_to_date/value
+- month to date median: null  bahrain/nowcast.json#/month_to_date/median
+- month to date ratio: null  bahrain/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  bahrain/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  bahrain/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 2.011  methods.json#/validation/175/value
+- LOYO weekly WAPE baseline annual_ratio: 2.076  methods.json#/validation/175/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 188.622  methods.json#/validation/175/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/175/years
+- eyesight status: "absent"  methods.json#/eyesight/10/status
+
+## Bangladesh (`bangladesh`)
+
+- jump multiple (value): 4.186  bangladesh/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.426  bangladesh/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 7.78  bangladesh/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  bangladesh/ruler.json#/jump_multiple/years
+- ruler sentence: "In Bangladesh, VIIRS reports about 4.2 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  bangladesh/ruler.json#/sentence
+- harmonized trend pct_per_decade: -17.9  bangladesh/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -28.308  bangladesh/trend.json#/harmonized/lo
+- harmonized trend hi: -10.149  bangladesh/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  bangladesh/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 48.018  bangladesh/trend.json#/naive/pct_per_decade
+- naive trend lo: 28.816  bangladesh/trend.json#/naive/lo
+- naive trend hi: 90.037  bangladesh/trend.json#/naive/hi
+- naive trend direction: "rising"  bangladesh/trend.json#/naive/direction
+- trend years: [2003, 2025]  bangladesh/trend.json#/years
+- verdict sentence_id: "artifact_falling"  bangladesh/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 18% per decade (-28 to -10)."  bangladesh/trend.json#/sentence
+- critical weeks: [11, 12, 13, 14, 15, 16]  bangladesh/season.json#/critical_weeks
+- window w1 label: "mid-March to late-April"  bangladesh/season.json#/windows/0/label
+- window w1 start_week: 11  bangladesh/season.json#/windows/0/start_week
+- window w1 peak_week: 14  bangladesh/season.json#/windows/0/peak_week
+- window w1 end_week: 16  bangladesh/season.json#/windows/0/end_week
+- window w1 share: 0.805  bangladesh/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 1.333  bangladesh/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -2.857  bangladesh/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 5.0  bangladesh/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the mid-March to late-April season."  bangladesh/season.json#/windows/0/sentence
+- this week value: null  bangladesh/nowcast.json#/value
+- this week lo: null  bangladesh/nowcast.json#/lo
+- this week hi: null  bangladesh/nowcast.json#/hi
+- this week percentile: null  bangladesh/nowcast.json#/percentile
+- this week status: "unavailable"  bangladesh/nowcast.json#/status
+- this week as_of: null  bangladesh/nowcast.json#/as_of
+- this week window start: null  bangladesh/nowcast.json#/window/start
+- this week window end: null  bangladesh/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  bangladesh/nowcast.json#/baseline_years
+- month to date value: null  bangladesh/nowcast.json#/month_to_date/value
+- month to date median: null  bangladesh/nowcast.json#/month_to_date/median
+- month to date ratio: null  bangladesh/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  bangladesh/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  bangladesh/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.298  methods.json#/validation/188/value
+- LOYO weekly WAPE baseline annual_ratio: 0.434  methods.json#/validation/188/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.28  methods.json#/validation/188/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/188/years
+- LOYO weekly WAPE (tier2): 0.178  methods.json#/validation/203/value
+- LOYO years: [2013, 2022]  methods.json#/validation/203/years
+- reliability_err (tier2): 0.0  methods.json#/validation/201/value
+- reliability_year_absolute_err (tier2): 0.053  methods.json#/validation/202/value
+- t1_t2_wape (tier2): 0.212  methods.json#/validation/205/value
+- eyesight status: "validated"  methods.json#/eyesight/11/status
+- eyesight param a: -3.721  methods.json#/eyesight/11/params/a
+- eyesight param a_hi: -3.596  methods.json#/eyesight/11/params/a_hi
+- eyesight param a_lo: -3.894  methods.json#/eyesight/11/params/a_lo
+- eyesight param b: 2.536  methods.json#/eyesight/11/params/b
+- eyesight param b_hi: 2.714  methods.json#/eyesight/11/params/b_hi
+- eyesight param b_lo: 2.397  methods.json#/eyesight/11/params/b_lo
+- eyesight param c: 0.681  methods.json#/eyesight/11/params/c
+- eyesight param c_hi: 0.733  methods.json#/eyesight/11/params/c_hi
+- eyesight param c_lo: 0.626  methods.json#/eyesight/11/params/c_lo
+- eyesight g: 1.683  methods.json#/eyesight/11/g
+
+## Belarus (`belarus`)
+
+- jump multiple (value): 3.172  belarus/ruler.json#/jump_multiple/value
+- jump multiple (lo): 2.667  belarus/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 3.554  belarus/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  belarus/ruler.json#/jump_multiple/years
+- ruler sentence: "In Belarus, VIIRS reports about 3.2 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  belarus/ruler.json#/sentence
+- harmonized trend pct_per_decade: -80.1  belarus/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -125.04  belarus/trend.json#/harmonized/lo
+- harmonized trend hi: -44.158  belarus/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  belarus/trend.json#/harmonized/direction
+- naive trend pct_per_decade: -9.08  belarus/trend.json#/naive/pct_per_decade
+- naive trend lo: -32.819  belarus/trend.json#/naive/lo
+- naive trend hi: 21.546  belarus/trend.json#/naive/hi
+- naive trend direction: "no_clear_change"  belarus/trend.json#/naive/direction
+- trend years: [2003, 2025]  belarus/trend.json#/years
+- verdict sentence_id: "artifact_falling"  belarus/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 80% per decade (-125 to -44)."  belarus/trend.json#/sentence
+- critical weeks: [12, 13, 14, 15, 16, 17, 18, 19, 32, 33, 34, 36, 37, 38]  belarus/season.json#/critical_weeks
+- window w1 label: "mid-March to mid-May"  belarus/season.json#/windows/0/label
+- window w1 start_week: 12  belarus/season.json#/windows/0/start_week
+- window w1 peak_week: 15  belarus/season.json#/windows/0/peak_week
+- window w1 end_week: 19  belarus/season.json#/windows/0/end_week
+- window w1 share: 0.645  belarus/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -7.895  belarus/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -13.5  belarus/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): -2.5  belarus/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "The mid-March to mid-May season now starts about 8 days earlier per decade (-14 to -3)."  belarus/season.json#/windows/0/sentence
+- window w2 label: "early-August to late-September"  belarus/season.json#/windows/1/label
+- window w2 start_week: 32  belarus/season.json#/windows/1/start_week
+- window w2 peak_week: 37  belarus/season.json#/windows/1/peak_week
+- window w2 end_week: 38  belarus/season.json#/windows/1/end_week
+- window w2 share: 0.179  belarus/season.json#/windows/1/share
+- window w2 start shift days per decade (value): -4.444  belarus/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -11.162  belarus/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): 2.222  belarus/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "No clear shift in the timing of the early-August to late-September season."  belarus/season.json#/windows/1/sentence
+- this week value: null  belarus/nowcast.json#/value
+- this week lo: null  belarus/nowcast.json#/lo
+- this week hi: null  belarus/nowcast.json#/hi
+- this week percentile: null  belarus/nowcast.json#/percentile
+- this week status: "unavailable"  belarus/nowcast.json#/status
+- this week as_of: null  belarus/nowcast.json#/as_of
+- this week window start: null  belarus/nowcast.json#/window/start
+- this week window end: null  belarus/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  belarus/nowcast.json#/baseline_years
+- month to date value: null  belarus/nowcast.json#/month_to_date/value
+- month to date median: null  belarus/nowcast.json#/month_to_date/median
+- month to date ratio: null  belarus/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  belarus/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  belarus/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.264  methods.json#/validation/206/value
+- LOYO weekly WAPE baseline annual_ratio: 0.268  methods.json#/validation/206/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.271  methods.json#/validation/206/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/206/years
+- LOYO weekly WAPE (tier2): 0.206  methods.json#/validation/221/value
+- LOYO years: [2013, 2022]  methods.json#/validation/221/years
+- reliability_err (tier2): 0.002  methods.json#/validation/219/value
+- reliability_year_absolute_err (tier2): 0.049  methods.json#/validation/220/value
+- t1_t2_wape (tier2): 0.221  methods.json#/validation/223/value
+- eyesight status: "validated"  methods.json#/eyesight/12/status
+- eyesight param a: -3.606  methods.json#/eyesight/12/params/a
+- eyesight param a_hi: -3.51  methods.json#/eyesight/12/params/a_hi
+- eyesight param a_lo: -3.732  methods.json#/eyesight/12/params/a_lo
+- eyesight param b: 2.515  methods.json#/eyesight/12/params/b
+- eyesight param b_hi: 2.612  methods.json#/eyesight/12/params/b_hi
+- eyesight param b_lo: 2.405  methods.json#/eyesight/12/params/b_lo
+- eyesight param c: 0.89  methods.json#/eyesight/12/params/c
+- eyesight param c_hi: 0.955  methods.json#/eyesight/12/params/c_hi
+- eyesight param c_lo: 0.849  methods.json#/eyesight/12/params/c_lo
+- eyesight g: 1.514  methods.json#/eyesight/12/g
+
+## Belgium (`belgium`)
+
+- jump multiple (value): 4.832  belgium/ruler.json#/jump_multiple/value
+- jump multiple (lo): 2.763  belgium/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 12.128  belgium/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  belgium/ruler.json#/jump_multiple/years
+- ruler sentence: "In Belgium, VIIRS reports about 4.8 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  belgium/ruler.json#/sentence
+- harmonized trend pct_per_decade: -49.383  belgium/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -70.977  belgium/trend.json#/harmonized/lo
+- harmonized trend hi: -31.974  belgium/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  belgium/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 26.776  belgium/trend.json#/naive/pct_per_decade
+- naive trend lo: 11.572  belgium/trend.json#/naive/lo
+- naive trend hi: 46.964  belgium/trend.json#/naive/hi
+- naive trend direction: "rising"  belgium/trend.json#/naive/direction
+- trend years: [2003, 2025]  belgium/trend.json#/years
+- verdict sentence_id: "artifact_falling"  belgium/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 49% per decade (-71 to -32)."  belgium/trend.json#/sentence
+- critical weeks: [11, 12, 13, 14, 15, 16, 17, 18, 21, 22, 23, 34, 35, 36, 37, 38, 39]  belgium/season.json#/critical_weeks
+- window w1 label: "mid-March to early-May"  belgium/season.json#/windows/0/label
+- window w1 start_week: 11  belgium/season.json#/windows/0/start_week
+- window w1 peak_week: 12  belgium/season.json#/windows/0/peak_week
+- window w1 end_week: 18  belgium/season.json#/windows/0/end_week
+- window w1 share: 0.448  belgium/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 6.667  belgium/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -3.75  belgium/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 18.345  belgium/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the mid-March to early-May season."  belgium/season.json#/windows/0/sentence
+- window w2 label: "mid-August to late-September"  belgium/season.json#/windows/1/label
+- window w2 start_week: 34  belgium/season.json#/windows/1/start_week
+- window w2 peak_week: 34  belgium/season.json#/windows/1/peak_week
+- window w2 end_week: 39  belgium/season.json#/windows/1/end_week
+- window w2 share: 0.266  belgium/season.json#/windows/1/share
+- window w2 start shift days per decade (value): 3.077  belgium/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -22.0  belgium/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): 90.0  belgium/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "No clear shift in the timing of the mid-August to late-September season."  belgium/season.json#/windows/1/sentence
+- this week value: null  belgium/nowcast.json#/value
+- this week lo: null  belgium/nowcast.json#/lo
+- this week hi: null  belgium/nowcast.json#/hi
+- this week percentile: null  belgium/nowcast.json#/percentile
+- this week status: "unavailable"  belgium/nowcast.json#/status
+- this week as_of: null  belgium/nowcast.json#/as_of
+- this week window start: null  belgium/nowcast.json#/window/start
+- this week window end: null  belgium/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  belgium/nowcast.json#/baseline_years
+- month to date value: null  belgium/nowcast.json#/month_to_date/value
+- month to date median: null  belgium/nowcast.json#/month_to_date/median
+- month to date ratio: null  belgium/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  belgium/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  belgium/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.925  methods.json#/validation/224/value
+- LOYO weekly WAPE baseline annual_ratio: 0.984  methods.json#/validation/224/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.731  methods.json#/validation/224/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/224/years
+- eyesight status: "absent"  methods.json#/eyesight/13/status
+
+## Belize (`belize`)
+
+- jump multiple (value): 4.51  belize/ruler.json#/jump_multiple/value
+- jump multiple (lo): 4.05  belize/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 5.009  belize/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  belize/ruler.json#/jump_multiple/years
+- ruler sentence: "In Belize, VIIRS reports about 4.5 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  belize/ruler.json#/sentence
+- harmonized trend pct_per_decade: 2.577  belize/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -22.536  belize/trend.json#/harmonized/lo
+- harmonized trend hi: 27.332  belize/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  belize/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 64.734  belize/trend.json#/naive/pct_per_decade
+- naive trend lo: 38.887  belize/trend.json#/naive/lo
+- naive trend hi: 149.154  belize/trend.json#/naive/hi
+- naive trend direction: "rising"  belize/trend.json#/naive/direction
+- trend years: [2003, 2025]  belize/trend.json#/years
+- verdict sentence_id: "artifact_flat"  belize/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 65% per decade. After correcting for the sensor change, there is no clear change (-23 to 27% per decade)."  belize/trend.json#/sentence
+- critical weeks: [12, 13, 14, 15, 16, 17, 18, 19, 20, 21]  belize/season.json#/critical_weeks
+- window w1 label: "mid-March to late-May"  belize/season.json#/windows/0/label
+- window w1 start_week: 12  belize/season.json#/windows/0/start_week
+- window w1 peak_week: 18  belize/season.json#/windows/0/peak_week
+- window w1 end_week: 21  belize/season.json#/windows/0/end_week
+- window w1 share: 0.809  belize/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 1.875  belize/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -9.231  belize/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 5.014  belize/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the mid-March to late-May season."  belize/season.json#/windows/0/sentence
+- this week value: null  belize/nowcast.json#/value
+- this week lo: null  belize/nowcast.json#/lo
+- this week hi: null  belize/nowcast.json#/hi
+- this week percentile: null  belize/nowcast.json#/percentile
+- this week status: "unavailable"  belize/nowcast.json#/status
+- this week as_of: null  belize/nowcast.json#/as_of
+- this week window start: null  belize/nowcast.json#/window/start
+- this week window end: null  belize/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  belize/nowcast.json#/baseline_years
+- month to date value: null  belize/nowcast.json#/month_to_date/value
+- month to date median: null  belize/nowcast.json#/month_to_date/median
+- month to date ratio: null  belize/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  belize/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  belize/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.269  methods.json#/validation/237/value
+- LOYO weekly WAPE baseline annual_ratio: 0.29  methods.json#/validation/237/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.739  methods.json#/validation/237/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/237/years
+- LOYO weekly WAPE (tier2): 0.243  methods.json#/validation/252/value
+- LOYO years: [2013, 2022]  methods.json#/validation/252/years
+- reliability_err (tier2): 0.002  methods.json#/validation/250/value
+- reliability_year_absolute_err (tier2): 0.08  methods.json#/validation/251/value
+- t1_t2_wape (tier2): 0.119  methods.json#/validation/254/value
+- eyesight status: "validated"  methods.json#/eyesight/14/status
+- eyesight param a: -3.841  methods.json#/eyesight/14/params/a
+- eyesight param a_hi: -3.772  methods.json#/eyesight/14/params/a_hi
+- eyesight param a_lo: -3.962  methods.json#/eyesight/14/params/a_lo
+- eyesight param b: 2.296  methods.json#/eyesight/14/params/b
+- eyesight param b_hi: 2.575  methods.json#/eyesight/14/params/b_hi
+- eyesight param b_lo: 2.08  methods.json#/eyesight/14/params/b_lo
+- eyesight param c: 0.662  methods.json#/eyesight/14/params/c
+- eyesight param c_hi: 0.755  methods.json#/eyesight/14/params/c_hi
+- eyesight param c_lo: 0.581  methods.json#/eyesight/14/params/c_lo
+- eyesight g: 1.778  methods.json#/eyesight/14/g
+
+## Benin (`benin`)
+
+- jump multiple (value): 4.897  benin/ruler.json#/jump_multiple/value
+- jump multiple (lo): 4.445  benin/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 5.512  benin/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  benin/ruler.json#/jump_multiple/years
+- ruler sentence: "In Benin, VIIRS reports about 4.9 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  benin/ruler.json#/sentence
+- harmonized trend pct_per_decade: -60.965  benin/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -80.536  benin/trend.json#/harmonized/lo
+- harmonized trend hi: -47.055  benin/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  benin/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 17.922  benin/trend.json#/naive/pct_per_decade
+- naive trend lo: -17.879  benin/trend.json#/naive/lo
+- naive trend hi: 58.712  benin/trend.json#/naive/hi
+- naive trend direction: "no_clear_change"  benin/trend.json#/naive/direction
+- trend years: [2003, 2025]  benin/trend.json#/years
+- verdict sentence_id: "artifact_falling"  benin/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 61% per decade (-81 to -47)."  benin/trend.json#/sentence
+- critical weeks: [1, 2, 3, 4, 5, 6, 47, 48, 49, 50, 51, 52]  benin/season.json#/critical_weeks
+- window w1 label: "mid-November to mid-February"  benin/season.json#/windows/0/label
+- window w1 start_week: 47  benin/season.json#/windows/0/start_week
+- window w1 peak_week: 51  benin/season.json#/windows/0/peak_week
+- window w1 end_week: 6  benin/season.json#/windows/0/end_week
+- window w1 share: 0.802  benin/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 4.706  benin/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): 1.25  benin/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 8.29  benin/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "The mid-November to mid-February season now starts about 5 days later per decade (1 to 8)."  benin/season.json#/windows/0/sentence
+- this week value: null  benin/nowcast.json#/value
+- this week lo: null  benin/nowcast.json#/lo
+- this week hi: null  benin/nowcast.json#/hi
+- this week percentile: null  benin/nowcast.json#/percentile
+- this week status: "unavailable"  benin/nowcast.json#/status
+- this week as_of: null  benin/nowcast.json#/as_of
+- this week window start: null  benin/nowcast.json#/window/start
+- this week window end: null  benin/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  benin/nowcast.json#/baseline_years
+- month to date value: null  benin/nowcast.json#/month_to_date/value
+- month to date median: null  benin/nowcast.json#/month_to_date/median
+- month to date ratio: null  benin/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  benin/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  benin/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.167  methods.json#/validation/255/value
+- LOYO weekly WAPE baseline annual_ratio: 0.268  methods.json#/validation/255/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.817  methods.json#/validation/255/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/255/years
+- LOYO weekly WAPE (tier2): 0.193  methods.json#/validation/270/value
+- LOYO years: [2013, 2022]  methods.json#/validation/270/years
+- reliability_err (tier2): 0.001  methods.json#/validation/268/value
+- reliability_year_absolute_err (tier2): 0.057  methods.json#/validation/269/value
+- t1_t2_wape (tier2): 0.157  methods.json#/validation/272/value
+- eyesight status: "exploratory"  methods.json#/eyesight/15/status
+- eyesight param a: -4.032  methods.json#/eyesight/15/params/a
+- eyesight param a_hi: -3.94  methods.json#/eyesight/15/params/a_hi
+- eyesight param a_lo: -4.16  methods.json#/eyesight/15/params/a_lo
+- eyesight param b: 2.266  methods.json#/eyesight/15/params/b
+- eyesight param b_hi: 2.377  methods.json#/eyesight/15/params/b_hi
+- eyesight param b_lo: 2.181  methods.json#/eyesight/15/params/b_lo
+- eyesight param c: 0.824  methods.json#/eyesight/15/params/c
+- eyesight param c_hi: 0.857  methods.json#/eyesight/15/params/c_hi
+- eyesight param c_lo: 0.786  methods.json#/eyesight/15/params/c_lo
+- eyesight g: 1.707  methods.json#/eyesight/15/g
+
+## Bhutan (`bhutan`)
+
+- jump multiple (value): 3.69  bhutan/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.021  bhutan/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 4.799  bhutan/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  bhutan/ruler.json#/jump_multiple/years
+- ruler sentence: "In Bhutan, VIIRS reports about 3.7 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  bhutan/ruler.json#/sentence
+- harmonized trend pct_per_decade: -33.409  bhutan/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -65.065  bhutan/trend.json#/harmonized/lo
+- harmonized trend hi: -19.608  bhutan/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  bhutan/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 39.785  bhutan/trend.json#/naive/pct_per_decade
+- naive trend lo: 12.682  bhutan/trend.json#/naive/lo
+- naive trend hi: 76.122  bhutan/trend.json#/naive/hi
+- naive trend direction: "rising"  bhutan/trend.json#/naive/direction
+- trend years: [2003, 2025]  bhutan/trend.json#/years
+- verdict sentence_id: "artifact_falling"  bhutan/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 33% per decade (-65 to -20)."  bhutan/trend.json#/sentence
+- critical weeks: [1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]  bhutan/season.json#/critical_weeks
+- window w1 label: "early-January to mid-April"  bhutan/season.json#/windows/0/label
+- window w1 start_week: 1  bhutan/season.json#/windows/0/start_week
+- window w1 peak_week: 11  bhutan/season.json#/windows/0/peak_week
+- window w1 end_week: 15  bhutan/season.json#/windows/0/end_week
+- window w1 share: 0.844  bhutan/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -10.0  bhutan/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -20.0  bhutan/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): -1.818  bhutan/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "The early-January to mid-April season now starts about 10 days earlier per decade (-20 to -2)."  bhutan/season.json#/windows/0/sentence
+- this week value: null  bhutan/nowcast.json#/value
+- this week lo: null  bhutan/nowcast.json#/lo
+- this week hi: null  bhutan/nowcast.json#/hi
+- this week percentile: null  bhutan/nowcast.json#/percentile
+- this week status: "unavailable"  bhutan/nowcast.json#/status
+- this week as_of: null  bhutan/nowcast.json#/as_of
+- this week window start: null  bhutan/nowcast.json#/window/start
+- this week window end: null  bhutan/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  bhutan/nowcast.json#/baseline_years
+- month to date value: null  bhutan/nowcast.json#/month_to_date/value
+- month to date median: null  bhutan/nowcast.json#/month_to_date/median
+- month to date ratio: null  bhutan/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  bhutan/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  bhutan/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.52  methods.json#/validation/273/value
+- LOYO weekly WAPE baseline annual_ratio: 0.51  methods.json#/validation/273/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.337  methods.json#/validation/273/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/273/years
+- LOYO weekly WAPE (tier2): 0.459  methods.json#/validation/288/value
+- LOYO years: [2013, 2022]  methods.json#/validation/288/years
+- reliability_err (tier2): 0.001  methods.json#/validation/286/value
+- reliability_year_absolute_err (tier2): 0.136  methods.json#/validation/287/value
+- t1_t2_wape (tier2): 0.297  methods.json#/validation/290/value
+- eyesight status: "validated"  methods.json#/eyesight/16/status
+- eyesight param a: -4.047  methods.json#/eyesight/16/params/a
+- eyesight param a_hi: -3.749  methods.json#/eyesight/16/params/a_hi
+- eyesight param a_lo: -4.438  methods.json#/eyesight/16/params/a_lo
+- eyesight param b: 2.502  methods.json#/eyesight/16/params/b
+- eyesight param b_hi: 2.968  methods.json#/eyesight/16/params/b_hi
+- eyesight param b_lo: 2.137  methods.json#/eyesight/16/params/b_lo
+- eyesight param c: 0.817  methods.json#/eyesight/16/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/16/params/c_hi
+- eyesight param c_lo: 0.71  methods.json#/eyesight/16/params/c_lo
+- eyesight g: 1.661  methods.json#/eyesight/16/g
+
+## Bosnia and Herzegovina (`bosnia-and-herzegovina`)
+
+- jump multiple (value): 4.267  bosnia-and-herzegovina/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.744  bosnia-and-herzegovina/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 5.241  bosnia-and-herzegovina/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  bosnia-and-herzegovina/ruler.json#/jump_multiple/years
+- ruler sentence: "In Bosnia and Herzegovina, VIIRS reports about 4.3 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  bosnia-and-herzegovina/ruler.json#/sentence
+- harmonized trend pct_per_decade: -6.438  bosnia-and-herzegovina/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -54.244  bosnia-and-herzegovina/trend.json#/harmonized/lo
+- harmonized trend hi: 32.732  bosnia-and-herzegovina/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  bosnia-and-herzegovina/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 66.145  bosnia-and-herzegovina/trend.json#/naive/pct_per_decade
+- naive trend lo: 25.274  bosnia-and-herzegovina/trend.json#/naive/lo
+- naive trend hi: 151.414  bosnia-and-herzegovina/trend.json#/naive/hi
+- naive trend direction: "rising"  bosnia-and-herzegovina/trend.json#/naive/direction
+- trend years: [2003, 2025]  bosnia-and-herzegovina/trend.json#/years
+- verdict sentence_id: "unclear"  bosnia-and-herzegovina/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (-54 to 33% per decade)."  bosnia-and-herzegovina/trend.json#/sentence
+- critical weeks: [9, 10, 11, 12, 13, 14, 15, 29, 30, 31, 32, 33, 34, 35, 36, 37, 43]  bosnia-and-herzegovina/season.json#/critical_weeks
+- window w1 label: "late-February to mid-April"  bosnia-and-herzegovina/season.json#/windows/0/label
+- window w1 start_week: 9  bosnia-and-herzegovina/season.json#/windows/0/start_week
+- window w1 peak_week: 13  bosnia-and-herzegovina/season.json#/windows/0/peak_week
+- window w1 end_week: 15  bosnia-and-herzegovina/season.json#/windows/0/end_week
+- window w1 share: 0.475  bosnia-and-herzegovina/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -9.231  bosnia-and-herzegovina/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -18.235  bosnia-and-herzegovina/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 0.909  bosnia-and-herzegovina/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the late-February to mid-April season."  bosnia-and-herzegovina/season.json#/windows/0/sentence
+- window w2 label: "mid-July to mid-September"  bosnia-and-herzegovina/season.json#/windows/1/label
+- window w2 start_week: 29  bosnia-and-herzegovina/season.json#/windows/1/start_week
+- window w2 peak_week: 34  bosnia-and-herzegovina/season.json#/windows/1/peak_week
+- window w2 end_week: 37  bosnia-and-herzegovina/season.json#/windows/1/end_week
+- window w2 share: 0.311  bosnia-and-herzegovina/season.json#/windows/1/share
+- window w2 start shift days per decade (value): -3.348  bosnia-and-herzegovina/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -10.911  bosnia-and-herzegovina/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): 5.294  bosnia-and-herzegovina/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "No clear shift in the timing of the mid-July to mid-September season."  bosnia-and-herzegovina/season.json#/windows/1/sentence
+- this week value: null  bosnia-and-herzegovina/nowcast.json#/value
+- this week lo: null  bosnia-and-herzegovina/nowcast.json#/lo
+- this week hi: null  bosnia-and-herzegovina/nowcast.json#/hi
+- this week percentile: null  bosnia-and-herzegovina/nowcast.json#/percentile
+- this week status: "unavailable"  bosnia-and-herzegovina/nowcast.json#/status
+- this week as_of: null  bosnia-and-herzegovina/nowcast.json#/as_of
+- this week window start: null  bosnia-and-herzegovina/nowcast.json#/window/start
+- this week window end: null  bosnia-and-herzegovina/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  bosnia-and-herzegovina/nowcast.json#/baseline_years
+- month to date value: null  bosnia-and-herzegovina/nowcast.json#/month_to_date/value
+- month to date median: null  bosnia-and-herzegovina/nowcast.json#/month_to_date/median
+- month to date ratio: null  bosnia-and-herzegovina/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  bosnia-and-herzegovina/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  bosnia-and-herzegovina/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.371  methods.json#/validation/291/value
+- LOYO weekly WAPE baseline annual_ratio: 0.368  methods.json#/validation/291/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.645  methods.json#/validation/291/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/291/years
+- LOYO weekly WAPE (tier2): 0.285  methods.json#/validation/306/value
+- LOYO years: [2013, 2022]  methods.json#/validation/306/years
+- reliability_err (tier2): 0.007  methods.json#/validation/304/value
+- reliability_year_absolute_err (tier2): 0.16  methods.json#/validation/305/value
+- t1_t2_wape (tier2): 0.315  methods.json#/validation/308/value
+- eyesight status: "validated"  methods.json#/eyesight/17/status
+- eyesight param a: -3.781  methods.json#/eyesight/17/params/a
+- eyesight param a_hi: -3.588  methods.json#/eyesight/17/params/a_hi
+- eyesight param a_lo: -4.001  methods.json#/eyesight/17/params/a_lo
+- eyesight param b: 2.728  methods.json#/eyesight/17/params/b
+- eyesight param b_hi: 2.992  methods.json#/eyesight/17/params/b_hi
+- eyesight param b_lo: 2.498  methods.json#/eyesight/17/params/b_lo
+- eyesight param c: 0.853  methods.json#/eyesight/17/params/c
+- eyesight param c_hi: 0.937  methods.json#/eyesight/17/params/c_hi
+- eyesight param c_lo: 0.736  methods.json#/eyesight/17/params/c_lo
+- eyesight g: 1.442  methods.json#/eyesight/17/g
+
+## Botswana (`botswana`)
+
+- jump multiple (value): 4.64  botswana/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.984  botswana/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 5.169  botswana/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  botswana/ruler.json#/jump_multiple/years
+- ruler sentence: "In Botswana, VIIRS reports about 4.6 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  botswana/ruler.json#/sentence
+- harmonized trend pct_per_decade: 14.667  botswana/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -12.658  botswana/trend.json#/harmonized/lo
+- harmonized trend hi: 59.244  botswana/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  botswana/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 80.284  botswana/trend.json#/naive/pct_per_decade
+- naive trend lo: 39.579  botswana/trend.json#/naive/lo
+- naive trend hi: 166.238  botswana/trend.json#/naive/hi
+- naive trend direction: "rising"  botswana/trend.json#/naive/direction
+- trend years: [2003, 2025]  botswana/trend.json#/years
+- verdict sentence_id: "unclear"  botswana/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (-13 to 59% per decade)."  botswana/trend.json#/sentence
+- critical weeks: [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44]  botswana/season.json#/critical_weeks
+- window w1 label: "late-July to early-November"  botswana/season.json#/windows/0/label
+- window w1 start_week: 30  botswana/season.json#/windows/0/start_week
+- window w1 peak_week: 38  botswana/season.json#/windows/0/peak_week
+- window w1 end_week: 44  botswana/season.json#/windows/0/end_week
+- window w1 share: 0.814  botswana/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -2.857  botswana/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -10.0  botswana/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 5.0  botswana/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the late-July to early-November season."  botswana/season.json#/windows/0/sentence
+- this week value: null  botswana/nowcast.json#/value
+- this week lo: null  botswana/nowcast.json#/lo
+- this week hi: null  botswana/nowcast.json#/hi
+- this week percentile: null  botswana/nowcast.json#/percentile
+- this week status: "unavailable"  botswana/nowcast.json#/status
+- this week as_of: null  botswana/nowcast.json#/as_of
+- this week window start: null  botswana/nowcast.json#/window/start
+- this week window end: null  botswana/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  botswana/nowcast.json#/baseline_years
+- month to date value: null  botswana/nowcast.json#/month_to_date/value
+- month to date median: null  botswana/nowcast.json#/month_to_date/median
+- month to date ratio: null  botswana/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  botswana/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  botswana/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.148  methods.json#/validation/309/value
+- LOYO weekly WAPE baseline annual_ratio: 0.188  methods.json#/validation/309/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.155  methods.json#/validation/309/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/309/years
+- LOYO weekly WAPE (tier2): 0.173  methods.json#/validation/324/value
+- LOYO years: [2013, 2022]  methods.json#/validation/324/years
+- reliability_err (tier2): 0.003  methods.json#/validation/322/value
+- reliability_year_absolute_err (tier2): 0.047  methods.json#/validation/323/value
+- t1_t2_wape (tier2): 0.15  methods.json#/validation/326/value
+- eyesight status: "exploratory"  methods.json#/eyesight/18/status
+- eyesight param a: -3.203  methods.json#/eyesight/18/params/a
+- eyesight param a_hi: -3.112  methods.json#/eyesight/18/params/a_hi
+- eyesight param a_lo: -3.297  methods.json#/eyesight/18/params/a_lo
+- eyesight param b: 1.738  methods.json#/eyesight/18/params/b
+- eyesight param b_hi: 1.799  methods.json#/eyesight/18/params/b_hi
+- eyesight param b_lo: 1.672  methods.json#/eyesight/18/params/b_lo
+- eyesight param c: 0.948  methods.json#/eyesight/18/params/c
+- eyesight param c_hi: 0.972  methods.json#/eyesight/18/params/c_hi
+- eyesight param c_lo: 0.922  methods.json#/eyesight/18/params/c_lo
+- eyesight g: 1.21  methods.json#/eyesight/18/g
+
+## Brazil (`brazil`)
+
+- jump multiple (value): 3.859  brazil/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.721  brazil/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 4.098  brazil/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  brazil/ruler.json#/jump_multiple/years
+- ruler sentence: "In Brazil, VIIRS reports about 3.9 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  brazil/ruler.json#/sentence
+- harmonized trend pct_per_decade: -33.758  brazil/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -51.153  brazil/trend.json#/harmonized/lo
+- harmonized trend hi: -10.247  brazil/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  brazil/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 59.844  brazil/trend.json#/naive/pct_per_decade
+- naive trend lo: 31.074  brazil/trend.json#/naive/lo
+- naive trend hi: 89.506  brazil/trend.json#/naive/hi
+- naive trend direction: "rising"  brazil/trend.json#/naive/direction
+- trend years: [2003, 2025]  brazil/trend.json#/years
+- verdict sentence_id: "artifact_falling"  brazil/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 34% per decade (-51 to -10)."  brazil/trend.json#/sentence
+- critical weeks: [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49]  brazil/season.json#/critical_weeks
+- window w1 label: "late-July to early-December"  brazil/season.json#/windows/0/label
+- window w1 start_week: 30  brazil/season.json#/windows/0/start_week
+- window w1 peak_week: 37  brazil/season.json#/windows/0/peak_week
+- window w1 end_week: 49  brazil/season.json#/windows/0/end_week
+- window w1 share: 0.804  brazil/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -1.0  brazil/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -4.12  brazil/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 0.0  brazil/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the late-July to early-December season."  brazil/season.json#/windows/0/sentence
+- this week value: null  brazil/nowcast.json#/value
+- this week lo: null  brazil/nowcast.json#/lo
+- this week hi: null  brazil/nowcast.json#/hi
+- this week percentile: null  brazil/nowcast.json#/percentile
+- this week status: "unavailable"  brazil/nowcast.json#/status
+- this week as_of: null  brazil/nowcast.json#/as_of
+- this week window start: null  brazil/nowcast.json#/window/start
+- this week window end: null  brazil/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  brazil/nowcast.json#/baseline_years
+- month to date value: null  brazil/nowcast.json#/month_to_date/value
+- month to date median: null  brazil/nowcast.json#/month_to_date/median
+- month to date ratio: null  brazil/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  brazil/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  brazil/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.103  methods.json#/validation/327/value
+- LOYO weekly WAPE baseline annual_ratio: 0.162  methods.json#/validation/327/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.185  methods.json#/validation/327/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/327/years
+- LOYO weekly WAPE (tier2): 0.128  methods.json#/validation/342/value
+- LOYO years: [2013, 2022]  methods.json#/validation/342/years
+- reliability_err (tier2): 0.0  methods.json#/validation/340/value
+- reliability_year_absolute_err (tier2): 0.032  methods.json#/validation/341/value
+- t1_t2_wape (tier2): 0.129  methods.json#/validation/344/value
+- eyesight status: "exploratory"  methods.json#/eyesight/19/status
+- eyesight param a: -3.646  methods.json#/eyesight/19/params/a
+- eyesight param a_hi: -3.616  methods.json#/eyesight/19/params/a_hi
+- eyesight param a_lo: -3.676  methods.json#/eyesight/19/params/a_lo
+- eyesight param b: 2.027  methods.json#/eyesight/19/params/b
+- eyesight param b_hi: 2.042  methods.json#/eyesight/19/params/b_hi
+- eyesight param b_lo: 2.012  methods.json#/eyesight/19/params/b_lo
+- eyesight param c: 0.768  methods.json#/eyesight/19/params/c
+- eyesight param c_hi: 0.785  methods.json#/eyesight/19/params/c_hi
+- eyesight param c_lo: 0.748  methods.json#/eyesight/19/params/c_lo
+- eyesight g: 1.683  methods.json#/eyesight/19/g
+
+## Bulgaria (`bulgaria`)
+
+- jump multiple (value): 2.972  bulgaria/ruler.json#/jump_multiple/value
+- jump multiple (lo): 2.747  bulgaria/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 3.493  bulgaria/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  bulgaria/ruler.json#/jump_multiple/years
+- ruler sentence: "In Bulgaria, VIIRS reports about 3.0 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  bulgaria/ruler.json#/sentence
+- harmonized trend pct_per_decade: -72.194  bulgaria/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -97.57  bulgaria/trend.json#/harmonized/lo
+- harmonized trend hi: -39.082  bulgaria/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  bulgaria/trend.json#/harmonized/direction
+- naive trend pct_per_decade: -6.452  bulgaria/trend.json#/naive/pct_per_decade
+- naive trend lo: -30.843  bulgaria/trend.json#/naive/lo
+- naive trend hi: 39.287  bulgaria/trend.json#/naive/hi
+- naive trend direction: "no_clear_change"  bulgaria/trend.json#/naive/direction
+- trend years: [2003, 2025]  bulgaria/trend.json#/years
+- verdict sentence_id: "artifact_falling"  bulgaria/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 72% per decade (-98 to -39)."  bulgaria/trend.json#/sentence
+- critical weeks: [11, 12, 13, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45]  bulgaria/season.json#/critical_weeks
+- window w1 label: "late-July to mid-November"  bulgaria/season.json#/windows/0/label
+- window w1 start_week: 30  bulgaria/season.json#/windows/0/start_week
+- window w1 peak_week: 39  bulgaria/season.json#/windows/0/peak_week
+- window w1 end_week: 45  bulgaria/season.json#/windows/0/end_week
+- window w1 share: 0.712  bulgaria/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 0.0  bulgaria/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -15.578  bulgaria/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 10.0  bulgaria/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the late-July to mid-November season."  bulgaria/season.json#/windows/0/sentence
+- this week value: null  bulgaria/nowcast.json#/value
+- this week lo: null  bulgaria/nowcast.json#/lo
+- this week hi: null  bulgaria/nowcast.json#/hi
+- this week percentile: null  bulgaria/nowcast.json#/percentile
+- this week status: "unavailable"  bulgaria/nowcast.json#/status
+- this week as_of: null  bulgaria/nowcast.json#/as_of
+- this week window start: null  bulgaria/nowcast.json#/window/start
+- this week window end: null  bulgaria/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  bulgaria/nowcast.json#/baseline_years
+- month to date value: null  bulgaria/nowcast.json#/month_to_date/value
+- month to date median: null  bulgaria/nowcast.json#/month_to_date/median
+- month to date ratio: null  bulgaria/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  bulgaria/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  bulgaria/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.222  methods.json#/validation/345/value
+- LOYO weekly WAPE baseline annual_ratio: 0.258  methods.json#/validation/345/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.107  methods.json#/validation/345/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/345/years
+- LOYO weekly WAPE (tier2): 0.246  methods.json#/validation/360/value
+- LOYO years: [2013, 2022]  methods.json#/validation/360/years
+- reliability_err (tier2): 0.001  methods.json#/validation/358/value
+- reliability_year_absolute_err (tier2): 0.052  methods.json#/validation/359/value
+- t1_t2_wape (tier2): 0.191  methods.json#/validation/362/value
+- eyesight status: "exploratory"  methods.json#/eyesight/20/status
+- eyesight param a: -3.249  methods.json#/eyesight/20/params/a
+- eyesight param a_hi: -3.157  methods.json#/eyesight/20/params/a_hi
+- eyesight param a_lo: -3.339  methods.json#/eyesight/20/params/a_lo
+- eyesight param b: 2.354  methods.json#/eyesight/20/params/b
+- eyesight param b_hi: 2.502  methods.json#/eyesight/20/params/b_hi
+- eyesight param b_lo: 2.205  methods.json#/eyesight/20/params/b_lo
+- eyesight param c: 0.702  methods.json#/eyesight/20/params/c
+- eyesight param c_hi: 0.75  methods.json#/eyesight/20/params/c_hi
+- eyesight param c_lo: 0.662  methods.json#/eyesight/20/params/c_lo
+- eyesight g: 1.643  methods.json#/eyesight/20/g
+
+## Burkina Faso (`burkina-faso`)
+
+- jump multiple (value): 4.461  burkina-faso/ruler.json#/jump_multiple/value
+- jump multiple (lo): 4.181  burkina-faso/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 4.9  burkina-faso/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  burkina-faso/ruler.json#/jump_multiple/years
+- ruler sentence: "In Burkina Faso, VIIRS reports about 4.5 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  burkina-faso/ruler.json#/sentence
+- harmonized trend pct_per_decade: -41.8  burkina-faso/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -53.318  burkina-faso/trend.json#/harmonized/lo
+- harmonized trend hi: -27.835  burkina-faso/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  burkina-faso/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 50.199  burkina-faso/trend.json#/naive/pct_per_decade
+- naive trend lo: 35.733  burkina-faso/trend.json#/naive/lo
+- naive trend hi: 104.749  burkina-faso/trend.json#/naive/hi
+- naive trend direction: "rising"  burkina-faso/trend.json#/naive/direction
+- trend years: [2003, 2025]  burkina-faso/trend.json#/years
+- verdict sentence_id: "artifact_falling"  burkina-faso/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 42% per decade (-53 to -28)."  burkina-faso/trend.json#/sentence
+- critical weeks: [1, 2, 3, 4, 5, 45, 46, 47, 48, 49, 50, 51, 52]  burkina-faso/season.json#/critical_weeks
+- window w1 label: "early-November to early-February"  burkina-faso/season.json#/windows/0/label
+- window w1 start_week: 45  burkina-faso/season.json#/windows/0/start_week
+- window w1 peak_week: 49  burkina-faso/season.json#/windows/0/peak_week
+- window w1 end_week: 5  burkina-faso/season.json#/windows/0/end_week
+- window w1 share: 0.814  burkina-faso/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 0.0  burkina-faso/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -3.636  burkina-faso/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 1.429  burkina-faso/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-November to early-February season."  burkina-faso/season.json#/windows/0/sentence
+- this week value: null  burkina-faso/nowcast.json#/value
+- this week lo: null  burkina-faso/nowcast.json#/lo
+- this week hi: null  burkina-faso/nowcast.json#/hi
+- this week percentile: null  burkina-faso/nowcast.json#/percentile
+- this week status: "unavailable"  burkina-faso/nowcast.json#/status
+- this week as_of: null  burkina-faso/nowcast.json#/as_of
+- this week window start: null  burkina-faso/nowcast.json#/window/start
+- this week window end: null  burkina-faso/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  burkina-faso/nowcast.json#/baseline_years
+- month to date value: null  burkina-faso/nowcast.json#/month_to_date/value
+- month to date median: null  burkina-faso/nowcast.json#/month_to_date/median
+- month to date ratio: null  burkina-faso/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  burkina-faso/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  burkina-faso/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.144  methods.json#/validation/363/value
+- LOYO weekly WAPE baseline annual_ratio: 0.247  methods.json#/validation/363/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.188  methods.json#/validation/363/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/363/years
+- LOYO weekly WAPE (tier2): 0.164  methods.json#/validation/378/value
+- LOYO years: [2013, 2022]  methods.json#/validation/378/years
+- reliability_err (tier2): 0.0  methods.json#/validation/376/value
+- reliability_year_absolute_err (tier2): 0.014  methods.json#/validation/377/value
+- t1_t2_wape (tier2): 0.139  methods.json#/validation/380/value
+- eyesight status: "exploratory"  methods.json#/eyesight/21/status
+- eyesight param a: -3.911  methods.json#/eyesight/21/params/a
+- eyesight param a_hi: -3.891  methods.json#/eyesight/21/params/a_hi
+- eyesight param a_lo: -3.938  methods.json#/eyesight/21/params/a_lo
+- eyesight param b: 2.323  methods.json#/eyesight/21/params/b
+- eyesight param b_hi: 2.366  methods.json#/eyesight/21/params/b_hi
+- eyesight param b_lo: 2.282  methods.json#/eyesight/21/params/b_lo
+- eyesight param c: 0.772  methods.json#/eyesight/21/params/c
+- eyesight param c_hi: 0.801  methods.json#/eyesight/21/params/c_hi
+- eyesight param c_lo: 0.749  methods.json#/eyesight/21/params/c_lo
+- eyesight g: 1.61  methods.json#/eyesight/21/g
+
+## Burundi (`burundi`)
+
+- jump multiple (value): 5.082  burundi/ruler.json#/jump_multiple/value
+- jump multiple (lo): 4.624  burundi/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 6.117  burundi/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  burundi/ruler.json#/jump_multiple/years
+- ruler sentence: "In Burundi, VIIRS reports about 5.1 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  burundi/ruler.json#/sentence
+- harmonized trend pct_per_decade: -33.333  burundi/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -85.329  burundi/trend.json#/harmonized/lo
+- harmonized trend hi: -5.149  burundi/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  burundi/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 52.327  burundi/trend.json#/naive/pct_per_decade
+- naive trend lo: 28.626  burundi/trend.json#/naive/lo
+- naive trend hi: 87.65  burundi/trend.json#/naive/hi
+- naive trend direction: "rising"  burundi/trend.json#/naive/direction
+- trend years: [2003, 2025]  burundi/trend.json#/years
+- verdict sentence_id: "artifact_falling"  burundi/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 33% per decade (-85 to -5)."  burundi/trend.json#/sentence
+- critical weeks: [25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36]  burundi/season.json#/critical_weeks
+- window w1 label: "mid-June to early-September"  burundi/season.json#/windows/0/label
+- window w1 start_week: 25  burundi/season.json#/windows/0/start_week
+- window w1 peak_week: 28  burundi/season.json#/windows/0/peak_week
+- window w1 end_week: 36  burundi/season.json#/windows/0/end_week
+- window w1 share: 0.811  burundi/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -1.765  burundi/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -6.0  burundi/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 2.667  burundi/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the mid-June to early-September season."  burundi/season.json#/windows/0/sentence
+- this week value: null  burundi/nowcast.json#/value
+- this week lo: null  burundi/nowcast.json#/lo
+- this week hi: null  burundi/nowcast.json#/hi
+- this week percentile: null  burundi/nowcast.json#/percentile
+- this week status: "unavailable"  burundi/nowcast.json#/status
+- this week as_of: null  burundi/nowcast.json#/as_of
+- this week window start: null  burundi/nowcast.json#/window/start
+- this week window end: null  burundi/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  burundi/nowcast.json#/baseline_years
+- month to date value: null  burundi/nowcast.json#/month_to_date/value
+- month to date median: null  burundi/nowcast.json#/month_to_date/median
+- month to date ratio: null  burundi/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  burundi/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  burundi/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.384  methods.json#/validation/381/value
+- LOYO weekly WAPE baseline annual_ratio: 0.434  methods.json#/validation/381/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.723  methods.json#/validation/381/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/381/years
+- LOYO weekly WAPE (tier2): 0.37  methods.json#/validation/396/value
+- LOYO years: [2013, 2022]  methods.json#/validation/396/years
+- reliability_err (tier2): 0.004  methods.json#/validation/394/value
+- reliability_year_absolute_err (tier2): 0.136  methods.json#/validation/395/value
+- t1_t2_wape (tier2): 0.196  methods.json#/validation/398/value
+- eyesight status: "validated"  methods.json#/eyesight/22/status
+- eyesight param a: -4.176  methods.json#/eyesight/22/params/a
+- eyesight param a_hi: -4.041  methods.json#/eyesight/22/params/a_hi
+- eyesight param a_lo: -4.385  methods.json#/eyesight/22/params/a_lo
+- eyesight param b: 2.301  methods.json#/eyesight/22/params/b
+- eyesight param b_hi: 2.616  methods.json#/eyesight/22/params/b_hi
+- eyesight param b_lo: 2.032  methods.json#/eyesight/22/params/b_lo
+- eyesight param c: 0.766  methods.json#/eyesight/22/params/c
+- eyesight param c_hi: 0.967  methods.json#/eyesight/22/params/c_hi
+- eyesight param c_lo: 0.643  methods.json#/eyesight/22/params/c_lo
+- eyesight g: 1.661  methods.json#/eyesight/22/g
+
+## Chile (`chile`)
+
+- jump multiple (value): 3.405  chile/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.08  chile/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 4.549  chile/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  chile/ruler.json#/jump_multiple/years
+- ruler sentence: "In Chile, VIIRS reports about 3.4 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  chile/ruler.json#/sentence
+- harmonized trend pct_per_decade: -16.948  chile/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -21.491  chile/trend.json#/harmonized/lo
+- harmonized trend hi: -6.172  chile/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  chile/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 54.285  chile/trend.json#/naive/pct_per_decade
+- naive trend lo: 40.262  chile/trend.json#/naive/lo
+- naive trend hi: 140.725  chile/trend.json#/naive/hi
+- naive trend direction: "rising"  chile/trend.json#/naive/direction
+- trend years: [2003, 2025]  chile/trend.json#/years
+- verdict sentence_id: "artifact_falling"  chile/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 17% per decade (-21 to -6)."  chile/trend.json#/sentence
+- critical weeks: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 38, 39, 40, 51]  chile/season.json#/critical_weeks
+- window w1 label: "early-January to early-June"  chile/season.json#/windows/0/label
+- window w1 start_week: 2  chile/season.json#/windows/0/start_week
+- window w1 peak_week: 13  chile/season.json#/windows/0/peak_week
+- window w1 end_week: 22  chile/season.json#/windows/0/end_week
+- window w1 share: 0.756  chile/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -14.545  chile/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -21.667  chile/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): -6.923  chile/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "The early-January to early-June season now starts about 15 days earlier per decade (-22 to -7)."  chile/season.json#/windows/0/sentence
+- this week value: null  chile/nowcast.json#/value
+- this week lo: null  chile/nowcast.json#/lo
+- this week hi: null  chile/nowcast.json#/hi
+- this week percentile: null  chile/nowcast.json#/percentile
+- this week status: "unavailable"  chile/nowcast.json#/status
+- this week as_of: null  chile/nowcast.json#/as_of
+- this week window start: null  chile/nowcast.json#/window/start
+- this week window end: null  chile/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  chile/nowcast.json#/baseline_years
+- month to date value: null  chile/nowcast.json#/month_to_date/value
+- month to date median: null  chile/nowcast.json#/month_to_date/median
+- month to date ratio: null  chile/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  chile/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  chile/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.223  methods.json#/validation/399/value
+- LOYO weekly WAPE baseline annual_ratio: 0.292  methods.json#/validation/399/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.606  methods.json#/validation/399/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/399/years
+- LOYO weekly WAPE (tier2): 0.204  methods.json#/validation/414/value
+- LOYO years: [2013, 2022]  methods.json#/validation/414/years
+- reliability_err (tier2): 0.002  methods.json#/validation/412/value
+- reliability_year_absolute_err (tier2): 0.063  methods.json#/validation/413/value
+- t1_t2_wape (tier2): 0.175  methods.json#/validation/416/value
+- eyesight status: "validated"  methods.json#/eyesight/23/status
+- eyesight param a: -3.483  methods.json#/eyesight/23/params/a
+- eyesight param a_hi: -3.382  methods.json#/eyesight/23/params/a_hi
+- eyesight param a_lo: -3.576  methods.json#/eyesight/23/params/a_lo
+- eyesight param b: 2.19  methods.json#/eyesight/23/params/b
+- eyesight param b_hi: 2.315  methods.json#/eyesight/23/params/b_hi
+- eyesight param b_lo: 2.069  methods.json#/eyesight/23/params/b_lo
+- eyesight param c: 0.882  methods.json#/eyesight/23/params/c
+- eyesight param c_hi: 0.942  methods.json#/eyesight/23/params/c_hi
+- eyesight param c_lo: 0.82  methods.json#/eyesight/23/params/c_lo
+- eyesight g: 1.58  methods.json#/eyesight/23/g
+
+## Costa Rica (`costa-rica`)
+
+- jump multiple (value): 4.502  costa-rica/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.749  costa-rica/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 5.24  costa-rica/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  costa-rica/ruler.json#/jump_multiple/years
+- ruler sentence: "In Costa Rica, VIIRS reports about 4.5 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  costa-rica/ruler.json#/sentence
+- harmonized trend pct_per_decade: -13.443  costa-rica/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -29.067  costa-rica/trend.json#/harmonized/lo
+- harmonized trend hi: 4.251  costa-rica/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  costa-rica/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 48.014  costa-rica/trend.json#/naive/pct_per_decade
+- naive trend lo: 11.949  costa-rica/trend.json#/naive/lo
+- naive trend hi: 134.378  costa-rica/trend.json#/naive/hi
+- naive trend direction: "rising"  costa-rica/trend.json#/naive/direction
+- trend years: [2003, 2025]  costa-rica/trend.json#/years
+- verdict sentence_id: "artifact_flat"  costa-rica/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 48% per decade. After correcting for the sensor change, there is no clear change (-29 to 4% per decade)."  costa-rica/trend.json#/sentence
+- critical weeks: [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]  costa-rica/season.json#/critical_weeks
+- window w1 label: "early-February to late-April"  costa-rica/season.json#/windows/0/label
+- window w1 start_week: 6  costa-rica/season.json#/windows/0/start_week
+- window w1 peak_week: 11  costa-rica/season.json#/windows/0/peak_week
+- window w1 end_week: 17  costa-rica/season.json#/windows/0/end_week
+- window w1 share: 0.813  costa-rica/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 4.286  costa-rica/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): 1.667  costa-rica/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 6.154  costa-rica/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "The early-February to late-April season now starts about 4 days later per decade (2 to 6)."  costa-rica/season.json#/windows/0/sentence
+- this week value: null  costa-rica/nowcast.json#/value
+- this week lo: null  costa-rica/nowcast.json#/lo
+- this week hi: null  costa-rica/nowcast.json#/hi
+- this week percentile: null  costa-rica/nowcast.json#/percentile
+- this week status: "unavailable"  costa-rica/nowcast.json#/status
+- this week as_of: null  costa-rica/nowcast.json#/as_of
+- this week window start: null  costa-rica/nowcast.json#/window/start
+- this week window end: null  costa-rica/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  costa-rica/nowcast.json#/baseline_years
+- month to date value: null  costa-rica/nowcast.json#/month_to_date/value
+- month to date median: null  costa-rica/nowcast.json#/month_to_date/median
+- month to date ratio: null  costa-rica/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  costa-rica/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  costa-rica/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.301  methods.json#/validation/417/value
+- LOYO weekly WAPE baseline annual_ratio: 0.3  methods.json#/validation/417/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.664  methods.json#/validation/417/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/417/years
+- LOYO weekly WAPE (tier2): 0.273  methods.json#/validation/432/value
+- LOYO years: [2013, 2022]  methods.json#/validation/432/years
+- reliability_err (tier2): 0.001  methods.json#/validation/430/value
+- reliability_year_absolute_err (tier2): 0.094  methods.json#/validation/431/value
+- t1_t2_wape (tier2): 0.174  methods.json#/validation/434/value
+- eyesight status: "validated"  methods.json#/eyesight/24/status
+- eyesight param a: -4.146  methods.json#/eyesight/24/params/a
+- eyesight param a_hi: -4.052  methods.json#/eyesight/24/params/a_hi
+- eyesight param a_lo: -4.323  methods.json#/eyesight/24/params/a_lo
+- eyesight param b: 2.312  methods.json#/eyesight/24/params/b
+- eyesight param b_hi: 2.559  methods.json#/eyesight/24/params/b_hi
+- eyesight param b_lo: 2.126  methods.json#/eyesight/24/params/b_lo
+- eyesight param c: 0.813  methods.json#/eyesight/24/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/24/params/c_hi
+- eyesight param c_lo: 0.659  methods.json#/eyesight/24/params/c_lo
+- eyesight g: 1.717  methods.json#/eyesight/24/g
+
+## Croatia (`croatia`)
+
+- jump multiple (value): 3.891  croatia/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.126  croatia/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 5.839  croatia/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  croatia/ruler.json#/jump_multiple/years
+- ruler sentence: "In Croatia, VIIRS reports about 3.9 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  croatia/ruler.json#/sentence
+- harmonized trend pct_per_decade: -58.343  croatia/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -129.112  croatia/trend.json#/harmonized/lo
+- harmonized trend hi: -33.124  croatia/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  croatia/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 11.373  croatia/trend.json#/naive/pct_per_decade
+- naive trend lo: -23.943  croatia/trend.json#/naive/lo
+- naive trend hi: 62.281  croatia/trend.json#/naive/hi
+- naive trend direction: "no_clear_change"  croatia/trend.json#/naive/direction
+- trend years: [2003, 2025]  croatia/trend.json#/years
+- verdict sentence_id: "artifact_falling"  croatia/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 58% per decade (-129 to -33)."  croatia/trend.json#/sentence
+- critical weeks: [9, 10, 11, 12, 13, 14, 15, 28, 29, 30, 31, 32, 33, 34, 40, 41, 42, 43]  croatia/season.json#/critical_weeks
+- window w1 label: "late-February to mid-April"  croatia/season.json#/windows/0/label
+- window w1 start_week: 9  croatia/season.json#/windows/0/start_week
+- window w1 peak_week: 12  croatia/season.json#/windows/0/peak_week
+- window w1 end_week: 15  croatia/season.json#/windows/0/end_week
+- window w1 share: 0.399  croatia/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -10.0  croatia/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -17.778  croatia/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 1.548  croatia/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the late-February to mid-April season."  croatia/season.json#/windows/0/sentence
+- window w2 label: "early-July to late-August"  croatia/season.json#/windows/1/label
+- window w2 start_week: 28  croatia/season.json#/windows/1/start_week
+- window w2 peak_week: 30  croatia/season.json#/windows/1/peak_week
+- window w2 end_week: 34  croatia/season.json#/windows/1/end_week
+- window w2 share: 0.26  croatia/season.json#/windows/1/share
+- window w2 start shift days per decade (value): -5.0  croatia/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -10.94  croatia/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): 1.111  croatia/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "No clear shift in the timing of the early-July to late-August season."  croatia/season.json#/windows/1/sentence
+- this week value: null  croatia/nowcast.json#/value
+- this week lo: null  croatia/nowcast.json#/lo
+- this week hi: null  croatia/nowcast.json#/hi
+- this week percentile: null  croatia/nowcast.json#/percentile
+- this week status: "unavailable"  croatia/nowcast.json#/status
+- this week as_of: null  croatia/nowcast.json#/as_of
+- this week window start: null  croatia/nowcast.json#/window/start
+- this week window end: null  croatia/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  croatia/nowcast.json#/baseline_years
+- month to date value: null  croatia/nowcast.json#/month_to_date/value
+- month to date median: null  croatia/nowcast.json#/month_to_date/median
+- month to date ratio: null  croatia/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  croatia/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  croatia/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.471  methods.json#/validation/435/value
+- LOYO weekly WAPE baseline annual_ratio: 0.523  methods.json#/validation/435/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.249  methods.json#/validation/435/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/435/years
+- LOYO weekly WAPE (tier2): 0.405  methods.json#/validation/450/value
+- LOYO years: [2013, 2022]  methods.json#/validation/450/years
+- reliability_err (tier2): 0.012  methods.json#/validation/448/value
+- reliability_year_absolute_err (tier2): 0.195  methods.json#/validation/449/value
+- t1_t2_wape (tier2): 0.329  methods.json#/validation/452/value
+- eyesight status: "validated"  methods.json#/eyesight/25/status
+- eyesight param a: -4.16  methods.json#/eyesight/25/params/a
+- eyesight param a_hi: -3.997  methods.json#/eyesight/25/params/a_hi
+- eyesight param a_lo: -4.342  methods.json#/eyesight/25/params/a_lo
+- eyesight param b: 2.733  methods.json#/eyesight/25/params/b
+- eyesight param b_hi: 3.253  methods.json#/eyesight/25/params/b_hi
+- eyesight param b_lo: 2.588  methods.json#/eyesight/25/params/b_lo
+- eyesight param c: 0.886  methods.json#/eyesight/25/params/c
+- eyesight param c_hi: 0.945  methods.json#/eyesight/25/params/c_hi
+- eyesight param c_lo: 0.648  methods.json#/eyesight/25/params/c_lo
+- eyesight g: 1.727  methods.json#/eyesight/25/g
+
+## Cuba (`cuba`)
+
+- jump multiple (value): 4.0  cuba/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.77  cuba/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 4.978  cuba/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  cuba/ruler.json#/jump_multiple/years
+- ruler sentence: "In Cuba, VIIRS reports about 4.0 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  cuba/ruler.json#/sentence
+- harmonized trend pct_per_decade: 2.275  cuba/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -24.334  cuba/trend.json#/harmonized/lo
+- harmonized trend hi: 20.155  cuba/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  cuba/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 80.371  cuba/trend.json#/naive/pct_per_decade
+- naive trend lo: 56.838  cuba/trend.json#/naive/lo
+- naive trend hi: 129.943  cuba/trend.json#/naive/hi
+- naive trend direction: "rising"  cuba/trend.json#/naive/direction
+- trend years: [2003, 2025]  cuba/trend.json#/years
+- verdict sentence_id: "artifact_flat"  cuba/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 80% per decade. After correcting for the sensor change, there is no clear change (-24 to 20% per decade)."  cuba/trend.json#/sentence
+- critical weeks: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]  cuba/season.json#/critical_weeks
+- window w1 label: "mid-January to early-May"  cuba/season.json#/windows/0/label
+- window w1 start_week: 3  cuba/season.json#/windows/0/start_week
+- window w1 peak_week: 12  cuba/season.json#/windows/0/peak_week
+- window w1 end_week: 18  cuba/season.json#/windows/0/end_week
+- window w1 share: 0.807  cuba/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -0.556  cuba/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -7.5  cuba/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 4.743  cuba/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the mid-January to early-May season."  cuba/season.json#/windows/0/sentence
+- this week value: null  cuba/nowcast.json#/value
+- this week lo: null  cuba/nowcast.json#/lo
+- this week hi: null  cuba/nowcast.json#/hi
+- this week percentile: null  cuba/nowcast.json#/percentile
+- this week status: "unavailable"  cuba/nowcast.json#/status
+- this week as_of: null  cuba/nowcast.json#/as_of
+- this week window start: null  cuba/nowcast.json#/window/start
+- this week window end: null  cuba/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  cuba/nowcast.json#/baseline_years
+- month to date value: null  cuba/nowcast.json#/month_to_date/value
+- month to date median: null  cuba/nowcast.json#/month_to_date/median
+- month to date ratio: null  cuba/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  cuba/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  cuba/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.16  methods.json#/validation/453/value
+- LOYO weekly WAPE baseline annual_ratio: 0.178  methods.json#/validation/453/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.171  methods.json#/validation/453/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/453/years
+- LOYO weekly WAPE (tier2): 0.179  methods.json#/validation/468/value
+- LOYO years: [2013, 2022]  methods.json#/validation/468/years
+- reliability_err (tier2): 0.0  methods.json#/validation/466/value
+- reliability_year_absolute_err (tier2): 0.036  methods.json#/validation/467/value
+- t1_t2_wape (tier2): 0.14  methods.json#/validation/470/value
+- eyesight status: "exploratory"  methods.json#/eyesight/26/status
+- eyesight param a: -4.045  methods.json#/eyesight/26/params/a
+- eyesight param a_hi: -3.956  methods.json#/eyesight/26/params/a_hi
+- eyesight param a_lo: -4.132  methods.json#/eyesight/26/params/a_lo
+- eyesight param b: 2.614  methods.json#/eyesight/26/params/b
+- eyesight param b_hi: 2.745  methods.json#/eyesight/26/params/b_hi
+- eyesight param b_lo: 2.527  methods.json#/eyesight/26/params/b_lo
+- eyesight param c: 0.671  methods.json#/eyesight/26/params/c
+- eyesight param c_hi: 0.716  methods.json#/eyesight/26/params/c_hi
+- eyesight param c_lo: 0.625  methods.json#/eyesight/26/params/c_lo
+- eyesight g: 1.638  methods.json#/eyesight/26/g
+
+## North Korea (`dem-rep-korea`)
+
+- jump multiple (value): 4.029  dem-rep-korea/ruler.json#/jump_multiple/value
+- jump multiple (lo): 2.868  dem-rep-korea/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 7.11  dem-rep-korea/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  dem-rep-korea/ruler.json#/jump_multiple/years
+- ruler sentence: "In North Korea, VIIRS reports about 4.0 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  dem-rep-korea/ruler.json#/sentence
+- harmonized trend pct_per_decade: -113.064  dem-rep-korea/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -199.551  dem-rep-korea/trend.json#/harmonized/lo
+- harmonized trend hi: -59.662  dem-rep-korea/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  dem-rep-korea/trend.json#/harmonized/direction
+- naive trend pct_per_decade: -28.481  dem-rep-korea/trend.json#/naive/pct_per_decade
+- naive trend lo: -79.181  dem-rep-korea/trend.json#/naive/lo
+- naive trend hi: 11.95  dem-rep-korea/trend.json#/naive/hi
+- naive trend direction: "no_clear_change"  dem-rep-korea/trend.json#/naive/direction
+- trend years: [2003, 2025]  dem-rep-korea/trend.json#/years
+- verdict sentence_id: "artifact_falling"  dem-rep-korea/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 113% per decade (-200 to -60)."  dem-rep-korea/trend.json#/sentence
+- critical weeks: [10, 11, 12, 13, 14, 15, 16, 17, 18, 19]  dem-rep-korea/season.json#/critical_weeks
+- window w1 label: "early-March to mid-May"  dem-rep-korea/season.json#/windows/0/label
+- window w1 start_week: 10  dem-rep-korea/season.json#/windows/0/start_week
+- window w1 peak_week: 17  dem-rep-korea/season.json#/windows/0/peak_week
+- window w1 end_week: 19  dem-rep-korea/season.json#/windows/0/end_week
+- window w1 share: 0.814  dem-rep-korea/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -7.692  dem-rep-korea/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -11.176  dem-rep-korea/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): -2.663  dem-rep-korea/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "The early-March to mid-May season now starts about 8 days earlier per decade (-11 to -3)."  dem-rep-korea/season.json#/windows/0/sentence
+- this week value: null  dem-rep-korea/nowcast.json#/value
+- this week lo: null  dem-rep-korea/nowcast.json#/lo
+- this week hi: null  dem-rep-korea/nowcast.json#/hi
+- this week percentile: null  dem-rep-korea/nowcast.json#/percentile
+- this week status: "unavailable"  dem-rep-korea/nowcast.json#/status
+- this week as_of: null  dem-rep-korea/nowcast.json#/as_of
+- this week window start: null  dem-rep-korea/nowcast.json#/window/start
+- this week window end: null  dem-rep-korea/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  dem-rep-korea/nowcast.json#/baseline_years
+- month to date value: null  dem-rep-korea/nowcast.json#/month_to_date/value
+- month to date median: null  dem-rep-korea/nowcast.json#/month_to_date/median
+- month to date ratio: null  dem-rep-korea/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  dem-rep-korea/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  dem-rep-korea/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.325  methods.json#/validation/471/value
+- LOYO weekly WAPE baseline annual_ratio: 0.376  methods.json#/validation/471/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.107  methods.json#/validation/471/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/471/years
+- LOYO weekly WAPE (tier2): 0.24  methods.json#/validation/486/value
+- LOYO years: [2013, 2022]  methods.json#/validation/486/years
+- reliability_err (tier2): 0.015  methods.json#/validation/484/value
+- reliability_year_absolute_err (tier2): 0.086  methods.json#/validation/485/value
+- t1_t2_wape (tier2): 0.237  methods.json#/validation/488/value
+- eyesight status: "validated"  methods.json#/eyesight/27/status
+- eyesight param a: -3.892  methods.json#/eyesight/27/params/a
+- eyesight param a_hi: -3.778  methods.json#/eyesight/27/params/a_hi
+- eyesight param a_lo: -4.102  methods.json#/eyesight/27/params/a_lo
+- eyesight param b: 2.7  methods.json#/eyesight/27/params/b
+- eyesight param b_hi: 2.87  methods.json#/eyesight/27/params/b_hi
+- eyesight param b_lo: 2.603  methods.json#/eyesight/27/params/b_lo
+- eyesight param c: 0.836  methods.json#/eyesight/27/params/c
+- eyesight param c_hi: 0.909  methods.json#/eyesight/27/params/c_hi
+- eyesight param c_lo: 0.769  methods.json#/eyesight/27/params/c_lo
+- eyesight g: 1.5  methods.json#/eyesight/27/g
+
+## Denmark (`denmark`)
+
+- jump multiple (value): 4.005  denmark/ruler.json#/jump_multiple/value
+- jump multiple (lo): 2.989  denmark/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 8.132  denmark/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  denmark/ruler.json#/jump_multiple/years
+- ruler sentence: "In Denmark, VIIRS reports about 4.0 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  denmark/ruler.json#/sentence
+- harmonized trend pct_per_decade: -86.022  denmark/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -154.067  denmark/trend.json#/harmonized/lo
+- harmonized trend hi: -16.667  denmark/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  denmark/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 12.327  denmark/trend.json#/naive/pct_per_decade
+- naive trend lo: -13.874  denmark/trend.json#/naive/lo
+- naive trend hi: 42.377  denmark/trend.json#/naive/hi
+- naive trend direction: "no_clear_change"  denmark/trend.json#/naive/direction
+- trend years: [2003, 2025]  denmark/trend.json#/years
+- verdict sentence_id: "artifact_falling"  denmark/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 86% per decade (-154 to -17)."  denmark/trend.json#/sentence
+- critical weeks: [14, 15, 16, 17, 18, 29, 30, 31, 33, 34, 35, 36, 37]  denmark/season.json#/critical_weeks
+- window w1 label: "mid-July to mid-September"  denmark/season.json#/windows/0/label
+- window w1 start_week: 29  denmark/season.json#/windows/0/start_week
+- window w1 peak_week: 35  denmark/season.json#/windows/0/peak_week
+- window w1 end_week: 37  denmark/season.json#/windows/0/end_week
+- window w1 share: 0.592  denmark/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -1.25  denmark/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -13.353  denmark/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 5.714  denmark/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the mid-July to mid-September season."  denmark/season.json#/windows/0/sentence
+- window w2 label: "early-April to early-May"  denmark/season.json#/windows/1/label
+- window w2 start_week: 14  denmark/season.json#/windows/1/start_week
+- window w2 peak_week: 16  denmark/season.json#/windows/1/peak_week
+- window w2 end_week: 18  denmark/season.json#/windows/1/end_week
+- window w2 share: 0.277  denmark/season.json#/windows/1/share
+- window w2 start shift days per decade (value): -2.93  denmark/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -10.0  denmark/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): 45.0  denmark/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "No clear shift in the timing of the early-April to early-May season."  denmark/season.json#/windows/1/sentence
+- this week value: null  denmark/nowcast.json#/value
+- this week lo: null  denmark/nowcast.json#/lo
+- this week hi: null  denmark/nowcast.json#/hi
+- this week percentile: null  denmark/nowcast.json#/percentile
+- this week status: "unavailable"  denmark/nowcast.json#/status
+- this week as_of: null  denmark/nowcast.json#/as_of
+- this week window start: null  denmark/nowcast.json#/window/start
+- this week window end: null  denmark/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  denmark/nowcast.json#/baseline_years
+- month to date value: null  denmark/nowcast.json#/month_to_date/value
+- month to date median: null  denmark/nowcast.json#/month_to_date/median
+- month to date ratio: null  denmark/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  denmark/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  denmark/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.909  methods.json#/validation/489/value
+- LOYO weekly WAPE baseline annual_ratio: 0.92  methods.json#/validation/489/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.101  methods.json#/validation/489/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/489/years
+- eyesight status: "absent"  methods.json#/eyesight/28/status
+
+## Dominican Republic (`dominican-republic`)
+
+- jump multiple (value): 5.858  dominican-republic/ruler.json#/jump_multiple/value
+- jump multiple (lo): 5.318  dominican-republic/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 7.477  dominican-republic/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  dominican-republic/ruler.json#/jump_multiple/years
+- ruler sentence: "In Dominican Republic, VIIRS reports about 5.9 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  dominican-republic/ruler.json#/sentence
+- harmonized trend pct_per_decade: -23.602  dominican-republic/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -39.813  dominican-republic/trend.json#/harmonized/lo
+- harmonized trend hi: -10.806  dominican-republic/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  dominican-republic/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 51.198  dominican-republic/trend.json#/naive/pct_per_decade
+- naive trend lo: 37.81  dominican-republic/trend.json#/naive/lo
+- naive trend hi: 146.85  dominican-republic/trend.json#/naive/hi
+- naive trend direction: "rising"  dominican-republic/trend.json#/naive/direction
+- trend years: [2003, 2025]  dominican-republic/trend.json#/years
+- verdict sentence_id: "artifact_falling"  dominican-republic/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 24% per decade (-40 to -11)."  dominican-republic/trend.json#/sentence
+- critical weeks: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 30, 31, 32, 33, 34, 35, 36, 37, 38]  dominican-republic/season.json#/critical_weeks
+- window w1 label: "mid-January to early-June"  dominican-republic/season.json#/windows/0/label
+- window w1 start_week: 3  dominican-republic/season.json#/windows/0/start_week
+- window w1 peak_week: 11  dominican-republic/season.json#/windows/0/peak_week
+- window w1 end_week: 23  dominican-republic/season.json#/windows/0/end_week
+- window w1 share: 0.651  dominican-republic/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -5.385  dominican-republic/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -14.0  dominican-republic/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): -0.576  dominican-republic/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "The mid-January to early-June season now starts about 5 days earlier per decade (-14 to -1)."  dominican-republic/season.json#/windows/0/sentence
+- this week value: null  dominican-republic/nowcast.json#/value
+- this week lo: null  dominican-republic/nowcast.json#/lo
+- this week hi: null  dominican-republic/nowcast.json#/hi
+- this week percentile: null  dominican-republic/nowcast.json#/percentile
+- this week status: "unavailable"  dominican-republic/nowcast.json#/status
+- this week as_of: null  dominican-republic/nowcast.json#/as_of
+- this week window start: null  dominican-republic/nowcast.json#/window/start
+- this week window end: null  dominican-republic/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  dominican-republic/nowcast.json#/baseline_years
+- month to date value: null  dominican-republic/nowcast.json#/month_to_date/value
+- month to date median: null  dominican-republic/nowcast.json#/month_to_date/median
+- month to date ratio: null  dominican-republic/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  dominican-republic/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  dominican-republic/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.303  methods.json#/validation/502/value
+- LOYO weekly WAPE baseline annual_ratio: 0.306  methods.json#/validation/502/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 6.2  methods.json#/validation/502/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/502/years
+- LOYO weekly WAPE (tier2): 0.301  methods.json#/validation/517/value
+- LOYO years: [2013, 2022]  methods.json#/validation/517/years
+- reliability_err (tier2): 0.002  methods.json#/validation/515/value
+- reliability_year_absolute_err (tier2): 0.064  methods.json#/validation/516/value
+- t1_t2_wape (tier2): 0.173  methods.json#/validation/519/value
+- eyesight status: "validated"  methods.json#/eyesight/29/status
+- eyesight param a: -4.245  methods.json#/eyesight/29/params/a
+- eyesight param a_hi: -4.188  methods.json#/eyesight/29/params/a_hi
+- eyesight param a_lo: -4.299  methods.json#/eyesight/29/params/a_lo
+- eyesight param b: 2.48  methods.json#/eyesight/29/params/b
+- eyesight param b_hi: 2.62  methods.json#/eyesight/29/params/b_hi
+- eyesight param b_lo: 2.314  methods.json#/eyesight/29/params/b_lo
+- eyesight param c: 0.554  methods.json#/eyesight/29/params/c
+- eyesight param c_hi: 0.637  methods.json#/eyesight/29/params/c_hi
+- eyesight param c_lo: 0.503  methods.json#/eyesight/29/params/c_lo
+- eyesight g: 2.011  methods.json#/eyesight/29/g
+
+## Ecuador (`ecuador`)
+
+- jump multiple (value): 5.413  ecuador/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.759  ecuador/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 8.021  ecuador/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  ecuador/ruler.json#/jump_multiple/years
+- ruler sentence: "In Ecuador, VIIRS reports about 5.4 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  ecuador/ruler.json#/sentence
+- harmonized trend pct_per_decade: -11.591  ecuador/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -32.057  ecuador/trend.json#/harmonized/lo
+- harmonized trend hi: 7.665  ecuador/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  ecuador/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 77.198  ecuador/trend.json#/naive/pct_per_decade
+- naive trend lo: 43.09  ecuador/trend.json#/naive/lo
+- naive trend hi: 182.102  ecuador/trend.json#/naive/hi
+- naive trend direction: "rising"  ecuador/trend.json#/naive/direction
+- trend years: [2003, 2025]  ecuador/trend.json#/years
+- verdict sentence_id: "artifact_flat"  ecuador/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 77% per decade. After correcting for the sensor change, there is no clear change (-32 to 8% per decade)."  ecuador/trend.json#/sentence
+- critical weeks: [36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51]  ecuador/season.json#/critical_weeks
+- window w1 label: "early-September to late-December"  ecuador/season.json#/windows/0/label
+- window w1 start_week: 36  ecuador/season.json#/windows/0/start_week
+- window w1 peak_week: 48  ecuador/season.json#/windows/0/peak_week
+- window w1 end_week: 51  ecuador/season.json#/windows/0/end_week
+- window w1 share: 0.813  ecuador/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 0.0  ecuador/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -8.412  ecuador/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 12.5  ecuador/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-September to late-December season."  ecuador/season.json#/windows/0/sentence
+- this week value: null  ecuador/nowcast.json#/value
+- this week lo: null  ecuador/nowcast.json#/lo
+- this week hi: null  ecuador/nowcast.json#/hi
+- this week percentile: null  ecuador/nowcast.json#/percentile
+- this week status: "unavailable"  ecuador/nowcast.json#/status
+- this week as_of: null  ecuador/nowcast.json#/as_of
+- this week window start: null  ecuador/nowcast.json#/window/start
+- this week window end: null  ecuador/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  ecuador/nowcast.json#/baseline_years
+- month to date value: null  ecuador/nowcast.json#/month_to_date/value
+- month to date median: null  ecuador/nowcast.json#/month_to_date/median
+- month to date ratio: null  ecuador/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  ecuador/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  ecuador/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.363  methods.json#/validation/520/value
+- LOYO weekly WAPE baseline annual_ratio: 0.369  methods.json#/validation/520/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 4.082  methods.json#/validation/520/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/520/years
+- LOYO weekly WAPE (tier2): 0.349  methods.json#/validation/535/value
+- LOYO years: [2013, 2022]  methods.json#/validation/535/years
+- reliability_err (tier2): 0.003  methods.json#/validation/533/value
+- reliability_year_absolute_err (tier2): 0.126  methods.json#/validation/534/value
+- t1_t2_wape (tier2): 0.127  methods.json#/validation/537/value
+- eyesight status: "validated"  methods.json#/eyesight/30/status
+- eyesight param a: -3.664  methods.json#/eyesight/30/params/a
+- eyesight param a_hi: -3.515  methods.json#/eyesight/30/params/a_hi
+- eyesight param a_lo: -3.797  methods.json#/eyesight/30/params/a_lo
+- eyesight param b: 2.402  methods.json#/eyesight/30/params/b
+- eyesight param b_hi: 2.542  methods.json#/eyesight/30/params/b_hi
+- eyesight param b_lo: 2.213  methods.json#/eyesight/30/params/b_lo
+- eyesight param c: 0.492  methods.json#/eyesight/30/params/c
+- eyesight param c_hi: 0.581  methods.json#/eyesight/30/params/c_hi
+- eyesight param c_lo: 0.422  methods.json#/eyesight/30/params/c_lo
+- eyesight g: 1.739  methods.json#/eyesight/30/g
+
+## Egypt (`egypt`)
+
+- jump multiple (value): 11.477  egypt/ruler.json#/jump_multiple/value
+- jump multiple (lo): 7.752  egypt/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 16.586  egypt/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  egypt/ruler.json#/jump_multiple/years
+- ruler sentence: "In Egypt, VIIRS reports about 11.5 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  egypt/ruler.json#/sentence
+- harmonized trend pct_per_decade: -19.371  egypt/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -40.995  egypt/trend.json#/harmonized/lo
+- harmonized trend hi: 2.952  egypt/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  egypt/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 58.169  egypt/trend.json#/naive/pct_per_decade
+- naive trend lo: 28.33  egypt/trend.json#/naive/lo
+- naive trend hi: 487.271  egypt/trend.json#/naive/hi
+- naive trend direction: "rising"  egypt/trend.json#/naive/direction
+- trend years: [2003, 2025]  egypt/trend.json#/years
+- verdict sentence_id: "artifact_flat"  egypt/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 58% per decade. After correcting for the sensor change, there is no clear change (-41 to 3% per decade)."  egypt/trend.json#/sentence
+- critical weeks: [4, 5, 8, 9, 10, 19, 20, 21, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47]  egypt/season.json#/critical_weeks
+- window w1 label: "mid-August to late-November"  egypt/season.json#/windows/0/label
+- window w1 start_week: 34  egypt/season.json#/windows/0/start_week
+- window w1 peak_week: 41  egypt/season.json#/windows/0/peak_week
+- window w1 end_week: 47  egypt/season.json#/windows/0/end_week
+- window w1 share: 0.715  egypt/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -7.5  egypt/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -11.667  egypt/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): -4.444  egypt/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "The mid-August to late-November season now starts about 8 days earlier per decade (-12 to -4)."  egypt/season.json#/windows/0/sentence
+- this week value: null  egypt/nowcast.json#/value
+- this week lo: null  egypt/nowcast.json#/lo
+- this week hi: null  egypt/nowcast.json#/hi
+- this week percentile: null  egypt/nowcast.json#/percentile
+- this week status: "unavailable"  egypt/nowcast.json#/status
+- this week as_of: null  egypt/nowcast.json#/as_of
+- this week window start: null  egypt/nowcast.json#/window/start
+- this week window end: null  egypt/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  egypt/nowcast.json#/baseline_years
+- month to date value: null  egypt/nowcast.json#/month_to_date/value
+- month to date median: null  egypt/nowcast.json#/month_to_date/median
+- month to date ratio: null  egypt/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  egypt/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  egypt/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.449  methods.json#/validation/538/value
+- LOYO weekly WAPE baseline annual_ratio: 0.48  methods.json#/validation/538/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 11.51  methods.json#/validation/538/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/538/years
+- LOYO weekly WAPE (tier2): 0.501  methods.json#/validation/553/value
+- LOYO years: [2013, 2022]  methods.json#/validation/553/years
+- reliability_err (tier2): 0.011  methods.json#/validation/551/value
+- reliability_year_absolute_err (tier2): 0.365  methods.json#/validation/552/value
+- t1_t2_wape (tier2): 0.269  methods.json#/validation/555/value
+- eyesight status: "exploratory"  methods.json#/eyesight/31/status
+- eyesight param a: -3.448  methods.json#/eyesight/31/params/a
+- eyesight param a_hi: -3.17  methods.json#/eyesight/31/params/a_hi
+- eyesight param a_lo: -3.911  methods.json#/eyesight/31/params/a_lo
+- eyesight param b: 2.328  methods.json#/eyesight/31/params/b
+- eyesight param b_hi: 2.715  methods.json#/eyesight/31/params/b_hi
+- eyesight param b_lo: 2.0  methods.json#/eyesight/31/params/b_lo
+- eyesight param c: 0.21  methods.json#/eyesight/31/params/c
+- eyesight param c_hi: 0.301  methods.json#/eyesight/31/params/c_hi
+- eyesight param c_lo: 0.16  methods.json#/eyesight/31/params/c_lo
+- eyesight g: 2.181  methods.json#/eyesight/31/g
+
+## El Salvador (`el-salvador`)
+
+- jump multiple (value): 4.555  el-salvador/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.215  el-salvador/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 5.562  el-salvador/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  el-salvador/ruler.json#/jump_multiple/years
+- ruler sentence: "In El Salvador, VIIRS reports about 4.6 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  el-salvador/ruler.json#/sentence
+- harmonized trend pct_per_decade: -26.627  el-salvador/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -45.562  el-salvador/trend.json#/harmonized/lo
+- harmonized trend hi: -2.448  el-salvador/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  el-salvador/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 31.975  el-salvador/trend.json#/naive/pct_per_decade
+- naive trend lo: 4.504  el-salvador/trend.json#/naive/lo
+- naive trend hi: 91.698  el-salvador/trend.json#/naive/hi
+- naive trend direction: "rising"  el-salvador/trend.json#/naive/direction
+- trend years: [2003, 2025]  el-salvador/trend.json#/years
+- verdict sentence_id: "unclear"  el-salvador/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (-46 to -2% per decade)."  el-salvador/trend.json#/sentence
+- critical weeks: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]  el-salvador/season.json#/critical_weeks
+- window w1 label: "early-January to early-May"  el-salvador/season.json#/windows/0/label
+- window w1 start_week: 2  el-salvador/season.json#/windows/0/start_week
+- window w1 peak_week: 11  el-salvador/season.json#/windows/0/peak_week
+- window w1 end_week: 18  el-salvador/season.json#/windows/0/end_week
+- window w1 share: 0.821  el-salvador/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 7.143  el-salvador/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): 3.665  el-salvador/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 11.0  el-salvador/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "The early-January to early-May season now starts about 7 days later per decade (4 to 11)."  el-salvador/season.json#/windows/0/sentence
+- this week value: null  el-salvador/nowcast.json#/value
+- this week lo: null  el-salvador/nowcast.json#/lo
+- this week hi: null  el-salvador/nowcast.json#/hi
+- this week percentile: null  el-salvador/nowcast.json#/percentile
+- this week status: "unavailable"  el-salvador/nowcast.json#/status
+- this week as_of: null  el-salvador/nowcast.json#/as_of
+- this week window start: null  el-salvador/nowcast.json#/window/start
+- this week window end: null  el-salvador/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  el-salvador/nowcast.json#/baseline_years
+- month to date value: null  el-salvador/nowcast.json#/month_to_date/value
+- month to date median: null  el-salvador/nowcast.json#/month_to_date/median
+- month to date ratio: null  el-salvador/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  el-salvador/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  el-salvador/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.359  methods.json#/validation/556/value
+- LOYO weekly WAPE baseline annual_ratio: 0.414  methods.json#/validation/556/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 4.68  methods.json#/validation/556/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/556/years
+- LOYO weekly WAPE (tier2): 0.369  methods.json#/validation/571/value
+- LOYO years: [2013, 2022]  methods.json#/validation/571/years
+- reliability_err (tier2): 0.002  methods.json#/validation/569/value
+- reliability_year_absolute_err (tier2): 0.116  methods.json#/validation/570/value
+- t1_t2_wape (tier2): 0.28  methods.json#/validation/573/value
+- eyesight status: "validated"  methods.json#/eyesight/32/status
+- eyesight param a: -4.663  methods.json#/eyesight/32/params/a
+- eyesight param a_hi: -4.503  methods.json#/eyesight/32/params/a_hi
+- eyesight param a_lo: -4.794  methods.json#/eyesight/32/params/a_lo
+- eyesight param b: 2.84  methods.json#/eyesight/32/params/b
+- eyesight param b_hi: 3.048  methods.json#/eyesight/32/params/b_hi
+- eyesight param b_lo: 2.554  methods.json#/eyesight/32/params/b_lo
+- eyesight param c: 0.641  methods.json#/eyesight/32/params/c
+- eyesight param c_hi: 0.728  methods.json#/eyesight/32/params/c_hi
+- eyesight param c_lo: 0.583  methods.json#/eyesight/32/params/c_lo
+- eyesight g: 1.874  methods.json#/eyesight/32/g
+
+## Equatorial Guinea (`equatorial-guinea`)
+
+- jump multiple (value): 4.246  equatorial-guinea/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.462  equatorial-guinea/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 6.919  equatorial-guinea/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  equatorial-guinea/ruler.json#/jump_multiple/years
+- ruler sentence: "In Equatorial Guinea, VIIRS reports about 4.2 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  equatorial-guinea/ruler.json#/sentence
+- harmonized trend pct_per_decade: 28.571  equatorial-guinea/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: 16.043  equatorial-guinea/trend.json#/harmonized/lo
+- harmonized trend hi: 40.566  equatorial-guinea/trend.json#/harmonized/hi
+- harmonized trend direction: "rising"  equatorial-guinea/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 69.276  equatorial-guinea/trend.json#/naive/pct_per_decade
+- naive trend lo: 49.739  equatorial-guinea/trend.json#/naive/lo
+- naive trend hi: 253.401  equatorial-guinea/trend.json#/naive/hi
+- naive trend direction: "rising"  equatorial-guinea/trend.json#/naive/direction
+- trend years: [2003, 2025]  equatorial-guinea/trend.json#/years
+- verdict sentence_id: "artifact_rising"  equatorial-guinea/trend.json#/sentence_id
+- verdict sentence: "Burning activity did rise, by about 29% per decade (16 to 41). The raw record overstates it at 69%."  equatorial-guinea/trend.json#/sentence
+- critical weeks: [5, 6, 7, 8, 9, 10, 11, 32, 33]  equatorial-guinea/season.json#/critical_weeks
+- window w1 label: "late-January to mid-March"  equatorial-guinea/season.json#/windows/0/label
+- window w1 start_week: 5  equatorial-guinea/season.json#/windows/0/start_week
+- window w1 peak_week: 8  equatorial-guinea/season.json#/windows/0/peak_week
+- window w1 end_week: 11  equatorial-guinea/season.json#/windows/0/end_week
+- window w1 share: 0.728  equatorial-guinea/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -2.727  equatorial-guinea/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -7.619  equatorial-guinea/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 1.351  equatorial-guinea/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the late-January to mid-March season."  equatorial-guinea/season.json#/windows/0/sentence
+- this week value: null  equatorial-guinea/nowcast.json#/value
+- this week lo: null  equatorial-guinea/nowcast.json#/lo
+- this week hi: null  equatorial-guinea/nowcast.json#/hi
+- this week percentile: null  equatorial-guinea/nowcast.json#/percentile
+- this week status: "unavailable"  equatorial-guinea/nowcast.json#/status
+- this week as_of: null  equatorial-guinea/nowcast.json#/as_of
+- this week window start: null  equatorial-guinea/nowcast.json#/window/start
+- this week window end: null  equatorial-guinea/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  equatorial-guinea/nowcast.json#/baseline_years
+- month to date value: null  equatorial-guinea/nowcast.json#/month_to_date/value
+- month to date median: null  equatorial-guinea/nowcast.json#/month_to_date/median
+- month to date ratio: null  equatorial-guinea/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  equatorial-guinea/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  equatorial-guinea/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.463  methods.json#/validation/574/value
+- LOYO weekly WAPE baseline annual_ratio: 0.47  methods.json#/validation/574/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.877  methods.json#/validation/574/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/574/years
+- LOYO weekly WAPE (tier2): 0.45  methods.json#/validation/589/value
+- LOYO years: [2013, 2022]  methods.json#/validation/589/years
+- reliability_err (tier2): 0.001  methods.json#/validation/587/value
+- reliability_year_absolute_err (tier2): 0.182  methods.json#/validation/588/value
+- t1_t2_wape (tier2): 0.159  methods.json#/validation/591/value
+- eyesight status: "validated"  methods.json#/eyesight/33/status
+- eyesight param a: -3.902  methods.json#/eyesight/33/params/a
+- eyesight param a_hi: -3.077  methods.json#/eyesight/33/params/a_hi
+- eyesight param a_lo: -4.05  methods.json#/eyesight/33/params/a_lo
+- eyesight param b: 1.932  methods.json#/eyesight/33/params/b
+- eyesight param b_hi: 2.705  methods.json#/eyesight/33/params/b_hi
+- eyesight param b_lo: 1.713  methods.json#/eyesight/33/params/b_lo
+- eyesight param c: 1.0  methods.json#/eyesight/33/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/33/params/c_hi
+- eyesight param c_lo: 0.359  methods.json#/eyesight/33/params/c_lo
+- eyesight g: 2.632  methods.json#/eyesight/33/g
+
+## Eritrea (`eritrea`)
+
+- jump multiple (value): 2.998  eritrea/ruler.json#/jump_multiple/value
+- jump multiple (lo): 1.565  eritrea/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 4.208  eritrea/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  eritrea/ruler.json#/jump_multiple/years
+- ruler sentence: "In Eritrea, VIIRS reports about 3.0 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  eritrea/ruler.json#/sentence
+- harmonized trend pct_per_decade: 8.475  eritrea/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -32.796  eritrea/trend.json#/harmonized/lo
+- harmonized trend hi: 49.744  eritrea/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  eritrea/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 109.43  eritrea/trend.json#/naive/pct_per_decade
+- naive trend lo: 66.019  eritrea/trend.json#/naive/lo
+- naive trend hi: 172.599  eritrea/trend.json#/naive/hi
+- naive trend direction: "rising"  eritrea/trend.json#/naive/direction
+- trend years: [2003, 2025]  eritrea/trend.json#/years
+- verdict sentence_id: "artifact_flat"  eritrea/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 109% per decade. After correcting for the sensor change, there is no clear change (-33 to 50% per decade)."  eritrea/trend.json#/sentence
+- critical weeks: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 45, 46, 47, 48, 51, 52]  eritrea/season.json#/critical_weeks
+- window w1 label: "mid-December to mid-June"  eritrea/season.json#/windows/0/label
+- window w1 start_week: 51  eritrea/season.json#/windows/0/start_week
+- window w1 peak_week: 19  eritrea/season.json#/windows/0/peak_week
+- window w1 end_week: 24  eritrea/season.json#/windows/0/end_week
+- window w1 share: 0.677  eritrea/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 0.0  eritrea/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -8.571  eritrea/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 10.016  eritrea/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the mid-December to mid-June season."  eritrea/season.json#/windows/0/sentence
+- this week value: null  eritrea/nowcast.json#/value
+- this week lo: null  eritrea/nowcast.json#/lo
+- this week hi: null  eritrea/nowcast.json#/hi
+- this week percentile: null  eritrea/nowcast.json#/percentile
+- this week status: "unavailable"  eritrea/nowcast.json#/status
+- this week as_of: null  eritrea/nowcast.json#/as_of
+- this week window start: null  eritrea/nowcast.json#/window/start
+- this week window end: null  eritrea/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  eritrea/nowcast.json#/baseline_years
+- month to date value: null  eritrea/nowcast.json#/month_to_date/value
+- month to date median: null  eritrea/nowcast.json#/month_to_date/median
+- month to date ratio: null  eritrea/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  eritrea/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  eritrea/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.736  methods.json#/validation/592/value
+- LOYO weekly WAPE baseline annual_ratio: 0.739  methods.json#/validation/592/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.286  methods.json#/validation/592/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/592/years
+- eyesight status: "absent"  methods.json#/eyesight/34/status
+
+## Fiji (`fiji`)
+
+- jump multiple (value): 6.373  fiji/ruler.json#/jump_multiple/value
+- jump multiple (lo): 5.468  fiji/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 8.228  fiji/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  fiji/ruler.json#/jump_multiple/years
+- ruler sentence: "In Fiji, VIIRS reports about 6.4 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  fiji/ruler.json#/sentence
+- harmonized trend pct_per_decade: -1.226  fiji/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -26.373  fiji/trend.json#/harmonized/lo
+- harmonized trend hi: 21.201  fiji/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  fiji/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 53.099  fiji/trend.json#/naive/pct_per_decade
+- naive trend lo: 36.102  fiji/trend.json#/naive/lo
+- naive trend hi: 169.017  fiji/trend.json#/naive/hi
+- naive trend direction: "rising"  fiji/trend.json#/naive/direction
+- trend years: [2003, 2025]  fiji/trend.json#/years
+- verdict sentence_id: "artifact_flat"  fiji/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 53% per decade. After correcting for the sensor change, there is no clear change (-26 to 21% per decade)."  fiji/trend.json#/sentence
+- critical weeks: [28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41]  fiji/season.json#/critical_weeks
+- window w1 label: "early-July to mid-October"  fiji/season.json#/windows/0/label
+- window w1 start_week: 28  fiji/season.json#/windows/0/start_week
+- window w1 peak_week: 36  fiji/season.json#/windows/0/peak_week
+- window w1 end_week: 41  fiji/season.json#/windows/0/end_week
+- window w1 share: 0.814  fiji/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -3.636  fiji/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -13.889  fiji/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 2.857  fiji/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-July to mid-October season."  fiji/season.json#/windows/0/sentence
+- this week value: null  fiji/nowcast.json#/value
+- this week lo: null  fiji/nowcast.json#/lo
+- this week hi: null  fiji/nowcast.json#/hi
+- this week percentile: null  fiji/nowcast.json#/percentile
+- this week status: "unavailable"  fiji/nowcast.json#/status
+- this week as_of: null  fiji/nowcast.json#/as_of
+- this week window start: null  fiji/nowcast.json#/window/start
+- this week window end: null  fiji/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  fiji/nowcast.json#/baseline_years
+- month to date value: null  fiji/nowcast.json#/month_to_date/value
+- month to date median: null  fiji/nowcast.json#/month_to_date/median
+- month to date ratio: null  fiji/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  fiji/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  fiji/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.418  methods.json#/validation/605/value
+- LOYO weekly WAPE baseline annual_ratio: 0.425  methods.json#/validation/605/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 4.716  methods.json#/validation/605/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/605/years
+- LOYO weekly WAPE (tier2): 0.403  methods.json#/validation/620/value
+- LOYO years: [2013, 2022]  methods.json#/validation/620/years
+- reliability_err (tier2): 0.004  methods.json#/validation/618/value
+- reliability_year_absolute_err (tier2): 0.083  methods.json#/validation/619/value
+- t1_t2_wape (tier2): 0.213  methods.json#/validation/622/value
+- eyesight status: "validated"  methods.json#/eyesight/35/status
+- eyesight param a: -3.779  methods.json#/eyesight/35/params/a
+- eyesight param a_hi: -3.626  methods.json#/eyesight/35/params/a_hi
+- eyesight param a_lo: -4.026  methods.json#/eyesight/35/params/a_lo
+- eyesight param b: 2.536  methods.json#/eyesight/35/params/b
+- eyesight param b_hi: 2.969  methods.json#/eyesight/35/params/b_hi
+- eyesight param b_lo: 2.211  methods.json#/eyesight/35/params/b_lo
+- eyesight param c: 0.563  methods.json#/eyesight/35/params/c
+- eyesight param c_hi: 0.708  methods.json#/eyesight/35/params/c_hi
+- eyesight param c_lo: 0.446  methods.json#/eyesight/35/params/c_lo
+- eyesight g: 1.633  methods.json#/eyesight/35/g
+
+## France (`france`)
+
+- jump multiple (value): 3.65  france/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.325  france/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 5.618  france/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  france/ruler.json#/jump_multiple/years
+- ruler sentence: "In France, VIIRS reports about 3.6 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  france/ruler.json#/sentence
+- harmonized trend pct_per_decade: -28.406  france/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -50.416  france/trend.json#/harmonized/lo
+- harmonized trend hi: -8.618  france/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  france/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 44.995  france/trend.json#/naive/pct_per_decade
+- naive trend lo: 21.624  france/trend.json#/naive/lo
+- naive trend hi: 95.072  france/trend.json#/naive/hi
+- naive trend direction: "rising"  france/trend.json#/naive/direction
+- trend years: [2003, 2025]  france/trend.json#/years
+- verdict sentence_id: "unclear"  france/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (-50 to -9% per decade)."  france/trend.json#/sentence
+- critical weeks: [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43]  france/season.json#/critical_weeks
+- window w1 label: "early-July to late-October"  france/season.json#/windows/0/label
+- window w1 start_week: 28  france/season.json#/windows/0/start_week
+- window w1 peak_week: 41  france/season.json#/windows/0/peak_week
+- window w1 end_week: 43  france/season.json#/windows/0/end_week
+- window w1 share: 0.5  france/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -5.0  france/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -10.0  france/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 0.952  france/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-July to late-October season."  france/season.json#/windows/0/sentence
+- window w2 label: "mid-February to late-April"  france/season.json#/windows/1/label
+- window w2 start_week: 7  france/season.json#/windows/1/start_week
+- window w2 peak_week: 12  france/season.json#/windows/1/peak_week
+- window w2 end_week: 16  france/season.json#/windows/1/end_week
+- window w2 share: 0.304  france/season.json#/windows/1/share
+- window w2 start shift days per decade (value): -5.455  france/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -14.294  france/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): 2.929  france/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "No clear shift in the timing of the mid-February to late-April season."  france/season.json#/windows/1/sentence
+- this week value: null  france/nowcast.json#/value
+- this week lo: null  france/nowcast.json#/lo
+- this week hi: null  france/nowcast.json#/hi
+- this week percentile: null  france/nowcast.json#/percentile
+- this week status: "unavailable"  france/nowcast.json#/status
+- this week as_of: null  france/nowcast.json#/as_of
+- this week window start: null  france/nowcast.json#/window/start
+- this week window end: null  france/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  france/nowcast.json#/baseline_years
+- month to date value: null  france/nowcast.json#/month_to_date/value
+- month to date median: null  france/nowcast.json#/month_to_date/median
+- month to date ratio: null  france/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  france/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  france/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.323  methods.json#/validation/623/value
+- LOYO weekly WAPE baseline annual_ratio: 0.388  methods.json#/validation/623/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.322  methods.json#/validation/623/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/623/years
+- LOYO weekly WAPE (tier2): 0.356  methods.json#/validation/638/value
+- LOYO years: [2013, 2022]  methods.json#/validation/638/years
+- reliability_err (tier2): 0.006  methods.json#/validation/636/value
+- reliability_year_absolute_err (tier2): 0.146  methods.json#/validation/637/value
+- t1_t2_wape (tier2): 0.267  methods.json#/validation/640/value
+- eyesight status: "exploratory"  methods.json#/eyesight/36/status
+- eyesight param a: -3.916  methods.json#/eyesight/36/params/a
+- eyesight param a_hi: -3.786  methods.json#/eyesight/36/params/a_hi
+- eyesight param a_lo: -4.158  methods.json#/eyesight/36/params/a_lo
+- eyesight param b: 2.829  methods.json#/eyesight/36/params/b
+- eyesight param b_hi: 3.37  methods.json#/eyesight/36/params/b_hi
+- eyesight param b_lo: 2.406  methods.json#/eyesight/36/params/b_lo
+- eyesight param c: 0.634  methods.json#/eyesight/36/params/c
+- eyesight param c_hi: 0.799  methods.json#/eyesight/36/params/c_hi
+- eyesight param c_lo: 0.486  methods.json#/eyesight/36/params/c_lo
+- eyesight g: 2.116  methods.json#/eyesight/36/g
+
+## French Guiana (`french-guiana`)
+
+- jump multiple (value): 4.362  french-guiana/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.753  french-guiana/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 6.279  french-guiana/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  french-guiana/ruler.json#/jump_multiple/years
+- ruler sentence: "In French Guiana, VIIRS reports about 4.4 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  french-guiana/ruler.json#/sentence
+- harmonized trend pct_per_decade: -30.174  french-guiana/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -52.026  french-guiana/trend.json#/harmonized/lo
+- harmonized trend hi: -11.173  french-guiana/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  french-guiana/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 56.584  french-guiana/trend.json#/naive/pct_per_decade
+- naive trend lo: 36.022  french-guiana/trend.json#/naive/lo
+- naive trend hi: 109.824  french-guiana/trend.json#/naive/hi
+- naive trend direction: "rising"  french-guiana/trend.json#/naive/direction
+- trend years: [2003, 2025]  french-guiana/trend.json#/years
+- verdict sentence_id: "artifact_falling"  french-guiana/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 30% per decade (-52 to -11)."  french-guiana/trend.json#/sentence
+- critical weeks: [38, 39, 40, 41, 42, 43, 44, 45]  french-guiana/season.json#/critical_weeks
+- window w1 label: "mid-September to mid-November"  french-guiana/season.json#/windows/0/label
+- window w1 start_week: 38  french-guiana/season.json#/windows/0/start_week
+- window w1 peak_week: 43  french-guiana/season.json#/windows/0/peak_week
+- window w1 end_week: 45  french-guiana/season.json#/windows/0/end_week
+- window w1 share: 0.808  french-guiana/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 0.0  french-guiana/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -2.857  french-guiana/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 4.211  french-guiana/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the mid-September to mid-November season."  french-guiana/season.json#/windows/0/sentence
+- this week value: null  french-guiana/nowcast.json#/value
+- this week lo: null  french-guiana/nowcast.json#/lo
+- this week hi: null  french-guiana/nowcast.json#/hi
+- this week percentile: null  french-guiana/nowcast.json#/percentile
+- this week status: "unavailable"  french-guiana/nowcast.json#/status
+- this week as_of: null  french-guiana/nowcast.json#/as_of
+- this week window start: null  french-guiana/nowcast.json#/window/start
+- this week window end: null  french-guiana/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  french-guiana/nowcast.json#/baseline_years
+- month to date value: null  french-guiana/nowcast.json#/month_to_date/value
+- month to date median: null  french-guiana/nowcast.json#/month_to_date/median
+- month to date ratio: null  french-guiana/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  french-guiana/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  french-guiana/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.375  methods.json#/validation/641/value
+- LOYO weekly WAPE baseline annual_ratio: 0.368  methods.json#/validation/641/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.971  methods.json#/validation/641/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/641/years
+- LOYO weekly WAPE (tier2): 0.385  methods.json#/validation/656/value
+- LOYO years: [2013, 2022]  methods.json#/validation/656/years
+- reliability_err (tier2): 0.002  methods.json#/validation/654/value
+- reliability_year_absolute_err (tier2): 0.118  methods.json#/validation/655/value
+- t1_t2_wape (tier2): 0.189  methods.json#/validation/658/value
+- eyesight status: "validated"  methods.json#/eyesight/37/status
+- eyesight param a: -3.512  methods.json#/eyesight/37/params/a
+- eyesight param a_hi: -3.261  methods.json#/eyesight/37/params/a_hi
+- eyesight param a_lo: -3.849  methods.json#/eyesight/37/params/a_lo
+- eyesight param b: 2.117  methods.json#/eyesight/37/params/b
+- eyesight param b_hi: 2.42  methods.json#/eyesight/37/params/b_hi
+- eyesight param b_lo: 1.805  methods.json#/eyesight/37/params/b_lo
+- eyesight param c: 0.602  methods.json#/eyesight/37/params/c
+- eyesight param c_hi: 0.823  methods.json#/eyesight/37/params/c_hi
+- eyesight param c_lo: 0.48  methods.json#/eyesight/37/params/c_lo
+- eyesight g: 1.843  methods.json#/eyesight/37/g
+
+## Gabon (`gabon`)
+
+- jump multiple (value): 4.081  gabon/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.506  gabon/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 4.654  gabon/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  gabon/ruler.json#/jump_multiple/years
+- ruler sentence: "In Gabon, VIIRS reports about 4.1 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  gabon/ruler.json#/sentence
+- harmonized trend pct_per_decade: -8.328  gabon/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -15.279  gabon/trend.json#/harmonized/lo
+- harmonized trend hi: -1.635  gabon/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  gabon/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 45.436  gabon/trend.json#/naive/pct_per_decade
+- naive trend lo: 22.475  gabon/trend.json#/naive/lo
+- naive trend hi: 155.895  gabon/trend.json#/naive/hi
+- naive trend direction: "rising"  gabon/trend.json#/naive/direction
+- trend years: [2003, 2025]  gabon/trend.json#/years
+- verdict sentence_id: "artifact_falling"  gabon/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 8% per decade (-15 to -2)."  gabon/trend.json#/sentence
+- critical weeks: [6, 7, 8, 9, 10, 11, 12, 13, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39]  gabon/season.json#/critical_weeks
+- window w1 label: "early-June to late-September"  gabon/season.json#/windows/0/label
+- window w1 start_week: 23  gabon/season.json#/windows/0/start_week
+- window w1 peak_week: 36  gabon/season.json#/windows/0/peak_week
+- window w1 end_week: 39  gabon/season.json#/windows/0/end_week
+- window w1 share: 0.652  gabon/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 0.625  gabon/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -2.308  gabon/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 5.0  gabon/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-June to late-September season."  gabon/season.json#/windows/0/sentence
+- window w2 label: "early-February to early-April"  gabon/season.json#/windows/1/label
+- window w2 start_week: 6  gabon/season.json#/windows/1/start_week
+- window w2 peak_week: 8  gabon/season.json#/windows/1/peak_week
+- window w2 end_week: 13  gabon/season.json#/windows/1/end_week
+- window w2 share: 0.153  gabon/season.json#/windows/1/share
+- window w2 start shift days per decade (value): -3.571  gabon/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -6.337  gabon/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): 0.0  gabon/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "No clear shift in the timing of the early-February to early-April season."  gabon/season.json#/windows/1/sentence
+- this week value: null  gabon/nowcast.json#/value
+- this week lo: null  gabon/nowcast.json#/lo
+- this week hi: null  gabon/nowcast.json#/hi
+- this week percentile: null  gabon/nowcast.json#/percentile
+- this week status: "unavailable"  gabon/nowcast.json#/status
+- this week as_of: null  gabon/nowcast.json#/as_of
+- this week window start: null  gabon/nowcast.json#/window/start
+- this week window end: null  gabon/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  gabon/nowcast.json#/baseline_years
+- month to date value: null  gabon/nowcast.json#/month_to_date/value
+- month to date median: null  gabon/nowcast.json#/month_to_date/median
+- month to date ratio: null  gabon/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  gabon/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  gabon/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.302  methods.json#/validation/659/value
+- LOYO weekly WAPE baseline annual_ratio: 0.317  methods.json#/validation/659/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.737  methods.json#/validation/659/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/659/years
+- LOYO weekly WAPE (tier2): 0.318  methods.json#/validation/674/value
+- LOYO years: [2013, 2022]  methods.json#/validation/674/years
+- reliability_err (tier2): 0.0  methods.json#/validation/672/value
+- reliability_year_absolute_err (tier2): 0.074  methods.json#/validation/673/value
+- t1_t2_wape (tier2): 0.139  methods.json#/validation/676/value
+- eyesight status: "validated"  methods.json#/eyesight/38/status
+- eyesight param a: -3.48  methods.json#/eyesight/38/params/a
+- eyesight param a_hi: -3.378  methods.json#/eyesight/38/params/a_hi
+- eyesight param a_lo: -3.609  methods.json#/eyesight/38/params/a_lo
+- eyesight param b: 2.081  methods.json#/eyesight/38/params/b
+- eyesight param b_hi: 2.203  methods.json#/eyesight/38/params/b_hi
+- eyesight param b_lo: 1.947  methods.json#/eyesight/38/params/b_lo
+- eyesight param c: 0.633  methods.json#/eyesight/38/params/c
+- eyesight param c_hi: 0.735  methods.json#/eyesight/38/params/c_hi
+- eyesight param c_lo: 0.572  methods.json#/eyesight/38/params/c_lo
+- eyesight g: 2.023  methods.json#/eyesight/38/g
+
+## Georgia (`georgia`)
+
+- jump multiple (value): 3.763  georgia/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.065  georgia/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 5.326  georgia/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  georgia/ruler.json#/jump_multiple/years
+- ruler sentence: "In Georgia, VIIRS reports about 3.8 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  georgia/ruler.json#/sentence
+- harmonized trend pct_per_decade: -15.765  georgia/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -35.107  georgia/trend.json#/harmonized/lo
+- harmonized trend hi: 3.018  georgia/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  georgia/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 51.984  georgia/trend.json#/naive/pct_per_decade
+- naive trend lo: 32.716  georgia/trend.json#/naive/lo
+- naive trend hi: 116.871  georgia/trend.json#/naive/hi
+- naive trend direction: "rising"  georgia/trend.json#/naive/direction
+- trend years: [2003, 2025]  georgia/trend.json#/years
+- verdict sentence_id: "artifact_flat"  georgia/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 52% per decade. After correcting for the sensor change, there is no clear change (-35 to 3% per decade)."  georgia/trend.json#/sentence
+- critical weeks: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 45]  georgia/season.json#/critical_weeks
+- window w1 label: "mid-January to mid-April"  georgia/season.json#/windows/0/label
+- window w1 start_week: 3  georgia/season.json#/windows/0/start_week
+- window w1 peak_week: 9  georgia/season.json#/windows/0/peak_week
+- window w1 end_week: 15  georgia/season.json#/windows/0/end_week
+- window w1 share: 0.406  georgia/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 3.333  georgia/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -8.428  georgia/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 13.0  georgia/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the mid-January to mid-April season."  georgia/season.json#/windows/0/sentence
+- window w2 label: "early-July to mid-September"  georgia/season.json#/windows/1/label
+- window w2 start_week: 27  georgia/season.json#/windows/1/start_week
+- window w2 peak_week: 31  georgia/season.json#/windows/1/peak_week
+- window w2 end_week: 37  georgia/season.json#/windows/1/end_week
+- window w2 share: 0.389  georgia/season.json#/windows/1/share
+- window w2 start shift days per decade (value): -5.0  georgia/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -12.0  georgia/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): -0.556  georgia/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "The early-July to mid-September season now starts about 5 days earlier per decade (-12 to -1)."  georgia/season.json#/windows/1/sentence
+- this week value: null  georgia/nowcast.json#/value
+- this week lo: null  georgia/nowcast.json#/lo
+- this week hi: null  georgia/nowcast.json#/hi
+- this week percentile: null  georgia/nowcast.json#/percentile
+- this week status: "unavailable"  georgia/nowcast.json#/status
+- this week as_of: null  georgia/nowcast.json#/as_of
+- this week window start: null  georgia/nowcast.json#/window/start
+- this week window end: null  georgia/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  georgia/nowcast.json#/baseline_years
+- month to date value: null  georgia/nowcast.json#/month_to_date/value
+- month to date median: null  georgia/nowcast.json#/month_to_date/median
+- month to date ratio: null  georgia/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  georgia/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  georgia/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.395  methods.json#/validation/677/value
+- LOYO weekly WAPE baseline annual_ratio: 0.419  methods.json#/validation/677/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.982  methods.json#/validation/677/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/677/years
+- LOYO weekly WAPE (tier2): 0.403  methods.json#/validation/692/value
+- LOYO years: [2013, 2022]  methods.json#/validation/692/years
+- reliability_err (tier2): 0.002  methods.json#/validation/690/value
+- reliability_year_absolute_err (tier2): 0.074  methods.json#/validation/691/value
+- t1_t2_wape (tier2): 0.265  methods.json#/validation/694/value
+- eyesight status: "validated"  methods.json#/eyesight/39/status
+- eyesight param a: -3.607  methods.json#/eyesight/39/params/a
+- eyesight param a_hi: -3.451  methods.json#/eyesight/39/params/a_hi
+- eyesight param a_lo: -3.778  methods.json#/eyesight/39/params/a_lo
+- eyesight param b: 2.318  methods.json#/eyesight/39/params/b
+- eyesight param b_hi: 2.665  methods.json#/eyesight/39/params/b_hi
+- eyesight param b_lo: 2.099  methods.json#/eyesight/39/params/b_lo
+- eyesight param c: 0.723  methods.json#/eyesight/39/params/c
+- eyesight param c_hi: 0.867  methods.json#/eyesight/39/params/c_hi
+- eyesight param c_lo: 0.588  methods.json#/eyesight/39/params/c_lo
+- eyesight g: 1.664  methods.json#/eyesight/39/g
+
+## Germany (`germany`)
+
+- jump multiple (value): 3.462  germany/ruler.json#/jump_multiple/value
+- jump multiple (lo): 2.474  germany/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 5.085  germany/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  germany/ruler.json#/jump_multiple/years
+- ruler sentence: "In Germany, VIIRS reports about 3.5 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  germany/ruler.json#/sentence
+- harmonized trend pct_per_decade: 36.9  germany/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: 25.234  germany/trend.json#/harmonized/lo
+- harmonized trend hi: 53.381  germany/trend.json#/harmonized/hi
+- harmonized trend direction: "rising"  germany/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 72.467  germany/trend.json#/naive/pct_per_decade
+- naive trend lo: 55.832  germany/trend.json#/naive/lo
+- naive trend hi: 201.612  germany/trend.json#/naive/hi
+- naive trend direction: "rising"  germany/trend.json#/naive/direction
+- trend years: [2003, 2025]  germany/trend.json#/years
+- verdict sentence_id: "artifact_rising"  germany/trend.json#/sentence_id
+- verdict sentence: "Burning activity did rise, by about 37% per decade (25 to 53). The raw record overstates it at 72%."  germany/trend.json#/sentence
+- critical weeks: [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39]  germany/season.json#/critical_weeks
+- window w1 label: "late-June to late-September"  germany/season.json#/windows/0/label
+- window w1 start_week: 26  germany/season.json#/windows/0/start_week
+- window w1 peak_week: 37  germany/season.json#/windows/0/peak_week
+- window w1 end_week: 39  germany/season.json#/windows/0/end_week
+- window w1 share: 0.441  germany/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 1.667  germany/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -4.706  germany/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 8.189  germany/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the late-June to late-September season."  germany/season.json#/windows/0/sentence
+- window w2 label: "mid-March to late-May"  germany/season.json#/windows/1/label
+- window w2 start_week: 11  germany/season.json#/windows/1/start_week
+- window w2 peak_week: 16  germany/season.json#/windows/1/peak_week
+- window w2 end_week: 21  germany/season.json#/windows/1/end_week
+- window w2 share: 0.371  germany/season.json#/windows/1/share
+- window w2 start shift days per decade (value): -2.353  germany/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -6.667  germany/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): 6.376  germany/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "No clear shift in the timing of the mid-March to late-May season."  germany/season.json#/windows/1/sentence
+- this week value: null  germany/nowcast.json#/value
+- this week lo: null  germany/nowcast.json#/lo
+- this week hi: null  germany/nowcast.json#/hi
+- this week percentile: null  germany/nowcast.json#/percentile
+- this week status: "unavailable"  germany/nowcast.json#/status
+- this week as_of: null  germany/nowcast.json#/as_of
+- this week window start: null  germany/nowcast.json#/window/start
+- this week window end: null  germany/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  germany/nowcast.json#/baseline_years
+- month to date value: null  germany/nowcast.json#/month_to_date/value
+- month to date median: null  germany/nowcast.json#/month_to_date/median
+- month to date ratio: null  germany/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  germany/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  germany/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.703  methods.json#/validation/695/value
+- LOYO weekly WAPE baseline annual_ratio: 0.811  methods.json#/validation/695/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.242  methods.json#/validation/695/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/695/years
+- LOYO weekly WAPE (tier2): 0.887  methods.json#/validation/710/value
+- LOYO years: [2013, 2022]  methods.json#/validation/710/years
+- reliability_err (tier2): 0.003  methods.json#/validation/708/value
+- reliability_year_absolute_err (tier2): 0.264  methods.json#/validation/709/value
+- t1_t2_wape (tier2): 0.598  methods.json#/validation/712/value
+- eyesight status: "exploratory"  methods.json#/eyesight/40/status
+- eyesight param a: -5.514  methods.json#/eyesight/40/params/a
+- eyesight param a_hi: -4.953  methods.json#/eyesight/40/params/a_hi
+- eyesight param a_lo: -6.009  methods.json#/eyesight/40/params/a_lo
+- eyesight param b: 3.407  methods.json#/eyesight/40/params/b
+- eyesight param b_hi: 4.069  methods.json#/eyesight/40/params/b_hi
+- eyesight param b_lo: 2.974  methods.json#/eyesight/40/params/b_lo
+- eyesight param c: 0.408  methods.json#/eyesight/40/params/c
+- eyesight param c_hi: 0.607  methods.json#/eyesight/40/params/c_hi
+- eyesight param c_lo: 0.267  methods.json#/eyesight/40/params/c_lo
+- eyesight g: 12.943  methods.json#/eyesight/40/g
+
+## Greece (`greece`)
+
+- jump multiple (value): 3.431  greece/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.005  greece/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 3.92  greece/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  greece/ruler.json#/jump_multiple/years
+- ruler sentence: "In Greece, VIIRS reports about 3.4 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  greece/ruler.json#/sentence
+- harmonized trend pct_per_decade: -46.296  greece/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -63.072  greece/trend.json#/harmonized/lo
+- harmonized trend hi: -29.81  greece/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  greece/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 35.811  greece/trend.json#/naive/pct_per_decade
+- naive trend lo: 13.096  greece/trend.json#/naive/lo
+- naive trend hi: 68.264  greece/trend.json#/naive/hi
+- naive trend direction: "rising"  greece/trend.json#/naive/direction
+- trend years: [2003, 2025]  greece/trend.json#/years
+- verdict sentence_id: "artifact_falling"  greece/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 46% per decade (-63 to -30)."  greece/trend.json#/sentence
+- critical weeks: [7, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47]  greece/season.json#/critical_weeks
+- window w1 label: "early-July to late-November"  greece/season.json#/windows/0/label
+- window w1 start_week: 27  greece/season.json#/windows/0/start_week
+- window w1 peak_week: 41  greece/season.json#/windows/0/peak_week
+- window w1 end_week: 47  greece/season.json#/windows/0/end_week
+- window w1 share: 0.786  greece/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -3.333  greece/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -10.0  greece/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 4.087  greece/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-July to late-November season."  greece/season.json#/windows/0/sentence
+- this week value: null  greece/nowcast.json#/value
+- this week lo: null  greece/nowcast.json#/lo
+- this week hi: null  greece/nowcast.json#/hi
+- this week percentile: null  greece/nowcast.json#/percentile
+- this week status: "unavailable"  greece/nowcast.json#/status
+- this week as_of: null  greece/nowcast.json#/as_of
+- this week window start: null  greece/nowcast.json#/window/start
+- this week window end: null  greece/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  greece/nowcast.json#/baseline_years
+- month to date value: null  greece/nowcast.json#/month_to_date/value
+- month to date median: null  greece/nowcast.json#/month_to_date/median
+- month to date ratio: null  greece/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  greece/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  greece/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.338  methods.json#/validation/713/value
+- LOYO weekly WAPE baseline annual_ratio: 0.392  methods.json#/validation/713/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.173  methods.json#/validation/713/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/713/years
+- LOYO weekly WAPE (tier2): 0.353  methods.json#/validation/728/value
+- LOYO years: [2013, 2022]  methods.json#/validation/728/years
+- reliability_err (tier2): 0.002  methods.json#/validation/726/value
+- reliability_year_absolute_err (tier2): 0.065  methods.json#/validation/727/value
+- t1_t2_wape (tier2): 0.261  methods.json#/validation/730/value
+- eyesight status: "validated"  methods.json#/eyesight/41/status
+- eyesight param a: -3.906  methods.json#/eyesight/41/params/a
+- eyesight param a_hi: -3.784  methods.json#/eyesight/41/params/a_hi
+- eyesight param a_lo: -4.071  methods.json#/eyesight/41/params/a_lo
+- eyesight param b: 2.08  methods.json#/eyesight/41/params/b
+- eyesight param b_hi: 2.265  methods.json#/eyesight/41/params/b_hi
+- eyesight param b_lo: 2.0  methods.json#/eyesight/41/params/b_lo
+- eyesight param c: 0.985  methods.json#/eyesight/41/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/41/params/c_hi
+- eyesight param c_lo: 0.838  methods.json#/eyesight/41/params/c_lo
+- eyesight g: 1.963  methods.json#/eyesight/41/g
+
+## Guatemala (`guatemala`)
+
+- jump multiple (value): 3.442  guatemala/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.169  guatemala/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 4.369  guatemala/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  guatemala/ruler.json#/jump_multiple/years
+- ruler sentence: "In Guatemala, VIIRS reports about 3.4 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  guatemala/ruler.json#/sentence
+- harmonized trend pct_per_decade: -50.569  guatemala/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -70.133  guatemala/trend.json#/harmonized/lo
+- harmonized trend hi: -28.445  guatemala/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  guatemala/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 31.268  guatemala/trend.json#/naive/pct_per_decade
+- naive trend lo: 5.757  guatemala/trend.json#/naive/lo
+- naive trend hi: 62.039  guatemala/trend.json#/naive/hi
+- naive trend direction: "rising"  guatemala/trend.json#/naive/direction
+- trend years: [2003, 2025]  guatemala/trend.json#/years
+- verdict sentence_id: "artifact_falling"  guatemala/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 51% per decade (-70 to -28)."  guatemala/trend.json#/sentence
+- critical weeks: [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]  guatemala/season.json#/critical_weeks
+- window w1 label: "late-February to early-June"  guatemala/season.json#/windows/0/label
+- window w1 start_week: 9  guatemala/season.json#/windows/0/start_week
+- window w1 peak_week: 16  guatemala/season.json#/windows/0/peak_week
+- window w1 end_week: 22  guatemala/season.json#/windows/0/end_week
+- window w1 share: 0.814  guatemala/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -6.364  guatemala/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -12.143  guatemala/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): -2.0  guatemala/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "The late-February to early-June season now starts about 6 days earlier per decade (-12 to -2)."  guatemala/season.json#/windows/0/sentence
+- this week value: null  guatemala/nowcast.json#/value
+- this week lo: null  guatemala/nowcast.json#/lo
+- this week hi: null  guatemala/nowcast.json#/hi
+- this week percentile: null  guatemala/nowcast.json#/percentile
+- this week status: "unavailable"  guatemala/nowcast.json#/status
+- this week as_of: null  guatemala/nowcast.json#/as_of
+- this week window start: null  guatemala/nowcast.json#/window/start
+- this week window end: null  guatemala/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  guatemala/nowcast.json#/baseline_years
+- month to date value: null  guatemala/nowcast.json#/month_to_date/value
+- month to date median: null  guatemala/nowcast.json#/month_to_date/median
+- month to date ratio: null  guatemala/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  guatemala/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  guatemala/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.173  methods.json#/validation/731/value
+- LOYO weekly WAPE baseline annual_ratio: 0.21  methods.json#/validation/731/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.453  methods.json#/validation/731/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/731/years
+- LOYO weekly WAPE (tier2): 0.157  methods.json#/validation/746/value
+- LOYO years: [2013, 2022]  methods.json#/validation/746/years
+- reliability_err (tier2): 0.002  methods.json#/validation/744/value
+- reliability_year_absolute_err (tier2): 0.069  methods.json#/validation/745/value
+- t1_t2_wape (tier2): 0.091  methods.json#/validation/748/value
+- eyesight status: "validated"  methods.json#/eyesight/42/status
+- eyesight param a: -4.128  methods.json#/eyesight/42/params/a
+- eyesight param a_hi: -4.082  methods.json#/eyesight/42/params/a_hi
+- eyesight param a_lo: -4.186  methods.json#/eyesight/42/params/a_lo
+- eyesight param b: 2.475  methods.json#/eyesight/42/params/b
+- eyesight param b_hi: 2.562  methods.json#/eyesight/42/params/b_hi
+- eyesight param b_lo: 2.369  methods.json#/eyesight/42/params/b_lo
+- eyesight param c: 0.649  methods.json#/eyesight/42/params/c
+- eyesight param c_hi: 0.699  methods.json#/eyesight/42/params/c_hi
+- eyesight param c_lo: 0.617  methods.json#/eyesight/42/params/c_lo
+- eyesight g: 1.787  methods.json#/eyesight/42/g
+
+## Guinea-Bissau (`guinea-bissau`)
+
+- jump multiple (value): 3.531  guinea-bissau/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.338  guinea-bissau/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 3.819  guinea-bissau/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  guinea-bissau/ruler.json#/jump_multiple/years
+- ruler sentence: "In Guinea-Bissau, VIIRS reports about 3.5 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  guinea-bissau/ruler.json#/sentence
+- harmonized trend pct_per_decade: -16.066  guinea-bissau/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -23.091  guinea-bissau/trend.json#/harmonized/lo
+- harmonized trend hi: -11.097  guinea-bissau/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  guinea-bissau/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 32.209  guinea-bissau/trend.json#/naive/pct_per_decade
+- naive trend lo: 5.926  guinea-bissau/trend.json#/naive/lo
+- naive trend hi: 83.109  guinea-bissau/trend.json#/naive/hi
+- naive trend direction: "rising"  guinea-bissau/trend.json#/naive/direction
+- trend years: [2003, 2025]  guinea-bissau/trend.json#/years
+- verdict sentence_id: "artifact_falling"  guinea-bissau/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 16% per decade (-23 to -11)."  guinea-bissau/trend.json#/sentence
+- critical weeks: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 17, 18, 19, 20, 21, 22, 23]  guinea-bissau/season.json#/critical_weeks
+- window w1 label: "mid-January to early-April"  guinea-bissau/season.json#/windows/0/label
+- window w1 start_week: 3  guinea-bissau/season.json#/windows/0/start_week
+- window w1 peak_week: 8  guinea-bissau/season.json#/windows/0/peak_week
+- window w1 end_week: 13  guinea-bissau/season.json#/windows/0/end_week
+- window w1 share: 0.459  guinea-bissau/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -2.5  guinea-bissau/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -6.008  guinea-bissau/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 3.333  guinea-bissau/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the mid-January to early-April season."  guinea-bissau/season.json#/windows/0/sentence
+- window w2 label: "late-April to early-June"  guinea-bissau/season.json#/windows/1/label
+- window w2 start_week: 17  guinea-bissau/season.json#/windows/1/start_week
+- window w2 peak_week: 20  guinea-bissau/season.json#/windows/1/peak_week
+- window w2 end_week: 23  guinea-bissau/season.json#/windows/1/end_week
+- window w2 share: 0.35  guinea-bissau/season.json#/windows/1/share
+- window w2 start shift days per decade (value): 0.0  guinea-bissau/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -1.25  guinea-bissau/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): 1.818  guinea-bissau/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "No clear shift in the timing of the late-April to early-June season."  guinea-bissau/season.json#/windows/1/sentence
+- this week value: null  guinea-bissau/nowcast.json#/value
+- this week lo: null  guinea-bissau/nowcast.json#/lo
+- this week hi: null  guinea-bissau/nowcast.json#/hi
+- this week percentile: null  guinea-bissau/nowcast.json#/percentile
+- this week status: "unavailable"  guinea-bissau/nowcast.json#/status
+- this week as_of: null  guinea-bissau/nowcast.json#/as_of
+- this week window start: null  guinea-bissau/nowcast.json#/window/start
+- this week window end: null  guinea-bissau/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  guinea-bissau/nowcast.json#/baseline_years
+- month to date value: null  guinea-bissau/nowcast.json#/month_to_date/value
+- month to date median: null  guinea-bissau/nowcast.json#/month_to_date/median
+- month to date ratio: null  guinea-bissau/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  guinea-bissau/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  guinea-bissau/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.191  methods.json#/validation/749/value
+- LOYO weekly WAPE baseline annual_ratio: 0.2  methods.json#/validation/749/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.987  methods.json#/validation/749/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/749/years
+- LOYO weekly WAPE (tier2): 0.181  methods.json#/validation/764/value
+- LOYO years: [2013, 2022]  methods.json#/validation/764/years
+- reliability_err (tier2): 0.0  methods.json#/validation/762/value
+- reliability_year_absolute_err (tier2): 0.043  methods.json#/validation/763/value
+- t1_t2_wape (tier2): 0.098  methods.json#/validation/766/value
+- eyesight status: "validated"  methods.json#/eyesight/43/status
+- eyesight param a: -3.254  methods.json#/eyesight/43/params/a
+- eyesight param a_hi: -3.109  methods.json#/eyesight/43/params/a_hi
+- eyesight param a_lo: -3.417  methods.json#/eyesight/43/params/a_lo
+- eyesight param b: 2.307  methods.json#/eyesight/43/params/b
+- eyesight param b_hi: 2.523  methods.json#/eyesight/43/params/b_hi
+- eyesight param b_lo: 2.131  methods.json#/eyesight/43/params/b_lo
+- eyesight param c: 0.609  methods.json#/eyesight/43/params/c
+- eyesight param c_hi: 0.667  methods.json#/eyesight/43/params/c_hi
+- eyesight param c_lo: 0.555  methods.json#/eyesight/43/params/c_lo
+- eyesight g: 1.604  methods.json#/eyesight/43/g
+
+## Guyana (`guyana`)
+
+- jump multiple (value): 4.91  guyana/ruler.json#/jump_multiple/value
+- jump multiple (lo): 4.429  guyana/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 5.28  guyana/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  guyana/ruler.json#/jump_multiple/years
+- ruler sentence: "In Guyana, VIIRS reports about 4.9 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  guyana/ruler.json#/sentence
+- harmonized trend pct_per_decade: 0.253  guyana/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -22.742  guyana/trend.json#/harmonized/lo
+- harmonized trend hi: 25.864  guyana/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  guyana/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 69.633  guyana/trend.json#/naive/pct_per_decade
+- naive trend lo: 39.247  guyana/trend.json#/naive/lo
+- naive trend hi: 187.335  guyana/trend.json#/naive/hi
+- naive trend direction: "rising"  guyana/trend.json#/naive/direction
+- trend years: [2003, 2025]  guyana/trend.json#/years
+- verdict sentence_id: "artifact_flat"  guyana/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 70% per decade. After correcting for the sensor change, there is no clear change (-23 to 26% per decade)."  guyana/trend.json#/sentence
+- critical weeks: [3, 4, 5, 10, 11, 12, 13, 14, 15, 16, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]  guyana/season.json#/critical_weeks
+- window w1 label: "early-September to mid-December"  guyana/season.json#/windows/0/label
+- window w1 start_week: 37  guyana/season.json#/windows/0/start_week
+- window w1 peak_week: 42  guyana/season.json#/windows/0/peak_week
+- window w1 end_week: 50  guyana/season.json#/windows/0/end_week
+- window w1 share: 0.574  guyana/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -3.333  guyana/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -6.875  guyana/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 0.909  guyana/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-September to mid-December season."  guyana/season.json#/windows/0/sentence
+- window w2 label: "early-March to late-April"  guyana/season.json#/windows/1/label
+- window w2 start_week: 10  guyana/season.json#/windows/1/start_week
+- window w2 peak_week: 14  guyana/season.json#/windows/1/peak_week
+- window w2 end_week: 16  guyana/season.json#/windows/1/end_week
+- window w2 share: 0.177  guyana/season.json#/windows/1/share
+- window w2 start shift days per decade (value): 3.0  guyana/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -2.857  guyana/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): 7.143  guyana/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "No clear shift in the timing of the early-March to late-April season."  guyana/season.json#/windows/1/sentence
+- this week value: null  guyana/nowcast.json#/value
+- this week lo: null  guyana/nowcast.json#/lo
+- this week hi: null  guyana/nowcast.json#/hi
+- this week percentile: null  guyana/nowcast.json#/percentile
+- this week status: "unavailable"  guyana/nowcast.json#/status
+- this week as_of: null  guyana/nowcast.json#/as_of
+- this week window start: null  guyana/nowcast.json#/window/start
+- this week window end: null  guyana/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  guyana/nowcast.json#/baseline_years
+- month to date value: null  guyana/nowcast.json#/month_to_date/value
+- month to date median: null  guyana/nowcast.json#/month_to_date/median
+- month to date ratio: null  guyana/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  guyana/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  guyana/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.269  methods.json#/validation/767/value
+- LOYO weekly WAPE baseline annual_ratio: 0.261  methods.json#/validation/767/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 4.001  methods.json#/validation/767/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/767/years
+- LOYO weekly WAPE (tier2): 0.269  methods.json#/validation/782/value
+- LOYO years: [2013, 2022]  methods.json#/validation/782/years
+- reliability_err (tier2): 0.001  methods.json#/validation/780/value
+- reliability_year_absolute_err (tier2): 0.091  methods.json#/validation/781/value
+- t1_t2_wape (tier2): 0.147  methods.json#/validation/784/value
+- eyesight status: "validated"  methods.json#/eyesight/44/status
+- eyesight param a: -4.054  methods.json#/eyesight/44/params/a
+- eyesight param a_hi: -3.92  methods.json#/eyesight/44/params/a_hi
+- eyesight param a_lo: -4.18  methods.json#/eyesight/44/params/a_lo
+- eyesight param b: 2.023  methods.json#/eyesight/44/params/b
+- eyesight param b_hi: 2.178  methods.json#/eyesight/44/params/b_hi
+- eyesight param b_lo: 1.891  methods.json#/eyesight/44/params/b_lo
+- eyesight param c: 0.791  methods.json#/eyesight/44/params/c
+- eyesight param c_hi: 0.943  methods.json#/eyesight/44/params/c_hi
+- eyesight param c_lo: 0.658  methods.json#/eyesight/44/params/c_lo
+- eyesight g: 2.12  methods.json#/eyesight/44/g
+
+## Haiti (`haiti`)
+
+- jump multiple (value): 7.808  haiti/ruler.json#/jump_multiple/value
+- jump multiple (lo): 6.944  haiti/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 9.391  haiti/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  haiti/ruler.json#/jump_multiple/years
+- ruler sentence: "In Haiti, VIIRS reports about 7.8 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  haiti/ruler.json#/sentence
+- harmonized trend pct_per_decade: -5.158  haiti/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -24.106  haiti/trend.json#/harmonized/lo
+- harmonized trend hi: 7.159  haiti/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  haiti/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 68.195  haiti/trend.json#/naive/pct_per_decade
+- naive trend lo: 41.314  haiti/trend.json#/naive/lo
+- naive trend hi: 277.426  haiti/trend.json#/naive/hi
+- naive trend direction: "rising"  haiti/trend.json#/naive/direction
+- trend years: [2003, 2025]  haiti/trend.json#/years
+- verdict sentence_id: "artifact_flat"  haiti/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 68% per decade. After correcting for the sensor change, there is no clear change (-24 to 7% per decade)."  haiti/trend.json#/sentence
+- critical weeks: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 51, 52]  haiti/season.json#/critical_weeks
+- window w1 label: "mid-December to mid-April"  haiti/season.json#/windows/0/label
+- window w1 start_week: 51  haiti/season.json#/windows/0/start_week
+- window w1 peak_week: 7  haiti/season.json#/windows/0/peak_week
+- window w1 end_week: 15  haiti/season.json#/windows/0/end_week
+- window w1 share: 0.812  haiti/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 6.667  haiti/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -0.526  haiti/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 12.0  haiti/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the mid-December to mid-April season."  haiti/season.json#/windows/0/sentence
+- this week value: null  haiti/nowcast.json#/value
+- this week lo: null  haiti/nowcast.json#/lo
+- this week hi: null  haiti/nowcast.json#/hi
+- this week percentile: null  haiti/nowcast.json#/percentile
+- this week status: "unavailable"  haiti/nowcast.json#/status
+- this week as_of: null  haiti/nowcast.json#/as_of
+- this week window start: null  haiti/nowcast.json#/window/start
+- this week window end: null  haiti/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  haiti/nowcast.json#/baseline_years
+- month to date value: null  haiti/nowcast.json#/month_to_date/value
+- month to date median: null  haiti/nowcast.json#/month_to_date/median
+- month to date ratio: null  haiti/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  haiti/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  haiti/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.544  methods.json#/validation/785/value
+- LOYO weekly WAPE baseline annual_ratio: 0.655  methods.json#/validation/785/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 8.506  methods.json#/validation/785/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/785/years
+- LOYO weekly WAPE (tier2): 0.575  methods.json#/validation/800/value
+- LOYO years: [2013, 2022]  methods.json#/validation/800/years
+- reliability_err (tier2): 0.0  methods.json#/validation/798/value
+- reliability_year_absolute_err (tier2): 0.113  methods.json#/validation/799/value
+- t1_t2_wape (tier2): 0.288  methods.json#/validation/802/value
+- eyesight status: "validated"  methods.json#/eyesight/45/status
+- eyesight param a: -4.47  methods.json#/eyesight/45/params/a
+- eyesight param a_hi: -4.248  methods.json#/eyesight/45/params/a_hi
+- eyesight param a_lo: -4.752  methods.json#/eyesight/45/params/a_lo
+- eyesight param b: 2.696  methods.json#/eyesight/45/params/b
+- eyesight param b_hi: 3.159  methods.json#/eyesight/45/params/b_hi
+- eyesight param b_lo: 2.359  methods.json#/eyesight/45/params/b_lo
+- eyesight param c: 0.511  methods.json#/eyesight/45/params/c
+- eyesight param c_hi: 0.792  methods.json#/eyesight/45/params/c_hi
+- eyesight param c_lo: 0.352  methods.json#/eyesight/45/params/c_lo
+- eyesight g: 1.969  methods.json#/eyesight/45/g
+
+## Honduras (`honduras`)
+
+- jump multiple (value): 5.355  honduras/ruler.json#/jump_multiple/value
+- jump multiple (lo): 4.786  honduras/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 7.638  honduras/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  honduras/ruler.json#/jump_multiple/years
+- ruler sentence: "In Honduras, VIIRS reports about 5.4 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  honduras/ruler.json#/sentence
+- harmonized trend pct_per_decade: -8.659  honduras/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -32.849  honduras/trend.json#/harmonized/lo
+- harmonized trend hi: 20.679  honduras/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  honduras/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 102.017  honduras/trend.json#/naive/pct_per_decade
+- naive trend lo: 47.131  honduras/trend.json#/naive/lo
+- naive trend hi: 206.196  honduras/trend.json#/naive/hi
+- naive trend direction: "rising"  honduras/trend.json#/naive/direction
+- trend years: [2003, 2025]  honduras/trend.json#/years
+- verdict sentence_id: "artifact_flat"  honduras/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 102% per decade. After correcting for the sensor change, there is no clear change (-33 to 21% per decade)."  honduras/trend.json#/sentence
+- critical weeks: [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]  honduras/season.json#/critical_weeks
+- window w1 label: "mid-March to early-June"  honduras/season.json#/windows/0/label
+- window w1 start_week: 11  honduras/season.json#/windows/0/start_week
+- window w1 peak_week: 17  honduras/season.json#/windows/0/peak_week
+- window w1 end_week: 22  honduras/season.json#/windows/0/end_week
+- window w1 share: 0.817  honduras/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 1.0  honduras/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -4.286  honduras/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 5.0  honduras/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the mid-March to early-June season."  honduras/season.json#/windows/0/sentence
+- this week value: null  honduras/nowcast.json#/value
+- this week lo: null  honduras/nowcast.json#/lo
+- this week hi: null  honduras/nowcast.json#/hi
+- this week percentile: null  honduras/nowcast.json#/percentile
+- this week status: "unavailable"  honduras/nowcast.json#/status
+- this week as_of: null  honduras/nowcast.json#/as_of
+- this week window start: null  honduras/nowcast.json#/window/start
+- this week window end: null  honduras/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  honduras/nowcast.json#/baseline_years
+- month to date value: null  honduras/nowcast.json#/month_to_date/value
+- month to date median: null  honduras/nowcast.json#/month_to_date/median
+- month to date ratio: null  honduras/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  honduras/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  honduras/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.201  methods.json#/validation/803/value
+- LOYO weekly WAPE baseline annual_ratio: 0.235  methods.json#/validation/803/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.818  methods.json#/validation/803/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/803/years
+- LOYO weekly WAPE (tier2): 0.171  methods.json#/validation/818/value
+- LOYO years: [2013, 2022]  methods.json#/validation/818/years
+- reliability_err (tier2): 0.005  methods.json#/validation/816/value
+- reliability_year_absolute_err (tier2): 0.099  methods.json#/validation/817/value
+- t1_t2_wape (tier2): 0.11  methods.json#/validation/820/value
+- eyesight status: "validated"  methods.json#/eyesight/46/status
+- eyesight param a: -3.803  methods.json#/eyesight/46/params/a
+- eyesight param a_hi: -3.653  methods.json#/eyesight/46/params/a_hi
+- eyesight param a_lo: -3.911  methods.json#/eyesight/46/params/a_lo
+- eyesight param b: 2.133  methods.json#/eyesight/46/params/b
+- eyesight param b_hi: 2.247  methods.json#/eyesight/46/params/b_hi
+- eyesight param b_lo: 2.051  methods.json#/eyesight/46/params/b_lo
+- eyesight param c: 0.603  methods.json#/eyesight/46/params/c
+- eyesight param c_hi: 0.663  methods.json#/eyesight/46/params/c_hi
+- eyesight param c_lo: 0.503  methods.json#/eyesight/46/params/c_lo
+- eyesight g: 1.816  methods.json#/eyesight/46/g
+
+## Hungary (`hungary`)
+
+- jump multiple (value): 3.506  hungary/ruler.json#/jump_multiple/value
+- jump multiple (lo): 2.623  hungary/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 5.008  hungary/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  hungary/ruler.json#/jump_multiple/years
+- ruler sentence: "In Hungary, VIIRS reports about 3.5 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  hungary/ruler.json#/sentence
+- harmonized trend pct_per_decade: -126.356  hungary/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -209.197  hungary/trend.json#/harmonized/lo
+- harmonized trend hi: -66.206  hungary/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  hungary/trend.json#/harmonized/direction
+- naive trend pct_per_decade: -20.356  hungary/trend.json#/naive/pct_per_decade
+- naive trend lo: -32.419  hungary/trend.json#/naive/lo
+- naive trend hi: 3.03  hungary/trend.json#/naive/hi
+- naive trend direction: "no_clear_change"  hungary/trend.json#/naive/direction
+- trend years: [2003, 2025]  hungary/trend.json#/years
+- verdict sentence_id: "artifact_falling"  hungary/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 126% per decade (-209 to -66)."  hungary/trend.json#/sentence
+- critical weeks: [9, 10, 11, 12, 13, 14, 15, 16, 30, 31, 32, 33, 35, 36, 37, 39, 40, 41, 42, 43]  hungary/season.json#/critical_weeks
+- window w1 label: "late-February to late-April"  hungary/season.json#/windows/0/label
+- window w1 start_week: 9  hungary/season.json#/windows/0/start_week
+- window w1 peak_week: 12  hungary/season.json#/windows/0/peak_week
+- window w1 end_week: 16  hungary/season.json#/windows/0/end_week
+- window w1 share: 0.502  hungary/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -13.542  hungary/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -17.011  hungary/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): -5.714  hungary/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "The late-February to late-April season now starts about 14 days earlier per decade (-17 to -6)."  hungary/season.json#/windows/0/sentence
+- window w2 label: "late-July to late-October"  hungary/season.json#/windows/1/label
+- window w2 start_week: 30  hungary/season.json#/windows/1/start_week
+- window w2 peak_week: 41  hungary/season.json#/windows/1/peak_week
+- window w2 end_week: 43  hungary/season.json#/windows/1/end_week
+- window w2 share: 0.337  hungary/season.json#/windows/1/share
+- window w2 start shift days per decade (value): -16.667  hungary/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -22.197  hungary/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): -6.923  hungary/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "The late-July to late-October season now starts about 17 days earlier per decade (-22 to -7)."  hungary/season.json#/windows/1/sentence
+- this week value: null  hungary/nowcast.json#/value
+- this week lo: null  hungary/nowcast.json#/lo
+- this week hi: null  hungary/nowcast.json#/hi
+- this week percentile: null  hungary/nowcast.json#/percentile
+- this week status: "unavailable"  hungary/nowcast.json#/status
+- this week as_of: null  hungary/nowcast.json#/as_of
+- this week window start: null  hungary/nowcast.json#/window/start
+- this week window end: null  hungary/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  hungary/nowcast.json#/baseline_years
+- month to date value: null  hungary/nowcast.json#/month_to_date/value
+- month to date median: null  hungary/nowcast.json#/month_to_date/median
+- month to date ratio: null  hungary/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  hungary/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  hungary/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.455  methods.json#/validation/821/value
+- LOYO weekly WAPE baseline annual_ratio: 0.531  methods.json#/validation/821/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.453  methods.json#/validation/821/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/821/years
+- LOYO weekly WAPE (tier2): 0.518  methods.json#/validation/836/value
+- LOYO years: [2013, 2022]  methods.json#/validation/836/years
+- reliability_err (tier2): 0.006  methods.json#/validation/834/value
+- reliability_year_absolute_err (tier2): 0.163  methods.json#/validation/835/value
+- t1_t2_wape (tier2): 0.279  methods.json#/validation/838/value
+- eyesight status: "exploratory"  methods.json#/eyesight/47/status
+- eyesight param a: -3.989  methods.json#/eyesight/47/params/a
+- eyesight param a_hi: -3.565  methods.json#/eyesight/47/params/a_hi
+- eyesight param a_lo: -4.228  methods.json#/eyesight/47/params/a_lo
+- eyesight param b: 2.217  methods.json#/eyesight/47/params/b
+- eyesight param b_hi: 2.936  methods.json#/eyesight/47/params/b_hi
+- eyesight param b_lo: 2.066  methods.json#/eyesight/47/params/b_lo
+- eyesight param c: 0.963  methods.json#/eyesight/47/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/47/params/c_hi
+- eyesight param c_lo: 0.5  methods.json#/eyesight/47/params/c_lo
+- eyesight g: 2.15  methods.json#/eyesight/47/g
+
+## Iceland (`iceland`)
+
+- jump multiple (value): 28.831  iceland/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.826  iceland/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 917.5  iceland/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  iceland/ruler.json#/jump_multiple/years
+- ruler sentence: "In Iceland, VIIRS reports about 28.8 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  iceland/ruler.json#/sentence
+- harmonized trend pct_per_decade: null  iceland/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: null  iceland/trend.json#/harmonized/lo
+- harmonized trend hi: null  iceland/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  iceland/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 207.117  iceland/trend.json#/naive/pct_per_decade
+- naive trend lo: 90.035  iceland/trend.json#/naive/lo
+- naive trend hi: 1442.268  iceland/trend.json#/naive/hi
+- naive trend direction: "rising"  iceland/trend.json#/naive/direction
+- trend years: [2003, 2025]  iceland/trend.json#/years
+- verdict sentence_id: "unclear"  iceland/trend.json#/sentence_id
+- verdict sentence: "Trend unavailable: the median annual activity is zero."  iceland/trend.json#/sentence
+- critical weeks: []  iceland/season.json#/critical_weeks
+- this week value: null  iceland/nowcast.json#/value
+- this week lo: null  iceland/nowcast.json#/lo
+- this week hi: null  iceland/nowcast.json#/hi
+- this week percentile: null  iceland/nowcast.json#/percentile
+- this week status: "unavailable"  iceland/nowcast.json#/status
+- this week as_of: null  iceland/nowcast.json#/as_of
+- this week window start: null  iceland/nowcast.json#/window/start
+- this week window end: null  iceland/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  iceland/nowcast.json#/baseline_years
+- month to date value: null  iceland/nowcast.json#/month_to_date/value
+- month to date median: null  iceland/nowcast.json#/month_to_date/median
+- month to date ratio: null  iceland/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  iceland/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  iceland/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 2.059  methods.json#/validation/839/value
+- LOYO weekly WAPE baseline annual_ratio: 2.019  methods.json#/validation/839/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.661  methods.json#/validation/839/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/839/years
+- eyesight status: "absent"  methods.json#/eyesight/48/status
+
+## Israel (`israel`)
+
+- jump multiple (value): 5.97  israel/ruler.json#/jump_multiple/value
+- jump multiple (lo): 4.759  israel/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 8.848  israel/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  israel/ruler.json#/jump_multiple/years
+- ruler sentence: "In Israel, VIIRS reports about 6.0 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  israel/ruler.json#/sentence
+- harmonized trend pct_per_decade: -17.117  israel/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -35.192  israel/trend.json#/harmonized/lo
+- harmonized trend hi: 11.472  israel/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  israel/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 58.791  israel/trend.json#/naive/pct_per_decade
+- naive trend lo: 40.747  israel/trend.json#/naive/lo
+- naive trend hi: 142.4  israel/trend.json#/naive/hi
+- naive trend direction: "rising"  israel/trend.json#/naive/direction
+- trend years: [2003, 2025]  israel/trend.json#/years
+- verdict sentence_id: "unclear"  israel/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (-35 to 11% per decade)."  israel/trend.json#/sentence
+- critical weeks: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 46]  israel/season.json#/critical_weeks
+- window w1 label: "mid-May to early-October"  israel/season.json#/windows/0/label
+- window w1 start_week: 20  israel/season.json#/windows/0/start_week
+- window w1 peak_week: 22  israel/season.json#/windows/0/peak_week
+- window w1 end_week: 40  israel/season.json#/windows/0/end_week
+- window w1 share: 0.77  israel/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 2.132  israel/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -8.889  israel/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 13.333  israel/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the mid-May to early-October season."  israel/season.json#/windows/0/sentence
+- this week value: null  israel/nowcast.json#/value
+- this week lo: null  israel/nowcast.json#/lo
+- this week hi: null  israel/nowcast.json#/hi
+- this week percentile: null  israel/nowcast.json#/percentile
+- this week status: "unavailable"  israel/nowcast.json#/status
+- this week as_of: null  israel/nowcast.json#/as_of
+- this week window start: null  israel/nowcast.json#/window/start
+- this week window end: null  israel/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  israel/nowcast.json#/baseline_years
+- month to date value: null  israel/nowcast.json#/month_to_date/value
+- month to date median: null  israel/nowcast.json#/month_to_date/median
+- month to date ratio: null  israel/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  israel/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  israel/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.93  methods.json#/validation/852/value
+- LOYO weekly WAPE baseline annual_ratio: 0.951  methods.json#/validation/852/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 4.04  methods.json#/validation/852/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/852/years
+- eyesight status: "absent"  methods.json#/eyesight/49/status
+
+## Italy (`italy`)
+
+- jump multiple (value): 3.56  italy/ruler.json#/jump_multiple/value
+- jump multiple (lo): 2.939  italy/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 4.875  italy/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  italy/ruler.json#/jump_multiple/years
+- ruler sentence: "In Italy, VIIRS reports about 3.6 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  italy/ruler.json#/sentence
+- harmonized trend pct_per_decade: -15.981  italy/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -33.533  italy/trend.json#/harmonized/lo
+- harmonized trend hi: -3.599  italy/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  italy/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 45.1  italy/trend.json#/naive/pct_per_decade
+- naive trend lo: 29.714  italy/trend.json#/naive/lo
+- naive trend hi: 80.65  italy/trend.json#/naive/hi
+- naive trend direction: "rising"  italy/trend.json#/naive/direction
+- trend years: [2003, 2025]  italy/trend.json#/years
+- verdict sentence_id: "unclear"  italy/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (-34 to -4% per decade)."  italy/trend.json#/sentence
+- critical weeks: [11, 12, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42]  italy/season.json#/critical_weeks
+- window w1 label: "early-June to late-October"  italy/season.json#/windows/0/label
+- window w1 start_week: 23  italy/season.json#/windows/0/start_week
+- window w1 peak_week: 32  italy/season.json#/windows/0/peak_week
+- window w1 end_week: 42  italy/season.json#/windows/0/end_week
+- window w1 share: 0.783  italy/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -1.429  italy/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -6.0  italy/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 5.72  italy/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-June to late-October season."  italy/season.json#/windows/0/sentence
+- this week value: null  italy/nowcast.json#/value
+- this week lo: null  italy/nowcast.json#/lo
+- this week hi: null  italy/nowcast.json#/hi
+- this week percentile: null  italy/nowcast.json#/percentile
+- this week status: "unavailable"  italy/nowcast.json#/status
+- this week as_of: null  italy/nowcast.json#/as_of
+- this week window start: null  italy/nowcast.json#/window/start
+- this week window end: null  italy/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  italy/nowcast.json#/baseline_years
+- month to date value: null  italy/nowcast.json#/month_to_date/value
+- month to date median: null  italy/nowcast.json#/month_to_date/median
+- month to date ratio: null  italy/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  italy/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  italy/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.311  methods.json#/validation/865/value
+- LOYO weekly WAPE baseline annual_ratio: 0.33  methods.json#/validation/865/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.19  methods.json#/validation/865/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/865/years
+- LOYO weekly WAPE (tier2): 0.361  methods.json#/validation/880/value
+- LOYO years: [2013, 2022]  methods.json#/validation/880/years
+- reliability_err (tier2): 0.005  methods.json#/validation/878/value
+- reliability_year_absolute_err (tier2): 0.098  methods.json#/validation/879/value
+- t1_t2_wape (tier2): 0.331  methods.json#/validation/882/value
+- eyesight status: "exploratory"  methods.json#/eyesight/50/status
+- eyesight param a: -4.494  methods.json#/eyesight/50/params/a
+- eyesight param a_hi: -4.327  methods.json#/eyesight/50/params/a_hi
+- eyesight param a_lo: -4.622  methods.json#/eyesight/50/params/a_lo
+- eyesight param b: 2.664  methods.json#/eyesight/50/params/b
+- eyesight param b_hi: 2.796  methods.json#/eyesight/50/params/b_hi
+- eyesight param b_lo: 2.583  methods.json#/eyesight/50/params/b_lo
+- eyesight param c: 0.772  methods.json#/eyesight/50/params/c
+- eyesight param c_hi: 0.825  methods.json#/eyesight/50/params/c_hi
+- eyesight param c_lo: 0.65  methods.json#/eyesight/50/params/c_lo
+- eyesight g: 2.398  methods.json#/eyesight/50/g
+
+## Japan (`japan`)
+
+- jump multiple (value): 1.99  japan/ruler.json#/jump_multiple/value
+- jump multiple (lo): 1.127  japan/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 3.024  japan/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  japan/ruler.json#/jump_multiple/years
+- ruler sentence: "In Japan, VIIRS reports about 2.0 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  japan/ruler.json#/sentence
+- harmonized trend pct_per_decade: 19.921  japan/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: 9.006  japan/trend.json#/harmonized/lo
+- harmonized trend hi: 30.118  japan/trend.json#/harmonized/hi
+- harmonized trend direction: "rising"  japan/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 46.79  japan/trend.json#/naive/pct_per_decade
+- naive trend lo: 36.433  japan/trend.json#/naive/lo
+- naive trend hi: 78.667  japan/trend.json#/naive/hi
+- naive trend direction: "rising"  japan/trend.json#/naive/direction
+- trend years: [2003, 2025]  japan/trend.json#/years
+- verdict sentence_id: "unclear"  japan/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (9 to 30% per decade)."  japan/trend.json#/sentence
+- critical weeks: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 28, 29, 30, 31, 32, 33, 34, 35, 36, 41, 42]  japan/season.json#/critical_weeks
+- window w1 label: "late-January to mid-May"  japan/season.json#/windows/0/label
+- window w1 start_week: 5  japan/season.json#/windows/0/start_week
+- window w1 peak_week: 11  japan/season.json#/windows/0/peak_week
+- window w1 end_week: 19  japan/season.json#/windows/0/end_week
+- window w1 share: 0.443  japan/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 3.333  japan/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -0.562  japan/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 10.667  japan/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the late-January to mid-May season."  japan/season.json#/windows/0/sentence
+- window w2 label: "early-July to early-September"  japan/season.json#/windows/1/label
+- window w2 start_week: 28  japan/season.json#/windows/1/start_week
+- window w2 peak_week: 32  japan/season.json#/windows/1/peak_week
+- window w2 end_week: 36  japan/season.json#/windows/1/end_week
+- window w2 share: 0.326  japan/season.json#/windows/1/share
+- window w2 start shift days per decade (value): 7.059  japan/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): 3.684  japan/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): 11.429  japan/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "The early-July to early-September season now starts about 7 days later per decade (4 to 11)."  japan/season.json#/windows/1/sentence
+- this week value: null  japan/nowcast.json#/value
+- this week lo: null  japan/nowcast.json#/lo
+- this week hi: null  japan/nowcast.json#/hi
+- this week percentile: null  japan/nowcast.json#/percentile
+- this week status: "unavailable"  japan/nowcast.json#/status
+- this week as_of: null  japan/nowcast.json#/as_of
+- this week window start: null  japan/nowcast.json#/window/start
+- this week window end: null  japan/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  japan/nowcast.json#/baseline_years
+- month to date value: null  japan/nowcast.json#/month_to_date/value
+- month to date median: null  japan/nowcast.json#/month_to_date/median
+- month to date ratio: null  japan/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  japan/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  japan/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.655  methods.json#/validation/883/value
+- LOYO weekly WAPE baseline annual_ratio: 0.782  methods.json#/validation/883/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.779  methods.json#/validation/883/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/883/years
+- LOYO weekly WAPE (tier2): 0.901  methods.json#/validation/898/value
+- LOYO years: [2013, 2022]  methods.json#/validation/898/years
+- reliability_err (tier2): 0.0  methods.json#/validation/896/value
+- reliability_year_absolute_err (tier2): 0.181  methods.json#/validation/897/value
+- t1_t2_wape (tier2): 0.651  methods.json#/validation/900/value
+- eyesight status: "exploratory"  methods.json#/eyesight/51/status
+- eyesight param a: -5.267  methods.json#/eyesight/51/params/a
+- eyesight param a_hi: -4.906  methods.json#/eyesight/51/params/a_hi
+- eyesight param a_lo: -5.729  methods.json#/eyesight/51/params/a_lo
+- eyesight param b: 3.333  methods.json#/eyesight/51/params/b
+- eyesight param b_hi: 3.856  methods.json#/eyesight/51/params/b_hi
+- eyesight param b_lo: 2.843  methods.json#/eyesight/51/params/b_lo
+- eyesight param c: 0.587  methods.json#/eyesight/51/params/c
+- eyesight param c_hi: 0.707  methods.json#/eyesight/51/params/c_hi
+- eyesight param c_lo: 0.477  methods.json#/eyesight/51/params/c_lo
+- eyesight g: 7.833  methods.json#/eyesight/51/g
+
+## Kenya (`kenya`)
+
+- jump multiple (value): 5.757  kenya/ruler.json#/jump_multiple/value
+- jump multiple (lo): 5.317  kenya/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 7.015  kenya/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  kenya/ruler.json#/jump_multiple/years
+- ruler sentence: "In Kenya, VIIRS reports about 5.8 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  kenya/ruler.json#/sentence
+- harmonized trend pct_per_decade: -42.392  kenya/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -63.792  kenya/trend.json#/harmonized/lo
+- harmonized trend hi: -17.574  kenya/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  kenya/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 63.787  kenya/trend.json#/naive/pct_per_decade
+- naive trend lo: 36.655  kenya/trend.json#/naive/lo
+- naive trend hi: 145.225  kenya/trend.json#/naive/hi
+- naive trend direction: "rising"  kenya/trend.json#/naive/direction
+- trend years: [2003, 2025]  kenya/trend.json#/years
+- verdict sentence_id: "artifact_falling"  kenya/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 42% per decade (-64 to -18)."  kenya/trend.json#/sentence
+- critical weeks: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 34, 35, 36, 37, 38, 39, 40, 41, 42]  kenya/season.json#/critical_weeks
+- window w1 label: "early-January to early-April"  kenya/season.json#/windows/0/label
+- window w1 start_week: 2  kenya/season.json#/windows/0/start_week
+- window w1 peak_week: 10  kenya/season.json#/windows/0/peak_week
+- window w1 end_week: 14  kenya/season.json#/windows/0/end_week
+- window w1 share: 0.521  kenya/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 5.0  kenya/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -5.0  kenya/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 11.882  kenya/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-January to early-April season."  kenya/season.json#/windows/0/sentence
+- window w2 label: "mid-August to late-October"  kenya/season.json#/windows/1/label
+- window w2 start_week: 34  kenya/season.json#/windows/1/start_week
+- window w2 peak_week: 39  kenya/season.json#/windows/1/peak_week
+- window w2 end_week: 42  kenya/season.json#/windows/1/end_week
+- window w2 share: 0.293  kenya/season.json#/windows/1/share
+- window w2 start shift days per decade (value): -3.333  kenya/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -7.647  kenya/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): 1.792  kenya/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "No clear shift in the timing of the mid-August to late-October season."  kenya/season.json#/windows/1/sentence
+- this week value: null  kenya/nowcast.json#/value
+- this week lo: null  kenya/nowcast.json#/lo
+- this week hi: null  kenya/nowcast.json#/hi
+- this week percentile: null  kenya/nowcast.json#/percentile
+- this week status: "unavailable"  kenya/nowcast.json#/status
+- this week as_of: null  kenya/nowcast.json#/as_of
+- this week window start: null  kenya/nowcast.json#/window/start
+- this week window end: null  kenya/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  kenya/nowcast.json#/baseline_years
+- month to date value: null  kenya/nowcast.json#/month_to_date/value
+- month to date median: null  kenya/nowcast.json#/month_to_date/median
+- month to date ratio: null  kenya/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  kenya/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  kenya/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.257  methods.json#/validation/901/value
+- LOYO weekly WAPE baseline annual_ratio: 0.258  methods.json#/validation/901/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 5.815  methods.json#/validation/901/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/901/years
+- LOYO weekly WAPE (tier2): 0.217  methods.json#/validation/916/value
+- LOYO years: [2013, 2022]  methods.json#/validation/916/years
+- reliability_err (tier2): 0.002  methods.json#/validation/914/value
+- reliability_year_absolute_err (tier2): 0.11  methods.json#/validation/915/value
+- t1_t2_wape (tier2): 0.173  methods.json#/validation/918/value
+- eyesight status: "validated"  methods.json#/eyesight/52/status
+- eyesight param a: -4.837  methods.json#/eyesight/52/params/a
+- eyesight param a_hi: -4.744  methods.json#/eyesight/52/params/a_hi
+- eyesight param a_lo: -4.949  methods.json#/eyesight/52/params/a_lo
+- eyesight param b: 2.611  methods.json#/eyesight/52/params/b
+- eyesight param b_hi: 2.68  methods.json#/eyesight/52/params/b_hi
+- eyesight param b_lo: 2.539  methods.json#/eyesight/52/params/b_lo
+- eyesight param c: 0.653  methods.json#/eyesight/52/params/c
+- eyesight param c_hi: 0.71  methods.json#/eyesight/52/params/c_hi
+- eyesight param c_lo: 0.606  methods.json#/eyesight/52/params/c_lo
+- eyesight g: 1.752  methods.json#/eyesight/52/g
+
+## Kuwait (`kuwait`)
+
+- jump multiple (value): 4.725  kuwait/ruler.json#/jump_multiple/value
+- jump multiple (lo): 2.674  kuwait/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 9.142  kuwait/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  kuwait/ruler.json#/jump_multiple/years
+- ruler sentence: "In Kuwait, VIIRS reports about 4.7 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  kuwait/ruler.json#/sentence
+- harmonized trend pct_per_decade: -1.924  kuwait/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -23.883  kuwait/trend.json#/harmonized/lo
+- harmonized trend hi: 18.602  kuwait/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  kuwait/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 94.312  kuwait/trend.json#/naive/pct_per_decade
+- naive trend lo: 54.889  kuwait/trend.json#/naive/lo
+- naive trend hi: 265.539  kuwait/trend.json#/naive/hi
+- naive trend direction: "rising"  kuwait/trend.json#/naive/direction
+- trend years: [2003, 2025]  kuwait/trend.json#/years
+- verdict sentence_id: "artifact_flat"  kuwait/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 94% per decade. After correcting for the sensor change, there is no clear change (-24 to 19% per decade)."  kuwait/trend.json#/sentence
+- critical weeks: [1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 16, 34, 44, 45, 46, 47, 48, 49, 50, 51, 52]  kuwait/season.json#/critical_weeks
+- window w1 label: "late-October to early-March"  kuwait/season.json#/windows/0/label
+- window w1 start_week: 44  kuwait/season.json#/windows/0/start_week
+- window w1 peak_week: 2  kuwait/season.json#/windows/0/peak_week
+- window w1 end_week: 9  kuwait/season.json#/windows/0/end_week
+- window w1 share: 0.753  kuwait/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 0.917  kuwait/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -10.0  kuwait/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 10.909  kuwait/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the late-October to early-March season."  kuwait/season.json#/windows/0/sentence
+- this week value: null  kuwait/nowcast.json#/value
+- this week lo: null  kuwait/nowcast.json#/lo
+- this week hi: null  kuwait/nowcast.json#/hi
+- this week percentile: null  kuwait/nowcast.json#/percentile
+- this week status: "unavailable"  kuwait/nowcast.json#/status
+- this week as_of: null  kuwait/nowcast.json#/as_of
+- this week window start: null  kuwait/nowcast.json#/window/start
+- this week window end: null  kuwait/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  kuwait/nowcast.json#/baseline_years
+- month to date value: null  kuwait/nowcast.json#/month_to_date/value
+- month to date median: null  kuwait/nowcast.json#/month_to_date/median
+- month to date ratio: null  kuwait/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  kuwait/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  kuwait/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.926  methods.json#/validation/919/value
+- LOYO weekly WAPE baseline annual_ratio: 1.029  methods.json#/validation/919/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.955  methods.json#/validation/919/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/919/years
+- LOYO weekly WAPE (tier2): 1.026  methods.json#/validation/934/value
+- LOYO years: [2013, 2022]  methods.json#/validation/934/years
+- reliability_err (tier2): 0.003  methods.json#/validation/932/value
+- reliability_year_absolute_err (tier2): 0.318  methods.json#/validation/933/value
+- t1_t2_wape (tier2): 0.464  methods.json#/validation/936/value
+- eyesight status: "exploratory"  methods.json#/eyesight/53/status
+- eyesight param a: -4.521  methods.json#/eyesight/53/params/a
+- eyesight param a_hi: -3.153  methods.json#/eyesight/53/params/a_hi
+- eyesight param a_lo: -5.197  methods.json#/eyesight/53/params/a_lo
+- eyesight param b: 1.79  methods.json#/eyesight/53/params/b
+- eyesight param b_hi: 2.577  methods.json#/eyesight/53/params/b_hi
+- eyesight param b_lo: 1.428  methods.json#/eyesight/53/params/b_lo
+- eyesight param c: 1.0  methods.json#/eyesight/53/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/53/params/c_hi
+- eyesight param c_lo: 0.211  methods.json#/eyesight/53/params/c_lo
+- eyesight g: 3.136  methods.json#/eyesight/53/g
+
+## Kyrgyzstan (`kyrgyzstan`)
+
+- jump multiple (value): 3.599  kyrgyzstan/ruler.json#/jump_multiple/value
+- jump multiple (lo): 2.682  kyrgyzstan/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 5.992  kyrgyzstan/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  kyrgyzstan/ruler.json#/jump_multiple/years
+- ruler sentence: "In Kyrgyzstan, VIIRS reports about 3.6 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  kyrgyzstan/ruler.json#/sentence
+- harmonized trend pct_per_decade: -79.661  kyrgyzstan/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -110.789  kyrgyzstan/trend.json#/harmonized/lo
+- harmonized trend hi: -46.434  kyrgyzstan/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  kyrgyzstan/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 7.162  kyrgyzstan/trend.json#/naive/pct_per_decade
+- naive trend lo: -19.208  kyrgyzstan/trend.json#/naive/lo
+- naive trend hi: 22.996  kyrgyzstan/trend.json#/naive/hi
+- naive trend direction: "no_clear_change"  kyrgyzstan/trend.json#/naive/direction
+- trend years: [2003, 2025]  kyrgyzstan/trend.json#/years
+- verdict sentence_id: "artifact_falling"  kyrgyzstan/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 80% per decade (-111 to -46)."  kyrgyzstan/trend.json#/sentence
+- critical weeks: [11, 12, 13, 14, 15, 16, 17, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43]  kyrgyzstan/season.json#/critical_weeks
+- window w1 label: "early-August to late-October"  kyrgyzstan/season.json#/windows/0/label
+- window w1 start_week: 32  kyrgyzstan/season.json#/windows/0/start_week
+- window w1 peak_week: 37  kyrgyzstan/season.json#/windows/0/peak_week
+- window w1 end_week: 43  kyrgyzstan/season.json#/windows/0/end_week
+- window w1 share: 0.439  kyrgyzstan/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -2.381  kyrgyzstan/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -8.824  kyrgyzstan/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 4.615  kyrgyzstan/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-August to late-October season."  kyrgyzstan/season.json#/windows/0/sentence
+- window w2 label: "mid-March to late-April"  kyrgyzstan/season.json#/windows/1/label
+- window w2 start_week: 11  kyrgyzstan/season.json#/windows/1/start_week
+- window w2 peak_week: 13  kyrgyzstan/season.json#/windows/1/peak_week
+- window w2 end_week: 17  kyrgyzstan/season.json#/windows/1/end_week
+- window w2 share: 0.372  kyrgyzstan/season.json#/windows/1/share
+- window w2 start shift days per decade (value): -5.714  kyrgyzstan/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -13.923  kyrgyzstan/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): 2.222  kyrgyzstan/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "No clear shift in the timing of the mid-March to late-April season."  kyrgyzstan/season.json#/windows/1/sentence
+- this week value: null  kyrgyzstan/nowcast.json#/value
+- this week lo: null  kyrgyzstan/nowcast.json#/lo
+- this week hi: null  kyrgyzstan/nowcast.json#/hi
+- this week percentile: null  kyrgyzstan/nowcast.json#/percentile
+- this week status: "unavailable"  kyrgyzstan/nowcast.json#/status
+- this week as_of: null  kyrgyzstan/nowcast.json#/as_of
+- this week window start: null  kyrgyzstan/nowcast.json#/window/start
+- this week window end: null  kyrgyzstan/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  kyrgyzstan/nowcast.json#/baseline_years
+- month to date value: null  kyrgyzstan/nowcast.json#/month_to_date/value
+- month to date median: null  kyrgyzstan/nowcast.json#/month_to_date/median
+- month to date ratio: null  kyrgyzstan/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  kyrgyzstan/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  kyrgyzstan/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.396  methods.json#/validation/937/value
+- LOYO weekly WAPE baseline annual_ratio: 0.39  methods.json#/validation/937/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.029  methods.json#/validation/937/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/937/years
+- LOYO weekly WAPE (tier2): 0.431  methods.json#/validation/952/value
+- LOYO years: [2013, 2022]  methods.json#/validation/952/years
+- reliability_err (tier2): 0.0  methods.json#/validation/950/value
+- reliability_year_absolute_err (tier2): 0.109  methods.json#/validation/951/value
+- t1_t2_wape (tier2): 0.293  methods.json#/validation/954/value
+- eyesight status: "validated"  methods.json#/eyesight/54/status
+- eyesight param a: -3.952  methods.json#/eyesight/54/params/a
+- eyesight param a_hi: -3.734  methods.json#/eyesight/54/params/a_hi
+- eyesight param a_lo: -4.143  methods.json#/eyesight/54/params/a_lo
+- eyesight param b: 2.049  methods.json#/eyesight/54/params/b
+- eyesight param b_hi: 2.287  methods.json#/eyesight/54/params/b_hi
+- eyesight param b_lo: 1.891  methods.json#/eyesight/54/params/b_lo
+- eyesight param c: 1.0  methods.json#/eyesight/54/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/54/params/c_hi
+- eyesight param c_lo: 0.814  methods.json#/eyesight/54/params/c_lo
+- eyesight g: 2.234  methods.json#/eyesight/54/g
+
+## Lesotho (`lesotho`)
+
+- jump multiple (value): 4.5  lesotho/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.795  lesotho/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 5.662  lesotho/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  lesotho/ruler.json#/jump_multiple/years
+- ruler sentence: "In Lesotho, VIIRS reports about 4.5 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  lesotho/ruler.json#/sentence
+- harmonized trend pct_per_decade: 1.43  lesotho/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -54.481  lesotho/trend.json#/harmonized/lo
+- harmonized trend hi: 48.841  lesotho/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  lesotho/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 70.978  lesotho/trend.json#/naive/pct_per_decade
+- naive trend lo: 29.215  lesotho/trend.json#/naive/lo
+- naive trend hi: 157.726  lesotho/trend.json#/naive/hi
+- naive trend direction: "rising"  lesotho/trend.json#/naive/direction
+- trend years: [2003, 2025]  lesotho/trend.json#/years
+- verdict sentence_id: "unclear"  lesotho/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (-54 to 49% per decade)."  lesotho/trend.json#/sentence
+- critical weeks: [29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]  lesotho/season.json#/critical_weeks
+- window w1 label: "mid-July to early-October"  lesotho/season.json#/windows/0/label
+- window w1 start_week: 29  lesotho/season.json#/windows/0/start_week
+- window w1 peak_week: 36  lesotho/season.json#/windows/0/peak_week
+- window w1 end_week: 40  lesotho/season.json#/windows/0/end_week
+- window w1 share: 0.819  lesotho/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -3.75  lesotho/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -8.667  lesotho/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 2.222  lesotho/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the mid-July to early-October season."  lesotho/season.json#/windows/0/sentence
+- this week value: null  lesotho/nowcast.json#/value
+- this week lo: null  lesotho/nowcast.json#/lo
+- this week hi: null  lesotho/nowcast.json#/hi
+- this week percentile: null  lesotho/nowcast.json#/percentile
+- this week status: "unavailable"  lesotho/nowcast.json#/status
+- this week as_of: null  lesotho/nowcast.json#/as_of
+- this week window start: null  lesotho/nowcast.json#/window/start
+- this week window end: null  lesotho/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  lesotho/nowcast.json#/baseline_years
+- month to date value: null  lesotho/nowcast.json#/month_to_date/value
+- month to date median: null  lesotho/nowcast.json#/month_to_date/median
+- month to date ratio: null  lesotho/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  lesotho/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  lesotho/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.404  methods.json#/validation/955/value
+- LOYO weekly WAPE baseline annual_ratio: 0.392  methods.json#/validation/955/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.083  methods.json#/validation/955/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/955/years
+- LOYO weekly WAPE (tier2): 0.371  methods.json#/validation/970/value
+- LOYO years: [2013, 2022]  methods.json#/validation/970/years
+- reliability_err (tier2): 0.004  methods.json#/validation/968/value
+- reliability_year_absolute_err (tier2): 0.189  methods.json#/validation/969/value
+- t1_t2_wape (tier2): 0.25  methods.json#/validation/972/value
+- eyesight status: "validated"  methods.json#/eyesight/55/status
+- eyesight param a: -3.505  methods.json#/eyesight/55/params/a
+- eyesight param a_hi: -3.261  methods.json#/eyesight/55/params/a_hi
+- eyesight param a_lo: -3.889  methods.json#/eyesight/55/params/a_lo
+- eyesight param b: 2.055  methods.json#/eyesight/55/params/b
+- eyesight param b_hi: 2.422  methods.json#/eyesight/55/params/b_hi
+- eyesight param b_lo: 1.755  methods.json#/eyesight/55/params/b_lo
+- eyesight param c: 0.777  methods.json#/eyesight/55/params/c
+- eyesight param c_hi: 0.998  methods.json#/eyesight/55/params/c_hi
+- eyesight param c_lo: 0.61  methods.json#/eyesight/55/params/c_lo
+- eyesight g: 1.752  methods.json#/eyesight/55/g
+
+## Liberia (`liberia`)
+
+- jump multiple (value): 3.936  liberia/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.169  liberia/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 5.25  liberia/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  liberia/ruler.json#/jump_multiple/years
+- ruler sentence: "In Liberia, VIIRS reports about 3.9 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  liberia/ruler.json#/sentence
+- harmonized trend pct_per_decade: 18.393  liberia/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -3.397  liberia/trend.json#/harmonized/lo
+- harmonized trend hi: 33.749  liberia/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  liberia/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 64.171  liberia/trend.json#/naive/pct_per_decade
+- naive trend lo: 41.983  liberia/trend.json#/naive/lo
+- naive trend hi: 203.172  liberia/trend.json#/naive/hi
+- naive trend direction: "rising"  liberia/trend.json#/naive/direction
+- trend years: [2003, 2025]  liberia/trend.json#/years
+- verdict sentence_id: "unclear"  liberia/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (-3 to 34% per decade)."  liberia/trend.json#/sentence
+- critical weeks: [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]  liberia/season.json#/critical_weeks
+- window w1 label: "mid-February to early-May"  liberia/season.json#/windows/0/label
+- window w1 start_week: 8  liberia/season.json#/windows/0/start_week
+- window w1 peak_week: 14  liberia/season.json#/windows/0/peak_week
+- window w1 end_week: 18  liberia/season.json#/windows/0/end_week
+- window w1 share: 0.827  liberia/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -6.667  liberia/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -9.0  liberia/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): -3.889  liberia/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "The mid-February to early-May season now starts about 7 days earlier per decade (-9 to -4)."  liberia/season.json#/windows/0/sentence
+- this week value: null  liberia/nowcast.json#/value
+- this week lo: null  liberia/nowcast.json#/lo
+- this week hi: null  liberia/nowcast.json#/hi
+- this week percentile: null  liberia/nowcast.json#/percentile
+- this week status: "unavailable"  liberia/nowcast.json#/status
+- this week as_of: null  liberia/nowcast.json#/as_of
+- this week window start: null  liberia/nowcast.json#/window/start
+- this week window end: null  liberia/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  liberia/nowcast.json#/baseline_years
+- month to date value: null  liberia/nowcast.json#/month_to_date/value
+- month to date median: null  liberia/nowcast.json#/month_to_date/median
+- month to date ratio: null  liberia/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  liberia/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  liberia/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.278  methods.json#/validation/973/value
+- LOYO weekly WAPE baseline annual_ratio: 0.362  methods.json#/validation/973/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.832  methods.json#/validation/973/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/973/years
+- LOYO weekly WAPE (tier2): 0.333  methods.json#/validation/988/value
+- LOYO years: [2013, 2022]  methods.json#/validation/988/years
+- reliability_err (tier2): 0.005  methods.json#/validation/986/value
+- reliability_year_absolute_err (tier2): 0.163  methods.json#/validation/987/value
+- t1_t2_wape (tier2): 0.213  methods.json#/validation/990/value
+- eyesight status: "exploratory"  methods.json#/eyesight/56/status
+- eyesight param a: -3.323  methods.json#/eyesight/56/params/a
+- eyesight param a_hi: -3.172  methods.json#/eyesight/56/params/a_hi
+- eyesight param a_lo: -3.45  methods.json#/eyesight/56/params/a_lo
+- eyesight param b: 1.422  methods.json#/eyesight/56/params/b
+- eyesight param b_hi: 1.47  methods.json#/eyesight/56/params/b_hi
+- eyesight param b_lo: 1.373  methods.json#/eyesight/56/params/b_lo
+- eyesight param c: 0.879  methods.json#/eyesight/56/params/c
+- eyesight param c_hi: 0.947  methods.json#/eyesight/56/params/c_hi
+- eyesight param c_lo: 0.794  methods.json#/eyesight/56/params/c_lo
+- eyesight g: 2.291  methods.json#/eyesight/56/g
+
+## Libya (`libya`)
+
+- jump multiple (value): 14.522  libya/ruler.json#/jump_multiple/value
+- jump multiple (lo): 6.265  libya/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 35.918  libya/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  libya/ruler.json#/jump_multiple/years
+- ruler sentence: "In Libya, VIIRS reports about 14.5 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  libya/ruler.json#/sentence
+- harmonized trend pct_per_decade: -16.198  libya/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -37.891  libya/trend.json#/harmonized/lo
+- harmonized trend hi: 13.395  libya/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  libya/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 98.081  libya/trend.json#/naive/pct_per_decade
+- naive trend lo: 55.609  libya/trend.json#/naive/lo
+- naive trend hi: 513.424  libya/trend.json#/naive/hi
+- naive trend direction: "rising"  libya/trend.json#/naive/direction
+- trend years: [2003, 2025]  libya/trend.json#/years
+- verdict sentence_id: "artifact_flat"  libya/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 98% per decade. After correcting for the sensor change, there is no clear change (-38 to 13% per decade)."  libya/trend.json#/sentence
+- critical weeks: [1, 36, 37, 38, 41, 42, 43, 44, 46, 47, 48, 51, 52]  libya/season.json#/critical_weeks
+- window w1 label: "early-October to early-December"  libya/season.json#/windows/0/label
+- window w1 start_week: 41  libya/season.json#/windows/0/start_week
+- window w1 peak_week: 43  libya/season.json#/windows/0/peak_week
+- window w1 end_week: 48  libya/season.json#/windows/0/end_week
+- window w1 share: 0.507  libya/season.json#/windows/0/share
+- window w1 start shift days per decade (value): null  libya/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): null  libya/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): null  libya/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "Timing shift unavailable: fewer than three valid annual observations."  libya/season.json#/windows/0/sentence
+- window w2 label: "early to late September"  libya/season.json#/windows/1/label
+- window w2 start_week: 36  libya/season.json#/windows/1/start_week
+- window w2 peak_week: 37  libya/season.json#/windows/1/peak_week
+- window w2 end_week: 38  libya/season.json#/windows/1/end_week
+- window w2 share: 0.175  libya/season.json#/windows/1/share
+- window w2 start shift days per decade (value): null  libya/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): null  libya/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): null  libya/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "Timing shift unavailable: fewer than three valid annual observations."  libya/season.json#/windows/1/sentence
+- this week value: null  libya/nowcast.json#/value
+- this week lo: null  libya/nowcast.json#/lo
+- this week hi: null  libya/nowcast.json#/hi
+- this week percentile: null  libya/nowcast.json#/percentile
+- this week status: "unavailable"  libya/nowcast.json#/status
+- this week as_of: null  libya/nowcast.json#/as_of
+- this week window start: null  libya/nowcast.json#/window/start
+- this week window end: null  libya/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  libya/nowcast.json#/baseline_years
+- month to date value: null  libya/nowcast.json#/month_to_date/value
+- month to date median: null  libya/nowcast.json#/month_to_date/median
+- month to date ratio: null  libya/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  libya/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  libya/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.409  methods.json#/validation/991/value
+- LOYO weekly WAPE baseline annual_ratio: 1.425  methods.json#/validation/991/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 36.855  methods.json#/validation/991/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/991/years
+- LOYO weekly WAPE (tier2): 1.249  methods.json#/validation/1006/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1006/years
+- reliability_err (tier2): 0.015  methods.json#/validation/1004/value
+- reliability_year_absolute_err (tier2): 0.464  methods.json#/validation/1005/value
+- t1_t2_wape (tier2): 0.579  methods.json#/validation/1008/value
+- eyesight status: "validated"  methods.json#/eyesight/57/status
+- eyesight param a: -6.892  methods.json#/eyesight/57/params/a
+- eyesight param a_hi: -6.349  methods.json#/eyesight/57/params/a_hi
+- eyesight param a_lo: -7.726  methods.json#/eyesight/57/params/a_lo
+- eyesight param b: 3.164  methods.json#/eyesight/57/params/b
+- eyesight param b_hi: 3.604  methods.json#/eyesight/57/params/b_hi
+- eyesight param b_lo: 2.832  methods.json#/eyesight/57/params/b_lo
+- eyesight param c: 0.468  methods.json#/eyesight/57/params/c
+- eyesight param c_hi: 0.968  methods.json#/eyesight/57/params/c_hi
+- eyesight param c_lo: 0.234  methods.json#/eyesight/57/params/c_lo
+- eyesight g: 2.21  methods.json#/eyesight/57/g
+
+## North Macedonia (`macedonia-former-yugoslav-republic-of`)
+
+- jump multiple (value): 4.367  macedonia-former-yugoslav-republic-of/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.359  macedonia-former-yugoslav-republic-of/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 5.206  macedonia-former-yugoslav-republic-of/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  macedonia-former-yugoslav-republic-of/ruler.json#/jump_multiple/years
+- ruler sentence: "In North Macedonia, VIIRS reports about 4.4 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  macedonia-former-yugoslav-republic-of/ruler.json#/sentence
+- harmonized trend pct_per_decade: 5.553  macedonia-former-yugoslav-republic-of/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -21.295  macedonia-former-yugoslav-republic-of/trend.json#/harmonized/lo
+- harmonized trend hi: 30.871  macedonia-former-yugoslav-republic-of/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  macedonia-former-yugoslav-republic-of/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 80.603  macedonia-former-yugoslav-republic-of/trend.json#/naive/pct_per_decade
+- naive trend lo: 43.592  macedonia-former-yugoslav-republic-of/trend.json#/naive/lo
+- naive trend hi: 154.139  macedonia-former-yugoslav-republic-of/trend.json#/naive/hi
+- naive trend direction: "rising"  macedonia-former-yugoslav-republic-of/trend.json#/naive/direction
+- trend years: [2003, 2025]  macedonia-former-yugoslav-republic-of/trend.json#/years
+- verdict sentence_id: "artifact_flat"  macedonia-former-yugoslav-republic-of/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 81% per decade. After correcting for the sensor change, there is no clear change (-21 to 31% per decade)."  macedonia-former-yugoslav-republic-of/trend.json#/sentence
+- critical weeks: [7, 9, 11, 12, 13, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 43, 44]  macedonia-former-yugoslav-republic-of/season.json#/critical_weeks
+- window w1 label: "mid-July to late-September"  macedonia-former-yugoslav-republic-of/season.json#/windows/0/label
+- window w1 start_week: 29  macedonia-former-yugoslav-republic-of/season.json#/windows/0/start_week
+- window w1 peak_week: 34  macedonia-former-yugoslav-republic-of/season.json#/windows/0/peak_week
+- window w1 end_week: 39  macedonia-former-yugoslav-republic-of/season.json#/windows/0/end_week
+- window w1 share: 0.592  macedonia-former-yugoslav-republic-of/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 0.794  macedonia-former-yugoslav-republic-of/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -6.5  macedonia-former-yugoslav-republic-of/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 10.0  macedonia-former-yugoslav-republic-of/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the mid-July to late-September season."  macedonia-former-yugoslav-republic-of/season.json#/windows/0/sentence
+- window w2 label: "mid-February to early-April"  macedonia-former-yugoslav-republic-of/season.json#/windows/1/label
+- window w2 start_week: 7  macedonia-former-yugoslav-republic-of/season.json#/windows/1/start_week
+- window w2 peak_week: 12  macedonia-former-yugoslav-republic-of/season.json#/windows/1/peak_week
+- window w2 end_week: 13  macedonia-former-yugoslav-republic-of/season.json#/windows/1/end_week
+- window w2 share: 0.209  macedonia-former-yugoslav-republic-of/season.json#/windows/1/share
+- window w2 start shift days per decade (value): -0.5  macedonia-former-yugoslav-republic-of/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -17.692  macedonia-former-yugoslav-republic-of/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): 12.0  macedonia-former-yugoslav-republic-of/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "No clear shift in the timing of the mid-February to early-April season."  macedonia-former-yugoslav-republic-of/season.json#/windows/1/sentence
+- this week value: null  macedonia-former-yugoslav-republic-of/nowcast.json#/value
+- this week lo: null  macedonia-former-yugoslav-republic-of/nowcast.json#/lo
+- this week hi: null  macedonia-former-yugoslav-republic-of/nowcast.json#/hi
+- this week percentile: null  macedonia-former-yugoslav-republic-of/nowcast.json#/percentile
+- this week status: "unavailable"  macedonia-former-yugoslav-republic-of/nowcast.json#/status
+- this week as_of: null  macedonia-former-yugoslav-republic-of/nowcast.json#/as_of
+- this week window start: null  macedonia-former-yugoslav-republic-of/nowcast.json#/window/start
+- this week window end: null  macedonia-former-yugoslav-republic-of/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  macedonia-former-yugoslav-republic-of/nowcast.json#/baseline_years
+- month to date value: null  macedonia-former-yugoslav-republic-of/nowcast.json#/month_to_date/value
+- month to date median: null  macedonia-former-yugoslav-republic-of/nowcast.json#/month_to_date/median
+- month to date ratio: null  macedonia-former-yugoslav-republic-of/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  macedonia-former-yugoslav-republic-of/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  macedonia-former-yugoslav-republic-of/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.504  methods.json#/validation/1009/value
+- LOYO weekly WAPE baseline annual_ratio: 0.514  methods.json#/validation/1009/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.972  methods.json#/validation/1009/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1009/years
+- LOYO weekly WAPE (tier2): 0.479  methods.json#/validation/1024/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1024/years
+- reliability_err (tier2): 0.008  methods.json#/validation/1022/value
+- reliability_year_absolute_err (tier2): 0.125  methods.json#/validation/1023/value
+- t1_t2_wape (tier2): 0.387  methods.json#/validation/1026/value
+- eyesight status: "validated"  methods.json#/eyesight/58/status
+- eyesight param a: -4.201  methods.json#/eyesight/58/params/a
+- eyesight param a_hi: -3.915  methods.json#/eyesight/58/params/a_hi
+- eyesight param a_lo: -4.533  methods.json#/eyesight/58/params/a_lo
+- eyesight param b: 2.735  methods.json#/eyesight/58/params/b
+- eyesight param b_hi: 3.078  methods.json#/eyesight/58/params/b_hi
+- eyesight param b_lo: 2.524  methods.json#/eyesight/58/params/b_lo
+- eyesight param c: 0.84  methods.json#/eyesight/58/params/c
+- eyesight param c_hi: 0.937  methods.json#/eyesight/58/params/c_hi
+- eyesight param c_lo: 0.669  methods.json#/eyesight/58/params/c_lo
+- eyesight g: 1.706  methods.json#/eyesight/58/g
+
+## Malawi (`malawi`)
+
+- jump multiple (value): 6.06  malawi/ruler.json#/jump_multiple/value
+- jump multiple (lo): 5.686  malawi/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 6.898  malawi/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  malawi/ruler.json#/jump_multiple/years
+- ruler sentence: "In Malawi, VIIRS reports about 6.1 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  malawi/ruler.json#/sentence
+- harmonized trend pct_per_decade: -27.09  malawi/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -34.978  malawi/trend.json#/harmonized/lo
+- harmonized trend hi: -18.447  malawi/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  malawi/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 37.506  malawi/trend.json#/naive/pct_per_decade
+- naive trend lo: -7.937  malawi/trend.json#/naive/lo
+- naive trend hi: 158.339  malawi/trend.json#/naive/hi
+- naive trend direction: "no_clear_change"  malawi/trend.json#/naive/direction
+- trend years: [2003, 2025]  malawi/trend.json#/years
+- verdict sentence_id: "artifact_falling"  malawi/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 27% per decade (-35 to -18)."  malawi/trend.json#/sentence
+- critical weeks: [29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45]  malawi/season.json#/critical_weeks
+- window w1 label: "mid-July to mid-November"  malawi/season.json#/windows/0/label
+- window w1 start_week: 29  malawi/season.json#/windows/0/start_week
+- window w1 peak_week: 34  malawi/season.json#/windows/0/peak_week
+- window w1 end_week: 45  malawi/season.json#/windows/0/end_week
+- window w1 share: 0.809  malawi/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 0.0  malawi/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -5.034  malawi/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 5.0  malawi/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the mid-July to mid-November season."  malawi/season.json#/windows/0/sentence
+- this week value: null  malawi/nowcast.json#/value
+- this week lo: null  malawi/nowcast.json#/lo
+- this week hi: null  malawi/nowcast.json#/hi
+- this week percentile: null  malawi/nowcast.json#/percentile
+- this week status: "unavailable"  malawi/nowcast.json#/status
+- this week as_of: null  malawi/nowcast.json#/as_of
+- this week window start: null  malawi/nowcast.json#/window/start
+- this week window end: null  malawi/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  malawi/nowcast.json#/baseline_years
+- month to date value: null  malawi/nowcast.json#/month_to_date/value
+- month to date median: null  malawi/nowcast.json#/month_to_date/median
+- month to date ratio: null  malawi/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  malawi/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  malawi/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.177  methods.json#/validation/1027/value
+- LOYO weekly WAPE baseline annual_ratio: 0.191  methods.json#/validation/1027/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 4.726  methods.json#/validation/1027/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1027/years
+- LOYO weekly WAPE (tier2): 0.239  methods.json#/validation/1042/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1042/years
+- reliability_err (tier2): 0.0  methods.json#/validation/1040/value
+- reliability_year_absolute_err (tier2): 0.027  methods.json#/validation/1041/value
+- t1_t2_wape (tier2): 0.213  methods.json#/validation/1044/value
+- eyesight status: "exploratory"  methods.json#/eyesight/59/status
+- eyesight param a: -4.206  methods.json#/eyesight/59/params/a
+- eyesight param a_hi: -4.149  methods.json#/eyesight/59/params/a_hi
+- eyesight param a_lo: -4.27  methods.json#/eyesight/59/params/a_lo
+- eyesight param b: 2.187  methods.json#/eyesight/59/params/b
+- eyesight param b_hi: 2.242  methods.json#/eyesight/59/params/b_hi
+- eyesight param b_lo: 2.144  methods.json#/eyesight/59/params/b_lo
+- eyesight param c: 0.868  methods.json#/eyesight/59/params/c
+- eyesight param c_hi: 0.905  methods.json#/eyesight/59/params/c_hi
+- eyesight param c_lo: 0.825  methods.json#/eyesight/59/params/c_lo
+- eyesight g: 1.521  methods.json#/eyesight/59/g
+
+## Malaysia (`malaysia`)
+
+- jump multiple (value): 4.446  malaysia/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.384  malaysia/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 5.36  malaysia/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  malaysia/ruler.json#/jump_multiple/years
+- ruler sentence: "In Malaysia, VIIRS reports about 4.4 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  malaysia/ruler.json#/sentence
+- harmonized trend pct_per_decade: -59.004  malaysia/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -109.917  malaysia/trend.json#/harmonized/lo
+- harmonized trend hi: -41.994  malaysia/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  malaysia/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 5.248  malaysia/trend.json#/naive/pct_per_decade
+- naive trend lo: -22.662  malaysia/trend.json#/naive/lo
+- naive trend hi: 38.571  malaysia/trend.json#/naive/hi
+- naive trend direction: "no_clear_change"  malaysia/trend.json#/naive/direction
+- trend years: [2003, 2025]  malaysia/trend.json#/years
+- verdict sentence_id: "artifact_falling"  malaysia/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 59% per decade (-110 to -42)."  malaysia/trend.json#/sentence
+- critical weeks: [8, 9, 10, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]  malaysia/season.json#/critical_weeks
+- window w1 label: "late-March to early-October"  malaysia/season.json#/windows/0/label
+- window w1 start_week: 13  malaysia/season.json#/windows/0/start_week
+- window w1 peak_week: 32  malaysia/season.json#/windows/0/peak_week
+- window w1 end_week: 40  malaysia/season.json#/windows/0/end_week
+- window w1 share: 0.769  malaysia/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -10.0  malaysia/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -24.502  malaysia/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 1.429  malaysia/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the late-March to early-October season."  malaysia/season.json#/windows/0/sentence
+- this week value: null  malaysia/nowcast.json#/value
+- this week lo: null  malaysia/nowcast.json#/lo
+- this week hi: null  malaysia/nowcast.json#/hi
+- this week percentile: null  malaysia/nowcast.json#/percentile
+- this week status: "unavailable"  malaysia/nowcast.json#/status
+- this week as_of: null  malaysia/nowcast.json#/as_of
+- this week window start: null  malaysia/nowcast.json#/window/start
+- this week window end: null  malaysia/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  malaysia/nowcast.json#/baseline_years
+- month to date value: null  malaysia/nowcast.json#/month_to_date/value
+- month to date median: null  malaysia/nowcast.json#/month_to_date/median
+- month to date ratio: null  malaysia/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  malaysia/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  malaysia/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.231  methods.json#/validation/1045/value
+- LOYO weekly WAPE baseline annual_ratio: 0.252  methods.json#/validation/1045/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.262  methods.json#/validation/1045/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1045/years
+- LOYO weekly WAPE (tier2): 0.227  methods.json#/validation/1060/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1060/years
+- reliability_err (tier2): 0.006  methods.json#/validation/1058/value
+- reliability_year_absolute_err (tier2): 0.072  methods.json#/validation/1059/value
+- t1_t2_wape (tier2): 0.169  methods.json#/validation/1062/value
+- eyesight status: "validated"  methods.json#/eyesight/60/status
+- eyesight param a: -4.1  methods.json#/eyesight/60/params/a
+- eyesight param a_hi: -3.98  methods.json#/eyesight/60/params/a_hi
+- eyesight param a_lo: -4.221  methods.json#/eyesight/60/params/a_lo
+- eyesight param b: 2.498  methods.json#/eyesight/60/params/b
+- eyesight param b_hi: 2.656  methods.json#/eyesight/60/params/b_hi
+- eyesight param b_lo: 2.404  methods.json#/eyesight/60/params/b_lo
+- eyesight param c: 0.61  methods.json#/eyesight/60/params/c
+- eyesight param c_hi: 0.679  methods.json#/eyesight/60/params/c_hi
+- eyesight param c_lo: 0.513  methods.json#/eyesight/60/params/c_lo
+- eyesight g: 2.186  methods.json#/eyesight/60/g
+
+## Mauritania (`mauritania`)
+
+- jump multiple (value): 5.164  mauritania/ruler.json#/jump_multiple/value
+- jump multiple (lo): 4.746  mauritania/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 6.483  mauritania/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  mauritania/ruler.json#/jump_multiple/years
+- ruler sentence: "In Mauritania, VIIRS reports about 5.2 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  mauritania/ruler.json#/sentence
+- harmonized trend pct_per_decade: -2.412  mauritania/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -45.887  mauritania/trend.json#/harmonized/lo
+- harmonized trend hi: 32.495  mauritania/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  mauritania/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 105.612  mauritania/trend.json#/naive/pct_per_decade
+- naive trend lo: 61.766  mauritania/trend.json#/naive/lo
+- naive trend hi: 172.437  mauritania/trend.json#/naive/hi
+- naive trend direction: "rising"  mauritania/trend.json#/naive/direction
+- trend years: [2003, 2025]  mauritania/trend.json#/years
+- verdict sentence_id: "artifact_flat"  mauritania/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 106% per decade. After correcting for the sensor change, there is no clear change (-46 to 32% per decade)."  mauritania/trend.json#/sentence
+- critical weeks: [1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52]  mauritania/season.json#/critical_weeks
+- window w1 label: "early-October to early-February"  mauritania/season.json#/windows/0/label
+- window w1 start_week: 41  mauritania/season.json#/windows/0/start_week
+- window w1 peak_week: 44  mauritania/season.json#/windows/0/peak_week
+- window w1 end_week: 5  mauritania/season.json#/windows/0/end_week
+- window w1 share: 0.685  mauritania/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 5.0  mauritania/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): 0.0  mauritania/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 8.0  mauritania/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-October to early-February season."  mauritania/season.json#/windows/0/sentence
+- this week value: null  mauritania/nowcast.json#/value
+- this week lo: null  mauritania/nowcast.json#/lo
+- this week hi: null  mauritania/nowcast.json#/hi
+- this week percentile: null  mauritania/nowcast.json#/percentile
+- this week status: "unavailable"  mauritania/nowcast.json#/status
+- this week as_of: null  mauritania/nowcast.json#/as_of
+- this week window start: null  mauritania/nowcast.json#/window/start
+- this week window end: null  mauritania/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  mauritania/nowcast.json#/baseline_years
+- month to date value: null  mauritania/nowcast.json#/month_to_date/value
+- month to date median: null  mauritania/nowcast.json#/month_to_date/median
+- month to date ratio: null  mauritania/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  mauritania/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  mauritania/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.625  methods.json#/validation/1063/value
+- LOYO weekly WAPE baseline annual_ratio: 0.651  methods.json#/validation/1063/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.589  methods.json#/validation/1063/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1063/years
+- LOYO weekly WAPE (tier2): 0.558  methods.json#/validation/1078/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1078/years
+- reliability_err (tier2): 0.002  methods.json#/validation/1076/value
+- reliability_year_absolute_err (tier2): 0.173  methods.json#/validation/1077/value
+- t1_t2_wape (tier2): 0.361  methods.json#/validation/1080/value
+- eyesight status: "validated"  methods.json#/eyesight/61/status
+- eyesight param a: -4.619  methods.json#/eyesight/61/params/a
+- eyesight param a_hi: -4.457  methods.json#/eyesight/61/params/a_hi
+- eyesight param a_lo: -4.791  methods.json#/eyesight/61/params/a_lo
+- eyesight param b: 2.568  methods.json#/eyesight/61/params/b
+- eyesight param b_hi: 2.905  methods.json#/eyesight/61/params/b_hi
+- eyesight param b_lo: 2.148  methods.json#/eyesight/61/params/b_lo
+- eyesight param c: 0.668  methods.json#/eyesight/61/params/c
+- eyesight param c_hi: 0.924  methods.json#/eyesight/61/params/c_hi
+- eyesight param c_lo: 0.577  methods.json#/eyesight/61/params/c_lo
+- eyesight g: 1.404  methods.json#/eyesight/61/g
+
+## Moldova (`moldova`)
+
+- jump multiple (value): 3.142  moldova/ruler.json#/jump_multiple/value
+- jump multiple (lo): 2.611  moldova/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 3.845  moldova/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  moldova/ruler.json#/jump_multiple/years
+- ruler sentence: "In Moldova, VIIRS reports about 3.1 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  moldova/ruler.json#/sentence
+- harmonized trend pct_per_decade: -32.635  moldova/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -73.725  moldova/trend.json#/harmonized/lo
+- harmonized trend hi: 13.155  moldova/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  moldova/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 22.568  moldova/trend.json#/naive/pct_per_decade
+- naive trend lo: -23.564  moldova/trend.json#/naive/lo
+- naive trend hi: 84.674  moldova/trend.json#/naive/hi
+- naive trend direction: "no_clear_change"  moldova/trend.json#/naive/direction
+- trend years: [2003, 2025]  moldova/trend.json#/years
+- verdict sentence_id: "unclear"  moldova/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (-74 to 13% per decade)."  moldova/trend.json#/sentence
+- critical weeks: [10, 11, 12, 13, 14, 28, 29, 30, 31, 32, 33, 34, 35, 36, 39, 41]  moldova/season.json#/critical_weeks
+- window w1 label: "early-July to early-September"  moldova/season.json#/windows/0/label
+- window w1 start_week: 28  moldova/season.json#/windows/0/start_week
+- window w1 peak_week: 31  moldova/season.json#/windows/0/peak_week
+- window w1 end_week: 36  moldova/season.json#/windows/0/end_week
+- window w1 share: 0.541  moldova/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -7.0  moldova/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -11.667  moldova/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 0.0  moldova/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-July to early-September season."  moldova/season.json#/windows/0/sentence
+- window w2 label: "early-March to early-April"  moldova/season.json#/windows/1/label
+- window w2 start_week: 10  moldova/season.json#/windows/1/start_week
+- window w2 peak_week: 12  moldova/season.json#/windows/1/peak_week
+- window w2 end_week: 14  moldova/season.json#/windows/1/end_week
+- window w2 share: 0.222  moldova/season.json#/windows/1/share
+- window w2 start shift days per decade (value): -10.0  moldova/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -13.333  moldova/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): -4.545  moldova/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "The early-March to early-April season now starts about 10 days earlier per decade (-13 to -5)."  moldova/season.json#/windows/1/sentence
+- this week value: null  moldova/nowcast.json#/value
+- this week lo: null  moldova/nowcast.json#/lo
+- this week hi: null  moldova/nowcast.json#/hi
+- this week percentile: null  moldova/nowcast.json#/percentile
+- this week status: "unavailable"  moldova/nowcast.json#/status
+- this week as_of: null  moldova/nowcast.json#/as_of
+- this week window start: null  moldova/nowcast.json#/window/start
+- this week window end: null  moldova/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  moldova/nowcast.json#/baseline_years
+- month to date value: null  moldova/nowcast.json#/month_to_date/value
+- month to date median: null  moldova/nowcast.json#/month_to_date/median
+- month to date ratio: null  moldova/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  moldova/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  moldova/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.337  methods.json#/validation/1081/value
+- LOYO weekly WAPE baseline annual_ratio: 0.382  methods.json#/validation/1081/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.738  methods.json#/validation/1081/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1081/years
+- LOYO weekly WAPE (tier2): 0.393  methods.json#/validation/1096/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1096/years
+- reliability_err (tier2): 0.005  methods.json#/validation/1094/value
+- reliability_year_absolute_err (tier2): 0.127  methods.json#/validation/1095/value
+- t1_t2_wape (tier2): 0.267  methods.json#/validation/1098/value
+- eyesight status: "exploratory"  methods.json#/eyesight/62/status
+- eyesight param a: -3.264  methods.json#/eyesight/62/params/a
+- eyesight param a_hi: -3.104  methods.json#/eyesight/62/params/a_hi
+- eyesight param a_lo: -3.452  methods.json#/eyesight/62/params/a_lo
+- eyesight param b: 2.417  methods.json#/eyesight/62/params/b
+- eyesight param b_hi: 2.668  methods.json#/eyesight/62/params/b_hi
+- eyesight param b_lo: 2.217  methods.json#/eyesight/62/params/b_lo
+- eyesight param c: 0.595  methods.json#/eyesight/62/params/c
+- eyesight param c_hi: 0.689  methods.json#/eyesight/62/params/c_hi
+- eyesight param c_lo: 0.529  methods.json#/eyesight/62/params/c_lo
+- eyesight g: 1.705  methods.json#/eyesight/62/g
+
+## Mongolia (`mongolia`)
+
+- jump multiple (value): 4.61  mongolia/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.769  mongolia/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 6.0  mongolia/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  mongolia/ruler.json#/jump_multiple/years
+- ruler sentence: "In Mongolia, VIIRS reports about 4.6 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  mongolia/ruler.json#/sentence
+- harmonized trend pct_per_decade: -68.027  mongolia/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -153.592  mongolia/trend.json#/harmonized/lo
+- harmonized trend hi: -38.426  mongolia/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  mongolia/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 6.784  mongolia/trend.json#/naive/pct_per_decade
+- naive trend lo: -34.831  mongolia/trend.json#/naive/lo
+- naive trend hi: 52.255  mongolia/trend.json#/naive/hi
+- naive trend direction: "no_clear_change"  mongolia/trend.json#/naive/direction
+- trend years: [2003, 2025]  mongolia/trend.json#/years
+- verdict sentence_id: "artifact_falling"  mongolia/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 68% per decade (-154 to -38)."  mongolia/trend.json#/sentence
+- critical weeks: [13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 38, 40, 41, 42]  mongolia/season.json#/critical_weeks
+- window w1 label: "late-March to early-June"  mongolia/season.json#/windows/0/label
+- window w1 start_week: 13  mongolia/season.json#/windows/0/start_week
+- window w1 peak_week: 17  mongolia/season.json#/windows/0/peak_week
+- window w1 end_week: 23  mongolia/season.json#/windows/0/end_week
+- window w1 share: 0.708  mongolia/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -15.0  mongolia/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -24.0  mongolia/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): -7.0  mongolia/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "The late-March to early-June season now starts about 15 days earlier per decade (-24 to -7)."  mongolia/season.json#/windows/0/sentence
+- this week value: null  mongolia/nowcast.json#/value
+- this week lo: null  mongolia/nowcast.json#/lo
+- this week hi: null  mongolia/nowcast.json#/hi
+- this week percentile: null  mongolia/nowcast.json#/percentile
+- this week status: "unavailable"  mongolia/nowcast.json#/status
+- this week as_of: null  mongolia/nowcast.json#/as_of
+- this week window start: null  mongolia/nowcast.json#/window/start
+- this week window end: null  mongolia/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  mongolia/nowcast.json#/baseline_years
+- month to date value: null  mongolia/nowcast.json#/month_to_date/value
+- month to date median: null  mongolia/nowcast.json#/month_to_date/median
+- month to date ratio: null  mongolia/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  mongolia/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  mongolia/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.342  methods.json#/validation/1099/value
+- LOYO weekly WAPE baseline annual_ratio: 0.329  methods.json#/validation/1099/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.087  methods.json#/validation/1099/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1099/years
+- LOYO weekly WAPE (tier2): 0.254  methods.json#/validation/1114/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1114/years
+- reliability_err (tier2): 0.001  methods.json#/validation/1112/value
+- reliability_year_absolute_err (tier2): 0.07  methods.json#/validation/1113/value
+- t1_t2_wape (tier2): 0.248  methods.json#/validation/1116/value
+- eyesight status: "validated"  methods.json#/eyesight/63/status
+- eyesight param a: -3.488  methods.json#/eyesight/63/params/a
+- eyesight param a_hi: -3.235  methods.json#/eyesight/63/params/a_hi
+- eyesight param a_lo: -3.947  methods.json#/eyesight/63/params/a_lo
+- eyesight param b: 2.211  methods.json#/eyesight/63/params/b
+- eyesight param b_hi: 2.615  methods.json#/eyesight/63/params/b_hi
+- eyesight param b_lo: 1.977  methods.json#/eyesight/63/params/b_lo
+- eyesight param c: 0.792  methods.json#/eyesight/63/params/c
+- eyesight param c_hi: 0.87  methods.json#/eyesight/63/params/c_hi
+- eyesight param c_lo: 0.705  methods.json#/eyesight/63/params/c_lo
+- eyesight g: 1.256  methods.json#/eyesight/63/g
+
+## Montenegro (`montenegro`)
+
+- jump multiple (value): 4.451  montenegro/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.353  montenegro/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 7.763  montenegro/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  montenegro/ruler.json#/jump_multiple/years
+- ruler sentence: "In Montenegro, VIIRS reports about 4.5 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  montenegro/ruler.json#/sentence
+- harmonized trend pct_per_decade: 26.214  montenegro/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -23.571  montenegro/trend.json#/harmonized/lo
+- harmonized trend hi: 91.304  montenegro/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  montenegro/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 115.705  montenegro/trend.json#/naive/pct_per_decade
+- naive trend lo: 48.551  montenegro/trend.json#/naive/lo
+- naive trend hi: 265.113  montenegro/trend.json#/naive/hi
+- naive trend direction: "rising"  montenegro/trend.json#/naive/direction
+- trend years: [2003, 2025]  montenegro/trend.json#/years
+- verdict sentence_id: "unclear"  montenegro/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (-24 to 91% per decade)."  montenegro/trend.json#/sentence
+- critical weeks: [11, 12, 13, 14, 29, 30, 31, 32, 33, 34, 35]  montenegro/season.json#/critical_weeks
+- window w1 label: "mid-July to early-September"  montenegro/season.json#/windows/0/label
+- window w1 start_week: 29  montenegro/season.json#/windows/0/start_week
+- window w1 peak_week: 32  montenegro/season.json#/windows/0/peak_week
+- window w1 end_week: 35  montenegro/season.json#/windows/0/end_week
+- window w1 share: 0.542  montenegro/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -8.095  montenegro/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -20.714  montenegro/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): -0.667  montenegro/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "The mid-July to early-September season now starts about 8 days earlier per decade (-21 to -1)."  montenegro/season.json#/windows/0/sentence
+- window w2 label: "mid-March to early-April"  montenegro/season.json#/windows/1/label
+- window w2 start_week: 11  montenegro/season.json#/windows/1/start_week
+- window w2 peak_week: 13  montenegro/season.json#/windows/1/peak_week
+- window w2 end_week: 14  montenegro/season.json#/windows/1/end_week
+- window w2 share: 0.305  montenegro/season.json#/windows/1/share
+- window w2 start shift days per decade (value): -3.611  montenegro/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -14.0  montenegro/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): 4.667  montenegro/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "No clear shift in the timing of the mid-March to early-April season."  montenegro/season.json#/windows/1/sentence
+- this week value: null  montenegro/nowcast.json#/value
+- this week lo: null  montenegro/nowcast.json#/lo
+- this week hi: null  montenegro/nowcast.json#/hi
+- this week percentile: null  montenegro/nowcast.json#/percentile
+- this week status: "unavailable"  montenegro/nowcast.json#/status
+- this week as_of: null  montenegro/nowcast.json#/as_of
+- this week window start: null  montenegro/nowcast.json#/window/start
+- this week window end: null  montenegro/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  montenegro/nowcast.json#/baseline_years
+- month to date value: null  montenegro/nowcast.json#/month_to_date/value
+- month to date median: null  montenegro/nowcast.json#/month_to_date/median
+- month to date ratio: null  montenegro/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  montenegro/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  montenegro/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.389  methods.json#/validation/1117/value
+- LOYO weekly WAPE baseline annual_ratio: 0.434  methods.json#/validation/1117/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.045  methods.json#/validation/1117/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1117/years
+- LOYO weekly WAPE (tier2): 0.346  methods.json#/validation/1132/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1132/years
+- reliability_err (tier2): 0.002  methods.json#/validation/1130/value
+- reliability_year_absolute_err (tier2): 0.131  methods.json#/validation/1131/value
+- t1_t2_wape (tier2): 0.279  methods.json#/validation/1134/value
+- eyesight status: "validated"  methods.json#/eyesight/64/status
+- eyesight param a: -3.709  methods.json#/eyesight/64/params/a
+- eyesight param a_hi: -3.443  methods.json#/eyesight/64/params/a_hi
+- eyesight param a_lo: -4.038  methods.json#/eyesight/64/params/a_lo
+- eyesight param b: 2.572  methods.json#/eyesight/64/params/b
+- eyesight param b_hi: 2.862  methods.json#/eyesight/64/params/b_hi
+- eyesight param b_lo: 2.333  methods.json#/eyesight/64/params/b_lo
+- eyesight param c: 0.918  methods.json#/eyesight/64/params/c
+- eyesight param c_hi: 0.997  methods.json#/eyesight/64/params/c_hi
+- eyesight param c_lo: 0.839  methods.json#/eyesight/64/params/c_lo
+- eyesight g: 1.309  methods.json#/eyesight/64/g
+
+## Morocco (`morocco`)
+
+- jump multiple (value): 5.088  morocco/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.429  morocco/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 7.117  morocco/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  morocco/ruler.json#/jump_multiple/years
+- ruler sentence: "In Morocco, VIIRS reports about 5.1 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  morocco/ruler.json#/sentence
+- harmonized trend pct_per_decade: -22.375  morocco/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -46.812  morocco/trend.json#/harmonized/lo
+- harmonized trend hi: 3.51  morocco/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  morocco/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 56.515  morocco/trend.json#/naive/pct_per_decade
+- naive trend lo: 42.387  morocco/trend.json#/naive/lo
+- naive trend hi: 144.29  morocco/trend.json#/naive/hi
+- naive trend direction: "rising"  morocco/trend.json#/naive/direction
+- trend years: [2003, 2025]  morocco/trend.json#/years
+- verdict sentence_id: "unclear"  morocco/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (-47 to 4% per decade)."  morocco/trend.json#/sentence
+- critical weeks: [20, 21, 22, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46]  morocco/season.json#/critical_weeks
+- window w1 label: "mid-June to mid-November"  morocco/season.json#/windows/0/label
+- window w1 start_week: 25  morocco/season.json#/windows/0/start_week
+- window w1 peak_week: 32  morocco/season.json#/windows/0/peak_week
+- window w1 end_week: 46  morocco/season.json#/windows/0/end_week
+- window w1 share: 0.761  morocco/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 0.0  morocco/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -8.0  morocco/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 6.435  morocco/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the mid-June to mid-November season."  morocco/season.json#/windows/0/sentence
+- this week value: null  morocco/nowcast.json#/value
+- this week lo: null  morocco/nowcast.json#/lo
+- this week hi: null  morocco/nowcast.json#/hi
+- this week percentile: null  morocco/nowcast.json#/percentile
+- this week status: "unavailable"  morocco/nowcast.json#/status
+- this week as_of: null  morocco/nowcast.json#/as_of
+- this week window start: null  morocco/nowcast.json#/window/start
+- this week window end: null  morocco/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  morocco/nowcast.json#/baseline_years
+- month to date value: null  morocco/nowcast.json#/month_to_date/value
+- month to date median: null  morocco/nowcast.json#/month_to_date/median
+- month to date ratio: null  morocco/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  morocco/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  morocco/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.753  methods.json#/validation/1135/value
+- LOYO weekly WAPE baseline annual_ratio: 0.729  methods.json#/validation/1135/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 5.226  methods.json#/validation/1135/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1135/years
+- LOYO weekly WAPE (tier2): 0.648  methods.json#/validation/1150/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1150/years
+- reliability_err (tier2): 0.004  methods.json#/validation/1148/value
+- reliability_year_absolute_err (tier2): 0.153  methods.json#/validation/1149/value
+- t1_t2_wape (tier2): 0.513  methods.json#/validation/1152/value
+- eyesight status: "validated"  methods.json#/eyesight/65/status
+- eyesight param a: -5.323  methods.json#/eyesight/65/params/a
+- eyesight param a_hi: -5.102  methods.json#/eyesight/65/params/a_hi
+- eyesight param a_lo: -5.54  methods.json#/eyesight/65/params/a_lo
+- eyesight param b: 3.08  methods.json#/eyesight/65/params/b
+- eyesight param b_hi: 3.437  methods.json#/eyesight/65/params/b_hi
+- eyesight param b_lo: 2.826  methods.json#/eyesight/65/params/b_lo
+- eyesight param c: 0.833  methods.json#/eyesight/65/params/c
+- eyesight param c_hi: 0.988  methods.json#/eyesight/65/params/c_hi
+- eyesight param c_lo: 0.645  methods.json#/eyesight/65/params/c_lo
+- eyesight g: 2.024  methods.json#/eyesight/65/g
+
+## Namibia (`namibia`)
+
+- jump multiple (value): 3.906  namibia/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.366  namibia/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 4.255  namibia/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  namibia/ruler.json#/jump_multiple/years
+- ruler sentence: "In Namibia, VIIRS reports about 3.9 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  namibia/ruler.json#/sentence
+- harmonized trend pct_per_decade: -11.09  namibia/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -35.489  namibia/trend.json#/harmonized/lo
+- harmonized trend hi: 8.256  namibia/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  namibia/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 65.084  namibia/trend.json#/naive/pct_per_decade
+- naive trend lo: 23.344  namibia/trend.json#/naive/lo
+- naive trend hi: 111.647  namibia/trend.json#/naive/hi
+- naive trend direction: "rising"  namibia/trend.json#/naive/direction
+- trend years: [2003, 2025]  namibia/trend.json#/years
+- verdict sentence_id: "artifact_flat"  namibia/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 65% per decade. After correcting for the sensor change, there is no clear change (-35 to 8% per decade)."  namibia/trend.json#/sentence
+- critical weeks: [29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42]  namibia/season.json#/critical_weeks
+- window w1 label: "mid-July to late-October"  namibia/season.json#/windows/0/label
+- window w1 start_week: 29  namibia/season.json#/windows/0/start_week
+- window w1 peak_week: 37  namibia/season.json#/windows/0/peak_week
+- window w1 end_week: 42  namibia/season.json#/windows/0/end_week
+- window w1 share: 0.82  namibia/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -8.75  namibia/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -12.5  namibia/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): -3.571  namibia/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "The mid-July to late-October season now starts about 9 days earlier per decade (-13 to -4)."  namibia/season.json#/windows/0/sentence
+- this week value: null  namibia/nowcast.json#/value
+- this week lo: null  namibia/nowcast.json#/lo
+- this week hi: null  namibia/nowcast.json#/hi
+- this week percentile: null  namibia/nowcast.json#/percentile
+- this week status: "unavailable"  namibia/nowcast.json#/status
+- this week as_of: null  namibia/nowcast.json#/as_of
+- this week window start: null  namibia/nowcast.json#/window/start
+- this week window end: null  namibia/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  namibia/nowcast.json#/baseline_years
+- month to date value: null  namibia/nowcast.json#/month_to_date/value
+- month to date median: null  namibia/nowcast.json#/month_to_date/median
+- month to date ratio: null  namibia/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  namibia/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  namibia/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.134  methods.json#/validation/1153/value
+- LOYO weekly WAPE baseline annual_ratio: 0.17  methods.json#/validation/1153/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.208  methods.json#/validation/1153/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1153/years
+- LOYO weekly WAPE (tier2): 0.173  methods.json#/validation/1168/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1168/years
+- reliability_err (tier2): 0.0  methods.json#/validation/1166/value
+- reliability_year_absolute_err (tier2): 0.025  methods.json#/validation/1167/value
+- t1_t2_wape (tier2): 0.154  methods.json#/validation/1170/value
+- eyesight status: "exploratory"  methods.json#/eyesight/66/status
+- eyesight param a: -3.129  methods.json#/eyesight/66/params/a
+- eyesight param a_hi: -3.073  methods.json#/eyesight/66/params/a_hi
+- eyesight param a_lo: -3.196  methods.json#/eyesight/66/params/a_lo
+- eyesight param b: 1.954  methods.json#/eyesight/66/params/b
+- eyesight param b_hi: 2.005  methods.json#/eyesight/66/params/b_hi
+- eyesight param b_lo: 1.896  methods.json#/eyesight/66/params/b_lo
+- eyesight param c: 0.863  methods.json#/eyesight/66/params/c
+- eyesight param c_hi: 0.894  methods.json#/eyesight/66/params/c_hi
+- eyesight param c_lo: 0.843  methods.json#/eyesight/66/params/c_lo
+- eyesight g: 1.291  methods.json#/eyesight/66/g
+
+## Nepal (`nepal`)
+
+- jump multiple (value): 7.852  nepal/ruler.json#/jump_multiple/value
+- jump multiple (lo): 6.81  nepal/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 9.771  nepal/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  nepal/ruler.json#/jump_multiple/years
+- ruler sentence: "In Nepal, VIIRS reports about 7.9 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  nepal/ruler.json#/sentence
+- harmonized trend pct_per_decade: 16.394  nepal/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -3.251  nepal/trend.json#/harmonized/lo
+- harmonized trend hi: 41.878  nepal/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  nepal/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 89.024  nepal/trend.json#/naive/pct_per_decade
+- naive trend lo: 56.317  nepal/trend.json#/naive/lo
+- naive trend hi: 365.72  nepal/trend.json#/naive/hi
+- naive trend direction: "rising"  nepal/trend.json#/naive/direction
+- trend years: [2003, 2025]  nepal/trend.json#/years
+- verdict sentence_id: "artifact_flat"  nepal/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 89% per decade. After correcting for the sensor change, there is no clear change (-3 to 42% per decade)."  nepal/trend.json#/sentence
+- critical weeks: [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 51]  nepal/season.json#/critical_weeks
+- window w1 label: "early-February to mid-May"  nepal/season.json#/windows/0/label
+- window w1 start_week: 6  nepal/season.json#/windows/0/start_week
+- window w1 peak_week: 16  nepal/season.json#/windows/0/peak_week
+- window w1 end_week: 19  nepal/season.json#/windows/0/end_week
+- window w1 share: 0.787  nepal/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 0.0  nepal/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -8.333  nepal/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 10.0  nepal/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-February to mid-May season."  nepal/season.json#/windows/0/sentence
+- this week value: null  nepal/nowcast.json#/value
+- this week lo: null  nepal/nowcast.json#/lo
+- this week hi: null  nepal/nowcast.json#/hi
+- this week percentile: null  nepal/nowcast.json#/percentile
+- this week status: "unavailable"  nepal/nowcast.json#/status
+- this week as_of: null  nepal/nowcast.json#/as_of
+- this week window start: null  nepal/nowcast.json#/window/start
+- this week window end: null  nepal/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  nepal/nowcast.json#/baseline_years
+- month to date value: null  nepal/nowcast.json#/month_to_date/value
+- month to date median: null  nepal/nowcast.json#/month_to_date/median
+- month to date ratio: null  nepal/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  nepal/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  nepal/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.221  methods.json#/validation/1171/value
+- LOYO weekly WAPE baseline annual_ratio: 0.229  methods.json#/validation/1171/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.326  methods.json#/validation/1171/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1171/years
+- LOYO weekly WAPE (tier2): 0.194  methods.json#/validation/1186/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1186/years
+- reliability_err (tier2): 0.004  methods.json#/validation/1184/value
+- reliability_year_absolute_err (tier2): 0.081  methods.json#/validation/1185/value
+- t1_t2_wape (tier2): 0.146  methods.json#/validation/1188/value
+- eyesight status: "validated"  methods.json#/eyesight/67/status
+- eyesight param a: -3.821  methods.json#/eyesight/67/params/a
+- eyesight param a_hi: -3.744  methods.json#/eyesight/67/params/a_hi
+- eyesight param a_lo: -3.924  methods.json#/eyesight/67/params/a_lo
+- eyesight param b: 2.572  methods.json#/eyesight/67/params/b
+- eyesight param b_hi: 2.639  methods.json#/eyesight/67/params/b_hi
+- eyesight param b_lo: 2.49  methods.json#/eyesight/67/params/b_lo
+- eyesight param c: 0.706  methods.json#/eyesight/67/params/c
+- eyesight param c_hi: 0.764  methods.json#/eyesight/67/params/c_hi
+- eyesight param c_lo: 0.672  methods.json#/eyesight/67/params/c_lo
+- eyesight g: 1.542  methods.json#/eyesight/67/g
+
+## Netherlands (`netherlands`)
+
+- jump multiple (value): 4.743  netherlands/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.0  netherlands/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 11.123  netherlands/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  netherlands/ruler.json#/jump_multiple/years
+- ruler sentence: "In Netherlands, VIIRS reports about 4.7 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  netherlands/ruler.json#/sentence
+- harmonized trend pct_per_decade: -28.616  netherlands/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -53.655  netherlands/trend.json#/harmonized/lo
+- harmonized trend hi: -8.929  netherlands/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  netherlands/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 52.018  netherlands/trend.json#/naive/pct_per_decade
+- naive trend lo: 29.214  netherlands/trend.json#/naive/lo
+- naive trend hi: 97.764  netherlands/trend.json#/naive/hi
+- naive trend direction: "rising"  netherlands/trend.json#/naive/direction
+- trend years: [2003, 2025]  netherlands/trend.json#/years
+- verdict sentence_id: "unclear"  netherlands/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (-54 to -9% per decade)."  netherlands/trend.json#/sentence
+- critical weeks: [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 28, 29, 30, 34, 35, 36, 37]  netherlands/season.json#/critical_weeks
+- window w1 label: "mid-March to early-June"  netherlands/season.json#/windows/0/label
+- window w1 start_week: 12  netherlands/season.json#/windows/0/start_week
+- window w1 peak_week: 14  netherlands/season.json#/windows/0/peak_week
+- window w1 end_week: 22  netherlands/season.json#/windows/0/end_week
+- window w1 share: 0.542  netherlands/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -0.955  netherlands/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -5.385  netherlands/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 3.08  netherlands/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the mid-March to early-June season."  netherlands/season.json#/windows/0/sentence
+- window w2 label: "mid-August to mid-September"  netherlands/season.json#/windows/1/label
+- window w2 start_week: 34  netherlands/season.json#/windows/1/start_week
+- window w2 peak_week: 35  netherlands/season.json#/windows/1/peak_week
+- window w2 end_week: 37  netherlands/season.json#/windows/1/end_week
+- window w2 share: 0.19  netherlands/season.json#/windows/1/share
+- window w2 start shift days per decade (value): -2.778  netherlands/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -15.455  netherlands/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): 8.525  netherlands/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "No clear shift in the timing of the mid-August to mid-September season."  netherlands/season.json#/windows/1/sentence
+- this week value: null  netherlands/nowcast.json#/value
+- this week lo: null  netherlands/nowcast.json#/lo
+- this week hi: null  netherlands/nowcast.json#/hi
+- this week percentile: null  netherlands/nowcast.json#/percentile
+- this week status: "unavailable"  netherlands/nowcast.json#/status
+- this week as_of: null  netherlands/nowcast.json#/as_of
+- this week window start: null  netherlands/nowcast.json#/window/start
+- this week window end: null  netherlands/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  netherlands/nowcast.json#/baseline_years
+- month to date value: null  netherlands/nowcast.json#/month_to_date/value
+- month to date median: null  netherlands/nowcast.json#/month_to_date/median
+- month to date ratio: null  netherlands/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  netherlands/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  netherlands/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.934  methods.json#/validation/1189/value
+- LOYO weekly WAPE baseline annual_ratio: 0.991  methods.json#/validation/1189/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.511  methods.json#/validation/1189/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1189/years
+- eyesight status: "absent"  methods.json#/eyesight/68/status
+
+## New Caledonia (`new-caledonia`)
+
+- jump multiple (value): 5.656  new-caledonia/ruler.json#/jump_multiple/value
+- jump multiple (lo): 4.656  new-caledonia/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 8.969  new-caledonia/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  new-caledonia/ruler.json#/jump_multiple/years
+- ruler sentence: "In New Caledonia, VIIRS reports about 5.7 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  new-caledonia/ruler.json#/sentence
+- harmonized trend pct_per_decade: 6.356  new-caledonia/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -34.037  new-caledonia/trend.json#/harmonized/lo
+- harmonized trend hi: 33.739  new-caledonia/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  new-caledonia/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 117.089  new-caledonia/trend.json#/naive/pct_per_decade
+- naive trend lo: 46.078  new-caledonia/trend.json#/naive/lo
+- naive trend hi: 259.253  new-caledonia/trend.json#/naive/hi
+- naive trend direction: "rising"  new-caledonia/trend.json#/naive/direction
+- trend years: [2003, 2025]  new-caledonia/trend.json#/years
+- verdict sentence_id: "artifact_flat"  new-caledonia/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 117% per decade. After correcting for the sensor change, there is no clear change (-34 to 34% per decade)."  new-caledonia/trend.json#/sentence
+- critical weeks: [35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47]  new-caledonia/season.json#/critical_weeks
+- window w1 label: "late-August to late-November"  new-caledonia/season.json#/windows/0/label
+- window w1 start_week: 35  new-caledonia/season.json#/windows/0/start_week
+- window w1 peak_week: 40  new-caledonia/season.json#/windows/0/peak_week
+- window w1 end_week: 47  new-caledonia/season.json#/windows/0/end_week
+- window w1 share: 0.833  new-caledonia/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -6.667  new-caledonia/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -15.0  new-caledonia/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 4.333  new-caledonia/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the late-August to late-November season."  new-caledonia/season.json#/windows/0/sentence
+- this week value: null  new-caledonia/nowcast.json#/value
+- this week lo: null  new-caledonia/nowcast.json#/lo
+- this week hi: null  new-caledonia/nowcast.json#/hi
+- this week percentile: null  new-caledonia/nowcast.json#/percentile
+- this week status: "unavailable"  new-caledonia/nowcast.json#/status
+- this week as_of: null  new-caledonia/nowcast.json#/as_of
+- this week window start: null  new-caledonia/nowcast.json#/window/start
+- this week window end: null  new-caledonia/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  new-caledonia/nowcast.json#/baseline_years
+- month to date value: null  new-caledonia/nowcast.json#/month_to_date/value
+- month to date median: null  new-caledonia/nowcast.json#/month_to_date/median
+- month to date ratio: null  new-caledonia/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  new-caledonia/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  new-caledonia/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.526  methods.json#/validation/1202/value
+- LOYO weekly WAPE baseline annual_ratio: 0.588  methods.json#/validation/1202/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.596  methods.json#/validation/1202/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1202/years
+- LOYO weekly WAPE (tier2): 0.479  methods.json#/validation/1217/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1217/years
+- reliability_err (tier2): 0.004  methods.json#/validation/1215/value
+- reliability_year_absolute_err (tier2): 0.123  methods.json#/validation/1216/value
+- t1_t2_wape (tier2): 0.293  methods.json#/validation/1219/value
+- eyesight status: "validated"  methods.json#/eyesight/69/status
+- eyesight param a: -3.974  methods.json#/eyesight/69/params/a
+- eyesight param a_hi: -3.731  methods.json#/eyesight/69/params/a_hi
+- eyesight param a_lo: -4.482  methods.json#/eyesight/69/params/a_lo
+- eyesight param b: 2.604  methods.json#/eyesight/69/params/b
+- eyesight param b_hi: 3.414  methods.json#/eyesight/69/params/b_hi
+- eyesight param b_lo: 2.194  methods.json#/eyesight/69/params/b_lo
+- eyesight param c: 0.671  methods.json#/eyesight/69/params/c
+- eyesight param c_hi: 0.819  methods.json#/eyesight/69/params/c_hi
+- eyesight param c_lo: 0.487  methods.json#/eyesight/69/params/c_lo
+- eyesight g: 1.476  methods.json#/eyesight/69/g
+
+## New Zealand (`new-zealand`)
+
+- jump multiple (value): 5.736  new-zealand/ruler.json#/jump_multiple/value
+- jump multiple (lo): 5.15  new-zealand/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 7.148  new-zealand/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  new-zealand/ruler.json#/jump_multiple/years
+- ruler sentence: "In New Zealand, VIIRS reports about 5.7 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  new-zealand/ruler.json#/sentence
+- harmonized trend pct_per_decade: -27.895  new-zealand/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -39.685  new-zealand/trend.json#/harmonized/lo
+- harmonized trend hi: -11.847  new-zealand/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  new-zealand/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 42.604  new-zealand/trend.json#/naive/pct_per_decade
+- naive trend lo: 11.009  new-zealand/trend.json#/naive/lo
+- naive trend hi: 171.023  new-zealand/trend.json#/naive/hi
+- naive trend direction: "rising"  new-zealand/trend.json#/naive/direction
+- trend years: [2003, 2025]  new-zealand/trend.json#/years
+- verdict sentence_id: "artifact_falling"  new-zealand/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 28% per decade (-40 to -12)."  new-zealand/trend.json#/sentence
+- critical weeks: [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 33, 34, 35, 36, 37, 38, 39, 40, 41]  new-zealand/season.json#/critical_weeks
+- window w1 label: "early-February to mid-May"  new-zealand/season.json#/windows/0/label
+- window w1 start_week: 6  new-zealand/season.json#/windows/0/start_week
+- window w1 peak_week: 11  new-zealand/season.json#/windows/0/peak_week
+- window w1 end_week: 20  new-zealand/season.json#/windows/0/end_week
+- window w1 share: 0.623  new-zealand/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -4.0  new-zealand/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -7.894  new-zealand/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): -1.203  new-zealand/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "The early-February to mid-May season now starts about 4 days earlier per decade (-8 to -1)."  new-zealand/season.json#/windows/0/sentence
+- window w2 label: "mid-August to mid-October"  new-zealand/season.json#/windows/1/label
+- window w2 start_week: 33  new-zealand/season.json#/windows/1/start_week
+- window w2 peak_week: 37  new-zealand/season.json#/windows/1/peak_week
+- window w2 end_week: 41  new-zealand/season.json#/windows/1/end_week
+- window w2 share: 0.187  new-zealand/season.json#/windows/1/share
+- window w2 start shift days per decade (value): -1.667  new-zealand/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -8.333  new-zealand/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): 5.0  new-zealand/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "No clear shift in the timing of the mid-August to mid-October season."  new-zealand/season.json#/windows/1/sentence
+- this week value: null  new-zealand/nowcast.json#/value
+- this week lo: null  new-zealand/nowcast.json#/lo
+- this week hi: null  new-zealand/nowcast.json#/hi
+- this week percentile: null  new-zealand/nowcast.json#/percentile
+- this week status: "unavailable"  new-zealand/nowcast.json#/status
+- this week as_of: null  new-zealand/nowcast.json#/as_of
+- this week window start: null  new-zealand/nowcast.json#/window/start
+- this week window end: null  new-zealand/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  new-zealand/nowcast.json#/baseline_years
+- month to date value: null  new-zealand/nowcast.json#/month_to_date/value
+- month to date median: null  new-zealand/nowcast.json#/month_to_date/median
+- month to date ratio: null  new-zealand/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  new-zealand/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  new-zealand/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.428  methods.json#/validation/1220/value
+- LOYO weekly WAPE baseline annual_ratio: 0.543  methods.json#/validation/1220/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 4.725  methods.json#/validation/1220/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1220/years
+- LOYO weekly WAPE (tier2): 0.438  methods.json#/validation/1235/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1235/years
+- reliability_err (tier2): 0.001  methods.json#/validation/1233/value
+- reliability_year_absolute_err (tier2): 0.081  methods.json#/validation/1234/value
+- t1_t2_wape (tier2): 0.235  methods.json#/validation/1237/value
+- eyesight status: "validated"  methods.json#/eyesight/70/status
+- eyesight param a: -3.836  methods.json#/eyesight/70/params/a
+- eyesight param a_hi: -3.753  methods.json#/eyesight/70/params/a_hi
+- eyesight param a_lo: -3.968  methods.json#/eyesight/70/params/a_lo
+- eyesight param b: 3.269  methods.json#/eyesight/70/params/b
+- eyesight param b_hi: 3.541  methods.json#/eyesight/70/params/b_hi
+- eyesight param b_lo: 2.975  methods.json#/eyesight/70/params/b_lo
+- eyesight param c: 0.343  methods.json#/eyesight/70/params/c
+- eyesight param c_hi: 0.39  methods.json#/eyesight/70/params/c_hi
+- eyesight param c_lo: 0.314  methods.json#/eyesight/70/params/c_lo
+- eyesight g: 1.711  methods.json#/eyesight/70/g
+
+## Nicaragua (`nicaragua`)
+
+- jump multiple (value): 6.294  nicaragua/ruler.json#/jump_multiple/value
+- jump multiple (lo): 5.792  nicaragua/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 8.114  nicaragua/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  nicaragua/ruler.json#/jump_multiple/years
+- ruler sentence: "In Nicaragua, VIIRS reports about 6.3 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  nicaragua/ruler.json#/sentence
+- harmonized trend pct_per_decade: -10.138  nicaragua/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -31.371  nicaragua/trend.json#/harmonized/lo
+- harmonized trend hi: 16.924  nicaragua/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  nicaragua/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 85.363  nicaragua/trend.json#/naive/pct_per_decade
+- naive trend lo: 42.202  nicaragua/trend.json#/naive/lo
+- naive trend hi: 209.111  nicaragua/trend.json#/naive/hi
+- naive trend direction: "rising"  nicaragua/trend.json#/naive/direction
+- trend years: [2003, 2025]  nicaragua/trend.json#/years
+- verdict sentence_id: "artifact_flat"  nicaragua/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 85% per decade. After correcting for the sensor change, there is no clear change (-31 to 17% per decade)."  nicaragua/trend.json#/sentence
+- critical weeks: [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]  nicaragua/season.json#/critical_weeks
+- window w1 label: "early-March to mid-May"  nicaragua/season.json#/windows/0/label
+- window w1 start_week: 10  nicaragua/season.json#/windows/0/start_week
+- window w1 peak_week: 17  nicaragua/season.json#/windows/0/peak_week
+- window w1 end_week: 20  nicaragua/season.json#/windows/0/end_week
+- window w1 share: 0.819  nicaragua/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 3.5  nicaragua/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -1.429  nicaragua/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 8.333  nicaragua/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-March to mid-May season."  nicaragua/season.json#/windows/0/sentence
+- this week value: null  nicaragua/nowcast.json#/value
+- this week lo: null  nicaragua/nowcast.json#/lo
+- this week hi: null  nicaragua/nowcast.json#/hi
+- this week percentile: null  nicaragua/nowcast.json#/percentile
+- this week status: "unavailable"  nicaragua/nowcast.json#/status
+- this week as_of: null  nicaragua/nowcast.json#/as_of
+- this week window start: null  nicaragua/nowcast.json#/window/start
+- this week window end: null  nicaragua/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  nicaragua/nowcast.json#/baseline_years
+- month to date value: null  nicaragua/nowcast.json#/month_to_date/value
+- month to date median: null  nicaragua/nowcast.json#/month_to_date/median
+- month to date ratio: null  nicaragua/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  nicaragua/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  nicaragua/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.215  methods.json#/validation/1238/value
+- LOYO weekly WAPE baseline annual_ratio: 0.25  methods.json#/validation/1238/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 4.956  methods.json#/validation/1238/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1238/years
+- LOYO weekly WAPE (tier2): 0.223  methods.json#/validation/1253/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1253/years
+- reliability_err (tier2): 0.0  methods.json#/validation/1251/value
+- reliability_year_absolute_err (tier2): 0.061  methods.json#/validation/1252/value
+- t1_t2_wape (tier2): 0.142  methods.json#/validation/1255/value
+- eyesight status: "validated"  methods.json#/eyesight/71/status
+- eyesight param a: -4.072  methods.json#/eyesight/71/params/a
+- eyesight param a_hi: -3.968  methods.json#/eyesight/71/params/a_hi
+- eyesight param a_lo: -4.192  methods.json#/eyesight/71/params/a_lo
+- eyesight param b: 1.9  methods.json#/eyesight/71/params/b
+- eyesight param b_hi: 1.991  methods.json#/eyesight/71/params/b_hi
+- eyesight param b_lo: 1.832  methods.json#/eyesight/71/params/b_lo
+- eyesight param c: 0.742  methods.json#/eyesight/71/params/c
+- eyesight param c_hi: 0.806  methods.json#/eyesight/71/params/c_hi
+- eyesight param c_lo: 0.666  methods.json#/eyesight/71/params/c_lo
+- eyesight g: 1.923  methods.json#/eyesight/71/g
+
+## Niger (`niger`)
+
+- jump multiple (value): 5.518  niger/ruler.json#/jump_multiple/value
+- jump multiple (lo): 4.723  niger/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 6.935  niger/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  niger/ruler.json#/jump_multiple/years
+- ruler sentence: "In Niger, VIIRS reports about 5.5 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  niger/ruler.json#/sentence
+- harmonized trend pct_per_decade: 27.883  niger/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: 11.792  niger/trend.json#/harmonized/lo
+- harmonized trend hi: 48.363  niger/trend.json#/harmonized/hi
+- harmonized trend direction: "rising"  niger/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 97.187  niger/trend.json#/naive/pct_per_decade
+- naive trend lo: 72.812  niger/trend.json#/naive/lo
+- naive trend hi: 418.54  niger/trend.json#/naive/hi
+- naive trend direction: "rising"  niger/trend.json#/naive/direction
+- trend years: [2003, 2025]  niger/trend.json#/years
+- verdict sentence_id: "unclear"  niger/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (12 to 48% per decade)."  niger/trend.json#/sentence
+- critical weeks: [1, 2, 3, 4, 5, 6, 8, 10, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52]  niger/season.json#/critical_weeks
+- window w1 label: "early-October to mid-March"  niger/season.json#/windows/0/label
+- window w1 start_week: 41  niger/season.json#/windows/0/start_week
+- window w1 peak_week: 45  niger/season.json#/windows/0/peak_week
+- window w1 end_week: 10  niger/season.json#/windows/0/end_week
+- window w1 share: 0.838  niger/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -1.429  niger/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -6.0  niger/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 2.267  niger/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-October to mid-March season."  niger/season.json#/windows/0/sentence
+- this week value: null  niger/nowcast.json#/value
+- this week lo: null  niger/nowcast.json#/lo
+- this week hi: null  niger/nowcast.json#/hi
+- this week percentile: null  niger/nowcast.json#/percentile
+- this week status: "unavailable"  niger/nowcast.json#/status
+- this week as_of: null  niger/nowcast.json#/as_of
+- this week window start: null  niger/nowcast.json#/window/start
+- this week window end: null  niger/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  niger/nowcast.json#/baseline_years
+- month to date value: null  niger/nowcast.json#/month_to_date/value
+- month to date median: null  niger/nowcast.json#/month_to_date/median
+- month to date ratio: null  niger/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  niger/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  niger/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.34  methods.json#/validation/1256/value
+- LOYO weekly WAPE baseline annual_ratio: 0.501  methods.json#/validation/1256/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 4.167  methods.json#/validation/1256/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1256/years
+- LOYO weekly WAPE (tier2): 0.338  methods.json#/validation/1271/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1271/years
+- reliability_err (tier2): 0.0  methods.json#/validation/1269/value
+- reliability_year_absolute_err (tier2): 0.132  methods.json#/validation/1270/value
+- t1_t2_wape (tier2): 0.232  methods.json#/validation/1273/value
+- eyesight status: "validated"  methods.json#/eyesight/72/status
+- eyesight param a: -4.62  methods.json#/eyesight/72/params/a
+- eyesight param a_hi: -4.471  methods.json#/eyesight/72/params/a_hi
+- eyesight param a_lo: -4.808  methods.json#/eyesight/72/params/a_lo
+- eyesight param b: 2.437  methods.json#/eyesight/72/params/b
+- eyesight param b_hi: 2.605  methods.json#/eyesight/72/params/b_hi
+- eyesight param b_lo: 2.324  methods.json#/eyesight/72/params/b_lo
+- eyesight param c: 0.757  methods.json#/eyesight/72/params/c
+- eyesight param c_hi: 0.806  methods.json#/eyesight/72/params/c_hi
+- eyesight param c_lo: 0.709  methods.json#/eyesight/72/params/c_lo
+- eyesight g: 1.422  methods.json#/eyesight/72/g
+
+## Oman (`oman`)
+
+- jump multiple (value): 7.789  oman/ruler.json#/jump_multiple/value
+- jump multiple (lo): 6.011  oman/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 10.354  oman/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  oman/ruler.json#/jump_multiple/years
+- ruler sentence: "In Oman, VIIRS reports about 7.8 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  oman/ruler.json#/sentence
+- harmonized trend pct_per_decade: -27.442  oman/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -58.968  oman/trend.json#/harmonized/lo
+- harmonized trend hi: -6.82  oman/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  oman/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 57.133  oman/trend.json#/naive/pct_per_decade
+- naive trend lo: 40.861  oman/trend.json#/naive/lo
+- naive trend hi: 266.399  oman/trend.json#/naive/hi
+- naive trend direction: "rising"  oman/trend.json#/naive/direction
+- trend years: [2003, 2025]  oman/trend.json#/years
+- verdict sentence_id: "unclear"  oman/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (-59 to -7% per decade)."  oman/trend.json#/sentence
+- critical weeks: [1, 2, 3, 5, 6, 7, 51]  oman/season.json#/critical_weeks
+- window w1 label: "mid-December to mid-February"  oman/season.json#/windows/0/label
+- window w1 start_week: 51  oman/season.json#/windows/0/start_week
+- window w1 peak_week: 1  oman/season.json#/windows/0/peak_week
+- window w1 end_week: 7  oman/season.json#/windows/0/end_week
+- window w1 share: 0.94  oman/season.json#/windows/0/share
+- window w1 start shift days per decade (value): null  oman/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): null  oman/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): null  oman/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "Timing shift unavailable: fewer than three valid annual observations."  oman/season.json#/windows/0/sentence
+- this week value: null  oman/nowcast.json#/value
+- this week lo: null  oman/nowcast.json#/lo
+- this week hi: null  oman/nowcast.json#/hi
+- this week percentile: null  oman/nowcast.json#/percentile
+- this week status: "unavailable"  oman/nowcast.json#/status
+- this week as_of: null  oman/nowcast.json#/as_of
+- this week window start: null  oman/nowcast.json#/window/start
+- this week window end: null  oman/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  oman/nowcast.json#/baseline_years
+- month to date value: null  oman/nowcast.json#/month_to_date/value
+- month to date median: null  oman/nowcast.json#/month_to_date/median
+- month to date ratio: null  oman/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  oman/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  oman/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.528  methods.json#/validation/1274/value
+- LOYO weekly WAPE baseline annual_ratio: 1.531  methods.json#/validation/1274/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 34.608  methods.json#/validation/1274/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1274/years
+- LOYO weekly WAPE (tier2): 1.537  methods.json#/validation/1289/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1289/years
+- reliability_err (tier2): 0.008  methods.json#/validation/1287/value
+- reliability_year_absolute_err (tier2): 0.484  methods.json#/validation/1288/value
+- t1_t2_wape (tier2): 0.511  methods.json#/validation/1291/value
+- eyesight status: "validated"  methods.json#/eyesight/73/status
+- eyesight param a: -5.197  methods.json#/eyesight/73/params/a
+- eyesight param a_hi: -4.243  methods.json#/eyesight/73/params/a_hi
+- eyesight param a_lo: -6.81  methods.json#/eyesight/73/params/a_lo
+- eyesight param b: 3.061  methods.json#/eyesight/73/params/b
+- eyesight param b_hi: 4.131  methods.json#/eyesight/73/params/b_hi
+- eyesight param b_lo: 2.36  methods.json#/eyesight/73/params/b_lo
+- eyesight param c: 0.11  methods.json#/eyesight/73/params/c
+- eyesight param c_hi: 0.834  methods.json#/eyesight/73/params/c_hi
+- eyesight param c_lo: 0.05  methods.json#/eyesight/73/params/c_lo
+- eyesight g: 3.229  methods.json#/eyesight/73/g
+
+## Pakistan (`pakistan`)
+
+- jump multiple (value): 4.585  pakistan/ruler.json#/jump_multiple/value
+- jump multiple (lo): 4.169  pakistan/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 4.894  pakistan/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  pakistan/ruler.json#/jump_multiple/years
+- ruler sentence: "In Pakistan, VIIRS reports about 4.6 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  pakistan/ruler.json#/sentence
+- harmonized trend pct_per_decade: 27.211  pakistan/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: 19.898  pakistan/trend.json#/harmonized/lo
+- harmonized trend hi: 38.668  pakistan/trend.json#/harmonized/hi
+- harmonized trend direction: "rising"  pakistan/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 61.566  pakistan/trend.json#/naive/pct_per_decade
+- naive trend lo: 48.724  pakistan/trend.json#/naive/lo
+- naive trend hi: 296.803  pakistan/trend.json#/naive/hi
+- naive trend direction: "rising"  pakistan/trend.json#/naive/direction
+- trend years: [2003, 2025]  pakistan/trend.json#/years
+- verdict sentence_id: "artifact_rising"  pakistan/trend.json#/sentence_id
+- verdict sentence: "Burning activity did rise, by about 27% per decade (20 to 39). The raw record overstates it at 62%."  pakistan/trend.json#/sentence
+- critical weeks: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 17, 18, 19, 20, 21, 44, 45, 46, 47, 48, 49, 50, 51, 52]  pakistan/season.json#/critical_weeks
+- window w1 label: "late-October to mid-March"  pakistan/season.json#/windows/0/label
+- window w1 start_week: 44  pakistan/season.json#/windows/0/start_week
+- window w1 peak_week: 6  pakistan/season.json#/windows/0/peak_week
+- window w1 end_week: 10  pakistan/season.json#/windows/0/end_week
+- window w1 share: 0.649  pakistan/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -10.0  pakistan/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -13.333  pakistan/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): -7.778  pakistan/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "The late-October to mid-March season now starts about 10 days earlier per decade (-13 to -8)."  pakistan/season.json#/windows/0/sentence
+- window w2 label: "late-April to late-May"  pakistan/season.json#/windows/1/label
+- window w2 start_week: 17  pakistan/season.json#/windows/1/start_week
+- window w2 peak_week: 19  pakistan/season.json#/windows/1/peak_week
+- window w2 end_week: 21  pakistan/season.json#/windows/1/end_week
+- window w2 share: 0.162  pakistan/season.json#/windows/1/share
+- window w2 start shift days per decade (value): 2.222  pakistan/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -3.696  pakistan/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): 6.667  pakistan/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "No clear shift in the timing of the late-April to late-May season."  pakistan/season.json#/windows/1/sentence
+- this week value: null  pakistan/nowcast.json#/value
+- this week lo: null  pakistan/nowcast.json#/lo
+- this week hi: null  pakistan/nowcast.json#/hi
+- this week percentile: null  pakistan/nowcast.json#/percentile
+- this week status: "unavailable"  pakistan/nowcast.json#/status
+- this week as_of: null  pakistan/nowcast.json#/as_of
+- this week window start: null  pakistan/nowcast.json#/window/start
+- this week window end: null  pakistan/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  pakistan/nowcast.json#/baseline_years
+- month to date value: null  pakistan/nowcast.json#/month_to_date/value
+- month to date median: null  pakistan/nowcast.json#/month_to_date/median
+- month to date ratio: null  pakistan/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  pakistan/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  pakistan/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.216  methods.json#/validation/1292/value
+- LOYO weekly WAPE baseline annual_ratio: 0.247  methods.json#/validation/1292/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 5.286  methods.json#/validation/1292/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1292/years
+- LOYO weekly WAPE (tier2): 0.288  methods.json#/validation/1307/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1307/years
+- reliability_err (tier2): 0.001  methods.json#/validation/1305/value
+- reliability_year_absolute_err (tier2): 0.084  methods.json#/validation/1306/value
+- t1_t2_wape (tier2): 0.242  methods.json#/validation/1309/value
+- eyesight status: "exploratory"  methods.json#/eyesight/74/status
+- eyesight param a: -4.189  methods.json#/eyesight/74/params/a
+- eyesight param a_hi: -4.083  methods.json#/eyesight/74/params/a_hi
+- eyesight param a_lo: -4.241  methods.json#/eyesight/74/params/a_lo
+- eyesight param b: 1.842  methods.json#/eyesight/74/params/b
+- eyesight param b_hi: 1.89  methods.json#/eyesight/74/params/b_hi
+- eyesight param b_lo: 1.803  methods.json#/eyesight/74/params/b_lo
+- eyesight param c: 1.0  methods.json#/eyesight/74/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/74/params/c_hi
+- eyesight param c_lo: 0.905  methods.json#/eyesight/74/params/c_lo
+- eyesight g: 2.376  methods.json#/eyesight/74/g
+
+## Panama (`panama`)
+
+- jump multiple (value): 5.131  panama/ruler.json#/jump_multiple/value
+- jump multiple (lo): 4.284  panama/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 7.732  panama/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  panama/ruler.json#/jump_multiple/years
+- ruler sentence: "In Panama, VIIRS reports about 5.1 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  panama/ruler.json#/sentence
+- harmonized trend pct_per_decade: -31.814  panama/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -51.742  panama/trend.json#/harmonized/lo
+- harmonized trend hi: -9.054  panama/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  panama/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 51.84  panama/trend.json#/naive/pct_per_decade
+- naive trend lo: 27.518  panama/trend.json#/naive/lo
+- naive trend hi: 113.884  panama/trend.json#/naive/hi
+- naive trend direction: "rising"  panama/trend.json#/naive/direction
+- trend years: [2003, 2025]  panama/trend.json#/years
+- verdict sentence_id: "artifact_falling"  panama/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 32% per decade (-52 to -9)."  panama/trend.json#/sentence
+- critical weeks: [10, 11, 12, 13, 14, 15, 16]  panama/season.json#/critical_weeks
+- window w1 label: "early-March to late-April"  panama/season.json#/windows/0/label
+- window w1 start_week: 10  panama/season.json#/windows/0/start_week
+- window w1 peak_week: 13  panama/season.json#/windows/0/peak_week
+- window w1 end_week: 16  panama/season.json#/windows/0/end_week
+- window w1 share: 0.809  panama/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -2.5  panama/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -5.0  panama/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 1.058  panama/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-March to late-April season."  panama/season.json#/windows/0/sentence
+- this week value: null  panama/nowcast.json#/value
+- this week lo: null  panama/nowcast.json#/lo
+- this week hi: null  panama/nowcast.json#/hi
+- this week percentile: null  panama/nowcast.json#/percentile
+- this week status: "unavailable"  panama/nowcast.json#/status
+- this week as_of: null  panama/nowcast.json#/as_of
+- this week window start: null  panama/nowcast.json#/window/start
+- this week window end: null  panama/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  panama/nowcast.json#/baseline_years
+- month to date value: null  panama/nowcast.json#/month_to_date/value
+- month to date median: null  panama/nowcast.json#/month_to_date/median
+- month to date ratio: null  panama/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  panama/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  panama/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.26  methods.json#/validation/1310/value
+- LOYO weekly WAPE baseline annual_ratio: 0.262  methods.json#/validation/1310/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 4.155  methods.json#/validation/1310/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1310/years
+- LOYO weekly WAPE (tier2): 0.237  methods.json#/validation/1325/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1325/years
+- reliability_err (tier2): 0.003  methods.json#/validation/1323/value
+- reliability_year_absolute_err (tier2): 0.157  methods.json#/validation/1324/value
+- t1_t2_wape (tier2): 0.091  methods.json#/validation/1327/value
+- eyesight status: "validated"  methods.json#/eyesight/75/status
+- eyesight param a: -3.456  methods.json#/eyesight/75/params/a
+- eyesight param a_hi: -3.265  methods.json#/eyesight/75/params/a_hi
+- eyesight param a_lo: -3.619  methods.json#/eyesight/75/params/a_lo
+- eyesight param b: 1.975  methods.json#/eyesight/75/params/b
+- eyesight param b_hi: 2.121  methods.json#/eyesight/75/params/b_hi
+- eyesight param b_lo: 1.819  methods.json#/eyesight/75/params/b_lo
+- eyesight param c: 0.534  methods.json#/eyesight/75/params/c
+- eyesight param c_hi: 0.646  methods.json#/eyesight/75/params/c_hi
+- eyesight param c_lo: 0.457  methods.json#/eyesight/75/params/c_lo
+- eyesight g: 1.847  methods.json#/eyesight/75/g
+
+## Papua New Guinea (`papua-new-guinea`)
+
+- jump multiple (value): 5.247  papua-new-guinea/ruler.json#/jump_multiple/value
+- jump multiple (lo): 4.916  papua-new-guinea/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 5.897  papua-new-guinea/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  papua-new-guinea/ruler.json#/jump_multiple/years
+- ruler sentence: "In Papua New Guinea, VIIRS reports about 5.2 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  papua-new-guinea/ruler.json#/sentence
+- harmonized trend pct_per_decade: -5.204  papua-new-guinea/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -19.384  papua-new-guinea/trend.json#/harmonized/lo
+- harmonized trend hi: 8.076  papua-new-guinea/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  papua-new-guinea/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 57.651  papua-new-guinea/trend.json#/naive/pct_per_decade
+- naive trend lo: 32.769  papua-new-guinea/trend.json#/naive/lo
+- naive trend hi: 136.991  papua-new-guinea/trend.json#/naive/hi
+- naive trend direction: "rising"  papua-new-guinea/trend.json#/naive/direction
+- trend years: [2003, 2025]  papua-new-guinea/trend.json#/years
+- verdict sentence_id: "artifact_flat"  papua-new-guinea/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 58% per decade. After correcting for the sensor change, there is no clear change (-19 to 8% per decade)."  papua-new-guinea/trend.json#/sentence
+- critical weeks: [23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45]  papua-new-guinea/season.json#/critical_weeks
+- window w1 label: "early-June to mid-November"  papua-new-guinea/season.json#/windows/0/label
+- window w1 start_week: 23  papua-new-guinea/season.json#/windows/0/start_week
+- window w1 peak_week: 33  papua-new-guinea/season.json#/windows/0/peak_week
+- window w1 end_week: 45  papua-new-guinea/season.json#/windows/0/end_week
+- window w1 share: 0.813  papua-new-guinea/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -1.818  papua-new-guinea/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -10.0  papua-new-guinea/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 3.846  papua-new-guinea/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-June to mid-November season."  papua-new-guinea/season.json#/windows/0/sentence
+- this week value: null  papua-new-guinea/nowcast.json#/value
+- this week lo: null  papua-new-guinea/nowcast.json#/lo
+- this week hi: null  papua-new-guinea/nowcast.json#/hi
+- this week percentile: null  papua-new-guinea/nowcast.json#/percentile
+- this week status: "unavailable"  papua-new-guinea/nowcast.json#/status
+- this week as_of: null  papua-new-guinea/nowcast.json#/as_of
+- this week window start: null  papua-new-guinea/nowcast.json#/window/start
+- this week window end: null  papua-new-guinea/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  papua-new-guinea/nowcast.json#/baseline_years
+- month to date value: null  papua-new-guinea/nowcast.json#/month_to_date/value
+- month to date median: null  papua-new-guinea/nowcast.json#/month_to_date/median
+- month to date ratio: null  papua-new-guinea/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  papua-new-guinea/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  papua-new-guinea/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.207  methods.json#/validation/1328/value
+- LOYO weekly WAPE baseline annual_ratio: 0.21  methods.json#/validation/1328/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.812  methods.json#/validation/1328/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1328/years
+- LOYO weekly WAPE (tier2): 0.207  methods.json#/validation/1343/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1343/years
+- reliability_err (tier2): 0.003  methods.json#/validation/1341/value
+- reliability_year_absolute_err (tier2): 0.062  methods.json#/validation/1342/value
+- t1_t2_wape (tier2): 0.167  methods.json#/validation/1345/value
+- eyesight status: "validated"  methods.json#/eyesight/76/status
+- eyesight param a: -3.988  methods.json#/eyesight/76/params/a
+- eyesight param a_hi: -3.92  methods.json#/eyesight/76/params/a_hi
+- eyesight param a_lo: -4.084  methods.json#/eyesight/76/params/a_lo
+- eyesight param b: 2.374  methods.json#/eyesight/76/params/b
+- eyesight param b_hi: 2.454  methods.json#/eyesight/76/params/b_hi
+- eyesight param b_lo: 2.306  methods.json#/eyesight/76/params/b_lo
+- eyesight param c: 0.673  methods.json#/eyesight/76/params/c
+- eyesight param c_hi: 0.716  methods.json#/eyesight/76/params/c_hi
+- eyesight param c_lo: 0.638  methods.json#/eyesight/76/params/c_lo
+- eyesight g: 1.812  methods.json#/eyesight/76/g
+
+## Peru (`peru`)
+
+- jump multiple (value): 4.943  peru/ruler.json#/jump_multiple/value
+- jump multiple (lo): 4.337  peru/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 5.71  peru/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  peru/ruler.json#/jump_multiple/years
+- ruler sentence: "In Peru, VIIRS reports about 4.9 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  peru/ruler.json#/sentence
+- harmonized trend pct_per_decade: 0.289  peru/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -11.938  peru/trend.json#/harmonized/lo
+- harmonized trend hi: 15.287  peru/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  peru/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 69.079  peru/trend.json#/naive/pct_per_decade
+- naive trend lo: 48.103  peru/trend.json#/naive/lo
+- naive trend hi: 204.494  peru/trend.json#/naive/hi
+- naive trend direction: "rising"  peru/trend.json#/naive/direction
+- trend years: [2003, 2025]  peru/trend.json#/years
+- verdict sentence_id: "artifact_flat"  peru/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 69% per decade. After correcting for the sensor change, there is no clear change (-12 to 15% per decade)."  peru/trend.json#/sentence
+- critical weeks: [29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42]  peru/season.json#/critical_weeks
+- window w1 label: "mid-July to late-October"  peru/season.json#/windows/0/label
+- window w1 start_week: 29  peru/season.json#/windows/0/start_week
+- window w1 peak_week: 36  peru/season.json#/windows/0/peak_week
+- window w1 end_week: 42  peru/season.json#/windows/0/end_week
+- window w1 share: 0.812  peru/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -1.25  peru/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -3.846  peru/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 1.819  peru/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the mid-July to late-October season."  peru/season.json#/windows/0/sentence
+- this week value: null  peru/nowcast.json#/value
+- this week lo: null  peru/nowcast.json#/lo
+- this week hi: null  peru/nowcast.json#/hi
+- this week percentile: null  peru/nowcast.json#/percentile
+- this week status: "unavailable"  peru/nowcast.json#/status
+- this week as_of: null  peru/nowcast.json#/as_of
+- this week window start: null  peru/nowcast.json#/window/start
+- this week window end: null  peru/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  peru/nowcast.json#/baseline_years
+- month to date value: null  peru/nowcast.json#/month_to_date/value
+- month to date median: null  peru/nowcast.json#/month_to_date/median
+- month to date ratio: null  peru/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  peru/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  peru/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.194  methods.json#/validation/1346/value
+- LOYO weekly WAPE baseline annual_ratio: 0.272  methods.json#/validation/1346/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.56  methods.json#/validation/1346/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1346/years
+- LOYO weekly WAPE (tier2): 0.193  methods.json#/validation/1361/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1361/years
+- reliability_err (tier2): 0.0  methods.json#/validation/1359/value
+- reliability_year_absolute_err (tier2): 0.057  methods.json#/validation/1360/value
+- t1_t2_wape (tier2): 0.122  methods.json#/validation/1363/value
+- eyesight status: "validated"  methods.json#/eyesight/77/status
+- eyesight param a: -3.671  methods.json#/eyesight/77/params/a
+- eyesight param a_hi: -3.623  methods.json#/eyesight/77/params/a_hi
+- eyesight param a_lo: -3.721  methods.json#/eyesight/77/params/a_lo
+- eyesight param b: 2.189  methods.json#/eyesight/77/params/b
+- eyesight param b_hi: 2.258  methods.json#/eyesight/77/params/b_hi
+- eyesight param b_lo: 2.117  methods.json#/eyesight/77/params/b_lo
+- eyesight param c: 0.615  methods.json#/eyesight/77/params/c
+- eyesight param c_hi: 0.644  methods.json#/eyesight/77/params/c_hi
+- eyesight param c_lo: 0.593  methods.json#/eyesight/77/params/c_lo
+- eyesight g: 1.738  methods.json#/eyesight/77/g
+
+## Philippines (`philippines`)
+
+- jump multiple (value): 6.501  philippines/ruler.json#/jump_multiple/value
+- jump multiple (lo): 5.931  philippines/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 7.05  philippines/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  philippines/ruler.json#/jump_multiple/years
+- ruler sentence: "In Philippines, VIIRS reports about 6.5 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  philippines/ruler.json#/sentence
+- harmonized trend pct_per_decade: -37.532  philippines/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -62.418  philippines/trend.json#/harmonized/lo
+- harmonized trend hi: -17.159  philippines/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  philippines/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 62.59  philippines/trend.json#/naive/pct_per_decade
+- naive trend lo: 28.392  philippines/trend.json#/naive/lo
+- naive trend hi: 155.93  philippines/trend.json#/naive/hi
+- naive trend direction: "rising"  philippines/trend.json#/naive/direction
+- trend years: [2003, 2025]  philippines/trend.json#/years
+- verdict sentence_id: "artifact_falling"  philippines/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 38% per decade (-62 to -17)."  philippines/trend.json#/sentence
+- critical weeks: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]  philippines/season.json#/critical_weeks
+- window w1 label: "late-January to mid-May"  philippines/season.json#/windows/0/label
+- window w1 start_week: 5  philippines/season.json#/windows/0/start_week
+- window w1 peak_week: 15  philippines/season.json#/windows/0/peak_week
+- window w1 end_week: 19  philippines/season.json#/windows/0/end_week
+- window w1 share: 0.807  philippines/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 1.579  philippines/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -4.762  philippines/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 7.224  philippines/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the late-January to mid-May season."  philippines/season.json#/windows/0/sentence
+- this week value: null  philippines/nowcast.json#/value
+- this week lo: null  philippines/nowcast.json#/lo
+- this week hi: null  philippines/nowcast.json#/hi
+- this week percentile: null  philippines/nowcast.json#/percentile
+- this week status: "unavailable"  philippines/nowcast.json#/status
+- this week as_of: null  philippines/nowcast.json#/as_of
+- this week window start: null  philippines/nowcast.json#/window/start
+- this week window end: null  philippines/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  philippines/nowcast.json#/baseline_years
+- month to date value: null  philippines/nowcast.json#/month_to_date/value
+- month to date median: null  philippines/nowcast.json#/month_to_date/median
+- month to date ratio: null  philippines/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  philippines/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  philippines/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.191  methods.json#/validation/1364/value
+- LOYO weekly WAPE baseline annual_ratio: 0.213  methods.json#/validation/1364/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 6.477  methods.json#/validation/1364/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1364/years
+- LOYO weekly WAPE (tier2): 0.19  methods.json#/validation/1379/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1379/years
+- reliability_err (tier2): 0.003  methods.json#/validation/1377/value
+- reliability_year_absolute_err (tier2): 0.084  methods.json#/validation/1378/value
+- t1_t2_wape (tier2): 0.115  methods.json#/validation/1381/value
+- eyesight status: "validated"  methods.json#/eyesight/78/status
+- eyesight param a: -3.82  methods.json#/eyesight/78/params/a
+- eyesight param a_hi: -3.753  methods.json#/eyesight/78/params/a_hi
+- eyesight param a_lo: -3.911  methods.json#/eyesight/78/params/a_lo
+- eyesight param b: 2.308  methods.json#/eyesight/78/params/b
+- eyesight param b_hi: 2.392  methods.json#/eyesight/78/params/b_hi
+- eyesight param b_lo: 2.206  methods.json#/eyesight/78/params/b_lo
+- eyesight param c: 0.382  methods.json#/eyesight/78/params/c
+- eyesight param c_hi: 0.418  methods.json#/eyesight/78/params/c_hi
+- eyesight param c_lo: 0.352  methods.json#/eyesight/78/params/c_lo
+- eyesight g: 2.206  methods.json#/eyesight/78/g
+
+## Poland (`poland`)
+
+- jump multiple (value): 4.285  poland/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.278  poland/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 8.101  poland/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  poland/ruler.json#/jump_multiple/years
+- ruler sentence: "In Poland, VIIRS reports about 4.3 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  poland/ruler.json#/sentence
+- harmonized trend pct_per_decade: -65.844  poland/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -117.213  poland/trend.json#/harmonized/lo
+- harmonized trend hi: -40.739  poland/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  poland/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 16.36  poland/trend.json#/naive/pct_per_decade
+- naive trend lo: -23.225  poland/trend.json#/naive/lo
+- naive trend hi: 45.247  poland/trend.json#/naive/hi
+- naive trend direction: "no_clear_change"  poland/trend.json#/naive/direction
+- trend years: [2003, 2025]  poland/trend.json#/years
+- verdict sentence_id: "artifact_falling"  poland/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 66% per decade (-117 to -41)."  poland/trend.json#/sentence
+- critical weeks: [11, 12, 13, 14, 15, 16, 17, 18, 32, 33, 34, 35, 36, 37, 38, 39]  poland/season.json#/critical_weeks
+- window w1 label: "mid-March to early-May"  poland/season.json#/windows/0/label
+- window w1 start_week: 11  poland/season.json#/windows/0/start_week
+- window w1 peak_week: 14  poland/season.json#/windows/0/peak_week
+- window w1 end_week: 18  poland/season.json#/windows/0/end_week
+- window w1 share: 0.579  poland/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -7.273  poland/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -14.375  poland/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): -1.111  poland/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "The mid-March to early-May season now starts about 7 days earlier per decade (-14 to -1)."  poland/season.json#/windows/0/sentence
+- window w2 label: "early-August to late-September"  poland/season.json#/windows/1/label
+- window w2 start_week: 32  poland/season.json#/windows/1/start_week
+- window w2 peak_week: 37  poland/season.json#/windows/1/peak_week
+- window w2 end_week: 39  poland/season.json#/windows/1/end_week
+- window w2 share: 0.232  poland/season.json#/windows/1/share
+- window w2 start shift days per decade (value): 0.0  poland/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -9.375  poland/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): 8.412  poland/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "No clear shift in the timing of the early-August to late-September season."  poland/season.json#/windows/1/sentence
+- this week value: null  poland/nowcast.json#/value
+- this week lo: null  poland/nowcast.json#/lo
+- this week hi: null  poland/nowcast.json#/hi
+- this week percentile: null  poland/nowcast.json#/percentile
+- this week status: "unavailable"  poland/nowcast.json#/status
+- this week as_of: null  poland/nowcast.json#/as_of
+- this week window start: null  poland/nowcast.json#/window/start
+- this week window end: null  poland/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  poland/nowcast.json#/baseline_years
+- month to date value: null  poland/nowcast.json#/month_to_date/value
+- month to date median: null  poland/nowcast.json#/month_to_date/median
+- month to date ratio: null  poland/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  poland/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  poland/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.424  methods.json#/validation/1382/value
+- LOYO weekly WAPE baseline annual_ratio: 0.434  methods.json#/validation/1382/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.869  methods.json#/validation/1382/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1382/years
+- LOYO weekly WAPE (tier2): 0.414  methods.json#/validation/1397/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1397/years
+- reliability_err (tier2): 0.007  methods.json#/validation/1395/value
+- reliability_year_absolute_err (tier2): 0.148  methods.json#/validation/1396/value
+- t1_t2_wape (tier2): 0.253  methods.json#/validation/1399/value
+- eyesight status: "validated"  methods.json#/eyesight/79/status
+- eyesight param a: -3.785  methods.json#/eyesight/79/params/a
+- eyesight param a_hi: -3.579  methods.json#/eyesight/79/params/a_hi
+- eyesight param a_lo: -4.203  methods.json#/eyesight/79/params/a_lo
+- eyesight param b: 2.9  methods.json#/eyesight/79/params/b
+- eyesight param b_hi: 3.483  methods.json#/eyesight/79/params/b_hi
+- eyesight param b_lo: 2.373  methods.json#/eyesight/79/params/b_lo
+- eyesight param c: 0.484  methods.json#/eyesight/79/params/c
+- eyesight param c_hi: 0.88  methods.json#/eyesight/79/params/c_hi
+- eyesight param c_lo: 0.355  methods.json#/eyesight/79/params/c_lo
+- eyesight g: 2.839  methods.json#/eyesight/79/g
+
 ## Portugal (`portugal`)
 
 - jump multiple (value): 2.672  portugal/ruler.json#/jump_multiple/value
@@ -199,26 +5209,2054 @@ Built from code_version 1bb5e8f4, 4389fe3d, 5c7271a5.
 - month to date ratio: null  portugal/nowcast.json#/month_to_date/ratio
 - month to date percentile: null  portugal/nowcast.json#/month_to_date/percentile
 - this week sentence: "No recent satellite data."  portugal/nowcast.json#/sentence
-- LOYO weekly WAPE (tier1): 0.335  methods.json#/validation/36/value
-- LOYO weekly WAPE baseline annual_ratio: 0.455  methods.json#/validation/36/baselines/annual_ratio
-- LOYO weekly WAPE baseline raw_viirs: 1.516  methods.json#/validation/36/baselines/raw_viirs
-- LOYO years: [2013, 2022]  methods.json#/validation/36/years
-- LOYO weekly WAPE (tier2): 0.275  methods.json#/validation/51/value
-- LOYO years: [2013, 2022]  methods.json#/validation/51/years
-- reliability_err (tier2): 0.001  methods.json#/validation/49/value
-- reliability_year_absolute_err (tier2): 0.059  methods.json#/validation/50/value
-- t1_t2_wape (tier2): 0.269  methods.json#/validation/53/value
-- eyesight status: "validated"  methods.json#/eyesight/2/status
-- eyesight param a: -3.645  methods.json#/eyesight/2/params/a
-- eyesight param a_hi: -3.492  methods.json#/eyesight/2/params/a_hi
-- eyesight param a_lo: -3.832  methods.json#/eyesight/2/params/a_lo
-- eyesight param b: 2.469  methods.json#/eyesight/2/params/b
-- eyesight param b_hi: 2.622  methods.json#/eyesight/2/params/b_hi
-- eyesight param b_lo: 2.269  methods.json#/eyesight/2/params/b_lo
-- eyesight param c: 0.868  methods.json#/eyesight/2/params/c
-- eyesight param c_hi: 0.954  methods.json#/eyesight/2/params/c_hi
-- eyesight param c_lo: 0.809  methods.json#/eyesight/2/params/c_lo
-- eyesight g: 1.525  methods.json#/eyesight/2/g
+- LOYO weekly WAPE (tier1): 0.335  methods.json#/validation/1400/value
+- LOYO weekly WAPE baseline annual_ratio: 0.455  methods.json#/validation/1400/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.516  methods.json#/validation/1400/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1400/years
+- LOYO weekly WAPE (tier2): 0.275  methods.json#/validation/1415/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1415/years
+- reliability_err (tier2): 0.001  methods.json#/validation/1413/value
+- reliability_year_absolute_err (tier2): 0.059  methods.json#/validation/1414/value
+- t1_t2_wape (tier2): 0.269  methods.json#/validation/1417/value
+- eyesight status: "validated"  methods.json#/eyesight/80/status
+- eyesight param a: -3.645  methods.json#/eyesight/80/params/a
+- eyesight param a_hi: -3.492  methods.json#/eyesight/80/params/a_hi
+- eyesight param a_lo: -3.832  methods.json#/eyesight/80/params/a_lo
+- eyesight param b: 2.469  methods.json#/eyesight/80/params/b
+- eyesight param b_hi: 2.622  methods.json#/eyesight/80/params/b_hi
+- eyesight param b_lo: 2.269  methods.json#/eyesight/80/params/b_lo
+- eyesight param c: 0.868  methods.json#/eyesight/80/params/c
+- eyesight param c_hi: 0.954  methods.json#/eyesight/80/params/c_hi
+- eyesight param c_lo: 0.809  methods.json#/eyesight/80/params/c_lo
+- eyesight g: 1.525  methods.json#/eyesight/80/g
+
+## Qatar (`qatar`)
+
+- jump multiple (value): 8.127  qatar/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.442  qatar/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 21.661  qatar/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  qatar/ruler.json#/jump_multiple/years
+- ruler sentence: "In Qatar, VIIRS reports about 8.1 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  qatar/ruler.json#/sentence
+- harmonized trend pct_per_decade: 37.156  qatar/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: 0.0  qatar/trend.json#/harmonized/lo
+- harmonized trend hi: 90.186  qatar/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  qatar/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 59.153  qatar/trend.json#/naive/pct_per_decade
+- naive trend lo: 39.39  qatar/trend.json#/naive/lo
+- naive trend hi: 186.897  qatar/trend.json#/naive/hi
+- naive trend direction: "rising"  qatar/trend.json#/naive/direction
+- trend years: [2003, 2025]  qatar/trend.json#/years
+- verdict sentence_id: "unclear"  qatar/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (0 to 90% per decade)."  qatar/trend.json#/sentence
+- critical weeks: []  qatar/season.json#/critical_weeks
+- this week value: null  qatar/nowcast.json#/value
+- this week lo: null  qatar/nowcast.json#/lo
+- this week hi: null  qatar/nowcast.json#/hi
+- this week percentile: null  qatar/nowcast.json#/percentile
+- this week status: "unavailable"  qatar/nowcast.json#/status
+- this week as_of: null  qatar/nowcast.json#/as_of
+- this week window start: null  qatar/nowcast.json#/window/start
+- this week window end: null  qatar/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  qatar/nowcast.json#/baseline_years
+- month to date value: null  qatar/nowcast.json#/month_to_date/value
+- month to date median: null  qatar/nowcast.json#/month_to_date/median
+- month to date ratio: null  qatar/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  qatar/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  qatar/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.854  methods.json#/validation/1418/value
+- LOYO weekly WAPE baseline annual_ratio: 1.89  methods.json#/validation/1418/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 18.788  methods.json#/validation/1418/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1418/years
+- eyesight status: "absent"  methods.json#/eyesight/81/status
+
+## Republic of the Congo (`republic-of-congo`)
+
+- jump multiple (value): 3.745  republic-of-congo/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.516  republic-of-congo/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 4.075  republic-of-congo/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  republic-of-congo/ruler.json#/jump_multiple/years
+- ruler sentence: "In Republic of the Congo, VIIRS reports about 3.7 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  republic-of-congo/ruler.json#/sentence
+- harmonized trend pct_per_decade: 10.88  republic-of-congo/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: 5.931  republic-of-congo/trend.json#/harmonized/lo
+- harmonized trend hi: 15.998  republic-of-congo/trend.json#/harmonized/hi
+- harmonized trend direction: "rising"  republic-of-congo/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 46.011  republic-of-congo/trend.json#/naive/pct_per_decade
+- naive trend lo: 30.144  republic-of-congo/trend.json#/naive/lo
+- naive trend hi: 170.487  republic-of-congo/trend.json#/naive/hi
+- naive trend direction: "rising"  republic-of-congo/trend.json#/naive/direction
+- trend years: [2003, 2025]  republic-of-congo/trend.json#/years
+- verdict sentence_id: "artifact_rising"  republic-of-congo/trend.json#/sentence_id
+- verdict sentence: "Burning activity did rise, by about 11% per decade (6 to 16). The raw record overstates it at 46%."  republic-of-congo/trend.json#/sentence
+- critical weeks: [9, 10, 11, 12, 13, 14, 15, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39]  republic-of-congo/season.json#/critical_weeks
+- window w1 label: "late-May to late-September"  republic-of-congo/season.json#/windows/0/label
+- window w1 start_week: 22  republic-of-congo/season.json#/windows/0/start_week
+- window w1 peak_week: 31  republic-of-congo/season.json#/windows/0/peak_week
+- window w1 end_week: 39  republic-of-congo/season.json#/windows/0/end_week
+- window w1 share: 0.697  republic-of-congo/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 0.0  republic-of-congo/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -3.333  republic-of-congo/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 2.0  republic-of-congo/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the late-May to late-September season."  republic-of-congo/season.json#/windows/0/sentence
+- this week value: null  republic-of-congo/nowcast.json#/value
+- this week lo: null  republic-of-congo/nowcast.json#/lo
+- this week hi: null  republic-of-congo/nowcast.json#/hi
+- this week percentile: null  republic-of-congo/nowcast.json#/percentile
+- this week status: "unavailable"  republic-of-congo/nowcast.json#/status
+- this week as_of: null  republic-of-congo/nowcast.json#/as_of
+- this week window start: null  republic-of-congo/nowcast.json#/window/start
+- this week window end: null  republic-of-congo/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  republic-of-congo/nowcast.json#/baseline_years
+- month to date value: null  republic-of-congo/nowcast.json#/month_to_date/value
+- month to date median: null  republic-of-congo/nowcast.json#/month_to_date/median
+- month to date ratio: null  republic-of-congo/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  republic-of-congo/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  republic-of-congo/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.181  methods.json#/validation/1431/value
+- LOYO weekly WAPE baseline annual_ratio: 0.196  methods.json#/validation/1431/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.363  methods.json#/validation/1431/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1431/years
+- LOYO weekly WAPE (tier2): 0.189  methods.json#/validation/1446/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1446/years
+- reliability_err (tier2): 0.0  methods.json#/validation/1444/value
+- reliability_year_absolute_err (tier2): 0.059  methods.json#/validation/1445/value
+- t1_t2_wape (tier2): 0.096  methods.json#/validation/1448/value
+- eyesight status: "validated"  methods.json#/eyesight/82/status
+- eyesight param a: -3.384  methods.json#/eyesight/82/params/a
+- eyesight param a_hi: -3.342  methods.json#/eyesight/82/params/a_hi
+- eyesight param a_lo: -3.431  methods.json#/eyesight/82/params/a_lo
+- eyesight param b: 1.989  methods.json#/eyesight/82/params/b
+- eyesight param b_hi: 2.055  methods.json#/eyesight/82/params/b_hi
+- eyesight param b_lo: 1.938  methods.json#/eyesight/82/params/b_lo
+- eyesight param c: 0.738  methods.json#/eyesight/82/params/c
+- eyesight param c_hi: 0.776  methods.json#/eyesight/82/params/c_hi
+- eyesight param c_lo: 0.708  methods.json#/eyesight/82/params/c_lo
+- eyesight g: 1.791  methods.json#/eyesight/82/g
+
+## South Korea (`republic-of-korea`)
+
+- jump multiple (value): 2.604  republic-of-korea/ruler.json#/jump_multiple/value
+- jump multiple (lo): 1.786  republic-of-korea/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 4.752  republic-of-korea/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  republic-of-korea/ruler.json#/jump_multiple/years
+- ruler sentence: "In South Korea, VIIRS reports about 2.6 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  republic-of-korea/ruler.json#/sentence
+- harmonized trend pct_per_decade: 2.093  republic-of-korea/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -10.173  republic-of-korea/trend.json#/harmonized/lo
+- harmonized trend hi: 11.26  republic-of-korea/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  republic-of-korea/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 65.434  republic-of-korea/trend.json#/naive/pct_per_decade
+- naive trend lo: 39.393  republic-of-korea/trend.json#/naive/lo
+- naive trend hi: 122.836  republic-of-korea/trend.json#/naive/hi
+- naive trend direction: "rising"  republic-of-korea/trend.json#/naive/direction
+- trend years: [2003, 2025]  republic-of-korea/trend.json#/years
+- verdict sentence_id: "artifact_flat"  republic-of-korea/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 65% per decade. After correcting for the sensor change, there is no clear change (-10 to 11% per decade)."  republic-of-korea/trend.json#/sentence
+- critical weeks: [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22, 23, 24, 30, 31, 32, 33, 34, 42, 43]  republic-of-korea/season.json#/critical_weeks
+- window w1 label: "mid-February to mid-June"  republic-of-korea/season.json#/windows/0/label
+- window w1 start_week: 7  republic-of-korea/season.json#/windows/0/start_week
+- window w1 peak_week: 10  republic-of-korea/season.json#/windows/0/peak_week
+- window w1 end_week: 24  republic-of-korea/season.json#/windows/0/end_week
+- window w1 share: 0.626  republic-of-korea/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 6.667  republic-of-korea/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): 3.158  republic-of-korea/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 10.667  republic-of-korea/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "The mid-February to mid-June season now starts about 7 days later per decade (3 to 11)."  republic-of-korea/season.json#/windows/0/sentence
+- window w2 label: "late-July to late-August"  republic-of-korea/season.json#/windows/1/label
+- window w2 start_week: 30  republic-of-korea/season.json#/windows/1/start_week
+- window w2 peak_week: 32  republic-of-korea/season.json#/windows/1/peak_week
+- window w2 end_week: 34  republic-of-korea/season.json#/windows/1/end_week
+- window w2 share: 0.163  republic-of-korea/season.json#/windows/1/share
+- window w2 start shift days per decade (value): -8.0  republic-of-korea/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -11.667  republic-of-korea/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): 0.0  republic-of-korea/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "No clear shift in the timing of the late-July to late-August season."  republic-of-korea/season.json#/windows/1/sentence
+- this week value: null  republic-of-korea/nowcast.json#/value
+- this week lo: null  republic-of-korea/nowcast.json#/lo
+- this week hi: null  republic-of-korea/nowcast.json#/hi
+- this week percentile: null  republic-of-korea/nowcast.json#/percentile
+- this week status: "unavailable"  republic-of-korea/nowcast.json#/status
+- this week as_of: null  republic-of-korea/nowcast.json#/as_of
+- this week window start: null  republic-of-korea/nowcast.json#/window/start
+- this week window end: null  republic-of-korea/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  republic-of-korea/nowcast.json#/baseline_years
+- month to date value: null  republic-of-korea/nowcast.json#/month_to_date/value
+- month to date median: null  republic-of-korea/nowcast.json#/month_to_date/median
+- month to date ratio: null  republic-of-korea/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  republic-of-korea/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  republic-of-korea/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.638  methods.json#/validation/1449/value
+- LOYO weekly WAPE baseline annual_ratio: 0.715  methods.json#/validation/1449/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.869  methods.json#/validation/1449/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1449/years
+- LOYO weekly WAPE (tier2): 0.768  methods.json#/validation/1464/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1464/years
+- reliability_err (tier2): 0.018  methods.json#/validation/1462/value
+- reliability_year_absolute_err (tier2): 0.353  methods.json#/validation/1463/value
+- t1_t2_wape (tier2): 0.506  methods.json#/validation/1466/value
+- eyesight status: "exploratory"  methods.json#/eyesight/83/status
+- eyesight param a: -5.037  methods.json#/eyesight/83/params/a
+- eyesight param a_hi: -4.753  methods.json#/eyesight/83/params/a_hi
+- eyesight param a_lo: -5.641  methods.json#/eyesight/83/params/a_lo
+- eyesight param b: 3.439  methods.json#/eyesight/83/params/b
+- eyesight param b_hi: 4.792  methods.json#/eyesight/83/params/b_hi
+- eyesight param b_lo: 2.561  methods.json#/eyesight/83/params/b_lo
+- eyesight param c: 0.595  methods.json#/eyesight/83/params/c
+- eyesight param c_hi: 0.994  methods.json#/eyesight/83/params/c_hi
+- eyesight param c_lo: 0.409  methods.json#/eyesight/83/params/c_lo
+- eyesight g: 6.833  methods.json#/eyesight/83/g
+
+## Reunion (`reunion`)
+
+- jump multiple (value): 16.596  reunion/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.828  reunion/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 344.0  reunion/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  reunion/ruler.json#/jump_multiple/years
+- ruler sentence: "In Reunion, VIIRS reports about 16.6 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  reunion/ruler.json#/sentence
+- harmonized trend pct_per_decade: -83.333  reunion/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -364.452  reunion/trend.json#/harmonized/lo
+- harmonized trend hi: -41.667  reunion/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  reunion/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 443.011  reunion/trend.json#/naive/pct_per_decade
+- naive trend lo: -16.003  reunion/trend.json#/naive/lo
+- naive trend hi: 836.299  reunion/trend.json#/naive/hi
+- naive trend direction: "no_clear_change"  reunion/trend.json#/naive/direction
+- trend years: [2003, 2025]  reunion/trend.json#/years
+- verdict sentence_id: "artifact_falling"  reunion/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 83% per decade (-364 to -42)."  reunion/trend.json#/sentence
+- critical weeks: []  reunion/season.json#/critical_weeks
+- this week value: null  reunion/nowcast.json#/value
+- this week lo: null  reunion/nowcast.json#/lo
+- this week hi: null  reunion/nowcast.json#/hi
+- this week percentile: null  reunion/nowcast.json#/percentile
+- this week status: "unavailable"  reunion/nowcast.json#/status
+- this week as_of: null  reunion/nowcast.json#/as_of
+- this week window start: null  reunion/nowcast.json#/window/start
+- this week window end: null  reunion/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  reunion/nowcast.json#/baseline_years
+- month to date value: null  reunion/nowcast.json#/month_to_date/value
+- month to date median: null  reunion/nowcast.json#/month_to_date/median
+- month to date ratio: null  reunion/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  reunion/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  reunion/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.795  methods.json#/validation/1467/value
+- LOYO weekly WAPE baseline annual_ratio: 1.954  methods.json#/validation/1467/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 9.097  methods.json#/validation/1467/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1467/years
+- eyesight status: "absent"  methods.json#/eyesight/84/status
+
+## Romania (`romania`)
+
+- jump multiple (value): 3.472  romania/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.129  romania/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 3.868  romania/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  romania/ruler.json#/jump_multiple/years
+- ruler sentence: "In Romania, VIIRS reports about 3.5 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  romania/ruler.json#/sentence
+- harmonized trend pct_per_decade: -32.524  romania/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -53.997  romania/trend.json#/harmonized/lo
+- harmonized trend hi: -7.551  romania/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  romania/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 43.565  romania/trend.json#/naive/pct_per_decade
+- naive trend lo: 10.044  romania/trend.json#/naive/lo
+- naive trend hi: 89.722  romania/trend.json#/naive/hi
+- naive trend direction: "rising"  romania/trend.json#/naive/direction
+- trend years: [2003, 2025]  romania/trend.json#/years
+- verdict sentence_id: "unclear"  romania/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (-54 to -8% per decade)."  romania/trend.json#/sentence
+- critical weeks: [11, 12, 13, 14, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44]  romania/season.json#/critical_weeks
+- window w1 label: "mid-July to early-November"  romania/season.json#/windows/0/label
+- window w1 start_week: 29  romania/season.json#/windows/0/start_week
+- window w1 peak_week: 30  romania/season.json#/windows/0/peak_week
+- window w1 end_week: 44  romania/season.json#/windows/0/end_week
+- window w1 share: 0.574  romania/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -2.353  romania/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -5.455  romania/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 6.0  romania/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the mid-July to early-November season."  romania/season.json#/windows/0/sentence
+- window w2 label: "mid-March to early-April"  romania/season.json#/windows/1/label
+- window w2 start_week: 11  romania/season.json#/windows/1/start_week
+- window w2 peak_week: 13  romania/season.json#/windows/1/peak_week
+- window w2 end_week: 14  romania/season.json#/windows/1/end_week
+- window w2 share: 0.245  romania/season.json#/windows/1/share
+- window w2 start shift days per decade (value): -8.0  romania/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -13.0  romania/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): -3.75  romania/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "The mid-March to early-April season now starts about 8 days earlier per decade (-13 to -4)."  romania/season.json#/windows/1/sentence
+- this week value: null  romania/nowcast.json#/value
+- this week lo: null  romania/nowcast.json#/lo
+- this week hi: null  romania/nowcast.json#/hi
+- this week percentile: null  romania/nowcast.json#/percentile
+- this week status: "unavailable"  romania/nowcast.json#/status
+- this week as_of: null  romania/nowcast.json#/as_of
+- this week window start: null  romania/nowcast.json#/window/start
+- this week window end: null  romania/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  romania/nowcast.json#/baseline_years
+- month to date value: null  romania/nowcast.json#/month_to_date/value
+- month to date median: null  romania/nowcast.json#/month_to_date/median
+- month to date ratio: null  romania/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  romania/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  romania/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.203  methods.json#/validation/1480/value
+- LOYO weekly WAPE baseline annual_ratio: 0.23  methods.json#/validation/1480/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.967  methods.json#/validation/1480/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1480/years
+- LOYO weekly WAPE (tier2): 0.274  methods.json#/validation/1495/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1495/years
+- reliability_err (tier2): 0.0  methods.json#/validation/1493/value
+- reliability_year_absolute_err (tier2): 0.072  methods.json#/validation/1494/value
+- t1_t2_wape (tier2): 0.238  methods.json#/validation/1497/value
+- eyesight status: "exploratory"  methods.json#/eyesight/85/status
+- eyesight param a: -3.412  methods.json#/eyesight/85/params/a
+- eyesight param a_hi: -3.34  methods.json#/eyesight/85/params/a_hi
+- eyesight param a_lo: -3.506  methods.json#/eyesight/85/params/a_lo
+- eyesight param b: 2.459  methods.json#/eyesight/85/params/b
+- eyesight param b_hi: 2.549  methods.json#/eyesight/85/params/b_hi
+- eyesight param b_lo: 2.379  methods.json#/eyesight/85/params/b_lo
+- eyesight param c: 0.624  methods.json#/eyesight/85/params/c
+- eyesight param c_hi: 0.665  methods.json#/eyesight/85/params/c_hi
+- eyesight param c_lo: 0.587  methods.json#/eyesight/85/params/c_lo
+- eyesight g: 1.757  methods.json#/eyesight/85/g
+
+## Rwanda (`rwanda`)
+
+- jump multiple (value): 5.158  rwanda/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.24  rwanda/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 6.772  rwanda/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  rwanda/ruler.json#/jump_multiple/years
+- ruler sentence: "In Rwanda, VIIRS reports about 5.2 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  rwanda/ruler.json#/sentence
+- harmonized trend pct_per_decade: -5.962  rwanda/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -31.314  rwanda/trend.json#/harmonized/lo
+- harmonized trend hi: 21.715  rwanda/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  rwanda/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 65.303  rwanda/trend.json#/naive/pct_per_decade
+- naive trend lo: 28.073  rwanda/trend.json#/naive/lo
+- naive trend hi: 171.619  rwanda/trend.json#/naive/hi
+- naive trend direction: "rising"  rwanda/trend.json#/naive/direction
+- trend years: [2003, 2025]  rwanda/trend.json#/years
+- verdict sentence_id: "artifact_flat"  rwanda/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 65% per decade. After correcting for the sensor change, there is no clear change (-31 to 22% per decade)."  rwanda/trend.json#/sentence
+- critical weeks: [25, 26, 27, 28, 29, 30, 31, 32, 33]  rwanda/season.json#/critical_weeks
+- window w1 label: "mid-June to mid-August"  rwanda/season.json#/windows/0/label
+- window w1 start_week: 25  rwanda/season.json#/windows/0/start_week
+- window w1 peak_week: 29  rwanda/season.json#/windows/0/peak_week
+- window w1 end_week: 33  rwanda/season.json#/windows/0/end_week
+- window w1 share: 0.817  rwanda/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -5.357  rwanda/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -16.111  rwanda/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 2.222  rwanda/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the mid-June to mid-August season."  rwanda/season.json#/windows/0/sentence
+- this week value: null  rwanda/nowcast.json#/value
+- this week lo: null  rwanda/nowcast.json#/lo
+- this week hi: null  rwanda/nowcast.json#/hi
+- this week percentile: null  rwanda/nowcast.json#/percentile
+- this week status: "unavailable"  rwanda/nowcast.json#/status
+- this week as_of: null  rwanda/nowcast.json#/as_of
+- this week window start: null  rwanda/nowcast.json#/window/start
+- this week window end: null  rwanda/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  rwanda/nowcast.json#/baseline_years
+- month to date value: null  rwanda/nowcast.json#/month_to_date/value
+- month to date median: null  rwanda/nowcast.json#/month_to_date/median
+- month to date ratio: null  rwanda/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  rwanda/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  rwanda/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.615  methods.json#/validation/1498/value
+- LOYO weekly WAPE baseline annual_ratio: 0.628  methods.json#/validation/1498/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 4.429  methods.json#/validation/1498/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1498/years
+- LOYO weekly WAPE (tier2): 0.573  methods.json#/validation/1513/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1513/years
+- reliability_err (tier2): 0.001  methods.json#/validation/1511/value
+- reliability_year_absolute_err (tier2): 0.149  methods.json#/validation/1512/value
+- t1_t2_wape (tier2): 0.272  methods.json#/validation/1515/value
+- eyesight status: "validated"  methods.json#/eyesight/86/status
+- eyesight param a: -4.301  methods.json#/eyesight/86/params/a
+- eyesight param a_hi: -4.032  methods.json#/eyesight/86/params/a_hi
+- eyesight param a_lo: -4.68  methods.json#/eyesight/86/params/a_lo
+- eyesight param b: 2.587  methods.json#/eyesight/86/params/b
+- eyesight param b_hi: 2.862  methods.json#/eyesight/86/params/b_hi
+- eyesight param b_lo: 2.292  methods.json#/eyesight/86/params/b_lo
+- eyesight param c: 0.563  methods.json#/eyesight/86/params/c
+- eyesight param c_hi: 0.665  methods.json#/eyesight/86/params/c_hi
+- eyesight param c_lo: 0.479  methods.json#/eyesight/86/params/c_lo
+- eyesight g: 1.583  methods.json#/eyesight/86/g
+
+## Saudi Arabia (`saudi-arabia`)
+
+- jump multiple (value): 8.983  saudi-arabia/ruler.json#/jump_multiple/value
+- jump multiple (lo): 6.896  saudi-arabia/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 12.505  saudi-arabia/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  saudi-arabia/ruler.json#/jump_multiple/years
+- ruler sentence: "In Saudi Arabia, VIIRS reports about 9.0 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  saudi-arabia/ruler.json#/sentence
+- harmonized trend pct_per_decade: 1.786  saudi-arabia/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -15.789  saudi-arabia/trend.json#/harmonized/lo
+- harmonized trend hi: 17.927  saudi-arabia/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  saudi-arabia/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 80.304  saudi-arabia/trend.json#/naive/pct_per_decade
+- naive trend lo: 55.366  saudi-arabia/trend.json#/naive/lo
+- naive trend hi: 548.737  saudi-arabia/trend.json#/naive/hi
+- naive trend direction: "rising"  saudi-arabia/trend.json#/naive/direction
+- trend years: [2003, 2025]  saudi-arabia/trend.json#/years
+- verdict sentence_id: "artifact_flat"  saudi-arabia/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 80% per decade. After correcting for the sensor change, there is no clear change (-16 to 18% per decade)."  saudi-arabia/trend.json#/sentence
+- critical weeks: [1, 2, 3, 4, 5, 6, 8, 9, 10, 22, 23, 24, 25, 26, 27, 28, 32, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52]  saudi-arabia/season.json#/critical_weeks
+- window w1 label: "early-August to mid-March"  saudi-arabia/season.json#/windows/0/label
+- window w1 start_week: 32  saudi-arabia/season.json#/windows/0/start_week
+- window w1 peak_week: 51  saudi-arabia/season.json#/windows/0/peak_week
+- window w1 end_week: 10  saudi-arabia/season.json#/windows/0/end_week
+- window w1 share: 0.664  saudi-arabia/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 5.0  saudi-arabia/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -5.97  saudi-arabia/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 13.333  saudi-arabia/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-August to mid-March season."  saudi-arabia/season.json#/windows/0/sentence
+- window w2 label: "late-May to mid-July"  saudi-arabia/season.json#/windows/1/label
+- window w2 start_week: 22  saudi-arabia/season.json#/windows/1/start_week
+- window w2 peak_week: 25  saudi-arabia/season.json#/windows/1/peak_week
+- window w2 end_week: 28  saudi-arabia/season.json#/windows/1/end_week
+- window w2 share: 0.17  saudi-arabia/season.json#/windows/1/share
+- window w2 start shift days per decade (value): -7.794  saudi-arabia/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -11.917  saudi-arabia/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): -4.284  saudi-arabia/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "The late-May to mid-July season now starts about 8 days earlier per decade (-12 to -4)."  saudi-arabia/season.json#/windows/1/sentence
+- this week value: null  saudi-arabia/nowcast.json#/value
+- this week lo: null  saudi-arabia/nowcast.json#/lo
+- this week hi: null  saudi-arabia/nowcast.json#/hi
+- this week percentile: null  saudi-arabia/nowcast.json#/percentile
+- this week status: "unavailable"  saudi-arabia/nowcast.json#/status
+- this week as_of: null  saudi-arabia/nowcast.json#/as_of
+- this week window start: null  saudi-arabia/nowcast.json#/window/start
+- this week window end: null  saudi-arabia/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  saudi-arabia/nowcast.json#/baseline_years
+- month to date value: null  saudi-arabia/nowcast.json#/month_to_date/value
+- month to date median: null  saudi-arabia/nowcast.json#/month_to_date/median
+- month to date ratio: null  saudi-arabia/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  saudi-arabia/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  saudi-arabia/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.706  methods.json#/validation/1516/value
+- LOYO weekly WAPE baseline annual_ratio: 0.716  methods.json#/validation/1516/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 14.764  methods.json#/validation/1516/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1516/years
+- LOYO weekly WAPE (tier2): 0.686  methods.json#/validation/1531/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1531/years
+- reliability_err (tier2): 0.001  methods.json#/validation/1529/value
+- reliability_year_absolute_err (tier2): 0.217  methods.json#/validation/1530/value
+- t1_t2_wape (tier2): 0.33  methods.json#/validation/1533/value
+- eyesight status: "validated"  methods.json#/eyesight/87/status
+- eyesight param a: -5.43  methods.json#/eyesight/87/params/a
+- eyesight param a_hi: -5.074  methods.json#/eyesight/87/params/a_hi
+- eyesight param a_lo: -5.923  methods.json#/eyesight/87/params/a_lo
+- eyesight param b: 2.812  methods.json#/eyesight/87/params/b
+- eyesight param b_hi: 3.275  methods.json#/eyesight/87/params/b_hi
+- eyesight param b_lo: 2.407  methods.json#/eyesight/87/params/b_lo
+- eyesight param c: 0.295  methods.json#/eyesight/87/params/c
+- eyesight param c_hi: 0.389  methods.json#/eyesight/87/params/c_hi
+- eyesight param c_lo: 0.265  methods.json#/eyesight/87/params/c_lo
+- eyesight g: 2.723  methods.json#/eyesight/87/g
+
+## Senegal (`senegal`)
+
+- jump multiple (value): 3.819  senegal/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.633  senegal/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 4.269  senegal/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  senegal/ruler.json#/jump_multiple/years
+- ruler sentence: "In Senegal, VIIRS reports about 3.8 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  senegal/ruler.json#/sentence
+- harmonized trend pct_per_decade: 3.995  senegal/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -7.917  senegal/trend.json#/harmonized/lo
+- harmonized trend hi: 13.779  senegal/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  senegal/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 59.306  senegal/trend.json#/naive/pct_per_decade
+- naive trend lo: 45.668  senegal/trend.json#/naive/lo
+- naive trend hi: 154.215  senegal/trend.json#/naive/hi
+- naive trend direction: "rising"  senegal/trend.json#/naive/direction
+- trend years: [2003, 2025]  senegal/trend.json#/years
+- verdict sentence_id: "artifact_flat"  senegal/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 59% per decade. After correcting for the sensor change, there is no clear change (-8 to 14% per decade)."  senegal/trend.json#/sentence
+- critical weeks: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52]  senegal/season.json#/critical_weeks
+- window w1 label: "late-October to mid-March"  senegal/season.json#/windows/0/label
+- window w1 start_week: 43  senegal/season.json#/windows/0/start_week
+- window w1 peak_week: 45  senegal/season.json#/windows/0/peak_week
+- window w1 end_week: 10  senegal/season.json#/windows/0/end_week
+- window w1 share: 0.823  senegal/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -1.429  senegal/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -4.667  senegal/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 3.077  senegal/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the late-October to mid-March season."  senegal/season.json#/windows/0/sentence
+- this week value: null  senegal/nowcast.json#/value
+- this week lo: null  senegal/nowcast.json#/lo
+- this week hi: null  senegal/nowcast.json#/hi
+- this week percentile: null  senegal/nowcast.json#/percentile
+- this week status: "unavailable"  senegal/nowcast.json#/status
+- this week as_of: null  senegal/nowcast.json#/as_of
+- this week window start: null  senegal/nowcast.json#/window/start
+- this week window end: null  senegal/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  senegal/nowcast.json#/baseline_years
+- month to date value: null  senegal/nowcast.json#/month_to_date/value
+- month to date median: null  senegal/nowcast.json#/month_to_date/median
+- month to date ratio: null  senegal/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  senegal/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  senegal/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.14  methods.json#/validation/1534/value
+- LOYO weekly WAPE baseline annual_ratio: 0.19  methods.json#/validation/1534/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.889  methods.json#/validation/1534/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1534/years
+- LOYO weekly WAPE (tier2): 0.143  methods.json#/validation/1549/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1549/years
+- reliability_err (tier2): 0.0  methods.json#/validation/1547/value
+- reliability_year_absolute_err (tier2): 0.037  methods.json#/validation/1548/value
+- t1_t2_wape (tier2): 0.118  methods.json#/validation/1551/value
+- eyesight status: "validated"  methods.json#/eyesight/88/status
+- eyesight param a: -3.329  methods.json#/eyesight/88/params/a
+- eyesight param a_hi: -3.274  methods.json#/eyesight/88/params/a_hi
+- eyesight param a_lo: -3.391  methods.json#/eyesight/88/params/a_lo
+- eyesight param b: 2.06  methods.json#/eyesight/88/params/b
+- eyesight param b_hi: 2.107  methods.json#/eyesight/88/params/b_hi
+- eyesight param b_lo: 2.016  methods.json#/eyesight/88/params/b_lo
+- eyesight param c: 0.817  methods.json#/eyesight/88/params/c
+- eyesight param c_hi: 0.837  methods.json#/eyesight/88/params/c_hi
+- eyesight param c_lo: 0.794  methods.json#/eyesight/88/params/c_lo
+- eyesight g: 1.443  methods.json#/eyesight/88/g
+
+## Serbia (`serbia`)
+
+- jump multiple (value): 3.55  serbia/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.103  serbia/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 4.623  serbia/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  serbia/ruler.json#/jump_multiple/years
+- ruler sentence: "In Serbia, VIIRS reports about 3.5 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  serbia/ruler.json#/sentence
+- harmonized trend pct_per_decade: -33.183  serbia/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -73.285  serbia/trend.json#/harmonized/lo
+- harmonized trend hi: -10.218  serbia/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  serbia/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 28.162  serbia/trend.json#/naive/pct_per_decade
+- naive trend lo: 4.735  serbia/trend.json#/naive/lo
+- naive trend hi: 86.917  serbia/trend.json#/naive/hi
+- naive trend direction: "rising"  serbia/trend.json#/naive/direction
+- trend years: [2003, 2025]  serbia/trend.json#/years
+- verdict sentence_id: "unclear"  serbia/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (-73 to -10% per decade)."  serbia/trend.json#/sentence
+- critical weeks: [11, 12, 13, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45]  serbia/season.json#/critical_weeks
+- window w1 label: "early-August to mid-November"  serbia/season.json#/windows/0/label
+- window w1 start_week: 32  serbia/season.json#/windows/0/start_week
+- window w1 peak_week: 41  serbia/season.json#/windows/0/peak_week
+- window w1 end_week: 45  serbia/season.json#/windows/0/end_week
+- window w1 share: 0.728  serbia/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 0.0  serbia/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -15.556  serbia/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 16.667  serbia/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-August to mid-November season."  serbia/season.json#/windows/0/sentence
+- this week value: null  serbia/nowcast.json#/value
+- this week lo: null  serbia/nowcast.json#/lo
+- this week hi: null  serbia/nowcast.json#/hi
+- this week percentile: null  serbia/nowcast.json#/percentile
+- this week status: "unavailable"  serbia/nowcast.json#/status
+- this week as_of: null  serbia/nowcast.json#/as_of
+- this week window start: null  serbia/nowcast.json#/window/start
+- this week window end: null  serbia/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  serbia/nowcast.json#/baseline_years
+- month to date value: null  serbia/nowcast.json#/month_to_date/value
+- month to date median: null  serbia/nowcast.json#/month_to_date/median
+- month to date ratio: null  serbia/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  serbia/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  serbia/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.294  methods.json#/validation/1552/value
+- LOYO weekly WAPE baseline annual_ratio: 0.328  methods.json#/validation/1552/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.941  methods.json#/validation/1552/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1552/years
+- LOYO weekly WAPE (tier2): 0.245  methods.json#/validation/1567/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1567/years
+- reliability_err (tier2): 0.01  methods.json#/validation/1565/value
+- reliability_year_absolute_err (tier2): 0.125  methods.json#/validation/1566/value
+- t1_t2_wape (tier2): 0.2  methods.json#/validation/1569/value
+- eyesight status: "validated"  methods.json#/eyesight/89/status
+- eyesight param a: -3.542  methods.json#/eyesight/89/params/a
+- eyesight param a_hi: -3.409  methods.json#/eyesight/89/params/a_hi
+- eyesight param a_lo: -3.717  methods.json#/eyesight/89/params/a_lo
+- eyesight param b: 2.38  methods.json#/eyesight/89/params/b
+- eyesight param b_hi: 2.622  methods.json#/eyesight/89/params/b_hi
+- eyesight param b_lo: 2.205  methods.json#/eyesight/89/params/b_lo
+- eyesight param c: 0.825  methods.json#/eyesight/89/params/c
+- eyesight param c_hi: 0.965  methods.json#/eyesight/89/params/c_hi
+- eyesight param c_lo: 0.689  methods.json#/eyesight/89/params/c_lo
+- eyesight g: 1.642  methods.json#/eyesight/89/g
+
+## Sierra Leone (`sierra-leone`)
+
+- jump multiple (value): 3.29  sierra-leone/ruler.json#/jump_multiple/value
+- jump multiple (lo): 2.686  sierra-leone/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 5.035  sierra-leone/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  sierra-leone/ruler.json#/jump_multiple/years
+- ruler sentence: "In Sierra Leone, VIIRS reports about 3.3 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  sierra-leone/ruler.json#/sentence
+- harmonized trend pct_per_decade: 3.929  sierra-leone/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -9.863  sierra-leone/trend.json#/harmonized/lo
+- harmonized trend hi: 15.85  sierra-leone/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  sierra-leone/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 45.48  sierra-leone/trend.json#/naive/pct_per_decade
+- naive trend lo: 28.269  sierra-leone/trend.json#/naive/lo
+- naive trend hi: 113.587  sierra-leone/trend.json#/naive/hi
+- naive trend direction: "rising"  sierra-leone/trend.json#/naive/direction
+- trend years: [2003, 2025]  sierra-leone/trend.json#/years
+- verdict sentence_id: "artifact_flat"  sierra-leone/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 45% per decade. After correcting for the sensor change, there is no clear change (-10 to 16% per decade)."  sierra-leone/trend.json#/sentence
+- critical weeks: [3, 4, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17]  sierra-leone/season.json#/critical_weeks
+- window w1 label: "late-February to late-April"  sierra-leone/season.json#/windows/0/label
+- window w1 start_week: 9  sierra-leone/season.json#/windows/0/start_week
+- window w1 peak_week: 13  sierra-leone/season.json#/windows/0/peak_week
+- window w1 end_week: 17  sierra-leone/season.json#/windows/0/end_week
+- window w1 share: 0.712  sierra-leone/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 0.0  sierra-leone/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -6.667  sierra-leone/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 3.846  sierra-leone/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the late-February to late-April season."  sierra-leone/season.json#/windows/0/sentence
+- this week value: null  sierra-leone/nowcast.json#/value
+- this week lo: null  sierra-leone/nowcast.json#/lo
+- this week hi: null  sierra-leone/nowcast.json#/hi
+- this week percentile: null  sierra-leone/nowcast.json#/percentile
+- this week status: "unavailable"  sierra-leone/nowcast.json#/status
+- this week as_of: null  sierra-leone/nowcast.json#/as_of
+- this week window start: null  sierra-leone/nowcast.json#/window/start
+- this week window end: null  sierra-leone/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  sierra-leone/nowcast.json#/baseline_years
+- month to date value: null  sierra-leone/nowcast.json#/month_to_date/value
+- month to date median: null  sierra-leone/nowcast.json#/month_to_date/median
+- month to date ratio: null  sierra-leone/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  sierra-leone/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  sierra-leone/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.202  methods.json#/validation/1570/value
+- LOYO weekly WAPE baseline annual_ratio: 0.267  methods.json#/validation/1570/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 1.415  methods.json#/validation/1570/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1570/years
+- LOYO weekly WAPE (tier2): 0.176  methods.json#/validation/1585/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1585/years
+- reliability_err (tier2): 0.001  methods.json#/validation/1583/value
+- reliability_year_absolute_err (tier2): 0.077  methods.json#/validation/1584/value
+- t1_t2_wape (tier2): 0.103  methods.json#/validation/1587/value
+- eyesight status: "validated"  methods.json#/eyesight/90/status
+- eyesight param a: -2.775  methods.json#/eyesight/90/params/a
+- eyesight param a_hi: -2.709  methods.json#/eyesight/90/params/a_hi
+- eyesight param a_lo: -2.85  methods.json#/eyesight/90/params/a_lo
+- eyesight param b: 2.046  methods.json#/eyesight/90/params/b
+- eyesight param b_hi: 2.194  methods.json#/eyesight/90/params/b_hi
+- eyesight param b_lo: 1.928  methods.json#/eyesight/90/params/b_lo
+- eyesight param c: 0.552  methods.json#/eyesight/90/params/c
+- eyesight param c_hi: 0.591  methods.json#/eyesight/90/params/c_hi
+- eyesight param c_lo: 0.501  methods.json#/eyesight/90/params/c_lo
+- eyesight g: 1.844  methods.json#/eyesight/90/g
+
+## Slovakia (`slovakia`)
+
+- jump multiple (value): 4.049  slovakia/ruler.json#/jump_multiple/value
+- jump multiple (lo): 2.712  slovakia/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 6.106  slovakia/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  slovakia/ruler.json#/jump_multiple/years
+- ruler sentence: "In Slovakia, VIIRS reports about 4.0 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  slovakia/ruler.json#/sentence
+- harmonized trend pct_per_decade: -76.151  slovakia/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -119.792  slovakia/trend.json#/harmonized/lo
+- harmonized trend hi: -47.979  slovakia/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  slovakia/trend.json#/harmonized/direction
+- naive trend pct_per_decade: -1.969  slovakia/trend.json#/naive/pct_per_decade
+- naive trend lo: -15.342  slovakia/trend.json#/naive/lo
+- naive trend hi: 27.89  slovakia/trend.json#/naive/hi
+- naive trend direction: "no_clear_change"  slovakia/trend.json#/naive/direction
+- trend years: [2003, 2025]  slovakia/trend.json#/years
+- verdict sentence_id: "artifact_falling"  slovakia/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 76% per decade (-120 to -48)."  slovakia/trend.json#/sentence
+- critical weeks: [12, 13, 14, 15, 26, 27, 28, 30, 31, 32, 33, 34, 35, 36, 37]  slovakia/season.json#/critical_weeks
+- window w1 label: "late-June to mid-September"  slovakia/season.json#/windows/0/label
+- window w1 start_week: 26  slovakia/season.json#/windows/0/start_week
+- window w1 peak_week: 32  slovakia/season.json#/windows/0/peak_week
+- window w1 end_week: 37  slovakia/season.json#/windows/0/end_week
+- window w1 share: 0.576  slovakia/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -26.375  slovakia/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -61.722  slovakia/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 14.167  slovakia/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the late-June to mid-September season."  slovakia/season.json#/windows/0/sentence
+- window w2 label: "mid-March to mid-April"  slovakia/season.json#/windows/1/label
+- window w2 start_week: 12  slovakia/season.json#/windows/1/start_week
+- window w2 peak_week: 13  slovakia/season.json#/windows/1/peak_week
+- window w2 end_week: 15  slovakia/season.json#/windows/1/end_week
+- window w2 share: 0.288  slovakia/season.json#/windows/1/share
+- window w2 start shift days per decade (value): -6.424  slovakia/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -25.0  slovakia/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): 2.5  slovakia/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "No clear shift in the timing of the mid-March to mid-April season."  slovakia/season.json#/windows/1/sentence
+- this week value: null  slovakia/nowcast.json#/value
+- this week lo: null  slovakia/nowcast.json#/lo
+- this week hi: null  slovakia/nowcast.json#/hi
+- this week percentile: null  slovakia/nowcast.json#/percentile
+- this week status: "unavailable"  slovakia/nowcast.json#/status
+- this week as_of: null  slovakia/nowcast.json#/as_of
+- this week window start: null  slovakia/nowcast.json#/window/start
+- this week window end: null  slovakia/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  slovakia/nowcast.json#/baseline_years
+- month to date value: null  slovakia/nowcast.json#/month_to_date/value
+- month to date median: null  slovakia/nowcast.json#/month_to_date/median
+- month to date ratio: null  slovakia/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  slovakia/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  slovakia/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.923  methods.json#/validation/1588/value
+- LOYO weekly WAPE baseline annual_ratio: 0.968  methods.json#/validation/1588/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.355  methods.json#/validation/1588/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1588/years
+- eyesight status: "absent"  methods.json#/eyesight/91/status
+
+## Somalia (`somalia`)
+
+- jump multiple (value): 6.471  somalia/ruler.json#/jump_multiple/value
+- jump multiple (lo): 4.868  somalia/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 10.327  somalia/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  somalia/ruler.json#/jump_multiple/years
+- ruler sentence: "In Somalia, VIIRS reports about 6.5 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  somalia/ruler.json#/sentence
+- harmonized trend pct_per_decade: -92.062  somalia/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -130.248  somalia/trend.json#/harmonized/lo
+- harmonized trend hi: -49.776  somalia/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  somalia/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 40.282  somalia/trend.json#/naive/pct_per_decade
+- naive trend lo: 12.261  somalia/trend.json#/naive/lo
+- naive trend hi: 75.934  somalia/trend.json#/naive/hi
+- naive trend direction: "rising"  somalia/trend.json#/naive/direction
+- trend years: [2003, 2025]  somalia/trend.json#/years
+- verdict sentence_id: "artifact_falling"  somalia/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 92% per decade (-130 to -50)."  somalia/trend.json#/sentence
+- critical weeks: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 35, 37, 38, 39, 40, 41]  somalia/season.json#/critical_weeks
+- window w1 label: "early-January to late-April"  somalia/season.json#/windows/0/label
+- window w1 start_week: 1  somalia/season.json#/windows/0/start_week
+- window w1 peak_week: 7  somalia/season.json#/windows/0/peak_week
+- window w1 end_week: 16  somalia/season.json#/windows/0/end_week
+- window w1 share: 0.674  somalia/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -1.818  somalia/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -8.995  somalia/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 8.354  somalia/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-January to late-April season."  somalia/season.json#/windows/0/sentence
+- this week value: null  somalia/nowcast.json#/value
+- this week lo: null  somalia/nowcast.json#/lo
+- this week hi: null  somalia/nowcast.json#/hi
+- this week percentile: null  somalia/nowcast.json#/percentile
+- this week status: "unavailable"  somalia/nowcast.json#/status
+- this week as_of: null  somalia/nowcast.json#/as_of
+- this week window start: null  somalia/nowcast.json#/window/start
+- this week window end: null  somalia/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  somalia/nowcast.json#/baseline_years
+- month to date value: null  somalia/nowcast.json#/month_to_date/value
+- month to date median: null  somalia/nowcast.json#/month_to_date/median
+- month to date ratio: null  somalia/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  somalia/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  somalia/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.505  methods.json#/validation/1601/value
+- LOYO weekly WAPE baseline annual_ratio: 0.545  methods.json#/validation/1601/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 7.174  methods.json#/validation/1601/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1601/years
+- LOYO weekly WAPE (tier2): 0.46  methods.json#/validation/1616/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1616/years
+- reliability_err (tier2): 0.01  methods.json#/validation/1614/value
+- reliability_year_absolute_err (tier2): 0.151  methods.json#/validation/1615/value
+- t1_t2_wape (tier2): 0.361  methods.json#/validation/1618/value
+- eyesight status: "validated"  methods.json#/eyesight/92/status
+- eyesight param a: -5.613  methods.json#/eyesight/92/params/a
+- eyesight param a_hi: -5.281  methods.json#/eyesight/92/params/a_hi
+- eyesight param a_lo: -5.976  methods.json#/eyesight/92/params/a_lo
+- eyesight param b: 3.136  methods.json#/eyesight/92/params/b
+- eyesight param b_hi: 3.521  methods.json#/eyesight/92/params/b_hi
+- eyesight param b_lo: 2.862  methods.json#/eyesight/92/params/b_lo
+- eyesight param c: 0.715  methods.json#/eyesight/92/params/c
+- eyesight param c_hi: 0.819  methods.json#/eyesight/92/params/c_hi
+- eyesight param c_lo: 0.543  methods.json#/eyesight/92/params/c_lo
+- eyesight g: 1.982  methods.json#/eyesight/92/g
+
+## Spain (`spain`)
+
+- jump multiple (value): 3.408  spain/ruler.json#/jump_multiple/value
+- jump multiple (lo): 2.666  spain/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 5.099  spain/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  spain/ruler.json#/jump_multiple/years
+- ruler sentence: "In Spain, VIIRS reports about 3.4 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  spain/ruler.json#/sentence
+- harmonized trend pct_per_decade: -50.402  spain/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -70.177  spain/trend.json#/harmonized/lo
+- harmonized trend hi: -35.178  spain/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  spain/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 38.862  spain/trend.json#/naive/pct_per_decade
+- naive trend lo: 12.505  spain/trend.json#/naive/lo
+- naive trend hi: 101.769  spain/trend.json#/naive/hi
+- naive trend direction: "rising"  spain/trend.json#/naive/direction
+- trend years: [2003, 2025]  spain/trend.json#/years
+- verdict sentence_id: "artifact_falling"  spain/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 50% per decade (-70 to -35)."  spain/trend.json#/sentence
+- critical weeks: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46]  spain/season.json#/critical_weeks
+- window w1 label: "mid-June to mid-November"  spain/season.json#/windows/0/label
+- window w1 start_week: 24  spain/season.json#/windows/0/start_week
+- window w1 peak_week: 41  spain/season.json#/windows/0/peak_week
+- window w1 end_week: 46  spain/season.json#/windows/0/end_week
+- window w1 share: 0.535  spain/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 3.889  spain/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): 0.0  spain/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 8.589  spain/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the mid-June to mid-November season."  spain/season.json#/windows/0/sentence
+- window w2 label: "late-January to late-April"  spain/season.json#/windows/1/label
+- window w2 start_week: 4  spain/season.json#/windows/1/start_week
+- window w2 peak_week: 11  spain/season.json#/windows/1/peak_week
+- window w2 end_week: 16  spain/season.json#/windows/1/end_week
+- window w2 share: 0.265  spain/season.json#/windows/1/share
+- window w2 start shift days per decade (value): -9.167  spain/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -18.155  spain/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): -3.333  spain/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "The late-January to late-April season now starts about 9 days earlier per decade (-18 to -3)."  spain/season.json#/windows/1/sentence
+- this week value: null  spain/nowcast.json#/value
+- this week lo: null  spain/nowcast.json#/lo
+- this week hi: null  spain/nowcast.json#/hi
+- this week percentile: null  spain/nowcast.json#/percentile
+- this week status: "unavailable"  spain/nowcast.json#/status
+- this week as_of: null  spain/nowcast.json#/as_of
+- this week window start: null  spain/nowcast.json#/window/start
+- this week window end: null  spain/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  spain/nowcast.json#/baseline_years
+- month to date value: null  spain/nowcast.json#/month_to_date/value
+- month to date median: null  spain/nowcast.json#/month_to_date/median
+- month to date ratio: null  spain/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  spain/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  spain/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.321  methods.json#/validation/1619/value
+- LOYO weekly WAPE baseline annual_ratio: 0.347  methods.json#/validation/1619/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.581  methods.json#/validation/1619/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1619/years
+- LOYO weekly WAPE (tier2): 0.314  methods.json#/validation/1634/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1634/years
+- reliability_err (tier2): 0.002  methods.json#/validation/1632/value
+- reliability_year_absolute_err (tier2): 0.076  methods.json#/validation/1633/value
+- t1_t2_wape (tier2): 0.312  methods.json#/validation/1636/value
+- eyesight status: "validated"  methods.json#/eyesight/93/status
+- eyesight param a: -4.205  methods.json#/eyesight/93/params/a
+- eyesight param a_hi: -4.094  methods.json#/eyesight/93/params/a_hi
+- eyesight param a_lo: -4.324  methods.json#/eyesight/93/params/a_lo
+- eyesight param b: 2.789  methods.json#/eyesight/93/params/b
+- eyesight param b_hi: 2.999  methods.json#/eyesight/93/params/b_hi
+- eyesight param b_lo: 2.606  methods.json#/eyesight/93/params/b_lo
+- eyesight param c: 0.75  methods.json#/eyesight/93/params/c
+- eyesight param c_hi: 0.826  methods.json#/eyesight/93/params/c_hi
+- eyesight param c_lo: 0.689  methods.json#/eyesight/93/params/c_lo
+- eyesight g: 1.953  methods.json#/eyesight/93/g
+
+## Sri Lanka (`sri-lanka`)
+
+- jump multiple (value): 7.504  sri-lanka/ruler.json#/jump_multiple/value
+- jump multiple (lo): 6.328  sri-lanka/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 10.958  sri-lanka/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  sri-lanka/ruler.json#/jump_multiple/years
+- ruler sentence: "In Sri Lanka, VIIRS reports about 7.5 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  sri-lanka/ruler.json#/sentence
+- harmonized trend pct_per_decade: -42.638  sri-lanka/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -63.895  sri-lanka/trend.json#/harmonized/lo
+- harmonized trend hi: -28.872  sri-lanka/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  sri-lanka/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 48.285  sri-lanka/trend.json#/naive/pct_per_decade
+- naive trend lo: 28.138  sri-lanka/trend.json#/naive/lo
+- naive trend hi: 121.391  sri-lanka/trend.json#/naive/hi
+- naive trend direction: "rising"  sri-lanka/trend.json#/naive/direction
+- trend years: [2003, 2025]  sri-lanka/trend.json#/years
+- verdict sentence_id: "artifact_falling"  sri-lanka/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 43% per decade (-64 to -29)."  sri-lanka/trend.json#/sentence
+- critical weeks: [24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]  sri-lanka/season.json#/critical_weeks
+- window w1 label: "mid-June to early-October"  sri-lanka/season.json#/windows/0/label
+- window w1 start_week: 24  sri-lanka/season.json#/windows/0/start_week
+- window w1 peak_week: 33  sri-lanka/season.json#/windows/0/peak_week
+- window w1 end_week: 40  sri-lanka/season.json#/windows/0/end_week
+- window w1 share: 0.809  sri-lanka/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 10.0  sri-lanka/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): 1.0  sri-lanka/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 16.667  sri-lanka/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "The mid-June to early-October season now starts about 10 days later per decade (1 to 17)."  sri-lanka/season.json#/windows/0/sentence
+- this week value: null  sri-lanka/nowcast.json#/value
+- this week lo: null  sri-lanka/nowcast.json#/lo
+- this week hi: null  sri-lanka/nowcast.json#/hi
+- this week percentile: null  sri-lanka/nowcast.json#/percentile
+- this week status: "unavailable"  sri-lanka/nowcast.json#/status
+- this week as_of: null  sri-lanka/nowcast.json#/as_of
+- this week window start: null  sri-lanka/nowcast.json#/window/start
+- this week window end: null  sri-lanka/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  sri-lanka/nowcast.json#/baseline_years
+- month to date value: null  sri-lanka/nowcast.json#/month_to_date/value
+- month to date median: null  sri-lanka/nowcast.json#/month_to_date/median
+- month to date ratio: null  sri-lanka/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  sri-lanka/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  sri-lanka/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.373  methods.json#/validation/1637/value
+- LOYO weekly WAPE baseline annual_ratio: 0.423  methods.json#/validation/1637/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 6.869  methods.json#/validation/1637/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1637/years
+- LOYO weekly WAPE (tier2): 0.394  methods.json#/validation/1652/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1652/years
+- reliability_err (tier2): 0.001  methods.json#/validation/1650/value
+- reliability_year_absolute_err (tier2): 0.116  methods.json#/validation/1651/value
+- t1_t2_wape (tier2): 0.209  methods.json#/validation/1654/value
+- eyesight status: "validated"  methods.json#/eyesight/94/status
+- eyesight param a: -4.199  methods.json#/eyesight/94/params/a
+- eyesight param a_hi: -4.01  methods.json#/eyesight/94/params/a_hi
+- eyesight param a_lo: -4.365  methods.json#/eyesight/94/params/a_lo
+- eyesight param b: 2.608  methods.json#/eyesight/94/params/b
+- eyesight param b_hi: 2.81  methods.json#/eyesight/94/params/b_hi
+- eyesight param b_lo: 2.45  methods.json#/eyesight/94/params/b_lo
+- eyesight param c: 0.373  methods.json#/eyesight/94/params/c
+- eyesight param c_hi: 0.427  methods.json#/eyesight/94/params/c_hi
+- eyesight param c_lo: 0.301  methods.json#/eyesight/94/params/c_lo
+- eyesight g: 2.431  methods.json#/eyesight/94/g
+
+## Suriname (`suriname`)
+
+- jump multiple (value): 4.48  suriname/ruler.json#/jump_multiple/value
+- jump multiple (lo): 4.069  suriname/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 6.504  suriname/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  suriname/ruler.json#/jump_multiple/years
+- ruler sentence: "In Suriname, VIIRS reports about 4.5 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  suriname/ruler.json#/sentence
+- harmonized trend pct_per_decade: -4.114  suriname/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -28.533  suriname/trend.json#/harmonized/lo
+- harmonized trend hi: 29.03  suriname/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  suriname/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 97.096  suriname/trend.json#/naive/pct_per_decade
+- naive trend lo: 41.342  suriname/trend.json#/naive/lo
+- naive trend hi: 187.507  suriname/trend.json#/naive/hi
+- naive trend direction: "rising"  suriname/trend.json#/naive/direction
+- trend years: [2003, 2025]  suriname/trend.json#/years
+- verdict sentence_id: "artifact_flat"  suriname/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 97% per decade. After correcting for the sensor change, there is no clear change (-29 to 29% per decade)."  suriname/trend.json#/sentence
+- critical weeks: [37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47]  suriname/season.json#/critical_weeks
+- window w1 label: "early-September to late-November"  suriname/season.json#/windows/0/label
+- window w1 start_week: 37  suriname/season.json#/windows/0/start_week
+- window w1 peak_week: 42  suriname/season.json#/windows/0/peak_week
+- window w1 end_week: 47  suriname/season.json#/windows/0/end_week
+- window w1 share: 0.819  suriname/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -2.0  suriname/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -6.253  suriname/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 2.0  suriname/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-September to late-November season."  suriname/season.json#/windows/0/sentence
+- this week value: null  suriname/nowcast.json#/value
+- this week lo: null  suriname/nowcast.json#/lo
+- this week hi: null  suriname/nowcast.json#/hi
+- this week percentile: null  suriname/nowcast.json#/percentile
+- this week status: "unavailable"  suriname/nowcast.json#/status
+- this week as_of: null  suriname/nowcast.json#/as_of
+- this week window start: null  suriname/nowcast.json#/window/start
+- this week window end: null  suriname/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  suriname/nowcast.json#/baseline_years
+- month to date value: null  suriname/nowcast.json#/month_to_date/value
+- month to date median: null  suriname/nowcast.json#/month_to_date/median
+- month to date ratio: null  suriname/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  suriname/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  suriname/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.306  methods.json#/validation/1655/value
+- LOYO weekly WAPE baseline annual_ratio: 0.313  methods.json#/validation/1655/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.21  methods.json#/validation/1655/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1655/years
+- LOYO weekly WAPE (tier2): 0.318  methods.json#/validation/1670/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1670/years
+- reliability_err (tier2): 0.001  methods.json#/validation/1668/value
+- reliability_year_absolute_err (tier2): 0.077  methods.json#/validation/1669/value
+- t1_t2_wape (tier2): 0.133  methods.json#/validation/1672/value
+- eyesight status: "validated"  methods.json#/eyesight/95/status
+- eyesight param a: -3.237  methods.json#/eyesight/95/params/a
+- eyesight param a_hi: -3.094  methods.json#/eyesight/95/params/a_hi
+- eyesight param a_lo: -3.434  methods.json#/eyesight/95/params/a_lo
+- eyesight param b: 2.298  methods.json#/eyesight/95/params/b
+- eyesight param b_hi: 2.685  methods.json#/eyesight/95/params/b_hi
+- eyesight param b_lo: 2.008  methods.json#/eyesight/95/params/b_lo
+- eyesight param c: 0.459  methods.json#/eyesight/95/params/c
+- eyesight param c_hi: 0.602  methods.json#/eyesight/95/params/c_hi
+- eyesight param c_lo: 0.371  methods.json#/eyesight/95/params/c_lo
+- eyesight g: 1.92  methods.json#/eyesight/95/g
+
+## eSwatini (`swaziland`)
+
+- jump multiple (value): 3.714  swaziland/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.233  swaziland/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 4.089  swaziland/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  swaziland/ruler.json#/jump_multiple/years
+- ruler sentence: "In eSwatini, VIIRS reports about 3.7 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  swaziland/ruler.json#/sentence
+- harmonized trend pct_per_decade: 11.015  swaziland/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -4.657  swaziland/trend.json#/harmonized/lo
+- harmonized trend hi: 24.599  swaziland/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  swaziland/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 64.462  swaziland/trend.json#/naive/pct_per_decade
+- naive trend lo: 41.833  swaziland/trend.json#/naive/lo
+- naive trend hi: 119.324  swaziland/trend.json#/naive/hi
+- naive trend direction: "rising"  swaziland/trend.json#/naive/direction
+- trend years: [2003, 2025]  swaziland/trend.json#/years
+- verdict sentence_id: "artifact_flat"  swaziland/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 64% per decade. After correcting for the sensor change, there is no clear change (-5 to 25% per decade)."  swaziland/trend.json#/sentence
+- critical weeks: [24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41]  swaziland/season.json#/critical_weeks
+- window w1 label: "mid-June to mid-October"  swaziland/season.json#/windows/0/label
+- window w1 start_week: 24  swaziland/season.json#/windows/0/start_week
+- window w1 peak_week: 35  swaziland/season.json#/windows/0/peak_week
+- window w1 end_week: 41  swaziland/season.json#/windows/0/end_week
+- window w1 share: 0.801  swaziland/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 2.0  swaziland/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -3.333  swaziland/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 6.667  swaziland/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the mid-June to mid-October season."  swaziland/season.json#/windows/0/sentence
+- this week value: null  swaziland/nowcast.json#/value
+- this week lo: null  swaziland/nowcast.json#/lo
+- this week hi: null  swaziland/nowcast.json#/hi
+- this week percentile: null  swaziland/nowcast.json#/percentile
+- this week status: "unavailable"  swaziland/nowcast.json#/status
+- this week as_of: null  swaziland/nowcast.json#/as_of
+- this week window start: null  swaziland/nowcast.json#/window/start
+- this week window end: null  swaziland/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  swaziland/nowcast.json#/baseline_years
+- month to date value: null  swaziland/nowcast.json#/month_to_date/value
+- month to date median: null  swaziland/nowcast.json#/month_to_date/median
+- month to date ratio: null  swaziland/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  swaziland/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  swaziland/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.317  methods.json#/validation/1673/value
+- LOYO weekly WAPE baseline annual_ratio: 0.327  methods.json#/validation/1673/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.013  methods.json#/validation/1673/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1673/years
+- LOYO weekly WAPE (tier2): 0.269  methods.json#/validation/1688/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1688/years
+- reliability_err (tier2): 0.003  methods.json#/validation/1686/value
+- reliability_year_absolute_err (tier2): 0.088  methods.json#/validation/1687/value
+- t1_t2_wape (tier2): 0.184  methods.json#/validation/1690/value
+- eyesight status: "validated"  methods.json#/eyesight/96/status
+- eyesight param a: -3.627  methods.json#/eyesight/96/params/a
+- eyesight param a_hi: -3.508  methods.json#/eyesight/96/params/a_hi
+- eyesight param a_lo: -3.761  methods.json#/eyesight/96/params/a_lo
+- eyesight param b: 2.456  methods.json#/eyesight/96/params/b
+- eyesight param b_hi: 2.603  methods.json#/eyesight/96/params/b_hi
+- eyesight param b_lo: 2.337  methods.json#/eyesight/96/params/b_lo
+- eyesight param c: 0.799  methods.json#/eyesight/96/params/c
+- eyesight param c_hi: 0.832  methods.json#/eyesight/96/params/c_hi
+- eyesight param c_lo: 0.751  methods.json#/eyesight/96/params/c_lo
+- eyesight g: 1.449  methods.json#/eyesight/96/g
+
+## Sweden (`sweden`)
+
+- jump multiple (value): 3.578  sweden/ruler.json#/jump_multiple/value
+- jump multiple (lo): 2.88  sweden/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 5.482  sweden/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  sweden/ruler.json#/jump_multiple/years
+- ruler sentence: "In Sweden, VIIRS reports about 3.6 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  sweden/ruler.json#/sentence
+- harmonized trend pct_per_decade: -57.952  sweden/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -71.467  sweden/trend.json#/harmonized/lo
+- harmonized trend hi: -32.272  sweden/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  sweden/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 23.108  sweden/trend.json#/naive/pct_per_decade
+- naive trend lo: 0.0  sweden/trend.json#/naive/lo
+- naive trend hi: 43.497  sweden/trend.json#/naive/hi
+- naive trend direction: "no_clear_change"  sweden/trend.json#/naive/direction
+- trend years: [2003, 2025]  sweden/trend.json#/years
+- verdict sentence_id: "artifact_falling"  sweden/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 58% per decade (-71 to -32)."  sweden/trend.json#/sentence
+- critical weeks: [15, 16, 17, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 32, 33, 34]  sweden/season.json#/critical_weeks
+- window w1 label: "late-May to late-August"  sweden/season.json#/windows/0/label
+- window w1 start_week: 21  sweden/season.json#/windows/0/start_week
+- window w1 peak_week: 23  sweden/season.json#/windows/0/peak_week
+- window w1 end_week: 34  sweden/season.json#/windows/0/end_week
+- window w1 share: 0.763  sweden/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -9.524  sweden/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -16.154  sweden/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): -2.353  sweden/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "The late-May to late-August season now starts about 10 days earlier per decade (-16 to -2)."  sweden/season.json#/windows/0/sentence
+- this week value: null  sweden/nowcast.json#/value
+- this week lo: null  sweden/nowcast.json#/lo
+- this week hi: null  sweden/nowcast.json#/hi
+- this week percentile: null  sweden/nowcast.json#/percentile
+- this week status: "unavailable"  sweden/nowcast.json#/status
+- this week as_of: null  sweden/nowcast.json#/as_of
+- this week window start: null  sweden/nowcast.json#/window/start
+- this week window end: null  sweden/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  sweden/nowcast.json#/baseline_years
+- month to date value: null  sweden/nowcast.json#/month_to_date/value
+- month to date median: null  sweden/nowcast.json#/month_to_date/median
+- month to date ratio: null  sweden/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  sweden/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  sweden/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.579  methods.json#/validation/1691/value
+- LOYO weekly WAPE baseline annual_ratio: 0.636  methods.json#/validation/1691/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.051  methods.json#/validation/1691/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1691/years
+- eyesight status: "absent"  methods.json#/eyesight/97/status
+
+## Syria (`syria`)
+
+- jump multiple (value): 5.006  syria/ruler.json#/jump_multiple/value
+- jump multiple (lo): 4.465  syria/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 9.789  syria/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  syria/ruler.json#/jump_multiple/years
+- ruler sentence: "In Syria, VIIRS reports about 5.0 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  syria/ruler.json#/sentence
+- harmonized trend pct_per_decade: 53.968  syria/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: 0.309  syria/trend.json#/harmonized/lo
+- harmonized trend hi: 105.003  syria/trend.json#/harmonized/hi
+- harmonized trend direction: "rising"  syria/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 78.884  syria/trend.json#/naive/pct_per_decade
+- naive trend lo: 33.906  syria/trend.json#/naive/lo
+- naive trend hi: 199.929  syria/trend.json#/naive/hi
+- naive trend direction: "rising"  syria/trend.json#/naive/direction
+- trend years: [2003, 2025]  syria/trend.json#/years
+- verdict sentence_id: "unclear"  syria/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (0 to 105% per decade)."  syria/trend.json#/sentence
+- critical weeks: [9, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 43, 44, 45]  syria/season.json#/critical_weeks
+- window w1 label: "late-May to mid-November"  syria/season.json#/windows/0/label
+- window w1 start_week: 22  syria/season.json#/windows/0/start_week
+- window w1 peak_week: 26  syria/season.json#/windows/0/peak_week
+- window w1 end_week: 45  syria/season.json#/windows/0/end_week
+- window w1 share: 0.805  syria/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -10.0  syria/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -16.429  syria/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): -3.095  syria/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "The late-May to mid-November season now starts about 10 days earlier per decade (-16 to -3)."  syria/season.json#/windows/0/sentence
+- this week value: null  syria/nowcast.json#/value
+- this week lo: null  syria/nowcast.json#/lo
+- this week hi: null  syria/nowcast.json#/hi
+- this week percentile: null  syria/nowcast.json#/percentile
+- this week status: "unavailable"  syria/nowcast.json#/status
+- this week as_of: null  syria/nowcast.json#/as_of
+- this week window start: null  syria/nowcast.json#/window/start
+- this week window end: null  syria/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  syria/nowcast.json#/baseline_years
+- month to date value: null  syria/nowcast.json#/month_to_date/value
+- month to date median: null  syria/nowcast.json#/month_to_date/median
+- month to date ratio: null  syria/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  syria/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  syria/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.347  methods.json#/validation/1704/value
+- LOYO weekly WAPE baseline annual_ratio: 0.379  methods.json#/validation/1704/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.577  methods.json#/validation/1704/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1704/years
+- LOYO weekly WAPE (tier2): 0.311  methods.json#/validation/1719/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1719/years
+- reliability_err (tier2): 0.002  methods.json#/validation/1717/value
+- reliability_year_absolute_err (tier2): 0.084  methods.json#/validation/1718/value
+- t1_t2_wape (tier2): 0.276  methods.json#/validation/1721/value
+- eyesight status: "validated"  methods.json#/eyesight/98/status
+- eyesight param a: -4.349  methods.json#/eyesight/98/params/a
+- eyesight param a_hi: -4.24  methods.json#/eyesight/98/params/a_hi
+- eyesight param a_lo: -4.578  methods.json#/eyesight/98/params/a_lo
+- eyesight param b: 2.095  methods.json#/eyesight/98/params/b
+- eyesight param b_hi: 2.385  methods.json#/eyesight/98/params/b_hi
+- eyesight param b_lo: 1.94  methods.json#/eyesight/98/params/b_lo
+- eyesight param c: 0.854  methods.json#/eyesight/98/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/98/params/c_hi
+- eyesight param c_lo: 0.698  methods.json#/eyesight/98/params/c_lo
+- eyesight g: 1.884  methods.json#/eyesight/98/g
+
+## Taiwan (`taiwan`)
+
+- jump multiple (value): 3.977  taiwan/ruler.json#/jump_multiple/value
+- jump multiple (lo): 2.048  taiwan/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 7.894  taiwan/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  taiwan/ruler.json#/jump_multiple/years
+- ruler sentence: "In Taiwan, VIIRS reports about 4.0 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  taiwan/ruler.json#/sentence
+- harmonized trend pct_per_decade: -42.155  taiwan/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -60.662  taiwan/trend.json#/harmonized/lo
+- harmonized trend hi: -23.446  taiwan/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  taiwan/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 42.901  taiwan/trend.json#/naive/pct_per_decade
+- naive trend lo: 28.479  taiwan/trend.json#/naive/lo
+- naive trend hi: 93.014  taiwan/trend.json#/naive/hi
+- naive trend direction: "rising"  taiwan/trend.json#/naive/direction
+- trend years: [2003, 2025]  taiwan/trend.json#/years
+- verdict sentence_id: "artifact_falling"  taiwan/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 42% per decade (-61 to -23)."  taiwan/trend.json#/sentence
+- critical weeks: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 19, 20, 25, 26, 27, 28, 29, 30, 35, 36, 37, 38, 47, 48, 49, 50]  taiwan/season.json#/critical_weeks
+- window w1 label: "early-January to mid-April"  taiwan/season.json#/windows/0/label
+- window w1 start_week: 1  taiwan/season.json#/windows/0/start_week
+- window w1 peak_week: 13  taiwan/season.json#/windows/0/peak_week
+- window w1 end_week: 15  taiwan/season.json#/windows/0/end_week
+- window w1 share: 0.423  taiwan/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 22.5  taiwan/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): 4.283  taiwan/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 35.0  taiwan/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "The early-January to mid-April season now starts about 23 days later per decade (4 to 35)."  taiwan/season.json#/windows/0/sentence
+- window w2 label: "mid-June to late-July"  taiwan/season.json#/windows/1/label
+- window w2 start_week: 25  taiwan/season.json#/windows/1/start_week
+- window w2 peak_week: 26  taiwan/season.json#/windows/1/peak_week
+- window w2 end_week: 30  taiwan/season.json#/windows/1/end_week
+- window w2 share: 0.168  taiwan/season.json#/windows/1/share
+- window w2 start shift days per decade (value): 13.875  taiwan/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): 3.333  taiwan/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): 25.714  taiwan/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "The mid-June to late-July season now starts about 14 days later per decade (3 to 26)."  taiwan/season.json#/windows/1/sentence
+- this week value: null  taiwan/nowcast.json#/value
+- this week lo: null  taiwan/nowcast.json#/lo
+- this week hi: null  taiwan/nowcast.json#/hi
+- this week percentile: null  taiwan/nowcast.json#/percentile
+- this week status: "unavailable"  taiwan/nowcast.json#/status
+- this week as_of: null  taiwan/nowcast.json#/as_of
+- this week window start: null  taiwan/nowcast.json#/window/start
+- this week window end: null  taiwan/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  taiwan/nowcast.json#/baseline_years
+- month to date value: null  taiwan/nowcast.json#/month_to_date/value
+- month to date median: null  taiwan/nowcast.json#/month_to_date/median
+- month to date ratio: null  taiwan/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  taiwan/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  taiwan/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.832  methods.json#/validation/1722/value
+- LOYO weekly WAPE baseline annual_ratio: 0.866  methods.json#/validation/1722/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 5.016  methods.json#/validation/1722/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1722/years
+- LOYO weekly WAPE (tier2): 0.874  methods.json#/validation/1737/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1737/years
+- reliability_err (tier2): 0.003  methods.json#/validation/1735/value
+- reliability_year_absolute_err (tier2): 0.252  methods.json#/validation/1736/value
+- t1_t2_wape (tier2): 0.499  methods.json#/validation/1739/value
+- eyesight status: "validated"  methods.json#/eyesight/99/status
+- eyesight param a: -4.937  methods.json#/eyesight/99/params/a
+- eyesight param a_hi: -4.523  methods.json#/eyesight/99/params/a_hi
+- eyesight param a_lo: -5.417  methods.json#/eyesight/99/params/a_lo
+- eyesight param b: 2.763  methods.json#/eyesight/99/params/b
+- eyesight param b_hi: 3.243  methods.json#/eyesight/99/params/b_hi
+- eyesight param b_lo: 2.368  methods.json#/eyesight/99/params/b_lo
+- eyesight param c: 0.756  methods.json#/eyesight/99/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/99/params/c_hi
+- eyesight param c_lo: 0.548  methods.json#/eyesight/99/params/c_lo
+- eyesight g: 3.743  methods.json#/eyesight/99/g
+
+## Tajikistan (`tajikistan`)
+
+- jump multiple (value): 4.226  tajikistan/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.253  tajikistan/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 6.709  tajikistan/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  tajikistan/ruler.json#/jump_multiple/years
+- ruler sentence: "In Tajikistan, VIIRS reports about 4.2 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  tajikistan/ruler.json#/sentence
+- harmonized trend pct_per_decade: -40.983  tajikistan/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -77.463  tajikistan/trend.json#/harmonized/lo
+- harmonized trend hi: -7.739  tajikistan/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  tajikistan/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 42.676  tajikistan/trend.json#/naive/pct_per_decade
+- naive trend lo: 17.152  tajikistan/trend.json#/naive/lo
+- naive trend hi: 68.878  tajikistan/trend.json#/naive/hi
+- naive trend direction: "rising"  tajikistan/trend.json#/naive/direction
+- trend years: [2003, 2025]  tajikistan/trend.json#/years
+- verdict sentence_id: "artifact_falling"  tajikistan/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 41% per decade (-77 to -8)."  tajikistan/trend.json#/sentence
+- critical weeks: [6, 7, 8, 9, 10, 11, 27, 28, 29, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 44]  tajikistan/season.json#/critical_weeks
+- window w1 label: "early-July to mid-October"  tajikistan/season.json#/windows/0/label
+- window w1 start_week: 27  tajikistan/season.json#/windows/0/start_week
+- window w1 peak_week: 33  tajikistan/season.json#/windows/0/peak_week
+- window w1 end_week: 41  tajikistan/season.json#/windows/0/end_week
+- window w1 share: 0.556  tajikistan/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -9.545  tajikistan/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -30.0  tajikistan/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 0.833  tajikistan/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-July to mid-October season."  tajikistan/season.json#/windows/0/sentence
+- window w2 label: "early-February to mid-March"  tajikistan/season.json#/windows/1/label
+- window w2 start_week: 6  tajikistan/season.json#/windows/1/start_week
+- window w2 peak_week: 7  tajikistan/season.json#/windows/1/peak_week
+- window w2 end_week: 11  tajikistan/season.json#/windows/1/end_week
+- window w2 share: 0.255  tajikistan/season.json#/windows/1/share
+- window w2 start shift days per decade (value): -4.091  tajikistan/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -60.0  tajikistan/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): 5.556  tajikistan/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "No clear shift in the timing of the early-February to mid-March season."  tajikistan/season.json#/windows/1/sentence
+- this week value: null  tajikistan/nowcast.json#/value
+- this week lo: null  tajikistan/nowcast.json#/lo
+- this week hi: null  tajikistan/nowcast.json#/hi
+- this week percentile: null  tajikistan/nowcast.json#/percentile
+- this week status: "unavailable"  tajikistan/nowcast.json#/status
+- this week as_of: null  tajikistan/nowcast.json#/as_of
+- this week window start: null  tajikistan/nowcast.json#/window/start
+- this week window end: null  tajikistan/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  tajikistan/nowcast.json#/baseline_years
+- month to date value: null  tajikistan/nowcast.json#/month_to_date/value
+- month to date median: null  tajikistan/nowcast.json#/month_to_date/median
+- month to date ratio: null  tajikistan/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  tajikistan/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  tajikistan/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.877  methods.json#/validation/1740/value
+- LOYO weekly WAPE baseline annual_ratio: 0.876  methods.json#/validation/1740/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.946  methods.json#/validation/1740/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1740/years
+- eyesight status: "absent"  methods.json#/eyesight/100/status
+
+## Gambia (`the-gambia`)
+
+- jump multiple (value): 4.695  the-gambia/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.859  the-gambia/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 5.508  the-gambia/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  the-gambia/ruler.json#/jump_multiple/years
+- ruler sentence: "In Gambia, VIIRS reports about 4.7 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  the-gambia/ruler.json#/sentence
+- harmonized trend pct_per_decade: 2.714  the-gambia/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -12.188  the-gambia/trend.json#/harmonized/lo
+- harmonized trend hi: 17.545  the-gambia/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  the-gambia/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 62.705  the-gambia/trend.json#/naive/pct_per_decade
+- naive trend lo: 47.778  the-gambia/trend.json#/naive/lo
+- naive trend hi: 170.3  the-gambia/trend.json#/naive/hi
+- naive trend direction: "rising"  the-gambia/trend.json#/naive/direction
+- trend years: [2003, 2025]  the-gambia/trend.json#/years
+- verdict sentence_id: "artifact_flat"  the-gambia/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 63% per decade. After correcting for the sensor change, there is no clear change (-12 to 18% per decade)."  the-gambia/trend.json#/sentence
+- critical weeks: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 51, 52]  the-gambia/season.json#/critical_weeks
+- window w1 label: "mid-December to mid-May"  the-gambia/season.json#/windows/0/label
+- window w1 start_week: 51  the-gambia/season.json#/windows/0/start_week
+- window w1 peak_week: 10  the-gambia/season.json#/windows/0/peak_week
+- window w1 end_week: 20  the-gambia/season.json#/windows/0/end_week
+- window w1 share: 0.815  the-gambia/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 7.5  the-gambia/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): 1.429  the-gambia/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 12.222  the-gambia/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "The mid-December to mid-May season now starts about 8 days later per decade (1 to 12)."  the-gambia/season.json#/windows/0/sentence
+- this week value: null  the-gambia/nowcast.json#/value
+- this week lo: null  the-gambia/nowcast.json#/lo
+- this week hi: null  the-gambia/nowcast.json#/hi
+- this week percentile: null  the-gambia/nowcast.json#/percentile
+- this week status: "unavailable"  the-gambia/nowcast.json#/status
+- this week as_of: null  the-gambia/nowcast.json#/as_of
+- this week window start: null  the-gambia/nowcast.json#/window/start
+- this week window end: null  the-gambia/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  the-gambia/nowcast.json#/baseline_years
+- month to date value: null  the-gambia/nowcast.json#/month_to_date/value
+- month to date median: null  the-gambia/nowcast.json#/month_to_date/median
+- month to date ratio: null  the-gambia/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  the-gambia/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  the-gambia/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.331  methods.json#/validation/1753/value
+- LOYO weekly WAPE baseline annual_ratio: 0.422  methods.json#/validation/1753/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.678  methods.json#/validation/1753/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1753/years
+- LOYO weekly WAPE (tier2): 0.34  methods.json#/validation/1768/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1768/years
+- reliability_err (tier2): 0.0  methods.json#/validation/1766/value
+- reliability_year_absolute_err (tier2): 0.096  methods.json#/validation/1767/value
+- t1_t2_wape (tier2): 0.235  methods.json#/validation/1770/value
+- eyesight status: "validated"  methods.json#/eyesight/101/status
+- eyesight param a: -4.3  methods.json#/eyesight/101/params/a
+- eyesight param a_hi: -4.165  methods.json#/eyesight/101/params/a_hi
+- eyesight param a_lo: -4.489  methods.json#/eyesight/101/params/a_lo
+- eyesight param b: 2.282  methods.json#/eyesight/101/params/b
+- eyesight param b_hi: 2.497  methods.json#/eyesight/101/params/b_hi
+- eyesight param b_lo: 2.164  methods.json#/eyesight/101/params/b_lo
+- eyesight param c: 0.93  methods.json#/eyesight/101/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/101/params/c_hi
+- eyesight param c_lo: 0.838  methods.json#/eyesight/101/params/c_lo
+- eyesight g: 1.476  methods.json#/eyesight/101/g
+
+## East Timor (`timor-leste`)
+
+- jump multiple (value): 7.4  timor-leste/ruler.json#/jump_multiple/value
+- jump multiple (lo): 6.717  timor-leste/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 9.723  timor-leste/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  timor-leste/ruler.json#/jump_multiple/years
+- ruler sentence: "In East Timor, VIIRS reports about 7.4 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  timor-leste/ruler.json#/sentence
+- harmonized trend pct_per_decade: -55.86  timor-leste/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -87.98  timor-leste/trend.json#/harmonized/lo
+- harmonized trend hi: -26.289  timor-leste/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  timor-leste/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 40.454  timor-leste/trend.json#/naive/pct_per_decade
+- naive trend lo: 14.064  timor-leste/trend.json#/naive/lo
+- naive trend hi: 133.068  timor-leste/trend.json#/naive/hi
+- naive trend direction: "rising"  timor-leste/trend.json#/naive/direction
+- trend years: [2003, 2025]  timor-leste/trend.json#/years
+- verdict sentence_id: "artifact_falling"  timor-leste/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 56% per decade (-88 to -26)."  timor-leste/trend.json#/sentence
+- critical weeks: [34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44]  timor-leste/season.json#/critical_weeks
+- window w1 label: "mid-August to early-November"  timor-leste/season.json#/windows/0/label
+- window w1 start_week: 34  timor-leste/season.json#/windows/0/start_week
+- window w1 peak_week: 41  timor-leste/season.json#/windows/0/peak_week
+- window w1 end_week: 44  timor-leste/season.json#/windows/0/end_week
+- window w1 share: 0.816  timor-leste/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 1.538  timor-leste/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -5.0  timor-leste/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 5.714  timor-leste/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the mid-August to early-November season."  timor-leste/season.json#/windows/0/sentence
+- this week value: null  timor-leste/nowcast.json#/value
+- this week lo: null  timor-leste/nowcast.json#/lo
+- this week hi: null  timor-leste/nowcast.json#/hi
+- this week percentile: null  timor-leste/nowcast.json#/percentile
+- this week status: "unavailable"  timor-leste/nowcast.json#/status
+- this week as_of: null  timor-leste/nowcast.json#/as_of
+- this week window start: null  timor-leste/nowcast.json#/window/start
+- this week window end: null  timor-leste/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  timor-leste/nowcast.json#/baseline_years
+- month to date value: null  timor-leste/nowcast.json#/month_to_date/value
+- month to date median: null  timor-leste/nowcast.json#/month_to_date/median
+- month to date ratio: null  timor-leste/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  timor-leste/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  timor-leste/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.358  methods.json#/validation/1771/value
+- LOYO weekly WAPE baseline annual_ratio: 0.355  methods.json#/validation/1771/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 6.796  methods.json#/validation/1771/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1771/years
+- LOYO weekly WAPE (tier2): 0.326  methods.json#/validation/1786/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1786/years
+- reliability_err (tier2): 0.007  methods.json#/validation/1784/value
+- reliability_year_absolute_err (tier2): 0.141  methods.json#/validation/1785/value
+- t1_t2_wape (tier2): 0.167  methods.json#/validation/1788/value
+- eyesight status: "validated"  methods.json#/eyesight/102/status
+- eyesight param a: -4.57  methods.json#/eyesight/102/params/a
+- eyesight param a_hi: -4.243  methods.json#/eyesight/102/params/a_hi
+- eyesight param a_lo: -4.708  methods.json#/eyesight/102/params/a_lo
+- eyesight param b: 2.213  methods.json#/eyesight/102/params/b
+- eyesight param b_hi: 2.545  methods.json#/eyesight/102/params/b_hi
+- eyesight param b_lo: 2.078  methods.json#/eyesight/102/params/b_lo
+- eyesight param c: 1.0  methods.json#/eyesight/102/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/102/params/c_hi
+- eyesight param c_lo: 0.63  methods.json#/eyesight/102/params/c_lo
+- eyesight g: 1.712  methods.json#/eyesight/102/g
+
+## Togo (`togo`)
+
+- jump multiple (value): 4.511  togo/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.959  togo/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 5.149  togo/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  togo/ruler.json#/jump_multiple/years
+- ruler sentence: "In Togo, VIIRS reports about 4.5 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  togo/ruler.json#/sentence
+- harmonized trend pct_per_decade: -35.027  togo/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -49.328  togo/trend.json#/harmonized/lo
+- harmonized trend hi: -24.834  togo/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  togo/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 31.441  togo/trend.json#/naive/pct_per_decade
+- naive trend lo: 8.673  togo/trend.json#/naive/lo
+- naive trend hi: 90.37  togo/trend.json#/naive/hi
+- naive trend direction: "rising"  togo/trend.json#/naive/direction
+- trend years: [2003, 2025]  togo/trend.json#/years
+- verdict sentence_id: "artifact_falling"  togo/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 35% per decade (-49 to -25)."  togo/trend.json#/sentence
+- critical weeks: [1, 2, 3, 4, 5, 47, 48, 49, 50, 51, 52]  togo/season.json#/critical_weeks
+- window w1 label: "mid-November to early-February"  togo/season.json#/windows/0/label
+- window w1 start_week: 47  togo/season.json#/windows/0/start_week
+- window w1 peak_week: 52  togo/season.json#/windows/0/peak_week
+- window w1 end_week: 5  togo/season.json#/windows/0/end_week
+- window w1 share: 0.834  togo/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 5.556  togo/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): 2.91  togo/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 10.0  togo/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "The mid-November to early-February season now starts about 6 days later per decade (3 to 10)."  togo/season.json#/windows/0/sentence
+- this week value: null  togo/nowcast.json#/value
+- this week lo: null  togo/nowcast.json#/lo
+- this week hi: null  togo/nowcast.json#/hi
+- this week percentile: null  togo/nowcast.json#/percentile
+- this week status: "unavailable"  togo/nowcast.json#/status
+- this week as_of: null  togo/nowcast.json#/as_of
+- this week window start: null  togo/nowcast.json#/window/start
+- this week window end: null  togo/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  togo/nowcast.json#/baseline_years
+- month to date value: null  togo/nowcast.json#/month_to_date/value
+- month to date median: null  togo/nowcast.json#/month_to_date/median
+- month to date ratio: null  togo/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  togo/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  togo/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.174  methods.json#/validation/1789/value
+- LOYO weekly WAPE baseline annual_ratio: 0.261  methods.json#/validation/1789/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.446  methods.json#/validation/1789/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1789/years
+- LOYO weekly WAPE (tier2): 0.205  methods.json#/validation/1804/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1804/years
+- reliability_err (tier2): 0.001  methods.json#/validation/1802/value
+- reliability_year_absolute_err (tier2): 0.054  methods.json#/validation/1803/value
+- t1_t2_wape (tier2): 0.151  methods.json#/validation/1806/value
+- eyesight status: "exploratory"  methods.json#/eyesight/103/status
+- eyesight param a: -3.869  methods.json#/eyesight/103/params/a
+- eyesight param a_hi: -3.77  methods.json#/eyesight/103/params/a_hi
+- eyesight param a_lo: -4.018  methods.json#/eyesight/103/params/a_lo
+- eyesight param b: 2.326  methods.json#/eyesight/103/params/b
+- eyesight param b_hi: 2.412  methods.json#/eyesight/103/params/b_hi
+- eyesight param b_lo: 2.25  methods.json#/eyesight/103/params/b_lo
+- eyesight param c: 0.754  methods.json#/eyesight/103/params/c
+- eyesight param c_hi: 0.807  methods.json#/eyesight/103/params/c_hi
+- eyesight param c_lo: 0.716  methods.json#/eyesight/103/params/c_lo
+- eyesight g: 1.722  methods.json#/eyesight/103/g
+
+## Tunisia (`tunisia`)
+
+- jump multiple (value): 5.422  tunisia/ruler.json#/jump_multiple/value
+- jump multiple (lo): 4.297  tunisia/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 15.924  tunisia/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  tunisia/ruler.json#/jump_multiple/years
+- ruler sentence: "In Tunisia, VIIRS reports about 5.4 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  tunisia/ruler.json#/sentence
+- harmonized trend pct_per_decade: 56.678  tunisia/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: 13.552  tunisia/trend.json#/harmonized/lo
+- harmonized trend hi: 83.02  tunisia/trend.json#/harmonized/hi
+- harmonized trend direction: "rising"  tunisia/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 59.973  tunisia/trend.json#/naive/pct_per_decade
+- naive trend lo: 34.706  tunisia/trend.json#/naive/lo
+- naive trend hi: 346.089  tunisia/trend.json#/naive/hi
+- naive trend direction: "rising"  tunisia/trend.json#/naive/direction
+- trend years: [2003, 2025]  tunisia/trend.json#/years
+- verdict sentence_id: "agree"  tunisia/trend.json#/sentence_id
+- verdict sentence: "Raw and corrected records agree: satellite-detected burning activity rose, about 57% per decade (14 to 83)."  tunisia/trend.json#/sentence
+- critical weeks: [28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38]  tunisia/season.json#/critical_weeks
+- window w1 label: "early-July to late-September"  tunisia/season.json#/windows/0/label
+- window w1 start_week: 28  tunisia/season.json#/windows/0/start_week
+- window w1 peak_week: 34  tunisia/season.json#/windows/0/peak_week
+- window w1 end_week: 38  tunisia/season.json#/windows/0/end_week
+- window w1 share: 0.81  tunisia/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -6.667  tunisia/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -15.835  tunisia/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 1.254  tunisia/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-July to late-September season."  tunisia/season.json#/windows/0/sentence
+- this week value: null  tunisia/nowcast.json#/value
+- this week lo: null  tunisia/nowcast.json#/lo
+- this week hi: null  tunisia/nowcast.json#/hi
+- this week percentile: null  tunisia/nowcast.json#/percentile
+- this week status: "unavailable"  tunisia/nowcast.json#/status
+- this week as_of: null  tunisia/nowcast.json#/as_of
+- this week window start: null  tunisia/nowcast.json#/window/start
+- this week window end: null  tunisia/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  tunisia/nowcast.json#/baseline_years
+- month to date value: null  tunisia/nowcast.json#/month_to_date/value
+- month to date median: null  tunisia/nowcast.json#/month_to_date/median
+- month to date ratio: null  tunisia/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  tunisia/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  tunisia/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.635  methods.json#/validation/1807/value
+- LOYO weekly WAPE baseline annual_ratio: 0.787  methods.json#/validation/1807/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.407  methods.json#/validation/1807/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1807/years
+- LOYO weekly WAPE (tier2): 0.427  methods.json#/validation/1822/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1822/years
+- reliability_err (tier2): 0.006  methods.json#/validation/1820/value
+- reliability_year_absolute_err (tier2): 0.176  methods.json#/validation/1821/value
+- t1_t2_wape (tier2): 0.443  methods.json#/validation/1824/value
+- eyesight status: "validated"  methods.json#/eyesight/104/status
+- eyesight param a: -5.015  methods.json#/eyesight/104/params/a
+- eyesight param a_hi: -4.736  methods.json#/eyesight/104/params/a_hi
+- eyesight param a_lo: -5.484  methods.json#/eyesight/104/params/a_lo
+- eyesight param b: 2.736  methods.json#/eyesight/104/params/b
+- eyesight param b_hi: 3.149  methods.json#/eyesight/104/params/b_hi
+- eyesight param b_lo: 2.543  methods.json#/eyesight/104/params/b_lo
+- eyesight param c: 0.959  methods.json#/eyesight/104/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/104/params/c_hi
+- eyesight param c_lo: 0.831  methods.json#/eyesight/104/params/c_lo
+- eyesight g: 1.643  methods.json#/eyesight/104/g
+
+## Turkey (`turkey`)
+
+- jump multiple (value): 3.152  turkey/ruler.json#/jump_multiple/value
+- jump multiple (lo): 2.865  turkey/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 3.706  turkey/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  turkey/ruler.json#/jump_multiple/years
+- ruler sentence: "In Turkey, VIIRS reports about 3.2 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  turkey/ruler.json#/sentence
+- harmonized trend pct_per_decade: 1.013  turkey/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -21.578  turkey/trend.json#/harmonized/lo
+- harmonized trend hi: 13.616  turkey/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  turkey/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 47.956  turkey/trend.json#/naive/pct_per_decade
+- naive trend lo: 27.995  turkey/trend.json#/naive/lo
+- naive trend hi: 80.253  turkey/trend.json#/naive/hi
+- naive trend direction: "rising"  turkey/trend.json#/naive/direction
+- trend years: [2003, 2025]  turkey/trend.json#/years
+- verdict sentence_id: "artifact_flat"  turkey/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 48% per decade. After correcting for the sensor change, there is no clear change (-22 to 14% per decade)."  turkey/trend.json#/sentence
+- critical weeks: [23, 24, 25, 26, 27, 28, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48]  turkey/season.json#/critical_weeks
+- window w1 label: "early-August to early-December"  turkey/season.json#/windows/0/label
+- window w1 start_week: 32  turkey/season.json#/windows/0/start_week
+- window w1 peak_week: 36  turkey/season.json#/windows/0/peak_week
+- window w1 end_week: 48  turkey/season.json#/windows/0/end_week
+- window w1 share: 0.679  turkey/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 3.75  turkey/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): 0.0  turkey/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 8.875  turkey/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-August to early-December season."  turkey/season.json#/windows/0/sentence
+- this week value: null  turkey/nowcast.json#/value
+- this week lo: null  turkey/nowcast.json#/lo
+- this week hi: null  turkey/nowcast.json#/hi
+- this week percentile: null  turkey/nowcast.json#/percentile
+- this week status: "unavailable"  turkey/nowcast.json#/status
+- this week as_of: null  turkey/nowcast.json#/as_of
+- this week window start: null  turkey/nowcast.json#/window/start
+- this week window end: null  turkey/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  turkey/nowcast.json#/baseline_years
+- month to date value: null  turkey/nowcast.json#/month_to_date/value
+- month to date median: null  turkey/nowcast.json#/month_to_date/median
+- month to date ratio: null  turkey/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  turkey/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  turkey/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.193  methods.json#/validation/1825/value
+- LOYO weekly WAPE baseline annual_ratio: 0.26  methods.json#/validation/1825/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.788  methods.json#/validation/1825/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1825/years
+- LOYO weekly WAPE (tier2): 0.278  methods.json#/validation/1840/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1840/years
+- reliability_err (tier2): 0.001  methods.json#/validation/1838/value
+- reliability_year_absolute_err (tier2): 0.045  methods.json#/validation/1839/value
+- t1_t2_wape (tier2): 0.238  methods.json#/validation/1842/value
+- eyesight status: "exploratory"  methods.json#/eyesight/105/status
+- eyesight param a: -3.675  methods.json#/eyesight/105/params/a
+- eyesight param a_hi: -3.592  methods.json#/eyesight/105/params/a_hi
+- eyesight param a_lo: -3.764  methods.json#/eyesight/105/params/a_lo
+- eyesight param b: 1.93  methods.json#/eyesight/105/params/b
+- eyesight param b_hi: 2.044  methods.json#/eyesight/105/params/b_hi
+- eyesight param b_lo: 1.829  methods.json#/eyesight/105/params/b_lo
+- eyesight param c: 0.876  methods.json#/eyesight/105/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/105/params/c_hi
+- eyesight param c_lo: 0.757  methods.json#/eyesight/105/params/c_lo
+- eyesight g: 1.964  methods.json#/eyesight/105/g
+
+## Turkmenistan (`turkmenistan`)
+
+- jump multiple (value): 4.856  turkmenistan/ruler.json#/jump_multiple/value
+- jump multiple (lo): 4.038  turkmenistan/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 7.074  turkmenistan/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  turkmenistan/ruler.json#/jump_multiple/years
+- ruler sentence: "In Turkmenistan, VIIRS reports about 4.9 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  turkmenistan/ruler.json#/sentence
+- harmonized trend pct_per_decade: 1.238  turkmenistan/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -21.027  turkmenistan/trend.json#/harmonized/lo
+- harmonized trend hi: 24.181  turkmenistan/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  turkmenistan/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 55.59  turkmenistan/trend.json#/naive/pct_per_decade
+- naive trend lo: 40.845  turkmenistan/trend.json#/naive/lo
+- naive trend hi: 169.599  turkmenistan/trend.json#/naive/hi
+- naive trend direction: "rising"  turkmenistan/trend.json#/naive/direction
+- trend years: [2003, 2025]  turkmenistan/trend.json#/years
+- verdict sentence_id: "artifact_flat"  turkmenistan/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 56% per decade. After correcting for the sensor change, there is no clear change (-21 to 24% per decade)."  turkmenistan/trend.json#/sentence
+- critical weeks: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 24, 25, 26, 27, 28, 29, 30, 34, 35, 42, 43, 44, 45, 46, 47, 48]  turkmenistan/season.json#/critical_weeks
+- window w1 label: "early-January to mid-April"  turkmenistan/season.json#/windows/0/label
+- window w1 start_week: 1  turkmenistan/season.json#/windows/0/start_week
+- window w1 peak_week: 9  turkmenistan/season.json#/windows/0/peak_week
+- window w1 end_week: 15  turkmenistan/season.json#/windows/0/end_week
+- window w1 share: 0.574  turkmenistan/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 0.0  turkmenistan/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -10.0  turkmenistan/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 10.0  turkmenistan/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-January to mid-April season."  turkmenistan/season.json#/windows/0/sentence
+- this week value: null  turkmenistan/nowcast.json#/value
+- this week lo: null  turkmenistan/nowcast.json#/lo
+- this week hi: null  turkmenistan/nowcast.json#/hi
+- this week percentile: null  turkmenistan/nowcast.json#/percentile
+- this week status: "unavailable"  turkmenistan/nowcast.json#/status
+- this week as_of: null  turkmenistan/nowcast.json#/as_of
+- this week window start: null  turkmenistan/nowcast.json#/window/start
+- this week window end: null  turkmenistan/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  turkmenistan/nowcast.json#/baseline_years
+- month to date value: null  turkmenistan/nowcast.json#/month_to_date/value
+- month to date median: null  turkmenistan/nowcast.json#/month_to_date/median
+- month to date ratio: null  turkmenistan/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  turkmenistan/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  turkmenistan/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.29  methods.json#/validation/1843/value
+- LOYO weekly WAPE baseline annual_ratio: 0.38  methods.json#/validation/1843/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.933  methods.json#/validation/1843/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1843/years
+- LOYO weekly WAPE (tier2): 0.425  methods.json#/validation/1858/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1858/years
+- reliability_err (tier2): 0.001  methods.json#/validation/1856/value
+- reliability_year_absolute_err (tier2): 0.089  methods.json#/validation/1857/value
+- t1_t2_wape (tier2): 0.344  methods.json#/validation/1860/value
+- eyesight status: "exploratory"  methods.json#/eyesight/106/status
+- eyesight param a: -3.6  methods.json#/eyesight/106/params/a
+- eyesight param a_hi: -3.386  methods.json#/eyesight/106/params/a_hi
+- eyesight param a_lo: -3.889  methods.json#/eyesight/106/params/a_lo
+- eyesight param b: 1.86  methods.json#/eyesight/106/params/b
+- eyesight param b_hi: 2.02  methods.json#/eyesight/106/params/b_hi
+- eyesight param b_lo: 1.701  methods.json#/eyesight/106/params/b_lo
+- eyesight param c: 0.762  methods.json#/eyesight/106/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/106/params/c_hi
+- eyesight param c_lo: 0.615  methods.json#/eyesight/106/params/c_lo
+- eyesight g: 2.355  methods.json#/eyesight/106/g
+
+## United Arab Emirates (`united-arab-emirates`)
+
+- jump multiple (value): 6.535  united-arab-emirates/ruler.json#/jump_multiple/value
+- jump multiple (lo): 2.449  united-arab-emirates/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 12.035  united-arab-emirates/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  united-arab-emirates/ruler.json#/jump_multiple/years
+- ruler sentence: "In United Arab Emirates, VIIRS reports about 6.5 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  united-arab-emirates/ruler.json#/sentence
+- harmonized trend pct_per_decade: 7.665  united-arab-emirates/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -25.299  united-arab-emirates/trend.json#/harmonized/lo
+- harmonized trend hi: 39.248  united-arab-emirates/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  united-arab-emirates/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 64.258  united-arab-emirates/trend.json#/naive/pct_per_decade
+- naive trend lo: 49.154  united-arab-emirates/trend.json#/naive/lo
+- naive trend hi: 303.686  united-arab-emirates/trend.json#/naive/hi
+- naive trend direction: "rising"  united-arab-emirates/trend.json#/naive/direction
+- trend years: [2003, 2025]  united-arab-emirates/trend.json#/years
+- verdict sentence_id: "artifact_flat"  united-arab-emirates/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 64% per decade. After correcting for the sensor change, there is no clear change (-25 to 39% per decade)."  united-arab-emirates/trend.json#/sentence
+- critical weeks: []  united-arab-emirates/season.json#/critical_weeks
+- this week value: null  united-arab-emirates/nowcast.json#/value
+- this week lo: null  united-arab-emirates/nowcast.json#/lo
+- this week hi: null  united-arab-emirates/nowcast.json#/hi
+- this week percentile: null  united-arab-emirates/nowcast.json#/percentile
+- this week status: "unavailable"  united-arab-emirates/nowcast.json#/status
+- this week as_of: null  united-arab-emirates/nowcast.json#/as_of
+- this week window start: null  united-arab-emirates/nowcast.json#/window/start
+- this week window end: null  united-arab-emirates/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  united-arab-emirates/nowcast.json#/baseline_years
+- month to date value: null  united-arab-emirates/nowcast.json#/month_to_date/value
+- month to date median: null  united-arab-emirates/nowcast.json#/month_to_date/median
+- month to date ratio: null  united-arab-emirates/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  united-arab-emirates/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  united-arab-emirates/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.696  methods.json#/validation/1861/value
+- LOYO weekly WAPE baseline annual_ratio: 1.689  methods.json#/validation/1861/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 17.414  methods.json#/validation/1861/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1861/years
+- eyesight status: "absent"  methods.json#/eyesight/107/status
+
+## United Kingdom (`united-kingdom`)
+
+- jump multiple (value): 5.908  united-kingdom/ruler.json#/jump_multiple/value
+- jump multiple (lo): 4.384  united-kingdom/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 8.656  united-kingdom/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  united-kingdom/ruler.json#/jump_multiple/years
+- ruler sentence: "In United Kingdom, VIIRS reports about 5.9 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  united-kingdom/ruler.json#/sentence
+- harmonized trend pct_per_decade: -6.077  united-kingdom/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -56.013  united-kingdom/trend.json#/harmonized/lo
+- harmonized trend hi: 22.895  united-kingdom/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  united-kingdom/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 72.148  united-kingdom/trend.json#/naive/pct_per_decade
+- naive trend lo: 30.571  united-kingdom/trend.json#/naive/lo
+- naive trend hi: 135.2  united-kingdom/trend.json#/naive/hi
+- naive trend direction: "rising"  united-kingdom/trend.json#/naive/direction
+- trend years: [2003, 2025]  united-kingdom/trend.json#/years
+- verdict sentence_id: "artifact_flat"  united-kingdom/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 72% per decade. After correcting for the sensor change, there is no clear change (-56 to 23% per decade)."  united-kingdom/trend.json#/sentence
+- critical weeks: [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 34, 35, 36, 37, 38, 39, 40, 41]  united-kingdom/season.json#/critical_weeks
+- window w1 label: "late-February to early-May"  united-kingdom/season.json#/windows/0/label
+- window w1 start_week: 9  united-kingdom/season.json#/windows/0/start_week
+- window w1 peak_week: 15  united-kingdom/season.json#/windows/0/peak_week
+- window w1 end_week: 18  united-kingdom/season.json#/windows/0/end_week
+- window w1 share: 0.595  united-kingdom/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 2.222  united-kingdom/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -4.737  united-kingdom/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 7.226  united-kingdom/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the late-February to early-May season."  united-kingdom/season.json#/windows/0/sentence
+- window w2 label: "mid-August to mid-October"  united-kingdom/season.json#/windows/1/label
+- window w2 start_week: 34  united-kingdom/season.json#/windows/1/start_week
+- window w2 peak_week: 36  united-kingdom/season.json#/windows/1/peak_week
+- window w2 end_week: 41  united-kingdom/season.json#/windows/1/end_week
+- window w2 share: 0.215  united-kingdom/season.json#/windows/1/share
+- window w2 start shift days per decade (value): -1.032  united-kingdom/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -6.667  united-kingdom/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): 2.857  united-kingdom/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "No clear shift in the timing of the mid-August to mid-October season."  united-kingdom/season.json#/windows/1/sentence
+- this week value: null  united-kingdom/nowcast.json#/value
+- this week lo: null  united-kingdom/nowcast.json#/lo
+- this week hi: null  united-kingdom/nowcast.json#/hi
+- this week percentile: null  united-kingdom/nowcast.json#/percentile
+- this week status: "unavailable"  united-kingdom/nowcast.json#/status
+- this week as_of: null  united-kingdom/nowcast.json#/as_of
+- this week window start: null  united-kingdom/nowcast.json#/window/start
+- this week window end: null  united-kingdom/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  united-kingdom/nowcast.json#/baseline_years
+- month to date value: null  united-kingdom/nowcast.json#/month_to_date/value
+- month to date median: null  united-kingdom/nowcast.json#/month_to_date/median
+- month to date ratio: null  united-kingdom/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  united-kingdom/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  united-kingdom/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.566  methods.json#/validation/1874/value
+- LOYO weekly WAPE baseline annual_ratio: 0.626  methods.json#/validation/1874/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 4.378  methods.json#/validation/1874/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1874/years
+- LOYO weekly WAPE (tier2): 0.568  methods.json#/validation/1889/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1889/years
+- reliability_err (tier2): 0.0  methods.json#/validation/1887/value
+- reliability_year_absolute_err (tier2): 0.151  methods.json#/validation/1888/value
+- t1_t2_wape (tier2): 0.396  methods.json#/validation/1891/value
+- eyesight status: "validated"  methods.json#/eyesight/108/status
+- eyesight param a: -4.723  methods.json#/eyesight/108/params/a
+- eyesight param a_hi: -4.492  methods.json#/eyesight/108/params/a_hi
+- eyesight param a_lo: -5.012  methods.json#/eyesight/108/params/a_lo
+- eyesight param b: 2.722  methods.json#/eyesight/108/params/b
+- eyesight param b_hi: 3.014  methods.json#/eyesight/108/params/b_hi
+- eyesight param b_lo: 2.549  methods.json#/eyesight/108/params/b_lo
+- eyesight param c: 0.848  methods.json#/eyesight/108/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/108/params/c_hi
+- eyesight param c_lo: 0.674  methods.json#/eyesight/108/params/c_lo
+- eyesight g: 2.322  methods.json#/eyesight/108/g
+
+## Uruguay (`uruguay`)
+
+- jump multiple (value): 3.102  uruguay/ruler.json#/jump_multiple/value
+- jump multiple (lo): 2.255  uruguay/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 3.924  uruguay/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  uruguay/ruler.json#/jump_multiple/years
+- ruler sentence: "In Uruguay, VIIRS reports about 3.1 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  uruguay/ruler.json#/sentence
+- harmonized trend pct_per_decade: -33.101  uruguay/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -63.505  uruguay/trend.json#/harmonized/lo
+- harmonized trend hi: -17.007  uruguay/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  uruguay/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 40.945  uruguay/trend.json#/naive/pct_per_decade
+- naive trend lo: 19.471  uruguay/trend.json#/naive/lo
+- naive trend hi: 60.527  uruguay/trend.json#/naive/hi
+- naive trend direction: "rising"  uruguay/trend.json#/naive/direction
+- trend years: [2003, 2025]  uruguay/trend.json#/years
+- verdict sentence_id: "artifact_falling"  uruguay/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 33% per decade (-64 to -17)."  uruguay/trend.json#/sentence
+- critical weeks: [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 44, 46, 51]  uruguay/season.json#/critical_weeks
+- window w1 label: "early-April to mid-November"  uruguay/season.json#/windows/0/label
+- window w1 start_week: 15  uruguay/season.json#/windows/0/start_week
+- window w1 peak_week: 33  uruguay/season.json#/windows/0/peak_week
+- window w1 end_week: 46  uruguay/season.json#/windows/0/end_week
+- window w1 share: 0.813  uruguay/season.json#/windows/0/share
+- window w1 start shift days per decade (value): 6.25  uruguay/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -0.714  uruguay/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 15.0  uruguay/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-April to mid-November season."  uruguay/season.json#/windows/0/sentence
+- this week value: null  uruguay/nowcast.json#/value
+- this week lo: null  uruguay/nowcast.json#/lo
+- this week hi: null  uruguay/nowcast.json#/hi
+- this week percentile: null  uruguay/nowcast.json#/percentile
+- this week status: "unavailable"  uruguay/nowcast.json#/status
+- this week as_of: null  uruguay/nowcast.json#/as_of
+- this week window start: null  uruguay/nowcast.json#/window/start
+- this week window end: null  uruguay/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  uruguay/nowcast.json#/baseline_years
+- month to date value: null  uruguay/nowcast.json#/month_to_date/value
+- month to date median: null  uruguay/nowcast.json#/month_to_date/median
+- month to date ratio: null  uruguay/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  uruguay/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  uruguay/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.355  methods.json#/validation/1892/value
+- LOYO weekly WAPE baseline annual_ratio: 0.361  methods.json#/validation/1892/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 2.472  methods.json#/validation/1892/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1892/years
+- LOYO weekly WAPE (tier2): 0.369  methods.json#/validation/1907/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1907/years
+- reliability_err (tier2): 0.004  methods.json#/validation/1905/value
+- reliability_year_absolute_err (tier2): 0.098  methods.json#/validation/1906/value
+- t1_t2_wape (tier2): 0.197  methods.json#/validation/1909/value
+- eyesight status: "validated"  methods.json#/eyesight/109/status
+- eyesight param a: -3.58  methods.json#/eyesight/109/params/a
+- eyesight param a_hi: -3.465  methods.json#/eyesight/109/params/a_hi
+- eyesight param a_lo: -3.707  methods.json#/eyesight/109/params/a_lo
+- eyesight param b: 2.258  methods.json#/eyesight/109/params/b
+- eyesight param b_hi: 2.349  methods.json#/eyesight/109/params/b_hi
+- eyesight param b_lo: 2.165  methods.json#/eyesight/109/params/b_lo
+- eyesight param c: 0.764  methods.json#/eyesight/109/params/c
+- eyesight param c_hi: 0.817  methods.json#/eyesight/109/params/c_hi
+- eyesight param c_lo: 0.712  methods.json#/eyesight/109/params/c_lo
+- eyesight g: 2.141  methods.json#/eyesight/109/g
+
+## Uzbekistan (`uzbekistan`)
+
+- jump multiple (value): 4.43  uzbekistan/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.836  uzbekistan/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 5.417  uzbekistan/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  uzbekistan/ruler.json#/jump_multiple/years
+- ruler sentence: "In Uzbekistan, VIIRS reports about 4.4 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  uzbekistan/ruler.json#/sentence
+- harmonized trend pct_per_decade: -11.089  uzbekistan/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -28.112  uzbekistan/trend.json#/harmonized/lo
+- harmonized trend hi: 5.49  uzbekistan/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  uzbekistan/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 51.635  uzbekistan/trend.json#/naive/pct_per_decade
+- naive trend lo: 34.52  uzbekistan/trend.json#/naive/lo
+- naive trend hi: 149.642  uzbekistan/trend.json#/naive/hi
+- naive trend direction: "rising"  uzbekistan/trend.json#/naive/direction
+- trend years: [2003, 2025]  uzbekistan/trend.json#/years
+- verdict sentence_id: "artifact_flat"  uzbekistan/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 52% per decade. After correcting for the sensor change, there is no clear change (-28 to 5% per decade)."  uzbekistan/trend.json#/sentence
+- critical weeks: [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 25, 26, 27, 28, 29, 30, 31, 34, 35, 40, 41, 42, 43, 44]  uzbekistan/season.json#/critical_weeks
+- window w1 label: "mid-February to late-April"  uzbekistan/season.json#/windows/0/label
+- window w1 start_week: 7  uzbekistan/season.json#/windows/0/start_week
+- window w1 peak_week: 10  uzbekistan/season.json#/windows/0/peak_week
+- window w1 end_week: 17  uzbekistan/season.json#/windows/0/end_week
+- window w1 share: 0.416  uzbekistan/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -1.818  uzbekistan/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -7.5  uzbekistan/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 5.0  uzbekistan/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the mid-February to late-April season."  uzbekistan/season.json#/windows/0/sentence
+- window w2 label: "mid-June to early-August"  uzbekistan/season.json#/windows/1/label
+- window w2 start_week: 25  uzbekistan/season.json#/windows/1/start_week
+- window w2 peak_week: 27  uzbekistan/season.json#/windows/1/peak_week
+- window w2 end_week: 31  uzbekistan/season.json#/windows/1/end_week
+- window w2 share: 0.278  uzbekistan/season.json#/windows/1/share
+- window w2 start shift days per decade (value): -2.353  uzbekistan/season.json#/windows/1/shift_days_per_decade/start/value
+- window w2 start shift days per decade (lo): -5.457  uzbekistan/season.json#/windows/1/shift_days_per_decade/start/lo
+- window w2 start shift days per decade (hi): 1.82  uzbekistan/season.json#/windows/1/shift_days_per_decade/start/hi
+- window w2 sentence: "No clear shift in the timing of the mid-June to early-August season."  uzbekistan/season.json#/windows/1/sentence
+- this week value: null  uzbekistan/nowcast.json#/value
+- this week lo: null  uzbekistan/nowcast.json#/lo
+- this week hi: null  uzbekistan/nowcast.json#/hi
+- this week percentile: null  uzbekistan/nowcast.json#/percentile
+- this week status: "unavailable"  uzbekistan/nowcast.json#/status
+- this week as_of: null  uzbekistan/nowcast.json#/as_of
+- this week window start: null  uzbekistan/nowcast.json#/window/start
+- this week window end: null  uzbekistan/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  uzbekistan/nowcast.json#/baseline_years
+- month to date value: null  uzbekistan/nowcast.json#/month_to_date/value
+- month to date median: null  uzbekistan/nowcast.json#/month_to_date/median
+- month to date ratio: null  uzbekistan/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  uzbekistan/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  uzbekistan/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.292  methods.json#/validation/1910/value
+- LOYO weekly WAPE baseline annual_ratio: 0.326  methods.json#/validation/1910/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.525  methods.json#/validation/1910/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1910/years
+- LOYO weekly WAPE (tier2): 0.332  methods.json#/validation/1925/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1925/years
+- reliability_err (tier2): 0.001  methods.json#/validation/1923/value
+- reliability_year_absolute_err (tier2): 0.092  methods.json#/validation/1924/value
+- t1_t2_wape (tier2): 0.297  methods.json#/validation/1927/value
+- eyesight status: "exploratory"  methods.json#/eyesight/110/status
+- eyesight param a: -4.109  methods.json#/eyesight/110/params/a
+- eyesight param a_hi: -3.993  methods.json#/eyesight/110/params/a_hi
+- eyesight param a_lo: -4.224  methods.json#/eyesight/110/params/a_lo
+- eyesight param b: 1.999  methods.json#/eyesight/110/params/b
+- eyesight param b_hi: 2.082  methods.json#/eyesight/110/params/b_hi
+- eyesight param b_lo: 1.933  methods.json#/eyesight/110/params/b_lo
+- eyesight param c: 0.984  methods.json#/eyesight/110/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/110/params/c_hi
+- eyesight param c_lo: 0.919  methods.json#/eyesight/110/params/c_lo
+- eyesight g: 1.86  methods.json#/eyesight/110/g
+
+## Vanuatu (`vanuatu`)
+
+- jump multiple (value): 4.383  vanuatu/ruler.json#/jump_multiple/value
+- jump multiple (lo): 2.215  vanuatu/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 52.0  vanuatu/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  vanuatu/ruler.json#/jump_multiple/years
+- ruler sentence: "In Vanuatu, VIIRS reports about 4.4 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  vanuatu/ruler.json#/sentence
+- harmonized trend pct_per_decade: -62.5  vanuatu/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -151.01  vanuatu/trend.json#/harmonized/lo
+- harmonized trend hi: -35.705  vanuatu/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  vanuatu/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 18.343  vanuatu/trend.json#/naive/pct_per_decade
+- naive trend lo: -27.494  vanuatu/trend.json#/naive/lo
+- naive trend hi: 91.978  vanuatu/trend.json#/naive/hi
+- naive trend direction: "no_clear_change"  vanuatu/trend.json#/naive/direction
+- trend years: [2003, 2025]  vanuatu/trend.json#/years
+- verdict sentence_id: "unclear"  vanuatu/trend.json#/sentence_id
+- verdict sentence: "The record does not show a clear long-term change here (-151 to -36% per decade)."  vanuatu/trend.json#/sentence
+- critical weeks: [34, 35, 36]  vanuatu/season.json#/critical_weeks
+- window w1 label: "mid-August to early-September"  vanuatu/season.json#/windows/0/label
+- window w1 start_week: 34  vanuatu/season.json#/windows/0/start_week
+- window w1 peak_week: 34  vanuatu/season.json#/windows/0/peak_week
+- window w1 end_week: 36  vanuatu/season.json#/windows/0/end_week
+- window w1 share: 1.0  vanuatu/season.json#/windows/0/share
+- window w1 start shift days per decade (value): null  vanuatu/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): null  vanuatu/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): null  vanuatu/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "Timing shift unavailable: fewer than three valid annual observations."  vanuatu/season.json#/windows/0/sentence
+- this week value: null  vanuatu/nowcast.json#/value
+- this week lo: null  vanuatu/nowcast.json#/lo
+- this week hi: null  vanuatu/nowcast.json#/hi
+- this week percentile: null  vanuatu/nowcast.json#/percentile
+- this week status: "unavailable"  vanuatu/nowcast.json#/status
+- this week as_of: null  vanuatu/nowcast.json#/as_of
+- this week window start: null  vanuatu/nowcast.json#/window/start
+- this week window end: null  vanuatu/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  vanuatu/nowcast.json#/baseline_years
+- month to date value: null  vanuatu/nowcast.json#/month_to_date/value
+- month to date median: null  vanuatu/nowcast.json#/month_to_date/median
+- month to date ratio: null  vanuatu/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  vanuatu/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  vanuatu/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.178  methods.json#/validation/1928/value
+- LOYO weekly WAPE baseline annual_ratio: 1.185  methods.json#/validation/1928/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 4.265  methods.json#/validation/1928/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1928/years
+- eyesight status: "absent"  methods.json#/eyesight/111/status
+
+## Vietnam (`vietnam`)
+
+- jump multiple (value): 4.096  vietnam/ruler.json#/jump_multiple/value
+- jump multiple (lo): 3.698  vietnam/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 4.463  vietnam/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  vietnam/ruler.json#/jump_multiple/years
+- ruler sentence: "In Vietnam, VIIRS reports about 4.1 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  vietnam/ruler.json#/sentence
+- harmonized trend pct_per_decade: -26.588  vietnam/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -35.352  vietnam/trend.json#/harmonized/lo
+- harmonized trend hi: -18.289  vietnam/trend.json#/harmonized/hi
+- harmonized trend direction: "falling"  vietnam/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 40.622  vietnam/trend.json#/naive/pct_per_decade
+- naive trend lo: 16.748  vietnam/trend.json#/naive/lo
+- naive trend hi: 89.967  vietnam/trend.json#/naive/hi
+- naive trend direction: "rising"  vietnam/trend.json#/naive/direction
+- trend years: [2003, 2025]  vietnam/trend.json#/years
+- verdict sentence_id: "artifact_falling"  vietnam/trend.json#/sentence_id
+- verdict sentence: "The raw record hides a decline: corrected burning activity fell about 27% per decade (-35 to -18)."  vietnam/trend.json#/sentence
+- critical weeks: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]  vietnam/season.json#/critical_weeks
+- window w1 label: "early-January to late-May"  vietnam/season.json#/windows/0/label
+- window w1 start_week: 2  vietnam/season.json#/windows/0/start_week
+- window w1 peak_week: 11  vietnam/season.json#/windows/0/peak_week
+- window w1 end_week: 21  vietnam/season.json#/windows/0/end_week
+- window w1 share: 0.803  vietnam/season.json#/windows/0/share
+- window w1 start shift days per decade (value): -5.0  vietnam/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): -11.435  vietnam/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): 0.0  vietnam/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "No clear shift in the timing of the early-January to late-May season."  vietnam/season.json#/windows/0/sentence
+- this week value: null  vietnam/nowcast.json#/value
+- this week lo: null  vietnam/nowcast.json#/lo
+- this week hi: null  vietnam/nowcast.json#/hi
+- this week percentile: null  vietnam/nowcast.json#/percentile
+- this week status: "unavailable"  vietnam/nowcast.json#/status
+- this week as_of: null  vietnam/nowcast.json#/as_of
+- this week window start: null  vietnam/nowcast.json#/window/start
+- this week window end: null  vietnam/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  vietnam/nowcast.json#/baseline_years
+- month to date value: null  vietnam/nowcast.json#/month_to_date/value
+- month to date median: null  vietnam/nowcast.json#/month_to_date/median
+- month to date ratio: null  vietnam/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  vietnam/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  vietnam/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 0.165  methods.json#/validation/1941/value
+- LOYO weekly WAPE baseline annual_ratio: 0.169  methods.json#/validation/1941/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 3.415  methods.json#/validation/1941/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1941/years
+- LOYO weekly WAPE (tier2): 0.155  methods.json#/validation/1956/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1956/years
+- reliability_err (tier2): 0.002  methods.json#/validation/1954/value
+- reliability_year_absolute_err (tier2): 0.062  methods.json#/validation/1955/value
+- t1_t2_wape (tier2): 0.102  methods.json#/validation/1958/value
+- eyesight status: "validated"  methods.json#/eyesight/112/status
+- eyesight param a: -3.534  methods.json#/eyesight/112/params/a
+- eyesight param a_hi: -3.449  methods.json#/eyesight/112/params/a_hi
+- eyesight param a_lo: -3.613  methods.json#/eyesight/112/params/a_lo
+- eyesight param b: 1.863  methods.json#/eyesight/112/params/b
+- eyesight param b_hi: 1.91  methods.json#/eyesight/112/params/b_hi
+- eyesight param b_lo: 1.822  methods.json#/eyesight/112/params/b_lo
+- eyesight param c: 0.687  methods.json#/eyesight/112/params/c
+- eyesight param c_hi: 0.728  methods.json#/eyesight/112/params/c_hi
+- eyesight param c_lo: 0.652  methods.json#/eyesight/112/params/c_lo
+- eyesight g: 2.029  methods.json#/eyesight/112/g
+
+## Yemen (`yemen`)
+
+- jump multiple (value): 14.713  yemen/ruler.json#/jump_multiple/value
+- jump multiple (lo): 8.255  yemen/ruler.json#/jump_multiple/lo
+- jump multiple (hi): 30.3  yemen/ruler.json#/jump_multiple/hi
+- jump multiple years: [2013, 2022]  yemen/ruler.json#/jump_multiple/years
+- ruler sentence: "In Yemen, VIIRS reports about 14.7 times as many hotspots as MODIS for the same years. Spliced naively, the record jumps in 2012; harmonized, it does not."  yemen/ruler.json#/sentence
+- harmonized trend pct_per_decade: -33.856  yemen/trend.json#/harmonized/pct_per_decade
+- harmonized trend lo: -71.329  yemen/trend.json#/harmonized/lo
+- harmonized trend hi: 0.0  yemen/trend.json#/harmonized/hi
+- harmonized trend direction: "no_clear_change"  yemen/trend.json#/harmonized/direction
+- naive trend pct_per_decade: 59.917  yemen/trend.json#/naive/pct_per_decade
+- naive trend lo: 32.803  yemen/trend.json#/naive/lo
+- naive trend hi: 210.729  yemen/trend.json#/naive/hi
+- naive trend direction: "rising"  yemen/trend.json#/naive/direction
+- trend years: [2003, 2025]  yemen/trend.json#/years
+- verdict sentence_id: "artifact_flat"  yemen/trend.json#/sentence_id
+- verdict sentence: "The raw record suggests burning rose 60% per decade. After correcting for the sensor change, there is no clear change (-71 to 0% per decade)."  yemen/trend.json#/sentence
+- critical weeks: [1, 2, 3]  yemen/season.json#/critical_weeks
+- window w1 label: "early to late January"  yemen/season.json#/windows/0/label
+- window w1 start_week: 1  yemen/season.json#/windows/0/start_week
+- window w1 peak_week: 1  yemen/season.json#/windows/0/peak_week
+- window w1 end_week: 3  yemen/season.json#/windows/0/end_week
+- window w1 share: 1.0  yemen/season.json#/windows/0/share
+- window w1 start shift days per decade (value): null  yemen/season.json#/windows/0/shift_days_per_decade/start/value
+- window w1 start shift days per decade (lo): null  yemen/season.json#/windows/0/shift_days_per_decade/start/lo
+- window w1 start shift days per decade (hi): null  yemen/season.json#/windows/0/shift_days_per_decade/start/hi
+- window w1 sentence: "Timing shift unavailable: fewer than three valid annual observations."  yemen/season.json#/windows/0/sentence
+- this week value: null  yemen/nowcast.json#/value
+- this week lo: null  yemen/nowcast.json#/lo
+- this week hi: null  yemen/nowcast.json#/hi
+- this week percentile: null  yemen/nowcast.json#/percentile
+- this week status: "unavailable"  yemen/nowcast.json#/status
+- this week as_of: null  yemen/nowcast.json#/as_of
+- this week window start: null  yemen/nowcast.json#/window/start
+- this week window end: null  yemen/nowcast.json#/window/end
+- this week years compared: [2003, 2025]  yemen/nowcast.json#/baseline_years
+- month to date value: null  yemen/nowcast.json#/month_to_date/value
+- month to date median: null  yemen/nowcast.json#/month_to_date/median
+- month to date ratio: null  yemen/nowcast.json#/month_to_date/ratio
+- month to date percentile: null  yemen/nowcast.json#/month_to_date/percentile
+- this week sentence: "No recent satellite data."  yemen/nowcast.json#/sentence
+- LOYO weekly WAPE (tier1): 1.676  methods.json#/validation/1959/value
+- LOYO weekly WAPE baseline annual_ratio: 1.662  methods.json#/validation/1959/baselines/annual_ratio
+- LOYO weekly WAPE baseline raw_viirs: 23.894  methods.json#/validation/1959/baselines/raw_viirs
+- LOYO years: [2013, 2022]  methods.json#/validation/1959/years
+- LOYO weekly WAPE (tier2): 1.523  methods.json#/validation/1974/value
+- LOYO years: [2013, 2022]  methods.json#/validation/1974/years
+- reliability_err (tier2): 0.012  methods.json#/validation/1972/value
+- reliability_year_absolute_err (tier2): 0.552  methods.json#/validation/1973/value
+- t1_t2_wape (tier2): 0.671  methods.json#/validation/1976/value
+- eyesight status: "validated"  methods.json#/eyesight/113/status
+- eyesight param a: -7.357  methods.json#/eyesight/113/params/a
+- eyesight param a_hi: -5.346  methods.json#/eyesight/113/params/a_hi
+- eyesight param a_lo: -9.713  methods.json#/eyesight/113/params/a_lo
+- eyesight param b: 3.895  methods.json#/eyesight/113/params/b
+- eyesight param b_hi: 6.17  methods.json#/eyesight/113/params/b_hi
+- eyesight param b_lo: 3.078  methods.json#/eyesight/113/params/b_lo
+- eyesight param c: 0.578  methods.json#/eyesight/113/params/c
+- eyesight param c_hi: 1.0  methods.json#/eyesight/113/params/c_hi
+- eyesight param c_lo: 0.071  methods.json#/eyesight/113/params/c_lo
+- eyesight g: 2.594  methods.json#/eyesight/113/g
 
 ## Planted truth (synthland)
 

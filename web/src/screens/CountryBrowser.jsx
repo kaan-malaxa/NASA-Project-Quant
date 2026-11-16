@@ -106,7 +106,7 @@ function Catalog({ data, regions }) {
                   Open analysis <ArrowRight aria-hidden="true" />
                 </Link>
               </Button>
-            ) : <p className="text-muted-foreground max-w-48 text-xs leading-relaxed">Calibrated analysis is pending for this country.</p>}
+            ) : <p className="text-muted-foreground max-w-48 text-xs leading-relaxed">Calibrated analysis is unavailable for this country.</p>}
           </div>
           <div className="mt-6">
             <label htmlFor="country-product" className="mb-2 block text-sm font-medium">Satellite product</label>

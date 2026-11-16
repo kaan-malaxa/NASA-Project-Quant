@@ -23,7 +23,7 @@ import pandas as pd
 import pyarrow.parquet as pq
 import yaml
 
-from pipeline.common import paths, provenance, publication
+from pipeline.common import config, paths, provenance, publication
 from pipeline.export.audit import write_audit
 from pipeline.export.check import (
     has_sample_kind,
@@ -33,6 +33,7 @@ from pipeline.export.check import (
     schema_errors,
     validator_for,
 )
+from pipeline.export.compress import compress_region
 
 METHODS_TEXT = Path(__file__).resolve().parent / "methods_text.yaml"
 REGION_FILES = ["weekly", "monthly", "daily", "climatology", "season", "trend", "ruler", "nowcast", "hex",
@@ -67,6 +68,14 @@ class Inputs:
 
 def _read_json(path: Path) -> Any:
     return load_json_strict(path)
+
+
+def is_world_region(rid: str) -> bool:
+    """FIRMS world-country regions are published gzipped (pipeline.export.compress)."""
+    try:
+        return config.get_region(rid).source == "firms_world"
+    except ValueError:
+        return False
 
 
 # ------------------------------------------------------------------ sample / real classification
@@ -203,6 +212,17 @@ def planted_truth(inp: Inputs) -> list[dict[str, Any]]:
 
 
 # ------------------------------------------------------------------ methods.json
+def eyesight_entry(curve: dict[str, Any], rid: str) -> dict[str, Any]:
+    """An absent Tier-2 fit (too little activity) publishes its status, not null parameters; months
+    without a Tier-2 factor are left out of the comparison rather than shown as zero."""
+    if curve.get("status") == "absent":
+        return {"region": rid, "status": "absent"}  # the contract's absent form
+    entry = {**curve, "region": rid}
+    if "k_compare" in entry:
+        entry["k_compare"] = [row for row in entry["k_compare"] if None not in (row.get("k_tier1"), row.get("k_tier2"))]
+    return entry
+
+
 def methods_doc(inp: Inputs, region_ids: list[str]) -> dict[str, Any]:
     sci = inp.science
     validation, drift, eyesight, inputs, filters = [], [], [], [], []
@@ -211,12 +231,14 @@ def methods_doc(inp: Inputs, region_ids: list[str]) -> dict[str, Any]:
         if t1.is_file():
             doc = _read_json(t1)
             validation += doc.get("validation", [])
-            drift += [{"region": rid, **row} for row in doc.get("drift", [])]
+            # A sensor-year without a drift estimate is left out (never shown as zero).
+            drift += [{"region": rid, **row} for row in doc.get("drift", [])
+                      if None not in (row.get("k_annual"), row.get("lo"), row.get("hi"))]
         t2 = inp.eyesight_dir(rid) / "validation_t2.json"
         if t2.is_file():
             validation += _read_json(t2).get("validation", [])
         curve = inp.eyesight_dir(rid) / "curve.json"
-        eyesight.append({**_read_json(curve), "region": rid} if curve.is_file() else {"region": rid, "status": "absent"})
+        eyesight.append(eyesight_entry(_read_json(curve), rid) if curve.is_file() else {"region": rid, "status": "absent"})
         manifest = inp.raw_dir(rid) / "MANIFEST.json"
         if manifest.is_file():
             inputs += [{"source": m["source"], "region": rid, "rows": m["rows"], "first_date": m["first_date"],
@@ -254,20 +276,34 @@ def _kinds(node: Any, acc: set[str]) -> set[str]:
     return acc
 
 
+def _manifest_entry(item: tuple[str, str]) -> tuple[dict[str, Any], bool]:
+    path, rel = Path(item[0]), item[1]
+    data = path.read_bytes()
+    kinds: list[str] = []
+    sample = False
+    if path.suffix in (".json", ".geojson"):
+        doc = load_json_strict(path)
+        kinds = sorted(_kinds(doc, set()))
+        sample = "sample" in kinds or (isinstance(doc, dict) and doc.get("code_version") == "sample")
+    return {"path": rel, "sha256": hashlib.sha256(data).hexdigest(), "bytes": len(data), "kinds": kinds}, sample
+
+
 def manifest_doc(inp: Inputs) -> dict[str, Any]:
-    files, contains_sample = [], False
-    for path in sorted(p for p in inp.web_dir.rglob("*") if p.is_file() and not p.name.startswith(".")):
-        rel = path.relative_to(inp.web_dir).as_posix()
-        if rel == "manifest.json":
-            continue
-        data = path.read_bytes()
-        kinds: list[str] = []
-        if path.suffix in (".json", ".geojson"):
-            doc = load_json_strict(path)
-            kinds = sorted(_kinds(doc, set()))
-            contains_sample |= "sample" in kinds or (isinstance(doc, dict) and doc.get("code_version") == "sample")
-        files.append({"path": rel, "sha256": hashlib.sha256(data).hexdigest(), "bytes": len(data), "kinds": kinds})
-    return {**inp.header, "contains_sample": contains_sample, "files": files}
+    from concurrent.futures import ProcessPoolExecutor
+
+    from pipeline.export.check import check_workers
+
+    items = [(str(path), path.relative_to(inp.web_dir).as_posix())
+             for path in sorted(p for p in inp.web_dir.rglob("*") if p.is_file() and not p.name.startswith("."))]
+    items = [item for item in items if item[1] != "manifest.json"]
+    workers = check_workers()
+    if workers > 1 and len(items) > 400:
+        with ProcessPoolExecutor(max_workers=workers) as pool:
+            entries = list(pool.map(_manifest_entry, items, chunksize=16))
+    else:
+        entries = [_manifest_entry(item) for item in items]
+    return {**inp.header, "contains_sample": any(sample for _, sample in entries),
+            "files": [entry for entry, _ in entries]}
 
 
 # ------------------------------------------------------------------ entry point
@@ -315,6 +351,8 @@ def _assemble(inp: Inputs) -> list[str]:
     rebuilt = [rid for rid in real if rid not in preserved]
     for rid in rebuilt:
         copy_calibration(inp, rid, registry)
+        if is_world_region(rid):
+            compress_region(inp.web_dir / rid)  # lossless; before the audit and the manifest hashes
     previous = {r["id"]: r for r in old_regions["regions"]} if old_regions else {}
     records = [previous[rid] if rid in preserved and rid in previous else region_record(inp, known[rid]) for rid in real]
     regions = {**inp.header, "regions": records,

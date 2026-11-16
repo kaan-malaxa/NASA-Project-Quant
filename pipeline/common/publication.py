@@ -1,4 +1,5 @@
 """Local publication transactions: prepare first, manifest last, restore on failure."""
+import filecmp
 import os
 import shutil
 from contextlib import contextmanager
@@ -62,4 +63,6 @@ def publish_tree(stage, destination):
     for file in destination.rglob("*"):
         if file.is_file() and file not in proposed:
             proposed[file] = None
-    publish(proposed)
+    # Unchanged files need no install or backup; with many published regions this avoids rewriting them.
+    publish({target: source for target, source in proposed.items()
+             if source is None or not (target.is_file() and filecmp.cmp(source, target, shallow=False))})

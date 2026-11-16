@@ -24,9 +24,9 @@ const MODE_OPTIONS = [
   { id: "anomaly", label: "Compared with normal" },
 ];
 
-function Toggle({ label, value, options, onChange, renderItem = undefined }) {
+function Toggle({ label, value, options, onChange, renderItem = undefined, available = true }) {
   return (
-    <div className="space-y-1">
+    <div data-tour={available ? (label === "View" ? "view" : label === "Show" ? "mode" : "lens") : undefined} className="space-y-1">
       <p className="text-muted-foreground text-xs font-medium tracking-wide uppercase">{label}</p>
       <ToggleGroup
         type="single"
@@ -74,11 +74,12 @@ export default function CalendarSection({ files, url, setUrl, lastDataDay, chart
       intro="Every week or month since 2003. Pick how to read the record and whether to compare each period with a normal year."
     >
       <div className="flex flex-wrap gap-x-6 gap-y-3">
-        <Toggle label="View" value={url.view} options={VIEW_OPTIONS} onChange={(view) => setUrl({ view })} />
-        <Toggle label="Show" value={url.mode} options={MODE_OPTIONS} onChange={(mode) => setUrl({ mode })} />
+        <Toggle available={!blocking} label="View" value={url.view} options={VIEW_OPTIONS} onChange={(view) => setUrl({ view })} />
+        <Toggle available={!blocking} label="Show" value={url.mode} options={MODE_OPTIONS} onChange={(mode) => setUrl({ mode })} />
       </div>
       {lenses.length ? (
         <Toggle
+          available={!blocking}
           label="Record (lens)"
           value={lens}
           options={lenses}

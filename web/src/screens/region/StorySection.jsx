@@ -3,6 +3,7 @@ export default function StorySection({ id, title, intro = undefined, children })
   return (
     <section
       id={id}
+      data-tour={id}
       aria-labelledby={`${id}-title`}
       className="bg-card scroll-mt-[calc(var(--sticky-offset,0px)+var(--region-bar-h,6rem)+0.5rem)] space-y-4 rounded-xl border p-5 shadow-sm sm:p-6"
     >

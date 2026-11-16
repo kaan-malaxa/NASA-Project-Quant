@@ -13,7 +13,8 @@ export function watch(page) {
   page.on("request", (r) => {
     const u = new URL(r.url());
     if (u.protocol === "data:" || u.protocol === "blob:") return;
-    const base = page.url() === "about:blank" ? process.env.PLAYWRIGHT_BASE_URL || "http://localhost:4173/" : page.url();
+    const base =
+      page.url() === "about:blank" ? process.env.PLAYWRIGHT_BASE_URL || "http://localhost:4173/" : page.url();
     if (u.origin !== new URL(base).origin && !OPTIONAL_HOSTS.includes(u.host)) {
       problems.push(`external request: ${r.url()}`);
     }

@@ -5,11 +5,14 @@ import Landing from "./Landing.jsx";
 import Picker from "./Picker.jsx";
 import { clearFetchCache } from "@/data/fetchJson.js";
 import { resetSample } from "@/data/sample.js";
+import { clearThumbCache } from "@/data/outlineThumbs.js";
 import { mockFetch } from "@/test/mockFetch.js";
 import { methodsJson, nowcastJson, outlineGeojson, regionsJson, rulerJson } from "@/test/fixtures.js";
 
 beforeEach(() => {
   clearFetchCache();
+  clearThumbCache();
+  localStorage.setItem("pt-tutorial-seen", "1"); // the tutorial has its own tests (screens/picker)
   resetSample();
   // The landing loader shows once per session; these tests are about the page under it (see landing/loader.test.jsx).
   localStorage.setItem("firerosetta-loader-off", "1");
@@ -28,15 +31,32 @@ describe("Landing", () => {
       "regions.json": regionsJson(listed),
       "testland/ruler.json": rulerJson(),
       "methods.json": methodsJson([
-        { claim_id: "aqua_drift", text: "Aqua drift text.", url: "https://example.org/a", checked: "2026-11-14" },
-        { claim_id: "snpp_end", text: "S-NPP end text.", url: "https://example.org/s", checked: "2026-11-14" },
-        { claim_id: "submission_rules", text: "Not shown.", url: "https://example.org/r", checked: "2026-11-14" },
+        {
+          claim_id: "aqua_drift",
+          text: "Aqua drift text.",
+          url: "https://example.org/a",
+          checked: "2026-11-14",
+        },
+        {
+          claim_id: "snpp_end",
+          text: "S-NPP end text.",
+          url: "https://example.org/s",
+          checked: "2026-11-14",
+        },
+        {
+          claim_id: "submission_rules",
+          text: "Not shown.",
+          url: "https://example.org/r",
+          checked: "2026-11-14",
+        },
       ]),
     });
     at(<Landing />);
     await waitFor(() => expect(screen.getByText("Ruler sentence from JSON.")).toBeTruthy());
     const why = await screen.findByTestId("why-now");
-    expect(why.textContent.indexOf("S-NPP end text.")).toBeLessThan(why.textContent.indexOf("Aqua drift text."));
+    expect(why.textContent.indexOf("S-NPP end text.")).toBeLessThan(
+      why.textContent.indexOf("Aqua drift text."),
+    );
     expect(why.textContent).not.toContain("Not shown.");
     expect(screen.getByText("Open on your phone")).toBeTruthy();
     expect(screen.getAllByRole("link", { name: "Pick a place" }).length).toBeGreaterThan(0);
@@ -61,8 +81,12 @@ describe("Picker", () => {
     const link = await screen.findByRole("link", { name: /Testland/ });
     expect(link.getAttribute("href")).toBe("/r/testland");
     await waitFor(() => expect(screen.getByText("This week: Above normal")).toBeTruthy());
-    expect(screen.getByRole("img", { name: "Outline of Testland" })).toBeTruthy();
-    expect(screen.queryByText("Synthland")).toBeNull();
+    // the outline fades in after the card text (thumbnail file, or the outline itself as a fallback)
+    expect(await screen.findByRole("img", { name: "Outline of Testland" })).toBeTruthy();
+    // simulated regions are listed too: after the real ones, labelled, linking with ?debug=1
+    const cards = screen.getAllByRole("link").filter((a) => a.getAttribute("href")?.startsWith("/r/"));
+    expect(cards.map((a) => a.getAttribute("href"))).toEqual(["/r/testland", "/r/synthland?debug=1"]);
+    expect(screen.getByText("Simulated region")).toBeTruthy();
   });
 
   it("shows synthetic regions with ?debug=1 and keeps debug in the link", async () => {

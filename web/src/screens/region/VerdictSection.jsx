@@ -47,7 +47,7 @@ export default function VerdictSection({ state }) {
               <p className="max-w-3xl text-lg font-medium text-pretty sm:text-xl">{trend.sentence}</p>
             {trend.qualification ? <p className="text-sm">{trend.qualification}</p> : null}
               <VizSlot name="TrendBars" trend={trend} placeholderClassName="h-56" />
-              <div className="grid gap-3 sm:grid-cols-2">
+              <div data-tour="verdict-figures" className="grid gap-3 sm:grid-cols-2">
                 <TrendFigure label="What the raw record suggests" fig={trend.naive} kinds={nKinds} />
                 <TrendFigure label="After harmonization" fig={trend.harmonized} kinds={hKinds} />
               </div>

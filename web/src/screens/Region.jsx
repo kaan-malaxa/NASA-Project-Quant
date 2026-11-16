@@ -74,8 +74,8 @@ export default function Region() {
         <p className="text-muted-foreground text-sm">Data through {region.last_data_day}.</p>
       </header>
       <StickyBar>
-        <AnalysisYears analysis={analysis} setUrl={setUrl} />
-        <DateRangeBar url={url} setUrl={setUrl} lastDataDay={lastDataDay} />
+        <div data-tour="years"><AnalysisYears analysis={analysis} setUrl={setUrl} /></div>
+        <div data-tour="dates"><DateRangeBar url={url} setUrl={setUrl} lastDataDay={lastDataDay} /></div>
         <SectionNav />
       </StickyBar>
       <VerdictSection state={files.trend} />
@@ -108,9 +108,11 @@ export default function Region() {
  * Sections above it grow as their data load, so the jump is repeated a few times, and stops when the visitor scrolls.
  */
 function useJumpToSection(ready) {
-  const target = useLocation().state?.section;
+  const arrival = useLocation().state;
+  const target = arrival?.section;
+  const tutorial = arrival?.tutorial;
   useEffect(() => {
-    if (!ready || !target) return;
+    if (!ready || !target || tutorial) return;
     let stopped = false;
     const stop = () => (stopped = true);
     const jump = () => !stopped && document.getElementById(target)?.scrollIntoView({ block: "start" });
@@ -124,5 +126,5 @@ function useJumpToSection(ready) {
       window.removeEventListener("touchstart", stop);
       window.removeEventListener("keydown", stop);
     };
-  }, [ready, target]);
+  }, [ready, target, tutorial]);
 }

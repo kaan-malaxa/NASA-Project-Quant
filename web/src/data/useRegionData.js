@@ -22,12 +22,15 @@ export function initialFileStates(region) {
  * Loads every JSON file listed for one region. Each file has its own state, so one absent or invalid file
  * never blocks the others.
  * @param {string} regionId
+ * @param {{ includeSynthetic?: boolean }} [options] find simulated regions too (they are hidden unless ?debug=1)
  * @returns {{ status: "loading" | "ok" | "unknown_region" | "regions_failed", region: import("./types.gen").RegionsJson["regions"][number] | null,
  *             files: Record<string, import("./state.js").FileState>, regionsState: import("./state.js").FileState }}
  */
-export function useRegionData(regionId) {
+export function useRegionData(regionId, { includeSynthetic = false } = {}) {
   const { state: regionsState, regions } = useRegions();
-  const region = useMemo(() => regions.find((r) => r.id === regionId) || null, [regions, regionId]);
+  // Simulated regions are hidden unless ?debug=1; the Simulation test page asks for them explicitly.
+  const pool = includeSynthetic && regionsState.status === "ok" ? regionsState.data.regions : regions;
+  const region = useMemo(() => pool.find((r) => r.id === regionId) || null, [pool, regionId]);
   // Loaded states, tagged with the region they belong to so a stale set is never shown for a new region.
   const [loaded, setLoaded] = useState({ regionId: null, files: {} });
 
@@ -39,7 +42,8 @@ export function useRegionData(regionId) {
     for (const [name, st] of Object.entries(init)) {
       if (st.status !== "loading") continue;
       fetchJson(regionFilePath(region.id, name)).then((r) => {
-        if (alive) setLoaded((prev) => ({ regionId: region.id, files: { ...prev.files, [name]: toFileState(r) } }));
+        if (alive)
+          setLoaded((prev) => ({ regionId: region.id, files: { ...prev.files, [name]: toFileState(r) } }));
       });
     }
     return () => {

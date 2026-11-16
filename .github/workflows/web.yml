@@ -1,4 +1,5 @@
-# Owner: R5. Builds the static site in web/ and deploys it to GitHub Pages at https://kaan-malaxa.github.io/NASA-Project-Quant/.
+# Owner: R5. Builds the static site in web/ and deploys it to GitHub Pages at https://prometheus-torch.design/
+# (custom domain set in the repo's Settings > Pages; kaan-malaxa.github.io/NASA-Project-Quant/ redirects there).
 # JavaScript is checked by the installed compiler against generated contract declarations.
 name: web
 
@@ -39,10 +40,11 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: npm run e2e
       - run: npm run build
-        # Custom domain prometheus-torch.design disabled until its DNS and HTTPS work. To re-enable: VITE_BASE "/", VITE_SITE_URL https://prometheus-torch.design/, and restore the CNAME file.
+        # Served at the root of the custom domain. To go back to plain GitHub Pages: VITE_BASE /NASA-Project-Quant/ and
+        # VITE_SITE_URL https://kaan-malaxa.github.io/NASA-Project-Quant/, and remove the domain in Settings > Pages.
         env:
-          VITE_BASE: /NASA-Project-Quant/
-          VITE_SITE_URL: https://kaan-malaxa.github.io/NASA-Project-Quant/
+          VITE_BASE: /
+          VITE_SITE_URL: https://prometheus-torch.design/
       - if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v5
       - if: github.event_name != 'pull_request'

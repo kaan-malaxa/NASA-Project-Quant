@@ -7,7 +7,7 @@ import tailwindcss from "@tailwindcss/vite";
 import { outlineThumb } from "./src/lib/outlineThumb.js";
 
 /**
- * Open Graph needs absolute URLs. CI sets VITE_SITE_URL (https://kaan-malaxa.github.io/NASA-Project-Quant/); locally the tags fall
+ * Open Graph needs absolute URLs. CI sets VITE_SITE_URL (https://prometheus-torch.design/); locally the tags fall
  * back to relative paths. The image is web/public/og-image.png (a static PNG from R6).
  */
 function openGraph() {
@@ -82,8 +82,8 @@ function outlineThumbnails() {
   };
 }
 
-// VITE_BASE is set by CI to the GitHub Pages path, "/NASA-Project-Quant/" (the site is served from
-// https://kaan-malaxa.github.io/NASA-Project-Quant/). Unset (local dev, tests, preview) it is "/".
+// VITE_BASE is the path the site is served from: "/" on the custom domain https://prometheus-torch.design/ (and
+// unset in local dev, tests and preview); "/NASA-Project-Quant/" if it is ever served from plain GitHub Pages again.
 export default defineConfig({
   base: process.env.VITE_BASE || "/",
   // Local development only: VITE_PUBLIC_DIR points the dev server at another folder of data files. Unset in CI.

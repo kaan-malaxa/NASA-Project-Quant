@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Skeleton } from "@/components/ui/skeleton";
+import LoadingFrame from "@/components/LoadingFrame.jsx";
 import KindBadge from "@/components/KindBadge.jsx";
 import { useJson } from "@/data/useJson.js";
 import { regionFilePath } from "@/data/files.js";
@@ -95,9 +95,7 @@ export default function LiveThisWeek({ regions }) {
             {n ? (
               <NowcastBody nowcast={n} kindBadge={false} />
             ) : (
-              <div role="status" aria-label="Loading this week's activity">
-                <Skeleton className="h-48 w-full" />
-              </div>
+              <LoadingFrame title="this week's activity" variant="live" />
             )}
           </div>
           <Button asChild size="lg">
@@ -160,9 +158,7 @@ function LatestYearCard({ region, nowcast, latest, innerRef }) {
               <WeekStrip weeks={latest.weeks} year={latest.year} unit={latest.weekUnit} />
             </>
           ) : (
-            <div role="status" aria-label="Loading the latest year">
-              <Skeleton className="h-40 w-full" />
-            </div>
+            <LoadingFrame title="the latest year" variant="latest" />
           )}
           <Button asChild size="lg">
             <Link to={`/r/${region.id}`}>See the full picture</Link>

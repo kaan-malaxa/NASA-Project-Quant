@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import LoadingFrame from "@/components/LoadingFrame.jsx";
 import SectionState from "@/components/SectionState.jsx";
 import KindBadge from "@/components/KindBadge.jsx";
 import { VizSlot } from "@/components/Viz.jsx";
@@ -13,7 +14,8 @@ const km2Format = new Intl.NumberFormat("en", { maximumSignificantDigits: 2 });
 
 function Progress() {
   return (
-    <div role="status" className="space-y-1 text-sm">
+    <div className="space-y-3 text-sm">
+      <LoadingFrame title="selected-area history" variant="area" />
       <p>Loading selected-area history…</p>
       <progress className="h-2 w-full max-w-sm" aria-label="Loading selected-area history" />
     </div>

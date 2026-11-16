@@ -29,7 +29,7 @@
   gap: 0.5rem;
   padding: 0.625rem 0.75rem;
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: var(--radius-control);
 }
 
 .country-search:focus-within {
@@ -60,7 +60,7 @@
   width: 100%;
   min-height: 44px;
   padding: 0.625rem 0.75rem;
-  border-radius: 5px;
+  border-radius: var(--radius-control);
   text-align: left;
   font-size: 0.875rem;
   cursor: pointer;
@@ -89,7 +89,7 @@
   min-height: 44px;
   padding: 0.625rem;
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: var(--radius-control);
   background: var(--background);
   font-size: 0.875rem;
 }

@@ -3,6 +3,7 @@ import { X } from "lucide-react";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { Button } from "@/components/ui/button";
+import LoadingFrame from "@/components/LoadingFrame.jsx";
 import SectionState from "@/components/SectionState.jsx";
 import KindBadge from "@/components/KindBadge.jsx";
 import GlossaryTerm from "@/components/GlossaryTerm.jsx";
@@ -77,6 +78,7 @@ export default function CalendarSection({ files, url, setUrl, lastDataDay, chart
         <Toggle available={!blocking} label="View" value={url.view} options={VIEW_OPTIONS} onChange={(view) => setUrl({ view })} />
         <Toggle available={!blocking} label="Show" value={url.mode} options={MODE_OPTIONS} onChange={(mode) => setUrl({ mode })} />
       </div>
+      {weekly?.status === "loading" ? <LoadingFrame title="record lenses" variant="buttons" /> : null}
       {lenses.length ? (
         <Toggle
           available={!blocking}
@@ -102,7 +104,7 @@ export default function CalendarSection({ files, url, setUrl, lastDataDay, chart
       ) : null}
 
       {blocking ? (
-        <SectionState state={blocking} title="Calendar" skeletonClassName="h-80" />
+        <SectionState state={blocking} title="Calendar" variant="calendar-body" skeletonClassName="h-80" />
       ) : (
         <div className="space-y-3">
           {url.view === "clock" ? (

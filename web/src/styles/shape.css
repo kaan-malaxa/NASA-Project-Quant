@@ -1,0 +1,9 @@
+/*
+ * Corner shapes for interactive parts (R5). Controls (buttons, toggles, inputs, selects, chips, segmented controls,
+ * tooltips, popovers) are rectangles with slightly rounded corners; small badges and tags a little tighter.
+ * True circles (radio/checkbox knobs, timeline nodes, dots, markers, the globe) keep their own round shape.
+ */
+:root {
+  --radius-control: 6px;
+  --radius-tag: 4px;
+}

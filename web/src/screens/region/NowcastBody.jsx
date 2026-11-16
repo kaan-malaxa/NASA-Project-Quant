@@ -70,7 +70,7 @@ export function StatusBadge({ status }) {
 export default function NowcastBody({ nowcast: n, kindBadge = true }) {
   if (n.status === "unavailable") {
     return (
-      <div className="space-y-2 rounded-lg border border-dashed p-4" data-layout="unavailable">
+      <div className="nowcast-body space-y-2 rounded-lg border border-dashed p-4" data-layout="unavailable">
         <StatusBadge status={n.status} />
         <p>{n.sentence}</p>
         <AsOf nowcast={n} />
@@ -80,7 +80,7 @@ export default function NowcastBody({ nowcast: n, kindBadge = true }) {
   }
   if (n.status === "low_activity") {
     return (
-      <div className="space-y-2 rounded-lg border p-4" data-layout="low_activity">
+      <div className="nowcast-body space-y-2 rounded-lg border p-4" data-layout="low_activity">
         <StatusBadge status={n.status} />
         <p className="text-lg">{n.sentence}</p>
         <p className="text-muted-foreground text-sm">{LOW_ACTIVITY_COPY}</p>
@@ -91,7 +91,7 @@ export default function NowcastBody({ nowcast: n, kindBadge = true }) {
     );
   }
   return (
-    <div className="space-y-3" data-layout="ranked">
+    <div className="nowcast-body space-y-3" data-layout="ranked">
       <div className="flex flex-wrap items-center gap-2">
         <StatusBadge status={n.status} />
         {kindBadge ? <KindBadge kind={n.kind} /> : null}

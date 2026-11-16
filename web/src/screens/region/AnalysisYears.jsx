@@ -1,3 +1,5 @@
+import LoadingFrame from "@/components/LoadingFrame.jsx";
+
 /** Scientific years are deliberately separate from the exact-date download controls. */
 export default function AnalysisYears({ analysis, setUrl }) {
   if (!analysis.index) return null;
@@ -12,6 +14,6 @@ export default function AnalysisYears({ analysis, setUrl }) {
       {analysis.index.available_years.map((year) => <option key={year}>{year}</option>)}
     </select></label>
     <p className="text-muted-foreground text-sm">Complete calendar years for the scientific results. Exact dates below select daily totals and downloads.</p>
-    {analysis.state?.status === "loading" ? <span role="status">Loading selected analysis…</span> : null}
+    <span className="inline-block h-5 w-28">{analysis.state?.status === "loading" ? <LoadingFrame title="selected analysis" variant="chart" className="h-5 w-28" /> : null}</span>
   </fieldset>;
 }

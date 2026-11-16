@@ -1,3 +1,5 @@
+import { PageLoading } from "@/components/LoadingFrame.jsx";
+import LoadingFrame from "@/components/LoadingFrame.jsx";
 import { useEffect, useRef } from "react";
 import { siteUrl } from "@/lib/siteUrl.js";
 import { Link, useLocation, useParams } from "react-router-dom";
@@ -74,13 +76,15 @@ export default function Brief() {
     };
   }, []);
 
+  if (status === "loading") return <div className="brief"><div className="brief-page"><PageLoading kind="brief" heading="Season Brief" /></div></div>;
+
   if (status !== "ok") {
     return (
       <div className="brief">
         <div className="brief-page">
           <h1 className="text-xl font-semibold">Season Brief</h1>
           <p className="mt-2">
-            {status === "loading" ? "Loading…" : `There is no Season Brief for “${id}”.`}{" "}
+            {`There is no Season Brief for “${id}”.`}{" "}
             <Link to="/pick" className="underline">
               Pick a place
             </Link>
@@ -124,6 +128,7 @@ export default function Brief() {
           </p>
         </header>
 
+        {trend?.status === "loading" ? <LoadingFrame title="Brief verdict" variant="brief-verdict" /> : null}
         {ok(trend) ? (
           <Block title="Is it really burning more?">
             <p className="text-[11pt] font-medium">{trend.data.sentence}</p>
@@ -136,6 +141,7 @@ export default function Brief() {
           </Block>
         ) : null}
 
+        {monthly?.status === "loading" || climatology?.status === "loading" || (ok(monthly) && ok(climatology) && viz === null) ? <LoadingFrame title="Brief calendar" variant="chart" className="h-48" /> : null}
         {showCalendar ? (
           <Block title="The fire calendar, month by month">
             <figure className="brief-calendar">
@@ -156,6 +162,7 @@ export default function Brief() {
         {/* Text on the left, the map on the right: keeps the page to one sheet. */}
         <div className={showMap ? "brief-row" : undefined}>
           <div>
+            {season?.status === "loading" ? <LoadingFrame title="Brief critical weeks" /> : null}
             {ok(season) && season.data.windows?.length ? (
               <Block title="When it burns">
                 <ul className="space-y-0.5">
@@ -166,6 +173,7 @@ export default function Brief() {
               </Block>
             ) : null}
 
+            {nowcast?.status === "loading" ? <LoadingFrame title="Brief this week" /> : null}
             {ok(nowcast) ? (
               <Block title="This week">
                 <p>
@@ -192,6 +200,7 @@ export default function Brief() {
             </Block>
           </div>
 
+          {hex?.status === "loading" || (ok(hex) && viz === null) ? <LoadingFrame title="Brief map" variant="chart" className="h-56" /> : null}
           {showMap ? (
             <Block title="Where it burns">
               <figure className="brief-map">

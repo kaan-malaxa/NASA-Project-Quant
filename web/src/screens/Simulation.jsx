@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { FlaskConical } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import LoadingFrame from "@/components/LoadingFrame.jsx";
+import { PageLoading } from "@/components/LoadingFrame.jsx";
 import SectionState from "@/components/SectionState.jsx";
 import { VizSlot } from "@/components/Viz.jsx";
 import { useRegions } from "@/data/useRegions.js";
@@ -55,11 +57,11 @@ export default function Simulation() {
       </header>
 
       {regionsState.status !== "ok" ? (
-        <SectionState state={regionsState} title="Places" />
+        regionsState.status === "loading" ? <PageLoading kind="region" heading="simulation" includeHeader={false} /> : <SectionState state={regionsState} title="Places" />
       ) : !sim ? (
         <p className="text-muted-foreground">There is no simulated region in this build of the data.</p>
       ) : status !== "ok" ? (
-        <SectionState state={{ status: "loading" }} title="Simulated region" />
+        <SectionState state={regionsState} title="Simulated region" variant="verdict" />
       ) : (
         <>
           {/* b. The broken ruler: naive splice against harmonized, for the simulated region */}
@@ -84,7 +86,7 @@ export default function Simulation() {
             <VerdictSection state={files.trend} />
             <div className="bg-card space-y-3 rounded-xl border p-5" data-testid="truth-check">
               <h2 className="text-lg font-semibold">The answer we planted</h2>
-              {check ? (
+              {methods.status === "loading" ? <LoadingFrame title="planted-truth checks" variant="table" /> : check ? (
                 <p className={`text-pretty ${check.inside ? "" : "text-warning"}`}>{check.sentence}</p>
               ) : (
                 <p className="text-muted-foreground text-sm">

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
+import LoadingFrame from "@/components/LoadingFrame.jsx";
 import SectionState from "@/components/SectionState.jsx";
 import { useRegions } from "@/data/useRegions.js";
 import { useJson } from "@/data/useJson.js";
@@ -58,7 +59,7 @@ export default function Picker() {
           className="bg-background w-full rounded-md border px-3 py-2 focus-visible:outline-2 focus-visible:outline-offset-2"
         />
       </label>
-      <SectionState state={state} title="Places">
+      <SectionState state={state} title="Places" variant="cards">
         {() =>
           allRegions.length ? (
             <ul data-tour="places" className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -119,7 +120,7 @@ function RegionCard({ region, debug }) {
     <Link
       ref={cardRef}
       to={{ pathname: `/r/${region.id}`, search: debug || region.synthetic ? "?debug=1" : "" }}
-      className="bg-card text-card-foreground hover:bg-accent/40 focus-visible:ring-ring flex h-full flex-col gap-3 rounded-xl border p-4 transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
+      className="bg-card text-card-foreground hover:bg-accent/40 focus-visible:ring-ring flex h-full min-h-[224px] flex-col gap-3 rounded-xl border p-4 transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
     >
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0 space-y-1">
@@ -173,11 +174,7 @@ function MiniOutline({ state, name }) {
           />
         </svg>
       ) : (
-        <div
-          aria-hidden="true"
-          data-testid="outline-placeholder"
-          className="bg-muted h-full w-full rounded-md"
-        />
+        <div data-testid="outline-placeholder"><LoadingFrame title={`${name} outline`} variant="chart" className="h-[72px] w-24" /></div>
       )}
     </div>
   );

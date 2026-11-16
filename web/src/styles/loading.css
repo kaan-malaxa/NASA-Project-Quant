@@ -1,0 +1,248 @@
+.loading-frame {
+    min-width: 0;
+}
+.loading-shapes[data-visible="false"] {
+    visibility: hidden;
+}
+.sk-stack,
+.sk-lines {
+    display: grid;
+    gap: 12px;
+}
+.sk-lines {
+    gap: 10px;
+}
+.sk-line {
+    height: 16px;
+    max-width: 100%;
+}
+.sk-line-0 {
+    width: 91%;
+}
+.sk-line-1 {
+    width: 76%;
+}
+.sk-line-2 {
+    width: 84%;
+}
+.sk-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.sk-figures,
+.sk-cards {
+    display: grid;
+    gap: 12px;
+}
+.sk-cards {
+    gap: 16px;
+}
+.sk-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    display: grid;
+    gap: 12px;
+    min-height: 224px;
+}
+.sk-table-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+}
+.sk-page {
+    display: grid;
+    gap: 24px;
+}
+.sk-section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    display: grid;
+    gap: 16px;
+}
+.sk-trend {
+    height: 170px;
+}
+.sk-clock {
+    height: min(640px, calc(100vw - 74px));
+    width: 100%;
+}
+.sk-map {
+    height: max(260px, min(420px, 70vw));
+    width: 100%;
+}
+.chart-shell {
+    min-width: 0;
+    container-type: inline-size;
+}
+.chart-shell-clock {
+    min-height: min(640px, 100cqw);
+}
+.chart-shell-ruler {
+    min-height: clamp(240px, 50cqw, 420px);
+}
+.chart-shell-trend {
+    min-height: 170px;
+}
+.chart-shell-map {
+    min-height: max(260px, min(420px, 70vw));
+}
+.chart-shell-clock > .loading-frame {
+    height: min(640px, 100cqw);
+}
+.chart-shell-ruler > .loading-frame {
+    height: clamp(240px, 50cqw, 420px);
+}
+.chart-shell-trend > .loading-frame {
+    height: 170px;
+}
+.chart-shell-map > .loading-frame {
+    height: max(260px, min(420px, 70vw));
+}
+.chart-frame > .loading-frame .loading-shapes,
+.chart-frame > .loading-frame [data-slot="skeleton"] {
+    height: 100%;
+}
+@media (min-width: 640px) {
+    .sk-figures {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .sk-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .sk-trend,
+    .chart-shell-trend,
+    .chart-shell-trend > .loading-frame {
+        min-height: 126px;
+        height: 126px;
+    }
+}
+@media (min-width: 1024px) {
+    .sk-cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    [data-slot="skeleton"] {
+        animation: none !important;
+    }
+}
+@media print {
+    [data-state="loading"] {
+        display: none !important;
+    }
+}
+
+.sk-region-header {
+    display: grid;
+    gap: 8px;
+}
+.sk-story {
+    height: 48px;
+}
+.sk-analysis {
+    height: 150px;
+}
+.sk-dates {
+    height: 120px;
+}
+@media (min-width: 640px) {
+    .sk-story {
+        height: 24px;
+    }
+    .sk-analysis {
+        height: 80px;
+    }
+    .sk-dates {
+        height: 40px;
+    }
+}
+
+[data-slot="skeleton"] {
+    background-color: color-mix(in srgb, var(--muted) 88%, var(--foreground));
+}
+.sk-verdict > .sk-lines {
+    gap: 8px;
+}
+.sk-verdict > .sk-lines .sk-line {
+    height: 20px;
+}
+@container (max-width:519px) {
+    .chart-shell-trend,
+    .chart-shell-trend > .loading-frame {
+        min-height: 170px;
+        height: 170px;
+    }
+}
+@media (min-width: 640px) {
+    .sk-controls {
+        gap: 0;
+    }
+    .sk-controls .sk-analysis {
+        height: 82px;
+    }
+    .sk-controls .sk-dates {
+        height: 36px;
+    }
+    .sk-controls .sk-buttons {
+        height: 44px;
+        align-items: center;
+    }
+}
+
+.sk-season {
+    height: 640px;
+}
+.sk-critical > .sk-lines {
+    min-height: 180px;
+}
+@media (min-width: 640px) {
+    .sk-season {
+        height: 320px;
+    }
+    .sk-critical > .sk-lines {
+        min-height: 120px;
+    }
+    .sk-section {
+        padding: 24px;
+    }
+}
+
+.sk-calendar-legend { height:150px; }
+@media(max-width:639px) {
+  .sk-verdict .sk-figures > div { min-height:178px; }
+  .sk-calendar > .sk-lines { min-height:42px; }
+  .sk-critical > .sk-lines { min-height:204px; }
+  .sk-controls .sk-analysis { height:122px; }
+  .sk-stats .sk-table-row { padding-block:26px; }
+  .sk-stats .sk-figures > div { min-height:200px; }
+}
+@media(min-width:640px) { .sk-critical { gap:22px; } }
+
+@media(min-width:640px) { .sk-calendar > .sk-lines { min-height:68px; } }
+
+/* Keep the recent-data card's strip-sized space even for calm empty states. */
+.nowcast-body { min-height:268px; }
+@media(min-width:640px) {
+  .sk-downloads .sk-figures > div { padding:12px; }
+  .sk-downloads .sk-lines { gap:8px; }
+  .sk-downloads .sk-line { height:14px; }
+}
+@media(max-width:639px) { .sk-downloads .sk-figures > div { padding:15px; } }
+
+/* The map includes its draw/selection toolbar, not just the canvas. */
+.map-content { display:grid; gap:12px; }
+.map-slot,.chart-shell-map { min-height:calc(max(260px,min(420px,70vw)) + 104px); }
+.chart-shell-map > .loading-frame { height:calc(max(260px,min(420px,70vw)) + 104px); }
+.map-notes { min-height:208px; }
+@media(min-width:640px) {
+  .map-slot,.chart-shell-map { min-height:calc(max(260px,min(420px,70vw)) + 80px); }
+  .chart-shell-map > .loading-frame { height:calc(max(260px,min(420px,70vw)) + 80px); }
+  .map-notes { min-height:104px; }
+}

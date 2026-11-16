@@ -99,6 +99,20 @@ def build_audit(read: Loader) -> str:
             L.value("trend years", trend, f, "years")
             L.value("verdict sentence_id", trend, f, "sentence_id")
             L.value("verdict sentence", trend, f, "sentence")
+        claim = load(f"{rid}/claim_check.json")
+        if claim is not None:  # SD-20 Claim Checker: constants, fixed sentences and the computed example claims
+            f = f"{rid}/claim_check.json"
+            for k in sorted(claim["config"]):
+                L.value(f"claim checker {k}", claim, f, "config", k)
+            for k in sorted(claim["templates"]):
+                L.value(f"claim checker template {k}", claim, f, "templates", k)
+            for k in sorted(claim["notes"]):
+                L.value(f"claim checker note {k}", claim, f, "notes", k)
+            L.value("claim checker replicate years", claim, f, "replicates", "years")
+            L.value("claim checker replicate count", claim, f, "replicates", "n")
+            for i in range(len(claim.get("examples", []))):
+                L.value(f"claim checker example {i + 1}", claim, f, "examples", i, "claim")
+                L.value(f"claim checker example {i + 1} verdict", claim, f, "examples", i, "verdict")
 
         season = load(f"{rid}/season.json")
         f = f"{rid}/season.json"

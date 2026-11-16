@@ -4,6 +4,10 @@ Prometheus Torch makes a satellite record inspectable across changes in observin
 
 The static JavaScript application reads validated files from web/public/data/. Analysis years select complete calendar years and load Python-precomputed trend, season, climatology and ruler results. Exact dates independently select daily totals and downloads. Anomaly comparisons retain the configured historical baseline. Maps and area summaries sum authoritative daily-source contributions, including outage fills, calibration bounds and regional coverage scaling. The analysis polygon includes Alaska and Hawaii; display wrapping leaves that polygon unchanged.
 
+## Claim Checker
+
+Each region page has a "Check a claim" section: "Fires in [place] have [increased|decreased] by [P]% between [year] and [year]." The claim is compared with the naive splice and the harmonized record using 3-year windows, the calibration replicates and fixed verdict sentences (science decision SD-20, constants in `pipeline/config/science.yaml` under `claim_check`). It runs in the browser on `<region>/claim_check.json`; no AI, chatbot or external service is involved. The Python reference is `pipeline/common/claim_check.py`; `python -m pipeline.export.claim_check --region us --region synthland` publishes the file.
+
 ## Reproduce locally
 
 Run these commands separately from the repository root:

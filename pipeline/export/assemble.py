@@ -33,12 +33,14 @@ from pipeline.export.check import (
     schema_errors,
     validator_for,
 )
+from pipeline.export.claim_check import ClaimCheckError
+from pipeline.export.claim_check import write_region as write_claim_check
 from pipeline.export.compress import compress_region
 
 METHODS_TEXT = Path(__file__).resolve().parent / "methods_text.yaml"
 REGION_FILES = ["weekly", "monthly", "daily", "climatology", "season", "trend", "ruler", "nowcast", "hex",
                 "calibration", "outline", "period_index", "spatial_index"]
-OPTIONAL_FILES = ["cells_monthly", "downloads", "hotspots_recent"]
+OPTIONAL_FILES = ["cells_monthly", "downloads", "hotspots_recent", "claim_check"]
 TOP_LEVEL = {"regions.json", "methods.json", "manifest.json", "numbers_audit.md"}
 SENSOR_TEXT = {"aqua": "MODIS Aqua", "terra": "MODIS Terra", "snpp": "S-NPP VIIRS", "noaa20": "NOAA-20 VIIRS"}
 PASS_TEXT = {"D": "daytime", "N": "night-time"}
@@ -361,6 +363,11 @@ def _assemble(inp: Inputs) -> list[str]:
     rebuilt = [rid for rid in real if rid not in preserved]
     for rid in rebuilt:
         copy_calibration(inp, rid, registry)
+        try:  # SD-20: the Claim Checker file, from trend.json and R3's replicates (skipped without replicates)
+            write_claim_check(inp.web_dir, rid, inp.harmonized_dir(rid) / "annual_bootstrap.parquet", inp.science,
+                              inp.header, inp.read_parquet, inp.write_json, _read_json)
+        except ClaimCheckError as error:
+            raise AssembleError(f"claim_check.json for {rid}: {error}") from error
         if is_world_region(rid):
             compress_region(inp.web_dir / rid)  # lossless; before the audit and the manifest hashes
     previous = {r["id"]: r for r in old_regions["regions"]} if old_regions else {}

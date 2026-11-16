@@ -12,4 +12,5 @@ climatology: {baseline_years: [2003, 2025], smooth_weeks: 3}
 anomaly: {low_activity_threshold: 5, extreme_pct: 95, above_pct: 75, below_pct: 25}
 season: {critical_share: 0.8, max_windows: 2, min_window_share: 0.15, extend_weeks: 4, min_year_celldays: 20}
 trend: {years: [2003, 2025], bootstrap_b: 1000, artifact_gap_points: 10}
+claim_check: {window_years: 3, artifact_min_naive_pct: 25, agreement_tolerance_pct_points: 5, max_claim_pct: 1000}
 tier2: {fit: ["2013-01-01", "2022-12-31"], frp_floor_mw: 0.1, bootstrap_b: 200, max_band_at_10mw: 0.30, max_reliability_err: 0.05, max_wape_ratio_vs_t1: 1.10}

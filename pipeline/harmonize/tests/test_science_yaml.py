@@ -58,6 +58,12 @@ def test_science_yaml_matches_contract():
             "bootstrap_b": 1000,
             "artifact_gap_points": 10,
         },
+        "claim_check": {  # SD-20
+            "window_years": 3,
+            "artifact_min_naive_pct": 25,
+            "agreement_tolerance_pct_points": 5,
+            "max_claim_pct": 1000,
+        },
         "tier2": {
             "fit": ["2013-01-01", "2022-12-31"],
             "frp_floor_mw": 0.1,

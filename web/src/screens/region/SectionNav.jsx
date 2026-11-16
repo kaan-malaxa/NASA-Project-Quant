@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 export const SECTIONS = [
   { id: "verdict", label: "Verdict" },
+  { id: "claim-checker", label: "Check a claim" },
   { id: "calendar", label: "Calendar" },
   { id: "critical-weeks", label: "Critical weeks" },
   { id: "this-week", label: "This week" },
@@ -61,7 +62,7 @@ export default function SectionNav({ sections = SECTIONS, orientation = "horizon
                   vertical ? "flex w-full items-baseline gap-2 px-3 py-1.5 text-left" : "px-3 py-1.5 whitespace-nowrap"
                 } ${on ? "bg-muted text-foreground font-semibold" : "text-muted-foreground hover:bg-muted hover:text-foreground"}`}
               >
-                {vertical ? <span className="w-4 shrink-0 text-xs tabular-nums opacity-70">{i + 1}</span> : null}
+                {vertical ? <span className="w-5 shrink-0 text-xs tabular-nums">{i + 1}</span> : null}
                 {s.label}
               </button>
             </li>

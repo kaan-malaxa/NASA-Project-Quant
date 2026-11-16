@@ -6,6 +6,7 @@ import { useRegionData } from "@/data/useRegionData.js";
 import { useUrlState } from "@/data/useUrlState.js";
 import SectionNav from "./region/SectionNav.jsx";
 import VerdictSection from "./region/VerdictSection.jsx";
+import ClaimCheckerSection from "./region/ClaimCheckerSection.jsx";
 import CalendarSection from "./region/CalendarSection.jsx";
 import CriticalWeeksSection from "./region/CriticalWeeksSection.jsx";
 import ThisWeekSection from "./region/ThisWeekSection.jsx";
@@ -82,6 +83,16 @@ export default function Region() {
         <SectionNav />
       </StickyBar>
       <VerdictSection state={files.trend} />
+      {originalFiles.claim_check && originalFiles.claim_check.status !== "absent" ? (
+        <ClaimCheckerSection
+          region={region}
+          state={originalFiles.claim_check}
+          files={files}
+          url={url}
+          setUrl={setUrl}
+          lastDataDay={lastDataDay}
+        />
+      ) : null}
       <CalendarSection
         files={files}
         url={url}

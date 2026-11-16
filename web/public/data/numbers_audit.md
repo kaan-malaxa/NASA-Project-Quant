@@ -2,7 +2,7 @@
 
 Every headline number on the site, with the file and JSON Pointer it comes from. No number may appear in the pitch, slides, README or video unless it is on this list. Values are copied exactly from the files; sentences are quoted exactly.
 
-Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d, c841c3b0.
+Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d, 9c561b0e9, c841c3b0.
 
 ## United States (`us`)
 
@@ -22,6 +22,37 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d, c841c3b0.
 - trend years: [2003, 2025]  us/trend.json#/years
 - verdict sentence_id: "unclear"  us/trend.json#/sentence_id
 - verdict sentence: "The record does not show a clear long-term change here (-9 to 2% per decade)."  us/trend.json#/sentence
+- claim checker agreement_tolerance_pct_points: 5  us/claim_check.json#/config/agreement_tolerance_pct_points
+- claim checker artifact_min_naive_pct: 25  us/claim_check.json#/config/artifact_min_naive_pct
+- claim checker interval_percentiles: [5, 95]  us/claim_check.json#/config/interval_percentiles
+- claim checker max_claim_pct: 1000  us/claim_check.json#/config/max_claim_pct
+- claim checker record_years: [2003, 2025]  us/claim_check.json#/config/record_years
+- claim checker sensor_change_year: 2012  us/claim_check.json#/config/sensor_change_year
+- claim checker window_years: 3  us/claim_check.json#/config/window_years
+- claim checker year_min_covered_frac: 0.9  us/claim_check.json#/config/year_min_covered_frac
+- claim checker template cant_tell_missing: "We can't tell. Satellite coverage is too thin in {missing_years}, inside the years this check compares, and missing data is never counted as zero."  us/claim_check.json#/templates/cant_tell_missing
+- claim checker template cant_tell_zero_start: "We can't tell. One of the two records shows no satellite-detected burning activity in {place} in {start_window}, so a percentage change from those years has no meaning."  us/claim_check.json#/templates/cant_tell_zero_start
+- claim checker template contradicted: "The record contradicts the claim. After correcting for the sensor change, satellite-detected burning activity in {place} changed by {h_mid} from {start_window} to {end_window} (likely range {h_lo} to {h_hi}), the opposite direction to the claimed {claimed}."  us/claim_check.json#/templates/contradicted
+- claim checker template holds_up: "The claim holds up. After correcting for the sensor change, satellite-detected burning activity in {place} changed by {h_mid} from {start_window} to {end_window} (likely range {h_lo} to {h_hi}), in line with the claimed {claimed}."  us/claim_check.json#/templates/holds_up
+- claim checker template no_clear_change: "The record shows no clear change. After correcting for the sensor change, satellite-detected burning activity in {place} changed by {h_mid} from {start_window} to {end_window} (likely range {h_lo} to {h_hi}), too small to support the claimed {claimed}."  us/claim_check.json#/templates/no_clear_change
+- claim checker template sensor_artifact: "The claimed change looks like a sensor artifact. The raw record, as most people would compute it, shows {naive} from {start_window} to {end_window} in {place}, but after correcting for the sensor change there is no clear change (likely range {h_lo} to {h_hi})."  us/claim_check.json#/templates/sensor_artifact
+- claim checker template stronger_than_claimed: "The claim understates the change. After correcting for the sensor change, satellite-detected burning activity in {place} changed by {h_mid} from {start_window} to {end_window} (likely range {h_lo} to {h_hi}), more than the claimed {claimed}."  us/claim_check.json#/templates/stronger_than_claimed
+- claim checker template weaker_than_claimed: "The claim overstates the change. After correcting for the sensor change, satellite-detected burning activity in {place} changed by {h_mid} from {start_window} to {end_window} (likely range {h_lo} to {h_hi}), less than the claimed {claimed}."  us/claim_check.json#/templates/weaker_than_claimed
+- claim checker note aoi_calibration: "Calibration measured for the whole region is applied to your drawn area. Treat small areas as indicative."  us/claim_check.json#/notes/aoi_calibration
+- claim checker note artifact_share: "About {artifact_share} of the raw change comes from the sensor switch."  us/claim_check.json#/notes/artifact_share
+- claim checker note same_sensor: "This period doesn't cross the {sensor_change_year} sensor change, so the two records should mostly agree."  us/claim_check.json#/notes/same_sensor
+- claim checker note tolerance: "A claim counts as matching when it is within {tolerance} percentage points of the corrected likely range."  us/claim_check.json#/notes/tolerance
+- claim checker note windows: "Compared the average of {start_window} with the average of {end_window} ({window_years}-year windows centred on the chosen years, shortened at the edges of the record)."  us/claim_check.json#/notes/windows
+- claim checker replicate years: [2020, 2022, 2023, 2024, 2025]  us/claim_check.json#/replicates/years
+- claim checker replicate count: 500  us/claim_check.json#/replicates/n
+- claim checker example 1: {"claimed_pct": 172, "direction": "increased", "from_year": 2004, "place": "region", "to_year": 2024}  us/claim_check.json#/examples/0/claim
+- claim checker example 1 verdict: "sensor_artifact"  us/claim_check.json#/examples/0/verdict
+- claim checker example 2: {"claimed_pct": 6, "direction": "decreased", "from_year": 2004, "place": "region", "to_year": 2024}  us/claim_check.json#/examples/1/claim
+- claim checker example 2 verdict: "no_clear_change"  us/claim_check.json#/examples/1/verdict
+- claim checker example 3: {"claimed_pct": 22, "direction": "decreased", "from_year": 2004, "place": "region", "to_year": 2010}  us/claim_check.json#/examples/2/claim
+- claim checker example 3 verdict: "weaker_than_claimed"  us/claim_check.json#/examples/2/verdict
+- claim checker example 4: {"claimed_pct": 13, "direction": "increased", "from_year": 2013, "place": "region", "to_year": 2024}  us/claim_check.json#/examples/3/claim
+- claim checker example 4 verdict: "holds_up"  us/claim_check.json#/examples/3/verdict
 - critical weeks: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47]  us/season.json#/critical_weeks
 - window w1 label: "early-July to late-November"  us/season.json#/windows/0/label
 - window w1 start_week: 28  us/season.json#/windows/0/start_week
@@ -94,6 +125,37 @@ Built from code_version 088f86c3, 1bb5e8f4, 4389fe3d, c841c3b0.
 - trend years: [2003, 2025]  synthland/trend.json#/years
 - verdict sentence_id: "artifact_rising"  synthland/trend.json#/sentence_id
 - verdict sentence: "Burning activity did rise, by about 12% per decade (11 to 14). The raw record overstates it at 44%."  synthland/trend.json#/sentence
+- claim checker agreement_tolerance_pct_points: 5  synthland/claim_check.json#/config/agreement_tolerance_pct_points
+- claim checker artifact_min_naive_pct: 25  synthland/claim_check.json#/config/artifact_min_naive_pct
+- claim checker interval_percentiles: [5, 95]  synthland/claim_check.json#/config/interval_percentiles
+- claim checker max_claim_pct: 1000  synthland/claim_check.json#/config/max_claim_pct
+- claim checker record_years: [2003, 2025]  synthland/claim_check.json#/config/record_years
+- claim checker sensor_change_year: 2012  synthland/claim_check.json#/config/sensor_change_year
+- claim checker window_years: 3  synthland/claim_check.json#/config/window_years
+- claim checker year_min_covered_frac: 0.9  synthland/claim_check.json#/config/year_min_covered_frac
+- claim checker template cant_tell_missing: "We can't tell. Satellite coverage is too thin in {missing_years}, inside the years this check compares, and missing data is never counted as zero."  synthland/claim_check.json#/templates/cant_tell_missing
+- claim checker template cant_tell_zero_start: "We can't tell. One of the two records shows no satellite-detected burning activity in {place} in {start_window}, so a percentage change from those years has no meaning."  synthland/claim_check.json#/templates/cant_tell_zero_start
+- claim checker template contradicted: "The record contradicts the claim. After correcting for the sensor change, satellite-detected burning activity in {place} changed by {h_mid} from {start_window} to {end_window} (likely range {h_lo} to {h_hi}), the opposite direction to the claimed {claimed}."  synthland/claim_check.json#/templates/contradicted
+- claim checker template holds_up: "The claim holds up. After correcting for the sensor change, satellite-detected burning activity in {place} changed by {h_mid} from {start_window} to {end_window} (likely range {h_lo} to {h_hi}), in line with the claimed {claimed}."  synthland/claim_check.json#/templates/holds_up
+- claim checker template no_clear_change: "The record shows no clear change. After correcting for the sensor change, satellite-detected burning activity in {place} changed by {h_mid} from {start_window} to {end_window} (likely range {h_lo} to {h_hi}), too small to support the claimed {claimed}."  synthland/claim_check.json#/templates/no_clear_change
+- claim checker template sensor_artifact: "The claimed change looks like a sensor artifact. The raw record, as most people would compute it, shows {naive} from {start_window} to {end_window} in {place}, but after correcting for the sensor change there is no clear change (likely range {h_lo} to {h_hi})."  synthland/claim_check.json#/templates/sensor_artifact
+- claim checker template stronger_than_claimed: "The claim understates the change. After correcting for the sensor change, satellite-detected burning activity in {place} changed by {h_mid} from {start_window} to {end_window} (likely range {h_lo} to {h_hi}), more than the claimed {claimed}."  synthland/claim_check.json#/templates/stronger_than_claimed
+- claim checker template weaker_than_claimed: "The claim overstates the change. After correcting for the sensor change, satellite-detected burning activity in {place} changed by {h_mid} from {start_window} to {end_window} (likely range {h_lo} to {h_hi}), less than the claimed {claimed}."  synthland/claim_check.json#/templates/weaker_than_claimed
+- claim checker note aoi_calibration: "Calibration measured for the whole region is applied to your drawn area. Treat small areas as indicative."  synthland/claim_check.json#/notes/aoi_calibration
+- claim checker note artifact_share: "About {artifact_share} of the raw change comes from the sensor switch."  synthland/claim_check.json#/notes/artifact_share
+- claim checker note same_sensor: "This period doesn't cross the {sensor_change_year} sensor change, so the two records should mostly agree."  synthland/claim_check.json#/notes/same_sensor
+- claim checker note tolerance: "A claim counts as matching when it is within {tolerance} percentage points of the corrected likely range."  synthland/claim_check.json#/notes/tolerance
+- claim checker note windows: "Compared the average of {start_window} with the average of {end_window} ({window_years}-year windows centred on the chosen years, shortened at the edges of the record)."  synthland/claim_check.json#/notes/windows
+- claim checker replicate years: [2020, 2022, 2023, 2024, 2025]  synthland/claim_check.json#/replicates/years
+- claim checker replicate count: 500  synthland/claim_check.json#/replicates/n
+- claim checker example 1: {"claimed_pct": 363, "direction": "increased", "from_year": 2004, "place": "region", "to_year": 2024}  synthland/claim_check.json#/examples/0/claim
+- claim checker example 1 verdict: "weaker_than_claimed"  synthland/claim_check.json#/examples/0/verdict
+- claim checker example 2: {"claimed_pct": 29, "direction": "increased", "from_year": 2004, "place": "region", "to_year": 2024}  synthland/claim_check.json#/examples/1/claim
+- claim checker example 2 verdict: "holds_up"  synthland/claim_check.json#/examples/1/verdict
+- claim checker example 3: {"claimed_pct": 11, "direction": "increased", "from_year": 2004, "place": "region", "to_year": 2010}  synthland/claim_check.json#/examples/2/claim
+- claim checker example 3 verdict: "holds_up"  synthland/claim_check.json#/examples/2/verdict
+- claim checker example 4: {"claimed_pct": 14, "direction": "increased", "from_year": 2013, "place": "region", "to_year": 2024}  synthland/claim_check.json#/examples/3/claim
+- claim checker example 4 verdict: "holds_up"  synthland/claim_check.json#/examples/3/verdict
 - critical weeks: [16, 17, 18, 19, 20, 40, 41, 42, 43, 44, 45, 46, 47, 48]  synthland/season.json#/critical_weeks
 - window w1 label: "early-October to early-December"  synthland/season.json#/windows/0/label
 - window w1 start_week: 40  synthland/season.json#/windows/0/start_week

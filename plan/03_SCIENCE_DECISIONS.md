@@ -245,6 +245,57 @@ Rules: training and test years never mix; any split is by year. A result that lo
 
 ---
 
+## Claim Checker
+
+### SD-20 · Claim Checker
+A visitor writes a claim as a sentence of controls: "Fires in [region | drawn area] have [increased | decreased] by [P]% between [Y1] and [Y2]." The site checks it against the naive splice (SD-09) and the harmonized record (SD-05) and answers with a fixed template. No AI, chatbot or external service is involved; the check is arithmetic on published files, run in the browser, with a Python reference implementation (`pipeline/common/claim_check.py`) that must give identical results to 3 decimals.
+
+- **Input rules.** `direction` is `increased` or `decreased`; `0 < P ≤ claim_check.max_claim_pct`; `Y1 < Y2`, both inside `trend.years`. Anything else is rejected with an error code, never a verdict. The claimed change is `C = +P` (increased) or `C = −P` (decreased).
+- **Endpoint windows.** Each end is the mean of the annual values in the window of `claim_check.window_years` years centred on the chosen year (`Y − 1 … Y + 1` for 3), **trimmed at the record edges** (`trend.years`): 2003 uses 2003–2004, 2025 uses 2024–2025. No single year can be cherry-picked. The windows actually used are always shown. Windows may overlap when `Y2 − Y1 < window_years`; they are shown as used.
+- **Annual values.** Region: `trend.json → annual` (harmonized Aqua-equivalent fire cell-days; naive hotspot count per SD-09). Drawn area: the sum of the 12 monthly bins of the area series (`spatial/<year>.json`, SD-04 res-5 cells); a year with any missing month is missing. The drawn-area naive splice is in fire cell-days (Aqua before 2012, S-NPP from 2012), not hotspots; the unit is shown.
+- **Change measure.** For each lens separately: `change = (mean(end window) ÷ mean(start window) − 1) × 100`. The naive (N) and harmonized (H) units differ; ratios inside one lens are comparable. N gets no range and is labelled "as most people would compute it".
+- **Harmonized range.** Region: for each R3 calibration replicate (`annual_bootstrap.parquet`, SD-06/SD-14) the same change is computed with that replicate's annual totals; `lo`/`hi` are the `tier1.interval_percentiles` (linear interpolation) of those changes. Only the years whose totals differ between replicates are exported; every other year is identical in all replicates and is read from `trend.json`. Drawn area (no replicates per area): the envelope `lo = mean(end lo) ÷ mean(start hi) − 1`, `hi = mean(end hi) ÷ mean(start lo) − 1` from the summed SD-07 bounds. In both cases the range is widened, if needed, to include the central value `mid`.
+- **Agreement tolerance.** Most years before 2020 are observed Aqua with no calibration uncertainty, so the harmonized range is often a single point. A claim is therefore compared with the band `Hb = [lo − t, hi + t]`, `t = claim_check.agreement_tolerance_pct_points` (5, the same size as the planted-truth trend tolerance in `pipeline/synth/truth.py`). The sentence states `t`.
+- **Coverage rule.** If any year in either window is missing in either lens (the SD-08 annual coverage threshold `timebins.year_min_covered_frac` failed), the verdict is `cant_tell_missing`. Missing is never zero. If either lens has a start-window mean of exactly 0, the verdict is `cant_tell_missing` with template `cant_tell_zero_start` (a percentage change from zero has no meaning).
+- **Verdict rules** (first match wins; C claimed, Hb band, N naive):
+  1. `cant_tell_missing`: the coverage rule fails, or a start mean is 0.
+  2. `contradicted`: all of Hb is on the opposite side of 0 from C (`C > 0` and `Hb.hi < 0`, or `C < 0` and `Hb.lo > 0`).
+  3. `sensor_artifact`: N has the same sign as C, `|N| ≥ claim_check.artifact_min_naive_pct`, and Hb contains 0.
+  4. `no_clear_change`: Hb contains 0.
+  5. `holds_up`: `Hb.lo ≤ C ≤ Hb.hi`.
+  6. `weaker_than_claimed`: Hb has the sign of C and C lies beyond Hb's far end (`|C|` larger than every value in Hb).
+  7. `stronger_than_claimed`: Hb has the sign of C and C lies before Hb's near end (`|C|` smaller than every value in Hb).
+- **Artifact share** = `(N − H.mid) ÷ N`, shown as "about X% of the raw change comes from the sensor switch" only when N and H.mid have the same sign, the share is above 0, and the windows cross the sensor change.
+- **Same-sensor note.** If every year of both windows is before the year of `eras.snpp_first_day`, or every year is from it on, add the note `same_sensor`.
+- **Drawn-area note.** For drawn areas add the existing limitation `aoi_calibration`.
+- **Determinism.** Every output number is rounded half away from zero to 3 decimals before the rules are applied. Sentences show whole percents (half away from zero, no "−0"), signed with "+" or "−" (U+2212).
+- **Templates** (slots only; `{place}` is the region name or "your drawn area"; percents formatted as above; windows as "2004–2006" or "2003" for a one-year window; `{missing_years}` as "2004, 2005"):
+
+| template_id | verdict | Template |
+|---|---|---|
+| `holds_up` | holds_up | "The claim holds up. After correcting for the sensor change, satellite-detected burning activity in {place} changed by {h_mid} from {start_window} to {end_window} (likely range {h_lo} to {h_hi}), in line with the claimed {claimed}." |
+| `weaker_than_claimed` | weaker_than_claimed | "The claim overstates the change. After correcting for the sensor change, satellite-detected burning activity in {place} changed by {h_mid} from {start_window} to {end_window} (likely range {h_lo} to {h_hi}), less than the claimed {claimed}." |
+| `stronger_than_claimed` | stronger_than_claimed | "The claim understates the change. After correcting for the sensor change, satellite-detected burning activity in {place} changed by {h_mid} from {start_window} to {end_window} (likely range {h_lo} to {h_hi}), more than the claimed {claimed}." |
+| `contradicted` | contradicted | "The record contradicts the claim. After correcting for the sensor change, satellite-detected burning activity in {place} changed by {h_mid} from {start_window} to {end_window} (likely range {h_lo} to {h_hi}), the opposite direction to the claimed {claimed}." |
+| `sensor_artifact` | sensor_artifact | "The claimed change looks like a sensor artifact. The raw record, as most people would compute it, shows {naive} from {start_window} to {end_window} in {place}, but after correcting for the sensor change there is no clear change (likely range {h_lo} to {h_hi})." |
+| `no_clear_change` | no_clear_change | "The record shows no clear change. After correcting for the sensor change, satellite-detected burning activity in {place} changed by {h_mid} from {start_window} to {end_window} (likely range {h_lo} to {h_hi}), too small to support the claimed {claimed}." |
+| `cant_tell_missing` | cant_tell_missing | "We can't tell. Satellite coverage is too thin in {missing_years}, inside the years this check compares, and missing data is never counted as zero." |
+| `cant_tell_zero_start` | cant_tell_missing | "We can't tell. One of the two records shows no satellite-detected burning activity in {place} in {start_window}, so a percentage change from those years has no meaning." |
+
+| note_id | When | Template |
+|---|---|---|
+| `windows` | always (unless cant_tell) | "Compared the average of {start_window} with the average of {end_window} ({window_years}-year windows centred on the chosen years, shortened at the edges of the record)." |
+| `tolerance` | always (unless cant_tell) | "A claim counts as matching when it is within {tolerance} percentage points of the corrected likely range." |
+| `artifact_share` | rule above | "About {artifact_share} of the raw change comes from the sensor switch." |
+| `same_sensor` | rule above | "This period doesn't cross the {sensor_change_year} sensor change, so the two records should mostly agree." |
+| `aoi_calibration` | drawn area | "Calibration measured for the whole region is applied to your drawn area. Treat small areas as indicative." |
+
+- **Limitations** (Methods page): the harmonized range holds calibration uncertainty only, not year-to-year variability (the tolerance stands in for it); drawn areas use whole-region calibration and an envelope range; the naive drawn-area lens counts cell-days, not hotspots.
+- Config: `claim_check.window_years: 3`, `claim_check.artifact_min_naive_pct: 25`, `claim_check.agreement_tolerance_pct_points: 5`, `claim_check.max_claim_pct: 1000`; also reads `trend.years`, `tier1.interval_percentiles`, `eras.snpp_first_day`, `timebins.year_min_covered_frac`.
+- **Publication.** `pipeline/export/claim_check.py` writes `<region>/claim_check.json` (contracts `claim_check.schema.json`): the config above, the templates, the annual series copied from `trend.json`, and the varying replicate years. Adding `claim_check:` changed the `science.yaml` fingerprint: the published `methods.json` fingerprint is stale until the next full rebuild of every published region.
+
+---
+
 ## H. Wording locks
 
 - A hotspot is a detection of heat in a pixel. Never call a count "number of fires".

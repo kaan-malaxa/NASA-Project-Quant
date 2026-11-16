@@ -1,5 +1,5 @@
 {
-  "code_version": "c841c3b0",
+  "code_version": "9c561b0e9",
   "contains_sample": false,
   "files": [
     {
@@ -301545,10 +301545,10 @@
       "sha256": "9384606a2693a559bb74e6414ae00f94d330b3a140d4c0a1bcae89a705f444da"
     },
     {
-      "bytes": 788299,
+      "bytes": 799374,
       "kinds": [],
       "path": "numbers_audit.md",
-      "sha256": "e8a32f303cccbb0d73d9b5737ffd9b4a4fbdcf66d19a982959d2a7bb37d3b8c4"
+      "sha256": "e5c8f0de9880122defecbb4ee491eb689a283055141e1c05f470d61544cfbabd"
     },
     {
       "bytes": 797,
@@ -335415,10 +335415,10 @@
       "sha256": "e30af56f592befb2783b398e0e292cc0debd3a81b5161c2c3267d208f95fd526"
     },
     {
-      "bytes": 150865,
+      "bytes": 150911,
       "kinds": [],
       "path": "regions.json",
-      "sha256": "2a95d75659131b6d68562cbcb99f97b7a86df313cca7ff5e9b7a4fb696ddf1da"
+      "sha256": "65babe6d661d923be534aad47e45cd0a9726c489dea15af5209202e8427dbe3d"
     },
     {
       "bytes": 900,
@@ -400518,6 +400518,15 @@
       "sha256": "b99b8a81748c3cbdd5f6156b32cbf00e780abafe0b9c2c06e809726fb015f815"
     },
     {
+      "bytes": 61585,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "synthland/claim_check.json",
+      "sha256": "547e1962f3ba4e5ef8361ab2bb9b714be840111647b5cd50a2421e6e43fd5def"
+    },
+    {
       "bytes": 13346,
       "kinds": [],
       "path": "synthland/climatology.json",
@@ -452600,6 +452609,15 @@
       "sha256": "d49795b3fa245ccada67591e08a83579d02937086d8e56849c1a50e523ed9003"
     },
     {
+      "bytes": 64212,
+      "kinds": [
+        "harmonized",
+        "observed"
+      ],
+      "path": "us/claim_check.json",
+      "sha256": "0eece259e4ea3018a47970862213f0e01d60eb1a1453a4176377413d24f82a43"
+    },
+    {
       "bytes": 13920,
       "kinds": [],
       "path": "us/climatology.json",
@@ -468235,6 +468253,6 @@
       "sha256": "25b571476e0bdc38e34283625a8b0cf9e355ef74e2e96ebcdc2aaa6b65ff5330"
     }
   ],
-  "generated_at": "2026-11-16T02:14:32Z",
+  "generated_at": "2026-11-16T04:06:35Z",
   "schema_version": "1.0"
 }

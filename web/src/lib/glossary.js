@@ -59,6 +59,10 @@ export const GLOSSARY = {
     term: "Naive splice",
     text: "What you get by switching from MODIS to VIIRS in 2012 without correcting anything.",
   },
+  artifact_share: {
+    term: "Artifact share",
+    text: "How much of the raw record's change disappears once the sensor change is corrected: (raw change − corrected change) ÷ raw change.",
+  },
   range: {
     term: "Range (likely range)",
     text: "The interval our calculation gives 9 times out of 10 when the data are resampled.",

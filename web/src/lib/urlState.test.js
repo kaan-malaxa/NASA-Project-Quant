@@ -11,11 +11,13 @@ const parse = (q) => parseUrlState(new URLSearchParams(q), LAST);
 describe("URL state (contracts section 7)", () => {
   it("defaults when empty", () => {
     expect(parse("")).toEqual(defaultUrlState(LAST));
-    expect(parse("")).toEqual({ from: "2003-01-01", to: LAST, lens: "harmonized", view: "clock", mode: "activity", aoi: [], analysis_from: null, analysis_to: null });
+    expect(parse("")).toEqual({ from: "2003-01-01", to: LAST, lens: "harmonized", view: "clock", mode: "activity", aoi: [], analysis_from: null, analysis_to: null,
+      claim_place: "region", claim_dir: null, claim_pct: null, claim_from: null, claim_to: null });
   });
 
   it("round-trips every parameter", () => {
-    const state = { from: "2012-01-20", to: "2020-02-29", lens: "naive_splice", view: "months", mode: "anomaly", aoi: [r5a, r5b], analysis_from: "2013", analysis_to: "2020" };
+    const state = { from: "2012-01-20", to: "2020-02-29", lens: "naive_splice", view: "months", mode: "anomaly", aoi: [r5a, r5b], analysis_from: "2013", analysis_to: "2020",
+      claim_place: "aoi", claim_dir: "decreased", claim_pct: 12.5, claim_from: 2005, claim_to: 2020 };
     const written = writeUrlState(new URLSearchParams("debug=1"), state, LAST);
     expect(written.get("debug")).toBe("1");
     expect(parse(written.toString())).toEqual(state);
@@ -39,5 +41,15 @@ describe("URL state (contracts section 7)", () => {
     expect(parse("from=2002-12-31").from).toBe("2003-01-01");
     expect(parse("to=2026-11-14").to).toBe(LAST);
     expect(parse("from=2020-01-01&to=2019-01-01")).toMatchObject({ from: "2003-01-01", to: LAST });
+  });
+
+  it("reads the Claim Checker parameters and drops malformed ones", () => {
+    expect(parse("claim_dir=increased&claim_pct=100&claim_from=2005&claim_to=2020")).toMatchObject({
+      claim_place: "region", claim_dir: "increased", claim_pct: 100, claim_from: 2005, claim_to: 2020 });
+    expect(parse("claim_place=moon&claim_dir=doubled&claim_pct=-5&claim_from=05&claim_to=twenty")).toMatchObject({
+      claim_place: "region", claim_dir: null, claim_pct: null, claim_from: null, claim_to: null });
+    expect(parse("claim_pct=1e3").claim_pct).toBeNull();
+    const written = writeUrlState(new URLSearchParams(), { ...defaultUrlState(LAST), claim_dir: "increased", claim_pct: 30, claim_from: 2003, claim_to: 2025 }, LAST);
+    expect(written.toString()).toBe("claim_dir=increased&claim_pct=30&claim_from=2003&claim_to=2025");
   });
 });

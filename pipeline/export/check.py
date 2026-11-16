@@ -34,7 +34,7 @@ TOP_LEVEL_SCHEMAS = {"regions.json": "regions", "methods.json": "methods", "mani
                      "world.json": "world"}
 REGION_SCHEMAS = {
     "weekly", "monthly", "daily", "climatology", "season", "trend", "ruler",
-    "nowcast", "hex", "calibration", "downloads", "period_index", "spatial_index",
+    "nowcast", "hex", "calibration", "downloads", "period_index", "spatial_index", "claim_check",
 }
 # Files that live in web/public/data but have no schema and need no check beyond existing.
 NO_SCHEMA_FILES = {"numbers_audit.md"}

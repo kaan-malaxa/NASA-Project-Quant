@@ -6,7 +6,10 @@ export const LENSES = ["harmonized", "aqua_raw", "viirs_raw", "naive_splice", "v
 export const VIEWS = ["clock", "weeks", "months"];
 export const MODES = ["activity", "anomaly"];
 export const FIRST_DAY = "2003-01-01";
-export const URL_KEYS = ["from", "to", "lens", "view", "mode", "aoi", "analysis_from", "analysis_to"];
+export const CLAIM_DIRECTIONS = ["increased", "decreased"];
+export const CLAIM_PLACES = ["region", "aoi"];
+export const URL_KEYS = ["from", "to", "lens", "view", "mode", "aoi", "analysis_from", "analysis_to",
+  "claim_place", "claim_dir", "claim_pct", "claim_from", "claim_to"];
 
 /** True for a real calendar date written YYYY-MM-DD. */
 export function isIsoDate(s) {
@@ -33,6 +36,12 @@ export function defaultUrlState(lastDataDay) {
     aoi: [],
     analysis_from: null,
     analysis_to: null,
+    // Claim Checker (SD-20): a claim is shared only when all four claim_* values are present.
+    claim_place: "region",
+    claim_dir: null,
+    claim_pct: null,
+    claim_from: null,
+    claim_to: null,
   };
 }
 
@@ -59,7 +68,12 @@ export function parseUrlState(params, lastDataDay = null) {
   const aoi = [...new Set((get("aoi") || "").split(",").map((s) => s.trim().toLowerCase()).filter(isR5Cell))];
   const analysis_from = /^\d{4}$/.test(get("analysis_from") || "") ? get("analysis_from") : null;
   const analysis_to = /^\d{4}$/.test(get("analysis_to") || "") ? get("analysis_to") : null;
-  return { from, to, lens, view, mode, aoi, analysis_from, analysis_to };
+  const claim_place = CLAIM_PLACES.includes(get("claim_place")) ? get("claim_place") : d.claim_place;
+  const claim_dir = CLAIM_DIRECTIONS.includes(get("claim_dir")) ? get("claim_dir") : d.claim_dir;
+  const claim_pct = /^\d{1,4}(\.\d{1,3})?$/.test(get("claim_pct") || "") ? Number(get("claim_pct")) : d.claim_pct;
+  const year = (k) => (/^\d{4}$/.test(get(k) || "") ? Number(get(k)) : null);
+  return { from, to, lens, view, mode, aoi, analysis_from, analysis_to, claim_place, claim_dir, claim_pct,
+    claim_from: year("claim_from"), claim_to: year("claim_to") };
 }
 
 /**

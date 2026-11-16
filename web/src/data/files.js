@@ -17,6 +17,7 @@ export const REGION_FILES = {
   calibration: "calibration.json",
   outline: "outline.geojson",
   downloads: "downloads.json",
+  claim_check: "claim_check.json",
   cells_monthly: "cells_monthly.csv",
   hotspots_recent: "hotspots_recent.csv",
 };

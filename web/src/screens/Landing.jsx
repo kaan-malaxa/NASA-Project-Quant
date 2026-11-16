@@ -126,7 +126,7 @@ export default function Landing() {
       {showLoader ? <LandingLoader tracker={tracker} onDone={hideLoader} /> : null}
 
       <ProblemStage years={rulerYears} problem={PROBLEM} solution={SOLUTION} />
-      <StartHere downloadsRegion={defaultRegion} />
+      <StartHere downloadsRegion={defaultRegion} claimRegion={defaultRegion?.optional_files?.includes("claim_check") ? defaultRegion : null} />
       {regionsState.status === "ok" ? <LiveThisWeek regions={regionsState.data.regions} /> : regionsState.status === "loading" ? (
         <div className="mx-auto w-full max-w-6xl px-4 pb-16"><div className="bg-card rounded-xl border p-5 sm:p-6"><SectionState state={regionsState} title="Live this week" variant="live" /></div></div>
       ) : null}
@@ -145,7 +145,7 @@ export default function Landing() {
  * "Start here": three ways in, as a numbered vertical path (one thin line, three nodes). Each row is one link.
  * Rows reveal one after another as they scroll in (none with reduced motion).
  */
-function StartHere({ downloadsRegion }) {
+function StartHere({ downloadsRegion, claimRegion = null }) {
   const rows = [
     {
       title: "One honest record",
@@ -201,6 +201,18 @@ function StartHere({ downloadsRegion }) {
             want answers for where you live, or with the data if you want to run your own numbers.
           </p>
           <p className="start-source pt-2">Data: NASA FIRMS · MODIS and VIIRS active fire records</p>
+          {claimRegion ? (
+            <p className="pt-2">
+              <Link
+                to={`/r/${claimRegion.id}`}
+                state={{ section: "claim-checker" }}
+                className="inline-flex items-center gap-1 font-medium underline underline-offset-4"
+              >
+                Heard a claim about fires? Check it against the record for {claimRegion.name}
+                <ArrowRight aria-hidden="true" className="size-4" />
+              </Link>
+            </p>
+          ) : null}
         </div>
         <ol className="start-path">
           {rows.map((r, i) => (

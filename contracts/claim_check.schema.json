@@ -1,0 +1,534 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "claim_check.json — Claim Checker inputs (science SD-20)",
+  "description": "Per region: the SD-20 configuration, the fixed verdict and note templates, the annual series of both lenses (copied from trend.json) and the harmonized totals of every calibration replicate for the years whose totals differ between replicates. $defs input/result describe the browser check (web/src/lib/claimCheck.js) and its Python reference (pipeline/common/claim_check.py).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "generated_at",
+    "code_version",
+    "region",
+    "config",
+    "templates",
+    "notes",
+    "naive_unit",
+    "annual",
+    "replicates",
+    "examples"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schema_version"
+    },
+    "generated_at": {
+      "$ref": "common.schema.json#/$defs/generated_at"
+    },
+    "code_version": {
+      "$ref": "common.schema.json#/$defs/code_version"
+    },
+    "region": {
+      "$ref": "common.schema.json#/$defs/region_id"
+    },
+    "config": {
+      "$ref": "#/$defs/config"
+    },
+    "templates": {
+      "$ref": "#/$defs/templates"
+    },
+    "notes": {
+      "$ref": "#/$defs/notes"
+    },
+    "naive_unit": {
+      "$ref": "#/$defs/naive_unit"
+    },
+    "annual": {
+      "type": "array",
+      "description": "trend.json annual rows over config.record_years, unchanged.",
+      "items": {
+        "$ref": "#/$defs/annual_row"
+      }
+    },
+    "replicates": {
+      "$ref": "#/$defs/replicates"
+    },
+    "examples": {
+      "type": "array",
+      "description": "SD-20 example claims computed by pipeline/common/claim_check.py example_claims, with the reference verdict.",
+      "items": {
+        "$ref": "#/$defs/example"
+      }
+    }
+  },
+  "$defs": {
+    "example": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_lens",
+        "claim",
+        "verdict",
+        "template_id"
+      ],
+      "properties": {
+        "source_lens": {
+          "enum": [
+            "naive",
+            "harmonized"
+          ]
+        },
+        "claim": {
+          "$ref": "#/$defs/input"
+        },
+        "verdict": {
+          "$ref": "#/$defs/verdict"
+        },
+        "template_id": {
+          "$ref": "#/$defs/template_id"
+        }
+      }
+    },
+    "config": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Copied from pipeline/config/science.yaml (claim_check, trend.years, tier1.interval_percentiles, eras.snpp_first_day, timebins.year_min_covered_frac).",
+      "required": [
+        "window_years",
+        "artifact_min_naive_pct",
+        "agreement_tolerance_pct_points",
+        "max_claim_pct",
+        "interval_percentiles",
+        "record_years",
+        "sensor_change_year",
+        "year_min_covered_frac"
+      ],
+      "properties": {
+        "window_years": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "artifact_min_naive_pct": {
+          "type": "number",
+          "minimum": 0
+        },
+        "agreement_tolerance_pct_points": {
+          "type": "number",
+          "minimum": 0
+        },
+        "max_claim_pct": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "interval_percentiles": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "record_years": {
+          "$ref": "common.schema.json#/$defs/year_range"
+        },
+        "sensor_change_year": {
+          "$ref": "common.schema.json#/$defs/year"
+        },
+        "year_min_covered_frac": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "template_id": {
+      "enum": [
+        "holds_up",
+        "weaker_than_claimed",
+        "stronger_than_claimed",
+        "contradicted",
+        "sensor_artifact",
+        "no_clear_change",
+        "cant_tell_missing",
+        "cant_tell_zero_start"
+      ]
+    },
+    "verdict": {
+      "enum": [
+        "holds_up",
+        "weaker_than_claimed",
+        "stronger_than_claimed",
+        "contradicted",
+        "sensor_artifact",
+        "no_clear_change",
+        "cant_tell_missing"
+      ]
+    },
+    "note_id": {
+      "enum": [
+        "windows",
+        "tolerance",
+        "artifact_share",
+        "same_sensor",
+        "aoi_calibration"
+      ]
+    },
+    "error": {
+      "enum": [
+        "direction",
+        "claimed_pct_range",
+        "years_order",
+        "years_range"
+      ]
+    },
+    "naive_unit": {
+      "enum": [
+        "hotspots",
+        "fire cell-days"
+      ]
+    },
+    "templates": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "SD-20 verdict sentences. Slots in braces only; no other text is ever added.",
+      "required": [
+        "holds_up",
+        "weaker_than_claimed",
+        "stronger_than_claimed",
+        "contradicted",
+        "sensor_artifact",
+        "no_clear_change",
+        "cant_tell_missing",
+        "cant_tell_zero_start"
+      ],
+      "properties": {
+        "holds_up": {"type": "string"},
+        "weaker_than_claimed": {"type": "string"},
+        "stronger_than_claimed": {"type": "string"},
+        "contradicted": {"type": "string"},
+        "sensor_artifact": {"type": "string"},
+        "no_clear_change": {"type": "string"},
+        "cant_tell_missing": {"type": "string"},
+        "cant_tell_zero_start": {"type": "string"}
+      }
+    },
+    "notes": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "SD-20 note sentences, same slot rules as the templates.",
+      "required": [
+        "windows",
+        "tolerance",
+        "artifact_share",
+        "same_sensor",
+        "aoi_calibration"
+      ],
+      "properties": {
+        "windows": {"type": "string"},
+        "tolerance": {"type": "string"},
+        "artifact_share": {"type": "string"},
+        "same_sensor": {"type": "string"},
+        "aoi_calibration": {"type": "string"}
+      }
+    },
+    "annual_row": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "year",
+        "harmonized",
+        "lo",
+        "hi",
+        "kind",
+        "naive_count",
+        "naive_source"
+      ],
+      "properties": {
+        "year": {
+          "$ref": "common.schema.json#/$defs/year"
+        },
+        "harmonized": {
+          "$ref": "common.schema.json#/$defs/nullable_number"
+        },
+        "lo": {
+          "$ref": "common.schema.json#/$defs/nullable_number"
+        },
+        "hi": {
+          "$ref": "common.schema.json#/$defs/nullable_number"
+        },
+        "kind": {
+          "$ref": "common.schema.json#/$defs/kind"
+        },
+        "naive_count": {
+          "$ref": "common.schema.json#/$defs/nullable_number"
+        },
+        "naive_source": {
+          "$ref": "common.schema.json#/$defs/naive_source"
+        }
+      }
+    },
+    "replicates": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Harmonized annual totals (Aqua-equivalent fire cell-days) of each calibration replicate, only for the years whose totals differ between replicates; every other year equals annual[].harmonized in all replicates. values[r][i] is replicate r, year years[i].",
+      "required": [
+        "source",
+        "n",
+        "years",
+        "values"
+      ],
+      "properties": {
+        "source": {
+          "type": "string"
+        },
+        "n": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "years": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/year"
+          },
+          "uniqueItems": true
+        },
+        "values": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "common.schema.json#/$defs/number"
+            }
+          }
+        }
+      }
+    },
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "One claim: 'Fires in [place] have [direction] by [claimed_pct]% between [from_year] and [to_year]'.",
+      "required": [
+        "place",
+        "direction",
+        "claimed_pct",
+        "from_year",
+        "to_year"
+      ],
+      "properties": {
+        "place": {
+          "enum": [
+            "region",
+            "aoi"
+          ]
+        },
+        "direction": {
+          "enum": [
+            "increased",
+            "decreased"
+          ]
+        },
+        "claimed_pct": {
+          "type": "number"
+        },
+        "from_year": {
+          "$ref": "common.schema.json#/$defs/year"
+        },
+        "to_year": {
+          "$ref": "common.schema.json#/$defs/year"
+        }
+      }
+    },
+    "window": {
+      "$ref": "common.schema.json#/$defs/year_range"
+    },
+    "change": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "start_mean",
+        "end_mean",
+        "change_pct"
+      ],
+      "properties": {
+        "start_mean": {
+          "$ref": "common.schema.json#/$defs/nullable_number"
+        },
+        "end_mean": {
+          "$ref": "common.schema.json#/$defs/nullable_number"
+        },
+        "change_pct": {
+          "$ref": "common.schema.json#/$defs/nullable_number"
+        }
+      }
+    },
+    "harmonized_change": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "start_mean",
+        "end_mean",
+        "mid",
+        "lo",
+        "hi",
+        "band_lo",
+        "band_hi",
+        "range_source"
+      ],
+      "properties": {
+        "start_mean": {
+          "$ref": "common.schema.json#/$defs/nullable_number"
+        },
+        "end_mean": {
+          "$ref": "common.schema.json#/$defs/nullable_number"
+        },
+        "mid": {
+          "$ref": "common.schema.json#/$defs/nullable_number"
+        },
+        "lo": {
+          "$ref": "common.schema.json#/$defs/nullable_number"
+        },
+        "hi": {
+          "$ref": "common.schema.json#/$defs/nullable_number"
+        },
+        "band_lo": {
+          "$ref": "common.schema.json#/$defs/nullable_number"
+        },
+        "band_hi": {
+          "$ref": "common.schema.json#/$defs/nullable_number"
+        },
+        "range_source": {
+          "enum": [
+            "replicates",
+            "envelope",
+            null
+          ]
+        }
+      }
+    },
+    "note": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "text"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/note_id"
+        },
+        "text": {
+          "type": "string"
+        }
+      }
+    },
+    "result": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Output of checkClaim / check_claim. Every number is rounded half away from zero to 3 decimals.",
+      "required": [
+        "ok",
+        "error",
+        "claimed_change_pct",
+        "verdict",
+        "template_id",
+        "sentence",
+        "windows",
+        "missing_years",
+        "naive",
+        "naive_unit",
+        "harmonized",
+        "artifact_share",
+        "same_sensor",
+        "notes",
+        "kinds"
+      ],
+      "properties": {
+        "ok": {
+          "type": "boolean"
+        },
+        "error": {
+          "anyOf": [
+            {"$ref": "#/$defs/error"},
+            {"type": "null"}
+          ]
+        },
+        "claimed_change_pct": {
+          "$ref": "common.schema.json#/$defs/nullable_number"
+        },
+        "verdict": {
+          "anyOf": [
+            {"$ref": "#/$defs/verdict"},
+            {"type": "null"}
+          ]
+        },
+        "template_id": {
+          "anyOf": [
+            {"$ref": "#/$defs/template_id"},
+            {"type": "null"}
+          ]
+        },
+        "sentence": {
+          "type": ["string", "null"]
+        },
+        "windows": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["start", "end"],
+              "properties": {
+                "start": {"$ref": "#/$defs/window"},
+                "end": {"$ref": "#/$defs/window"}
+              }
+            },
+            {"type": "null"}
+          ]
+        },
+        "missing_years": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/year"
+          }
+        },
+        "naive": {
+          "anyOf": [
+            {"$ref": "#/$defs/change"},
+            {"type": "null"}
+          ]
+        },
+        "naive_unit": {
+          "anyOf": [
+            {"$ref": "#/$defs/naive_unit"},
+            {"type": "null"}
+          ]
+        },
+        "harmonized": {
+          "anyOf": [
+            {"$ref": "#/$defs/harmonized_change"},
+            {"type": "null"}
+          ]
+        },
+        "artifact_share": {
+          "$ref": "common.schema.json#/$defs/nullable_number"
+        },
+        "same_sensor": {
+          "type": ["boolean", "null"]
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/note"
+          }
+        },
+        "kinds": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/kind"
+          },
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}

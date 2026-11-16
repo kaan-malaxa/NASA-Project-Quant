@@ -1,0 +1,7045 @@
+{
+ "cases": [
+  {
+   "claim": {
+    "claimed_pct": 10,
+    "direction": "doubled",
+    "from_year": 2005,
+    "place": "region",
+    "to_year": 2020
+   },
+   "doc": null,
+   "expected": {
+    "artifact_share": null,
+    "claimed_change_pct": null,
+    "error": "direction",
+    "harmonized": null,
+    "kinds": [],
+    "missing_years": [],
+    "naive": null,
+    "naive_unit": null,
+    "notes": [],
+    "ok": false,
+    "same_sensor": null,
+    "sentence": null,
+    "template_id": null,
+    "verdict": null,
+    "windows": null
+   },
+   "name": "error_direction",
+   "series": {
+    "annual": [
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2003
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2004
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2005
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2006
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2007
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2008
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2009
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2010
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2011
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2012
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2013
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2014
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2015
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2016
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2017
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2018
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2019
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2020
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2021
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2022
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2023
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2024
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2025
+     }
+    ],
+    "naive_unit": "hotspots",
+    "place_name": "Testland",
+    "replicates": {
+     "n": 0,
+     "source": "test",
+     "values": [],
+     "years": []
+    }
+   }
+  },
+  {
+   "claim": {
+    "claimed_pct": 0,
+    "direction": "increased",
+    "from_year": 2005,
+    "place": "region",
+    "to_year": 2020
+   },
+   "doc": null,
+   "expected": {
+    "artifact_share": null,
+    "claimed_change_pct": null,
+    "error": "claimed_pct_range",
+    "harmonized": null,
+    "kinds": [],
+    "missing_years": [],
+    "naive": null,
+    "naive_unit": null,
+    "notes": [],
+    "ok": false,
+    "same_sensor": null,
+    "sentence": null,
+    "template_id": null,
+    "verdict": null,
+    "windows": null
+   },
+   "name": "error_claimed_pct_zero",
+   "series": {
+    "annual": [
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2003
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2004
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2005
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2006
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2007
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2008
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2009
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2010
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2011
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2012
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2013
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2014
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2015
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2016
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2017
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2018
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2019
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2020
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2021
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2022
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2023
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2024
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2025
+     }
+    ],
+    "naive_unit": "hotspots",
+    "place_name": "Testland",
+    "replicates": {
+     "n": 0,
+     "source": "test",
+     "values": [],
+     "years": []
+    }
+   }
+  },
+  {
+   "claim": {
+    "claimed_pct": 1000.5,
+    "direction": "increased",
+    "from_year": 2005,
+    "place": "region",
+    "to_year": 2020
+   },
+   "doc": null,
+   "expected": {
+    "artifact_share": null,
+    "claimed_change_pct": null,
+    "error": "claimed_pct_range",
+    "harmonized": null,
+    "kinds": [],
+    "missing_years": [],
+    "naive": null,
+    "naive_unit": null,
+    "notes": [],
+    "ok": false,
+    "same_sensor": null,
+    "sentence": null,
+    "template_id": null,
+    "verdict": null,
+    "windows": null
+   },
+   "name": "error_claimed_pct_too_large",
+   "series": {
+    "annual": [
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2003
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2004
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2005
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2006
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2007
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2008
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2009
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2010
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2011
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2012
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2013
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2014
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2015
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2016
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2017
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2018
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2019
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2020
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2021
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2022
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2023
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2024
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2025
+     }
+    ],
+    "naive_unit": "hotspots",
+    "place_name": "Testland",
+    "replicates": {
+     "n": 0,
+     "source": "test",
+     "values": [],
+     "years": []
+    }
+   }
+  },
+  {
+   "claim": {
+    "claimed_pct": 10,
+    "direction": "increased",
+    "from_year": 2002,
+    "place": "region",
+    "to_year": 2020
+   },
+   "doc": null,
+   "expected": {
+    "artifact_share": null,
+    "claimed_change_pct": null,
+    "error": "years_range",
+    "harmonized": null,
+    "kinds": [],
+    "missing_years": [],
+    "naive": null,
+    "naive_unit": null,
+    "notes": [],
+    "ok": false,
+    "same_sensor": null,
+    "sentence": null,
+    "template_id": null,
+    "verdict": null,
+    "windows": null
+   },
+   "name": "error_year_outside_record",
+   "series": {
+    "annual": [
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2003
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2004
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2005
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2006
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2007
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2008
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2009
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2010
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2011
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2012
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2013
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2014
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2015
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2016
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2017
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2018
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2019
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2020
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2021
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2022
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2023
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2024
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2025
+     }
+    ],
+    "naive_unit": "hotspots",
+    "place_name": "Testland",
+    "replicates": {
+     "n": 0,
+     "source": "test",
+     "values": [],
+     "years": []
+    }
+   }
+  },
+  {
+   "claim": {
+    "claimed_pct": 10,
+    "direction": "increased",
+    "from_year": 2020,
+    "place": "region",
+    "to_year": 2005
+   },
+   "doc": null,
+   "expected": {
+    "artifact_share": null,
+    "claimed_change_pct": null,
+    "error": "years_order",
+    "harmonized": null,
+    "kinds": [],
+    "missing_years": [],
+    "naive": null,
+    "naive_unit": null,
+    "notes": [],
+    "ok": false,
+    "same_sensor": null,
+    "sentence": null,
+    "template_id": null,
+    "verdict": null,
+    "windows": null
+   },
+   "name": "error_from_after_to",
+   "series": {
+    "annual": [
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2003
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2004
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2005
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2006
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2007
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2008
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2009
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2010
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2011
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2012
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2013
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2014
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2015
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2016
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2017
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2018
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2019
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2020
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2021
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2022
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2023
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2024
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2025
+     }
+    ],
+    "naive_unit": "hotspots",
+    "place_name": "Testland",
+    "replicates": {
+     "n": 0,
+     "source": "test",
+     "values": [],
+     "years": []
+    }
+   }
+  },
+  {
+   "claim": {
+    "claimed_pct": 10,
+    "direction": "increased",
+    "from_year": 2010,
+    "place": "region",
+    "to_year": 2010
+   },
+   "doc": null,
+   "expected": {
+    "artifact_share": null,
+    "claimed_change_pct": null,
+    "error": "years_order",
+    "harmonized": null,
+    "kinds": [],
+    "missing_years": [],
+    "naive": null,
+    "naive_unit": null,
+    "notes": [],
+    "ok": false,
+    "same_sensor": null,
+    "sentence": null,
+    "template_id": null,
+    "verdict": null,
+    "windows": null
+   },
+   "name": "error_from_equals_to",
+   "series": {
+    "annual": [
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2003
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2004
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2005
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2006
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2007
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2008
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2009
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2010
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2011
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2012
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2013
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2014
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2015
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2016
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2017
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2018
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2019
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2020
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2021
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2022
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2023
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2024
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2025
+     }
+    ],
+    "naive_unit": "hotspots",
+    "place_name": "Testland",
+    "replicates": {
+     "n": 0,
+     "source": "test",
+     "values": [],
+     "years": []
+    }
+   }
+  },
+  {
+   "claim": {
+    "claimed_pct": 10,
+    "direction": "increased",
+    "from_year": 2005,
+    "place": "region",
+    "to_year": 2020
+   },
+   "doc": null,
+   "expected": {
+    "artifact_share": null,
+    "claimed_change_pct": 10.0,
+    "error": null,
+    "harmonized": null,
+    "kinds": [
+     "observed",
+     "missing"
+    ],
+    "missing_years": [
+     2004
+    ],
+    "naive": null,
+    "naive_unit": "hotspots",
+    "notes": [],
+    "ok": true,
+    "same_sensor": false,
+    "sentence": "We can't tell. Satellite coverage is too thin in 2004, inside the years this check compares, and missing data is never counted as zero.",
+    "template_id": "cant_tell_missing",
+    "verdict": "cant_tell_missing",
+    "windows": {
+     "end": [
+      2019,
+      2021
+     ],
+     "start": [
+      2004,
+      2006
+     ]
+    }
+   },
+   "name": "rule1_missing_year_in_window",
+   "series": {
+    "annual": [
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2003
+     },
+     {
+      "harmonized": null,
+      "hi": null,
+      "kind": "missing",
+      "lo": null,
+      "naive_count": null,
+      "naive_source": "modis",
+      "year": 2004
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2005
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2006
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2007
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2008
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2009
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2010
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2011
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2012
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2013
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2014
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2015
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2016
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2017
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2018
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2019
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2020
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2021
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2022
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2023
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2024
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2025
+     }
+    ],
+    "naive_unit": "hotspots",
+    "place_name": "Testland",
+    "replicates": {
+     "n": 0,
+     "source": "test",
+     "values": [],
+     "years": []
+    }
+   }
+  },
+  {
+   "claim": {
+    "claimed_pct": 10,
+    "direction": "increased",
+    "from_year": 2005,
+    "place": "region",
+    "to_year": 2020
+   },
+   "doc": null,
+   "expected": {
+    "artifact_share": null,
+    "claimed_change_pct": 10.0,
+    "error": null,
+    "harmonized": null,
+    "kinds": [
+     "observed"
+    ],
+    "missing_years": [],
+    "naive": null,
+    "naive_unit": "hotspots",
+    "notes": [],
+    "ok": true,
+    "same_sensor": false,
+    "sentence": "We can't tell. One of the two records shows no satellite-detected burning activity in Testland in 2004–2006, so a percentage change from those years has no meaning.",
+    "template_id": "cant_tell_zero_start",
+    "verdict": "cant_tell_missing",
+    "windows": {
+     "end": [
+      2019,
+      2021
+     ],
+     "start": [
+      2004,
+      2006
+     ]
+    }
+   },
+   "name": "rule1_zero_start",
+   "series": {
+    "annual": [
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 0.0,
+      "naive_source": "modis",
+      "year": 2003
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 0.0,
+      "naive_source": "modis",
+      "year": 2004
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 0.0,
+      "naive_source": "modis",
+      "year": 2005
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 0.0,
+      "naive_source": "modis",
+      "year": 2006
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 0.0,
+      "naive_source": "modis",
+      "year": 2007
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2008
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2009
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2010
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2011
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "snpp",
+      "year": 2012
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "snpp",
+      "year": 2013
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "snpp",
+      "year": 2014
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "snpp",
+      "year": 2015
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "snpp",
+      "year": 2016
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "snpp",
+      "year": 2017
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "snpp",
+      "year": 2018
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "snpp",
+      "year": 2019
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "snpp",
+      "year": 2020
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "snpp",
+      "year": 2021
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "snpp",
+      "year": 2022
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "snpp",
+      "year": 2023
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "snpp",
+      "year": 2024
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "snpp",
+      "year": 2025
+     }
+    ],
+    "naive_unit": "hotspots",
+    "place_name": "Testland",
+    "replicates": {
+     "n": 0,
+     "source": "test",
+     "values": [],
+     "years": []
+    }
+   }
+  },
+  {
+   "claim": {
+    "claimed_pct": 20,
+    "direction": "decreased",
+    "from_year": 2005,
+    "place": "region",
+    "to_year": 2020
+   },
+   "doc": null,
+   "expected": {
+    "artifact_share": 0.9,
+    "claimed_change_pct": -20.0,
+    "error": null,
+    "harmonized": {
+     "band_hi": 55.0,
+     "band_lo": 45.0,
+     "end_mean": 1500.0,
+     "hi": 50.0,
+     "lo": 50.0,
+     "mid": 50.0,
+     "range_source": "replicates",
+     "start_mean": 1000.0
+    },
+    "kinds": [
+     "observed"
+    ],
+    "missing_years": [],
+    "naive": {
+     "change_pct": 500.0,
+     "end_mean": 18000.0,
+     "start_mean": 3000.0
+    },
+    "naive_unit": "hotspots",
+    "notes": [
+     {
+      "id": "windows",
+      "text": "Compared the average of 2004–2006 with the average of 2019–2021 (3-year windows centred on the chosen years, shortened at the edges of the record)."
+     },
+     {
+      "id": "tolerance",
+      "text": "A claim counts as matching when it is within 5 percentage points of the corrected likely range."
+     },
+     {
+      "id": "artifact_share",
+      "text": "About 90% of the raw change comes from the sensor switch."
+     }
+    ],
+    "ok": true,
+    "same_sensor": false,
+    "sentence": "The record contradicts the claim. After correcting for the sensor change, satellite-detected burning activity in Testland changed by +50% from 2004–2006 to 2019–2021 (likely range +50% to +50%), the opposite direction to the claimed −20%.",
+    "template_id": "contradicted",
+    "verdict": "contradicted",
+    "windows": {
+     "end": [
+      2019,
+      2021
+     ],
+     "start": [
+      2004,
+      2006
+     ]
+    }
+   },
+   "name": "rule2_contradicted",
+   "series": {
+    "annual": [
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2003
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2004
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2005
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2006
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2007
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2008
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2009
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2010
+     },
+     {
+      "harmonized": 1100.0,
+      "hi": 1100.0,
+      "kind": "observed",
+      "lo": 1100.0,
+      "naive_count": 3300.0,
+      "naive_source": "modis",
+      "year": 2011
+     },
+     {
+      "harmonized": 1200.0,
+      "hi": 1200.0,
+      "kind": "observed",
+      "lo": 1200.0,
+      "naive_count": 14400.0,
+      "naive_source": "snpp",
+      "year": 2012
+     },
+     {
+      "harmonized": 1300.0,
+      "hi": 1300.0,
+      "kind": "observed",
+      "lo": 1300.0,
+      "naive_count": 15600.0,
+      "naive_source": "snpp",
+      "year": 2013
+     },
+     {
+      "harmonized": 1400.0,
+      "hi": 1400.0,
+      "kind": "observed",
+      "lo": 1400.0,
+      "naive_count": 16800.0,
+      "naive_source": "snpp",
+      "year": 2014
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2015
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2016
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2017
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2018
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2019
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2020
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2021
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2022
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2023
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2024
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2025
+     }
+    ],
+    "naive_unit": "hotspots",
+    "place_name": "Testland",
+    "replicates": {
+     "n": 0,
+     "source": "test",
+     "values": [],
+     "years": []
+    }
+   }
+  },
+  {
+   "claim": {
+    "claimed_pct": 300,
+    "direction": "increased",
+    "from_year": 2005,
+    "place": "region",
+    "to_year": 2020
+   },
+   "doc": null,
+   "expected": {
+    "artifact_share": null,
+    "claimed_change_pct": 300.0,
+    "error": null,
+    "harmonized": {
+     "band_hi": 5.0,
+     "band_lo": -5.0,
+     "end_mean": 1000.0,
+     "hi": 0.0,
+     "lo": 0.0,
+     "mid": 0.0,
+     "range_source": "replicates",
+     "start_mean": 1000.0
+    },
+    "kinds": [
+     "observed"
+    ],
+    "missing_years": [],
+    "naive": {
+     "change_pct": 300.0,
+     "end_mean": 12000.0,
+     "start_mean": 3000.0
+    },
+    "naive_unit": "hotspots",
+    "notes": [
+     {
+      "id": "windows",
+      "text": "Compared the average of 2004–2006 with the average of 2019–2021 (3-year windows centred on the chosen years, shortened at the edges of the record)."
+     },
+     {
+      "id": "tolerance",
+      "text": "A claim counts as matching when it is within 5 percentage points of the corrected likely range."
+     }
+    ],
+    "ok": true,
+    "same_sensor": false,
+    "sentence": "The claimed change looks like a sensor artifact. The raw record, as most people would compute it, shows +300% from 2004–2006 to 2019–2021 in Testland, but after correcting for the sensor change there is no clear change (likely range 0% to 0%).",
+    "template_id": "sensor_artifact",
+    "verdict": "sensor_artifact",
+    "windows": {
+     "end": [
+      2019,
+      2021
+     ],
+     "start": [
+      2004,
+      2006
+     ]
+    }
+   },
+   "name": "rule3_sensor_artifact",
+   "series": {
+    "annual": [
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2003
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2004
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2005
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2006
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2007
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2008
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2009
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2010
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2011
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2012
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2013
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2014
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2015
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2016
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2017
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2018
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2019
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2020
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2021
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2022
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2023
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2024
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2025
+     }
+    ],
+    "naive_unit": "hotspots",
+    "place_name": "Testland",
+    "replicates": {
+     "n": 0,
+     "source": "test",
+     "values": [],
+     "years": []
+    }
+   }
+  },
+  {
+   "claim": {
+    "claimed_pct": 10,
+    "direction": "increased",
+    "from_year": 2004,
+    "place": "region",
+    "to_year": 2009
+   },
+   "doc": null,
+   "expected": {
+    "artifact_share": null,
+    "claimed_change_pct": 10.0,
+    "error": null,
+    "harmonized": {
+     "band_hi": 5.0,
+     "band_lo": -5.0,
+     "end_mean": 1000.0,
+     "hi": 0.0,
+     "lo": 0.0,
+     "mid": 0.0,
+     "range_source": "replicates",
+     "start_mean": 1000.0
+    },
+    "kinds": [
+     "observed"
+    ],
+    "missing_years": [],
+    "naive": {
+     "change_pct": 0.0,
+     "end_mean": 3000.0,
+     "start_mean": 3000.0
+    },
+    "naive_unit": "hotspots",
+    "notes": [
+     {
+      "id": "windows",
+      "text": "Compared the average of 2003–2005 with the average of 2008–2010 (3-year windows centred on the chosen years, shortened at the edges of the record)."
+     },
+     {
+      "id": "tolerance",
+      "text": "A claim counts as matching when it is within 5 percentage points of the corrected likely range."
+     },
+     {
+      "id": "same_sensor",
+      "text": "This period doesn't cross the 2012 sensor change, so the two records should mostly agree."
+     }
+    ],
+    "ok": true,
+    "same_sensor": true,
+    "sentence": "The record shows no clear change. After correcting for the sensor change, satellite-detected burning activity in Testland changed by 0% from 2003–2005 to 2008–2010 (likely range 0% to 0%), too small to support the claimed +10%.",
+    "template_id": "no_clear_change",
+    "verdict": "no_clear_change",
+    "windows": {
+     "end": [
+      2008,
+      2010
+     ],
+     "start": [
+      2003,
+      2005
+     ]
+    }
+   },
+   "name": "rule4_no_clear_change_same_sensor",
+   "series": {
+    "annual": [
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2003
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2004
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2005
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2006
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2007
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2008
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2009
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2010
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2011
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2012
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2013
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2014
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2015
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2016
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2017
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2018
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2019
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2020
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2021
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2022
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2023
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2024
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2025
+     }
+    ],
+    "naive_unit": "hotspots",
+    "place_name": "Testland",
+    "replicates": {
+     "n": 0,
+     "source": "test",
+     "values": [],
+     "years": []
+    }
+   }
+  },
+  {
+   "claim": {
+    "claimed_pct": 20,
+    "direction": "increased",
+    "from_year": 2005,
+    "place": "region",
+    "to_year": 2020
+   },
+   "doc": null,
+   "expected": {
+    "artifact_share": null,
+    "claimed_change_pct": 20.0,
+    "error": null,
+    "harmonized": {
+     "band_hi": 5.0,
+     "band_lo": -5.0,
+     "end_mean": 1000.0,
+     "hi": 0.0,
+     "lo": 0.0,
+     "mid": 0.0,
+     "range_source": "replicates",
+     "start_mean": 1000.0
+    },
+    "kinds": [
+     "observed"
+    ],
+    "missing_years": [],
+    "naive": {
+     "change_pct": 20.0,
+     "end_mean": 3600.0,
+     "start_mean": 3000.0
+    },
+    "naive_unit": "hotspots",
+    "notes": [
+     {
+      "id": "windows",
+      "text": "Compared the average of 2004–2006 with the average of 2019–2021 (3-year windows centred on the chosen years, shortened at the edges of the record)."
+     },
+     {
+      "id": "tolerance",
+      "text": "A claim counts as matching when it is within 5 percentage points of the corrected likely range."
+     }
+    ],
+    "ok": true,
+    "same_sensor": false,
+    "sentence": "The record shows no clear change. After correcting for the sensor change, satellite-detected burning activity in Testland changed by 0% from 2004–2006 to 2019–2021 (likely range 0% to 0%), too small to support the claimed +20%.",
+    "template_id": "no_clear_change",
+    "verdict": "no_clear_change",
+    "windows": {
+     "end": [
+      2019,
+      2021
+     ],
+     "start": [
+      2004,
+      2006
+     ]
+    }
+   },
+   "name": "rule4_naive_below_artifact_threshold",
+   "series": {
+    "annual": [
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2003
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2004
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2005
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2006
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2007
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2008
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2009
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2010
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2011
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3600.0,
+      "naive_source": "snpp",
+      "year": 2012
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3600.0,
+      "naive_source": "snpp",
+      "year": 2013
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3600.0,
+      "naive_source": "snpp",
+      "year": 2014
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3600.0,
+      "naive_source": "snpp",
+      "year": 2015
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3600.0,
+      "naive_source": "snpp",
+      "year": 2016
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3600.0,
+      "naive_source": "snpp",
+      "year": 2017
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3600.0,
+      "naive_source": "snpp",
+      "year": 2018
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3600.0,
+      "naive_source": "snpp",
+      "year": 2019
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3600.0,
+      "naive_source": "snpp",
+      "year": 2020
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3600.0,
+      "naive_source": "snpp",
+      "year": 2021
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3600.0,
+      "naive_source": "snpp",
+      "year": 2022
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3600.0,
+      "naive_source": "snpp",
+      "year": 2023
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3600.0,
+      "naive_source": "snpp",
+      "year": 2024
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3600.0,
+      "naive_source": "snpp",
+      "year": 2025
+     }
+    ],
+    "naive_unit": "hotspots",
+    "place_name": "Testland",
+    "replicates": {
+     "n": 0,
+     "source": "test",
+     "values": [],
+     "years": []
+    }
+   }
+  },
+  {
+   "claim": {
+    "claimed_pct": 30,
+    "direction": "decreased",
+    "from_year": 2005,
+    "place": "region",
+    "to_year": 2020
+   },
+   "doc": null,
+   "expected": {
+    "artifact_share": null,
+    "claimed_change_pct": -30.0,
+    "error": null,
+    "harmonized": {
+     "band_hi": 5.0,
+     "band_lo": -5.0,
+     "end_mean": 1000.0,
+     "hi": 0.0,
+     "lo": 0.0,
+     "mid": 0.0,
+     "range_source": "replicates",
+     "start_mean": 1000.0
+    },
+    "kinds": [
+     "observed"
+    ],
+    "missing_years": [],
+    "naive": {
+     "change_pct": 300.0,
+     "end_mean": 12000.0,
+     "start_mean": 3000.0
+    },
+    "naive_unit": "hotspots",
+    "notes": [
+     {
+      "id": "windows",
+      "text": "Compared the average of 2004–2006 with the average of 2019–2021 (3-year windows centred on the chosen years, shortened at the edges of the record)."
+     },
+     {
+      "id": "tolerance",
+      "text": "A claim counts as matching when it is within 5 percentage points of the corrected likely range."
+     }
+    ],
+    "ok": true,
+    "same_sensor": false,
+    "sentence": "The record shows no clear change. After correcting for the sensor change, satellite-detected burning activity in Testland changed by 0% from 2004–2006 to 2019–2021 (likely range 0% to 0%), too small to support the claimed −30%.",
+    "template_id": "no_clear_change",
+    "verdict": "no_clear_change",
+    "windows": {
+     "end": [
+      2019,
+      2021
+     ],
+     "start": [
+      2004,
+      2006
+     ]
+    }
+   },
+   "name": "rule4_no_clear_change_naive_opposite",
+   "series": {
+    "annual": [
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2003
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2004
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2005
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2006
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2007
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2008
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2009
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2010
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2011
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2012
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2013
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2014
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2015
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2016
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2017
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2018
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2019
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2020
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2021
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2022
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2023
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2024
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2025
+     }
+    ],
+    "naive_unit": "hotspots",
+    "place_name": "Testland",
+    "replicates": {
+     "n": 0,
+     "source": "test",
+     "values": [],
+     "years": []
+    }
+   }
+  },
+  {
+   "claim": {
+    "claimed_pct": 50,
+    "direction": "increased",
+    "from_year": 2005,
+    "place": "region",
+    "to_year": 2020
+   },
+   "doc": null,
+   "expected": {
+    "artifact_share": 0.9,
+    "claimed_change_pct": 50.0,
+    "error": null,
+    "harmonized": {
+     "band_hi": 55.0,
+     "band_lo": 45.0,
+     "end_mean": 1500.0,
+     "hi": 50.0,
+     "lo": 50.0,
+     "mid": 50.0,
+     "range_source": "replicates",
+     "start_mean": 1000.0
+    },
+    "kinds": [
+     "observed"
+    ],
+    "missing_years": [],
+    "naive": {
+     "change_pct": 500.0,
+     "end_mean": 18000.0,
+     "start_mean": 3000.0
+    },
+    "naive_unit": "hotspots",
+    "notes": [
+     {
+      "id": "windows",
+      "text": "Compared the average of 2004–2006 with the average of 2019–2021 (3-year windows centred on the chosen years, shortened at the edges of the record)."
+     },
+     {
+      "id": "tolerance",
+      "text": "A claim counts as matching when it is within 5 percentage points of the corrected likely range."
+     },
+     {
+      "id": "artifact_share",
+      "text": "About 90% of the raw change comes from the sensor switch."
+     }
+    ],
+    "ok": true,
+    "same_sensor": false,
+    "sentence": "The claim holds up. After correcting for the sensor change, satellite-detected burning activity in Testland changed by +50% from 2004–2006 to 2019–2021 (likely range +50% to +50%), in line with the claimed +50%.",
+    "template_id": "holds_up",
+    "verdict": "holds_up",
+    "windows": {
+     "end": [
+      2019,
+      2021
+     ],
+     "start": [
+      2004,
+      2006
+     ]
+    }
+   },
+   "name": "rule5_holds_up",
+   "series": {
+    "annual": [
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2003
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2004
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2005
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2006
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2007
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2008
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2009
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2010
+     },
+     {
+      "harmonized": 1100.0,
+      "hi": 1100.0,
+      "kind": "observed",
+      "lo": 1100.0,
+      "naive_count": 3300.0,
+      "naive_source": "modis",
+      "year": 2011
+     },
+     {
+      "harmonized": 1200.0,
+      "hi": 1200.0,
+      "kind": "observed",
+      "lo": 1200.0,
+      "naive_count": 14400.0,
+      "naive_source": "snpp",
+      "year": 2012
+     },
+     {
+      "harmonized": 1300.0,
+      "hi": 1300.0,
+      "kind": "observed",
+      "lo": 1300.0,
+      "naive_count": 15600.0,
+      "naive_source": "snpp",
+      "year": 2013
+     },
+     {
+      "harmonized": 1400.0,
+      "hi": 1400.0,
+      "kind": "observed",
+      "lo": 1400.0,
+      "naive_count": 16800.0,
+      "naive_source": "snpp",
+      "year": 2014
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2015
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2016
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2017
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2018
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2019
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2020
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2021
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2022
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2023
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2024
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2025
+     }
+    ],
+    "naive_unit": "hotspots",
+    "place_name": "Testland",
+    "replicates": {
+     "n": 0,
+     "source": "test",
+     "values": [],
+     "years": []
+    }
+   }
+  },
+  {
+   "claim": {
+    "claimed_pct": 54,
+    "direction": "increased",
+    "from_year": 2005,
+    "place": "region",
+    "to_year": 2020
+   },
+   "doc": null,
+   "expected": {
+    "artifact_share": 0.9,
+    "claimed_change_pct": 54.0,
+    "error": null,
+    "harmonized": {
+     "band_hi": 55.0,
+     "band_lo": 45.0,
+     "end_mean": 1500.0,
+     "hi": 50.0,
+     "lo": 50.0,
+     "mid": 50.0,
+     "range_source": "replicates",
+     "start_mean": 1000.0
+    },
+    "kinds": [
+     "observed"
+    ],
+    "missing_years": [],
+    "naive": {
+     "change_pct": 500.0,
+     "end_mean": 18000.0,
+     "start_mean": 3000.0
+    },
+    "naive_unit": "hotspots",
+    "notes": [
+     {
+      "id": "windows",
+      "text": "Compared the average of 2004–2006 with the average of 2019–2021 (3-year windows centred on the chosen years, shortened at the edges of the record)."
+     },
+     {
+      "id": "tolerance",
+      "text": "A claim counts as matching when it is within 5 percentage points of the corrected likely range."
+     },
+     {
+      "id": "artifact_share",
+      "text": "About 90% of the raw change comes from the sensor switch."
+     }
+    ],
+    "ok": true,
+    "same_sensor": false,
+    "sentence": "The claim holds up. After correcting for the sensor change, satellite-detected burning activity in Testland changed by +50% from 2004–2006 to 2019–2021 (likely range +50% to +50%), in line with the claimed +54%.",
+    "template_id": "holds_up",
+    "verdict": "holds_up",
+    "windows": {
+     "end": [
+      2019,
+      2021
+     ],
+     "start": [
+      2004,
+      2006
+     ]
+    }
+   },
+   "name": "rule5_holds_up_inside_tolerance",
+   "series": {
+    "annual": [
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2003
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2004
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2005
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2006
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2007
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2008
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2009
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2010
+     },
+     {
+      "harmonized": 1100.0,
+      "hi": 1100.0,
+      "kind": "observed",
+      "lo": 1100.0,
+      "naive_count": 3300.0,
+      "naive_source": "modis",
+      "year": 2011
+     },
+     {
+      "harmonized": 1200.0,
+      "hi": 1200.0,
+      "kind": "observed",
+      "lo": 1200.0,
+      "naive_count": 14400.0,
+      "naive_source": "snpp",
+      "year": 2012
+     },
+     {
+      "harmonized": 1300.0,
+      "hi": 1300.0,
+      "kind": "observed",
+      "lo": 1300.0,
+      "naive_count": 15600.0,
+      "naive_source": "snpp",
+      "year": 2013
+     },
+     {
+      "harmonized": 1400.0,
+      "hi": 1400.0,
+      "kind": "observed",
+      "lo": 1400.0,
+      "naive_count": 16800.0,
+      "naive_source": "snpp",
+      "year": 2014
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2015
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2016
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2017
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2018
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2019
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2020
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2021
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2022
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2023
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2024
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2025
+     }
+    ],
+    "naive_unit": "hotspots",
+    "place_name": "Testland",
+    "replicates": {
+     "n": 0,
+     "source": "test",
+     "values": [],
+     "years": []
+    }
+   }
+  },
+  {
+   "claim": {
+    "claimed_pct": 100,
+    "direction": "increased",
+    "from_year": 2005,
+    "place": "region",
+    "to_year": 2020
+   },
+   "doc": null,
+   "expected": {
+    "artifact_share": 0.9,
+    "claimed_change_pct": 100.0,
+    "error": null,
+    "harmonized": {
+     "band_hi": 55.0,
+     "band_lo": 45.0,
+     "end_mean": 1500.0,
+     "hi": 50.0,
+     "lo": 50.0,
+     "mid": 50.0,
+     "range_source": "replicates",
+     "start_mean": 1000.0
+    },
+    "kinds": [
+     "observed"
+    ],
+    "missing_years": [],
+    "naive": {
+     "change_pct": 500.0,
+     "end_mean": 18000.0,
+     "start_mean": 3000.0
+    },
+    "naive_unit": "hotspots",
+    "notes": [
+     {
+      "id": "windows",
+      "text": "Compared the average of 2004–2006 with the average of 2019–2021 (3-year windows centred on the chosen years, shortened at the edges of the record)."
+     },
+     {
+      "id": "tolerance",
+      "text": "A claim counts as matching when it is within 5 percentage points of the corrected likely range."
+     },
+     {
+      "id": "artifact_share",
+      "text": "About 90% of the raw change comes from the sensor switch."
+     }
+    ],
+    "ok": true,
+    "same_sensor": false,
+    "sentence": "The claim overstates the change. After correcting for the sensor change, satellite-detected burning activity in Testland changed by +50% from 2004–2006 to 2019–2021 (likely range +50% to +50%), less than the claimed +100%.",
+    "template_id": "weaker_than_claimed",
+    "verdict": "weaker_than_claimed",
+    "windows": {
+     "end": [
+      2019,
+      2021
+     ],
+     "start": [
+      2004,
+      2006
+     ]
+    }
+   },
+   "name": "rule6_weaker_than_claimed",
+   "series": {
+    "annual": [
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2003
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2004
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2005
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2006
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2007
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2008
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2009
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2010
+     },
+     {
+      "harmonized": 1100.0,
+      "hi": 1100.0,
+      "kind": "observed",
+      "lo": 1100.0,
+      "naive_count": 3300.0,
+      "naive_source": "modis",
+      "year": 2011
+     },
+     {
+      "harmonized": 1200.0,
+      "hi": 1200.0,
+      "kind": "observed",
+      "lo": 1200.0,
+      "naive_count": 14400.0,
+      "naive_source": "snpp",
+      "year": 2012
+     },
+     {
+      "harmonized": 1300.0,
+      "hi": 1300.0,
+      "kind": "observed",
+      "lo": 1300.0,
+      "naive_count": 15600.0,
+      "naive_source": "snpp",
+      "year": 2013
+     },
+     {
+      "harmonized": 1400.0,
+      "hi": 1400.0,
+      "kind": "observed",
+      "lo": 1400.0,
+      "naive_count": 16800.0,
+      "naive_source": "snpp",
+      "year": 2014
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2015
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2016
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2017
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2018
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2019
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2020
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2021
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2022
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2023
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2024
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2025
+     }
+    ],
+    "naive_unit": "hotspots",
+    "place_name": "Testland",
+    "replicates": {
+     "n": 0,
+     "source": "test",
+     "values": [],
+     "years": []
+    }
+   }
+  },
+  {
+   "claim": {
+    "claimed_pct": 20,
+    "direction": "increased",
+    "from_year": 2005,
+    "place": "region",
+    "to_year": 2020
+   },
+   "doc": null,
+   "expected": {
+    "artifact_share": 0.9,
+    "claimed_change_pct": 20.0,
+    "error": null,
+    "harmonized": {
+     "band_hi": 55.0,
+     "band_lo": 45.0,
+     "end_mean": 1500.0,
+     "hi": 50.0,
+     "lo": 50.0,
+     "mid": 50.0,
+     "range_source": "replicates",
+     "start_mean": 1000.0
+    },
+    "kinds": [
+     "observed"
+    ],
+    "missing_years": [],
+    "naive": {
+     "change_pct": 500.0,
+     "end_mean": 18000.0,
+     "start_mean": 3000.0
+    },
+    "naive_unit": "hotspots",
+    "notes": [
+     {
+      "id": "windows",
+      "text": "Compared the average of 2004–2006 with the average of 2019–2021 (3-year windows centred on the chosen years, shortened at the edges of the record)."
+     },
+     {
+      "id": "tolerance",
+      "text": "A claim counts as matching when it is within 5 percentage points of the corrected likely range."
+     },
+     {
+      "id": "artifact_share",
+      "text": "About 90% of the raw change comes from the sensor switch."
+     }
+    ],
+    "ok": true,
+    "same_sensor": false,
+    "sentence": "The claim understates the change. After correcting for the sensor change, satellite-detected burning activity in Testland changed by +50% from 2004–2006 to 2019–2021 (likely range +50% to +50%), more than the claimed +20%.",
+    "template_id": "stronger_than_claimed",
+    "verdict": "stronger_than_claimed",
+    "windows": {
+     "end": [
+      2019,
+      2021
+     ],
+     "start": [
+      2004,
+      2006
+     ]
+    }
+   },
+   "name": "rule7_stronger_than_claimed",
+   "series": {
+    "annual": [
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2003
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2004
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2005
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2006
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2007
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2008
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2009
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2010
+     },
+     {
+      "harmonized": 1100.0,
+      "hi": 1100.0,
+      "kind": "observed",
+      "lo": 1100.0,
+      "naive_count": 3300.0,
+      "naive_source": "modis",
+      "year": 2011
+     },
+     {
+      "harmonized": 1200.0,
+      "hi": 1200.0,
+      "kind": "observed",
+      "lo": 1200.0,
+      "naive_count": 14400.0,
+      "naive_source": "snpp",
+      "year": 2012
+     },
+     {
+      "harmonized": 1300.0,
+      "hi": 1300.0,
+      "kind": "observed",
+      "lo": 1300.0,
+      "naive_count": 15600.0,
+      "naive_source": "snpp",
+      "year": 2013
+     },
+     {
+      "harmonized": 1400.0,
+      "hi": 1400.0,
+      "kind": "observed",
+      "lo": 1400.0,
+      "naive_count": 16800.0,
+      "naive_source": "snpp",
+      "year": 2014
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2015
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2016
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2017
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2018
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2019
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2020
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2021
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2022
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2023
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2024
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2025
+     }
+    ],
+    "naive_unit": "hotspots",
+    "place_name": "Testland",
+    "replicates": {
+     "n": 0,
+     "source": "test",
+     "values": [],
+     "years": []
+    }
+   }
+  },
+  {
+   "claim": {
+    "claimed_pct": 30,
+    "direction": "decreased",
+    "from_year": 2005,
+    "place": "region",
+    "to_year": 2020
+   },
+   "doc": null,
+   "expected": {
+    "artifact_share": null,
+    "claimed_change_pct": -30.0,
+    "error": null,
+    "harmonized": {
+     "band_hi": -25.0,
+     "band_lo": -35.0,
+     "end_mean": 700.0,
+     "hi": -30.0,
+     "lo": -30.0,
+     "mid": -30.0,
+     "range_source": "replicates",
+     "start_mean": 1000.0
+    },
+    "kinds": [
+     "observed"
+    ],
+    "missing_years": [],
+    "naive": {
+     "change_pct": 180.0,
+     "end_mean": 8400.0,
+     "start_mean": 3000.0
+    },
+    "naive_unit": "hotspots",
+    "notes": [
+     {
+      "id": "windows",
+      "text": "Compared the average of 2004–2006 with the average of 2019–2021 (3-year windows centred on the chosen years, shortened at the edges of the record)."
+     },
+     {
+      "id": "tolerance",
+      "text": "A claim counts as matching when it is within 5 percentage points of the corrected likely range."
+     }
+    ],
+    "ok": true,
+    "same_sensor": false,
+    "sentence": "The claim holds up. After correcting for the sensor change, satellite-detected burning activity in Testland changed by −30% from 2004–2006 to 2019–2021 (likely range −30% to −30%), in line with the claimed −30%.",
+    "template_id": "holds_up",
+    "verdict": "holds_up",
+    "windows": {
+     "end": [
+      2019,
+      2021
+     ],
+     "start": [
+      2004,
+      2006
+     ]
+    }
+   },
+   "name": "negative_holds_up",
+   "series": {
+    "annual": [
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2003
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2004
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2005
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2006
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2007
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2008
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2009
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2010
+     },
+     {
+      "harmonized": 940.0,
+      "hi": 940.0,
+      "kind": "observed",
+      "lo": 940.0,
+      "naive_count": 2820.0,
+      "naive_source": "modis",
+      "year": 2011
+     },
+     {
+      "harmonized": 880.0,
+      "hi": 880.0,
+      "kind": "observed",
+      "lo": 880.0,
+      "naive_count": 10560.0,
+      "naive_source": "snpp",
+      "year": 2012
+     },
+     {
+      "harmonized": 820.0,
+      "hi": 820.0,
+      "kind": "observed",
+      "lo": 820.0,
+      "naive_count": 9840.0,
+      "naive_source": "snpp",
+      "year": 2013
+     },
+     {
+      "harmonized": 760.0,
+      "hi": 760.0,
+      "kind": "observed",
+      "lo": 760.0,
+      "naive_count": 9120.0,
+      "naive_source": "snpp",
+      "year": 2014
+     },
+     {
+      "harmonized": 700.0,
+      "hi": 700.0,
+      "kind": "observed",
+      "lo": 700.0,
+      "naive_count": 8400.0,
+      "naive_source": "snpp",
+      "year": 2015
+     },
+     {
+      "harmonized": 700.0,
+      "hi": 700.0,
+      "kind": "observed",
+      "lo": 700.0,
+      "naive_count": 8400.0,
+      "naive_source": "snpp",
+      "year": 2016
+     },
+     {
+      "harmonized": 700.0,
+      "hi": 700.0,
+      "kind": "observed",
+      "lo": 700.0,
+      "naive_count": 8400.0,
+      "naive_source": "snpp",
+      "year": 2017
+     },
+     {
+      "harmonized": 700.0,
+      "hi": 700.0,
+      "kind": "observed",
+      "lo": 700.0,
+      "naive_count": 8400.0,
+      "naive_source": "snpp",
+      "year": 2018
+     },
+     {
+      "harmonized": 700.0,
+      "hi": 700.0,
+      "kind": "observed",
+      "lo": 700.0,
+      "naive_count": 8400.0,
+      "naive_source": "snpp",
+      "year": 2019
+     },
+     {
+      "harmonized": 700.0,
+      "hi": 700.0,
+      "kind": "observed",
+      "lo": 700.0,
+      "naive_count": 8400.0,
+      "naive_source": "snpp",
+      "year": 2020
+     },
+     {
+      "harmonized": 700.0,
+      "hi": 700.0,
+      "kind": "observed",
+      "lo": 700.0,
+      "naive_count": 8400.0,
+      "naive_source": "snpp",
+      "year": 2021
+     },
+     {
+      "harmonized": 700.0,
+      "hi": 700.0,
+      "kind": "observed",
+      "lo": 700.0,
+      "naive_count": 8400.0,
+      "naive_source": "snpp",
+      "year": 2022
+     },
+     {
+      "harmonized": 700.0,
+      "hi": 700.0,
+      "kind": "observed",
+      "lo": 700.0,
+      "naive_count": 8400.0,
+      "naive_source": "snpp",
+      "year": 2023
+     },
+     {
+      "harmonized": 700.0,
+      "hi": 700.0,
+      "kind": "observed",
+      "lo": 700.0,
+      "naive_count": 8400.0,
+      "naive_source": "snpp",
+      "year": 2024
+     },
+     {
+      "harmonized": 700.0,
+      "hi": 700.0,
+      "kind": "observed",
+      "lo": 700.0,
+      "naive_count": 8400.0,
+      "naive_source": "snpp",
+      "year": 2025
+     }
+    ],
+    "naive_unit": "hotspots",
+    "place_name": "Testland",
+    "replicates": {
+     "n": 0,
+     "source": "test",
+     "values": [],
+     "years": []
+    }
+   }
+  },
+  {
+   "claim": {
+    "claimed_pct": 60,
+    "direction": "decreased",
+    "from_year": 2005,
+    "place": "region",
+    "to_year": 2020
+   },
+   "doc": null,
+   "expected": {
+    "artifact_share": null,
+    "claimed_change_pct": -60.0,
+    "error": null,
+    "harmonized": {
+     "band_hi": -25.0,
+     "band_lo": -35.0,
+     "end_mean": 700.0,
+     "hi": -30.0,
+     "lo": -30.0,
+     "mid": -30.0,
+     "range_source": "replicates",
+     "start_mean": 1000.0
+    },
+    "kinds": [
+     "observed"
+    ],
+    "missing_years": [],
+    "naive": {
+     "change_pct": 180.0,
+     "end_mean": 8400.0,
+     "start_mean": 3000.0
+    },
+    "naive_unit": "hotspots",
+    "notes": [
+     {
+      "id": "windows",
+      "text": "Compared the average of 2004–2006 with the average of 2019–2021 (3-year windows centred on the chosen years, shortened at the edges of the record)."
+     },
+     {
+      "id": "tolerance",
+      "text": "A claim counts as matching when it is within 5 percentage points of the corrected likely range."
+     }
+    ],
+    "ok": true,
+    "same_sensor": false,
+    "sentence": "The claim overstates the change. After correcting for the sensor change, satellite-detected burning activity in Testland changed by −30% from 2004–2006 to 2019–2021 (likely range −30% to −30%), less than the claimed −60%.",
+    "template_id": "weaker_than_claimed",
+    "verdict": "weaker_than_claimed",
+    "windows": {
+     "end": [
+      2019,
+      2021
+     ],
+     "start": [
+      2004,
+      2006
+     ]
+    }
+   },
+   "name": "negative_weaker_than_claimed",
+   "series": {
+    "annual": [
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2003
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2004
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2005
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2006
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2007
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2008
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2009
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2010
+     },
+     {
+      "harmonized": 940.0,
+      "hi": 940.0,
+      "kind": "observed",
+      "lo": 940.0,
+      "naive_count": 2820.0,
+      "naive_source": "modis",
+      "year": 2011
+     },
+     {
+      "harmonized": 880.0,
+      "hi": 880.0,
+      "kind": "observed",
+      "lo": 880.0,
+      "naive_count": 10560.0,
+      "naive_source": "snpp",
+      "year": 2012
+     },
+     {
+      "harmonized": 820.0,
+      "hi": 820.0,
+      "kind": "observed",
+      "lo": 820.0,
+      "naive_count": 9840.0,
+      "naive_source": "snpp",
+      "year": 2013
+     },
+     {
+      "harmonized": 760.0,
+      "hi": 760.0,
+      "kind": "observed",
+      "lo": 760.0,
+      "naive_count": 9120.0,
+      "naive_source": "snpp",
+      "year": 2014
+     },
+     {
+      "harmonized": 700.0,
+      "hi": 700.0,
+      "kind": "observed",
+      "lo": 700.0,
+      "naive_count": 8400.0,
+      "naive_source": "snpp",
+      "year": 2015
+     },
+     {
+      "harmonized": 700.0,
+      "hi": 700.0,
+      "kind": "observed",
+      "lo": 700.0,
+      "naive_count": 8400.0,
+      "naive_source": "snpp",
+      "year": 2016
+     },
+     {
+      "harmonized": 700.0,
+      "hi": 700.0,
+      "kind": "observed",
+      "lo": 700.0,
+      "naive_count": 8400.0,
+      "naive_source": "snpp",
+      "year": 2017
+     },
+     {
+      "harmonized": 700.0,
+      "hi": 700.0,
+      "kind": "observed",
+      "lo": 700.0,
+      "naive_count": 8400.0,
+      "naive_source": "snpp",
+      "year": 2018
+     },
+     {
+      "harmonized": 700.0,
+      "hi": 700.0,
+      "kind": "observed",
+      "lo": 700.0,
+      "naive_count": 8400.0,
+      "naive_source": "snpp",
+      "year": 2019
+     },
+     {
+      "harmonized": 700.0,
+      "hi": 700.0,
+      "kind": "observed",
+      "lo": 700.0,
+      "naive_count": 8400.0,
+      "naive_source": "snpp",
+      "year": 2020
+     },
+     {
+      "harmonized": 700.0,
+      "hi": 700.0,
+      "kind": "observed",
+      "lo": 700.0,
+      "naive_count": 8400.0,
+      "naive_source": "snpp",
+      "year": 2021
+     },
+     {
+      "harmonized": 700.0,
+      "hi": 700.0,
+      "kind": "observed",
+      "lo": 700.0,
+      "naive_count": 8400.0,
+      "naive_source": "snpp",
+      "year": 2022
+     },
+     {
+      "harmonized": 700.0,
+      "hi": 700.0,
+      "kind": "observed",
+      "lo": 700.0,
+      "naive_count": 8400.0,
+      "naive_source": "snpp",
+      "year": 2023
+     },
+     {
+      "harmonized": 700.0,
+      "hi": 700.0,
+      "kind": "observed",
+      "lo": 700.0,
+      "naive_count": 8400.0,
+      "naive_source": "snpp",
+      "year": 2024
+     },
+     {
+      "harmonized": 700.0,
+      "hi": 700.0,
+      "kind": "observed",
+      "lo": 700.0,
+      "naive_count": 8400.0,
+      "naive_source": "snpp",
+      "year": 2025
+     }
+    ],
+    "naive_unit": "hotspots",
+    "place_name": "Testland",
+    "replicates": {
+     "n": 0,
+     "source": "test",
+     "values": [],
+     "years": []
+    }
+   }
+  },
+  {
+   "claim": {
+    "claimed_pct": 10,
+    "direction": "decreased",
+    "from_year": 2005,
+    "place": "region",
+    "to_year": 2020
+   },
+   "doc": null,
+   "expected": {
+    "artifact_share": null,
+    "claimed_change_pct": -10.0,
+    "error": null,
+    "harmonized": {
+     "band_hi": -25.0,
+     "band_lo": -35.0,
+     "end_mean": 700.0,
+     "hi": -30.0,
+     "lo": -30.0,
+     "mid": -30.0,
+     "range_source": "replicates",
+     "start_mean": 1000.0
+    },
+    "kinds": [
+     "observed"
+    ],
+    "missing_years": [],
+    "naive": {
+     "change_pct": 180.0,
+     "end_mean": 8400.0,
+     "start_mean": 3000.0
+    },
+    "naive_unit": "hotspots",
+    "notes": [
+     {
+      "id": "windows",
+      "text": "Compared the average of 2004–2006 with the average of 2019–2021 (3-year windows centred on the chosen years, shortened at the edges of the record)."
+     },
+     {
+      "id": "tolerance",
+      "text": "A claim counts as matching when it is within 5 percentage points of the corrected likely range."
+     }
+    ],
+    "ok": true,
+    "same_sensor": false,
+    "sentence": "The claim understates the change. After correcting for the sensor change, satellite-detected burning activity in Testland changed by −30% from 2004–2006 to 2019–2021 (likely range −30% to −30%), more than the claimed −10%.",
+    "template_id": "stronger_than_claimed",
+    "verdict": "stronger_than_claimed",
+    "windows": {
+     "end": [
+      2019,
+      2021
+     ],
+     "start": [
+      2004,
+      2006
+     ]
+    }
+   },
+   "name": "negative_stronger_than_claimed",
+   "series": {
+    "annual": [
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2003
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2004
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2005
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2006
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2007
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2008
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2009
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2010
+     },
+     {
+      "harmonized": 940.0,
+      "hi": 940.0,
+      "kind": "observed",
+      "lo": 940.0,
+      "naive_count": 2820.0,
+      "naive_source": "modis",
+      "year": 2011
+     },
+     {
+      "harmonized": 880.0,
+      "hi": 880.0,
+      "kind": "observed",
+      "lo": 880.0,
+      "naive_count": 10560.0,
+      "naive_source": "snpp",
+      "year": 2012
+     },
+     {
+      "harmonized": 820.0,
+      "hi": 820.0,
+      "kind": "observed",
+      "lo": 820.0,
+      "naive_count": 9840.0,
+      "naive_source": "snpp",
+      "year": 2013
+     },
+     {
+      "harmonized": 760.0,
+      "hi": 760.0,
+      "kind": "observed",
+      "lo": 760.0,
+      "naive_count": 9120.0,
+      "naive_source": "snpp",
+      "year": 2014
+     },
+     {
+      "harmonized": 700.0,
+      "hi": 700.0,
+      "kind": "observed",
+      "lo": 700.0,
+      "naive_count": 8400.0,
+      "naive_source": "snpp",
+      "year": 2015
+     },
+     {
+      "harmonized": 700.0,
+      "hi": 700.0,
+      "kind": "observed",
+      "lo": 700.0,
+      "naive_count": 8400.0,
+      "naive_source": "snpp",
+      "year": 2016
+     },
+     {
+      "harmonized": 700.0,
+      "hi": 700.0,
+      "kind": "observed",
+      "lo": 700.0,
+      "naive_count": 8400.0,
+      "naive_source": "snpp",
+      "year": 2017
+     },
+     {
+      "harmonized": 700.0,
+      "hi": 700.0,
+      "kind": "observed",
+      "lo": 700.0,
+      "naive_count": 8400.0,
+      "naive_source": "snpp",
+      "year": 2018
+     },
+     {
+      "harmonized": 700.0,
+      "hi": 700.0,
+      "kind": "observed",
+      "lo": 700.0,
+      "naive_count": 8400.0,
+      "naive_source": "snpp",
+      "year": 2019
+     },
+     {
+      "harmonized": 700.0,
+      "hi": 700.0,
+      "kind": "observed",
+      "lo": 700.0,
+      "naive_count": 8400.0,
+      "naive_source": "snpp",
+      "year": 2020
+     },
+     {
+      "harmonized": 700.0,
+      "hi": 700.0,
+      "kind": "observed",
+      "lo": 700.0,
+      "naive_count": 8400.0,
+      "naive_source": "snpp",
+      "year": 2021
+     },
+     {
+      "harmonized": 700.0,
+      "hi": 700.0,
+      "kind": "observed",
+      "lo": 700.0,
+      "naive_count": 8400.0,
+      "naive_source": "snpp",
+      "year": 2022
+     },
+     {
+      "harmonized": 700.0,
+      "hi": 700.0,
+      "kind": "observed",
+      "lo": 700.0,
+      "naive_count": 8400.0,
+      "naive_source": "snpp",
+      "year": 2023
+     },
+     {
+      "harmonized": 700.0,
+      "hi": 700.0,
+      "kind": "observed",
+      "lo": 700.0,
+      "naive_count": 8400.0,
+      "naive_source": "snpp",
+      "year": 2024
+     },
+     {
+      "harmonized": 700.0,
+      "hi": 700.0,
+      "kind": "observed",
+      "lo": 700.0,
+      "naive_count": 8400.0,
+      "naive_source": "snpp",
+      "year": 2025
+     }
+    ],
+    "naive_unit": "hotspots",
+    "place_name": "Testland",
+    "replicates": {
+     "n": 0,
+     "source": "test",
+     "values": [],
+     "years": []
+    }
+   }
+  },
+  {
+   "claim": {
+    "claimed_pct": 50,
+    "direction": "increased",
+    "from_year": 2003,
+    "place": "region",
+    "to_year": 2025
+   },
+   "doc": null,
+   "expected": {
+    "artifact_share": 0.9,
+    "claimed_change_pct": 50.0,
+    "error": null,
+    "harmonized": {
+     "band_hi": 55.0,
+     "band_lo": 45.0,
+     "end_mean": 1500.0,
+     "hi": 50.0,
+     "lo": 50.0,
+     "mid": 50.0,
+     "range_source": "replicates",
+     "start_mean": 1000.0
+    },
+    "kinds": [
+     "observed"
+    ],
+    "missing_years": [],
+    "naive": {
+     "change_pct": 500.0,
+     "end_mean": 18000.0,
+     "start_mean": 3000.0
+    },
+    "naive_unit": "hotspots",
+    "notes": [
+     {
+      "id": "windows",
+      "text": "Compared the average of 2003–2004 with the average of 2024–2025 (3-year windows centred on the chosen years, shortened at the edges of the record)."
+     },
+     {
+      "id": "tolerance",
+      "text": "A claim counts as matching when it is within 5 percentage points of the corrected likely range."
+     },
+     {
+      "id": "artifact_share",
+      "text": "About 90% of the raw change comes from the sensor switch."
+     }
+    ],
+    "ok": true,
+    "same_sensor": false,
+    "sentence": "The claim holds up. After correcting for the sensor change, satellite-detected burning activity in Testland changed by +50% from 2003–2004 to 2024–2025 (likely range +50% to +50%), in line with the claimed +50%.",
+    "template_id": "holds_up",
+    "verdict": "holds_up",
+    "windows": {
+     "end": [
+      2024,
+      2025
+     ],
+     "start": [
+      2003,
+      2004
+     ]
+    }
+   },
+   "name": "edge_windows_2003_2025",
+   "series": {
+    "annual": [
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2003
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2004
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2005
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2006
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2007
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2008
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2009
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2010
+     },
+     {
+      "harmonized": 1100.0,
+      "hi": 1100.0,
+      "kind": "observed",
+      "lo": 1100.0,
+      "naive_count": 3300.0,
+      "naive_source": "modis",
+      "year": 2011
+     },
+     {
+      "harmonized": 1200.0,
+      "hi": 1200.0,
+      "kind": "observed",
+      "lo": 1200.0,
+      "naive_count": 14400.0,
+      "naive_source": "snpp",
+      "year": 2012
+     },
+     {
+      "harmonized": 1300.0,
+      "hi": 1300.0,
+      "kind": "observed",
+      "lo": 1300.0,
+      "naive_count": 15600.0,
+      "naive_source": "snpp",
+      "year": 2013
+     },
+     {
+      "harmonized": 1400.0,
+      "hi": 1400.0,
+      "kind": "observed",
+      "lo": 1400.0,
+      "naive_count": 16800.0,
+      "naive_source": "snpp",
+      "year": 2014
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2015
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2016
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2017
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2018
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2019
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2020
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2021
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2022
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2023
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2024
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2025
+     }
+    ],
+    "naive_unit": "hotspots",
+    "place_name": "Testland",
+    "replicates": {
+     "n": 0,
+     "source": "test",
+     "values": [],
+     "years": []
+    }
+   }
+  },
+  {
+   "claim": {
+    "claimed_pct": 10,
+    "direction": "increased",
+    "from_year": 2003,
+    "place": "region",
+    "to_year": 2004
+   },
+   "doc": null,
+   "expected": {
+    "artifact_share": null,
+    "claimed_change_pct": 10.0,
+    "error": null,
+    "harmonized": {
+     "band_hi": 5.0,
+     "band_lo": -5.0,
+     "end_mean": 1000.0,
+     "hi": 0.0,
+     "lo": 0.0,
+     "mid": 0.0,
+     "range_source": "replicates",
+     "start_mean": 1000.0
+    },
+    "kinds": [
+     "observed"
+    ],
+    "missing_years": [],
+    "naive": {
+     "change_pct": 0.0,
+     "end_mean": 3000.0,
+     "start_mean": 3000.0
+    },
+    "naive_unit": "hotspots",
+    "notes": [
+     {
+      "id": "windows",
+      "text": "Compared the average of 2003–2004 with the average of 2003–2005 (3-year windows centred on the chosen years, shortened at the edges of the record)."
+     },
+     {
+      "id": "tolerance",
+      "text": "A claim counts as matching when it is within 5 percentage points of the corrected likely range."
+     },
+     {
+      "id": "same_sensor",
+      "text": "This period doesn't cross the 2012 sensor change, so the two records should mostly agree."
+     }
+    ],
+    "ok": true,
+    "same_sensor": true,
+    "sentence": "The record shows no clear change. After correcting for the sensor change, satellite-detected burning activity in Testland changed by 0% from 2003–2004 to 2003–2005 (likely range 0% to 0%), too small to support the claimed +10%.",
+    "template_id": "no_clear_change",
+    "verdict": "no_clear_change",
+    "windows": {
+     "end": [
+      2003,
+      2005
+     ],
+     "start": [
+      2003,
+      2004
+     ]
+    }
+   },
+   "name": "edge_adjacent_years_overlap",
+   "series": {
+    "annual": [
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2003
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2004
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2005
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2006
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2007
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2008
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2009
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2010
+     },
+     {
+      "harmonized": 1100.0,
+      "hi": 1100.0,
+      "kind": "observed",
+      "lo": 1100.0,
+      "naive_count": 3300.0,
+      "naive_source": "modis",
+      "year": 2011
+     },
+     {
+      "harmonized": 1200.0,
+      "hi": 1200.0,
+      "kind": "observed",
+      "lo": 1200.0,
+      "naive_count": 14400.0,
+      "naive_source": "snpp",
+      "year": 2012
+     },
+     {
+      "harmonized": 1300.0,
+      "hi": 1300.0,
+      "kind": "observed",
+      "lo": 1300.0,
+      "naive_count": 15600.0,
+      "naive_source": "snpp",
+      "year": 2013
+     },
+     {
+      "harmonized": 1400.0,
+      "hi": 1400.0,
+      "kind": "observed",
+      "lo": 1400.0,
+      "naive_count": 16800.0,
+      "naive_source": "snpp",
+      "year": 2014
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2015
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2016
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2017
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2018
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2019
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2020
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2021
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2022
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2023
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2024
+     },
+     {
+      "harmonized": 1500.0,
+      "hi": 1500.0,
+      "kind": "observed",
+      "lo": 1500.0,
+      "naive_count": 18000.0,
+      "naive_source": "snpp",
+      "year": 2025
+     }
+    ],
+    "naive_unit": "hotspots",
+    "place_name": "Testland",
+    "replicates": {
+     "n": 0,
+     "source": "test",
+     "values": [],
+     "years": []
+    }
+   }
+  },
+  {
+   "claim": {
+    "claimed_pct": 10,
+    "direction": "increased",
+    "from_year": 2005,
+    "place": "region",
+    "to_year": 2024
+   },
+   "doc": null,
+   "expected": {
+    "artifact_share": 0.967,
+    "claimed_change_pct": 10.0,
+    "error": null,
+    "harmonized": {
+     "band_hi": 16.275,
+     "band_lo": 3.725,
+     "end_mean": 1100.0,
+     "hi": 11.275,
+     "lo": 8.725,
+     "mid": 10.0,
+     "range_source": "replicates",
+     "start_mean": 1000.0
+    },
+    "kinds": [
+     "observed",
+     "harmonized"
+    ],
+    "missing_years": [],
+    "naive": {
+     "change_pct": 300.0,
+     "end_mean": 12000.0,
+     "start_mean": 3000.0
+    },
+    "naive_unit": "hotspots",
+    "notes": [
+     {
+      "id": "windows",
+      "text": "Compared the average of 2004–2006 with the average of 2023–2025 (3-year windows centred on the chosen years, shortened at the edges of the record)."
+     },
+     {
+      "id": "tolerance",
+      "text": "A claim counts as matching when it is within 5 percentage points of the corrected likely range."
+     },
+     {
+      "id": "artifact_share",
+      "text": "About 97% of the raw change comes from the sensor switch."
+     }
+    ],
+    "ok": true,
+    "same_sensor": false,
+    "sentence": "The claim holds up. After correcting for the sensor change, satellite-detected burning activity in Testland changed by +10% from 2004–2006 to 2023–2025 (likely range +9% to +11%), in line with the claimed +10%.",
+    "template_id": "holds_up",
+    "verdict": "holds_up",
+    "windows": {
+     "end": [
+      2023,
+      2025
+     ],
+     "start": [
+      2004,
+      2006
+     ]
+    }
+   },
+   "name": "replicate_range",
+   "series": {
+    "annual": [
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2003
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2004
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2005
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2006
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2007
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2008
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2009
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2010
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 3000.0,
+      "naive_source": "modis",
+      "year": 2011
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2012
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2013
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2014
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2015
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2016
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2017
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2018
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2019
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2020
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2021
+     },
+     {
+      "harmonized": 1000.0,
+      "hi": 1000.0,
+      "kind": "observed",
+      "lo": 1000.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2022
+     },
+     {
+      "harmonized": 1100.0,
+      "hi": 1100.0,
+      "kind": "harmonized",
+      "lo": 1100.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2023
+     },
+     {
+      "harmonized": 1100.0,
+      "hi": 1100.0,
+      "kind": "harmonized",
+      "lo": 1100.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2024
+     },
+     {
+      "harmonized": 1100.0,
+      "hi": 1100.0,
+      "kind": "harmonized",
+      "lo": 1100.0,
+      "naive_count": 12000.0,
+      "naive_source": "snpp",
+      "year": 2025
+     }
+    ],
+    "naive_unit": "hotspots",
+    "place_name": "Testland",
+    "replicates": {
+     "n": 4,
+     "source": "test",
+     "values": [
+      [
+       1080.0,
+       1090.0,
+       1085.0
+      ],
+      [
+       1100.0,
+       1100.0,
+       1100.0
+      ],
+      [
+       1120.0,
+       1110.0,
+       1115.0
+      ],
+      [
+       1060.0,
+       1140.0,
+       1100.0
+      ]
+     ],
+     "years": [
+      2023,
+      2024,
+      2025
+     ]
+    }
+   }
+  },
+  {
+   "claim": {
+    "claimed_pct": 30,
+    "direction": "increased",
+    "from_year": 2005,
+    "place": "aoi",
+    "to_year": 2020
+   },
+   "doc": null,
+   "expected": {
+    "artifact_share": 0.9,
+    "claimed_change_pct": 30.0,
+    "error": null,
+    "harmonized": {
+     "band_hi": 43.041,
+     "band_lo": 17.427,
+     "end_mean": 130.0,
+     "hi": 38.041,
+     "lo": 22.427,
+     "mid": 30.0,
+     "range_source": "envelope",
+     "start_mean": 100.0
+    },
+    "kinds": [
+     "observed"
+    ],
+    "missing_years": [],
+    "naive": {
+     "change_pct": 300.0,
+     "end_mean": 160.0,
+     "start_mean": 40.0
+    },
+    "naive_unit": "fire cell-days",
+    "notes": [
+     {
+      "id": "windows",
+      "text": "Compared the average of 2004–2006 with the average of 2019–2021 (3-year windows centred on the chosen years, shortened at the edges of the record)."
+     },
+     {
+      "id": "tolerance",
+      "text": "A claim counts as matching when it is within 5 percentage points of the corrected likely range."
+     },
+     {
+      "id": "artifact_share",
+      "text": "About 90% of the raw change comes from the sensor switch."
+     },
+     {
+      "id": "aoi_calibration",
+      "text": "Calibration measured for the whole region is applied to your drawn area. Treat small areas as indicative."
+     }
+    ],
+    "ok": true,
+    "same_sensor": false,
+    "sentence": "The claim holds up. After correcting for the sensor change, satellite-detected burning activity in your drawn area changed by +30% from 2004–2006 to 2019–2021 (likely range +22% to +38%), in line with the claimed +30%.",
+    "template_id": "holds_up",
+    "verdict": "holds_up",
+    "windows": {
+     "end": [
+      2019,
+      2021
+     ],
+     "start": [
+      2004,
+      2006
+     ]
+    }
+   },
+   "name": "aoi_envelope_range",
+   "series": {
+    "annual": [
+     {
+      "harmonized": 100.0,
+      "hi": 103.0,
+      "kind": "observed",
+      "lo": 97.0,
+      "naive_count": 40.0,
+      "naive_source": "modis",
+      "year": 2003
+     },
+     {
+      "harmonized": 100.0,
+      "hi": 103.0,
+      "kind": "observed",
+      "lo": 97.0,
+      "naive_count": 40.0,
+      "naive_source": "modis",
+      "year": 2004
+     },
+     {
+      "harmonized": 100.0,
+      "hi": 103.0,
+      "kind": "observed",
+      "lo": 97.0,
+      "naive_count": 40.0,
+      "naive_source": "modis",
+      "year": 2005
+     },
+     {
+      "harmonized": 100.0,
+      "hi": 103.0,
+      "kind": "observed",
+      "lo": 97.0,
+      "naive_count": 40.0,
+      "naive_source": "modis",
+      "year": 2006
+     },
+     {
+      "harmonized": 100.0,
+      "hi": 103.0,
+      "kind": "observed",
+      "lo": 97.0,
+      "naive_count": 40.0,
+      "naive_source": "modis",
+      "year": 2007
+     },
+     {
+      "harmonized": 100.0,
+      "hi": 103.0,
+      "kind": "observed",
+      "lo": 97.0,
+      "naive_count": 40.0,
+      "naive_source": "modis",
+      "year": 2008
+     },
+     {
+      "harmonized": 100.0,
+      "hi": 103.0,
+      "kind": "observed",
+      "lo": 97.0,
+      "naive_count": 40.0,
+      "naive_source": "modis",
+      "year": 2009
+     },
+     {
+      "harmonized": 100.0,
+      "hi": 103.0,
+      "kind": "observed",
+      "lo": 97.0,
+      "naive_count": 40.0,
+      "naive_source": "modis",
+      "year": 2010
+     },
+     {
+      "harmonized": 100.0,
+      "hi": 103.0,
+      "kind": "observed",
+      "lo": 97.0,
+      "naive_count": 40.0,
+      "naive_source": "modis",
+      "year": 2011
+     },
+     {
+      "harmonized": 100.0,
+      "hi": 103.0,
+      "kind": "observed",
+      "lo": 97.0,
+      "naive_count": 160.0,
+      "naive_source": "snpp",
+      "year": 2012
+     },
+     {
+      "harmonized": 100.0,
+      "hi": 103.0,
+      "kind": "observed",
+      "lo": 97.0,
+      "naive_count": 160.0,
+      "naive_source": "snpp",
+      "year": 2013
+     },
+     {
+      "harmonized": 100.0,
+      "hi": 103.0,
+      "kind": "observed",
+      "lo": 97.0,
+      "naive_count": 160.0,
+      "naive_source": "snpp",
+      "year": 2014
+     },
+     {
+      "harmonized": 130.0,
+      "hi": 133.9,
+      "kind": "observed",
+      "lo": 126.1,
+      "naive_count": 160.0,
+      "naive_source": "snpp",
+      "year": 2015
+     },
+     {
+      "harmonized": 130.0,
+      "hi": 133.9,
+      "kind": "observed",
+      "lo": 126.1,
+      "naive_count": 160.0,
+      "naive_source": "snpp",
+      "year": 2016
+     },
+     {
+      "harmonized": 130.0,
+      "hi": 133.9,
+      "kind": "observed",
+      "lo": 126.1,
+      "naive_count": 160.0,
+      "naive_source": "snpp",
+      "year": 2017
+     },
+     {
+      "harmonized": 130.0,
+      "hi": 133.9,
+      "kind": "observed",
+      "lo": 126.1,
+      "naive_count": 160.0,
+      "naive_source": "snpp",
+      "year": 2018
+     },
+     {
+      "harmonized": 130.0,
+      "hi": 133.9,
+      "kind": "observed",
+      "lo": 126.1,
+      "naive_count": 160.0,
+      "naive_source": "snpp",
+      "year": 2019
+     },
+     {
+      "harmonized": 130.0,
+      "hi": 133.9,
+      "kind": "observed",
+      "lo": 126.1,
+      "naive_count": 160.0,
+      "naive_source": "snpp",
+      "year": 2020
+     },
+     {
+      "harmonized": 130.0,
+      "hi": 133.9,
+      "kind": "observed",
+      "lo": 126.1,
+      "naive_count": 160.0,
+      "naive_source": "snpp",
+      "year": 2021
+     },
+     {
+      "harmonized": 130.0,
+      "hi": 133.9,
+      "kind": "observed",
+      "lo": 126.1,
+      "naive_count": 160.0,
+      "naive_source": "snpp",
+      "year": 2022
+     },
+     {
+      "harmonized": 130.0,
+      "hi": 133.9,
+      "kind": "observed",
+      "lo": 126.1,
+      "naive_count": 160.0,
+      "naive_source": "snpp",
+      "year": 2023
+     },
+     {
+      "harmonized": 130.0,
+      "hi": 133.9,
+      "kind": "observed",
+      "lo": 126.1,
+      "naive_count": 160.0,
+      "naive_source": "snpp",
+      "year": 2024
+     },
+     {
+      "harmonized": 130.0,
+      "hi": 133.9,
+      "kind": "observed",
+      "lo": 126.1,
+      "naive_count": 160.0,
+      "naive_source": "snpp",
+      "year": 2025
+     }
+    ],
+    "naive_unit": "fire cell-days",
+    "place_name": "your drawn area",
+    "replicates": null
+   }
+  },
+  {
+   "claim": {
+    "claimed_pct": 100,
+    "direction": "increased",
+    "from_year": 2005,
+    "place": "region",
+    "to_year": 2020
+   },
+   "doc": "us",
+   "expected": {
+    "artifact_share": null,
+    "claimed_change_pct": 100.0,
+    "error": null,
+    "harmonized": {
+     "band_hi": -9.998,
+     "band_lo": -20.277,
+     "end_mean": 29932.047,
+     "hi": -14.998,
+     "lo": -15.277,
+     "mid": -15.115,
+     "range_source": "replicates",
+     "start_mean": 35261.931
+    },
+    "kinds": [
+     "observed"
+    ],
+    "missing_years": [],
+    "naive": {
+     "change_pct": 259.821,
+     "end_mean": 491310.0,
+     "start_mean": 136542.784
+    },
+    "naive_unit": "hotspots",
+    "notes": [
+     {
+      "id": "windows",
+      "text": "Compared the average of 2004–2006 with the average of 2019–2021 (3-year windows centred on the chosen years, shortened at the edges of the record)."
+     },
+     {
+      "id": "tolerance",
+      "text": "A claim counts as matching when it is within 5 percentage points of the corrected likely range."
+     }
+    ],
+    "ok": true,
+    "same_sensor": false,
+    "sentence": "The record contradicts the claim. After correcting for the sensor change, satellite-detected burning activity in United States changed by −15% from 2004–2006 to 2019–2021 (likely range −15% to −15%), the opposite direction to the claimed +100%.",
+    "template_id": "contradicted",
+    "verdict": "contradicted",
+    "windows": {
+     "end": [
+      2019,
+      2021
+     ],
+     "start": [
+      2004,
+      2006
+     ]
+    }
+   },
+   "name": "us_2005_2020_doubled",
+   "place_name": "United States"
+  },
+  {
+   "claim": {
+    "claimed_pct": 30,
+    "direction": "increased",
+    "from_year": 2003,
+    "place": "region",
+    "to_year": 2025
+   },
+   "doc": "us",
+   "expected": {
+    "artifact_share": 0.986,
+    "claimed_change_pct": 30.0,
+    "error": null,
+    "harmonized": {
+     "band_hi": 9.549,
+     "band_lo": -3.646,
+     "end_mean": 33441.094,
+     "hi": 4.549,
+     "lo": 1.354,
+     "mid": 3.131,
+     "range_source": "replicates",
+     "start_mean": 32425.711
+    },
+    "kinds": [
+     "observed",
+     "harmonized"
+    ],
+    "missing_years": [],
+    "naive": {
+     "change_pct": 223.04,
+     "end_mean": 395794.425,
+     "start_mean": 122521.676
+    },
+    "naive_unit": "hotspots",
+    "notes": [
+     {
+      "id": "windows",
+      "text": "Compared the average of 2003–2004 with the average of 2024–2025 (3-year windows centred on the chosen years, shortened at the edges of the record)."
+     },
+     {
+      "id": "tolerance",
+      "text": "A claim counts as matching when it is within 5 percentage points of the corrected likely range."
+     },
+     {
+      "id": "artifact_share",
+      "text": "About 99% of the raw change comes from the sensor switch."
+     }
+    ],
+    "ok": true,
+    "same_sensor": false,
+    "sentence": "The claimed change looks like a sensor artifact. The raw record, as most people would compute it, shows +223% from 2003–2004 to 2024–2025 in United States, but after correcting for the sensor change there is no clear change (likely range +1% to +5%).",
+    "template_id": "sensor_artifact",
+    "verdict": "sensor_artifact",
+    "windows": {
+     "end": [
+      2024,
+      2025
+     ],
+     "start": [
+      2003,
+      2004
+     ]
+    }
+   },
+   "name": "us_2003_2025_rise_30",
+   "place_name": "United States"
+  },
+  {
+   "claim": {
+    "claimed_pct": 10,
+    "direction": "decreased",
+    "from_year": 2012,
+    "place": "region",
+    "to_year": 2024
+   },
+   "doc": "us",
+   "expected": {
+    "artifact_share": 0.764,
+    "claimed_change_pct": -10.0,
+    "error": null,
+    "harmonized": {
+     "band_hi": 11.967,
+     "band_lo": -1.274,
+     "end_mean": 32301.994,
+     "hi": 6.967,
+     "lo": 3.726,
+     "mid": 5.548,
+     "range_source": "replicates",
+     "start_mean": 30604.0
+    },
+    "kinds": [
+     "observed",
+     "harmonized"
+    ],
+    "missing_years": [],
+    "naive": {
+     "change_pct": 23.491,
+     "end_mean": 359992.283,
+     "start_mean": 291512.025
+    },
+    "naive_unit": "hotspots",
+    "notes": [
+     {
+      "id": "windows",
+      "text": "Compared the average of 2011–2013 with the average of 2023–2025 (3-year windows centred on the chosen years, shortened at the edges of the record)."
+     },
+     {
+      "id": "tolerance",
+      "text": "A claim counts as matching when it is within 5 percentage points of the corrected likely range."
+     },
+     {
+      "id": "artifact_share",
+      "text": "About 76% of the raw change comes from the sensor switch."
+     }
+    ],
+    "ok": true,
+    "same_sensor": false,
+    "sentence": "The record shows no clear change. After correcting for the sensor change, satellite-detected burning activity in United States changed by +6% from 2011–2013 to 2023–2025 (likely range +4% to +7%), too small to support the claimed −10%.",
+    "template_id": "no_clear_change",
+    "verdict": "no_clear_change",
+    "windows": {
+     "end": [
+      2023,
+      2025
+     ],
+     "start": [
+      2011,
+      2013
+     ]
+    }
+   },
+   "name": "us_2012_2024_fall_10",
+   "place_name": "United States"
+  },
+  {
+   "claim": {
+    "claimed_pct": 5,
+    "direction": "increased",
+    "from_year": 2004,
+    "place": "region",
+    "to_year": 2010
+   },
+   "doc": "us",
+   "expected": {
+    "artifact_share": null,
+    "claimed_change_pct": 5.0,
+    "error": null,
+    "harmonized": {
+     "band_hi": -2.594,
+     "band_lo": -12.594,
+     "end_mean": 31598.333,
+     "hi": -7.594,
+     "lo": -7.594,
+     "mid": -7.594,
+     "range_source": "replicates",
+     "start_mean": 34195.14
+    },
+    "kinds": [
+     "observed"
+    ],
+    "missing_years": [],
+    "naive": {
+     "change_pct": -22.445,
+     "end_mean": 102564.333,
+     "start_mean": 132247.117
+    },
+    "naive_unit": "hotspots",
+    "notes": [
+     {
+      "id": "windows",
+      "text": "Compared the average of 2003–2005 with the average of 2009–2011 (3-year windows centred on the chosen years, shortened at the edges of the record)."
+     },
+     {
+      "id": "tolerance",
+      "text": "A claim counts as matching when it is within 5 percentage points of the corrected likely range."
+     },
+     {
+      "id": "same_sensor",
+      "text": "This period doesn't cross the 2012 sensor change, so the two records should mostly agree."
+     }
+    ],
+    "ok": true,
+    "same_sensor": true,
+    "sentence": "The record contradicts the claim. After correcting for the sensor change, satellite-detected burning activity in United States changed by −8% from 2003–2005 to 2009–2011 (likely range −8% to −8%), the opposite direction to the claimed +5%.",
+    "template_id": "contradicted",
+    "verdict": "contradicted",
+    "windows": {
+     "end": [
+      2009,
+      2011
+     ],
+     "start": [
+      2003,
+      2005
+     ]
+    }
+   },
+   "name": "us_2004_2010_rise_5",
+   "place_name": "United States"
+  },
+  {
+   "claim": {
+    "claimed_pct": 20,
+    "direction": "increased",
+    "from_year": 2005,
+    "place": "region",
+    "to_year": 2020
+   },
+   "doc": "synthland",
+   "expected": {
+    "artifact_share": 0.936,
+    "claimed_change_pct": 20.0,
+    "error": null,
+    "harmonized": {
+     "band_hi": 26.068,
+     "band_lo": 16.037,
+     "end_mean": 4075.842,
+     "hi": 21.068,
+     "lo": 21.037,
+     "mid": 21.053,
+     "range_source": "replicates",
+     "start_mean": 3367.0
+    },
+    "kinds": [
+     "observed"
+    ],
+    "missing_years": [],
+    "naive": {
+     "change_pct": 327.078,
+     "end_mean": 28674.0,
+     "start_mean": 6714.0
+    },
+    "naive_unit": "hotspots",
+    "notes": [
+     {
+      "id": "windows",
+      "text": "Compared the average of 2004–2006 with the average of 2019–2021 (3-year windows centred on the chosen years, shortened at the edges of the record)."
+     },
+     {
+      "id": "tolerance",
+      "text": "A claim counts as matching when it is within 5 percentage points of the corrected likely range."
+     },
+     {
+      "id": "artifact_share",
+      "text": "About 94% of the raw change comes from the sensor switch."
+     }
+    ],
+    "ok": true,
+    "same_sensor": false,
+    "sentence": "The claim holds up. After correcting for the sensor change, satellite-detected burning activity in Synthland changed by +21% from 2004–2006 to 2019–2021 (likely range +21% to +21%), in line with the claimed +20%.",
+    "template_id": "holds_up",
+    "verdict": "holds_up",
+    "windows": {
+     "end": [
+      2019,
+      2021
+     ],
+     "start": [
+      2004,
+      2006
+     ]
+    }
+   },
+   "name": "synthland_2005_2020_rise_20",
+   "place_name": "Synthland"
+  },
+  {
+   "claim": {
+    "claimed_pct": 31.266,
+    "direction": "increased",
+    "from_year": 2003,
+    "place": "region",
+    "to_year": 2025
+   },
+   "doc": "synthland",
+   "expected": {
+    "artifact_share": 0.914,
+    "claimed_change_pct": 31.266,
+    "error": null,
+    "harmonized": {
+     "band_hi": 37.966,
+     "band_lo": 26.55,
+     "end_mean": 4300.058,
+     "hi": 32.966,
+     "lo": 31.55,
+     "mid": 32.248,
+     "range_source": "replicates",
+     "start_mean": 3251.5
+    },
+    "kinds": [
+     "observed",
+     "harmonized"
+    ],
+    "missing_years": [],
+    "naive": {
+     "change_pct": 374.054,
+     "end_mean": 31313.644,
+     "start_mean": 6605.5
+    },
+    "naive_unit": "hotspots",
+    "notes": [
+     {
+      "id": "windows",
+      "text": "Compared the average of 2003–2004 with the average of 2024–2025 (3-year windows centred on the chosen years, shortened at the edges of the record)."
+     },
+     {
+      "id": "tolerance",
+      "text": "A claim counts as matching when it is within 5 percentage points of the corrected likely range."
+     },
+     {
+      "id": "artifact_share",
+      "text": "About 91% of the raw change comes from the sensor switch."
+     }
+    ],
+    "ok": true,
+    "same_sensor": false,
+    "sentence": "The claim holds up. After correcting for the sensor change, satellite-detected burning activity in Synthland changed by +32% from 2003–2004 to 2024–2025 (likely range +32% to +33%), in line with the claimed +31%.",
+    "template_id": "holds_up",
+    "verdict": "holds_up",
+    "windows": {
+     "end": [
+      2024,
+      2025
+     ],
+     "start": [
+      2003,
+      2004
+     ]
+    }
+   },
+   "name": "planted_trend_full_record",
+   "place_name": "Synthland"
+  },
+  {
+   "claim": {
+    "claimed_pct": 327.078,
+    "direction": "increased",
+    "from_year": 2005,
+    "place": "region",
+    "to_year": 2020
+   },
+   "doc": "synthland",
+   "expected": {
+    "artifact_share": 0.936,
+    "claimed_change_pct": 327.078,
+    "error": null,
+    "harmonized": {
+     "band_hi": 26.068,
+     "band_lo": 16.037,
+     "end_mean": 4075.842,
+     "hi": 21.068,
+     "lo": 21.037,
+     "mid": 21.053,
+     "range_source": "replicates",
+     "start_mean": 3367.0
+    },
+    "kinds": [
+     "observed"
+    ],
+    "missing_years": [],
+    "naive": {
+     "change_pct": 327.078,
+     "end_mean": 28674.0,
+     "start_mean": 6714.0
+    },
+    "naive_unit": "hotspots",
+    "notes": [
+     {
+      "id": "windows",
+      "text": "Compared the average of 2004–2006 with the average of 2019–2021 (3-year windows centred on the chosen years, shortened at the edges of the record)."
+     },
+     {
+      "id": "tolerance",
+      "text": "A claim counts as matching when it is within 5 percentage points of the corrected likely range."
+     },
+     {
+      "id": "artifact_share",
+      "text": "About 94% of the raw change comes from the sensor switch."
+     }
+    ],
+    "ok": true,
+    "same_sensor": false,
+    "sentence": "The claim overstates the change. After correcting for the sensor change, satellite-detected burning activity in Synthland changed by +21% from 2004–2006 to 2019–2021 (likely range +21% to +21%), less than the claimed +327%.",
+    "template_id": "weaker_than_claimed",
+    "verdict": "weaker_than_claimed",
+    "windows": {
+     "end": [
+      2019,
+      2021
+     ],
+     "start": [
+      2004,
+      2006
+     ]
+    }
+   },
+   "name": "planted_naive_splice_across_2012",
+   "place_name": "Synthland"
+  }
+ ],
+ "description": "Write contracts/fixtures/claim_check_parity.json: claim inputs and the Python reference results (SD-20).",
+ "inline_config": {
+  "agreement_tolerance_pct_points": 5,
+  "artifact_min_naive_pct": 25,
+  "interval_percentiles": [
+   5,
+   95
+  ],
+  "max_claim_pct": 1000,
+  "notes": {
+   "aoi_calibration": "Calibration measured for the whole region is applied to your drawn area. Treat small areas as indicative.",
+   "artifact_share": "About {artifact_share} of the raw change comes from the sensor switch.",
+   "same_sensor": "This period doesn't cross the {sensor_change_year} sensor change, so the two records should mostly agree.",
+   "tolerance": "A claim counts as matching when it is within {tolerance} percentage points of the corrected likely range.",
+   "windows": "Compared the average of {start_window} with the average of {end_window} ({window_years}-year windows centred on the chosen years, shortened at the edges of the record)."
+  },
+  "record_years": [
+   2003,
+   2025
+  ],
+  "sensor_change_year": 2012,
+  "templates": {
+   "cant_tell_missing": "We can't tell. Satellite coverage is too thin in {missing_years}, inside the years this check compares, and missing data is never counted as zero.",
+   "cant_tell_zero_start": "We can't tell. One of the two records shows no satellite-detected burning activity in {place} in {start_window}, so a percentage change from those years has no meaning.",
+   "contradicted": "The record contradicts the claim. After correcting for the sensor change, satellite-detected burning activity in {place} changed by {h_mid} from {start_window} to {end_window} (likely range {h_lo} to {h_hi}), the opposite direction to the claimed {claimed}.",
+   "holds_up": "The claim holds up. After correcting for the sensor change, satellite-detected burning activity in {place} changed by {h_mid} from {start_window} to {end_window} (likely range {h_lo} to {h_hi}), in line with the claimed {claimed}.",
+   "no_clear_change": "The record shows no clear change. After correcting for the sensor change, satellite-detected burning activity in {place} changed by {h_mid} from {start_window} to {end_window} (likely range {h_lo} to {h_hi}), too small to support the claimed {claimed}.",
+   "sensor_artifact": "The claimed change looks like a sensor artifact. The raw record, as most people would compute it, shows {naive} from {start_window} to {end_window} in {place}, but after correcting for the sensor change there is no clear change (likely range {h_lo} to {h_hi}).",
+   "stronger_than_claimed": "The claim understates the change. After correcting for the sensor change, satellite-detected burning activity in {place} changed by {h_mid} from {start_window} to {end_window} (likely range {h_lo} to {h_hi}), more than the claimed {claimed}.",
+   "weaker_than_claimed": "The claim overstates the change. After correcting for the sensor change, satellite-detected burning activity in {place} changed by {h_mid} from {start_window} to {end_window} (likely range {h_lo} to {h_hi}), less than the claimed {claimed}."
+  },
+  "window_years": 3,
+  "year_min_covered_frac": 0.9
+ }
+}

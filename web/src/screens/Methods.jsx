@@ -30,6 +30,7 @@ const METHODS_SECTIONS = [
   { id: "planted-truth", label: "Planted-truth test" },
   { id: "eyesight", label: "Satellite eyesight" },
   { id: "data", label: "Data" },
+  { id: "claim-checker", label: "Claim Checker" },
   { id: "limitations", label: "Limitations" },
   { id: "ai-use", label: "How we used AI" },
   { id: "attribution", label: "Credits" },
@@ -102,6 +103,7 @@ export default function Methods() {
           {has(m?.planted_truth) ? <PlantedTruth rows={m.planted_truth} manifest={manifest} /> : null}
           {has(m?.eyesight) ? <Eyesight entries={m.eyesight} nameOf={nameOf} /> : null}
           {m && (has(m.inputs) || has(m.filters) || has(m.sources)) ? <Data m={m} nameOf={nameOf} manifest={manifest} /> : null}
+          <ClaimCheckerMethods regions={regions} />
           <Closing m={m} />
         </div>
       </div>
@@ -418,6 +420,43 @@ function Data({ m, nameOf, manifest }) {
     </MethodsSection>
   );
 }
+
+/** SD-20 in plain words. Every constant is read from the first published claim_check.json (all come from science.yaml). */
+function ClaimCheckerMethods({ regions }) {
+  const region = (regions || []).find((r) => r.optional_files?.includes("claim_check"));
+  const state = useJson(region ? regionFilePath(region.id, "claim_check") : null);
+  if (state.status !== "ok") return null;
+  const c = state.data.config;
+  const [p0, p1] = c.interval_percentiles;
+  return (
+    <MethodsSection id="claim-checker" title="Claim Checker" intro="How a claim such as “fires have doubled” is checked on each region page.">
+      <ul className="max-w-3xl list-disc space-y-1 pl-6">
+        <li>No AI or chatbot is involved; verdicts are fixed templates filled with numbers from the published files.</li>
+        <li>
+          Each end of the claim is the mean of a {c.window_years}-year window centred on the chosen year, shortened at the
+          edges of the record ({c.record_years[0]}–{c.record_years[1]}), so no single year can be cherry-picked.
+        </li>
+        <li>
+          Change = (end mean ÷ start mean − 1) × 100, separately for the raw record (naive splice, as most people would
+          compute it) and the corrected record (harmonized). The two use different units; only changes within one record are compared.
+        </li>
+        <li>
+          The corrected change gets a {p0}th–{p1}th percentile range from the calibration replicates. A claim matches when it is within{" "}
+          {c.agreement_tolerance_pct_points} percentage points of that range.
+        </li>
+        <li>
+          Any year in either window below the yearly coverage threshold ({Math.round(c.year_min_covered_frac * 100)}% of days covered) gives “can’t tell”: missing data is never counted as zero.
+        </li>
+        <li>
+          Verdicts, first match wins: can’t tell; contradicted; sensor artifact (the raw change backs the claim by at least{" "}
+          {c.artifact_min_naive_pct}% but the corrected range includes no change); no clear change; holds up; overstated; understated.
+        </li>
+        <li>Limitations: the range covers calibration uncertainty, not year-to-year variability; drawn areas use the whole-region calibration with an envelope range, and their raw record counts fire cell-days, not hotspots.</li>
+      </ul>
+    </MethodsSection>
+  );
+}
+
 
 function Closing({ m }) {
   return (

@@ -48,6 +48,20 @@ describe("fetchJson", () => {
     expect(r.detail).toContain("kind");
   });
 
+  it("validates claim_check.json (SD-20) against its contract", async () => {
+    const example = (await import("../../../contracts/examples/claim_check.json")).default;
+    mockFetch({ "testland/claim_check.json": example });
+    expect(await fetchJson("testland/claim_check.json")).toMatchObject({ ok: true });
+    clearFetchCache();
+    const bad = structuredClone(example);
+    delete bad.templates.holds_up;
+    bad.replicates.values = [["not a number"]];
+    mockFetch({ "testland/claim_check.json": bad });
+    const r = await fetchJson("testland/claim_check.json");
+    expect(r).toMatchObject({ ok: false, reason: "invalid" });
+    expect(r.detail).toContain("holds_up");
+  });
+
   it("returns invalid for text that is not JSON", async () => {
     vi.stubGlobal("fetch", vi.fn(async () => new Response("{oops", { status: 200 })));
     expect(await fetchJson("regions.json")).toMatchObject({ ok: false, reason: "invalid" });

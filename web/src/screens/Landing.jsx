@@ -127,7 +127,9 @@ export default function Landing() {
 
       <ProblemStage years={rulerYears} problem={PROBLEM} solution={SOLUTION} />
       <StartHere downloadsRegion={defaultRegion} />
-      {regionsState.status === "ok" ? <LiveThisWeek regions={regionsState.data.regions} /> : null}
+      {regionsState.status === "ok" ? <LiveThisWeek regions={regionsState.data.regions} /> : regionsState.status === "loading" ? (
+        <div className="mx-auto w-full max-w-6xl px-4 pb-16"><div className="bg-card rounded-xl border p-5 sm:p-6"><SectionState state={regionsState} title="Live this week" variant="live" /></div></div>
+      ) : null}
 
       <div className="mx-auto w-full max-w-6xl space-y-8 px-4 pb-10">
         {methods.status === "ok" ? <WhyNow sources={methods.data.sources} /> : null}

@@ -1,3 +1,4 @@
+import LoadingFrame from "@/components/LoadingFrame.jsx";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Download, FileImage, FileText, Printer } from "lucide-react";
@@ -85,19 +86,19 @@ export default function DownloadsPanel({ region, files, url, lastDataDay, chartE
       </p>
       <ul className="grid gap-3 md:grid-cols-2">
         <Item title="Daily series (CSV)" description="One line per day: value, likely range, kind, satellite and unit. Days without data are left blank.">
-          <Button size="sm" onClick={seriesCsv} disabled={files.daily?.status !== "ok"}>
+          {files.daily?.status === "loading" ? <LoadingFrame title="Series CSV" variant="button" /> : <Button size="sm" onClick={seriesCsv} disabled={files.daily?.status !== "ok"}>
             <Download aria-hidden="true" /> Series CSV
-          </Button>
-          {files.daily?.status !== "ok" ? <span className="text-muted-foreground text-sm">Daily file not available for this place.</span> : null}
+          </Button>}
+          {files.daily?.status !== "ok" && files.daily?.status !== "loading" ? <span className="text-muted-foreground text-sm">Daily file not available for this place.</span> : null}
         </Item>
 
         <Item
           title={`Calendar table (CSV, ${grain === "week" ? "weeks" : "months"})`}
           description={`The ${grain === "week" ? "year × week" : "year × month"} table behind the calendar, for the years in the range.`}
         >
-          <Button size="sm" onClick={calendarCsv} disabled={table?.status !== "ok"}>
+          {table?.status === "loading" ? <LoadingFrame title="Calendar CSV" variant="button" /> : <Button size="sm" onClick={calendarCsv} disabled={table?.status !== "ok"}>
             <Download aria-hidden="true" /> Calendar CSV
-          </Button>
+          </Button>}
         </Item>
 
         <Item title="Chart image" description="The calendar chart as it looks now, as a picture (PNG, 2× size) or a drawing (SVG).">
@@ -126,7 +127,7 @@ export default function DownloadsPanel({ region, files, url, lastDataDay, chartE
             <span className="text-sm">Recent hotspot records are not available for this place.</span>
           )}
           <div className="w-full text-sm">
-            {archives === null ? (
+            {files.downloads?.status === "loading" ? <LoadingFrame title="hotspot archives" variant="table" /> : archives === null ? (
               <p>Yearly hotspot archives are not available for this place.</p>
             ) : archives.length === 0 ? (
               <p>No yearly hotspot archives overlap this date range.</p>
